@@ -1,0 +1,11 @@
+---
+title: "Výuka - Jan Caha"
+---
+
+Materiály pro moje předměty vyučované v roce **{{< var dates.school-year >}}** na Katedře Geoinformatiky, HGF, VŠB-TUO.
+
+## Zimní semestr
+
+## Letní semestr
+
+- [Programování v GIS 2 (PGIS2)](pgis2.qmd)

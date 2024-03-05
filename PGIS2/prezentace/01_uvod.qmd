@@ -1,0 +1,53 @@
+---
+title: "Úvodní cvičení"
+subtitle: "Programování v GIS 2"
+author: "Jan Caha"
+date: 2024-02-19
+date-format: "YYYY-MM-DD"
+format: clean-revealjs
+footer: "{{< var links.web >}}"
+---
+
+## Náplň
+
+- programování v **Pythonu** s důrazem na **GIS knihovny**
+  - GDAL
+  - Fiona, Rasterio, Shapely
+  - Pandas, Polars  
+- management Pythonu pomocí **Conda**
+- standardní techniky programování v Pythonu
+
+## O čem to bude
+
+- programování skriptů v Pythonu (funkce, objekty, atd.)
+- operace s geodaty v Pythonu
+- funkcionální i objektově orientované programování
+- odchytávání výjimek
+- práce s GitHub
+  
+  
+## Dílčí úlohy
+
+- použitelný a čitelný kód 
+- replikovatelné postupy
+- programovací techniky a postupy
+- debugování programů
+
+## V čem budeme pracovat
+
+- **VS Code**
+- extenze pro **VS Code**
+
+## Materiály
+
+- prezentace
+- kód z cvičení
+- budou dostupné (kde upřesním)
+
+## Zakončení předmětu
+
+- samostatný projekt
+  - netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód 
+- písemka - klíčové položky programování v Pythonu a GIS knihoven
+ 
+# Dotazy? {.center}

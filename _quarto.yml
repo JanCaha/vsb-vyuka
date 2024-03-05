@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "Výuka - Jan Caha"
+  description: "Výukové materiály"
+  site-url: "https://sta210-s22.github.io/website/"
+
+  open-graph: true
+
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright {{< var dates.year >}}, Jan Caha"
+
+  sidebar:
+    pinned: true
+    align: center
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: pgis2.qmd
+        text: Programování v GIS 2
+      
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+freeze: auto

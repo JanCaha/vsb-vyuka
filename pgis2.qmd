@@ -1,0 +1,30 @@
+---
+title: Programování v GIS 2 (PGIS2)
+listing:
+    id: prezentace
+    contents: PGIS2/prezentace
+    sort-ui: false
+    filter-ui: false
+    type: table
+    date-format: iso
+    sort:
+        - "date"
+    fields: [date, title] 
+    field-display-names:
+        title: "Prezentace"
+        date: "Datum"
+        author: "Autor"
+---
+
+## 📃 Řešená témata
+
+- opakování základů Pythonu
+
+## 📑Prezentace
+
+::: {#prezentace}
+:::
+
+## 📚 Zdroje
+
+## 💻 Ukázkové kódy

@@ -1,0 +1,186 @@
+---
+title: "Opakování Pythonu"
+subtitle: "Programování v GIS 2"
+author: "Jan Caha"
+date: 2024-02-26
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Python
+
+- **interpretovaný** programovací (skriptovací) jazyk
+- **dynamicky typovaný**
+- široce využívaný - ať už samostatně, nebo i jako součást jiného softwaru
+- snadno propojitelný s dalšími knihovnami i softwarem
+- podpora jak objektového, tak i funkcionálního programování
+- verze 2.x už nepoužívat, verze 3 ideálně **od 3.10 a novější** (aktuální verze a cca dvě verze zpátky)
+  
+## VS Code
+
+- IDE pro řadu jazyků a technologií
+- klíčové jsou extenze, které posunují funcionalitu od textového editoru více k "težšímu" IDE
+- profily - pro různé technologie či využití
+- synchronizace po přihlášení
+- instalace - lze bez administrátorských práv
+  
+## VS Code extenze pro Python
+
+- Python, Python Debugger
+- formátování kódu - Black Formatter, isort
+- kontroly kódu - autopep8, Flake8, Mypy Type Checker, Pylance, Pylint
+- generování docstringů - autoDocstring - Python Docstring Generator
+- Github Copilot - přihlášení, pouze pokud máte přístup (studenti mají)
+  
+
+## Conda
+
+- systém pro správu Pythonu a jeho balíčků
+- použití z příkazové řádky - ale existuje i GUI (Anaconda)
+  
+```bash
+conda create -n pgis2 python=3.11
+conda activate pgis2
+conda config --add channels conda-forge
+conda install GDAL
+conda deactivate
+```
+
+- v environmentu lze instalovat i skrze `pip`, ale nelze to doporučit - chybí návaznosti závislostí
+- v **VS Code** nutno nastavit interpretor jazyka
+
+# Python - použití jazyka<br/>opakování{.center}
+
+## Proměnné
+
+- jednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota
+- komplexní - seznam, slovník, tuple
+- objekty - např. `Path` z knihovny `pathlib`
+- funkce - lze je také uložit do proměnné (trochu komplikované na představu)
+
+## Podmínky
+
+- konstrukce `if, elif, else`
+
+## Cykly
+
+- konstrukce `for` a `while`
+- přeskočení v cyklu `continue` a ukončení cyklu `break`
+- speciální případ `for` s `enumerate`
+   
+## Import knihoven či modulů
+
+- lze importovat objekty, funkce, moduly
+- lze buď celým názvem - `import pathlib`
+- lokální souboru lze i jako `import .muj_soubor` (doporučuje se pouze u jednoduchých skriptů, v případě modulů - knihoven lépe importovat plnou cestou)
+- lze importovat i s přejmenováním - `import numpy as np`
+- kombinace a variace importů občas ztěžují interpretaci kódu
+ 
+## Zpracování chyb
+
+- konstrukce `raise`
+- druhy chyb
+- konstrukce `try, except, finally`
+  
+## Magické proměnné či funkce
+
+- zapisují je jako `__nazev__` 
+- odkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování
+- ukázka - tvorba objektu a funkce pro tisk
+- příklad tvorba objektu a funkce pro tisk
+- do této skupiny lze zařadit i soubor `__init__.py`, jehož existence označuje složku jako Pythonový modul
+
+---
+
+- tisk objektu bez funkce `__repr__()`
+- tiskne informace o umístění objektu v paměti
+
+```{python}
+class A:
+  def __init__(self):
+    pass
+  
+a = A()
+print(a)
+```
+
+---
+
+- tisk objektu s funkcí `__repr__()`
+- tiskne řetězec z této funkce
+
+```{python}
+class A:
+  def __init__(self):
+    pass
+  
+  def __repr__(self) -> str:
+    return "Objekt třídy A."  
+
+a = A()
+print(a)
+```
+
+## Debugování
+
+- proces nahlížení na stav programu za jeho běhu
+- umožňuje nahlížet do paměti programu v jeho různých fázích a stavech
+- v Pythonu máme možnost do proměnných za běhu i zasahovat
+- ukázka v **VS Code**
+
+## Konextové managery
+
+- konstrukce `with`
+- vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pěvně pojí
+- objekty, které využívají dvou magických metod `__enter__` a `__exit__` 
+- ukázka se souborem
+- ukázka s vlastním managerem
+
+## Typování proměnných 
+
+- teoreticky není vůbec nutné
+- zejména u větších knihoven však výrazně pomáhá s managementem kódu
+- zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace
+
+```{python}
+import typing
+
+def fun(var: typing.List[float], round_up: bool = True) -> typing.List[int]:
+  ...
+```
+
+## Instalace knihoven
+
+```{bash}
+conda activate pgis2
+conda instally black isort mypy pep8 flake8 pylint
+conda install shapely fiona rasterio polars pandas geopandas
+pip install --pre geopolars
+```
+
+- podle osnovy se máme věnovat `pandas` - `polars` je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem
+
+## Formátování pomocí black a isort
+
+- isort řadí importy dle určité logiky
+- black formátuje kód dle pravidel, má minimum nastavení a tak je vysoce konstantní napříč projekty
+- zpočátku obvykle nevyhovuje uživateli na 100%, ale jde o zvyk
+
+## Kontroly pomocí mypy, pep8, flake8, pylint
+
+- zvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu
+- ne vždy musí jít o zásadní problém
+- v moha situacích to předchází chybám
+- např. **mypy** nutí uživatele psát rozumně typovaný kód a používat ho správně
+- celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu
+- většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit 
+
+# Dotazy? {.center}
+
