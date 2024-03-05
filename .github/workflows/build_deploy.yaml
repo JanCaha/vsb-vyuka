@@ -24,6 +24,9 @@ jobs:
       - name: Setup Conda
         uses: s-weigand/setup-conda@v1
       
+      - name: Conda init
+        run: conda init
+
       - name: Create conda env
         run: conda env create -f conda-environment.yml
       
