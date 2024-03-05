@@ -30,6 +30,11 @@ jobs:
         run: |
           pip install jupyter nbformat
       
+      - name: Add Repo
+        run: |
+          sudo add-apt-repository ppa:ubuntugis/ppa
+          sudo apt-get update
+
       - name: Install system libraries
         run: sudo apt-get install gdal-bin libgdal-dev
 
