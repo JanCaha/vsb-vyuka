@@ -26,8 +26,8 @@ jobs:
       
       - name: Create conda env and activate
         run: |
-          conda create --name project --file conda-environment.yml
-          conda activate project
+          conda create --name project-env --file conda-environment.yml
+          conda activate project-env
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
