@@ -14,4 +14,4 @@ dependencies:
   - geopandas
   - polars
   # quarto
-  -jupyter
+  - jupyter
