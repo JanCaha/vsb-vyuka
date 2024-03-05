@@ -1,5 +1,3 @@
-name: project-env
-
 channels:
   - conda-forge
 
