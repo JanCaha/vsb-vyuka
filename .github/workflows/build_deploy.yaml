@@ -25,7 +25,7 @@ jobs:
         uses: s-weigand/setup-conda@v1
       
       - name: Create conda env
-        run: conda create --name project-env --file conda-environment.yml
+        run: conda create --name project-env -f conda-environment.yml
       
       - name: Activate conda env 
         run:  conda activate project-env
