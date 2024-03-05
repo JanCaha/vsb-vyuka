@@ -1,0 +1,13 @@
+name: project
+
+channels:
+  - conda-forge
+
+dependencies:
+  - GDAL
+  - fiona
+  - rasterio
+  - shapely
+  - pandas
+  - geopandas
+  - polars
