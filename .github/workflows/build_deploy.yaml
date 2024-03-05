@@ -30,6 +30,7 @@ jobs:
       - name: Activate conda env 
         run:  |
           conda init bash
+          source ~/.bashrc
           conda activate env-project
 
       - name: Setup Quarto
