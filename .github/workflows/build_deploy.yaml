@@ -31,7 +31,7 @@ jobs:
           pip install jupyter nbformat
       
       - name: Install system libraries
-        run: sudo apt-get install gdal-bin
+        run: sudo apt-get install gdal-bin libgdal-dev
 
       - name: Install Python libraries - PGIS2
         run: |
