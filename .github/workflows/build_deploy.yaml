@@ -18,22 +18,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install R
-        uses: r-lib/actions/setup-r@v2
+      #- name: Install R
+      #  uses: r-lib/actions/setup-r@v2
 
-      - name: Setup Python in Conda
-        uses: conda-incubator/setup-miniconda@v3
-        with:
-          auto-activate-base: false
-          activate-environment: project
-          environment-file: conda-environment.yml
-          python-version: "3.10"
+      - name: Setup Conda
+        uses: s-weigand/setup-conda@v
       
-      - name: Activate Conda
-        run: conda activate project
-
-      - name: Install Conda Package
-        run: conda install pytest
+      - name: Create conda env
+        run: conda create --name project --file conda-environment.yml
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -41,13 +33,9 @@ jobs:
       - name: Install extensions
         run: ./install.sh  
 
-      - name: Render Quarto Project
-        uses: quarto-dev/quarto-actions/render@v2
-
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
-          render: "false"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
