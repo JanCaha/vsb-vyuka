@@ -4,6 +4,7 @@ channels:
   - conda-forge
 
 dependencies:
+  # pgis2
   - GDAL
   - fiona
   - rasterio
@@ -11,3 +12,5 @@ dependencies:
   - pandas
   - geopandas
   - polars
+  # quarto
+  -jupyter
