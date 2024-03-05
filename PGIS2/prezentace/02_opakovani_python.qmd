@@ -23,6 +23,9 @@ execute:
 - podpora jak objektového, tak i funkcionálního programování
 - verze 2.x už nepoužívat, verze 3 ideálně **od 3.10 a novější** (aktuální verze a cca dvě verze zpátky)
   
+ ```{python}
+ import osgeo
+ ``` 
 ## VS Code
 
 - IDE pro řadu jazyků a technologií
