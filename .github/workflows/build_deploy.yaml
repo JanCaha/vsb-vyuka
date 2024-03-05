@@ -25,10 +25,10 @@ jobs:
         uses: s-weigand/setup-conda@v1
       
       - name: Create conda env
-        run: conda create --name project-env -f conda-environment.yml
+        run: conda env create -f conda-environment.yml
       
       - name: Activate conda env 
-        run:  conda activate project-env
+        run:  conda activate env-project
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
