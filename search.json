@@ -1,0 +1,227 @@
+[
+  {
+    "objectID": "pgis2.html",
+    "href": "pgis2.html",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "",
+    "text": "opakování základů Pythonu",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#řešená-témata",
+    "href": "pgis2.html#řešená-témata",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "",
+    "text": "opakování základů Pythonu",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#prezentace",
+    "href": "pgis2.html#prezentace",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "📑Prezentace",
+    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nOpakování Pythonu\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#zdroje",
+    "href": "pgis2.html#zdroje",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "📚 Zdroje",
+    "text": "📚 Zdroje",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#ukázkové-kódy",
+    "href": "pgis2.html#ukázkové-kódy",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "💻 Ukázkové kódy",
+    "text": "💻 Ukázkové kódy",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#náplň",
+    "href": "PGIS2/prezentace/01_uvod.html#náplň",
+    "title": "Úvodní cvičení",
+    "section": "Náplň",
+    "text": "Náplň\n\nprogramování v Pythonu s důrazem na GIS knihovny\n\nGDAL\nFiona, Rasterio, Shapely\nPandas, Polars\n\n\nmanagement Pythonu pomocí Conda\nstandardní techniky programování v Pythonu"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "href": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "title": "Úvodní cvičení",
+    "section": "O čem to bude",
+    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\noperace s geodaty v Pythonu\nfunkcionální i objektově orientované programování\nodchytávání výjimek\npráce s GitHub"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "href": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "title": "Úvodní cvičení",
+    "section": "Dílčí úlohy",
+    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "href": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "title": "Úvodní cvičení",
+    "section": "V čem budeme pracovat",
+    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#materiály",
+    "href": "PGIS2/prezentace/01_uvod.html#materiály",
+    "title": "Úvodní cvičení",
+    "section": "Materiály",
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
+    "href": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
+    "title": "Úvodní cvičení",
+    "section": "Zakončení předmětu",
+    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Výuka - Jan Caha",
+    "section": "",
+    "text": "Materiály pro moje předměty vyučované v roce 2023/2024 na Katedře Geoinformatiky, HGF, VŠB-TUO."
+  },
+  {
+    "objectID": "index.html#zimní-semestr",
+    "href": "index.html#zimní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Zimní semestr",
+    "text": "Zimní semestr"
+  },
+  {
+    "objectID": "index.html#letní-semestr",
+    "href": "index.html#letní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Letní semestr",
+    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#python",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#python",
+    "title": "Opakování Pythonu",
+    "section": "Python",
+    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.10 a novější (aktuální verze a cca dvě verze zpátky)"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#vs-code",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#vs-code",
+    "title": "Opakování Pythonu",
+    "section": "VS Code",
+    "text": "VS Code\n\nIDE pro řadu jazyků a technologií\nklíčové jsou extenze, které posunují funcionalitu od textového editoru více k “težšímu” IDE\nprofily - pro různé technologie či využití\nsynchronizace po přihlášení\ninstalace - lze bez administrátorských práv"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#vs-code-extenze-pro-python",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#vs-code-extenze-pro-python",
+    "title": "Opakování Pythonu",
+    "section": "VS Code extenze pro Python",
+    "text": "VS Code extenze pro Python\n\nPython, Python Debugger\nformátování kódu - Black Formatter, isort\nkontroly kódu - autopep8, Flake8, Mypy Type Checker, Pylance, Pylint\ngenerování docstringů - autoDocstring - Python Docstring Generator\nGithub Copilot - přihlášení, pouze pokud máte přístup (studenti mají)"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#conda",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#conda",
+    "title": "Opakování Pythonu",
+    "section": "Conda",
+    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI (Anaconda)\n\nconda create -n pgis2 python=3.11\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#proměnné",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#proměnné",
+    "title": "Opakování Pythonu",
+    "section": "Proměnné",
+    "text": "Proměnné\n\njednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota\nkomplexní - seznam, slovník, tuple\nobjekty - např. Path z knihovny pathlib\nfunkce - lze je také uložit do proměnné (trochu komplikované na představu)"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#podmínky",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#podmínky",
+    "title": "Opakování Pythonu",
+    "section": "Podmínky",
+    "text": "Podmínky\n\nkonstrukce if, elif, else"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#cykly",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#cykly",
+    "title": "Opakování Pythonu",
+    "section": "Cykly",
+    "text": "Cykly\n\nkonstrukce for a while\npřeskočení v cyklu continue a ukončení cyklu break\nspeciální případ for s enumerate"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#import-knihoven-či-modulů",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#import-knihoven-či-modulů",
+    "title": "Opakování Pythonu",
+    "section": "Import knihoven či modulů",
+    "text": "Import knihoven či modulů\n\nlze importovat objekty, funkce, moduly\nlze buď celým názvem - import pathlib\nlokální souboru lze i jako import .muj_soubor (doporučuje se pouze u jednoduchých skriptů, v případě modulů - knihoven lépe importovat plnou cestou)\nlze importovat i s přejmenováním - import numpy as np\nkombinace a variace importů občas ztěžují interpretaci kódu"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#zpracování-chyb",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#zpracování-chyb",
+    "title": "Opakování Pythonu",
+    "section": "Zpracování chyb",
+    "text": "Zpracování chyb\n\nkonstrukce raise\ndruhy chyb\nkonstrukce try, except, finally"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#magické-proměnné-či-funkce",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#magické-proměnné-či-funkce",
+    "title": "Opakování Pythonu",
+    "section": "Magické proměnné či funkce",
+    "text": "Magické proměnné či funkce\n\nzapisují je jako __nazev__\nodkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování\nukázka - tvorba objektu a funkce pro tisk\npříklad tvorba objektu a funkce pro tisk\ndo této skupiny lze zařadit i soubor __init__.py, jehož existence označuje složku jako Pythonový modul"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#debugování",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#debugování",
+    "title": "Opakování Pythonu",
+    "section": "Debugování",
+    "text": "Debugování\n\nproces nahlížení na stav programu za jeho běhu\numožňuje nahlížet do paměti programu v jeho různých fázích a stavech\nv Pythonu máme možnost do proměnných za běhu i zasahovat\nukázka v VS Code"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#konextové-managery",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#konextové-managery",
+    "title": "Opakování Pythonu",
+    "section": "Konextové managery",
+    "text": "Konextové managery\n\nkonstrukce with\nvhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pěvně pojí\nobjekty, které využívají dvou magických metod __enter__ a __exit__\nukázka se souborem\nukázka s vlastním managerem"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#typování-proměnných",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#typování-proměnných",
+    "title": "Opakování Pythonu",
+    "section": "Typování proměnných",
+    "text": "Typování proměnných\n\nteoreticky není vůbec nutné\nzejména u větších knihoven však výrazně pomáhá s managementem kódu\nzastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace\n\n\nimport typing\n\ndef fun(var: typing.List[float], round_up: bool = True) -&gt; typing.List[int]:\n  ..."
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
+    "title": "Opakování Pythonu",
+    "section": "Instalace knihoven",
+    "text": "Instalace knihoven\nconda activate pgis2\nconda instally black isort mypy pep8 flake8 pylint\nconda install shapely fiona rasterio polars pandas geopandas\npip install --pre geopolars\n\npodle osnovy se máme věnovat pandas - polars je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#formátování-pomocí-black-a-isort",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#formátování-pomocí-black-a-isort",
+    "title": "Opakování Pythonu",
+    "section": "Formátování pomocí black a isort",
+    "text": "Formátování pomocí black a isort\n\nisort řadí importy dle určité logiky\nblack formátuje kód dle pravidel, má minimum nastavení a tak je vysoce konstantní napříč projekty\nzpočátku obvykle nevyhovuje uživateli na 100%, ale jde o zvyk"
+  },
+  {
+    "objectID": "PGIS2/prezentace/02_opakovani_python.html#kontroly-pomocí-mypy-pep8-flake8-pylint",
+    "href": "PGIS2/prezentace/02_opakovani_python.html#kontroly-pomocí-mypy-pep8-flake8-pylint",
+    "title": "Opakování Pythonu",
+    "section": "Kontroly pomocí mypy, pep8, flake8, pylint",
+    "text": "Kontroly pomocí mypy, pep8, flake8, pylint\n\nzvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu\nne vždy musí jít o zásadní problém\nv moha situacích to předchází chybám\nnapř. mypy nutí uživatele psát rozumně typovaný kód a používat ho správně\ncelkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu\nvětšina těchto nástrojů má svoje nastavení a možnosti, jak je upravit"
+  }
+]
