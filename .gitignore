@@ -1,3 +1,6 @@
 .quarto
 _extensions
 *_files/
+/.quarto/
+_freeze
+_site
