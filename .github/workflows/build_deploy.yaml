@@ -26,12 +26,11 @@ jobs:
       
       - name: Create conda env
         run: conda env create -f conda-environment.yml
-      
-      - name: Conda init
-        run: conda init bash
-      
+        
       - name: Activate conda env 
-        run:  conda activate env-project
+        run:  |
+          conda init bash
+          conda activate env-project
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
