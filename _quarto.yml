@@ -23,6 +23,8 @@ website:
     contents:
       - href: pgis2.qmd
         text: Programování v GIS 2
+      - href: idg.qmd
+        text: Interpretace geodat
       
 
 format:

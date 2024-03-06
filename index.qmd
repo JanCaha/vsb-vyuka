@@ -9,3 +9,4 @@ Materiály pro moje předměty vyučované v roce **{{< var dates.school-year >}
 ## Letní semestr
 
 - [Programování v GIS 2 (PGIS2)](pgis2.qmd)
+- [Interpretace geodat (IDG)](idg.qmd)
