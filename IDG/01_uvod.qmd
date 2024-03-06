@@ -1,0 +1,57 @@
+---
+title: "Úvodní cvičení"
+subtitle: "Interpretace geodat"
+author: "Jan Caha"
+date: 2024-02-19
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Náplň
+
+- zpracování dat
+- operace s daty
+- PCA, faktorová analýza, shluková analýza, rozhodovací stromy, data mining
+  
+
+## O čem to bude
+
+- jazyk **R**
+- balíky pro **R**
+- zpracování a vizualizace dat **tidyverse**
+- statistické modelování **tidymodels** a další
+- prostorová data - balíky **sf**, **terra** a **stars**
+- geoinformatické workflow - **qgisprocess**, **qgis** 
+
+## Dílčí úlohy
+
+- práce s datovými rámci (tabulkami)
+- tvorba workflow pro zpracování dat
+- opakovatelnost postupů
+- tvorba reportů 
+
+## V čem budeme pracovat
+
+- **R** a **RStudio**
+- větší množství balíků
+
+## Materiály
+
+- prezentace
+- kód z cvičení
+- budou dostupné (kde upřesním)
+
+## Zápočet
+
+- 40 bodů za seminární úkol
+  - zpracování vámi vybraných dat, tvorba jednoho komplexního grafického výstupu, reportu, použití alespoň jedné pokročilé statické metody
+- 60 bodů za test
+
+# Dotazy? {.center}

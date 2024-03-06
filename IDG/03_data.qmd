@@ -1,0 +1,369 @@
+---
+title: "Načítání dat, Manipulace s daty"
+subtitle: "Interpretace geodat"
+author: "Jan Caha"
+date: 2024-03-04
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+# Načítání dat
+
+## Balík **here**
+
+- malý balík, jehož hlavní funce je `here()`, často se odkazuje jako `here::here()` kvůli kolizi v názvu funkce
+
+- při odkazování na soubory v rámci RStudio projektu je tento balík neocenitelný
+
+- umožňuje se vždy odkazovat s ohledem na hlavní složku projektu, která obsahuje __*.Rproj__ soubor
+
+```{r}
+#| eval: false
+
+here("data", "raw", "soubor.csv")
+```
+
+- odpadá nutnost řešit, ve které složce se nachází zdrojový soubor s kódem R a jak bude spouštěn
+
+## Balíky
+
+- základnem je balík **readr**, který řeší většinu textových formátu pro uložení dat
+
+- balíky **readxl** a **writexl** řeší načítání a ukládání souborů ve formátu __xlsx__ a __xls__ 
+
+- balíky **haven** a **foreign** řeší formáty většiny statickým a matematických softwarů
+
+- další formáty řeší ruzné specializované knihovny, např. většinu formátů prostorových dat řeší balíky **sf**, **terra** či **stars**
+
+
+## Načítací a uklídácí funkce
+
+- `write_*` a `read_*`, kde za `*` dosazujeme typ souboru (původní funkce **R** používají notaci `write.*` a `read.*`)
+
+- R se obecně snaží pracovat hlavně s kódováním **UTF-8** a obecnými předpoklady pro zápis souborů dle typů 
+
+- zapisovací funkce jsou výrazně jednodušší, co se týká parametrů
+
+
+## Načítácí funkce pro **readr**
+
+- důležité parametry funkcí `locale` a `col_types`, které příjímají funkce `locale()` a `cols()`
+
+- pomocí parametru `na` lze specifikovat, které hodnoty se mají interpretovat jako chybějící
+
+- funkce `col_*` umožňují specifikovat v rámci funce `cols()`, jako jaký typ se má sloupec načíst
+
+## Práce s excelem
+
+- funkce `read_excel()`, `read_xls()` a `read_xlsx()` (balík **readxl**)
+
+- specifické parametry `sheet` a `range` (např. `"A2:C19"`)
+
+- funkce `write_xlsx` (balík **writexl**)
+
+
+# Manipulace s daty
+
+
+## Balík **dplyr**
+
+- součást a jeden z nejdůležitějších balíků **Tidyverse**
+
+- hlavní balík pro úpravy a manipulace s daty
+
+- značné množství funkcí (viz nápověda), ještě větší množství vzniká jejich možnými kombinacemi
+
+- syntaxe založená na slovesech, alespoň pro ty nejvýznamnější funkce
+
+::: {.callout-warning appearance="simple"}
+### Pozor
+rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektoru (sloupce)
+:::
+
+## Výběr řádků
+
+- funkce `slice()`
+
+- lze zadat hodnoty řádků, které zůstanou (kladné čísla řádků), nebo které se mají odstranit (záporná čísla řádků)
+
+
+## Setřídění dat dle sloupce
+
+- funkce `arrange()`
+
+- uvádíme sloupce, podle kterých se mají data setřídit
+
+- výchozí setřídění je vzestupné, pokud chceme třídit sestupně, pak názevu proměnné předřadíme `-`, lze použít i funkci `desc()`
+
+- pokud uvedeme více než jeden sloupec, pak se setřizuje postupně dle těchto sloupců
+
+## Výběr sloupců
+
+- funkce `select()`
+
+- uvádí se sloupce, které mají zůstat
+
+- pokud názvu sloupce předřadíme `-`, pak označujeme sloupce, které se mají odmazat
+
+## Filtrování dle hodnot
+
+- funkce `filter()`
+
+- lze úvést jakékoliv podmínky, které lze vyhodnotit jako pravdivostní hodnotu
+
+- pokud uvedeme více podmínek a oddělíme je čárkou, vyhodnocují se jako platné současně - logický `and`
+
+- pokud chceme logický `or` musíme ho explicitně zapsat pomocí operátoru `|`
+
+- operátor `and` lze zapsat i jako `&`
+
+## Tvorba nového sloupce/sloupců
+
+- funce `mutate()`
+
+- formát pro přidání proměnné `nazev_promenne = vzorec`, kde vzorec může být téměř cokoliv, kde pro každý řádek datového rámce vrátíme jednu hodnotu
+
+- možnost používat jak jednoduché matematické funkce, tak i funkce složitější funkce buď z balíku nebo i z jiných
+
+## Sumarizace dat
+
+- funkce `summarize()` nebo i `summarise()`
+
+- pracuje podobně jako `mutate()`, jen výsledkem je datový rámec, který má menší počet řádků (často jeden)
+
+- definice nové proměnné a funkce, která sumarizuje vektor hodnot
+
+## Propojení datových rámců
+
+- join funkce známé z SQL jazyka
+
+- `left_join()`, `right_join()`, `full_join()` - propojovací joiny
+
+- `semi_join()`, `anti_join()` - filtrovací joiny
+
+- ukázky v vignette **dplyr**
+
+- specifikace propojení - 3 možnosti 
+  - automaticky podle názvů sloupců
+  - pokud je shoda názvů stačí `by = "sloupec"`, `by = c("sloupec", "sloupec2")`
+  - po propojení sloupců různých názvů `by = c("sloupec_df_1" = "sloupec_df_2", ...)`
+
+## Seskupování dat
+
+- funkce `group_by()`
+
+- uvedeme sloupec nebo sloupce, které slouží pro vytvoření skupin
+
+- funkce sama o sobě nic v datech nemění, ale informace o skupinách se přenáší dále a mění fungování některých funkcí
+
+## Další operace s group_by
+
+- hlavní spojení se `summarize()`
+
+- možné ale i s dalšími funkcemi např. `arrange()` nebo `sample_n()` a další
+
+- zrušení skupin, pro další práci pomocí funkce `ungroup()`
+
+
+## Další užitečné funkce z **dplyr**
+
+- `pull()`
+
+- `rename()`
+
+- `top_n()`
+
+- `distinct()`
+
+- `sample_frac()`
+
+- `row_number()`, `percent_rank()`, `cume_dist()` a `ntile()`
+
+- `lag()` a `lead()`
+
+# Čištění dat
+
+## Balík tidyr
+
+- součást **Tidyverse**
+
+- obsahuje hlavně funkce určené pro čištění dat a jejich úprav do čistého (tidy) formátu
+
+- dvě nejdůležitější funkce jsou `pivot_longer()` a `pivod_wider()`, původní názvy byly `gather()` a `spread()`
+
+## pivot_wider
+
+- provádí transformaci datového rámce na "širší" variantu, kdy se data pro sloupce se shodnými "klíči" přidávají do nových sloupců
+
+- důležité parametry `id_cols`, `names_from`, `values_from`
+  - `id_cols` určují, které sloupce jednoznačně identifikují záznam a mají být tudíž zachovány
+  - `names_from` sloupec (sloupce), jejichž hodnoty budou tvořit názvy nových sloupců
+  - `values_from` sloupec (sloupce), který definuje hodnoty pro nově vytvořené sloupce
+
+---
+
+# ukázka pivot_wider
+```{r, echo=FALSE}
+library(tibble)
+library(tidyr)
+```
+
+```{r}
+df <- tibble(
+    nazev = c("a", "b", "b", "c", "a"),
+    roky = c(2016, 2017, 2016, 2017, 2017),
+    hodnoty = c(1, 5, 6, 4, 1)
+)
+
+df
+```
+
+---
+
+```{r}
+pivot_wider(df,
+    id_cols = nazev,
+    names_from = roky,
+    values_from = hodnoty
+)
+```
+
+
+## pivot_longer
+
+- provádí transformaci datového rámce "delší" variantu, kdy se pro každý řádek původních dat vytvoří více řádků nových dle specifikace
+
+- důležité parametry `cols`, `names_to`, `values_to`
+  - `cols` sloupce, které mají být pro transformaci použity
+  - `names_to` název sloupce, jehož hodnoty budou udávat původní názvy sloupců
+  - `values_to` název sloupce, v němž budou hodnoty z původních sloupců
+  
+- funkce `pivot_wider` a `pivot_longer` tvoří komplementární dvojici
+
+## ukázka pivot_longer
+
+```{r}
+df <- tibble(
+    nazev = c("a", "b", "c"),
+    `2016` = c(1, 6, NA),
+    `2017` = c(1, 5, 5)
+)
+
+df
+```
+
+
+---
+
+```{r}
+pivot_longer(df,
+    c(`2016`, `2017`),
+    names_to = "roky",
+    values_to = "hodnoty"
+)
+```
+
+## Další užitečné funkce **tidyr**
+
+- `drop_na()`
+
+- `expand()`, `complete()`
+
+- `full_seq()`
+
+- `replace_na()`
+
+- `fill()`
+
+- `nest()`, `unnest()` a příbuzné funkce
+
+- `separate()`, `extract()`
+
+## Balík **janitor**
+
+- používá se zejména pro jednoduché čistící funkce, ale umí toho poměrně hodně
+
+- `remove_empty()`, `clean_names()`
+
+- `row_to_names()`
+
+- `excel_numeric_to_date()`
+
+- `add_totals_col()`, `add_totals_row()`
+
+- `tabyl()`
+
+
+
+# Projekty v RStudiu
+
+## Hlavní přínosy
+
+- ujednoconí struktury - jedna analýza/úkol/problém = jeden projekt/složka
+
+- snadné přenášení, nehrozí opomenutí dat nebo jiné části - vše na jednom místě
+
+- za použití balíku **renv** ([renv web](https://rstudio.github.io/renv/articles/renv.html)) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí
+
+- RStudio projekt - složka s několika spefickými soubory a složkami
+  - `.Rproj.user` - složka RStudia a jeho nastavení apod.
+  - `.Rhistory` - textový soubor s posledními příkazy spuštěnými v konzoli
+  - `.RData` - tomu se snažíme vyhnout (nastavení RStudia), data neobnovujeme ale vždy znovu načítáme
+  - `*.Rproj` - asociační soubor pomocí něhož lze projekt přímo otevřít v RStudiu + některá nastavení
+
+
+## Doporučená struktura
+
+- složky a jejich obsahy
+
+- _data_ 
+  - _raw_ - surová data, na nichž neprovádíme manuálně žádné úpravy, z této složky pouze čteme
+  - _produced_ - odvozená data, ke každé datově sadě máme skript, který ji vytvořil, případné smazání této složky nepředstavuje problém (čas od času žádoucí)
+
+- _scripts_ - **.R** soubory, obsahující bloky kódu, které v rámci analýzy používáme opakovaně (načtení balíků, či dat)
+
+- _reports_ - **.Rmd** soubory obsahující surové reporty, a jejich přeložené verze (později)
+
+- _graphs_ - uložené grafické výstupy
+
+- další: např. _functions_, _config_ atd.
+
+
+## Odkazy na soubory v projektu
+
+- doporučení - používat v maximální míře balík **here** pro odkazování na cesty
+
+- nevznikají problémy při přesunech částí kódu a odkazech na soubory ve špatných umístěních
+
+## Funkce source
+
+- `source()` umožňuje načíst a provést blok kódu z jiného **.R** souboru v konkrétním místě ve skriptu
+
+- použití na bloky kódů, které se opakují napříč skripty (např. načtení balíků nebo načtení a vyčištění dat)
+
+- pokud soubor, který načítáme obsahuje jiné než ANSI znaky, je vhodné specifikovat parametr `encoding = "UTF-8"`
+
+## Příklad použití source
+
+- příklad - soubor `init.R` (uložený ve složce projektu `scripts`)
+```{r}
+#| eval: false
+library(tidyverse)
+library(here)
+library(readxl)
+```
+
+- jiný soubor
+```{r}
+#| eval: false
+source(here::here("scripts", "init.R"), encoding = "UTF-8")
+```
+
+## Dotazy???

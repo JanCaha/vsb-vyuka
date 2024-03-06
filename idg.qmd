@@ -1,0 +1,43 @@
+---
+title: Interpretace geodat (IDG)
+listing:
+    id: prezentace
+    contents: IDG/prezentace
+    sort-ui: false
+    filter-ui: false
+    type: table
+    date-format: iso
+    sort:
+        - "date"
+    fields: [date, title] 
+    field-display-names:
+        title: "Prezentace"
+        date: "Datum"
+        author: "Autor"
+---
+
+## 📃 Řešená témata
+
+- úvod do jazyka R
+- načítání dat do R
+- manipulace s daty v R pomocí balíku `dplyr`
+  
+## 📑Prezentace
+
+::: {#prezentace}
+:::
+
+## 📚 Zdroje
+
+- kniha [R for Data Science (2e)](https://r4ds.hadley.nz/) - shrnuje základní postupy datové vědy (data science) v R
+- kniha [Hands-On Programming with R](https://rstudio-education.github.io/hopr/) - programování v R 
+- kniha [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) - vizualizace dat - příklady v R
+- kniha [Geocomputation with R](https://r.geocompx.org/) - základy práce s geodaty v R
+  
+## Další zajímavé
+
+- kniha [Data Visualization](https://socviz.co/) - vizualizace dat - příklady v R
+- kniha [Statistical Inference via Data Science](https://moderndive.com/) - statistické metody/postupy v R
+
+
+## 💻 Ukázkové kódy

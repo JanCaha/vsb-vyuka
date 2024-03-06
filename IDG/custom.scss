@@ -1,0 +1,21 @@
+/*-- scss:rules --*/
+
+
+code.sourceCode {
+    font-size: x-large;
+}
+
+div.cell-output-error {
+    pre {
+        code {
+            color: rgb(200, 0, 0);
+            font-weight: bold;
+        }
+    }
+}
+
+div.cell-output {
+    pre{
+        font-size: x-large;
+    }
+}

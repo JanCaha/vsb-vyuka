@@ -1,0 +1,541 @@
+---
+title: "Základní orientace v jazyce **R**"
+subtitle: "Interpretace geodat"
+author: "Jan Caha"
+date: 2024-02-26
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Instalace
+
+- R verze 4.3.2 z [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/)
+  - samotný jazyk a prostředí 
+
+- RStudio Desktop (Open Source License) verze 2023.12.1 z [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+  - uživatelské prostředí z nějž R ovládáme, IDE
+
+- RTools verze 4.3 z [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/)
+  - není nezbytné, pokud neplánujeme instalovat balíky z jiného zdroje než CRAN
+  - pro instalaci balíků z GitHubu nezbytné 
+
+---
+
+## Jazyk **R**
+
+- interpretovaný programovací jazyk přístupný v základu skrze příkazový řádek
+
+- implementace jazyka **S** pod open source licencí
+
+- určený primárně ke zpracování dat a jejich vizualizaci, s výrazným zaměřením na statistiku (původně) a celkovou problematiku zpracování dat (současnost)
+
+- základní funkcionalita není příliš široká (respektive snadno přístupná), většina funkcinality přichází z tzv. balíčků
+
+- centrální sklad balíčků - [CRAN](https://cran.r-project.org/) (Comprehensive R Archive Network)
+
+---
+
+## R $\times$ ostatní jazyky
+
+- konkurence: Matlab, Wolfram Language, Julia, Python, Excel
+
+- výraznější zaměření na data a operaci s nimi, většina funkcí dobře pracuje s vektory dat a datovými rámci
+
+- interpretovaný jazyk, možnost široce interagovat s daty a procesy
+
+- RStudio maximálně zpřístupňuje tzv. interaktivní práci s jazykem (náhledy na pamět, nápovědu, grafy a atd.)
+
+- od uživatele se většinou nepředpokládá "programování" (ve smyslu komplexnějších konstrukcí)
+
+- velice příjemná učící křivka
+
+# Struktury dat v R, <br/> Základní syntaxe R
+
+---
+
+## Přiřazovací operátor
+
+- v R používáme pro přiřazení hodnoty do proměnné operátor `<-`
+
+- lze použít i `=` ale z hlediska čtení kódu se to nedoporučuje
+
+- v RStudiu zkratka **Levý Alt + -**
+
+---
+
+## Základní typy dat
+
+```{r}
+x <- 5.2
+x <- 1.42e-2
+typeof(x)
+
+x <- 5L
+typeof(x)
+```
+
+---
+
+## Základní typy dat
+
+```{r}
+x <- "řetězec"
+typeof(x)
+
+x <- TRUE
+typeof(x)
+```
+
+---
+
+## Vektor
+
+- definice pomocí funkce `c()`
+
+```{r}
+v <- c(5.2, 4.9, 3.1, -0.4)
+v
+```
+
+::: {.callout-warning appearance="simple"}
+### Pozor
+pokud nejsou všechny prvky stejného typu, pak se typ změní na nejreprezentativnější
+:::
+
+```{r}
+v <- c(5.2, 4.9, 3.1, -0.4, TRUE, "a")
+v
+```
+
+---
+
+## Vektor
+
+- jednotlivé prvky lze získat pomocí operátoru `[]`
+  
+```{r}
+v[3]
+v[5]
+```
+
+---
+
+## Seznam
+
+- definice funkcí `list()`, umožňuje ukládat smíšené typy prvků
+
+
+```{r}
+l <- list(5, 4.5, "a", FALSE)
+l
+```
+
+---
+
+## Seznam
+
+- jednotlivé prvky lze získat podobně jako u vektorů
+
+- v jednoduché podobě vrací vždy seznam 
+  
+
+```{r}
+l[1]
+```
+
+::: {.callout-warning appearance="simple"}
+### Pozor
+pokud chceme přímo hodnotu, pak musíme použít operátor `[[]]` pro rozložení seznamu
+:::
+
+```{r}
+l[[1]]
+```
+
+---
+
+## Pojmenované vektory a seznamy
+
+```{r}
+x <- c("a" = 1, "b" = 5, "c" = 6)
+x[1]
+x["a"]
+```
+
+---
+
+## Extrakce jmen
+
+```{r}
+x <- c(1, 5, 6)
+names(x) <- c("a", "b", "c")
+print(x)
+```
+
+```{r}
+n <- names(x)
+print(n)
+```
+
+---
+
+## Pojmenované seznamy
+
+```{r}
+l <- list("a" = 1, "b" = "text", "c" = TRUE)
+l["a"]
+l[["a"]]
+l$a
+```
+
+---
+
+## Matematické a logické operátory
+
+- `+, -, *, /`
+- `^` nebo `**` mocnina
+- `%%` modulo
+- `%/%` celočíselné dělení
+- `==, <, >, <=, >=, !=`
+- `!` zápor , `|` nebo, `&` a
+- speciální operátor `%in%` pro vyhledávání ve vektorech a seznamech
+- operátory `$` a `@` pro přístup k součástem komplexních datových struktur
+
+---
+
+## Funkce
+
+- jak matematické, např. `cos()`, `sin()`, `log()` atd., ale i funkce pro zpracování dat `sort()`
+
+- speciální případy `c()` a `list()`
+
+- většinou vektorizované, takže lze provést nejen na jednom prvku (proměnné) ale přímo na vektoru
+
+- na funkce se lze odkazovat i `balik::funkce()`, nepoužívá se často ale lze na tento zápis narazit, např. v situaci kdy je kolize názvů funkcí z různých balíků
+
+```{r}
+a <- c(4, 5, 3.5)
+b <- sin(a)
+b
+```
+---
+
+## Komentáře
+
+- v kódu R se zapisují pomocí `#`
+
+```{r}
+# vstupní náhodný vektor o 5 číslech
+x <- runif(5, 0, 1)
+
+# funkce pro výpočet logaritmu o základu 10
+y <- log(x, base = 10)
+
+# tisk výsledku
+y
+```
+
+---
+
+## Komplexní datové struktury
+
+- 2D struktury pro uložení dat - matice (`matrix`),  datové rámce (`data.frame`)
+
+- v maticích musí být všechny prvky stejného typu, v datovém rámci se mohou jednotlivé sloupce lišit
+
+- pro zpracování dat se obvykle používá `data.frame`, či jeho modernější verze `tibble`
+
+- s daty v této podobě se budeme setkávat v při zpracování dat nejčastěji
+
+- načtení ukázkové datové sady dostupné přímo v základní instalaci R
+
+## Komplexní datové struktury
+
+```{r}
+data("mtcars")
+View(mtcars)
+head(mtcars)
+```
+
+---
+
+## data.frame
+
+```{r}
+df <- data.frame(col_1 = c(1,3,8,7),
+                 col_2 = c("a", "b", "b", "a"))
+
+str(df)
+head(df)
+```
+
+---
+
+## data.frame prvky
+
+- konkrétní prvek na řádku a ve sloupci
+```{r}
+df[1, 1]
+```
+
+- celý sloupec
+```{r}
+df$col_1
+```
+
+---
+
+## data.frame prvky
+
+- konkrétní prvek ze sloupce
+```{r}
+df$col_1[1]
+```
+
+---
+
+## data.frame názvy proměnných
+
+- v `data.frame` (`tibble`) mají povinně sloupce názvy (případně je přiřazuje R)
+
+- teoreticky je možné libovolné pojmenování sloupce, ale pokud obsahuje mezeru nebo nestandardní znaky (české) tak je nelze zapisovat jednodušše 
+
+```{r}
+#| eval: false
+mtcars$mpg
+mtcars$`míle na galon`
+```
+
+- ideální je se těmto názvům vyhnout a předcházet problémům
+
+- funkce `colnames()` a `rownames()` jsou variantami funce `names()`
+
+---
+
+## tibble
+
+- modernější implementace **data.frame** se nazývá **tibble** hodně využivívanou v balících **tidyverse** 
+- navenek se zásadně neliší od **data.frame** je kompatabilní
+- funkce navíc, zjednodušení některých operací
+- tvorba po řádcích - viz help
+
+```{r}
+library(tibble)
+```
+
+---
+
+## Faktor
+
+- R je statistický software a snaží se tedy připravovat data pro statické zpracování
+
+- `factor` je speciální typ dat, kdy se řetězce zakódují pomocí celočíselných hodnot a samotné textové hodnoty se uloží jako tzv. úrovně (`levels`)
+
+- převod na factor pomocí funkce `as.factor()`, z faktoru na řetězec `as.character()` nebo na celé číslo `as.integer()`
+
+- faktor může být bez pořádí (nominální data), tak s určeným pořadím prvků (ordinální data) 
+---
+
+## Faktor ukázka
+
+```{r}
+df$col_2 <- as.factor(df$col_2)
+print(df)
+df$col_2
+```
+
+```{r}
+as.character(df$col_2)
+as.integer(df$col_2)
+```
+
+---
+
+## Důležité funkce
+
+- kromě `data()`,`View()` a `names()`, které jsme už viděli 
+
+- instalace balíků a jejich načtení do R
+
+- instalace se provádí pouze jednou, načtení balíku je potřeba udělat před každým jeho použitím v rámci nové `R Sesssion`
+
+```{r}
+#| eval: false
+
+install.packages("nycflights13")
+```
+
+```{r}
+#| eval: false
+
+library(nycflights13)
+data("flights")
+View(flights)
+```
+
+---
+
+## Nenačtení balíku či špatně zapsaná funkce
+
+```{r}
+#| error: true
+neexistujici_funkce(df)
+```
+
+
+---
+
+## Parametry funkcí
+
+- 3 typy - povinné, nepovinné (obvykle s určenou výchozí hodnotou) a parametr `...`
+
+```{r}
+#| eval=FALSE
+
+cor(x, y = NULL, use = "everything", 
+    method = c("pearson", "kendall", "spearman"))
+```
+
+
+```{r}
+#| eval=FALSE
+
+data.frame(..., row.names = NULL, check.rows = FALSE, 
+           check.names = TRUE, fix.empty.names = TRUE, 
+           stringsAsFactors = default.stringsAsFactors())
+```
+
+---
+
+## NSE (non-standard evaluation)
+
+- česky tzv. nestandardní vyhodnocování argumentů
+
+- příklad
+
+```{r}
+#| eval=FALSE
+
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+- u `library()` pojem `tidyverse` vypadá jako název proměnné, ale ve skutečnosti ho R vyhodnotí jako textové označení balíku
+
+- verze volání funkce s textovým řetězcem je také možná, ale považuje se to zbytečné
+
+```{r}
+#| eval=FALSE
+
+library("tidyverse")
+```
+
+---
+
+## Dalším příkladem je parametr `...`
+
+- viz dříve zmíněný příklad
+
+```{r}
+#| eval=FALSE
+
+data.frame(..., row.names = NULL, check.rows = FALSE, 
+           check.names = TRUE, fix.empty.names = TRUE, 
+           stringsAsFactors = default.stringsAsFactors())
+```
+
+- parametr `...` zachytí všechny atributy, kromě těch specificky pojmenovaných
+
+- všechny parametry jsou vyhodnoceny stejně, zde konkrétně vytvoří nové sloupce
+
+---
+
+# Nejvyužívanější balíky pro zpracování dat (Tidyverse)
+
+---
+
+## Balík **tidyverse**
+
+```{r, eval=FALSE}
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+- tzv. metabalík - sám definuje pouze minimum funkcí, ale načítá nejdůležitější balíky pro zpracování dat
+
+- balíky, které sdílejí společnou filozofii designu funkcí
+
+- některé funkce základního R nemají ujednocené argumenty a celkové chování (vznikaly v různé době a od různých autorů), tidyverse směřuje k tomu tyto problémy odstranit a ujednotit chování funkcí
+
+- tidyverse balíky v maximální možné míře využívají NSE pro redukci množství kódu, který je potřeba napsat
+
+- [The tidyverse style guide](https://style.tidyverse.org/index.html)
+
+---
+
+## Řetězení funkcí
+
+```{r}
+log(sin(seq(0.1, 1, by = 0.2)), base = 2)
+```
+
+- operátor `%>%` (klávesová zkratka **Ctrl + Shift + M**) umožňuje předat hodnotu před ním jako první parametr funkce za operátorem
+
+- není nutné vytvářet dočasné proměnné, ani tvořit složité konstrukce (viz výše)
+
+```{r, message=FALSE}
+library(magrittr)
+seq(0.1, 1, by = 0.2) %>% 
+  sin() %>%
+  log(base = 2)
+```
+
+---
+
+## Řetězení funkce - příklady
+
+- definice v balíku **magrittr**, ale lze používat kompletně v rámci **tidyverse**
+
+```{r}
+x <- seq(1, 5, by = 1)
+y <- x %>% 
+  sin() %>% 
+  cos()
+print(y)
+```
+---
+
+## Řetězení funkcí v **tidyverse**
+
+- **tidyverse** maximálně využívá možností řetězení funkcí
+
+- dosahuje se toho tím, že prvním argumentem funkce jsou vždy vstupní data (což v klasickém R není vždy pravda)
+
+---
+
+## Nejpoužívanější balíky z **Tidyverse**
+
+- **readr**, **readxl** - načítání a ukládání dat
+
+- **dplyr** - základní manipulace s daty
+
+- **tidyr** - čištění a reformátování dat
+
+- **ggplot2** - vizualizace, tvorba grafů
+
+- **hms**, **lubridate** - práce s datumy a časy
+
+- **stringr** - práce s textovými daty
+
+- **purrr** - fukncionální programování
+
+---
+
+# Dotazy? {.center}
