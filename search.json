@@ -109,7 +109,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1686187 -0.3360389 -0.3240759 -0.6339626 -0.3416667"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.91252400 -0.06881952 -0.21024573 -0.62083631 -0.31763400"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -291,7 +291,7 @@
     "href": "PGIS2/prezentace/02_opakovani_python.html#python",
     "title": "Opakování Pythonu",
     "section": "Python",
-    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.10 a novější (aktuální verze a cca dvě verze zpátky)\n\n::: {#af9f1c2c .cell execution_count=1} {.python .cell-code}  import osgeo :::"
+    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.10 a novější (aktuální verze a cca dvě verze zpátky)\n\n::: {#c8b4d19c .cell execution_count=1} {.python .cell-code}  import osgeo :::"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#vs-code",
@@ -417,7 +417,7 @@
     "href": "index.html#letní-semestr",
     "title": "Výuka - Jan Caha",
     "section": "Letní semestr",
-    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)"
+    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nInterpretace geodat (IDG)"
   },
   {
     "objectID": "pgis2.html",
@@ -516,42 +516,60 @@
     "href": "idg.html",
     "title": "Interpretace geodat (IDG)",
     "section": "",
-    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr"
+    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
   },
   {
     "objectID": "idg.html#řešená-témata",
     "href": "idg.html#řešená-témata",
     "title": "Interpretace geodat (IDG)",
     "section": "",
-    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr"
+    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
   },
   {
     "objectID": "idg.html#prezentace",
     "href": "idg.html#prezentace",
     "title": "Interpretace geodat (IDG)",
     "section": "📑Prezentace",
-    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n\nNo matching items"
+    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
   },
   {
     "objectID": "idg.html#zdroje",
     "href": "idg.html#zdroje",
     "title": "Interpretace geodat (IDG)",
     "section": "📚 Zdroje",
-    "text": "📚 Zdroje\n\nkniha R for Data Science (2e) - shrnuje základní postupy datové vědy (data science) v R\nkniha Hands-On Programming with R - programování v R\nkniha Fundamentals of Data Visualization - vizualizace dat - příklady v R\nkniha Geocomputation with R - základy práce s geodaty v R"
+    "text": "📚 Zdroje\n\nkniha R for Data Science (2e) - shrnuje základní postupy datové vědy (data science) v R\nkniha Hands-On Programming with R - programování v R\nkniha Fundamentals of Data Visualization - vizualizace dat - příklady v R\nkniha Geocomputation with R - základy práce s geodaty v R",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
   },
   {
     "objectID": "idg.html#další-zajímavé",
     "href": "idg.html#další-zajímavé",
     "title": "Interpretace geodat (IDG)",
     "section": "Další zajímavé",
-    "text": "Další zajímavé\n\nkniha Data Visualization - vizualizace dat - příklady v R\nkniha Statistical Inference via Data Science - statistické metody/postupy v R"
+    "text": "Další zajímavé\n\nkniha Data Visualization - vizualizace dat - příklady v R\nkniha Statistical Inference via Data Science - statistické metody/postupy v R",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
   },
   {
     "objectID": "idg.html#ukázkové-kódy",
     "href": "idg.html#ukázkové-kódy",
     "title": "Interpretace geodat (IDG)",
     "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy"
+    "text": "💻 Ukázkové kódy",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
   },
   {
     "objectID": "IDG/prezentace/03_data.html#balík-here",
