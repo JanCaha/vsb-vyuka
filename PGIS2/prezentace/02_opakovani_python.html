@@ -8,7 +8,7 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2024-02-26">
@@ -418,7 +418,7 @@ Jan Caha
 <li>podpora jak objektového, tak i funkcionálního programování</li>
 <li>verze 2.x už nepoužívat, verze 3 ideálně <strong>od 3.10 a novější</strong> (aktuální verze a cca dvě verze zpátky)</li>
 </ul>
-<p>::: {#debae22c .cell execution_count=1} <code>{.python .cell-code}  import osgeo</code> :::</p>
+<p>::: {#af9f1c2c .cell execution_count=1} <code>{.python .cell-code}  import osgeo</code> :::</p>
 </section>
 <section id="vs-code" class="slide level2">
 <h2>VS Code</h2>
@@ -518,7 +518,7 @@ Jan Caha
 <li>tisk objektu bez funkce <code>__repr__()</code></li>
 <li>tiskne informace o umístění objektu v paměti</li>
 </ul>
-<div id="5fbec774" class="cell" data-execution_count="2">
+<div id="f47af86a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -526,7 +526,7 @@ Jan Caha
 <span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7ff1a4f63910&gt;</code></pre>
+<pre><code>&lt;__main__.A object at 0x7fadc4f77820&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -536,7 +536,7 @@ Jan Caha
 <li>tisk objektu s funkcí <code>__repr__()</code></li>
 <li>tiskne řetězec z této funkce</li>
 </ul>
-<div id="09398516" class="cell" data-execution_count="3">
+<div id="36b882cc" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -577,7 +577,7 @@ Jan Caha
 <li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
 <li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
 </ul>
-<div id="67125f27" class="cell" data-execution_count="4">
+<div id="9c04a45b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
@@ -618,7 +618,7 @@ pip install --pre geopolars</code></pre>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
-<p>Materiály dostupné: <a href="web.com">web.com</a></p>
+<p>Materiály dostupné: <a href="https://jancaha.github.io/vsb-vyuka/">https://jancaha.github.io/vsb-vyuka/</a></p>
 </div>
 </div>
 </section>
@@ -908,6 +908,24 @@ pip install --pre geopolars</code></pre>
         // clear code selection
         e.clearSelection();
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/jancaha\.github\.io\/vsb-vyuka\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -944,7 +962,11 @@ pip install --pre geopolars</code></pre>
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

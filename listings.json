@@ -5,5 +5,13 @@
       "/PGIS2/prezentace/01_uvod.html",
       "/PGIS2/prezentace/02_opakovani_python.html"
     ]
+  },
+  {
+    "listing": "/idg.html",
+    "items": [
+      "/IDG/prezentace/01_uvod.html",
+      "/IDG/prezentace/02_uvod_r.html",
+      "/IDG/prezentace/03_data.html"
+    ]
   }
 ]
