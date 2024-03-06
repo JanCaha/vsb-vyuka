@@ -109,7 +109,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.91252400 -0.06881952 -0.21024573 -0.62083631 -0.31763400"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.2699546 -1.0671682 -0.3141816 -0.7557055 -1.3668976"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -291,7 +291,7 @@
     "href": "PGIS2/prezentace/02_opakovani_python.html#python",
     "title": "Opakování Pythonu",
     "section": "Python",
-    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.10 a novější (aktuální verze a cca dvě verze zpátky)\n\n::: {#c8b4d19c .cell execution_count=1} {.python .cell-code}  import osgeo :::"
+    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.10 a novější (aktuální verze a cca dvě verze zpátky)\n\n::: {#8f36afde .cell execution_count=1} {.python .cell-code}  import osgeo :::"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#vs-code",
@@ -552,11 +552,11 @@
     ]
   },
   {
-    "objectID": "idg.html#další-zajímavé",
-    "href": "idg.html#další-zajímavé",
+    "objectID": "idg.html#další-zajímavé-zdroje",
+    "href": "idg.html#další-zajímavé-zdroje",
     "title": "Interpretace geodat (IDG)",
-    "section": "Další zajímavé",
-    "text": "Další zajímavé\n\nkniha Data Visualization - vizualizace dat - příklady v R\nkniha Statistical Inference via Data Science - statistické metody/postupy v R",
+    "section": "Další zajímavé zdroje",
+    "text": "Další zajímavé zdroje\n\nkniha Data Visualization - vizualizace dat - příklady v R\nkniha Statistical Inference via Data Science - statistické metody/postupy v R",
     "crumbs": [
       "Interpretace geodat"
     ]
