@@ -260,10 +260,12 @@ y
 
 ```{r}
 data("mtcars")
-View(mtcars)
 head(mtcars)
 ```
-
+```{r}
+#| eval: false
+View(mtcars)
+```
 ---
 
 ## data.frame
@@ -371,12 +373,14 @@ as.integer(df$col_2)
 
 install.packages("nycflights13")
 ```
-
 ```{r}
 #| eval: false
 
 library(nycflights13)
 data("flights")
+```
+```{r}
+#| eval: false
 View(flights)
 ```
 
