@@ -31,7 +31,7 @@ jobs:
         run: |  
           sudo wget -q https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc -O /etc/apt/trusted.gpg.d/cranapt_key.asc
           echo \"deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main\" | sudo tee /etc/apt/sources.list.d/cranapt.list
-          sudo apt-get apt-get install -y r-base r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here
+          sudo apt-get install -y r-base r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
