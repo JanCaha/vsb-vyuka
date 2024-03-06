@@ -34,7 +34,7 @@ listing:
 - kniha [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) - vizualizace dat - příklady v R
 - kniha [Geocomputation with R](https://r.geocompx.org/) - základy práce s geodaty v R
   
-## Další zajímavé
+## Další zajímavé zdroje
 
 - kniha [Data Visualization](https://socviz.co/) - vizualizace dat - příklady v R
 - kniha [Statistical Inference via Data Science](https://moderndive.com/) - statistické metody/postupy v R
