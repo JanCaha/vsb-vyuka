@@ -1,0 +1,15 @@
+name: pgis2
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - GDAL
+  - fiona
+  - rasterio
+  - shapely
+  - pandas
+  - geopandas
+  - polars
