@@ -29,7 +29,7 @@ jobs:
       
       - name: Setup CRAN Binaries
         run: |  
-          sudo wget -q -O- https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc | tee -a /etc/apt/trusted.gpg.d/cranapt_key.asc
+          sudo wget -q -O- https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc | sudo tee -a /etc/apt/trusted.gpg.d/cranapt_key.asc
           sudo echo \"deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main\" > /etc/apt/sources.list.d/cranapt.list
           sudo apt-get apt-get install -y r-base r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here
 
