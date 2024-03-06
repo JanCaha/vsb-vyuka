@@ -14,6 +14,8 @@ listing:
         title: "Prezentace"
         date: "Datum"
         author: "Autor"
+filters:
+   - include-code-files
 ---
 
 ## 📃 Řešená témata
@@ -28,3 +30,20 @@ listing:
 ## 📚 Zdroje
 
 ## 💻 Ukázkové kódy
+
+## 🖥 Instalace
+
+- management Pythonu - [Miniconda](https://docs.anaconda.com/free/miniconda/index.html)
+- IDE - [Visual Studio Code](https://code.visualstudio.com/)
+- extenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator
+- instalace Conda environmentu
+
+Definice environment souboru, např. s názvem `env-pgis2.yaml` 
+```{.yaml include="./PGIS2/soubory/conda-environment.yml"}
+```
+
+Z conda prompt následně spustit:
+```{bash}
+conda create -f env-pgis2.yaml
+conda activate pgis2
+```

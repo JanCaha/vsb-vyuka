@@ -14,6 +14,8 @@ listing:
         title: "Prezentace"
         date: "Datum"
         author: "Autor"
+filters:
+   - include-code-files
 ---
 
 ## 📃 Řešená témata
@@ -41,3 +43,12 @@ listing:
 
 
 ## 💻 Ukázkové kódy
+
+## 🖥 Instalace
+
+- R - [R CRAN](https://cran.r-project.org/bin/windows/base/)
+- IDE - [RStudio](https://posit.co/download/rstudio-desktop/)
+
+V RStudiu nainstalovat balíky následujícím skriptem:
+```{.r include="./IDG/skripty/00_packages_install.R"}
+```
