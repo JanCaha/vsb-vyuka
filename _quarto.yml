@@ -16,10 +16,14 @@ website:
   sidebar:
     pinned: true
     align: center
-
     style: "docked"
     search: true
     collapse-level: 1
+    
+    tools:
+      - icon: github
+        url: "https://github.com/JanCaha/vsb-vyuka"
+      
     contents:
       - href: pgis2.qmd
         text: Programování v GIS 2
