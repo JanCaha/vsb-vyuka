@@ -33,10 +33,6 @@ jobs:
           sudo echo \"deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main\" > /etc/apt/sources.list.d/cranapt.list
           sudo apt-get apt-get install -y r-base r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here
 
-      - name: Install R packages
-        run: |
-          Rscript ./IDG/skripty/00_packages_install.R
-
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         
