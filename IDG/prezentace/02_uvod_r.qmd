@@ -6,7 +6,7 @@ date: 2024-02-26
 date-format: "YYYY-MM-DD"
 format: 
     clean-revealjs:
-        theme: [custom.scss]
+        theme: [../../reveal-custom.scss]
 footer: "{{< var links.web >}}"
 code-line-numbers: false
 execute:
@@ -66,7 +66,7 @@ execute:
 
 - lze použít i `=` ale z hlediska čtení kódu se to nedoporučuje
 
-- v RStudiu zkratka **Levý Alt + -**
+- v RStudiu zkratka [Levý Alt + -]{.keys}
 
 ---
 
@@ -459,11 +459,7 @@ data.frame(..., row.names = NULL, check.rows = FALSE,
 
 - všechny parametry jsou vyhodnoceny stejně, zde konkrétně vytvoří nové sloupce
 
----
-
 # Nejvyužívanější balíky pro zpracování dat (Tidyverse)
-
----
 
 ## Balík **tidyverse**
 
@@ -490,7 +486,7 @@ library(tidyverse)
 log(sin(seq(0.1, 1, by = 0.2)), base = 2)
 ```
 
-- operátor `%>%` (klávesová zkratka **Ctrl + Shift + M**) umožňuje předat hodnotu před ním jako první parametr funkce za operátorem
+- operátor `%>%` (klávesová zkratka [Ctrl + Shift + M]{.keys}) umožňuje předat hodnotu před ním jako první parametr funkce za operátorem
 
 - není nutné vytvářet dočasné proměnné, ani tvořit složité konstrukce (viz výše)
 
