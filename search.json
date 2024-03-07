@@ -1,5 +1,86 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Výuka - Jan Caha",
+    "section": "",
+    "text": "Materiály pro moje předměty vyučované v roce 2023/2024 na Katedře Geoinformatiky, HGF, VŠB-TUO."
+  },
+  {
+    "objectID": "index.html#zimní-semestr",
+    "href": "index.html#zimní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Zimní semestr",
+    "text": "Zimní semestr"
+  },
+  {
+    "objectID": "index.html#letní-semestr",
+    "href": "index.html#letní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Letní semestr",
+    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nInterpretace geodat (IDG)"
+  },
+  {
+    "objectID": "pgis2.html",
+    "href": "pgis2.html",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "",
+    "text": "opakování základů Pythonu",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#řešená-témata",
+    "href": "pgis2.html#řešená-témata",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "",
+    "text": "opakování základů Pythonu",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#prezentace",
+    "href": "pgis2.html#prezentace",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "📑Prezentace",
+    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nOpakování Pythonu\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#zdroje",
+    "href": "pgis2.html#zdroje",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "📚 Zdroje",
+    "text": "📚 Zdroje",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#ukázkové-kódy",
+    "href": "pgis2.html#ukázkové-kódy",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "💻 Ukázkové kódy",
+    "text": "💻 Ukázkové kódy",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
+    "objectID": "pgis2.html#instalace",
+    "href": "pgis2.html#instalace",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "🖥 Instalace",
+    "text": "🖥 Instalace\n\nmanagement Pythonu - Miniconda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.10\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
     "objectID": "IDG/prezentace/02_uvod_r.html#instalace",
     "href": "IDG/prezentace/02_uvod_r.html#instalace",
     "title": "Základní orientace v jazyce R",
@@ -109,7 +190,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.2699546 -1.0671682 -0.3141816 -0.7557055 -1.3668976"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.4419450 -0.4092981 -0.3243444 -0.5725578 -0.2153101"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -241,57 +322,57 @@
     "objectID": "IDG/prezentace/02_uvod_r.html#nejpoužívanější-balíky-z-tidyverse",
     "href": "IDG/prezentace/02_uvod_r.html#nejpoužívanější-balíky-z-tidyverse",
     "title": "Základní orientace v jazyce R",
-    "section": "Nejpoužívanější balíky z Tidyverse",
-    "text": "Nejpoužívanější balíky z Tidyverse\n\nreadr, readxl - načítání a ukládání dat\ndplyr - základní manipulace s daty\ntidyr - čištění a reformátování dat\nggplot2 - vizualizace, tvorba grafů\nhms, lubridate - práce s datumy a časy\nstringr - práce s textovými daty\npurrr - fukncionální programování"
+    "section": "Nejpoužívanější balíky z tidyverse",
+    "text": "Nejpoužívanější balíky z tidyverse\n\nreadr, readxl - načítání a ukládání dat\ndplyr - základní manipulace s daty\ntidyr - čištění a reformátování dat\nggplot2 - vizualizace, tvorba grafů\nhms, lubridate - práce s datumy a časy\nstringr - práce s textovými daty\npurrr - fukncionální programování"
   },
   {
-    "objectID": "IDG/prezentace/01_uvod.html#náplň",
-    "href": "IDG/prezentace/01_uvod.html#náplň",
+    "objectID": "PGIS2/prezentace/01_uvod.html#náplň",
+    "href": "PGIS2/prezentace/01_uvod.html#náplň",
     "title": "Úvodní cvičení",
     "section": "Náplň",
-    "text": "Náplň\n\nzpracování dat\noperace s daty\nPCA, faktorová analýza, shluková analýza, rozhodovací stromy, data mining"
+    "text": "Náplň\n\nprogramování v Pythonu s důrazem na GIS knihovny\n\nGDAL\nFiona, Rasterio, Shapely\nPandas, Polars\n\n\nmanagement Pythonu pomocí Conda\nstandardní techniky programování v Pythonu"
   },
   {
-    "objectID": "IDG/prezentace/01_uvod.html#o-čem-to-bude",
-    "href": "IDG/prezentace/01_uvod.html#o-čem-to-bude",
+    "objectID": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "href": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
     "title": "Úvodní cvičení",
     "section": "O čem to bude",
-    "text": "O čem to bude\n\njazyk R\nbalíky pro R\nzpracování a vizualizace dat tidyverse\nstatistické modelování tidymodels a další\nprostorová data - balíky sf, terra a stars\ngeoinformatické workflow - qgisprocess, qgis"
+    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\noperace s geodaty v Pythonu\nfunkcionální i objektově orientované programování\nodchytávání výjimek\npráce s GitHub"
   },
   {
-    "objectID": "IDG/prezentace/01_uvod.html#dílčí-úlohy",
-    "href": "IDG/prezentace/01_uvod.html#dílčí-úlohy",
+    "objectID": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "href": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
     "title": "Úvodní cvičení",
     "section": "Dílčí úlohy",
-    "text": "Dílčí úlohy\n\npráce s datovými rámci (tabulkami)\ntvorba workflow pro zpracování dat\nopakovatelnost postupů\ntvorba reportů"
+    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
   },
   {
-    "objectID": "IDG/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "href": "IDG/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "objectID": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "href": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
     "title": "Úvodní cvičení",
     "section": "V čem budeme pracovat",
-    "text": "V čem budeme pracovat\n\nR a RStudio\nvětší množství balíků"
+    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code"
   },
   {
-    "objectID": "IDG/prezentace/01_uvod.html#materiály",
-    "href": "IDG/prezentace/01_uvod.html#materiály",
+    "objectID": "PGIS2/prezentace/01_uvod.html#materiály",
+    "href": "PGIS2/prezentace/01_uvod.html#materiály",
     "title": "Úvodní cvičení",
     "section": "Materiály",
     "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
   },
   {
-    "objectID": "IDG/prezentace/01_uvod.html#zápočet",
-    "href": "IDG/prezentace/01_uvod.html#zápočet",
+    "objectID": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
+    "href": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
     "title": "Úvodní cvičení",
-    "section": "Zápočet",
-    "text": "Zápočet\n\n40 bodů za seminární úkol\n\nzpracování vámi vybraných dat, tvorba jednoho komplexního grafického výstupu, reportu, použití alespoň jedné pokročilé statické metody\n\n60 bodů za test"
+    "section": "Zakončení předmětu",
+    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#python",
     "href": "PGIS2/prezentace/02_opakovani_python.html#python",
     "title": "Opakování Pythonu",
     "section": "Python",
-    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.10 a novější (aktuální verze a cca dvě verze zpátky)\n\n::: {#8f36afde .cell execution_count=1} {.python .cell-code}  import osgeo :::"
+    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.10 a novější (aktuální verze a cca dvě verze zpátky)"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#vs-code",
@@ -312,7 +393,7 @@
     "href": "PGIS2/prezentace/02_opakovani_python.html#conda",
     "title": "Opakování Pythonu",
     "section": "Conda",
-    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI (Anaconda)\n\nconda create -n pgis2 python=3.11\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
+    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})\n\nconda create -n pgis2 python=3.11\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#proměnné",
@@ -399,179 +480,6 @@
     "text": "Kontroly pomocí mypy, pep8, flake8, pylint\n\nzvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu\nne vždy musí jít o zásadní problém\nv moha situacích to předchází chybám\nnapř. mypy nutí uživatele psát rozumně typovaný kód a používat ho správně\ncelkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu\nvětšina těchto nástrojů má svoje nastavení a možnosti, jak je upravit"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Výuka - Jan Caha",
-    "section": "",
-    "text": "Materiály pro moje předměty vyučované v roce 2023/2024 na Katedře Geoinformatiky, HGF, VŠB-TUO."
-  },
-  {
-    "objectID": "index.html#zimní-semestr",
-    "href": "index.html#zimní-semestr",
-    "title": "Výuka - Jan Caha",
-    "section": "Zimní semestr",
-    "text": "Zimní semestr"
-  },
-  {
-    "objectID": "index.html#letní-semestr",
-    "href": "index.html#letní-semestr",
-    "title": "Výuka - Jan Caha",
-    "section": "Letní semestr",
-    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nInterpretace geodat (IDG)"
-  },
-  {
-    "objectID": "pgis2.html",
-    "href": "pgis2.html",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "",
-    "text": "opakování základů Pythonu",
-    "crumbs": [
-      "Programování v GIS 2"
-    ]
-  },
-  {
-    "objectID": "pgis2.html#řešená-témata",
-    "href": "pgis2.html#řešená-témata",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "",
-    "text": "opakování základů Pythonu",
-    "crumbs": [
-      "Programování v GIS 2"
-    ]
-  },
-  {
-    "objectID": "pgis2.html#prezentace",
-    "href": "pgis2.html#prezentace",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "📑Prezentace",
-    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nOpakování Pythonu\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Programování v GIS 2"
-    ]
-  },
-  {
-    "objectID": "pgis2.html#zdroje",
-    "href": "pgis2.html#zdroje",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "📚 Zdroje",
-    "text": "📚 Zdroje",
-    "crumbs": [
-      "Programování v GIS 2"
-    ]
-  },
-  {
-    "objectID": "pgis2.html#ukázkové-kódy",
-    "href": "pgis2.html#ukázkové-kódy",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy",
-    "crumbs": [
-      "Programování v GIS 2"
-    ]
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#náplň",
-    "href": "PGIS2/prezentace/01_uvod.html#náplň",
-    "title": "Úvodní cvičení",
-    "section": "Náplň",
-    "text": "Náplň\n\nprogramování v Pythonu s důrazem na GIS knihovny\n\nGDAL\nFiona, Rasterio, Shapely\nPandas, Polars\n\n\nmanagement Pythonu pomocí Conda\nstandardní techniky programování v Pythonu"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "href": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "title": "Úvodní cvičení",
-    "section": "O čem to bude",
-    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\noperace s geodaty v Pythonu\nfunkcionální i objektově orientované programování\nodchytávání výjimek\npráce s GitHub"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "href": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "title": "Úvodní cvičení",
-    "section": "Dílčí úlohy",
-    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "href": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "title": "Úvodní cvičení",
-    "section": "V čem budeme pracovat",
-    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#materiály",
-    "href": "PGIS2/prezentace/01_uvod.html#materiály",
-    "title": "Úvodní cvičení",
-    "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
-    "href": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
-    "title": "Úvodní cvičení",
-    "section": "Zakončení předmětu",
-    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
-  },
-  {
-    "objectID": "idg.html",
-    "href": "idg.html",
-    "title": "Interpretace geodat (IDG)",
-    "section": "",
-    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr",
-    "crumbs": [
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "idg.html#řešená-témata",
-    "href": "idg.html#řešená-témata",
-    "title": "Interpretace geodat (IDG)",
-    "section": "",
-    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr",
-    "crumbs": [
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "idg.html#prezentace",
-    "href": "idg.html#prezentace",
-    "title": "Interpretace geodat (IDG)",
-    "section": "📑Prezentace",
-    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "idg.html#zdroje",
-    "href": "idg.html#zdroje",
-    "title": "Interpretace geodat (IDG)",
-    "section": "📚 Zdroje",
-    "text": "📚 Zdroje\n\nkniha R for Data Science (2e) - shrnuje základní postupy datové vědy (data science) v R\nkniha Hands-On Programming with R - programování v R\nkniha Fundamentals of Data Visualization - vizualizace dat - příklady v R\nkniha Geocomputation with R - základy práce s geodaty v R",
-    "crumbs": [
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "idg.html#další-zajímavé-zdroje",
-    "href": "idg.html#další-zajímavé-zdroje",
-    "title": "Interpretace geodat (IDG)",
-    "section": "Další zajímavé zdroje",
-    "text": "Další zajímavé zdroje\n\nkniha Data Visualization - vizualizace dat - příklady v R\nkniha Statistical Inference via Data Science - statistické metody/postupy v R",
-    "crumbs": [
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "idg.html#ukázkové-kódy",
-    "href": "idg.html#ukázkové-kódy",
-    "title": "Interpretace geodat (IDG)",
-    "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy",
-    "crumbs": [
-      "Interpretace geodat"
-    ]
-  },
-  {
     "objectID": "IDG/prezentace/03_data.html#balík-here",
     "href": "IDG/prezentace/03_data.html#balík-here",
     "title": "Načítání dat, Manipulace s daty",
@@ -611,7 +519,7 @@
     "href": "IDG/prezentace/03_data.html#balík-dplyr",
     "title": "Načítání dat, Manipulace s daty",
     "section": "Balík dplyr",
-    "text": "Balík dplyr\n\nsoučást a jeden z nejdůležitějších balíků Tidyverse\nhlavní balík pro úpravy a manipulace s daty\nznačné množství funkcí (viz nápověda), ještě větší množství vzniká jejich možnými kombinacemi\nsyntaxe založená na slovesech, alespoň pro ty nejvýznamnější funkce\n\n\n\n\n\n\n\nPozor\n\n\nrozlišovat funkce, které jsou pro celý data.frame a které se týkají vektoru (sloupce)"
+    "text": "Balík dplyr\n\nsoučást a jeden z nejdůležitějších balíků tidyverse\nhlavní balík pro úpravy a manipulace s daty\nznačné množství funkcí (viz nápověda), ještě větší množství vzniká jejich možnými kombinacemi\nsyntaxe založená na slovesech, alespoň pro ty nejvýznamnější funkce\n\n\n\n\n\n\n\nPozor\n\n\nrozlišovat funkce, které jsou pro celý data.frame a které se týkají vektoru (sloupce)"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#výběr-řádků",
@@ -688,7 +596,7 @@
     "href": "IDG/prezentace/03_data.html#balík-tidyr",
     "title": "Načítání dat, Manipulace s daty",
     "section": "Balík tidyr",
-    "text": "Balík tidyr\n\nsoučást Tidyverse\nobsahuje hlavně funkce určené pro čištění dat a jejich úprav do čistého (tidy) formátu\ndvě nejdůležitější funkce jsou pivot_longer() a pivod_wider(), původní názvy byly gather() a spread()"
+    "text": "Balík tidyr\n\nsoučást tidyverse\nobsahuje hlavně funkce určené pro čištění dat a jejich úprav do čistého (tidy) formátu\ndvě nejdůležitější funkce jsou pivot_longer() a pivod_wider(), původní názvy byly gather() a spread()"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#pivot_wider",
@@ -766,5 +674,117 @@
     "title": "Načítání dat, Manipulace s daty",
     "section": "Dotazy???",
     "text": "Dotazy???\n\n\n\nMateriály dostupné: https://jancaha.github.io/vsb-vyuka/"
+  },
+  {
+    "objectID": "IDG/prezentace/01_uvod.html#náplň",
+    "href": "IDG/prezentace/01_uvod.html#náplň",
+    "title": "Úvodní cvičení",
+    "section": "Náplň",
+    "text": "Náplň\n\nzpracování dat\noperace s daty\nPCA, faktorová analýza, shluková analýza, rozhodovací stromy, data mining"
+  },
+  {
+    "objectID": "IDG/prezentace/01_uvod.html#o-čem-to-bude",
+    "href": "IDG/prezentace/01_uvod.html#o-čem-to-bude",
+    "title": "Úvodní cvičení",
+    "section": "O čem to bude",
+    "text": "O čem to bude\n\njazyk R\nbalíky pro R\nzpracování a vizualizace dat tidyverse\nstatistické modelování tidymodels a další\nprostorová data - balíky sf, terra a stars\ngeoinformatické workflow - qgisprocess, qgis"
+  },
+  {
+    "objectID": "IDG/prezentace/01_uvod.html#dílčí-úlohy",
+    "href": "IDG/prezentace/01_uvod.html#dílčí-úlohy",
+    "title": "Úvodní cvičení",
+    "section": "Dílčí úlohy",
+    "text": "Dílčí úlohy\n\npráce s datovými rámci (tabulkami)\ntvorba workflow pro zpracování dat\nopakovatelnost postupů\ntvorba reportů"
+  },
+  {
+    "objectID": "IDG/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "href": "IDG/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "title": "Úvodní cvičení",
+    "section": "V čem budeme pracovat",
+    "text": "V čem budeme pracovat\n\nR a RStudio\nvětší množství balíků"
+  },
+  {
+    "objectID": "IDG/prezentace/01_uvod.html#materiály",
+    "href": "IDG/prezentace/01_uvod.html#materiály",
+    "title": "Úvodní cvičení",
+    "section": "Materiály",
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
+  },
+  {
+    "objectID": "IDG/prezentace/01_uvod.html#zápočet",
+    "href": "IDG/prezentace/01_uvod.html#zápočet",
+    "title": "Úvodní cvičení",
+    "section": "Zápočet",
+    "text": "Zápočet\n\n40 bodů za seminární úkol\n\nzpracování vámi vybraných dat, tvorba jednoho komplexního grafického výstupu, reportu, použití alespoň jedné pokročilé statické metody\n\n60 bodů za test"
+  },
+  {
+    "objectID": "idg.html",
+    "href": "idg.html",
+    "title": "Interpretace geodat (IDG)",
+    "section": "",
+    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "idg.html#řešená-témata",
+    "href": "idg.html#řešená-témata",
+    "title": "Interpretace geodat (IDG)",
+    "section": "",
+    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "idg.html#prezentace",
+    "href": "idg.html#prezentace",
+    "title": "Interpretace geodat (IDG)",
+    "section": "📑Prezentace",
+    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "idg.html#zdroje",
+    "href": "idg.html#zdroje",
+    "title": "Interpretace geodat (IDG)",
+    "section": "📚 Zdroje",
+    "text": "📚 Zdroje\n\nkniha R for Data Science (2e) - shrnuje základní postupy datové vědy (data science) v R\nkniha Hands-On Programming with R - programování v R\nkniha Fundamentals of Data Visualization - vizualizace dat - příklady v R\nkniha Geocomputation with R - základy práce s geodaty v R",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "idg.html#další-zajímavé-zdroje",
+    "href": "idg.html#další-zajímavé-zdroje",
+    "title": "Interpretace geodat (IDG)",
+    "section": "Další zajímavé zdroje",
+    "text": "Další zajímavé zdroje\n\nkniha Data Visualization - vizualizace dat - příklady v R\nkniha Statistical Inference via Data Science - statistické metody/postupy v R",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "idg.html#ukázkové-kódy",
+    "href": "idg.html#ukázkové-kódy",
+    "title": "Interpretace geodat (IDG)",
+    "section": "💻 Ukázkové kódy",
+    "text": "💻 Ukázkové kódy",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "idg.html#instalace",
+    "href": "idg.html#instalace",
+    "title": "Interpretace geodat (IDG)",
+    "section": "🖥 Instalace",
+    "text": "🖥 Instalace\n\nR - R CRAN\nIDE - RStudio\n\nV RStudiu nainstalovat balíky následujícím skriptem:\ninstall.packages(c(\n    \"tidyverse\",\n    \"here\",\n    \"sf\",\n    \"terra\",\n    \"stars\",\n    \"tidymodels\"\n))",
+    "crumbs": [
+      "Interpretace geodat"
+    ]
   }
 ]

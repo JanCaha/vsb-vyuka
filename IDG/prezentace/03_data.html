@@ -430,16 +430,16 @@ Jan Caha
 <section id="balíky" class="slide level2">
 <h2>Balíky</h2>
 <ul>
-<li><p>základnem je balík <strong>readr</strong>, který řeší většinu textových formátu pro uložení dat</p></li>
-<li><p>balíky <strong>readxl</strong> a <strong>writexl</strong> řeší načítání a ukládání souborů ve formátu <strong>xlsx</strong> a <strong>xls</strong></p></li>
-<li><p>balíky <strong>haven</strong> a <strong>foreign</strong> řeší formáty většiny statickým a matematických softwarů</p></li>
-<li><p>další formáty řeší ruzné specializované knihovny, např. většinu formátů prostorových dat řeší balíky <strong>sf</strong>, <strong>terra</strong> či <strong>stars</strong></p></li>
+<li><p>základnem je balík <span class="software">readr</span>, který řeší většinu textových formátu pro uložení dat</p></li>
+<li><p>balíky <span class="software">readxl</span> a <span class="software">writexl</span> řeší načítání a ukládání souborů ve formátu <strong>xlsx</strong> a <strong>xls</strong></p></li>
+<li><p>balíky <span class="software">haven</span> a <span class="software">foreign</span> řeší formáty většiny statickým a matematických softwarů</p></li>
+<li><p>další formáty řeší ruzné specializované knihovny, např. většinu formátů prostorových dat řeší balíky <span class="software">sf</span>, <span class="software">terra</span> či <span class="software">stars</span></p></li>
 </ul>
 </section>
 <section id="načítací-a-uklídácí-funkce" class="slide level2">
 <h2>Načítací a uklídácí funkce</h2>
 <ul>
-<li><p><code>write_*</code> a <code>read_*</code>, kde za <code>*</code> dosazujeme typ souboru (původní funkce <strong>R</strong> používají notaci <code>write.*</code> a <code>read.*</code>)</p></li>
+<li><p><code>write_*</code> a <code>read_*</code>, kde za <code>*</code> dosazujeme typ souboru (původní funkce <span class="software">R</span> používají notaci <code>write.*</code> a <code>read.*</code>)</p></li>
 <li><p>R se obecně snaží pracovat hlavně s kódováním <strong>UTF-8</strong> a obecnými předpoklady pro zápis souborů dle typů</p></li>
 <li><p>zapisovací funkce jsou výrazně jednodušší, co se týká parametrů</p></li>
 </ul>
@@ -455,9 +455,9 @@ Jan Caha
 <section id="práce-s-excelem" class="slide level2">
 <h2>Práce s excelem</h2>
 <ul>
-<li><p>funkce <code>read_excel()</code>, <code>read_xls()</code> a <code>read_xlsx()</code> (balík <strong>readxl</strong>)</p></li>
+<li><p>funkce <code>read_excel()</code>, <code>read_xls()</code> a <code>read_xlsx()</code> (balík <span class="software">readxl</span>)</p></li>
 <li><p>specifické parametry <code>sheet</code> a <code>range</code> (např. <code>"A2:C19"</code>)</p></li>
-<li><p>funkce <code>write_xlsx</code> (balík <strong>writexl</strong>)</p></li>
+<li><p>funkce <code>write_xlsx</code> (balík <span class="software">writexl</span>)</p></li>
 </ul>
 </section></section>
 <section>
@@ -466,9 +466,9 @@ Jan Caha
 
 </section>
 <section id="balík-dplyr" class="slide level2">
-<h2>Balík <strong>dplyr</strong></h2>
+<h2>Balík <span class="software">dplyr</span></h2>
 <ul>
-<li><p>součást a jeden z nejdůležitějších balíků <strong>Tidyverse</strong></p></li>
+<li><p>součást a jeden z nejdůležitějších balíků <span class="software">tidyverse</span></p></li>
 <li><p>hlavní balík pro úpravy a manipulace s daty</p></li>
 <li><p>značné množství funkcí (viz nápověda), ještě větší množství vzniká jejich možnými kombinacemi</p></li>
 <li><p>syntaxe založená na slovesech, alespoň pro ty nejvýznamnější funkce</p></li>
@@ -543,7 +543,7 @@ Jan Caha
 <li><p>join funkce známé z SQL jazyka</p></li>
 <li><p><code>left_join()</code>, <code>right_join()</code>, <code>full_join()</code> - propojovací joiny</p></li>
 <li><p><code>semi_join()</code>, <code>anti_join()</code> - filtrovací joiny</p></li>
-<li><p>ukázky v vignette <strong>dplyr</strong></p></li>
+<li><p>ukázky v vignette <span class="software">dplyr</span></p></li>
 <li><p>specifikace propojení - 3 možnosti</p>
 <ul>
 <li>automaticky podle názvů sloupců</li>
@@ -569,7 +569,7 @@ Jan Caha
 </ul>
 </section>
 <section id="další-užitečné-funkce-z-dplyr" class="slide level2">
-<h2>Další užitečné funkce z <strong>dplyr</strong></h2>
+<h2>Další užitečné funkce z <span class="software">dplyr</span></h2>
 <ul>
 <li><p><code>pull()</code></p></li>
 <li><p><code>rename()</code></p></li>
@@ -586,9 +586,9 @@ Jan Caha
 
 </section>
 <section id="balík-tidyr" class="slide level2">
-<h2>Balík tidyr</h2>
+<h2>Balík <span class="software">tidyr</span></h2>
 <ul>
-<li><p>součást <strong>Tidyverse</strong></p></li>
+<li><p>součást <span class="software">tidyverse</span></p></li>
 <li><p>obsahuje hlavně funkce určené pro čištění dat a jejich úprav do čistého (tidy) formátu</p></li>
 <li><p>dvě nejdůležitější funkce jsou <code>pivot_longer()</code> a <code>pivod_wider()</code>, původní názvy byly <code>gather()</code> a <code>spread()</code></p></li>
 </ul>
@@ -704,7 +704,7 @@ Jan Caha
 </div>
 </section>
 <section id="další-užitečné-funkce-tidyr" class="slide level2">
-<h2>Další užitečné funkce <strong>tidyr</strong></h2>
+<h2>Další užitečné funkce <span class="software">tidyr</span></h2>
 <ul>
 <li><p><code>drop_na()</code></p></li>
 <li><p><code>expand()</code>, <code>complete()</code></p></li>
@@ -716,7 +716,7 @@ Jan Caha
 </ul>
 </section>
 <section id="balík-janitor" class="slide level2">
-<h2>Balík <strong>janitor</strong></h2>
+<h2>Balík <span class="software">janitor</span></h2>
 <ul>
 <li><p>používá se zejména pro jednoduché čistící funkce, ale umí toho poměrně hodně</p></li>
 <li><p><code>remove_empty()</code>, <code>clean_names()</code></p></li>
@@ -736,7 +736,7 @@ Jan Caha
 <ul>
 <li><p>ujednoconí struktury - jedna analýza/úkol/problém = jeden projekt/složka</p></li>
 <li><p>snadné přenášení, nehrozí opomenutí dat nebo jiné části - vše na jednom místě</p></li>
-<li><p>za použití balíku <strong>renv</strong> (<a href="https://rstudio.github.io/renv/articles/renv.html">renv web</a>) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí</p></li>
+<li><p>za použití balíku <span class="software">renv</span> (<a href="https://rstudio.github.io/renv/articles/renv.html">renv web</a>) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí</p></li>
 <li><p>RStudio projekt - složka s několika spefickými soubory a složkami</p>
 <ul>
 <li><code>.Rproj.user</code> - složka RStudia a jeho nastavení apod.</li>
@@ -764,7 +764,7 @@ Jan Caha
 <section id="odkazy-na-soubory-v-projektu" class="slide level2">
 <h2>Odkazy na soubory v projektu</h2>
 <ul>
-<li><p>doporučení - používat v maximální míře balík <strong>here</strong> pro odkazování na cesty</p></li>
+<li><p>doporučení - používat v maximální míře balík <span class="software">here</span> pro odkazování na cesty</p></li>
 <li><p>nevznikají problémy při přesunech částí kódu a odkazech na soubory ve špatných umístěních</p></li>
 </ul>
 </section>

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -131,6 +165,7 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="Výuka - Jan Caha - Interpretace geodat (IDG)">
+<meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 
@@ -199,6 +234,7 @@ window.Quarto = {
   <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">📚 Zdroje</a></li>
   <li><a href="#další-zajímavé-zdroje" id="toc-další-zajímavé-zdroje" class="nav-link" data-scroll-target="#další-zajímavé-zdroje">Další zajímavé zdroje</a></li>
   <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">💻 Ukázkové kódy</a></li>
+  <li><a href="#instalace" id="toc-instalace" class="nav-link" data-scroll-target="#instalace">🖥 Instalace</a></li>
   </ul>
 </nav>
     </div>
@@ -247,7 +283,7 @@ Prezentace
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1709720348456" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
+<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1709831780947" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
 <td>
 <span class="listing-date">2024-02-19</span>
 </td>
@@ -255,15 +291,15 @@ Prezentace
 <a href="./IDG/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1709720348456" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1260" data-listing-title-sort="Základní orientace v jazyce **R**" data-listing-filename-sort="02_uvod_r.qmd">
+<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1709831780947" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1259" data-listing-title-sort="Základní orientace v jazyce [R]{.software}" data-listing-filename-sort="02_uvod_r.qmd">
 <td>
 <span class="listing-date">2024-02-26</span>
 </td>
 <td>
-<a href="./IDG/prezentace/02_uvod_r.html" class="title listing-title">Základní orientace v jazyce <strong>R</strong></a>
+<a href="./IDG/prezentace/02_uvod_r.html" class="title listing-title">Základní orientace v jazyce <span class="software">R</span></a>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1709720348456" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1255" data-listing-title-sort="Načítání dat, Manipulace s daty" data-listing-filename-sort="03_data.qmd">
+<tr data-index="2" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1709831780947" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1255" data-listing-title-sort="Načítání dat, Manipulace s daty" data-listing-filename-sort="03_data.qmd">
 <td>
 <span class="listing-date">2024-03-04</span>
 </td>
@@ -296,6 +332,22 @@ No matching items
 </section>
 <section id="ukázkové-kódy" class="level2">
 <h2 class="anchored" data-anchor-id="ukázkové-kódy">💻 Ukázkové kódy</h2>
+</section>
+<section id="instalace" class="level2">
+<h2 class="anchored" data-anchor-id="instalace">🖥 Instalace</h2>
+<ul>
+<li>R - <a href="https://cran.r-project.org/bin/windows/base/">R CRAN</a></li>
+<li>IDE - <a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+</ul>
+<p>V RStudiu nainstalovat balíky následujícím skriptem:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidyverse"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"here"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sf"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"terra"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"stars"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidymodels"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 

@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/02_uvod_r.html</loc>
-    <lastmod>2024-03-06T10:19:08.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/01_uvod.html</loc>
-    <lastmod>2024-03-06T10:19:08.456Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/02_opakovani_python.html</loc>
-    <lastmod>2024-03-06T10:19:08.460Z</lastmod>
-  </url>
-  <url>
     <loc>https://jancaha.github.io/vsb-vyuka/index.html</loc>
-    <lastmod>2024-03-06T10:19:08.460Z</lastmod>
+    <lastmod>2024-03-07T17:16:20.951Z</lastmod>
   </url>
   <url>
     <loc>https://jancaha.github.io/vsb-vyuka/pgis2.html</loc>
-    <lastmod>2024-03-06T10:19:08.460Z</lastmod>
+    <lastmod>2024-03-07T17:16:20.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/02_uvod_r.html</loc>
+    <lastmod>2024-03-07T17:16:20.947Z</lastmod>
   </url>
   <url>
     <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/01_uvod.html</loc>
-    <lastmod>2024-03-06T10:19:08.460Z</lastmod>
+    <lastmod>2024-03-07T17:16:20.951Z</lastmod>
   </url>
   <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/idg.html</loc>
-    <lastmod>2024-03-06T10:19:08.460Z</lastmod>
+    <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/02_opakovani_python.html</loc>
+    <lastmod>2024-03-07T17:16:20.951Z</lastmod>
   </url>
   <url>
     <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/03_data.html</loc>
-    <lastmod>2024-03-06T10:19:08.456Z</lastmod>
+    <lastmod>2024-03-07T17:16:20.947Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/01_uvod.html</loc>
+    <lastmod>2024-03-07T17:16:20.947Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/idg.html</loc>
+    <lastmod>2024-03-07T17:16:20.951Z</lastmod>
   </url>
 </urlset>

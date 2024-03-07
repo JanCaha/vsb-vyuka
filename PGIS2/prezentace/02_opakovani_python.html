@@ -418,10 +418,9 @@ Jan Caha
 <li>podpora jak objektového, tak i funkcionálního programování</li>
 <li>verze 2.x už nepoužívat, verze 3 ideálně <strong>od 3.10 a novější</strong> (aktuální verze a cca dvě verze zpátky)</li>
 </ul>
-<p>::: {#8f36afde .cell execution_count=1} <code>{.python .cell-code}  import osgeo</code> :::</p>
 </section>
 <section id="vs-code" class="slide level2">
-<h2>VS Code</h2>
+<h2><span class="software">VS Code</span></h2>
 <ul>
 <li>IDE pro řadu jazyků a technologií</li>
 <li>klíčové jsou extenze, které posunují funcionalitu od textového editoru více k “težšímu” IDE</li>
@@ -433,18 +432,18 @@ Jan Caha
 <section id="vs-code-extenze-pro-python" class="slide level2">
 <h2>VS Code extenze pro Python</h2>
 <ul>
-<li>Python, Python Debugger</li>
-<li>formátování kódu - Black Formatter, isort</li>
-<li>kontroly kódu - autopep8, Flake8, Mypy Type Checker, Pylance, Pylint</li>
-<li>generování docstringů - autoDocstring - Python Docstring Generator</li>
-<li>Github Copilot - přihlášení, pouze pokud máte přístup (studenti mají)</li>
+<li><span class="software">Python, Python Debugger</span></li>
+<li>formátování kódu - <span class="software">Black Formatter, isort</span></li>
+<li>kontroly kódu - <span class="software">autopep8, Flake8, Mypy Type Checker, Pylance, Pylint</span></li>
+<li>generování docstringů - autoDocstring - <span class="software">Python Docstring Generator</span></li>
+<li><span class="software">Github Copilot</span> - přihlášení, pouze pokud máte přístup (studenti mají)</li>
 </ul>
 </section>
 <section id="conda" class="slide level2">
 <h2>Conda</h2>
 <ul>
 <li>systém pro správu Pythonu a jeho balíčků</li>
-<li>použití z příkazové řádky - ale existuje i GUI (Anaconda)</li>
+<li>použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pgis2 python=3.11</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
@@ -452,8 +451,8 @@ Jan Caha
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install GDAL</span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>v environmentu lze instalovat i skrze <code>pip</code>, ale nelze to doporučit - chybí návaznosti závislostí</li>
-<li>v <strong>VS Code</strong> nutno nastavit interpretor jazyka</li>
+<li>v environmentu lze instalovat i skrze <span class="software">pip</span>, ale nelze to doporučit - chybí návaznosti závislostí</li>
+<li>v <span class="software">VS Code</span> nutno nastavit interpretor jazyka</li>
 </ul>
 </section>
 <section>
@@ -466,7 +465,7 @@ Jan Caha
 <ul>
 <li>jednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota</li>
 <li>komplexní - seznam, slovník, tuple</li>
-<li>objekty - např. <code>Path</code> z knihovny <code>pathlib</code></li>
+<li>objekty - např. <code>Path</code> z knihovny <span class="software">pathlib</span></li>
 <li>funkce - lze je také uložit do proměnné (trochu komplikované na představu)</li>
 </ul>
 </section>
@@ -518,7 +517,7 @@ Jan Caha
 <li>tisk objektu bez funkce <code>__repr__()</code></li>
 <li>tiskne informace o umístění objektu v paměti</li>
 </ul>
-<div id="96fc9506" class="cell" data-execution_count="2">
+<div id="2576534b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -526,7 +525,7 @@ Jan Caha
 <span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7f4d28c9f550&gt;</code></pre>
+<pre><code>&lt;__main__.A object at 0x7fc3a0f5b640&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -536,7 +535,7 @@ Jan Caha
 <li>tisk objektu s funkcí <code>__repr__()</code></li>
 <li>tiskne řetězec z této funkce</li>
 </ul>
-<div id="8a8bd39e" class="cell" data-execution_count="3">
+<div id="58a3d349" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -557,7 +556,7 @@ Jan Caha
 <li>proces nahlížení na stav programu za jeho běhu</li>
 <li>umožňuje nahlížet do paměti programu v jeho různých fázích a stavech</li>
 <li>v Pythonu máme možnost do proměnných za běhu i zasahovat</li>
-<li>ukázka v <strong>VS Code</strong></li>
+<li>ukázka v <span class="software">VS Code</span></li>
 </ul>
 </section>
 <section id="konextové-managery" class="slide level2">
@@ -577,7 +576,7 @@ Jan Caha
 <li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
 <li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
 </ul>
-<div id="d4376504" class="cell" data-execution_count="4">
+<div id="fd779294" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
@@ -586,29 +585,29 @@ Jan Caha
 </section>
 <section id="instalace-knihoven" class="slide level2">
 <h2>Instalace knihoven</h2>
-<pre class="{bash}"><code>conda activate pgis2
-conda instally black isort mypy pep8 flake8 pylint
-conda install shapely fiona rasterio polars pandas geopandas
-pip install --pre geopolars</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> instally black isort mypy pep8 flake8 pylint</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install shapely fiona rasterio polars pandas geopandas</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--pre</span> geopolars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>podle osnovy se máme věnovat <code>pandas</code> - <code>polars</code> je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem</li>
 </ul>
 </section>
 <section id="formátování-pomocí-black-a-isort" class="slide level2">
-<h2>Formátování pomocí black a isort</h2>
+<h2>Formátování pomocí <span class="software">black</span> a <span class="software">isort</span></h2>
 <ul>
-<li>isort řadí importy dle určité logiky</li>
-<li>black formátuje kód dle pravidel, má minimum nastavení a tak je vysoce konstantní napříč projekty</li>
+<li><span class="software">isort</span> řadí importy dle určité logiky</li>
+<li><span class="software">black</span> formátuje kód dle pravidel, má minimum nastavení a tak je vysoce konstantní napříč projekty</li>
 <li>zpočátku obvykle nevyhovuje uživateli na 100%, ale jde o zvyk</li>
 </ul>
 </section>
 <section id="kontroly-pomocí-mypy-pep8-flake8-pylint" class="slide level2">
-<h2>Kontroly pomocí mypy, pep8, flake8, pylint</h2>
+<h2>Kontroly pomocí <span class="software">mypy, pep8, flake8, pylint</span></h2>
 <ul>
 <li>zvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu</li>
 <li>ne vždy musí jít o zásadní problém</li>
 <li>v moha situacích to předchází chybám</li>
-<li>např. <strong>mypy</strong> nutí uživatele psát rozumně typovaný kód a používat ho správně</li>
+<li>např. <span class="software">mypy</span> nutí uživatele psát rozumně typovaný kód a používat ho správně</li>
 <li>celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu</li>
 <li>většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit</li>
 </ul>

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -131,6 +165,7 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="Výuka - Jan Caha - Programování v GIS 2 (PGIS2)">
+<meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 
@@ -198,6 +233,7 @@ window.Quarto = {
   <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">📑Prezentace</a></li>
   <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">📚 Zdroje</a></li>
   <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">💻 Ukázkové kódy</a></li>
+  <li><a href="#instalace" id="toc-instalace" class="nav-link" data-scroll-target="#instalace">🖥 Instalace</a></li>
   </ul>
 </nav>
     </div>
@@ -244,7 +280,7 @@ Prezentace
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1709720348460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="126" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
+<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1709831780951" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="126" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
 <td>
 <span class="listing-date">2024-02-19</span>
 </td>
@@ -252,7 +288,7 @@ Prezentace
 <a href="./PGIS2/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1709720348460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="700" data-listing-title-sort="Opakování Pythonu" data-listing-filename-sort="02_opakovani_python.qmd">
+<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1709831780951" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="695" data-listing-title-sort="Opakování Pythonu" data-listing-filename-sort="02_opakovani_python.qmd">
 <td>
 <span class="listing-date">2024-02-26</span>
 </td>
@@ -272,6 +308,34 @@ No matching items
 </section>
 <section id="ukázkové-kódy" class="level2">
 <h2 class="anchored" data-anchor-id="ukázkové-kódy">💻 Ukázkové kódy</h2>
+</section>
+<section id="instalace" class="level2">
+<h2 class="anchored" data-anchor-id="instalace">🖥 Instalace</h2>
+<ul>
+<li>management Pythonu - <a href="https://docs.anaconda.com/free/miniconda/index.html">Miniconda</a></li>
+<li>IDE - <a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+<li>extenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator</li>
+<li>instalace Conda environmentu</li>
+</ul>
+<p>Definice environment souboru, např. s názvem <code>env-pgis2.yaml</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> pgis2</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> defaults</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python=3.10</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> GDAL</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> fiona</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> rasterio</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> shapely</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pandas</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> geopandas</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> polars</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Z conda prompt následně spustit:</p>
+<pre class="{bash}"><code>conda create -f env-pgis2.yaml
+conda activate pgis2</code></pre>
 
 
 

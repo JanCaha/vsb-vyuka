@@ -395,7 +395,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Základní orientace v jazyce <strong>R</strong></h1>
+  <h1 class="title">Základní orientace v jazyce <span class="software">R</span></h1>
   <p class="subtitle">Interpretace geodat</p>
 
 <div class="quarto-title-authors">
@@ -427,10 +427,10 @@ Jan Caha
 </ul>
 </section>
 <section id="jazyk-r" class="slide level2">
-<h2>Jazyk <strong>R</strong></h2>
+<h2>Jazyk <span class="software">R</span></h2>
 <ul>
 <li><p>interpretovaný programovací jazyk přístupný v základu skrze příkazový řádek</p></li>
-<li><p>implementace jazyka <strong>S</strong> pod open source licencí</p></li>
+<li><p>implementace jazyka <span class="software">S</span> pod open source licencí</p></li>
 <li><p>určený primárně ke zpracování dat a jejich vizualizaci, s výrazným zaměřením na statistiku (původně) a celkovou problematiku zpracování dat (současnost)</p></li>
 <li><p>základní funkcionalita není příliš široká (respektive snadno přístupná), většina funkcinality přichází z tzv. balíčků</p></li>
 <li><p>centrální sklad balíčků - <a href="https://cran.r-project.org/">CRAN</a> (Comprehensive R Archive Network)</p></li>
@@ -439,7 +439,7 @@ Jan Caha
 <section id="r-times-ostatní-jazyky" class="slide level2">
 <h2>R <span class="math inline">\(\times\)</span> ostatní jazyky</h2>
 <ul>
-<li><p>konkurence: Matlab, Wolfram Language, Julia, Python, Excel</p></li>
+<li><p>konkurence: <span class="software">Matlab, Wolfram Language, Julia, Python, Excel</span></p></li>
 <li><p>výraznější zaměření na data a operaci s nimi, většina funkcí dobře pracuje s vektory dat a datovými rámci</p></li>
 <li><p>interpretovaný jazyk, možnost široce interagovat s daty a procesy</p></li>
 <li><p>RStudio maximálně zpřístupňuje tzv. interaktivní práci s jazykem (náhledy na pamět, nápovědu, grafy a atd.)</p></li>
@@ -457,7 +457,7 @@ Jan Caha
 <ul>
 <li><p>v R používáme pro přiřazení hodnoty do proměnné operátor <code>&lt;-</code></p></li>
 <li><p>lze použít i <code>=</code> ale z hlediska čtení kódu se to nedoporučuje</p></li>
-<li><p>v RStudiu zkratka <strong>Levý Alt + -</strong></p></li>
+<li><p>v RStudiu zkratka <span class="keys">Levý Alt + -</span></p></li>
 </ul>
 </section>
 <section id="základní-typy-dat" class="slide level2">
@@ -695,7 +695,7 @@ Jan Caha
 <span id="cb39-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># tisk výsledku</span></span>
 <span id="cb39-8"><a aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.2699546 -1.0671682 -0.3141816 -0.7557055 -1.3668976</code></pre>
+<pre><code>[1] -0.4419450 -0.4092981 -0.3243444 -0.5725578 -0.2153101</code></pre>
 </div>
 </div>
 </section>
@@ -801,8 +801,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <section id="tibble" class="slide level2">
 <h2>tibble</h2>
 <ul>
-<li>modernější implementace <strong>data.frame</strong> se nazývá <strong>tibble</strong> hodně využivívanou v balících <strong>tidyverse</strong></li>
-<li>navenek se zásadně neliší od <strong>data.frame</strong> je kompatabilní</li>
+<li>modernější implementace <code>data.frame</code> se nazývá <code>tibble</code> hodně využivívanou v balících <span class="software">tidyverse</span></li>
+<li>navenek se zásadně neliší od <code>data.frame</code> je kompatabilní</li>
 <li>funkce navíc, zjednodušení některých operací</li>
 <li>tvorba po řádcích - viz help</li>
 </ul>
@@ -922,9 +922,6 @@ Levels: a b</code></pre>
 <li><p>parametr <code>...</code> zachytí všechny atributy, kromě těch specificky pojmenovaných</p></li>
 <li><p>všechny parametry jsou vyhodnoceny stejně, zde konkrétně vytvoří nové sloupce</p></li>
 </ul>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="nejvyužívanější-balíky-pro-zpracování-dat-tidyverse" class="title-slide slide level1 center">
@@ -954,7 +951,7 @@ Levels: a b</code></pre>
 </div>
 </div>
 <ul>
-<li><p>operátor <code>%&gt;%</code> (klávesová zkratka <strong>Ctrl + Shift + M</strong>) umožňuje předat hodnotu před ním jako první parametr funkce za operátorem</p></li>
+<li><p>operátor <code>%&gt;%</code> (klávesová zkratka <span class="keys">Ctrl + Shift + M</span>) umožňuje předat hodnotu před ním jako první parametr funkce za operátorem</p></li>
 <li><p>není nutné vytvářet dočasné proměnné, ani tvořit složité konstrukce (viz výše)</p></li>
 </ul>
 <div class="cell">
@@ -970,7 +967,7 @@ Levels: a b</code></pre>
 <section id="řetězení-funkce---příklady" class="slide level2">
 <h2>Řetězení funkce - příklady</h2>
 <ul>
-<li>definice v balíku <strong>magrittr</strong>, ale lze používat kompletně v rámci <strong>tidyverse</strong></li>
+<li>definice v balíku <span class="software">magrittr</span>, ale lze používat kompletně v rámci <span class="software">tidyverse</span></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
@@ -984,22 +981,22 @@ Levels: a b</code></pre>
 </div>
 </section>
 <section id="řetězení-funkcí-v-tidyverse" class="slide level2">
-<h2>Řetězení funkcí v <strong>tidyverse</strong></h2>
+<h2>Řetězení funkcí v <span class="software">tidyverse</span></h2>
 <ul>
-<li><p><strong>tidyverse</strong> maximálně využívá možností řetězení funkcí</p></li>
+<li><p><span class="software">tidyverse</span> maximálně využívá možností řetězení funkcí</p></li>
 <li><p>dosahuje se toho tím, že prvním argumentem funkce jsou vždy vstupní data (což v klasickém R není vždy pravda)</p></li>
 </ul>
 </section>
 <section id="nejpoužívanější-balíky-z-tidyverse" class="slide level2">
-<h2>Nejpoužívanější balíky z <strong>Tidyverse</strong></h2>
+<h2>Nejpoužívanější balíky z <span class="software">tidyverse</span></h2>
 <ul>
-<li><p><strong>readr</strong>, <strong>readxl</strong> - načítání a ukládání dat</p></li>
-<li><p><strong>dplyr</strong> - základní manipulace s daty</p></li>
-<li><p><strong>tidyr</strong> - čištění a reformátování dat</p></li>
-<li><p><strong>ggplot2</strong> - vizualizace, tvorba grafů</p></li>
-<li><p><strong>hms</strong>, <strong>lubridate</strong> - práce s datumy a časy</p></li>
-<li><p><strong>stringr</strong> - práce s textovými daty</p></li>
-<li><p><strong>purrr</strong> - fukncionální programování</p></li>
+<li><p><span class="software">readr</span>, <span class="software">readxl</span> - načítání a ukládání dat</p></li>
+<li><p><span class="software">dplyr</span> - základní manipulace s daty</p></li>
+<li><p><span class="software">tidyr</span> - čištění a reformátování dat</p></li>
+<li><p><span class="software">ggplot2</span> - vizualizace, tvorba grafů</p></li>
+<li><p><span class="software">hms</span>, <span class="software">lubridate</span> - práce s datumy a časy</p></li>
+<li><p><span class="software">stringr</span> - práce s textovými daty</p></li>
+<li><p><span class="software">purrr</span> - fukncionální programování</p></li>
 </ul>
 </section>
 <section class="slide level2">
