@@ -34,18 +34,18 @@ here("data", "raw", "soubor.csv")
 
 ## Balíky
 
-- základnem je balík **readr**, který řeší většinu textových formátu pro uložení dat
+- základnem je balík [readr]{.software}, který řeší většinu textových formátu pro uložení dat
 
-- balíky **readxl** a **writexl** řeší načítání a ukládání souborů ve formátu __xlsx__ a __xls__ 
+- balíky [readxl]{.software} a [writexl]{.software} řeší načítání a ukládání souborů ve formátu __xlsx__ a __xls__ 
 
-- balíky **haven** a **foreign** řeší formáty většiny statickým a matematických softwarů
+- balíky [haven]{.software} a [foreign]{.software} řeší formáty většiny statickým a matematických softwarů
 
-- další formáty řeší ruzné specializované knihovny, např. většinu formátů prostorových dat řeší balíky **sf**, **terra** či **stars**
+- další formáty řeší ruzné specializované knihovny, např. většinu formátů prostorových dat řeší balíky [sf]{.software}, [terra]{.software} či [stars]{.software}
 
 
 ## Načítací a uklídácí funkce
 
-- `write_*` a `read_*`, kde za `*` dosazujeme typ souboru (původní funkce **R** používají notaci `write.*` a `read.*`)
+- `write_*` a `read_*`, kde za `*` dosazujeme typ souboru (původní funkce [R]{.software} používají notaci `write.*` a `read.*`)
 
 - R se obecně snaží pracovat hlavně s kódováním **UTF-8** a obecnými předpoklady pro zápis souborů dle typů 
 
@@ -62,19 +62,19 @@ here("data", "raw", "soubor.csv")
 
 ## Práce s excelem
 
-- funkce `read_excel()`, `read_xls()` a `read_xlsx()` (balík **readxl**)
+- funkce `read_excel()`, `read_xls()` a `read_xlsx()` (balík [readxl]{.software})
 
 - specifické parametry `sheet` a `range` (např. `"A2:C19"`)
 
-- funkce `write_xlsx` (balík **writexl**)
+- funkce `write_xlsx` (balík [writexl]{.software})
 
 
 # Manipulace s daty
 
 
-## Balík **dplyr**
+## Balík [dplyr]{.software}
 
-- součást a jeden z nejdůležitějších balíků **Tidyverse**
+- součást a jeden z nejdůležitějších balíků [tidyverse]{.software}
 
 - hlavní balík pro úpravy a manipulace s daty
 
@@ -148,7 +148,7 @@ rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektor
 
 - `semi_join()`, `anti_join()` - filtrovací joiny
 
-- ukázky v vignette **dplyr**
+- ukázky v vignette [dplyr]{.software}
 
 - specifikace propojení - 3 možnosti 
   - automaticky podle názvů sloupců
@@ -172,7 +172,7 @@ rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektor
 - zrušení skupin, pro další práci pomocí funkce `ungroup()`
 
 
-## Další užitečné funkce z **dplyr**
+## Další užitečné funkce z [dplyr]{.software}
 
 - `pull()`
 
@@ -190,9 +190,9 @@ rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektor
 
 # Čištění dat
 
-## Balík tidyr
+## Balík [tidyr]{.software}
 
-- součást **Tidyverse**
+- součást [tidyverse]{.software}
 
 - obsahuje hlavně funkce určené pro čištění dat a jejich úprav do čistého (tidy) formátu
 
@@ -270,7 +270,7 @@ pivot_longer(df,
 )
 ```
 
-## Další užitečné funkce **tidyr**
+## Další užitečné funkce [tidyr]{.software}
 
 - `drop_na()`
 
@@ -286,7 +286,7 @@ pivot_longer(df,
 
 - `separate()`, `extract()`
 
-## Balík **janitor**
+## Balík [janitor]{.software}
 
 - používá se zejména pro jednoduché čistící funkce, ale umí toho poměrně hodně
 
@@ -310,7 +310,7 @@ pivot_longer(df,
 
 - snadné přenášení, nehrozí opomenutí dat nebo jiné části - vše na jednom místě
 
-- za použití balíku **renv** ([renv web](https://rstudio.github.io/renv/articles/renv.html)) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí
+- za použití balíku [renv]{.software} ([renv web](https://rstudio.github.io/renv/articles/renv.html)) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí
 
 - RStudio projekt - složka s několika spefickými soubory a složkami
   - `.Rproj.user` - složka RStudia a jeho nastavení apod.
@@ -338,7 +338,7 @@ pivot_longer(df,
 
 ## Odkazy na soubory v projektu
 
-- doporučení - používat v maximální míře balík **here** pro odkazování na cesty
+- doporučení - používat v maximální míře balík [here]{.software} pro odkazování na cesty
 
 - nevznikají problémy při přesunech částí kódu a odkazech na soubory ve špatných umístěních
 

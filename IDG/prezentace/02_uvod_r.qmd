@@ -1,5 +1,5 @@
 ---
-title: "Základní orientace v jazyce **R**"
+title: "Základní orientace v jazyce [R]{.software}"
 subtitle: "Interpretace geodat"
 author: "Jan Caha"
 date: 2024-02-26
@@ -28,11 +28,11 @@ execute:
 
 ---
 
-## Jazyk **R**
+## Jazyk [R]{.software}
 
 - interpretovaný programovací jazyk přístupný v základu skrze příkazový řádek
 
-- implementace jazyka **S** pod open source licencí
+- implementace jazyka [S]{.software} pod open source licencí
 
 - určený primárně ke zpracování dat a jejich vizualizaci, s výrazným zaměřením na statistiku (původně) a celkovou problematiku zpracování dat (současnost)
 
@@ -44,7 +44,7 @@ execute:
 
 ## R $\times$ ostatní jazyky
 
-- konkurence: Matlab, Wolfram Language, Julia, Python, Excel
+- konkurence: [Matlab, Wolfram Language, Julia, Python, Excel]{.software}
 
 - výraznější zaměření na data a operaci s nimi, většina funkcí dobře pracuje s vektory dat a datovými rámci
 
@@ -323,8 +323,8 @@ mtcars$`míle na galon`
 
 ## tibble
 
-- modernější implementace **data.frame** se nazývá **tibble** hodně využivívanou v balících **tidyverse** 
-- navenek se zásadně neliší od **data.frame** je kompatabilní
+- modernější implementace `data.frame` se nazývá `tibble` hodně využivívanou v balících [tidyverse]{.software}
+- navenek se zásadně neliší od `data.frame` je kompatabilní
 - funkce navíc, zjednodušení některých operací
 - tvorba po řádcích - viz help
 
@@ -501,7 +501,7 @@ seq(0.1, 1, by = 0.2) %>%
 
 ## Řetězení funkce - příklady
 
-- definice v balíku **magrittr**, ale lze používat kompletně v rámci **tidyverse**
+- definice v balíku [magrittr]{.software}, ale lze používat kompletně v rámci [tidyverse]{.software}
 
 ```{r}
 x <- seq(1, 5, by = 1)
@@ -512,29 +512,29 @@ print(y)
 ```
 ---
 
-## Řetězení funkcí v **tidyverse**
+## Řetězení funkcí v [tidyverse]{.software}
 
-- **tidyverse** maximálně využívá možností řetězení funkcí
+- [tidyverse]{.software} maximálně využívá možností řetězení funkcí
 
 - dosahuje se toho tím, že prvním argumentem funkce jsou vždy vstupní data (což v klasickém R není vždy pravda)
 
 ---
 
-## Nejpoužívanější balíky z **Tidyverse**
+## Nejpoužívanější balíky z [tidyverse]{.software}
 
-- **readr**, **readxl** - načítání a ukládání dat
+- [readr]{.software}, [readxl]{.software} - načítání a ukládání dat
 
-- **dplyr** - základní manipulace s daty
+- [dplyr]{.software} - základní manipulace s daty
 
-- **tidyr** - čištění a reformátování dat
+- [tidyr]{.software} - čištění a reformátování dat
 
-- **ggplot2** - vizualizace, tvorba grafů
+- [ggplot2]{.software} - vizualizace, tvorba grafů
 
-- **hms**, **lubridate** - práce s datumy a časy
+- [hms]{.software}, [lubridate]{.software} - práce s datumy a časy
 
-- **stringr** - práce s textovými daty
+- [stringr]{.software} - práce s textovými daty
 
-- **purrr** - fukncionální programování
+- [purrr]{.software} - fukncionální programování
 
 ---
 

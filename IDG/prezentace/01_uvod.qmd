@@ -23,12 +23,12 @@ execute:
 
 ## O čem to bude
 
-- jazyk **R**
-- balíky pro **R**
-- zpracování a vizualizace dat **tidyverse**
-- statistické modelování **tidymodels** a další
-- prostorová data - balíky **sf**, **terra** a **stars**
-- geoinformatické workflow - **qgisprocess**, **qgis** 
+- jazyk [R]{.software}
+- balíky pro [R]{.software}
+- zpracování a vizualizace dat [tidyverse]{.software}
+- statistické modelování [tidymodels]{.software} a další
+- prostorová data - balíky [sf]{.software}, [terra]{.software} a [stars]{.software}
+- geoinformatické workflow - [qgisprocess]{.software}, [qgis]{.software}
 
 ## Dílčí úlohy
 
@@ -39,7 +39,7 @@ execute:
 
 ## V čem budeme pracovat
 
-- **R** a **RStudio**
+- [R]{.software} a [RStudio]{.software}
 - větší množství balíků
 
 ## Materiály

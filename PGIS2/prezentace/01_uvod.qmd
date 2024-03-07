@@ -16,11 +16,11 @@ execute:
 
 ## Náplň
 
-- programování v **Pythonu** s důrazem na **GIS knihovny**
+- programování v [Pythonu]{.software} s důrazem na **GIS knihovny**
   - GDAL
   - Fiona, Rasterio, Shapely
   - Pandas, Polars  
-- management Pythonu pomocí **Conda**
+- management Pythonu pomocí [Conda]{.software}
 - standardní techniky programování v Pythonu
 
 ## O čem to bude
@@ -41,8 +41,8 @@ execute:
 
 ## V čem budeme pracovat
 
-- **VS Code**
-- extenze pro **VS Code**
+- [VS Code]{.software}
+- extenze pro [VS Code]{.software}
 
 ## Materiály
 
