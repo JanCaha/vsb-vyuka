@@ -47,3 +47,10 @@ Z conda prompt následně spustit:
 conda create -f env-pgis2.yaml
 conda activate pgis2
 ```
+
+## Další 
+
+- zřízení účtu na [Github](github.com), primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu
+- požádání o studentský přístup na Github dle [článku](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279)
+- ověření nějakou dobou trvá cca. 1-2 dny
+- následně se lze ve **VS Code** pomocí tohoto účtu přihlásit a měl by být dostupý **GitHub Copilot**  
