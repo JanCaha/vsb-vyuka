@@ -81,6 +81,16 @@
     ]
   },
   {
+    "objectID": "pgis2.html#další",
+    "href": "pgis2.html#další",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "Další",
+    "text": "Další\n\nzřízení účtu na Github, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu\npožádání o studentský přístup na Github dle článku\nověření nějakou dobou trvá cca. 1-2 dny\nnásledně se lze ve VS Code pomocí tohoto účtu přihlásit a měl by být dostupý GitHub Copilot",
+    "crumbs": [
+      "Programování v GIS 2"
+    ]
+  },
+  {
     "objectID": "IDG/prezentace/02_uvod_r.html#instalace",
     "href": "IDG/prezentace/02_uvod_r.html#instalace",
     "title": "Základní orientace v jazyce R",
@@ -190,7 +200,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.4419450 -0.4092981 -0.3243444 -0.5725578 -0.2153101"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.38191556 -1.17409833 -0.06164847 -0.16267319 -0.53961752"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
