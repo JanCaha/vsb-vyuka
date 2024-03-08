@@ -48,3 +48,9 @@ execute:
 - často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je
 - drivery `MEM` - raster a `Memory` - raster, pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu)
 
+## Příklad
+
+- z [QGIS]{.software} exportujeme vrstvu **world**
+- otevření souboru (bez i za použití driveru)
+- výběr vrstvy
+- iterace přes prvky - geometrie i atributy
