@@ -6,6 +6,7 @@ channels:
 
 dependencies:
   - python=3.11
+  - pip
   - GDAL
   - fiona
   - rasterio
@@ -13,3 +14,5 @@ dependencies:
   - pandas
   - geopandas
   - polars
+  - pip:
+    - geopolars

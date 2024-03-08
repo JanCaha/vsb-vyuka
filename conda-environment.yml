@@ -6,6 +6,7 @@ channels:
 
 dependencies:
   - python=3.11
+  - pip
   # pgis2
   - GDAL
   - fiona
@@ -17,3 +18,7 @@ dependencies:
   # quarto
   - jupyter
   - nbformat
+  # install using pip
+  - pip:
+    # pgis2
+    - geopolars
