@@ -1,0 +1,28 @@
+---
+title: "Knihovna [GDAL/OGR]{.software}"
+subtitle: "Programování v GIS 2"
+author: "Jan Caha"
+date: 2024-02-26
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Popis [GDAL/OGR]{.software}
+
+- nízkoúrovňová knihovna
+- v Pythonu zpřístupňujeme její **binding**
+- kód knihovny v [C/C++]{.software} -> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)
+- většinu objektů uložených v proměnných je vhodné po použití nastavit na `None`, čímž se explicitně uvolní prostředky
+- knihovna má hlavní modul `osgeo` a několik dílčích modulů
+  -  `gdal` - rastry
+  -  `ogr` - vektory
+  -  `osr` - souřadnicové systémy 
+
+##
