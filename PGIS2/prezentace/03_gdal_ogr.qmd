@@ -24,5 +24,27 @@ execute:
   -  `gdal` - rastry
   -  `ogr` - vektory
   -  `osr` - souřadnicové systémy 
+- kód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a [mypy]{.software} dobře kontrolovat kód
+  
+## Otevírání souborů
 
-##
+- funkce `gdal.Open()` (rastry i vektory) a `ogr.Open()` (pouze vektory)
+- jako první první parametr cesta k souboru 
+  - buď lokální - klasický zápis
+  - nebo virtuální začínající `/vsi*` kde `*` je typ virtuální složky
+
+## Virtuální složky
+
+- např. `/vsicurl/cesta_k_online.souboru` - automaticky stahuje data
+- `/vsizip/cesta_k_lokálnímu.souboru` - extrahuje ze zip souboru
+- `/vsis3`, `/vsigs`, `/vsiaz`, `/vsioss` pro přístup k online službám
+- `/vsimem` - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk
+
+## Drivery
+
+- každý podporovaný formát má svůj vlastní
+- mohou být pouze pro čtení, značná část ale podporuje i zápis
+- některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit
+- často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je
+- drivery `MEM` - raster a `Memory` - raster, pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu)
+
