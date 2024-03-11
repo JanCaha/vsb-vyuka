@@ -80,23 +80,25 @@ layer: ogr.Layer = ds.GetLayer()
 - další ukázka v příkladech
 
 ```{python}
+# | eval: false
 from pathlib import Path
 
 from osgeo import gdal, ogr
 
 gdal.UseExceptions()
 
-file = Path.cwd().parent.parent / \
-    "_data" / "ne_10m_admin_0_countries.shp"
+if __name__ == "__main__":
+    file = Path.cwd().parent.parent / \
+        "_data" / "ne_10m_admin_0_countries.shp"
 
-print(file.exists())
+    print(file.exists())
 
-ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+    ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
 
-layer: ogr.Layer = ds.GetLayer()
+    layer: ogr.Layer = ds.GetLayer()
 
-print(layer.GetName())
-print(layer.GetFeatureCount())
+    print(layer.GetName())
+    print(layer.GetFeatureCount())
 ```
 
 
