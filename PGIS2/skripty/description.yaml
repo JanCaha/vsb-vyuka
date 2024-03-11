@@ -1,4 +1,8 @@
-- title: "GDAL/OGR načtení dat"
+- title: "GDAL/OGR načtení vektorových dat"
   author: Jan Caha
   date: 2024-03-11
   path: "PGIS2/skripty/01_ogr.py"
+- title: "GDAL/OGR načtení rastrových dat"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PGIS2/skripty/02_gdal.py"
