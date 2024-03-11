@@ -220,7 +220,7 @@ sum_mtcars <- mtcars %>%
 
 - `semi_join()`, `anti_join()` - filtrovací joiny
 
-- ukázky v vignette [dplyr]{.software}
+- ukázky v vignette [dplyr]{.software} - [zde](https://dplyr.tidyverse.org/articles/two-table.html) 
 
 - specifikace propojení - 3 možnosti 
   - automaticky podle názvů sloupců
@@ -263,9 +263,7 @@ sum_mtcars <- mtcars %>%
   - `names_from` sloupec (sloupce), jejichž hodnoty budou tvořit názvy nových sloupců
   - `values_from` sloupec (sloupce), který definuje hodnoty pro nově vytvořené sloupce
 
-- ukázky i v dokumentaci
-
----
+- ukázky i v dokumentaci - [zde](https://tidyr.tidyverse.org/reference/pivot_wider.html)
 
 # ukázka pivot_wider
 ```{r, echo=FALSE}
@@ -293,7 +291,6 @@ pivot_wider(df,
 )
 ```
 
-
 ## pivot_longer
 
 - provádí transformaci datového rámce "delší" variantu, kdy se pro každý řádek původních dat vytvoří více řádků nových dle specifikace
@@ -305,8 +302,8 @@ pivot_wider(df,
   
 - funkce `pivot_wider` a `pivot_longer` tvoří komplementární dvojici
 
-- ukázky i v dokumentaci
-- 
+- ukázky i v dokumentaci - [zde](https://tidyr.tidyverse.org/reference/pivot_longer.html)
+  
 ## ukázka pivot_longer
 
 ```{r}
@@ -318,7 +315,6 @@ df <- tibble(
 
 df
 ```
-
 
 ---
 
