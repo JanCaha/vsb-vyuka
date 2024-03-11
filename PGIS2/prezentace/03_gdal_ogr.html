@@ -428,7 +428,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="e920059b" class="cell" data-execution_count="1">
+<div id="8dc5db35" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -445,7 +445,7 @@ Jan Caha
 <section id="otevírání-souborů" class="slide level2">
 <h2>Otevírání souborů</h2>
 <ul>
-<li>funkce <code>gdal.Open()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory)</li>
+<li>funkce <code>gdal.OpenEx()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory)</li>
 <li>jako první první parametr cesta k souboru
 <ul>
 <li>buď lokální - klasický zápis</li>
@@ -488,7 +488,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="a0486eb0" class="cell" data-execution_count="2">
+<div id="288f805f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -515,6 +515,9 @@ Jan Caha
 <li>rastrová data</li>
 <li>operace</li>
 </ul>
+</section>
+<section id="dotazy" class="title-slide slide level1 center">
+<h1>Dotazy?</h1>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

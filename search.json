@@ -65,7 +65,7 @@
     "href": "pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení dat\n\n\n\n\n\nNo matching items",
+    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Programování v GIS 2"
     ]
@@ -200,7 +200,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.17935436 -0.68599806 -0.06498939 -0.02509967 -0.24140740"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.06525515 -0.01004532 -0.37022474 -0.08832825 -0.21663189"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -354,7 +354,7 @@
     "href": "PGIS2/prezentace/03_gdal_ogr.html#otevírání-souborů",
     "title": "Knihovna GDAL/OGR",
     "section": "Otevírání souborů",
-    "text": "Otevírání souborů\n\nfunkce gdal.Open() (rastry i vektory) a ogr.Open() (pouze vektory)\njako první první parametr cesta k souboru\n\nbuď lokální - klasický zápis\nnebo virtuální začínající /vsi* kde * je typ virtuální složky"
+    "text": "Otevírání souborů\n\nfunkce gdal.OpenEx() (rastry i vektory) a ogr.Open() (pouze vektory)\njako první první parametr cesta k souboru\n\nbuď lokální - klasický zápis\nnebo virtuální začínající /vsi* kde * je typ virtuální složky"
   },
   {
     "objectID": "PGIS2/prezentace/03_gdal_ogr.html#virtuální-složky",
@@ -389,7 +389,7 @@
     "href": "PGIS2/prezentace/03_gdal_ogr.html#další-ukázky",
     "title": "Knihovna GDAL/OGR",
     "section": "Další ukázky",
-    "text": "Další ukázky\n\nrastrová data\noperace\n\n\n\n\nMateriály dostupné: https://jancaha.github.io/vsb-vyuka/"
+    "text": "Další ukázky\n\nrastrová data\noperace"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#python",
@@ -655,7 +655,7 @@
     "href": "IDG/prezentace/03_data.html#propojení-datových-rámců",
     "title": "Načítání dat, Manipulace s daty",
     "section": "Propojení datových rámců",
-    "text": "Propojení datových rámců\n\njoin funkce známé z SQL jazyka\nleft_join(), right_join(), full_join() - propojovací joiny\nsemi_join(), anti_join() - filtrovací joiny\nukázky v vignette dplyr\nspecifikace propojení - 3 možnosti\n\nautomaticky podle názvů sloupců\npokud je shoda názvů stačí by = \"sloupec\", by = c(\"sloupec\", \"sloupec2\")\npo propojení sloupců různých názvů by = c(\"sloupec_df_1\" = \"sloupec_df_2\", ...)"
+    "text": "Propojení datových rámců\n\njoin funkce známé z SQL jazyka\nleft_join(), right_join(), full_join() - propojovací joiny\nsemi_join(), anti_join() - filtrovací joiny\nukázky v vignette dplyr - zde\nspecifikace propojení - 3 možnosti\n\nautomaticky podle názvů sloupců\npokud je shoda názvů stačí by = \"sloupec\", by = c(\"sloupec\", \"sloupec2\")\npo propojení sloupců různých názvů by = c(\"sloupec_df_1\" = \"sloupec_df_2\", ...)"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#další-užitečné-funkce-z-dplyr",
@@ -676,14 +676,21 @@
     "href": "IDG/prezentace/03_data.html#pivot_wider",
     "title": "Načítání dat, Manipulace s daty",
     "section": "pivot_wider",
-    "text": "pivot_wider\n\nprovádí transformaci datového rámce na “širší” variantu, kdy se data pro sloupce se shodnými “klíči” přidávají do nových sloupců\ndůležité parametry id_cols, names_from, values_from\n\nid_cols určují, které sloupce jednoznačně identifikují záznam a mají být tudíž zachovány\nnames_from sloupec (sloupce), jejichž hodnoty budou tvořit názvy nových sloupců\nvalues_from sloupec (sloupce), který definuje hodnoty pro nově vytvořené sloupce\n\nukázky i v dokumentaci"
+    "text": "pivot_wider\n\nprovádí transformaci datového rámce na “širší” variantu, kdy se data pro sloupce se shodnými “klíči” přidávají do nových sloupců\ndůležité parametry id_cols, names_from, values_from\n\nid_cols určují, které sloupce jednoznačně identifikují záznam a mají být tudíž zachovány\nnames_from sloupec (sloupce), jejichž hodnoty budou tvořit názvy nových sloupců\nvalues_from sloupec (sloupce), který definuje hodnoty pro nově vytvořené sloupce\n\nukázky i v dokumentaci - zde"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#pivot_longer",
     "href": "IDG/prezentace/03_data.html#pivot_longer",
     "title": "Načítání dat, Manipulace s daty",
     "section": "pivot_longer",
-    "text": "pivot_longer\n\nprovádí transformaci datového rámce “delší” variantu, kdy se pro každý řádek původních dat vytvoří více řádků nových dle specifikace\ndůležité parametry cols, names_to, values_to\n\ncols sloupce, které mají být pro transformaci použity\nnames_to název sloupce, jehož hodnoty budou udávat původní názvy sloupců\nvalues_to název sloupce, v němž budou hodnoty z původních sloupců\n\nfunkce pivot_wider a pivot_longer tvoří komplementární dvojici\nukázky i v dokumentaci\nukázka pivot_longer\n\n\ndf &lt;- tibble(\n    nazev = c(\"a\", \"b\", \"c\"),\n    `2016` = c(1, 6, NA),\n    `2017` = c(1, 5, 5)\n)\n\ndf\n\n# A tibble: 3 × 3\n  nazev `2016` `2017`\n  &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 a          1      1\n2 b          6      5\n3 c         NA      5"
+    "text": "pivot_longer\n\nprovádí transformaci datového rámce “delší” variantu, kdy se pro každý řádek původních dat vytvoří více řádků nových dle specifikace\ndůležité parametry cols, names_to, values_to\n\ncols sloupce, které mají být pro transformaci použity\nnames_to název sloupce, jehož hodnoty budou udávat původní názvy sloupců\nvalues_to název sloupce, v němž budou hodnoty z původních sloupců\n\nfunkce pivot_wider a pivot_longer tvoří komplementární dvojici\nukázky i v dokumentaci - zde"
+  },
+  {
+    "objectID": "IDG/prezentace/03_data.html#ukázka-pivot_longer",
+    "href": "IDG/prezentace/03_data.html#ukázka-pivot_longer",
+    "title": "Načítání dat, Manipulace s daty",
+    "section": "ukázka pivot_longer",
+    "text": "ukázka pivot_longer\n\ndf &lt;- tibble(\n    nazev = c(\"a\", \"b\", \"c\"),\n    `2016` = c(1, 6, NA),\n    `2017` = c(1, 5, 5)\n)\n\ndf\n\n# A tibble: 3 × 3\n  nazev `2016` `2017`\n  &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 a          1      1\n2 b          6      5\n3 c         NA      5"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#další-užitečné-funkce-tidyr",
@@ -733,13 +740,6 @@
     "title": "Načítání dat, Manipulace s daty",
     "section": "Příklad použití source",
     "text": "Příklad použití source\n\npříklad - soubor init.R (uložený ve složce projektu scripts)\n\n\nlibrary(tidyverse)\nlibrary(here)\nlibrary(readxl)\n\n\njiný soubor\n\n\nsource(here::here(\"scripts\", \"init.R\"), encoding = \"UTF-8\")"
-  },
-  {
-    "objectID": "IDG/prezentace/03_data.html#dotazy",
-    "href": "IDG/prezentace/03_data.html#dotazy",
-    "title": "Načítání dat, Manipulace s daty",
-    "section": "Dotazy???",
-    "text": "Dotazy???\n\n\n\nMateriály dostupné: https://jancaha.github.io/vsb-vyuka/"
   },
   {
     "objectID": "IDG/prezentace/01_uvod.html#náplň",
