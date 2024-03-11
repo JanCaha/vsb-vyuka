@@ -124,6 +124,31 @@ rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektor
 
 - operátor `and` lze zapsat i jako `&`
 
+## Ukázka
+
+```{r}
+library(dplyr)
+data("mtcars")
+```
+```{r}
+#| eval: false
+
+# AND operace
+mtcars %>%
+    filter(
+        mpg > 24,
+        hp > 80
+    )
+# shodné jako výše, alternativní zápis
+mtcars %>%
+    filter(mpg > 24 & hp > 80)
+
+# OR operace
+mtcars %>%
+    filter(mpg > 24 | hp > 80)
+
+```
+
 ## Tvorba nového sloupce/sloupců
 
 - funce `mutate()`
@@ -132,6 +157,39 @@ rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektor
 
 - možnost používat jak jednoduché matematické funkce, tak i funkce složitější funkce buď z balíku nebo i z jiných
 
+```{r}
+#| eval: false
+
+new_mtcars <- mtcars %>%
+    mutate(mpg_eff = mpg / wt)
+```
+
+
+## Seskupování dat
+
+- funkce `group_by()`
+
+- uvedeme sloupec nebo sloupce, které slouží pro vytvoření skupin
+
+- funkce sama o sobě nic v datech nemění, ale informace o skupinách se přenáší dále a mění fungování některých funkcí
+
+- pro zrušení seskupení na datovém rámci je třeba zavolat `ungroup()`
+
+```{r}
+class(mtcars)
+
+gp_mtcars <- mtcars %>%
+    group_by(cyl, am)
+
+class(gp_mtcars)
+```
+
+## Další operace s group_by
+
+- hlavní spojení se `summarize()`
+
+- možné ale i s dalšími funkcemi např. `arrange()` nebo `sample_n()` a další
+ 
 ## Sumarizace dat
 
 - funkce `summarize()` nebo i `summarise()`
@@ -139,6 +197,20 @@ rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektor
 - pracuje podobně jako `mutate()`, jen výsledkem je datový rámec, který má menší počet řádků (často jeden)
 
 - definice nové proměnné a funkce, která sumarizuje vektor hodnot
+- obvykle se používá se seskupením dat, jinak sumarizuje celý `data.frame`
+
+```{r}
+#| eval: false
+
+sum_mtcars <- mtcars %>%
+    group_by(cyl, am) %>%
+    summarise(
+        count = n(),
+        mpg_mean = mean(mpg),
+        mpg_median = median(mpg)
+    ) %>%
+    ungroup()
+```
 
 ## Propojení datových rámců
 
@@ -154,22 +226,6 @@ rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektor
   - automaticky podle názvů sloupců
   - pokud je shoda názvů stačí `by = "sloupec"`, `by = c("sloupec", "sloupec2")`
   - po propojení sloupců různých názvů `by = c("sloupec_df_1" = "sloupec_df_2", ...)`
-
-## Seskupování dat
-
-- funkce `group_by()`
-
-- uvedeme sloupec nebo sloupce, které slouží pro vytvoření skupin
-
-- funkce sama o sobě nic v datech nemění, ale informace o skupinách se přenáší dále a mění fungování některých funkcí
-
-## Další operace s group_by
-
-- hlavní spojení se `summarize()`
-
-- možné ale i s dalšími funkcemi např. `arrange()` nebo `sample_n()` a další
-
-- zrušení skupin, pro další práci pomocí funkce `ungroup()`
 
 
 ## Další užitečné funkce z [dplyr]{.software}
@@ -206,6 +262,8 @@ rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektor
   - `id_cols` určují, které sloupce jednoznačně identifikují záznam a mají být tudíž zachovány
   - `names_from` sloupec (sloupce), jejichž hodnoty budou tvořit názvy nových sloupců
   - `values_from` sloupec (sloupce), který definuje hodnoty pro nově vytvořené sloupce
+
+- ukázky i v dokumentaci
 
 ---
 
@@ -247,6 +305,8 @@ pivot_wider(df,
   
 - funkce `pivot_wider` a `pivot_longer` tvoří komplementární dvojici
 
+- ukázky i v dokumentaci
+- 
 ## ukázka pivot_longer
 
 ```{r}
@@ -299,8 +359,6 @@ pivot_longer(df,
 - `add_totals_col()`, `add_totals_row()`
 
 - `tabyl()`
-
-
 
 # Projekty v RStudiu
 
