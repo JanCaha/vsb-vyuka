@@ -7,12 +7,14 @@
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-03-04">
-  <title>Výuka - Jan Caha - Načítání dat, Manipulace s daty</title>
+  <meta name="dcterms.date" content="2024-02-26">
+  <title>Výuka - Jan Caha - Knihovna GDAL/OGR</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,8 +388,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Výuka - Jan Caha - Načítání dat, Manipulace s daty">
-<meta property="og:description" content="Interpretace geodat">
+<meta property="og:title" content="Výuka - Jan Caha - Knihovna GDAL/OGR">
+<meta property="og:description" content="Programování v GIS 2">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -395,8 +397,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Načítání dat, Manipulace s daty</h1>
-  <p class="subtitle">Interpretace geodat</p>
+  <h1 class="title">Knihovna <span class="software">GDAL/OGR</span></h1>
+  <p class="subtitle">Programování v GIS 2</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -406,452 +408,120 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-03-04</p>
+  <p class="date">2024-02-26</p>
 </section>
-<section>
-<section id="načítání-dat" class="title-slide slide level1 center">
-<h1>Načítání dat</h1>
-
-</section>
-<section id="balík-here" class="slide level2">
-<h2>Balík <strong>here</strong></h2>
+<section id="popis-gdalogr" class="slide level2">
+<h2>Popis <span class="software">GDAL/OGR</span></h2>
 <ul>
-<li><p>malý balík, jehož hlavní funce je <code>here()</code>, často se odkazuje jako <code>here::here()</code> kvůli kolizi v názvu funkce</p></li>
-<li><p>při odkazování na soubory v rámci RStudio projektu je tento balík neocenitelný</p></li>
-<li><p>umožňuje se vždy odkazovat s ohledem na hlavní složku projektu, která obsahuje __*.Rproj__ soubor</p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"raw"</span>, <span class="st">"soubor.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<li>nízkoúrovňová knihovna</li>
+<li>v Pythonu zpřístupňujeme její <strong>binding</strong></li>
+<li>kód knihovny v <span class="software">C/C++</span> -&gt; odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)</li>
+<li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní prostředky</li>
+<li>knihovna má hlavní modul <code>osgeo</code> a několik dílčích modulů
 <ul>
-<li>odpadá nutnost řešit, ve které složce se nachází zdrojový soubor s kódem R a jak bude spouštěn</li>
+<li><code>gdal</code> - rastry</li>
+<li><code>ogr</code> - vektory</li>
+<li><code>osr</code> - souřadnicové systémy</li>
+</ul></li>
+<li>kód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a <span class="software">mypy</span> dobře kontrolovat kód</li>
 </ul>
 </section>
-<section id="balíky" class="slide level2">
-<h2>Balíky</h2>
-<ul>
-<li><p>základnem je balík <span class="software">readr</span>, který řeší většinu textových formátu pro uložení dat</p></li>
-<li><p>balíky <span class="software">readxl</span> a <span class="software">writexl</span> řeší načítání a ukládání souborů ve formátu <strong>xlsx</strong> a <strong>xls</strong></p></li>
-<li><p>balíky <span class="software">haven</span> a <span class="software">foreign</span> řeší formáty většiny statickým a matematických softwarů</p></li>
-<li><p>další formáty řeší ruzné specializované knihovny, např. většinu formátů prostorových dat řeší balíky <span class="software">sf</span>, <span class="software">terra</span> či <span class="software">stars</span></p></li>
-</ul>
-</section>
-<section id="načítací-a-uklídácí-funkce" class="slide level2">
-<h2>Načítací a uklídácí funkce</h2>
-<ul>
-<li><p><code>write_*</code> a <code>read_*</code>, kde za <code>*</code> dosazujeme typ souboru (původní funkce <span class="software">R</span> používají notaci <code>write.*</code> a <code>read.*</code>)</p></li>
-<li><p>R se obecně snaží pracovat hlavně s kódováním <strong>UTF-8</strong> a obecnými předpoklady pro zápis souborů dle typů</p></li>
-<li><p>zapisovací funkce jsou výrazně jednodušší, co se týká parametrů</p></li>
-</ul>
-</section>
-<section id="načítácí-funkce-pro-readr" class="slide level2">
-<h2>Načítácí funkce pro <strong>readr</strong></h2>
-<ul>
-<li><p>důležité parametry funkcí <code>locale</code> a <code>col_types</code>, které příjímají funkce <code>locale()</code> a <code>cols()</code></p></li>
-<li><p>pomocí parametru <code>na</code> lze specifikovat, které hodnoty se mají interpretovat jako chybějící</p></li>
-<li><p>funkce <code>col_*</code> umožňují specifikovat v rámci funce <code>cols()</code>, jako jaký typ se má sloupec načíst</p></li>
-</ul>
-</section>
-<section id="práce-s-excelem" class="slide level2">
-<h2>Práce s excelem</h2>
-<ul>
-<li><p>funkce <code>read_excel()</code>, <code>read_xls()</code> a <code>read_xlsx()</code> (balík <span class="software">readxl</span>)</p></li>
-<li><p>specifické parametry <code>sheet</code> a <code>range</code> (např. <code>"A2:C19"</code>)</p></li>
-<li><p>funkce <code>write_xlsx</code> (balík <span class="software">writexl</span>)</p></li>
-</ul>
-</section></section>
-<section>
-<section id="manipulace-s-daty" class="title-slide slide level1 center">
-<h1>Manipulace s daty</h1>
-
-</section>
-<section id="balík-dplyr" class="slide level2">
-<h2>Balík <span class="software">dplyr</span></h2>
-<ul>
-<li><p>součást a jeden z nejdůležitějších balíků <span class="software">tidyverse</span></p></li>
-<li><p>hlavní balík pro úpravy a manipulace s daty</p></li>
-<li><p>značné množství funkcí (viz nápověda), ještě větší množství vzniká jejich možnými kombinacemi</p></li>
-<li><p>syntaxe založená na slovesech, alespoň pro ty nejvýznamnější funkce</p></li>
-</ul>
-<div class="callout callout-warning callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Pozor</strong></p>
-</div>
-<div class="callout-content">
-<p>rozlišovat funkce, které jsou pro celý data.frame a které se týkají vektoru (sloupce)</p>
-</div>
-</div>
+<section id="příklady-typování" class="slide level2">
+<h2>Příklady typování</h2>
+<div id="22044d33" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="st">"soubor.txt"</span></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="výběr-řádků" class="slide level2">
-<h2>Výběr řádků</h2>
+<section id="otevírání-souborů" class="slide level2">
+<h2>Otevírání souborů</h2>
 <ul>
-<li><p>funkce <code>slice()</code></p></li>
-<li><p>lze zadat hodnoty řádků, které zůstanou (kladné čísla řádků), nebo které se mají odstranit (záporná čísla řádků)</p></li>
-</ul>
-</section>
-<section id="setřídění-dat-dle-sloupce" class="slide level2">
-<h2>Setřídění dat dle sloupce</h2>
+<li>funkce <code>gdal.Open()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory)</li>
+<li>jako první první parametr cesta k souboru
 <ul>
-<li><p>funkce <code>arrange()</code></p></li>
-<li><p>uvádíme sloupce, podle kterých se mají data setřídit</p></li>
-<li><p>výchozí setřídění je vzestupné, pokud chceme třídit sestupně, pak názevu proměnné předřadíme <code>-</code>, lze použít i funkci <code>desc()</code></p></li>
-<li><p>pokud uvedeme více než jeden sloupec, pak se setřizuje postupně dle těchto sloupců</p></li>
-</ul>
-</section>
-<section id="výběr-sloupců" class="slide level2">
-<h2>Výběr sloupců</h2>
-<ul>
-<li><p>funkce <code>select()</code></p></li>
-<li><p>uvádí se sloupce, které mají zůstat</p></li>
-<li><p>pokud názvu sloupce předřadíme <code>-</code>, pak označujeme sloupce, které se mají odmazat</p></li>
-</ul>
-</section>
-<section id="filtrování-dle-hodnot" class="slide level2">
-<h2>Filtrování dle hodnot</h2>
-<ul>
-<li><p>funkce <code>filter()</code></p></li>
-<li><p>lze úvést jakékoliv podmínky, které lze vyhodnotit jako pravdivostní hodnotu</p></li>
-<li><p>pokud uvedeme více podmínek a oddělíme je čárkou, vyhodnocují se jako platné současně - logický <code>and</code></p></li>
-<li><p>pokud chceme logický <code>or</code> musíme ho explicitně zapsat pomocí operátoru <code>|</code></p></li>
-<li><p>operátor <code>and</code> lze zapsat i jako <code>&amp;</code></p></li>
-</ul>
-</section>
-<section id="ukázka" class="slide level2">
-<h2>Ukázka</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># AND operace</span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>        mpg <span class="sc">&gt;</span> <span class="dv">24</span>,</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>        hp <span class="sc">&gt;</span> <span class="dv">80</span></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># shodné jako výše, alternativní zápis</span></span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">24</span> <span class="sc">&amp;</span> hp <span class="sc">&gt;</span> <span class="dv">80</span>)</span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="co"># OR operace</span></span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">24</span> <span class="sc">|</span> hp <span class="sc">&gt;</span> <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="tvorba-nového-sloupcesloupců" class="slide level2">
-<h2>Tvorba nového sloupce/sloupců</h2>
-<ul>
-<li><p>funce <code>mutate()</code></p></li>
-<li><p>formát pro přidání proměnné <code>nazev_promenne = vzorec</code>, kde vzorec může být téměř cokoliv, kde pro každý řádek datového rámce vrátíme jednu hodnotu</p></li>
-<li><p>možnost používat jak jednoduché matematické funkce, tak i funkce složitější funkce buď z balíku nebo i z jiných</p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>new_mtcars <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">mpg_eff =</span> mpg <span class="sc">/</span> wt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="seskupování-dat" class="slide level2">
-<h2>Seskupování dat</h2>
-<ul>
-<li><p>funkce <code>group_by()</code></p></li>
-<li><p>uvedeme sloupec nebo sloupce, které slouží pro vytvoření skupin</p></li>
-<li><p>funkce sama o sobě nic v datech nemění, ale informace o skupinách se přenáší dále a mění fungování některých funkcí</p></li>
-<li><p>pro zrušení seskupení na datovém rámci je třeba zavolat <code>ungroup()</code></p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "data.frame"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>gp_mtcars <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(cyl, am)</span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(gp_mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "grouped_df" "tbl_df"     "tbl"        "data.frame"</code></pre>
-</div>
-</div>
-</section>
-<section id="další-operace-s-group_by" class="slide level2">
-<h2>Další operace s group_by</h2>
-<ul>
-<li><p>hlavní spojení se <code>summarize()</code></p></li>
-<li><p>možné ale i s dalšími funkcemi např. <code>arrange()</code> nebo <code>sample_n()</code> a další</p></li>
-</ul>
-</section>
-<section id="sumarizace-dat" class="slide level2">
-<h2>Sumarizace dat</h2>
-<ul>
-<li><p>funkce <code>summarize()</code> nebo i <code>summarise()</code></p></li>
-<li><p>pracuje podobně jako <code>mutate()</code>, jen výsledkem je datový rámec, který má menší počet řádků (často jeden)</p></li>
-<li><p>definice nové proměnné a funkce, která sumarizuje vektor hodnot</p></li>
-<li><p>obvykle se používá se seskupením dat, jinak sumarizuje celý <code>data.frame</code></p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>sum_mtcars <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(cyl, am) <span class="sc">%&gt;%</span></span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">count =</span> <span class="fu">n</span>(),</span>
-<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">mpg_mean =</span> <span class="fu">mean</span>(mpg),</span>
-<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">mpg_median =</span> <span class="fu">median</span>(mpg)</span>
-<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb9-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="propojení-datových-rámců" class="slide level2">
-<h2>Propojení datových rámců</h2>
-<ul>
-<li><p>join funkce známé z SQL jazyka</p></li>
-<li><p><code>left_join()</code>, <code>right_join()</code>, <code>full_join()</code> - propojovací joiny</p></li>
-<li><p><code>semi_join()</code>, <code>anti_join()</code> - filtrovací joiny</p></li>
-<li><p>ukázky v vignette <span class="software">dplyr</span></p></li>
-<li><p>specifikace propojení - 3 možnosti</p>
-<ul>
-<li>automaticky podle názvů sloupců</li>
-<li>pokud je shoda názvů stačí <code>by = "sloupec"</code>, <code>by = c("sloupec", "sloupec2")</code></li>
-<li>po propojení sloupců různých názvů <code>by = c("sloupec_df_1" = "sloupec_df_2", ...)</code></li>
+<li>buď lokální - klasický zápis</li>
+<li>nebo virtuální začínající <code>/vsi*</code> kde <code>*</code> je typ virtuální složky</li>
 </ul></li>
 </ul>
 </section>
-<section id="další-užitečné-funkce-z-dplyr" class="slide level2">
-<h2>Další užitečné funkce z <span class="software">dplyr</span></h2>
+<section id="virtuální-složky" class="slide level2">
+<h2>Virtuální složky</h2>
 <ul>
-<li><p><code>pull()</code></p></li>
-<li><p><code>rename()</code></p></li>
-<li><p><code>top_n()</code></p></li>
-<li><p><code>distinct()</code></p></li>
-<li><p><code>sample_frac()</code></p></li>
-<li><p><code>row_number()</code>, <code>percent_rank()</code>, <code>cume_dist()</code> a <code>ntile()</code></p></li>
-<li><p><code>lag()</code> a <code>lead()</code></p></li>
-</ul>
-</section></section>
-<section>
-<section id="čištění-dat" class="title-slide slide level1 center">
-<h1>Čištění dat</h1>
-
-</section>
-<section id="balík-tidyr" class="slide level2">
-<h2>Balík <span class="software">tidyr</span></h2>
-<ul>
-<li><p>součást <span class="software">tidyverse</span></p></li>
-<li><p>obsahuje hlavně funkce určené pro čištění dat a jejich úprav do čistého (tidy) formátu</p></li>
-<li><p>dvě nejdůležitější funkce jsou <code>pivot_longer()</code> a <code>pivod_wider()</code>, původní názvy byly <code>gather()</code> a <code>spread()</code></p></li>
+<li>např. <code>/vsicurl/cesta_k_online.souboru</code> - automaticky stahuje data</li>
+<li><code>/vsizip/cesta_k_lokálnímu.souboru</code> - extrahuje ze zip souboru</li>
+<li><code>/vsis3</code>, <code>/vsigs</code>, <code>/vsiaz</code>, <code>/vsioss</code> pro přístup k online službám</li>
+<li><code>/vsimem</code> - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát</li>
+<li>tyto adresy pak fungují všude, kde je <span class="software">GDAL/OGR</span> využíván (třeba python knihovny ale i <span class="software">QGIS</span>)</li>
 </ul>
 </section>
-<section id="pivot_wider" class="slide level2">
-<h2>pivot_wider</h2>
+<section id="drivery" class="slide level2">
+<h2>Drivery</h2>
 <ul>
-<li><p>provádí transformaci datového rámce na “širší” variantu, kdy se data pro sloupce se shodnými “klíči” přidávají do nových sloupců</p></li>
-<li><p>důležité parametry <code>id_cols</code>, <code>names_from</code>, <code>values_from</code></p>
-<ul>
-<li><code>id_cols</code> určují, které sloupce jednoznačně identifikují záznam a mají být tudíž zachovány</li>
-<li><code>names_from</code> sloupec (sloupce), jejichž hodnoty budou tvořit názvy nových sloupců</li>
-<li><code>values_from</code> sloupec (sloupce), který definuje hodnoty pro nově vytvořené sloupce</li>
-</ul></li>
-<li><p>ukázky i v dokumentaci</p></li>
+<li>každý podporovaný formát má svůj vlastní</li>
+<li>mohou být pouze pro čtení (<strong>DWG</strong>), značná část ale podporuje i zápis (<strong>GPKG</strong>, <strong>GeoTiff</strong>)</li>
+<li>některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (<strong>GeoJSON</strong>)</li>
+<li>často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je</li>
+<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu</li>
 </ul>
 </section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="ukázka-pivot_wider" class="title-slide slide level1 center">
-<h1>ukázka pivot_wider</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">nazev =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"a"</span>),</span>
-<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">roky =</span> <span class="fu">c</span>(<span class="dv">2016</span>, <span class="dv">2017</span>, <span class="dv">2016</span>, <span class="dv">2017</span>, <span class="dv">2017</span>),</span>
-<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">hodnoty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">1</span>)</span>
-<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 3
-  nazev  roky hodnoty
-  &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt;
-1 a      2016       1
-2 b      2017       5
-3 b      2016       6
-4 c      2017       4
-5 a      2017       1</code></pre>
-</div>
+<section id="příklad" class="slide level2">
+<h2>Příklad</h2>
+<ul>
+<li>data z <a href="https://www.naturalearthdata.com/">Natural Earth</a></li>
+<li>otevření souboru (bez i za použití driveru)</li>
+<li>výběr vrstvy</li>
+<li>iterace přes prvky - geometrie i atributy</li>
+<li>definice vrstvy</li>
+</ul>
+</section>
+<section id="načtení-souboru-a-základní-info" class="slide level2">
+<h2>Načtení souboru a základní info</h2>
+<ul>
+<li>další ukázka v příkladech</li>
+</ul>
+<div id="b2db1b16" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span> <span class="op">=</span> Path.cwd().parent.parent <span class="op">/</span> <span class="op">\</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"_data"</span> <span class="op">/</span> <span class="st">"ne_10m_admin_0_countries.shp"</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.exists())</span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>    ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>    layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span>
+<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetName())</span>
+<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetFeatureCount())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section class="slide level2">
-
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(df,</span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">id_cols =</span> nazev,</span>
-<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> roky,</span>
-<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> hodnoty</span>
-<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  nazev `2016` `2017`
-  &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-1 a          1      1
-2 b          6      5
-3 c         NA      4</code></pre>
-</div>
-</div>
-</section>
-<section id="pivot_longer" class="slide level2">
-<h2>pivot_longer</h2>
+<section id="další-ukázky" class="slide level2">
+<h2>Další ukázky</h2>
 <ul>
-<li><p>provádí transformaci datového rámce “delší” variantu, kdy se pro každý řádek původních dat vytvoří více řádků nových dle specifikace</p></li>
-<li><p>důležité parametry <code>cols</code>, <code>names_to</code>, <code>values_to</code></p>
-<ul>
-<li><code>cols</code> sloupce, které mají být pro transformaci použity</li>
-<li><code>names_to</code> název sloupce, jehož hodnoty budou udávat původní názvy sloupců</li>
-<li><code>values_to</code> název sloupce, v němž budou hodnoty z původních sloupců</li>
-</ul></li>
-<li><p>funkce <code>pivot_wider</code> a <code>pivot_longer</code> tvoří komplementární dvojici</p></li>
-<li><p>ukázky i v dokumentaci</p></li>
-<li><h2 id="ukázka-pivot_longer">ukázka pivot_longer</h2></li>
+<li>rastrová data</li>
+<li>operace</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">nazev =</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>),</span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2016</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">6</span>, <span class="cn">NA</span>),</span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">2017</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  nazev `2016` `2017`
-  &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-1 a          1      1
-2 b          6      5
-3 c         NA      5</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(df,</span>
-<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">`</span><span class="at">2016</span><span class="st">`</span>, <span class="st">`</span><span class="at">2017</span><span class="st">`</span>),</span>
-<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"roky"</span>,</span>
-<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"hodnoty"</span></span>
-<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-  nazev roky  hodnoty
-  &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;
-1 a     2016        1
-2 a     2017        1
-3 b     2016        6
-4 b     2017        5
-5 c     2016       NA
-6 c     2017        5</code></pre>
-</div>
-</div>
-</section>
-<section id="další-užitečné-funkce-tidyr" class="slide level2">
-<h2>Další užitečné funkce <span class="software">tidyr</span></h2>
-<ul>
-<li><p><code>drop_na()</code></p></li>
-<li><p><code>expand()</code>, <code>complete()</code></p></li>
-<li><p><code>full_seq()</code></p></li>
-<li><p><code>replace_na()</code></p></li>
-<li><p><code>fill()</code></p></li>
-<li><p><code>nest()</code>, <code>unnest()</code> a příbuzné funkce</p></li>
-<li><p><code>separate()</code>, <code>extract()</code></p></li>
-</ul>
-</section>
-<section id="balík-janitor" class="slide level2">
-<h2>Balík <span class="software">janitor</span></h2>
-<ul>
-<li><p>používá se zejména pro jednoduché čistící funkce, ale umí toho poměrně hodně</p></li>
-<li><p><code>remove_empty()</code>, <code>clean_names()</code></p></li>
-<li><p><code>row_to_names()</code></p></li>
-<li><p><code>excel_numeric_to_date()</code></p></li>
-<li><p><code>add_totals_col()</code>, <code>add_totals_row()</code></p></li>
-<li><p><code>tabyl()</code></p></li>
-</ul>
-</section></section>
-<section>
-<section id="projekty-v-rstudiu" class="title-slide slide level1 center">
-<h1>Projekty v RStudiu</h1>
-
-</section>
-<section id="hlavní-přínosy" class="slide level2">
-<h2>Hlavní přínosy</h2>
-<ul>
-<li><p>ujednoconí struktury - jedna analýza/úkol/problém = jeden projekt/složka</p></li>
-<li><p>snadné přenášení, nehrozí opomenutí dat nebo jiné části - vše na jednom místě</p></li>
-<li><p>za použití balíku <span class="software">renv</span> (<a href="https://rstudio.github.io/renv/articles/renv.html">renv web</a>) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí</p></li>
-<li><p>RStudio projekt - složka s několika spefickými soubory a složkami</p>
-<ul>
-<li><code>.Rproj.user</code> - složka RStudia a jeho nastavení apod.</li>
-<li><code>.Rhistory</code> - textový soubor s posledními příkazy spuštěnými v konzoli</li>
-<li><code>.RData</code> - tomu se snažíme vyhnout (nastavení RStudia), data neobnovujeme ale vždy znovu načítáme</li>
-<li><code>*.Rproj</code> - asociační soubor pomocí něhož lze projekt přímo otevřít v RStudiu + některá nastavení</li>
-</ul></li>
-</ul>
-</section>
-<section id="doporučená-struktura" class="slide level2">
-<h2>Doporučená struktura</h2>
-<ul>
-<li><p>složky a jejich obsahy</p></li>
-<li><p><em>data</em></p>
-<ul>
-<li><em>raw</em> - surová data, na nichž neprovádíme manuálně žádné úpravy, z této složky pouze čteme</li>
-<li><em>produced</em> - odvozená data, ke každé datově sadě máme skript, který ji vytvořil, případné smazání této složky nepředstavuje problém (čas od času žádoucí)</li>
-</ul></li>
-<li><p><em>scripts</em> - <strong>.R</strong> soubory, obsahující bloky kódu, které v rámci analýzy používáme opakovaně (načtení balíků, či dat)</p></li>
-<li><p><em>reports</em> - <strong>.Rmd</strong> soubory obsahující surové reporty, a jejich přeložené verze (později)</p></li>
-<li><p><em>graphs</em> - uložené grafické výstupy</p></li>
-<li><p>další: např. <em>functions</em>, <em>config</em> atd.</p></li>
-</ul>
-</section>
-<section id="odkazy-na-soubory-v-projektu" class="slide level2">
-<h2>Odkazy na soubory v projektu</h2>
-<ul>
-<li><p>doporučení - používat v maximální míře balík <span class="software">here</span> pro odkazování na cesty</p></li>
-<li><p>nevznikají problémy při přesunech částí kódu a odkazech na soubory ve špatných umístěních</p></li>
-</ul>
-</section>
-<section id="funkce-source" class="slide level2">
-<h2>Funkce source</h2>
-<ul>
-<li><p><code>source()</code> umožňuje načíst a provést blok kódu z jiného <strong>.R</strong> souboru v konkrétním místě ve skriptu</p></li>
-<li><p>použití na bloky kódů, které se opakují napříč skripty (např. načtení balíků nebo načtení a vyčištění dat)</p></li>
-<li><p>pokud soubor, který načítáme obsahuje jiné než ANSI znaky, je vhodné specifikovat parametr <code>encoding = "UTF-8"</code></p></li>
-</ul>
-</section>
-<section id="příklad-použití-source" class="slide level2">
-<h2>Příklad použití source</h2>
-<ul>
-<li>příklad - soubor <code>init.R</code> (uložený ve složce projektu <code>scripts</code>)</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>jiný soubor</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"scripts"</span>, <span class="st">"init.R"</span>), <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="dotazy" class="slide level2">
-<h2>Dotazy???</h2>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Materiály dostupné: <a href="https://jancaha.github.io/vsb-vyuka/">https://jancaha.github.io/vsb-vyuka/</a></p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -1062,44 +732,6 @@ Jan Caha
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

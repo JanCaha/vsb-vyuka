@@ -3,7 +3,8 @@
     "listing": "/pgis2.html",
     "items": [
       "/PGIS2/prezentace/01_uvod.html",
-      "/PGIS2/prezentace/02_opakovani_python.html"
+      "/PGIS2/prezentace/02_opakovani_python.html",
+      "/PGIS2/prezentace/03_gdal_ogr.html"
     ]
   },
   {

@@ -25,7 +25,7 @@
     "href": "pgis2.html",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "",
-    "text": "opakování základů Pythonu",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR",
     "crumbs": [
       "Programování v GIS 2"
     ]
@@ -35,7 +35,7 @@
     "href": "pgis2.html#řešená-témata",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "",
-    "text": "opakování základů Pythonu",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR",
     "crumbs": [
       "Programování v GIS 2"
     ]
@@ -45,7 +45,7 @@
     "href": "pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "📑Prezentace",
-    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nOpakování Pythonu\n\n\n\n\n\nNo matching items",
+    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nOpakování Pythonu\n\n\n\n\n2024-02-26\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Programování v GIS 2"
     ]
@@ -55,7 +55,7 @@
     "href": "pgis2.html#zdroje",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "📚 Zdroje",
-    "text": "📚 Zdroje",
+    "text": "📚 Zdroje\n\ndata Natural Earth\nGDAL/OGR Cookbook",
     "crumbs": [
       "Programování v GIS 2"
     ]
@@ -65,7 +65,7 @@
     "href": "pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy",
+    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení a pársování dat\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Programování v GIS 2"
     ]
@@ -75,7 +75,7 @@
     "href": "pgis2.html#instalace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "🖥 Instalace",
-    "text": "🖥 Instalace\n\nmanagement Pythonu - Miniconda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.10\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "text": "🖥 Instalace\n\nmanagement Pythonu - Miniconda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.11\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  - pip:\n    - geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
     "crumbs": [
       "Programování v GIS 2"
     ]
@@ -200,7 +200,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.38191556 -1.17409833 -0.06164847 -0.16267319 -0.53961752"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.2923738 -0.2559379 -0.6236111 -0.7519561 -0.4792388"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -336,46 +336,60 @@
     "text": "Nejpoužívanější balíky z tidyverse\n\nreadr, readxl - načítání a ukládání dat\ndplyr - základní manipulace s daty\ntidyr - čištění a reformátování dat\nggplot2 - vizualizace, tvorba grafů\nhms, lubridate - práce s datumy a časy\nstringr - práce s textovými daty\npurrr - fukncionální programování"
   },
   {
-    "objectID": "PGIS2/prezentace/01_uvod.html#náplň",
-    "href": "PGIS2/prezentace/01_uvod.html#náplň",
-    "title": "Úvodní cvičení",
-    "section": "Náplň",
-    "text": "Náplň\n\nprogramování v Pythonu s důrazem na GIS knihovny\n\nGDAL\nFiona, Rasterio, Shapely\nPandas, Polars\n\n\nmanagement Pythonu pomocí Conda\nstandardní techniky programování v Pythonu"
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#popis-gdalogr",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#popis-gdalogr",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Popis GDAL/OGR",
+    "text": "Popis GDAL/OGR\n\nnízkoúrovňová knihovna\nv Pythonu zpřístupňujeme její binding\nkód knihovny v C/C++ -&gt; odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)\nvětšinu objektů uložených v proměnných je vhodné po použití nastavit na None, čímž se explicitně uvolní prostředky\nknihovna má hlavní modul osgeo a několik dílčích modulů\n\ngdal - rastry\nogr - vektory\nosr - souřadnicové systémy\n\nkód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a mypy dobře kontrolovat kód"
   },
   {
-    "objectID": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "href": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "title": "Úvodní cvičení",
-    "section": "O čem to bude",
-    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\noperace s geodaty v Pythonu\nfunkcionální i objektově orientované programování\nodchytávání výjimek\npráce s GitHub"
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#příklady-typování",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#příklady-typování",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Příklady typování",
+    "text": "Příklady typování\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nfile = \"soubor.txt\"\n\nds: gdal.Dataset = gdal.OpenEx(file.as_posix())\n\nlayer: ogr.Layer = ds.GetLayer()"
   },
   {
-    "objectID": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "href": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "title": "Úvodní cvičení",
-    "section": "Dílčí úlohy",
-    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#otevírání-souborů",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#otevírání-souborů",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Otevírání souborů",
+    "text": "Otevírání souborů\n\nfunkce gdal.Open() (rastry i vektory) a ogr.Open() (pouze vektory)\njako první první parametr cesta k souboru\n\nbuď lokální - klasický zápis\nnebo virtuální začínající /vsi* kde * je typ virtuální složky"
   },
   {
-    "objectID": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "href": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "title": "Úvodní cvičení",
-    "section": "V čem budeme pracovat",
-    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code"
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#virtuální-složky",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#virtuální-složky",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Virtuální složky",
+    "text": "Virtuální složky\n\nnapř. /vsicurl/cesta_k_online.souboru - automaticky stahuje data\n/vsizip/cesta_k_lokálnímu.souboru - extrahuje ze zip souboru\n/vsis3, /vsigs, /vsiaz, /vsioss pro přístup k online službám\n/vsimem - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát\ntyto adresy pak fungují všude, kde je GDAL/OGR využíván (třeba python knihovny ale i QGIS)"
   },
   {
-    "objectID": "PGIS2/prezentace/01_uvod.html#materiály",
-    "href": "PGIS2/prezentace/01_uvod.html#materiály",
-    "title": "Úvodní cvičení",
-    "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#drivery",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#drivery",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Drivery",
+    "text": "Drivery\n\nkaždý podporovaný formát má svůj vlastní\nmohou být pouze pro čtení (DWG), značná část ale podporuje i zápis (GPKG, GeoTiff)\nněkteré drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (GeoJSON)\nčasto není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je\ndrivery MEM - raster a Memory - vektor  pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu"
   },
   {
-    "objectID": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
-    "href": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
-    "title": "Úvodní cvičení",
-    "section": "Zakončení předmětu",
-    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#příklad",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#příklad",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Příklad",
+    "text": "Příklad\n\ndata z Natural Earth\notevření souboru (bez i za použití driveru)\nvýběr vrstvy\niterace přes prvky - geometrie i atributy\ndefinice vrstvy"
+  },
+  {
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#načtení-souboru-a-základní-info",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#načtení-souboru-a-základní-info",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Načtení souboru a základní info",
+    "text": "Načtení souboru a základní info\n\ndalší ukázka v příkladech\n\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nif __name__ == \"__main__\":\n    file = Path.cwd().parent.parent / \\\n        \"_data\" / \"ne_10m_admin_0_countries.shp\"\n\n    print(file.exists())\n\n    ds: gdal.Dataset = gdal.OpenEx(file.as_posix())\n\n    layer: ogr.Layer = ds.GetLayer()\n\n    print(layer.GetName())\n    print(layer.GetFeatureCount())"
+  },
+  {
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#další-ukázky",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#další-ukázky",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Další ukázky",
+    "text": "Další ukázky\n\nrastrová data\noperace\n\n\n\n\nMateriály dostupné: https://jancaha.github.io/vsb-vyuka/"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#python",
@@ -473,7 +487,7 @@
     "href": "PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
     "title": "Opakování Pythonu",
     "section": "Instalace knihoven",
-    "text": "Instalace knihoven\nconda activate pgis2\nconda instally black isort mypy pep8 flake8 pylint\nconda install shapely fiona rasterio polars pandas geopandas\npip install --pre geopolars\n\npodle osnovy se máme věnovat pandas - polars je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem"
+    "text": "Instalace knihoven\nconda activate pgis2\nconda install black isort mypy pep8 flake8 pylint\nconda install shapely fiona rasterio polars pandas geopandas\npip install --pre geopolars\n\npodle osnovy se máme věnovat pandas - polars je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#formátování-pomocí-black-a-isort",
@@ -488,6 +502,48 @@
     "title": "Opakování Pythonu",
     "section": "Kontroly pomocí mypy, pep8, flake8, pylint",
     "text": "Kontroly pomocí mypy, pep8, flake8, pylint\n\nzvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu\nne vždy musí jít o zásadní problém\nv moha situacích to předchází chybám\nnapř. mypy nutí uživatele psát rozumně typovaný kód a používat ho správně\ncelkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu\nvětšina těchto nástrojů má svoje nastavení a možnosti, jak je upravit"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#náplň",
+    "href": "PGIS2/prezentace/01_uvod.html#náplň",
+    "title": "Úvodní cvičení",
+    "section": "Náplň",
+    "text": "Náplň\n\nprogramování v Pythonu s důrazem na GIS knihovny\n\nGDAL\nFiona, Rasterio, Shapely\nPandas, Polars\n\n\nmanagement Pythonu pomocí Conda\nstandardní techniky programování v Pythonu"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "href": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "title": "Úvodní cvičení",
+    "section": "O čem to bude",
+    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\noperace s geodaty v Pythonu\nfunkcionální i objektově orientované programování\nodchytávání výjimek\npráce s GitHub"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "href": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "title": "Úvodní cvičení",
+    "section": "Dílčí úlohy",
+    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "href": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "title": "Úvodní cvičení",
+    "section": "V čem budeme pracovat",
+    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#materiály",
+    "href": "PGIS2/prezentace/01_uvod.html#materiály",
+    "title": "Úvodní cvičení",
+    "section": "Materiály",
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
+  },
+  {
+    "objectID": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
+    "href": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
+    "title": "Úvodní cvičení",
+    "section": "Zakončení předmětu",
+    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#balík-here",
@@ -560,18 +616,39 @@
     "text": "Filtrování dle hodnot\n\nfunkce filter()\nlze úvést jakékoliv podmínky, které lze vyhodnotit jako pravdivostní hodnotu\npokud uvedeme více podmínek a oddělíme je čárkou, vyhodnocují se jako platné současně - logický and\npokud chceme logický or musíme ho explicitně zapsat pomocí operátoru |\noperátor and lze zapsat i jako &"
   },
   {
+    "objectID": "IDG/prezentace/03_data.html#ukázka",
+    "href": "IDG/prezentace/03_data.html#ukázka",
+    "title": "Načítání dat, Manipulace s daty",
+    "section": "Ukázka",
+    "text": "Ukázka\n\nlibrary(dplyr)\ndata(\"mtcars\")\n\n\n# AND operace\nmtcars %&gt;%\n    filter(\n        mpg &gt; 24,\n        hp &gt; 80\n    )\n# shodné jako výše, alternativní zápis\nmtcars %&gt;%\n    filter(mpg &gt; 24 & hp &gt; 80)\n\n# OR operace\nmtcars %&gt;%\n    filter(mpg &gt; 24 | hp &gt; 80)"
+  },
+  {
     "objectID": "IDG/prezentace/03_data.html#tvorba-nového-sloupcesloupců",
     "href": "IDG/prezentace/03_data.html#tvorba-nového-sloupcesloupců",
     "title": "Načítání dat, Manipulace s daty",
     "section": "Tvorba nového sloupce/sloupců",
-    "text": "Tvorba nového sloupce/sloupců\n\nfunce mutate()\nformát pro přidání proměnné nazev_promenne = vzorec, kde vzorec může být téměř cokoliv, kde pro každý řádek datového rámce vrátíme jednu hodnotu\nmožnost používat jak jednoduché matematické funkce, tak i funkce složitější funkce buď z balíku nebo i z jiných"
+    "text": "Tvorba nového sloupce/sloupců\n\nfunce mutate()\nformát pro přidání proměnné nazev_promenne = vzorec, kde vzorec může být téměř cokoliv, kde pro každý řádek datového rámce vrátíme jednu hodnotu\nmožnost používat jak jednoduché matematické funkce, tak i funkce složitější funkce buď z balíku nebo i z jiných\n\n\nnew_mtcars &lt;- mtcars %&gt;%\n    mutate(mpg_eff = mpg / wt)"
+  },
+  {
+    "objectID": "IDG/prezentace/03_data.html#seskupování-dat",
+    "href": "IDG/prezentace/03_data.html#seskupování-dat",
+    "title": "Načítání dat, Manipulace s daty",
+    "section": "Seskupování dat",
+    "text": "Seskupování dat\n\nfunkce group_by()\nuvedeme sloupec nebo sloupce, které slouží pro vytvoření skupin\nfunkce sama o sobě nic v datech nemění, ale informace o skupinách se přenáší dále a mění fungování některých funkcí\npro zrušení seskupení na datovém rámci je třeba zavolat ungroup()\n\n\nclass(mtcars)\n\n[1] \"data.frame\"\n\ngp_mtcars &lt;- mtcars %&gt;%\n    group_by(cyl, am)\n\nclass(gp_mtcars)\n\n[1] \"grouped_df\" \"tbl_df\"     \"tbl\"        \"data.frame\""
+  },
+  {
+    "objectID": "IDG/prezentace/03_data.html#další-operace-s-group_by",
+    "href": "IDG/prezentace/03_data.html#další-operace-s-group_by",
+    "title": "Načítání dat, Manipulace s daty",
+    "section": "Další operace s group_by",
+    "text": "Další operace s group_by\n\nhlavní spojení se summarize()\nmožné ale i s dalšími funkcemi např. arrange() nebo sample_n() a další"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#sumarizace-dat",
     "href": "IDG/prezentace/03_data.html#sumarizace-dat",
     "title": "Načítání dat, Manipulace s daty",
     "section": "Sumarizace dat",
-    "text": "Sumarizace dat\n\nfunkce summarize() nebo i summarise()\npracuje podobně jako mutate(), jen výsledkem je datový rámec, který má menší počet řádků (často jeden)\ndefinice nové proměnné a funkce, která sumarizuje vektor hodnot"
+    "text": "Sumarizace dat\n\nfunkce summarize() nebo i summarise()\npracuje podobně jako mutate(), jen výsledkem je datový rámec, který má menší počet řádků (často jeden)\ndefinice nové proměnné a funkce, která sumarizuje vektor hodnot\nobvykle se používá se seskupením dat, jinak sumarizuje celý data.frame\n\n\nsum_mtcars &lt;- mtcars %&gt;%\n    group_by(cyl, am) %&gt;%\n    summarise(\n        count = n(),\n        mpg_mean = mean(mpg),\n        mpg_median = median(mpg)\n    ) %&gt;%\n    ungroup()"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#propojení-datových-rámců",
@@ -579,20 +656,6 @@
     "title": "Načítání dat, Manipulace s daty",
     "section": "Propojení datových rámců",
     "text": "Propojení datových rámců\n\njoin funkce známé z SQL jazyka\nleft_join(), right_join(), full_join() - propojovací joiny\nsemi_join(), anti_join() - filtrovací joiny\nukázky v vignette dplyr\nspecifikace propojení - 3 možnosti\n\nautomaticky podle názvů sloupců\npokud je shoda názvů stačí by = \"sloupec\", by = c(\"sloupec\", \"sloupec2\")\npo propojení sloupců různých názvů by = c(\"sloupec_df_1\" = \"sloupec_df_2\", ...)"
-  },
-  {
-    "objectID": "IDG/prezentace/03_data.html#seskupování-dat",
-    "href": "IDG/prezentace/03_data.html#seskupování-dat",
-    "title": "Načítání dat, Manipulace s daty",
-    "section": "Seskupování dat",
-    "text": "Seskupování dat\n\nfunkce group_by()\nuvedeme sloupec nebo sloupce, které slouží pro vytvoření skupin\nfunkce sama o sobě nic v datech nemění, ale informace o skupinách se přenáší dále a mění fungování některých funkcí"
-  },
-  {
-    "objectID": "IDG/prezentace/03_data.html#další-operace-s-group_by",
-    "href": "IDG/prezentace/03_data.html#další-operace-s-group_by",
-    "title": "Načítání dat, Manipulace s daty",
-    "section": "Další operace s group_by",
-    "text": "Další operace s group_by\n\nhlavní spojení se summarize()\nmožné ale i s dalšími funkcemi např. arrange() nebo sample_n() a další\nzrušení skupin, pro další práci pomocí funkce ungroup()"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#další-užitečné-funkce-z-dplyr",
@@ -613,21 +676,14 @@
     "href": "IDG/prezentace/03_data.html#pivot_wider",
     "title": "Načítání dat, Manipulace s daty",
     "section": "pivot_wider",
-    "text": "pivot_wider\n\nprovádí transformaci datového rámce na “širší” variantu, kdy se data pro sloupce se shodnými “klíči” přidávají do nových sloupců\ndůležité parametry id_cols, names_from, values_from\n\nid_cols určují, které sloupce jednoznačně identifikují záznam a mají být tudíž zachovány\nnames_from sloupec (sloupce), jejichž hodnoty budou tvořit názvy nových sloupců\nvalues_from sloupec (sloupce), který definuje hodnoty pro nově vytvořené sloupce"
+    "text": "pivot_wider\n\nprovádí transformaci datového rámce na “širší” variantu, kdy se data pro sloupce se shodnými “klíči” přidávají do nových sloupců\ndůležité parametry id_cols, names_from, values_from\n\nid_cols určují, které sloupce jednoznačně identifikují záznam a mají být tudíž zachovány\nnames_from sloupec (sloupce), jejichž hodnoty budou tvořit názvy nových sloupců\nvalues_from sloupec (sloupce), který definuje hodnoty pro nově vytvořené sloupce\n\nukázky i v dokumentaci"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#pivot_longer",
     "href": "IDG/prezentace/03_data.html#pivot_longer",
     "title": "Načítání dat, Manipulace s daty",
     "section": "pivot_longer",
-    "text": "pivot_longer\n\nprovádí transformaci datového rámce “delší” variantu, kdy se pro každý řádek původních dat vytvoří více řádků nových dle specifikace\ndůležité parametry cols, names_to, values_to\n\ncols sloupce, které mají být pro transformaci použity\nnames_to název sloupce, jehož hodnoty budou udávat původní názvy sloupců\nvalues_to název sloupce, v němž budou hodnoty z původních sloupců\n\nfunkce pivot_wider a pivot_longer tvoří komplementární dvojici"
-  },
-  {
-    "objectID": "IDG/prezentace/03_data.html#ukázka-pivot_longer",
-    "href": "IDG/prezentace/03_data.html#ukázka-pivot_longer",
-    "title": "Načítání dat, Manipulace s daty",
-    "section": "ukázka pivot_longer",
-    "text": "ukázka pivot_longer\n\ndf &lt;- tibble(\n    nazev = c(\"a\", \"b\", \"c\"),\n    `2016` = c(1, 6, NA),\n    `2017` = c(1, 5, 5)\n)\n\ndf\n\n# A tibble: 3 × 3\n  nazev `2016` `2017`\n  &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 a          1      1\n2 b          6      5\n3 c         NA      5"
+    "text": "pivot_longer\n\nprovádí transformaci datového rámce “delší” variantu, kdy se pro každý řádek původních dat vytvoří více řádků nových dle specifikace\ndůležité parametry cols, names_to, values_to\n\ncols sloupce, které mají být pro transformaci použity\nnames_to název sloupce, jehož hodnoty budou udávat původní názvy sloupců\nvalues_to název sloupce, v němž budou hodnoty z původních sloupců\n\nfunkce pivot_wider a pivot_longer tvoří komplementární dvojici\nukázky i v dokumentaci\nukázka pivot_longer\n\n\ndf &lt;- tibble(\n    nazev = c(\"a\", \"b\", \"c\"),\n    `2016` = c(1, 6, NA),\n    `2017` = c(1, 5, 5)\n)\n\ndf\n\n# A tibble: 3 × 3\n  nazev `2016` `2017`\n  &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 a          1      1\n2 b          6      5\n3 c         NA      5"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#další-užitečné-funkce-tidyr",
