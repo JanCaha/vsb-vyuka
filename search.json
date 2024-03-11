@@ -65,7 +65,7 @@
     "href": "pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení a pársování dat\n\n\n\n\n\nNo matching items",
+    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení dat\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Programování v GIS 2"
     ]
@@ -200,7 +200,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.2923738 -0.2559379 -0.6236111 -0.7519561 -0.4792388"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.17935436 -0.68599806 -0.06498939 -0.02509967 -0.24140740"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
