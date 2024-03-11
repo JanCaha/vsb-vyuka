@@ -5,3 +5,4 @@ _extensions
 _freeze
 _site
 .mypy_cache
+_data
