@@ -29,23 +29,19 @@ execute:
 ## Příklady typování
 
 ```{python}
+#| eval: false
+#| 
 from pathlib import Path
 
 from osgeo import gdal, ogr
 
 gdal.UseExceptions()
 
-file = Path.cwd().parent.parent / \
-    "_data" / "ne_10m_admin_0_countries.shp"
-
-print(file.exists())
+file = "soubor.txt"
 
 ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
 
 layer: ogr.Layer = ds.GetLayer()
-
-print(layer.GetName())
-print(layer.GetFeatureCount())
 ```
 
 ## Otevírání souborů
@@ -78,3 +74,32 @@ print(layer.GetFeatureCount())
 - výběr vrstvy
 - iterace přes prvky - geometrie i atributy
 - definice vrstvy
+
+## Načtení souboru a základní info
+
+- další ukázka v příkladech
+
+```{python}
+from pathlib import Path
+
+from osgeo import gdal, ogr
+
+gdal.UseExceptions()
+
+file = Path.cwd().parent.parent / \
+    "_data" / "ne_10m_admin_0_countries.shp"
+
+print(file.exists())
+
+ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+
+layer: ogr.Layer = ds.GetLayer()
+
+print(layer.GetName())
+print(layer.GetFeatureCount())
+```
+
+
+## Další ukázky
+- rastrová data
+- operace
