@@ -73,7 +73,7 @@ print(layer.GetFeatureCount())
 
 ## Příklad
 
-- z [QGIS]{.software} exportujeme vrstvu **world**
+- data z [Natural Earth](https://www.naturalearthdata.com/)
 - otevření souboru (bez i za použití driveru)
 - výběr vrstvy
 - iterace přes prvky - geometrie i atributy
