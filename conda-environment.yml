@@ -18,6 +18,13 @@ dependencies:
   # quarto
   - jupyter
   - nbformat
+  # for VS Code 
+  - black 
+  - isort
+  - mypy
+  - pep8
+  - flake8
+  - pylint
   # install using pip
   - pip:
     # pgis2
