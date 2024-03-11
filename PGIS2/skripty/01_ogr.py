@@ -1,3 +1,5 @@
+# NOTE: Načtení vektorových dat, získání vrstvy a základní informací o vrstvě,
+# nastavení prostorového filtru a výpis prvků vyhovujících tomuto pravidlu
 from pathlib import Path
 
 from osgeo import gdal, ogr, osr
@@ -50,5 +52,5 @@ if __name__ == "__main__":
 
     for feature in layer:
         geom: ogr.Geometry = feature.geometry()
-        name = feature.GetField("SOVEREIGNT")
+        name = feature.GetField("Name")
         print(f"{name} - {geom.Area()}")
