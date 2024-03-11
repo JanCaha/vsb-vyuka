@@ -46,7 +46,7 @@ layer: ogr.Layer = ds.GetLayer()
 
 ## Otevírání souborů
 
-- funkce `gdal.Open()` (rastry i vektory) a `ogr.Open()` (pouze vektory)
+- funkce `gdal.OpenEx()` (rastry i vektory) a `ogr.Open()` (pouze vektory)
 - jako první první parametr cesta k souboru 
   - buď lokální - klasický zápis
   - nebo virtuální začínající `/vsi*` kde `*` je typ virtuální složky
@@ -105,3 +105,5 @@ if __name__ == "__main__":
 ## Další ukázky
 - rastrová data
 - operace
+
+# Dotazy?
