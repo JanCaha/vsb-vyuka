@@ -18,7 +18,7 @@ dependencies:
   # quarto
   - jupyter
   - nbformat
-  # for VS Code 
+  # VS Code extensions
   - black 
   - isort
   - mypy
