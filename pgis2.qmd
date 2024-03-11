@@ -1,19 +1,32 @@
 ---
 title: Programování v GIS 2 (PGIS2)
 listing:
-    id: prezentace
-    contents: PGIS2/prezentace
-    sort-ui: false
-    filter-ui: false
-    type: table
-    date-format: iso
-    sort:
-        - "date"
-    fields: [date, title] 
-    field-display-names:
-        title: "Prezentace"
-        date: "Datum"
-        author: "Autor"
+    - id: prezentace
+      contents: PGIS2/prezentace
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+      fields: [date, title] 
+      field-display-names:
+          title: "Prezentace"
+          date: "Datum"
+          author: "Autor"
+    - id: codes
+      contents: PGIS2/skripty/description.yaml
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+      fields: [date, title] 
+      field-display-names:
+          title: "Skript"
+          date: "Datum"
+          author: "Autor"
 filters:
    - include-code-files
 ---
@@ -21,6 +34,7 @@ filters:
 ## 📃 Řešená témata
 
 - opakování základů Pythonu
+-  knihovna GDAL/OGR
 
 ## 📑Prezentace
 
@@ -29,7 +43,13 @@ filters:
 
 ## 📚 Zdroje
 
+- data [Natural Earth](https://www.naturalearthdata.com/)
+- [GDAL/OGR Cookbook](https://pcjericks.github.io/py-gdalogr-cookbook/)
+
 ## 💻 Ukázkové kódy
+
+::: {#codes}
+:::
 
 ## 🖥 Instalace
 

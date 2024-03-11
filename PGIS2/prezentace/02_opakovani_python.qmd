@@ -160,7 +160,7 @@ def fun(var: typing.List[float], round_up: bool = True) -> typing.List[int]:
 
 ```bash
 conda activate pgis2
-conda instally black isort mypy pep8 flake8 pylint
+conda install black isort mypy pep8 flake8 pylint
 conda install shapely fiona rasterio polars pandas geopandas
 pip install --pre geopolars
 ```

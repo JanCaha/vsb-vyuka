@@ -1,0 +1,105 @@
+---
+title: "Knihovna [GDAL/OGR]{.software}"
+subtitle: "Programování v GIS 2"
+author: "Jan Caha"
+date: 2024-02-26
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Popis [GDAL/OGR]{.software}
+
+- nízkoúrovňová knihovna
+- v Pythonu zpřístupňujeme její **binding**
+- kód knihovny v [C/C++]{.software} -> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)
+- většinu objektů uložených v proměnných je vhodné po použití nastavit na `None`, čímž se explicitně uvolní prostředky
+- knihovna má hlavní modul `osgeo` a několik dílčích modulů
+  -  `gdal` - rastry
+  -  `ogr` - vektory
+  -  `osr` - souřadnicové systémy 
+- kód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a [mypy]{.software} dobře kontrolovat kód
+
+## Příklady typování
+
+```{python}
+#| eval: false
+#| 
+from pathlib import Path
+
+from osgeo import gdal, ogr
+
+gdal.UseExceptions()
+
+file = "soubor.txt"
+
+ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+
+layer: ogr.Layer = ds.GetLayer()
+```
+
+## Otevírání souborů
+
+- funkce `gdal.Open()` (rastry i vektory) a `ogr.Open()` (pouze vektory)
+- jako první první parametr cesta k souboru 
+  - buď lokální - klasický zápis
+  - nebo virtuální začínající `/vsi*` kde `*` je typ virtuální složky
+
+## Virtuální složky
+
+- např. `/vsicurl/cesta_k_online.souboru` - automaticky stahuje data
+- `/vsizip/cesta_k_lokálnímu.souboru` - extrahuje ze zip souboru
+- `/vsis3`, `/vsigs`, `/vsiaz`, `/vsioss` pro přístup k online službám
+- `/vsimem` - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát
+- tyto adresy pak fungují všude, kde je [GDAL/OGR]{.software} využíván (třeba python knihovny ale i [QGIS]{.software}) 
+
+## Drivery
+
+- každý podporovaný formát má svůj vlastní
+- mohou být pouze pro čtení (**DWG**), značná část ale podporuje i zápis (**GPKG**, **GeoTiff**)
+- některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (**GeoJSON**)
+- často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je
+- drivery `MEM` - raster a `Memory` - vektor {{< fa arrow-right >}} pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu
+
+## Příklad
+
+- data z [Natural Earth](https://www.naturalearthdata.com/)
+- otevření souboru (bez i za použití driveru)
+- výběr vrstvy
+- iterace přes prvky - geometrie i atributy
+- definice vrstvy
+
+## Načtení souboru a základní info
+
+- další ukázka v příkladech
+
+```{python}
+from pathlib import Path
+
+from osgeo import gdal, ogr
+
+gdal.UseExceptions()
+
+file = Path.cwd().parent.parent / \
+    "_data" / "ne_10m_admin_0_countries.shp"
+
+print(file.exists())
+
+ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+
+layer: ogr.Layer = ds.GetLayer()
+
+print(layer.GetName())
+print(layer.GetFeatureCount())
+```
+
+
+## Další ukázky
+- rastrová data
+- operace

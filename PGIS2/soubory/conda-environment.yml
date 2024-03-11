@@ -5,7 +5,8 @@ channels:
   - defaults
 
 dependencies:
-  - python=3.10
+  - python=3.11
+  - pip
   - GDAL
   - fiona
   - rasterio
@@ -13,3 +14,12 @@ dependencies:
   - pandas
   - geopandas
   - polars
+  # VS Code extensions
+  - black
+  - isort
+  - mypy
+  - pep8
+  - flake8
+  - pylint
+  - pip:
+    - geopolars

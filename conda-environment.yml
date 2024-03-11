@@ -5,7 +5,8 @@ channels:
   - defaults
 
 dependencies:
-  - python=3.10
+  - python=3.11
+  - pip
   # pgis2
   - GDAL
   - fiona
@@ -17,3 +18,14 @@ dependencies:
   # quarto
   - jupyter
   - nbformat
+  # VS Code extensions
+  - black 
+  - isort
+  - mypy
+  - pep8
+  - flake8
+  - pylint
+  # install using pip
+  - pip:
+    # pgis2
+    - geopolars
