@@ -1,8 +1,8 @@
 # NOTE: Načtení vektorových dat, získání vrstvy a základní informací o vrstvě,
 # nastavení prostorového filtru a výpis prvků vyhovujících tomuto pravidlu
-from pathlib import Path
-
 from osgeo import gdal, ogr, osr
+
+from utils import data_path
 
 gdal.UseExceptions()
 
@@ -22,9 +22,7 @@ def create_box(min_x: float, max_x: float, min_y: float, max_y: float) -> ogr.Ge
 
 
 if __name__ == "__main__":
-    file = (
-        Path(__file__).parent.parent.parent / "_data" / "ne_10m_admin_0_countries.shp"
-    )
+    file = data_path("ne_10m_admin_0_countries.shp")
 
     print(file.exists())
 
