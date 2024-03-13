@@ -414,7 +414,7 @@ Jan Caha
 <h2>Popis <span class="software">GDAL/OGR</span></h2>
 <ul>
 <li>nízkoúrovňová knihovna</li>
-<li>v Pythonu zpřístupňujeme její <strong>binding</strong></li>
+<li>v Pythonu zpřístupňujeme její <strong>binding</strong> - <a href="https://gdal.org/api/python/osgeo.html">dokumentace</a></li>
 <li>kód knihovny v <span class="software">C/C++</span> -&gt; odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)</li>
 <li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní prostředky</li>
 <li>knihovna má hlavní modul <code>osgeo</code> a několik dílčích modulů
@@ -428,7 +428,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="8dc5db35" class="cell" data-execution_count="1">
+<div id="53a77f1c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -488,7 +488,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="288f805f" class="cell" data-execution_count="2">
+<div id="b4cb7cf3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -513,7 +513,17 @@ Jan Caha
 <h2>Další ukázky</h2>
 <ul>
 <li>rastrová data</li>
-<li>operace</li>
+</ul>
+</section>
+<section id="spouštění-operací-z-gdal" class="slide level2">
+<h2>Spouštění operací z GDAL</h2>
+<ul>
+<li>hlavní funkce</li>
+<li><code>gdal.VectorTranslate()</code> pro vektorová data</li>
+<li>pro rastrová data je funcí vícero <code>gdal.Translate()</code> (<code>gdal.TranslateOptions()</code>), <code>gdal.Warp()</code> (<code>gdal.WarpOptions()</code>)</li>
+<li>mnoho dalších popsaných v dokumentaci</li>
+<li>množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí</li>
+<li>všude, kde se používají cesty k souborům lze použít cesty <code>/vsi*</code> nebo přímo objekty <code>gdal.Dataset</code></li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">

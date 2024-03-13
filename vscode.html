@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Výuka - Jan Caha - Interpretace geodat (IDG)</title>
+<title>Výuka - Jan Caha - Visual Studio Code</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,9 +63,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./pgis2.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,67 +101,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-prezentace .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-prezentace'] = new List('listing-prezentace', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Výuka - Jan Caha - Interpretace geodat (IDG)">
+<meta property="og:title" content="Výuka - Jan Caha - Visual Studio Code">
 <meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -178,7 +117,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./idg.html">Interpretace geodat</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Výuka - Jan Caha
+      </li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -215,7 +156,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./idg.html" class="sidebar-item-text sidebar-link active">
+  <a href="./idg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Interpretace geodat</span></a>
   </div>
 </li>
@@ -229,12 +170,13 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#řešená-témata" id="toc-řešená-témata" class="nav-link active" data-scroll-target="#řešená-témata">📃 Řešená témata</a></li>
-  <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">📑Prezentace</a></li>
-  <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">📚 Zdroje</a></li>
-  <li><a href="#další-zajímavé-zdroje" id="toc-další-zajímavé-zdroje" class="nav-link" data-scroll-target="#další-zajímavé-zdroje">Další zajímavé zdroje</a></li>
-  <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">💻 Ukázkové kódy</a></li>
-  <li><a href="#instalace" id="toc-instalace" class="nav-link" data-scroll-target="#instalace">🖥 Instalace</a></li>
+  <li><a href="#užitečné-klávesové-zkratky" id="toc-užitečné-klávesové-zkratky" class="nav-link active" data-scroll-target="#užitečné-klávesové-zkratky">Užitečné klávesové zkratky</a></li>
+  <li><a href="#nastavení-pro-zkopírování-do-příslušných-json-souborů" id="toc-nastavení-pro-zkopírování-do-příslušných-json-souborů" class="nav-link" data-scroll-target="#nastavení-pro-zkopírování-do-příslušných-json-souborů">Nastavení, pro zkopírování do příslušných <strong>JSON</strong> souborů</a>
+  <ul class="collapse">
+  <li><a href="#klávesové-zkratky" id="toc-klávesové-zkratky" class="nav-link" data-scroll-target="#klávesové-zkratky">Klávesové zkratky</a></li>
+  <li><a href="#uživatelská-nastavení" id="toc-uživatelská-nastavení" class="nav-link" data-scroll-target="#uživatelská-nastavení">Uživatelská nastavení</a></li>
+  <li><a href="#doporučené-extenze-pro-python" id="toc-doporučené-extenze-pro-python" class="nav-link" data-scroll-target="#doporučené-extenze-pro-python">Doporučené extenze pro Python</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -243,7 +185,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Interpretace geodat (IDG)</h1>
+<h1 class="title">Visual Studio Code</h1>
 </div>
 
 
@@ -260,97 +202,119 @@ window.Quarto = {
 </header>
 
 
-<section id="řešená-témata" class="level2">
-<h2 class="anchored" data-anchor-id="řešená-témata">📃 Řešená témata</h2>
+<p>IDE pro práci s Pythonem, ale i řadou dalších jazyků a technologií, ke stažení <a href="https://code.visualstudio.com/">zde</a>. Obsahuje synchronizaci nastavení, extenzí a dalších skrze účet Microsoft (školní, či <a href="https://code.visualstudio.com/">Outlook.com</a> ) nebo <a href="https://github.com">GitHub</a>. Veškerá nastavení se ukládají do JSON souborů a lze je tak snadno sdílet a modifikovat.</p>
+<p>Podporuje vytváření profilů pro různé druhy práce. Je vhodné si rovnou vytvořit speciální profil pro různé technologie (např. Python).</p>
+<section id="užitečné-klávesové-zkratky" class="level2">
+<h2 class="anchored" data-anchor-id="užitečné-klávesové-zkratky">Užitečné klávesové zkratky</h2>
 <ul>
-<li>úvod do jazyka R</li>
-<li>načítání dat do R</li>
-<li>manipulace s daty v R pomocí balíku <code>dplyr</code></li>
+<li><code>F1</code> - paleta nástrojů - zde se vyhledávají příkazy <strong>VS Code</strong></li>
 </ul>
 </section>
-<section id="prezentace" class="level2">
-<h2 class="anchored" data-anchor-id="prezentace">📑Prezentace</h2>
-<div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Prezentace
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1710342786791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
-<td>
-<span class="listing-date">2024-02-19</span>
-</td>
-<td>
-<a href="./IDG/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1710342786791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1259" data-listing-title-sort="Základní orientace v jazyce [R]{.software}" data-listing-filename-sort="02_uvod_r.qmd">
-<td>
-<span class="listing-date">2024-02-26</span>
-</td>
-<td>
-<a href="./IDG/prezentace/02_uvod_r.html" class="title listing-title">Základní orientace v jazyce <span class="software">R</span></a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1710342786791" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1424" data-listing-title-sort="Načítání dat, Manipulace s daty" data-listing-filename-sort="03_data.qmd">
-<td>
-<span class="listing-date">2024-03-04</span>
-</td>
-<td>
-<a href="./IDG/prezentace/03_data.html" class="title listing-title">Načítání dat, Manipulace s daty</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="zdroje" class="level2">
-<h2 class="anchored" data-anchor-id="zdroje">📚 Zdroje</h2>
+<section id="nastavení-pro-zkopírování-do-příslušných-json-souborů" class="level2">
+<h2 class="anchored" data-anchor-id="nastavení-pro-zkopírování-do-příslušných-json-souborů">Nastavení, pro zkopírování do příslušných <strong>JSON</strong> souborů</h2>
+<p>Většina nastavení má dvě úrovně. Globální – uložené v uživatelském profilu a lokální – uložené v projektu ve složce <code>.vscode</code>. Lokální přepisují globální. Pomocí lokálních nastavení lze upravovat specifické chování projektu.</p>
+<section id="klávesové-zkratky" class="level3">
+<h3 class="anchored" data-anchor-id="klávesové-zkratky">Klávesové zkratky</h3>
 <ul>
-<li>kniha <a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a> - shrnuje základní postupy datové vědy (data science) v R</li>
-<li>kniha <a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a> - programování v R</li>
-<li>kniha <a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization</a> - vizualizace dat - příklady v R</li>
-<li>kniha <a href="https://r.geocompx.org/">Geocomputation with R</a> - základy práce s geodaty v R</li>
+<li>v paletě nástrojů vyhledat <code>Keyboard Shortcuts (JSON)</code></li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+d"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.duplicateSelection"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="er">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"key"</span><span class="fu">:</span> <span class="st">"ctrl+shift+c"</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"command"</span><span class="fu">:</span> <span class="st">"editor.action.commentLine"</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"when"</span><span class="fu">:</span> <span class="st">"editorTextFocus &amp;&amp; !editorReadonly"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="er">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="další-zajímavé-zdroje" class="level2">
-<h2 class="anchored" data-anchor-id="další-zajímavé-zdroje">Další zajímavé zdroje</h2>
+<section id="uživatelská-nastavení" class="level3">
+<h3 class="anchored" data-anchor-id="uživatelská-nastavení">Uživatelská nastavení</h3>
 <ul>
-<li>kniha <a href="https://socviz.co/">Data Visualization</a> - vizualizace dat - příklady v R</li>
-<li>kniha <a href="https://moderndive.com/">Statistical Inference via Data Science</a> - statistické metody/postupy v R</li>
-</ul>
-</section>
-<section id="ukázkové-kódy" class="level2">
-<h2 class="anchored" data-anchor-id="ukázkové-kódy">💻 Ukázkové kódy</h2>
-</section>
-<section id="instalace" class="level2">
-<h2 class="anchored" data-anchor-id="instalace">🖥 Instalace</h2>
+<li>v paletě nástrojů buď
 <ul>
-<li>R - <a href="https://cran.r-project.org/bin/windows/base/">R CRAN</a></li>
-<li>IDE - <a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+<li><code>User Settings (JSON)</code> - globální</li>
+<li><code>Workspace Settings (JSON)</code> - lokální</li>
+</ul></li>
+<li>uvádíme pouze části JSONu</li>
 </ul>
-<p>V RStudiu nainstalovat balíky následujícím skriptem:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidyverse"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"here"</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sf"</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"terra"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"stars"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidymodels"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>VS Code nastavení</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.suggestSelection":</span> <span class="er">"first",</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.bracketPairColorization.enabled":</span> <span class="er">true,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="er">"workbench.editor.enablePreview":</span> <span class="er">false,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.guides.bracketPairs":</span> <span class="er">"active",</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="er">"explorer.confirmDelete":</span> <span class="er">false,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="er">"explorer.confirmDragAndDrop":</span> <span class="er">false,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="er">"workbench.startupEditor":</span> <span class="er">"none",</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="er">"git.confirmSync":</span> <span class="er">false,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.stickyScroll.enabled":</span> <span class="er">true,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Python úprava kódu</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">"</span><span class="ot">[</span><span class="er">python</span><span class="ot">]</span><span class="er">":</span> <span class="fu">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.codeActionsOnSave"</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"source.organizeImports"</span><span class="fu">:</span> <span class="st">"explicit"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">},</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.formatOnSave"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.defaultFormatter"</span><span class="fu">:</span> <span class="st">"ms-python.black-formatter"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Python extenze</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">"flake8.args":</span> <span class="ot">[</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--max-line-length"</span><span class="ot">,</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"160"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="er">,</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="er">"isort.args":</span> <span class="ot">[</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--profile"</span><span class="ot">,</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"black"</span><span class="ot">,</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--line-width"</span><span class="ot">,</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"120"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="er">,</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="er">"black-formatter.args":</span> <span class="ot">[</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--line-length"</span><span class="ot">,</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"120"</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="er">,</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="er">"pylint.args":</span> <span class="ot">[</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--disable=E0611"</span><span class="ot">,</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--max-line-length=160"</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="er">,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vynechání složek např. při prohledávání souborů</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">"files.exclude":</span> <span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"**/__pycache__"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"**/.classpath"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"**/.factorypath"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"**/.project"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"**/.settings"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"**/.mypy_cache"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"**/.pytest_cache"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="er">,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="doporučené-extenze-pro-python" class="level3">
+<h3 class="anchored" data-anchor-id="doporučené-extenze-pro-python">Doporučené extenze pro Python</h3>
+<ul>
+<li>některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu <a href="./pgis2.html">PGIS2</a></li>
+<li>uložit do souboru <code>.vscode/extensions.json</code> ve složce projektu</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">which</span> <span class="er">should</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"recommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.debugpy"</span><span class="ot">,</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.vscode-pylance"</span><span class="ot">,</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.autopep8"</span><span class="ot">,</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.black-formatter"</span><span class="ot">,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.flake8"</span><span class="ot">,</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.isort"</span><span class="ot">,</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.mypy-type-checker"</span><span class="ot">,</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.pylint"</span><span class="ot">,</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.python"</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">recommended</span> <span class="er">by</span> <span class="er">VS</span> <span class="er">Code</span> <span class="er">that</span> <span class="er">should</span> <span class="er">not</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"unwantedRecommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -907,15 +871,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./pgis2.html" class="pagination-link" aria-label="Programování v GIS 2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Programování v GIS 2</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
