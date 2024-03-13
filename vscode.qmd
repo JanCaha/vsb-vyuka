@@ -1,0 +1,126 @@
+---
+title: Visual Studio Code
+---
+
+IDE pro práci s Pythonem, ale i řadou dalších jazyků a technologií, ke stažení [zde](https://code.visualstudio.com/). 
+Obsahuje synchronizaci nastavení, extenzí a dalších skrze účet Microsoft (školní, či [Outlook.com](https://code.visualstudio.com/) ) nebo [GitHub](https://github.com). Veškerá nastavení se ukládají do JSON souborů a lze je tak snadno sdílet a modifikovat.
+
+Podporuje vytváření profilů pro různé druhy práce. Je vhodné si rovnou vytvořit speciální profil pro různé technologie (např. Python).
+
+## Užitečné klávesové zkratky
+
+- `F1` - paleta nástrojů - zde se vyhledávají příkazy **VS Code**
+
+## Nastavení, pro zkopírování do příslušných **JSON** souborů
+
+Většina nastavení má dvě úrovně. Globální -- uložené v uživatelském profilu a lokální -- uložené v projektu ve složce `.vscode`. Lokální přepisují globální. Pomocí lokálních nastavení lze upravovat specifické chování projektu.
+
+### Klávesové zkratky
+
+- v paletě nástrojů vyhledat `Keyboard Shortcuts (JSON)`
+
+```json
+{
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.duplicateSelection"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+}
+```
+
+### Uživatelská nastavení
+
+- v paletě nástrojů buď
+  - `User Settings (JSON)` - globální 
+  - `Workspace Settings (JSON)` - lokální
+- uvádíme pouze části JSONu
+
+VS Code nastavení
+```json
+    "editor.suggestSelection": "first",
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.editor.enablePreview": false,
+    "editor.guides.bracketPairs": "active",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.startupEditor": "none",
+    "git.confirmSync": false,
+    "editor.stickyScroll.enabled": true,
+```
+
+Python úprava kódu
+```json
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    }
+```
+
+Python extenze
+```json
+    "flake8.args": [
+        "--max-line-length",
+        "160"
+    ],
+    "isort.args": [
+        "--profile",
+        "black",
+        "--line-width",
+        "120"
+    ],
+    "black-formatter.args": [
+        "--line-length",
+        "120"
+    ],
+    "pylint.args": [
+        "--disable=E0611",
+        "--max-line-length=160"
+    ],
+```
+
+Vynechání složek např. při prohledávání souborů 
+```json
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+    },
+```
+
+### Doporučené extenze pro Python
+
+- některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu [PGIS2](pgis2.qmd)
+- uložit do souboru `.vscode/extensions.json` ve složce projektu
+ 
+```json
+{
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		"ms-python.debugpy",
+		"ms-python.vscode-pylance",
+		"ms-python.autopep8",
+		"ms-python.black-formatter",
+		"ms-python.flake8",
+		"ms-python.isort",
+		"ms-python.mypy-type-checker",
+		"ms-python.pylint",
+		"ms-python.python"
+		
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+	]
+}
+```
