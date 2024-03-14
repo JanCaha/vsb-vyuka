@@ -38,14 +38,14 @@ sudo apt-get upgrade -y
 # Install pgAdmin for both desktop and web modes:
 sudo apt-get install -y pgadmin4
 ```
-   - následně nainstalujeme Gedit, PostgreSQL, PostGIS, QGIS a GDAL
+   - následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL
 
 ```bash
 # přidání zdroje balíčků GIS nástrojů
 sudo add-apt-repository -y ppa:ubuntugis/ppa
 sudo apt-get update
 
-sudo apt-get install -y gedit postgresql postgis qgis gdal-bin
+sudo apt-get install -y gedit postgresql pgxnclient postgis qgis gdal-bin
 ```
 
    - prvotní spuštění PostgreSQL je nutné provést z příkazové řádky

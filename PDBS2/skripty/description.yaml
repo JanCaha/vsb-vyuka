@@ -1,0 +1,4 @@
+- title: "Instalace PostGIS do daného schématu DB"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PDBS2/skripty/01_install_postgis_check_version.sql"
