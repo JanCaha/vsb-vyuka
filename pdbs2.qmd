@@ -1,5 +1,19 @@
 ---
-title: Prostorové databázové systémy 2 (PDBS2)	
+title: Prostorové databázové systémy 2 (PDBS2)
+listing:
+   - id: codes
+      contents: PDBS2/skripty/description.yaml
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+      fields: [date, title] 
+      field-display-names:
+          title: "Skript"
+          date: "Datum"
+          author: "Autor"
 filters:
    - include-code-files
 ---
@@ -7,13 +21,14 @@ filters:
 ## 📃 Řešená témata
 
 - Oracle 
-- Instalace a připojení k PostgreSQL
+- Instalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL
 
 ## 📚 Zdroje
 
-
-
 ## 💻 Ukázkové kódy
+
+::: {#codes}
+:::
 
 ## 🖥 Instalace PostregSQL
 

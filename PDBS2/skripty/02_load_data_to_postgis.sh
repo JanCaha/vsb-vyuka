@@ -1,0 +1,1 @@
+ogr2ogr -nln world Pg:"dbname=postgres host=localhost user=postgres port=5432 password=heslo" world.gpkg
