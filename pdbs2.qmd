@@ -2,18 +2,18 @@
 title: Prostorové databázové systémy 2 (PDBS2)
 listing:
    - id: codes
-      contents: PDBS2/skripty/description.yaml
-      sort-ui: false
-      filter-ui: false
-      type: table
-      date-format: iso
-      sort:
-          - "date"
-      fields: [date, title] 
-      field-display-names:
-          title: "Skript"
-          date: "Datum"
-          author: "Autor"
+     contents: PDBS2/skripty/description.yaml
+     sort-ui: false
+     filter-ui: false
+     type: table
+     date-format: iso
+     sort:
+       - "date"
+     fields: [date, title] 
+     field-display-names:
+       title: "Skript"
+       date: "Datum"
+       author: "Autor"
 filters:
    - include-code-files
 ---
