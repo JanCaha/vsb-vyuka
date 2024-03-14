@@ -1,0 +1,58 @@
+---
+title: Prostorové databázové systémy 2 (PDBS2)	
+filters:
+   - include-code-files
+---
+
+## 📃 Řešená témata
+
+- Oracle 
+- Instalace a připojení k PostgreSQL
+
+## 📚 Zdroje
+
+
+
+## 💻 Ukázkové kódy
+
+## 🖥 Instalace PostregSQL
+
+- instalujeme [Linux Mint - Cinnamon edition](https://www.linuxmint.com/download.php) do prostředí [VirtualBox](https://www.virtualbox.org/wiki/Downloads) -- celý process je ukázán v [tomto videu](https://www.youtube.com/watch?v=5MwBbgdSZS0), nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval
+- důležité je nastavení jména uživatele a hesla
+- následně instalace softwarů
+   - nejdříve nastavíme nezbytnosti pro [PG Admin 4](https://www.pgadmin.org/download/pgadmin-4-apt/) (pozor bude požadováno heslo)
+ 
+```bash
+source /etc/os-release
+
+# Install the public key for the repository (if not done previously):
+curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
+
+# Create the repository configuration file:
+echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$UBUNTU_CODENAME pgadmin4 main" | sudo tee /etc/apt/sources.list.d/pgadmin4.list
+
+# Update software sources
+sudo apt update
+sudo apt upgrade -y
+
+# Install pgAdmin for both desktop and web modes:
+sudo apt install -y pgadmin4
+```
+   - následně nainstalujeme Gedit, PostgreSQL, PostGIS, QGIS a GDAL
+
+```bash
+sudo apt-get install -y gedit postgresql postgis qgis gdal-bin
+```
+
+   - prvotní spuštění PostgreSQL je nutné provést z příkazové řádky
+
+```bash
+sudo -u postgres psql template1
+```
+   - následně spustíme příkaz pro modifikaci hesla hlavní uživatele DB
+  
+```sql
+ALTER USER postgres with encrypted password 'heslo';
+```
+   - příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serverlu `localhost` s uživatelem `postgres` a heslem `heslo` (nastavené výše)
+
