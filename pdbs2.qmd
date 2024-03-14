@@ -25,6 +25,9 @@ filters:
 
 ## 📚 Zdroje
 
+- [PostgreSQL Manuál](https://www.postgresql.org/docs/14/index.html)
+- [PostGIS Manuál](https://postgis.net/docs/manual-3.4/)
+
 ## 💻 Ukázkové kódy
 
 ::: {#codes}
