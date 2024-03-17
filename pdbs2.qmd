@@ -23,6 +23,11 @@ filters:
 - Oracle 
 - Instalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL
 
+## 🗂️ Data ke stažení
+
+- [GPKG s vrstvami okresů a krajů](./PDBS2/soubory/uzemni_jednotky.gpkg)
+- [CSV s údaji o počtu obyvatel](./PDBS2/soubory/obyvatele_roky.csv)
+
 ## 📚 Zdroje
 
 - [PostgreSQL Manuál](https://www.postgresql.org/docs/14/index.html)
