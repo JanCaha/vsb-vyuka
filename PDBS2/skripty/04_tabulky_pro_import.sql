@@ -19,3 +19,10 @@ CREATE TABLE IF NOT EXISTS public.obyvatele_roky
     uzemi_txt text COLLATE pg_catalog."default",
     uzemi_typ text COLLATE pg_catalog."default"
 )
+
+CREATE TABLE IF NOT EXISTS public.ciselnik_csu_ruian
+(
+    typ text,
+    kod_csu integer,
+    kod_ruian integer
+)
