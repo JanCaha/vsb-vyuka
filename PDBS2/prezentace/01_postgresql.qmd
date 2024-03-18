@@ -65,3 +65,5 @@ WITH nazev_tabulky AS (
 - updatuje se v podsatě v reálném čase
 - užitečné proti duplikacím dat
 - může být náročné na čas
+  
+# Dotazy ???
