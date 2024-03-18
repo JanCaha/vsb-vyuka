@@ -428,7 +428,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="d680fd95" class="cell" data-execution_count="1">
+<div id="4547ade8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -488,7 +488,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="1936f4e8" class="cell" data-execution_count="2">
+<div id="cd5461fe" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -509,21 +509,21 @@ Jan Caha
 <span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetFeatureCount())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="další-ukázky" class="slide level2">
-<h2>Další ukázky</h2>
-<ul>
-<li>rastrová data</li>
-</ul>
-</section>
 <section id="spouštění-operací-z-gdal" class="slide level2">
 <h2>Spouštění operací z GDAL</h2>
 <ul>
 <li>hlavní funkce</li>
-<li><code>gdal.VectorTranslate()</code> pro vektorová data</li>
+<li><code>gdal.VectorTranslate()</code> (<code>gdal.VectorTranslateOptions()</code>) pro vektorová data</li>
 <li>pro rastrová data je funcí vícero <code>gdal.Translate()</code> (<code>gdal.TranslateOptions()</code>), <code>gdal.Warp()</code> (<code>gdal.WarpOptions()</code>)</li>
 <li>mnoho dalších popsaných v dokumentaci</li>
 <li>množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí</li>
 <li>všude, kde se používají cesty k souborům lze použít cesty <code>/vsi*</code> nebo přímo objekty <code>gdal.Dataset</code></li>
+</ul>
+</section>
+<section id="práce-s-daty-v-paměti" class="slide level2">
+<h2>Práce s daty v paměti</h2>
+<ul>
+<li>viz ukázkový kód</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">

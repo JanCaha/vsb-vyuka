@@ -124,291 +124,158 @@
     "text": "Zápočet\n\n40 bodů za seminární úkol\n\nzpracování vámi vybraných dat, tvorba jednoho komplexního grafického výstupu, reportu, použití alespoň jedné pokročilé statické metody\n\n60 bodů za test"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#instalace",
-    "href": "IDG/prezentace/02_uvod_r.html#instalace",
-    "title": "Základní orientace v jazyce R",
-    "section": "Instalace",
-    "text": "Instalace\n\nR verze 4.3.2 z https://cran.r-project.org/bin/windows/base/\n\nsamotný jazyk a prostředí\n\nRStudio Desktop (Open Source License) verze 2023.12.1 z https://posit.co/download/rstudio-desktop/\n\nuživatelské prostředí z nějž R ovládáme, IDE\n\nRTools verze 4.3 z https://cran.r-project.org/bin/windows/Rtools/\n\nnení nezbytné, pokud neplánujeme instalovat balíky z jiného zdroje než CRAN\npro instalaci balíků z GitHubu nezbytné"
+    "objectID": "IDG/prezentace/04_ggplot2.html#balík-ggplot2",
+    "href": "IDG/prezentace/04_ggplot2.html#balík-ggplot2",
+    "title": "Grafy - ggplot2",
+    "section": "Balík ggplot2",
+    "text": "Balík ggplot2\n\nsoučást tidyverse\nzaložen na filozifii tzv. grammar of graphics\nmapování složek dat k vizuálním složkám grafů\ngrafy jsou principiálně extrémně dlouhými a komplikovanými seznamy, které se teprve při tisku (zobrazení) převádí na grafiku\njednotlivé části grafů lze ukládat do proměnných a různě s nimi pracovat\nextrémně dobře zpracovaná nápovědy + velké množství tutoriálů online"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#jazyk-r",
-    "href": "IDG/prezentace/02_uvod_r.html#jazyk-r",
-    "title": "Základní orientace v jazyce R",
-    "section": "Jazyk R",
-    "text": "Jazyk R\n\ninterpretovaný programovací jazyk přístupný v základu skrze příkazový řádek\nimplementace jazyka S pod open source licencí\nurčený primárně ke zpracování dat a jejich vizualizaci, s výrazným zaměřením na statistiku (původně) a celkovou problematiku zpracování dat (současnost)\nzákladní funkcionalita není příliš široká (respektive snadno přístupná), většina funkcinality přichází z tzv. balíčků\ncentrální sklad balíčků - CRAN (Comprehensive R Archive Network)"
+    "objectID": "IDG/prezentace/04_ggplot2.html#zdroje-a-tutoriály",
+    "href": "IDG/prezentace/04_ggplot2.html#zdroje-a-tutoriály",
+    "title": "Grafy - ggplot2",
+    "section": "Zdroje a tutoriály",
+    "text": "Zdroje a tutoriály\n\nFundamentals of Data Visualization\nr-statistics.co\nTop 50 ggplot2 Visualizations - The Master List (With Full R Code)\nThe R Graph Gallery\nggplot2"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#r-times-ostatní-jazyky",
-    "href": "IDG/prezentace/02_uvod_r.html#r-times-ostatní-jazyky",
-    "title": "Základní orientace v jazyce R",
-    "section": "R \\(\\times\\) ostatní jazyky",
-    "text": "R \\(\\times\\) ostatní jazyky\n\nkonkurence: Matlab, Wolfram Language, Julia, Python, Excel\nvýraznější zaměření na data a operaci s nimi, většina funkcí dobře pracuje s vektory dat a datovými rámci\ninterpretovaný jazyk, možnost široce interagovat s daty a procesy\nRStudio maximálně zpřístupňuje tzv. interaktivní práci s jazykem (náhledy na pamět, nápovědu, grafy a atd.)\nod uživatele se většinou nepředpokládá “programování” (ve smyslu komplexnějších konstrukcí)\nvelice příjemná učící křivka"
+    "objectID": "IDG/prezentace/04_ggplot2.html#konstrukční-prvky-grafu",
+    "href": "IDG/prezentace/04_ggplot2.html#konstrukční-prvky-grafu",
+    "title": "Grafy - ggplot2",
+    "section": "Konstrukční prvky grafu",
+    "text": "Konstrukční prvky grafu\n\nggplot() - parametry data, mapping, není nutné uvádět zde, lze uvést u příslušné vrstvy (funkce geom_*())\nfunkce aes() (aesthetic) - parametry x a y (není nutné vždy), další dle možní geometrie\ngeom_*() - parametr pro vykreslení dané geometrie, je možné použít jinou specifikaci dat či aesthetic"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#přiřazovací-operátor",
-    "href": "IDG/prezentace/02_uvod_r.html#přiřazovací-operátor",
-    "title": "Základní orientace v jazyce R",
-    "section": "Přiřazovací operátor",
-    "text": "Přiřazovací operátor\n\nv R používáme pro přiřazení hodnoty do proměnné operátor &lt;-\nlze použít i = ale z hlediska čtení kódu se to nedoporučuje\nv RStudiu zkratka Levý Alt + -"
+    "objectID": "IDG/prezentace/04_ggplot2.html#ukázka-jednoduchý-bodový-graf",
+    "href": "IDG/prezentace/04_ggplot2.html#ukázka-jednoduchý-bodový-graf",
+    "title": "Grafy - ggplot2",
+    "section": "Ukázka jednoduchý bodový graf",
+    "text": "Ukázka jednoduchý bodový graf\n\nscale_x_continuous(), obecně scale_*_*()\ncoord_trans()\nlabs()\ntheme() - funkce element_*() zejména element_text()\npředpřipravená témata\nfacety - facet_grid()"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#základní-typy-dat",
-    "href": "IDG/prezentace/02_uvod_r.html#základní-typy-dat",
-    "title": "Základní orientace v jazyce R",
-    "section": "Základní typy dat",
-    "text": "Základní typy dat\n\nx &lt;- 5.2\nx &lt;- 1.42e-2\ntypeof(x)\n\n[1] \"double\"\n\nx &lt;- 5L\ntypeof(x)\n\n[1] \"integer\""
+    "objectID": "IDG/prezentace/04_ggplot2.html#duležité-informace",
+    "href": "IDG/prezentace/04_ggplot2.html#duležité-informace",
+    "title": "Grafy - ggplot2",
+    "section": "Duležité informace",
+    "text": "Duležité informace\n\nproměnné specifikované v aes() se musí vázat na data\nty samé proměnné lze specifikovat i přimo v geom_*(), ale pak jsou pro celou vrstvu jednotné, např. size\nduležité proměnné geom_*() jsou stat (co se bude počítat), position (jestli se budou data nějak odsazovat)\nmožnosti funkcí stat_*()"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#základní-typy-dat-1",
-    "href": "IDG/prezentace/02_uvod_r.html#základní-typy-dat-1",
-    "title": "Základní orientace v jazyce R",
-    "section": "Základní typy dat",
-    "text": "Základní typy dat\n\nx &lt;- \"řetězec\"\ntypeof(x)\n\n[1] \"character\"\n\nx &lt;- TRUE\ntypeof(x)\n\n[1] \"logical\""
+    "objectID": "IDG/prezentace/04_ggplot2.html#rozšíření-ggplot2",
+    "href": "IDG/prezentace/04_ggplot2.html#rozšíření-ggplot2",
+    "title": "Grafy - ggplot2",
+    "section": "Rozšíření ggplot2",
+    "text": "Rozšíření ggplot2\n\nGalerie rozšíření\nnejvýznamnější gganimate, ggthemes, ggstatsplot, ggraph, ggforce, ggalt a cowplot"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#vektor",
-    "href": "IDG/prezentace/02_uvod_r.html#vektor",
-    "title": "Základní orientace v jazyce R",
-    "section": "Vektor",
-    "text": "Vektor\n\ndefinice pomocí funkce c()\n\n\nv &lt;- c(5.2, 4.9, 3.1, -0.4)\nv\n\n[1]  5.2  4.9  3.1 -0.4\n\n\n\n\n\n\n\n\nPozor\n\n\npokud nejsou všechny prvky stejného typu, pak se typ změní na nejreprezentativnější\n\n\n\n\nv &lt;- c(5.2, 4.9, 3.1, -0.4, TRUE, \"a\")\nv\n\n[1] \"5.2\"  \"4.9\"  \"3.1\"  \"-0.4\" \"TRUE\" \"a\""
+    "objectID": "IDG/prezentace/04_ggplot2.html#interaktivní-vizualizace",
+    "href": "IDG/prezentace/04_ggplot2.html#interaktivní-vizualizace",
+    "title": "Grafy - ggplot2",
+    "section": "Interaktivní vizualizace",
+    "text": "Interaktivní vizualizace\n\nzejména balík plotly\numí převést značné množství grafů vytvořených v ggplot2 do interaktivní online verze\npřímo v plotly lze grafy i tvořit, ale přístup je odlišný od ggplot2"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#vektor-1",
-    "href": "IDG/prezentace/02_uvod_r.html#vektor-1",
-    "title": "Základní orientace v jazyce R",
-    "section": "Vektor",
-    "text": "Vektor\n\njednotlivé prvky lze získat pomocí operátoru []\n\n\nv[3]\n\n[1] \"3.1\"\n\nv[5]\n\n[1] \"TRUE\""
+    "objectID": "pgis2.html",
+    "href": "pgis2.html",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Programování v GIS 2"
+    ]
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#seznam",
-    "href": "IDG/prezentace/02_uvod_r.html#seznam",
-    "title": "Základní orientace v jazyce R",
-    "section": "Seznam",
-    "text": "Seznam\n\ndefinice funkcí list(), umožňuje ukládat smíšené typy prvků\n\n\nl &lt;- list(5, 4.5, \"a\", FALSE)\nl\n\n[[1]]\n[1] 5\n\n[[2]]\n[1] 4.5\n\n[[3]]\n[1] \"a\"\n\n[[4]]\n[1] FALSE"
+    "objectID": "pgis2.html#řešená-témata",
+    "href": "pgis2.html#řešená-témata",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Programování v GIS 2"
+    ]
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#seznam-1",
-    "href": "IDG/prezentace/02_uvod_r.html#seznam-1",
-    "title": "Základní orientace v jazyce R",
-    "section": "Seznam",
-    "text": "Seznam\n\njednotlivé prvky lze získat podobně jako u vektorů\nv jednoduché podobě vrací vždy seznam\n\n\nl[1]\n\n[[1]]\n[1] 5\n\n\n\n\n\n\n\n\nPozor\n\n\npokud chceme přímo hodnotu, pak musíme použít operátor [[]] pro rozložení seznamu\n\n\n\n\nl[[1]]\n\n[1] 5"
+    "objectID": "pgis2.html#prezentace",
+    "href": "pgis2.html#prezentace",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "📑Prezentace",
+    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nOpakování Pythonu\n\n\n\n\n2024-02-26\n\n\nKnihovna GDAL/OGR\n\n\n\n\n2024-03-18\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Programování v GIS 2"
+    ]
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#pojmenované-vektory-a-seznamy",
-    "href": "IDG/prezentace/02_uvod_r.html#pojmenované-vektory-a-seznamy",
-    "title": "Základní orientace v jazyce R",
-    "section": "Pojmenované vektory a seznamy",
-    "text": "Pojmenované vektory a seznamy\n\nx &lt;- c(\"a\" = 1, \"b\" = 5, \"c\" = 6)\nx[1]\n\na \n1 \n\nx[\"a\"]\n\na \n1"
+    "objectID": "pgis2.html#zdroje",
+    "href": "pgis2.html#zdroje",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "📚 Zdroje",
+    "text": "📚 Zdroje\n\ndata Natural Earth\nGDAL/OGR Cookbook",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Programování v GIS 2"
+    ]
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#extrakce-jmen",
-    "href": "IDG/prezentace/02_uvod_r.html#extrakce-jmen",
-    "title": "Základní orientace v jazyce R",
-    "section": "Extrakce jmen",
-    "text": "Extrakce jmen\n\nx &lt;- c(1, 5, 6)\nnames(x) &lt;- c(\"a\", \"b\", \"c\")\nprint(x)\n\na b c \n1 5 6 \n\n\n\nn &lt;- names(x)\nprint(n)\n\n[1] \"a\" \"b\" \"c\""
+    "objectID": "pgis2.html#ukázkové-kódy",
+    "href": "pgis2.html#ukázkové-kódy",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "💻 Ukázkové kódy",
+    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2024-03-18\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2024-03-18\n\n\nFiona editace vektorových dat\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Programování v GIS 2"
+    ]
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#pojmenované-seznamy",
-    "href": "IDG/prezentace/02_uvod_r.html#pojmenované-seznamy",
-    "title": "Základní orientace v jazyce R",
-    "section": "Pojmenované seznamy",
-    "text": "Pojmenované seznamy\n\nl &lt;- list(\"a\" = 1, \"b\" = \"text\", \"c\" = TRUE)\nl[\"a\"]\n\n$a\n[1] 1\n\nl[[\"a\"]]\n\n[1] 1\n\nl$a\n\n[1] 1"
+    "objectID": "pgis2.html#instalace",
+    "href": "pgis2.html#instalace",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "🖥 Instalace",
+    "text": "🖥 Instalace\n\nmanagement Pythonu - Miniconda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.11\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  - pip:\n    - geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Programování v GIS 2"
+    ]
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#matematické-a-logické-operátory",
-    "href": "IDG/prezentace/02_uvod_r.html#matematické-a-logické-operátory",
-    "title": "Základní orientace v jazyce R",
-    "section": "Matematické a logické operátory",
-    "text": "Matematické a logické operátory\n\n+, -, *, /\n^ nebo ** mocnina\n%% modulo\n%/% celočíselné dělení\n==, &lt;, &gt;, &lt;=, &gt;=, !=\n! zápor , | nebo, & a\nspeciální operátor %in% pro vyhledávání ve vektorech a seznamech\noperátory $ a @ pro přístup k součástem komplexních datových struktur"
+    "objectID": "pgis2.html#další",
+    "href": "pgis2.html#další",
+    "title": "Programování v GIS 2 (PGIS2)",
+    "section": "Další",
+    "text": "Další\n\nzřízení účtu na Github, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu\npožádání o studentský přístup na Github dle článku\nověření nějakou dobou trvá cca. 1-2 dny\nnásledně se lze ve VS Code pomocí tohoto účtu přihlásit a měl by být dostupý GitHub Copilot",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Programování v GIS 2"
+    ]
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#funkce",
-    "href": "IDG/prezentace/02_uvod_r.html#funkce",
-    "title": "Základní orientace v jazyce R",
-    "section": "Funkce",
-    "text": "Funkce\n\njak matematické, např. cos(), sin(), log() atd., ale i funkce pro zpracování dat sort()\nspeciální případy c() a list()\nvětšinou vektorizované, takže lze provést nejen na jednom prvku (proměnné) ale přímo na vektoru\nna funkce se lze odkazovat i balik::funkce(), nepoužívá se často ale lze na tento zápis narazit, např. v situaci kdy je kolize názvů funkcí z různých balíků\n\n\na &lt;- c(4, 5, 3.5)\nb &lt;- sin(a)\nb\n\n[1] -0.7568025 -0.9589243 -0.3507832"
+    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#typy-knihoven-pro-python",
+    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#typy-knihoven-pro-python",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "Typy knihoven pro Python",
+    "text": "Typy knihoven pro Python\n\nnativní knihovny - pouze Python kód\nkompilované knihovny - C, C++, Rust nebo i jiné jazyky\nnativní knihovny fungují automaticky všude, kompilované je nutné sestavit pro danou platformu a verzi Pythonu"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#komentáře",
-    "href": "IDG/prezentace/02_uvod_r.html#komentáře",
-    "title": "Základní orientace v jazyce R",
-    "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.67248124 -0.40780856 -0.19142121 -0.04210018 -0.64330578"
+    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#fiona-rasterio-shapely",
+    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#fiona-rasterio-shapely",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "fiona, rasterio, shapely",
+    "text": "fiona, rasterio, shapely\n\nkompilované knihovny\npostavené nad GDAL/OGR (ne nad balíkem osgeo)\nsnaha aby pracovaly více jako Python knihovny a méně jako C++ kód\no něco měně komplikované než přímé použití GDAL/OGR skrze osgeo, o něco horší spolupráce knihoven (zejména fiona a shapely)"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
-    "href": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
-    "title": "Základní orientace v jazyce R",
-    "section": "Komplexní datové struktury",
-    "text": "Komplexní datové struktury\n\n2D struktury pro uložení dat - matice (matrix), datové rámce (data.frame)\nv maticích musí být všechny prvky stejného typu, v datovém rámci se mohou jednotlivé sloupce lišit\npro zpracování dat se obvykle používá data.frame, či jeho modernější verze tibble\ns daty v této podobě se budeme setkávat v při zpracování dat nejčastěji\nnačtení ukázkové datové sady dostupné přímo v základní instalaci R"
+    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#fiona",
+    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#fiona",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "fiona",
+    "text": "fiona\n\nknihovna pro práci s vektorovými daty\nodstraňuje mnoho dílčích kroků, které jsou v osgeo\nsouřadnicové systémy a transformace s knihovnou pyproj\napi není bohaté na práci s geometrií\npřístup např. ke struktuře vrstvy je velice jednoduchý\nnepodpruje vše co osgeo"
   },
   {
-    "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury-1",
-    "href": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury-1",
-    "title": "Základní orientace v jazyce R",
-    "section": "Komplexní datové struktury",
-    "text": "Komplexní datové struktury\n\ndata(\"mtcars\")\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\n\nView(mtcars)"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#data.frame",
-    "href": "IDG/prezentace/02_uvod_r.html#data.frame",
-    "title": "Základní orientace v jazyce R",
-    "section": "data.frame",
-    "text": "data.frame\n\ndf &lt;- data.frame(col_1 = c(1,3,8,7),\n                 col_2 = c(\"a\", \"b\", \"b\", \"a\"))\n\nstr(df)\n\n'data.frame':   4 obs. of  2 variables:\n $ col_1: num  1 3 8 7\n $ col_2: chr  \"a\" \"b\" \"b\" \"a\"\n\nhead(df)\n\n  col_1 col_2\n1     1     a\n2     3     b\n3     8     b\n4     7     a"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#data.frame-prvky",
-    "href": "IDG/prezentace/02_uvod_r.html#data.frame-prvky",
-    "title": "Základní orientace v jazyce R",
-    "section": "data.frame prvky",
-    "text": "data.frame prvky\n\nkonkrétní prvek na řádku a ve sloupci\n\n\ndf[1, 1]\n\n[1] 1\n\n\n\ncelý sloupec\n\n\ndf$col_1\n\n[1] 1 3 8 7"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#data.frame-prvky-1",
-    "href": "IDG/prezentace/02_uvod_r.html#data.frame-prvky-1",
-    "title": "Základní orientace v jazyce R",
-    "section": "data.frame prvky",
-    "text": "data.frame prvky\n\nkonkrétní prvek ze sloupce\n\n\ndf$col_1[1]\n\n[1] 1"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#data.frame-názvy-proměnných",
-    "href": "IDG/prezentace/02_uvod_r.html#data.frame-názvy-proměnných",
-    "title": "Základní orientace v jazyce R",
-    "section": "data.frame názvy proměnných",
-    "text": "data.frame názvy proměnných\n\nv data.frame (tibble) mají povinně sloupce názvy (případně je přiřazuje R)\nteoreticky je možné libovolné pojmenování sloupce, ale pokud obsahuje mezeru nebo nestandardní znaky (české) tak je nelze zapisovat jednodušše\n\n\nmtcars$mpg\nmtcars$`míle na galon`\n\n\nideální je se těmto názvům vyhnout a předcházet problémům\nfunkce colnames() a rownames() jsou variantami funce names()"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#tibble",
-    "href": "IDG/prezentace/02_uvod_r.html#tibble",
-    "title": "Základní orientace v jazyce R",
-    "section": "tibble",
-    "text": "tibble\n\nmodernější implementace data.frame se nazývá tibble hodně využivívanou v balících tidyverse\nnavenek se zásadně neliší od data.frame je kompatabilní\nfunkce navíc, zjednodušení některých operací\ntvorba po řádcích - viz help\n\n\nlibrary(tibble)"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#faktor",
-    "href": "IDG/prezentace/02_uvod_r.html#faktor",
-    "title": "Základní orientace v jazyce R",
-    "section": "Faktor",
-    "text": "Faktor\n\nR je statistický software a snaží se tedy připravovat data pro statické zpracování\nfactor je speciální typ dat, kdy se řetězce zakódují pomocí celočíselných hodnot a samotné textové hodnoty se uloží jako tzv. úrovně (levels)\npřevod na factor pomocí funkce as.factor(), z faktoru na řetězec as.character() nebo na celé číslo as.integer()\nfaktor může být bez pořádí (nominální data), tak s určeným pořadím prvků (ordinální data)"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#faktor-ukázka",
-    "href": "IDG/prezentace/02_uvod_r.html#faktor-ukázka",
-    "title": "Základní orientace v jazyce R",
-    "section": "Faktor ukázka",
-    "text": "Faktor ukázka\n\ndf$col_2 &lt;- as.factor(df$col_2)\nprint(df)\n\n  col_1 col_2\n1     1     a\n2     3     b\n3     8     b\n4     7     a\n\ndf$col_2\n\n[1] a b b a\nLevels: a b\n\n\n\nas.character(df$col_2)\n\n[1] \"a\" \"b\" \"b\" \"a\"\n\nas.integer(df$col_2)\n\n[1] 1 2 2 1"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#důležité-funkce",
-    "href": "IDG/prezentace/02_uvod_r.html#důležité-funkce",
-    "title": "Základní orientace v jazyce R",
-    "section": "Důležité funkce",
-    "text": "Důležité funkce\n\nkromě data(),View() a names(), které jsme už viděli\ninstalace balíků a jejich načtení do R\ninstalace se provádí pouze jednou, načtení balíku je potřeba udělat před každým jeho použitím v rámci nové R Sesssion\n\n\ninstall.packages(\"nycflights13\")\n\n\nlibrary(nycflights13)\ndata(\"flights\")\n\n\nView(flights)"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#nenačtení-balíku-či-špatně-zapsaná-funkce",
-    "href": "IDG/prezentace/02_uvod_r.html#nenačtení-balíku-či-špatně-zapsaná-funkce",
-    "title": "Základní orientace v jazyce R",
-    "section": "Nenačtení balíku či špatně zapsaná funkce",
-    "text": "Nenačtení balíku či špatně zapsaná funkce\n\nneexistujici_funkce(df)\n\nError in neexistujici_funkce(df): could not find function \"neexistujici_funkce\""
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#parametry-funkcí",
-    "href": "IDG/prezentace/02_uvod_r.html#parametry-funkcí",
-    "title": "Základní orientace v jazyce R",
-    "section": "Parametry funkcí",
-    "text": "Parametry funkcí\n\n3 typy - povinné, nepovinné (obvykle s určenou výchozí hodnotou) a parametr ...\n\n\ncor(x, y = NULL, use = \"everything\", \n    method = c(\"pearson\", \"kendall\", \"spearman\"))\n\n\ndata.frame(..., row.names = NULL, check.rows = FALSE, \n           check.names = TRUE, fix.empty.names = TRUE, \n           stringsAsFactors = default.stringsAsFactors())"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#nse-non-standard-evaluation",
-    "href": "IDG/prezentace/02_uvod_r.html#nse-non-standard-evaluation",
-    "title": "Základní orientace v jazyce R",
-    "section": "NSE (non-standard evaluation)",
-    "text": "NSE (non-standard evaluation)\n\nčesky tzv. nestandardní vyhodnocování argumentů\npříklad\n\n\ninstall.packages(\"tidyverse\")\nlibrary(tidyverse)\n\n\nu library() pojem tidyverse vypadá jako název proměnné, ale ve skutečnosti ho R vyhodnotí jako textové označení balíku\nverze volání funkce s textovým řetězcem je také možná, ale považuje se to zbytečné\n\n\nlibrary(\"tidyverse\")"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#dalším-příkladem-je-parametr-...",
-    "href": "IDG/prezentace/02_uvod_r.html#dalším-příkladem-je-parametr-...",
-    "title": "Základní orientace v jazyce R",
-    "section": "Dalším příkladem je parametr ...",
-    "text": "Dalším příkladem je parametr ...\n\nviz dříve zmíněný příklad\n\n\ndata.frame(..., row.names = NULL, check.rows = FALSE, \n           check.names = TRUE, fix.empty.names = TRUE, \n           stringsAsFactors = default.stringsAsFactors())\n\n\nparametr ... zachytí všechny atributy, kromě těch specificky pojmenovaných\nvšechny parametry jsou vyhodnoceny stejně, zde konkrétně vytvoří nové sloupce"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#balík-tidyverse",
-    "href": "IDG/prezentace/02_uvod_r.html#balík-tidyverse",
-    "title": "Základní orientace v jazyce R",
-    "section": "Balík tidyverse",
-    "text": "Balík tidyverse\n\ninstall.packages(\"tidyverse\")\nlibrary(tidyverse)\n\n\ntzv. metabalík - sám definuje pouze minimum funkcí, ale načítá nejdůležitější balíky pro zpracování dat\nbalíky, které sdílejí společnou filozofii designu funkcí\nněkteré funkce základního R nemají ujednocené argumenty a celkové chování (vznikaly v různé době a od různých autorů), tidyverse směřuje k tomu tyto problémy odstranit a ujednotit chování funkcí\ntidyverse balíky v maximální možné míře využívají NSE pro redukci množství kódu, který je potřeba napsat\nThe tidyverse style guide"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#řetězení-funkcí",
-    "href": "IDG/prezentace/02_uvod_r.html#řetězení-funkcí",
-    "title": "Základní orientace v jazyce R",
-    "section": "Řetězení funkcí",
-    "text": "Řetězení funkcí\n\nlog(sin(seq(0.1, 1, by = 0.2)), base = 2)\n\n[1] -3.3243334 -1.7586713 -1.0606213 -0.6343798 -0.3523136\n\n\n\noperátor %&gt;% (klávesová zkratka Ctrl + Shift + M) umožňuje předat hodnotu před ním jako první parametr funkce za operátorem\nnení nutné vytvářet dočasné proměnné, ani tvořit složité konstrukce (viz výše)\n\n\nlibrary(magrittr)\nseq(0.1, 1, by = 0.2) %&gt;% \n  sin() %&gt;%\n  log(base = 2)\n\n[1] -3.3243334 -1.7586713 -1.0606213 -0.6343798 -0.3523136"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#řetězení-funkce---příklady",
-    "href": "IDG/prezentace/02_uvod_r.html#řetězení-funkce---příklady",
-    "title": "Základní orientace v jazyce R",
-    "section": "Řetězení funkce - příklady",
-    "text": "Řetězení funkce - příklady\n\ndefinice v balíku magrittr, ale lze používat kompletně v rámci tidyverse\n\n\nx &lt;- seq(1, 5, by = 1)\ny &lt;- x %&gt;% \n  sin() %&gt;% \n  cos()\nprint(y)\n\n[1] 0.6663667 0.6143003 0.9900591 0.7270351 0.5744009"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#řetězení-funkcí-v-tidyverse",
-    "href": "IDG/prezentace/02_uvod_r.html#řetězení-funkcí-v-tidyverse",
-    "title": "Základní orientace v jazyce R",
-    "section": "Řetězení funkcí v tidyverse",
-    "text": "Řetězení funkcí v tidyverse\n\ntidyverse maximálně využívá možností řetězení funkcí\ndosahuje se toho tím, že prvním argumentem funkce jsou vždy vstupní data (což v klasickém R není vždy pravda)"
-  },
-  {
-    "objectID": "IDG/prezentace/02_uvod_r.html#nejpoužívanější-balíky-z-tidyverse",
-    "href": "IDG/prezentace/02_uvod_r.html#nejpoužívanější-balíky-z-tidyverse",
-    "title": "Základní orientace v jazyce R",
-    "section": "Nejpoužívanější balíky z tidyverse",
-    "text": "Nejpoužívanější balíky z tidyverse\n\nreadr, readxl - načítání a ukládání dat\ndplyr - základní manipulace s daty\ntidyr - čištění a reformátování dat\nggplot2 - vizualizace, tvorba grafů\nhms, lubridate - práce s datumy a časy\nstringr - práce s textovými daty\npurrr - fukncionální programování"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#náplň",
-    "href": "PGIS2/prezentace/01_uvod.html#náplň",
-    "title": "Úvodní cvičení",
-    "section": "Náplň",
-    "text": "Náplň\n\nprogramování v Pythonu s důrazem na GIS knihovny\n\nGDAL\nFiona, Rasterio, Shapely\nPandas, Polars\n\n\nmanagement Pythonu pomocí Conda\nstandardní techniky programování v Pythonu"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "href": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "title": "Úvodní cvičení",
-    "section": "O čem to bude",
-    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\noperace s geodaty v Pythonu\nfunkcionální i objektově orientované programování\nodchytávání výjimek\npráce s GitHub"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "href": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "title": "Úvodní cvičení",
-    "section": "Dílčí úlohy",
-    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "href": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "title": "Úvodní cvičení",
-    "section": "V čem budeme pracovat",
-    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#materiály",
-    "href": "PGIS2/prezentace/01_uvod.html#materiály",
-    "title": "Úvodní cvičení",
-    "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
-  },
-  {
-    "objectID": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
-    "href": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
-    "title": "Úvodní cvičení",
-    "section": "Zakončení předmětu",
-    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
+    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#shapely",
+    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#shapely",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "shapely",
+    "text": "shapely\n\nknihovna založená na GEOS\nzpracování geometrií\npři využití s fiona nutné konverze mezi jejich typy"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#python",
@@ -549,7 +416,7 @@
     "href": "idg.html#prezentace",
     "title": "Interpretace geodat (IDG)",
     "section": "📑Prezentace",
-    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n\nNo matching items",
+    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n2024-03-18\n\n\nGrafy - ggplot2\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Interpretace geodat"
@@ -759,95 +626,305 @@
     "text": "Načtení souboru a základní info\n\ndalší ukázka v příkladech\n\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nif __name__ == \"__main__\":\n    file = Path.cwd().parent.parent / \\\n        \"_data\" / \"ne_10m_admin_0_countries.shp\"\n\n    print(file.exists())\n\n    ds: gdal.Dataset = gdal.OpenEx(file.as_posix())\n\n    layer: ogr.Layer = ds.GetLayer()\n\n    print(layer.GetName())\n    print(layer.GetFeatureCount())"
   },
   {
-    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#další-ukázky",
-    "href": "PGIS2/prezentace/03_gdal_ogr.html#další-ukázky",
-    "title": "Knihovna GDAL/OGR",
-    "section": "Další ukázky",
-    "text": "Další ukázky\n\nrastrová data"
-  },
-  {
     "objectID": "PGIS2/prezentace/03_gdal_ogr.html#spouštění-operací-z-gdal",
     "href": "PGIS2/prezentace/03_gdal_ogr.html#spouštění-operací-z-gdal",
     "title": "Knihovna GDAL/OGR",
     "section": "Spouštění operací z GDAL",
-    "text": "Spouštění operací z GDAL\n\nhlavní funkce\ngdal.VectorTranslate() pro vektorová data\npro rastrová data je funcí vícero gdal.Translate() (gdal.TranslateOptions()), gdal.Warp() (gdal.WarpOptions())\nmnoho dalších popsaných v dokumentaci\nmnožství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí\nvšude, kde se používají cesty k souborům lze použít cesty /vsi* nebo přímo objekty gdal.Dataset"
+    "text": "Spouštění operací z GDAL\n\nhlavní funkce\ngdal.VectorTranslate() (gdal.VectorTranslateOptions()) pro vektorová data\npro rastrová data je funcí vícero gdal.Translate() (gdal.TranslateOptions()), gdal.Warp() (gdal.WarpOptions())\nmnoho dalších popsaných v dokumentaci\nmnožství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí\nvšude, kde se používají cesty k souborům lze použít cesty /vsi* nebo přímo objekty gdal.Dataset"
   },
   {
-    "objectID": "pgis2.html",
-    "href": "pgis2.html",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "",
-    "text": "opakování základů Pythonu\nknihovna GDAL/OGR",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Programování v GIS 2"
-    ]
+    "objectID": "PGIS2/prezentace/03_gdal_ogr.html#práce-s-daty-v-paměti",
+    "href": "PGIS2/prezentace/03_gdal_ogr.html#práce-s-daty-v-paměti",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Práce s daty v paměti",
+    "text": "Práce s daty v paměti\n\nviz ukázkový kód"
   },
   {
-    "objectID": "pgis2.html#řešená-témata",
-    "href": "pgis2.html#řešená-témata",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "",
-    "text": "opakování základů Pythonu\nknihovna GDAL/OGR",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Programování v GIS 2"
-    ]
+    "objectID": "PGIS2/prezentace/01_uvod.html#náplň",
+    "href": "PGIS2/prezentace/01_uvod.html#náplň",
+    "title": "Úvodní cvičení",
+    "section": "Náplň",
+    "text": "Náplň\n\nprogramování v Pythonu s důrazem na GIS knihovny\n\nGDAL\nFiona, Rasterio, Shapely\nPandas, Polars\n\n\nmanagement Pythonu pomocí Conda\nstandardní techniky programování v Pythonu"
   },
   {
-    "objectID": "pgis2.html#prezentace",
-    "href": "pgis2.html#prezentace",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "📑Prezentace",
-    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nOpakování Pythonu\n\n\n\n\n2024-02-26\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Programování v GIS 2"
-    ]
+    "objectID": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "href": "PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "title": "Úvodní cvičení",
+    "section": "O čem to bude",
+    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\noperace s geodaty v Pythonu\nfunkcionální i objektově orientované programování\nodchytávání výjimek\npráce s GitHub"
   },
   {
-    "objectID": "pgis2.html#zdroje",
-    "href": "pgis2.html#zdroje",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "📚 Zdroje",
-    "text": "📚 Zdroje\n\ndata Natural Earth\nGDAL/OGR Cookbook",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Programování v GIS 2"
-    ]
+    "objectID": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "href": "PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "title": "Úvodní cvičení",
+    "section": "Dílčí úlohy",
+    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
   },
   {
-    "objectID": "pgis2.html#ukázkové-kódy",
-    "href": "pgis2.html#ukázkové-kódy",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Programování v GIS 2"
-    ]
+    "objectID": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "href": "PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "title": "Úvodní cvičení",
+    "section": "V čem budeme pracovat",
+    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code"
   },
   {
-    "objectID": "pgis2.html#instalace",
-    "href": "pgis2.html#instalace",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "🖥 Instalace",
-    "text": "🖥 Instalace\n\nmanagement Pythonu - Miniconda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.11\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  - pip:\n    - geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Programování v GIS 2"
-    ]
+    "objectID": "PGIS2/prezentace/01_uvod.html#materiály",
+    "href": "PGIS2/prezentace/01_uvod.html#materiály",
+    "title": "Úvodní cvičení",
+    "section": "Materiály",
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
   },
   {
-    "objectID": "pgis2.html#další",
-    "href": "pgis2.html#další",
-    "title": "Programování v GIS 2 (PGIS2)",
-    "section": "Další",
-    "text": "Další\n\nzřízení účtu na Github, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu\npožádání o studentský přístup na Github dle článku\nověření nějakou dobou trvá cca. 1-2 dny\nnásledně se lze ve VS Code pomocí tohoto účtu přihlásit a měl by být dostupý GitHub Copilot",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Programování v GIS 2"
-    ]
+    "objectID": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
+    "href": "PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
+    "title": "Úvodní cvičení",
+    "section": "Zakončení předmětu",
+    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#instalace",
+    "href": "IDG/prezentace/02_uvod_r.html#instalace",
+    "title": "Základní orientace v jazyce R",
+    "section": "Instalace",
+    "text": "Instalace\n\nR verze 4.3.2 z https://cran.r-project.org/bin/windows/base/\n\nsamotný jazyk a prostředí\n\nRStudio Desktop (Open Source License) verze 2023.12.1 z https://posit.co/download/rstudio-desktop/\n\nuživatelské prostředí z nějž R ovládáme, IDE\n\nRTools verze 4.3 z https://cran.r-project.org/bin/windows/Rtools/\n\nnení nezbytné, pokud neplánujeme instalovat balíky z jiného zdroje než CRAN\npro instalaci balíků z GitHubu nezbytné"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#jazyk-r",
+    "href": "IDG/prezentace/02_uvod_r.html#jazyk-r",
+    "title": "Základní orientace v jazyce R",
+    "section": "Jazyk R",
+    "text": "Jazyk R\n\ninterpretovaný programovací jazyk přístupný v základu skrze příkazový řádek\nimplementace jazyka S pod open source licencí\nurčený primárně ke zpracování dat a jejich vizualizaci, s výrazným zaměřením na statistiku (původně) a celkovou problematiku zpracování dat (současnost)\nzákladní funkcionalita není příliš široká (respektive snadno přístupná), většina funkcinality přichází z tzv. balíčků\ncentrální sklad balíčků - CRAN (Comprehensive R Archive Network)"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#r-times-ostatní-jazyky",
+    "href": "IDG/prezentace/02_uvod_r.html#r-times-ostatní-jazyky",
+    "title": "Základní orientace v jazyce R",
+    "section": "R \\(\\times\\) ostatní jazyky",
+    "text": "R \\(\\times\\) ostatní jazyky\n\nkonkurence: Matlab, Wolfram Language, Julia, Python, Excel\nvýraznější zaměření na data a operaci s nimi, většina funkcí dobře pracuje s vektory dat a datovými rámci\ninterpretovaný jazyk, možnost široce interagovat s daty a procesy\nRStudio maximálně zpřístupňuje tzv. interaktivní práci s jazykem (náhledy na pamět, nápovědu, grafy a atd.)\nod uživatele se většinou nepředpokládá “programování” (ve smyslu komplexnějších konstrukcí)\nvelice příjemná učící křivka"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#přiřazovací-operátor",
+    "href": "IDG/prezentace/02_uvod_r.html#přiřazovací-operátor",
+    "title": "Základní orientace v jazyce R",
+    "section": "Přiřazovací operátor",
+    "text": "Přiřazovací operátor\n\nv R používáme pro přiřazení hodnoty do proměnné operátor &lt;-\nlze použít i = ale z hlediska čtení kódu se to nedoporučuje\nv RStudiu zkratka Levý Alt + -"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#základní-typy-dat",
+    "href": "IDG/prezentace/02_uvod_r.html#základní-typy-dat",
+    "title": "Základní orientace v jazyce R",
+    "section": "Základní typy dat",
+    "text": "Základní typy dat\n\nx &lt;- 5.2\nx &lt;- 1.42e-2\ntypeof(x)\n\n[1] \"double\"\n\nx &lt;- 5L\ntypeof(x)\n\n[1] \"integer\""
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#základní-typy-dat-1",
+    "href": "IDG/prezentace/02_uvod_r.html#základní-typy-dat-1",
+    "title": "Základní orientace v jazyce R",
+    "section": "Základní typy dat",
+    "text": "Základní typy dat\n\nx &lt;- \"řetězec\"\ntypeof(x)\n\n[1] \"character\"\n\nx &lt;- TRUE\ntypeof(x)\n\n[1] \"logical\""
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#vektor",
+    "href": "IDG/prezentace/02_uvod_r.html#vektor",
+    "title": "Základní orientace v jazyce R",
+    "section": "Vektor",
+    "text": "Vektor\n\ndefinice pomocí funkce c()\n\n\nv &lt;- c(5.2, 4.9, 3.1, -0.4)\nv\n\n[1]  5.2  4.9  3.1 -0.4\n\n\n\n\n\n\n\n\nPozor\n\n\npokud nejsou všechny prvky stejného typu, pak se typ změní na nejreprezentativnější\n\n\n\n\nv &lt;- c(5.2, 4.9, 3.1, -0.4, TRUE, \"a\")\nv\n\n[1] \"5.2\"  \"4.9\"  \"3.1\"  \"-0.4\" \"TRUE\" \"a\""
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#vektor-1",
+    "href": "IDG/prezentace/02_uvod_r.html#vektor-1",
+    "title": "Základní orientace v jazyce R",
+    "section": "Vektor",
+    "text": "Vektor\n\njednotlivé prvky lze získat pomocí operátoru []\n\n\nv[3]\n\n[1] \"3.1\"\n\nv[5]\n\n[1] \"TRUE\""
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#seznam",
+    "href": "IDG/prezentace/02_uvod_r.html#seznam",
+    "title": "Základní orientace v jazyce R",
+    "section": "Seznam",
+    "text": "Seznam\n\ndefinice funkcí list(), umožňuje ukládat smíšené typy prvků\n\n\nl &lt;- list(5, 4.5, \"a\", FALSE)\nl\n\n[[1]]\n[1] 5\n\n[[2]]\n[1] 4.5\n\n[[3]]\n[1] \"a\"\n\n[[4]]\n[1] FALSE"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#seznam-1",
+    "href": "IDG/prezentace/02_uvod_r.html#seznam-1",
+    "title": "Základní orientace v jazyce R",
+    "section": "Seznam",
+    "text": "Seznam\n\njednotlivé prvky lze získat podobně jako u vektorů\nv jednoduché podobě vrací vždy seznam\n\n\nl[1]\n\n[[1]]\n[1] 5\n\n\n\n\n\n\n\n\nPozor\n\n\npokud chceme přímo hodnotu, pak musíme použít operátor [[]] pro rozložení seznamu\n\n\n\n\nl[[1]]\n\n[1] 5"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#pojmenované-vektory-a-seznamy",
+    "href": "IDG/prezentace/02_uvod_r.html#pojmenované-vektory-a-seznamy",
+    "title": "Základní orientace v jazyce R",
+    "section": "Pojmenované vektory a seznamy",
+    "text": "Pojmenované vektory a seznamy\n\nx &lt;- c(\"a\" = 1, \"b\" = 5, \"c\" = 6)\nx[1]\n\na \n1 \n\nx[\"a\"]\n\na \n1"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#extrakce-jmen",
+    "href": "IDG/prezentace/02_uvod_r.html#extrakce-jmen",
+    "title": "Základní orientace v jazyce R",
+    "section": "Extrakce jmen",
+    "text": "Extrakce jmen\n\nx &lt;- c(1, 5, 6)\nnames(x) &lt;- c(\"a\", \"b\", \"c\")\nprint(x)\n\na b c \n1 5 6 \n\n\n\nn &lt;- names(x)\nprint(n)\n\n[1] \"a\" \"b\" \"c\""
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#pojmenované-seznamy",
+    "href": "IDG/prezentace/02_uvod_r.html#pojmenované-seznamy",
+    "title": "Základní orientace v jazyce R",
+    "section": "Pojmenované seznamy",
+    "text": "Pojmenované seznamy\n\nl &lt;- list(\"a\" = 1, \"b\" = \"text\", \"c\" = TRUE)\nl[\"a\"]\n\n$a\n[1] 1\n\nl[[\"a\"]]\n\n[1] 1\n\nl$a\n\n[1] 1"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#matematické-a-logické-operátory",
+    "href": "IDG/prezentace/02_uvod_r.html#matematické-a-logické-operátory",
+    "title": "Základní orientace v jazyce R",
+    "section": "Matematické a logické operátory",
+    "text": "Matematické a logické operátory\n\n+, -, *, /\n^ nebo ** mocnina\n%% modulo\n%/% celočíselné dělení\n==, &lt;, &gt;, &lt;=, &gt;=, !=\n! zápor , | nebo, & a\nspeciální operátor %in% pro vyhledávání ve vektorech a seznamech\noperátory $ a @ pro přístup k součástem komplexních datových struktur"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#funkce",
+    "href": "IDG/prezentace/02_uvod_r.html#funkce",
+    "title": "Základní orientace v jazyce R",
+    "section": "Funkce",
+    "text": "Funkce\n\njak matematické, např. cos(), sin(), log() atd., ale i funkce pro zpracování dat sort()\nspeciální případy c() a list()\nvětšinou vektorizované, takže lze provést nejen na jednom prvku (proměnné) ale přímo na vektoru\nna funkce se lze odkazovat i balik::funkce(), nepoužívá se často ale lze na tento zápis narazit, např. v situaci kdy je kolize názvů funkcí z různých balíků\n\n\na &lt;- c(4, 5, 3.5)\nb &lt;- sin(a)\nb\n\n[1] -0.7568025 -0.9589243 -0.3507832"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#komentáře",
+    "href": "IDG/prezentace/02_uvod_r.html#komentáře",
+    "title": "Základní orientace v jazyce R",
+    "section": "Komentáře",
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.3403035 -0.5733537 -0.2623285 -0.7733668 -0.5399121"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
+    "href": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
+    "title": "Základní orientace v jazyce R",
+    "section": "Komplexní datové struktury",
+    "text": "Komplexní datové struktury\n\n2D struktury pro uložení dat - matice (matrix), datové rámce (data.frame)\nv maticích musí být všechny prvky stejného typu, v datovém rámci se mohou jednotlivé sloupce lišit\npro zpracování dat se obvykle používá data.frame, či jeho modernější verze tibble\ns daty v této podobě se budeme setkávat v při zpracování dat nejčastěji\nnačtení ukázkové datové sady dostupné přímo v základní instalaci R"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury-1",
+    "href": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury-1",
+    "title": "Základní orientace v jazyce R",
+    "section": "Komplexní datové struktury",
+    "text": "Komplexní datové struktury\n\ndata(\"mtcars\")\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\n\n\nView(mtcars)"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#data.frame",
+    "href": "IDG/prezentace/02_uvod_r.html#data.frame",
+    "title": "Základní orientace v jazyce R",
+    "section": "data.frame",
+    "text": "data.frame\n\ndf &lt;- data.frame(col_1 = c(1,3,8,7),\n                 col_2 = c(\"a\", \"b\", \"b\", \"a\"))\n\nstr(df)\n\n'data.frame':   4 obs. of  2 variables:\n $ col_1: num  1 3 8 7\n $ col_2: chr  \"a\" \"b\" \"b\" \"a\"\n\nhead(df)\n\n  col_1 col_2\n1     1     a\n2     3     b\n3     8     b\n4     7     a"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#data.frame-prvky",
+    "href": "IDG/prezentace/02_uvod_r.html#data.frame-prvky",
+    "title": "Základní orientace v jazyce R",
+    "section": "data.frame prvky",
+    "text": "data.frame prvky\n\nkonkrétní prvek na řádku a ve sloupci\n\n\ndf[1, 1]\n\n[1] 1\n\n\n\ncelý sloupec\n\n\ndf$col_1\n\n[1] 1 3 8 7"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#data.frame-prvky-1",
+    "href": "IDG/prezentace/02_uvod_r.html#data.frame-prvky-1",
+    "title": "Základní orientace v jazyce R",
+    "section": "data.frame prvky",
+    "text": "data.frame prvky\n\nkonkrétní prvek ze sloupce\n\n\ndf$col_1[1]\n\n[1] 1"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#data.frame-názvy-proměnných",
+    "href": "IDG/prezentace/02_uvod_r.html#data.frame-názvy-proměnných",
+    "title": "Základní orientace v jazyce R",
+    "section": "data.frame názvy proměnných",
+    "text": "data.frame názvy proměnných\n\nv data.frame (tibble) mají povinně sloupce názvy (případně je přiřazuje R)\nteoreticky je možné libovolné pojmenování sloupce, ale pokud obsahuje mezeru nebo nestandardní znaky (české) tak je nelze zapisovat jednodušše\n\n\nmtcars$mpg\nmtcars$`míle na galon`\n\n\nideální je se těmto názvům vyhnout a předcházet problémům\nfunkce colnames() a rownames() jsou variantami funce names()"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#tibble",
+    "href": "IDG/prezentace/02_uvod_r.html#tibble",
+    "title": "Základní orientace v jazyce R",
+    "section": "tibble",
+    "text": "tibble\n\nmodernější implementace data.frame se nazývá tibble hodně využivívanou v balících tidyverse\nnavenek se zásadně neliší od data.frame je kompatabilní\nfunkce navíc, zjednodušení některých operací\ntvorba po řádcích - viz help\n\n\nlibrary(tibble)"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#faktor",
+    "href": "IDG/prezentace/02_uvod_r.html#faktor",
+    "title": "Základní orientace v jazyce R",
+    "section": "Faktor",
+    "text": "Faktor\n\nR je statistický software a snaží se tedy připravovat data pro statické zpracování\nfactor je speciální typ dat, kdy se řetězce zakódují pomocí celočíselných hodnot a samotné textové hodnoty se uloží jako tzv. úrovně (levels)\npřevod na factor pomocí funkce as.factor(), z faktoru na řetězec as.character() nebo na celé číslo as.integer()\nfaktor může být bez pořádí (nominální data), tak s určeným pořadím prvků (ordinální data)"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#faktor-ukázka",
+    "href": "IDG/prezentace/02_uvod_r.html#faktor-ukázka",
+    "title": "Základní orientace v jazyce R",
+    "section": "Faktor ukázka",
+    "text": "Faktor ukázka\n\ndf$col_2 &lt;- as.factor(df$col_2)\nprint(df)\n\n  col_1 col_2\n1     1     a\n2     3     b\n3     8     b\n4     7     a\n\ndf$col_2\n\n[1] a b b a\nLevels: a b\n\n\n\nas.character(df$col_2)\n\n[1] \"a\" \"b\" \"b\" \"a\"\n\nas.integer(df$col_2)\n\n[1] 1 2 2 1"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#důležité-funkce",
+    "href": "IDG/prezentace/02_uvod_r.html#důležité-funkce",
+    "title": "Základní orientace v jazyce R",
+    "section": "Důležité funkce",
+    "text": "Důležité funkce\n\nkromě data(),View() a names(), které jsme už viděli\ninstalace balíků a jejich načtení do R\ninstalace se provádí pouze jednou, načtení balíku je potřeba udělat před každým jeho použitím v rámci nové R Sesssion\n\n\ninstall.packages(\"nycflights13\")\n\n\nlibrary(nycflights13)\ndata(\"flights\")\n\n\nView(flights)"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#nenačtení-balíku-či-špatně-zapsaná-funkce",
+    "href": "IDG/prezentace/02_uvod_r.html#nenačtení-balíku-či-špatně-zapsaná-funkce",
+    "title": "Základní orientace v jazyce R",
+    "section": "Nenačtení balíku či špatně zapsaná funkce",
+    "text": "Nenačtení balíku či špatně zapsaná funkce\n\nneexistujici_funkce(df)\n\nError in neexistujici_funkce(df): could not find function \"neexistujici_funkce\""
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#parametry-funkcí",
+    "href": "IDG/prezentace/02_uvod_r.html#parametry-funkcí",
+    "title": "Základní orientace v jazyce R",
+    "section": "Parametry funkcí",
+    "text": "Parametry funkcí\n\n3 typy - povinné, nepovinné (obvykle s určenou výchozí hodnotou) a parametr ...\n\n\ncor(x, y = NULL, use = \"everything\", \n    method = c(\"pearson\", \"kendall\", \"spearman\"))\n\n\ndata.frame(..., row.names = NULL, check.rows = FALSE, \n           check.names = TRUE, fix.empty.names = TRUE, \n           stringsAsFactors = default.stringsAsFactors())"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#nse-non-standard-evaluation",
+    "href": "IDG/prezentace/02_uvod_r.html#nse-non-standard-evaluation",
+    "title": "Základní orientace v jazyce R",
+    "section": "NSE (non-standard evaluation)",
+    "text": "NSE (non-standard evaluation)\n\nčesky tzv. nestandardní vyhodnocování argumentů\npříklad\n\n\ninstall.packages(\"tidyverse\")\nlibrary(tidyverse)\n\n\nu library() pojem tidyverse vypadá jako název proměnné, ale ve skutečnosti ho R vyhodnotí jako textové označení balíku\nverze volání funkce s textovým řetězcem je také možná, ale považuje se to zbytečné\n\n\nlibrary(\"tidyverse\")"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#dalším-příkladem-je-parametr-...",
+    "href": "IDG/prezentace/02_uvod_r.html#dalším-příkladem-je-parametr-...",
+    "title": "Základní orientace v jazyce R",
+    "section": "Dalším příkladem je parametr ...",
+    "text": "Dalším příkladem je parametr ...\n\nviz dříve zmíněný příklad\n\n\ndata.frame(..., row.names = NULL, check.rows = FALSE, \n           check.names = TRUE, fix.empty.names = TRUE, \n           stringsAsFactors = default.stringsAsFactors())\n\n\nparametr ... zachytí všechny atributy, kromě těch specificky pojmenovaných\nvšechny parametry jsou vyhodnoceny stejně, zde konkrétně vytvoří nové sloupce"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#balík-tidyverse",
+    "href": "IDG/prezentace/02_uvod_r.html#balík-tidyverse",
+    "title": "Základní orientace v jazyce R",
+    "section": "Balík tidyverse",
+    "text": "Balík tidyverse\n\ninstall.packages(\"tidyverse\")\nlibrary(tidyverse)\n\n\ntzv. metabalík - sám definuje pouze minimum funkcí, ale načítá nejdůležitější balíky pro zpracování dat\nbalíky, které sdílejí společnou filozofii designu funkcí\nněkteré funkce základního R nemají ujednocené argumenty a celkové chování (vznikaly v různé době a od různých autorů), tidyverse směřuje k tomu tyto problémy odstranit a ujednotit chování funkcí\ntidyverse balíky v maximální možné míře využívají NSE pro redukci množství kódu, který je potřeba napsat\nThe tidyverse style guide"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#řetězení-funkcí",
+    "href": "IDG/prezentace/02_uvod_r.html#řetězení-funkcí",
+    "title": "Základní orientace v jazyce R",
+    "section": "Řetězení funkcí",
+    "text": "Řetězení funkcí\n\nlog(sin(seq(0.1, 1, by = 0.2)), base = 2)\n\n[1] -3.3243334 -1.7586713 -1.0606213 -0.6343798 -0.3523136\n\n\n\noperátor %&gt;% (klávesová zkratka Ctrl + Shift + M) umožňuje předat hodnotu před ním jako první parametr funkce za operátorem\nnení nutné vytvářet dočasné proměnné, ani tvořit složité konstrukce (viz výše)\n\n\nlibrary(magrittr)\nseq(0.1, 1, by = 0.2) %&gt;% \n  sin() %&gt;%\n  log(base = 2)\n\n[1] -3.3243334 -1.7586713 -1.0606213 -0.6343798 -0.3523136"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#řetězení-funkce---příklady",
+    "href": "IDG/prezentace/02_uvod_r.html#řetězení-funkce---příklady",
+    "title": "Základní orientace v jazyce R",
+    "section": "Řetězení funkce - příklady",
+    "text": "Řetězení funkce - příklady\n\ndefinice v balíku magrittr, ale lze používat kompletně v rámci tidyverse\n\n\nx &lt;- seq(1, 5, by = 1)\ny &lt;- x %&gt;% \n  sin() %&gt;% \n  cos()\nprint(y)\n\n[1] 0.6663667 0.6143003 0.9900591 0.7270351 0.5744009"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#řetězení-funkcí-v-tidyverse",
+    "href": "IDG/prezentace/02_uvod_r.html#řetězení-funkcí-v-tidyverse",
+    "title": "Základní orientace v jazyce R",
+    "section": "Řetězení funkcí v tidyverse",
+    "text": "Řetězení funkcí v tidyverse\n\ntidyverse maximálně využívá možností řetězení funkcí\ndosahuje se toho tím, že prvním argumentem funkce jsou vždy vstupní data (což v klasickém R není vždy pravda)"
+  },
+  {
+    "objectID": "IDG/prezentace/02_uvod_r.html#nejpoužívanější-balíky-z-tidyverse",
+    "href": "IDG/prezentace/02_uvod_r.html#nejpoužívanější-balíky-z-tidyverse",
+    "title": "Základní orientace v jazyce R",
+    "section": "Nejpoužívanější balíky z tidyverse",
+    "text": "Nejpoužívanější balíky z tidyverse\n\nreadr, readxl - načítání a ukládání dat\ndplyr - základní manipulace s daty\ntidyr - čištění a reformátování dat\nggplot2 - vizualizace, tvorba grafů\nhms, lubridate - práce s datumy a časy\nstringr - práce s textovými daty\npurrr - fukncionální programování"
   },
   {
     "objectID": "IDG/prezentace/03_data.html#balík-here",
@@ -1071,7 +1148,7 @@
     "href": "index.html#nástroje",
     "title": "Výuka - Jan Caha",
     "section": "Nástroje",
-    "text": "Nástroje\n\nVisual Studio Code"
+    "text": "Nástroje\n\nVisual Studio Code\nLinux Mint"
   },
   {
     "objectID": "PDBS2/prezentace/01_uvod.html#náplň",
