@@ -1,0 +1,24 @@
+- title: "Instalace PostGIS do daného schématu DB"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PDBS2/skripty/01_install_postgis_check_version.sql"
+- title: "Načtení souboru jako tabulky do PostGIS"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PDBS2/skripty/02_load_data_to_postgis.sh"
+- title: "Načtení CSV souboru jako tabulky do PostgreSQL"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PDBS2/skripty/03_load_csv.sql"
+- title: "Tvorba tabulek pro import z CSV"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PDBS2/skripty/04_tabulky_pro_import.sql"
+- title: "Join s dočasnou tabulkou"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PDBS2/skripty/05_join_with.sql"
+- title: "View"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PDBS2/skripty/06_view.sql"

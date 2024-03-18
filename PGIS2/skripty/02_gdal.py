@@ -1,13 +1,14 @@
-# NOTE: kontorla typu souboru pomocí driveru, otevření rastru a zjištění
+# NOTE: kontrola typu souboru pomocí driveru, otevření rastru a zjištění
 # detailů o rastru a pásmu
-from pathlib import Path
 
 from osgeo import gdal
+
+from utils import data_path
 
 gdal.UseExceptions()
 
 if __name__ == "__main__":
-    file = Path(__file__).parent.parent.parent / "_data" / "HYP_HR_SR_OB_DR.tif"
+    file = data_path("HYP_HR_SR_OB_DR.tif")
 
     print(file.exists())
 

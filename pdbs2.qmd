@@ -1,0 +1,125 @@
+---
+title: Prostorové databázové systémy 2 (PDBS2)
+listing:
+   - id: codes
+     contents: PDBS2/skripty/description.yaml
+     sort-ui: false
+     filter-ui: false
+     type: table
+     date-format: iso
+     sort:
+       - "date"
+     fields: [date, title] 
+     field-display-names:
+       title: "Skript"
+       date: "Datum"
+       author: "Autor"
+   - id: prezentace
+     contents: PDBS2/prezentace
+     sort-ui: false
+     filter-ui: false
+     type: table
+     date-format: iso
+     sort:
+       - "date"
+     fields: [date, title] 
+     field-display-names:
+       title: "Prezentace"
+       date: "Datum"
+filters:
+   - include-code-files
+---
+
+## 📃 Řešená témata
+
+- Oracle 
+- Instalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL
+
+## 📑Prezentace
+
+::: {#prezentace}
+:::
+
+## 🗂️ Data ke stažení
+
+- [GPKG s vrstvami okresů a krajů](./PDBS2/soubory/uzemni_jednotky.gpkg)
+- [CSV s údaji o počtu obyvatel](./PDBS2/soubory/obyvatele_roky.csv)
+- [CSV s převodním číselníkem z RUIAN do ČSÚ](./PDBS2/soubory/ciselnik_csu_ruian.csv)
+
+## 📚 Zdroje
+
+- [PostgreSQL Manuál](https://www.postgresql.org/docs/14/index.html)
+- [PostGIS Manuál](https://postgis.net/docs/manual-3.4/)
+
+## 💻 Ukázkové kódy
+
+::: {#codes}
+:::
+
+## 🖥 Instalace PostregSQL
+
+- instalujeme [Linux Mint - Cinnamon edition](https://www.linuxmint.com/download.php) do prostředí [VirtualBox](https://www.virtualbox.org/wiki/Downloads) -- celý process je ukázán v [tomto videu](https://www.youtube.com/watch?v=5MwBbgdSZS0), nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval
+- důležité je nastavení jména uživatele a hesla
+- následně instalace softwarů
+   - nejdříve nastavíme nezbytnosti pro [PG Admin 4](https://www.pgadmin.org/download/pgadmin-4-apt/) (pozor bude požadováno heslo)
+ 
+```bash
+source /etc/os-release
+
+# Install the public key for the repository (if not done previously):
+curl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg
+
+# Create the repository configuration file:
+echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$UBUNTU_CODENAME pgadmin4 main" | sudo tee /etc/apt/sources.list.d/pgadmin4.list
+
+# Update software sources
+sudo apt-get update
+sudo apt-get upgrade -y
+
+# Install pgAdmin for both desktop and web modes:
+sudo apt-get install -y pgadmin4
+```
+   - následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL
+
+```bash
+# přidání zdroje balíčků GIS nástrojů
+sudo add-apt-repository -y ppa:ubuntugis/ppa
+sudo apt-get update
+
+sudo apt-get install -y gedit postgresql pgxnclient postgis qgis gdal-bin
+```
+
+   - prvotní spuštění PostgreSQL je nutné provést z příkazové řádky
+
+```bash
+sudo -u postgres psql template1
+```
+   - následně spustíme příkaz pro modifikaci hesla hlavní uživatele DB
+  
+```sql
+ALTER USER postgres with encrypted password 'heslo';
+```
+   - příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru `localhost` s uživatelem `postgres` a heslem `heslo` (nastavené výše)
+
+### Docker
+
+Pro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít `docker compose` se souborem s nastavením:
+
+```yaml
+version: "3.5"
+
+services:
+  postgres:
+    container_name: postgis
+    image: postgis/postgis:16-master
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+      PGDATA: /data/postgres
+    volumes:
+      - cesta_k_složce_na_disku:/data/postgres
+    ports:
+      - "5432:5432"
+```
+
+Stačí upravit `volumes` na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.
