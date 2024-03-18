@@ -54,9 +54,11 @@ Dokumentace !!!
 
 ```SQL
 WITH nazev_tabulky AS (
-  SELECT ....
+  SELECT ...
 )
 ```
+
+- tabulku pak dále použijeme např. v `JOIN`
 
 ## VIEW
 
