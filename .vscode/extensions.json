@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "ms-python.autopep8",
+        "streetsidesoftware.code-spell-checker",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "ms-python.mypy-type-checker",
+        "ionutvmi.path-autocomplete",
+        "ms-python.vscode-pylance",
+        "ms-python.pylint",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "quarto.quarto",
+        "reditorsupport.r"
+    ]
+}

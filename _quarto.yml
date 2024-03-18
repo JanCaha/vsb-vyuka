@@ -25,10 +25,21 @@ website:
         url: "https://github.com/JanCaha/vsb-vyuka"
       
     contents:
-      - href: pgis2.qmd
-        text: Programování v GIS 2
-      - href: idg.qmd
-        text: Interpretace geodat
+      - section: Předměty letní semestr
+        contents:
+        - href: pgis2.qmd
+          text: Programování v GIS 2
+        - href: idg.qmd
+          text: Interpretace geodat
+        - href: pdbs2.qmd
+          text: Prostorové databázové systémy 2
+      - section: Předměty zimní semestr
+      - section: "Nástroje"
+        contents:
+        - href: vscode.qmd
+          text: Visual Studio Code
+        - href: linux-mint.qmd
+          text: Linux Mint
       
 
 format:
