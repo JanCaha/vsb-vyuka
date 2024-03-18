@@ -106,4 +106,8 @@ if __name__ == "__main__":
 - rastrová data
 - operace
 
+## Operace s daty
+
+
+
 # Dotazy? {.center}
