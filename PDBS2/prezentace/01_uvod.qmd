@@ -57,3 +57,11 @@ WITH nazev_tabulky AS (
   SELECT ....
 )
 ```
+
+## VIEW
+
+- pohled na data
+- reálně neexistující tabulka, která se vytváří na požádání z dat
+- updatuje se v podsatě v reálném čase
+- užitečné proti duplikacím dat
+- může být náročné na čas

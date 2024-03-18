@@ -18,3 +18,7 @@
   author: Jan Caha
   date: 2024-03-11
   path: "PDBS2/skripty/05_join_with.sql"
+- title: "View"
+  author: Jan Caha
+  date: 2024-03-11
+  path: "PDBS2/skripty/06_view.sql"
