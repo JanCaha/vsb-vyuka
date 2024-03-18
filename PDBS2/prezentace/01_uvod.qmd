@@ -1,0 +1,59 @@
+---
+title: "PostgreSQL (Postgis)"
+subtitle: "Prostorové databázové systémy 2"
+author: "Jan Caha"
+date: 2024-03-04
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Připojení a práce s DB
+
+- buď přes specializovaného klienta [PGAdmin](https://www.pgadmin.org/download/)
+- nebo přes obecné klienty k databázím (např. [DBeaver](https://dbeaver.io/) a řada dalších)
+- přes programovací jazyky - [Python]{.software} (knihovna [Psycopg]{.software}), [R]{.software}(knihovny [RPostgres]{.software} a [dbplyr]{.software})
+- některé IDE mají extenze pro DB
+- jednoúčelové nástroje - např. [ogr2ogr]{.software} z [GDAL/OGR]{.software}
+- příkazová řádka
+  
+## SQL
+
+- odlišný od programovacích jazyků
+- popisujeme výsledek, ne process jak se k němu dostat
+- založený na výrazech (`SELECT, INSERT, UPDATE, DROP, ALTER`...)
+- variace pro různé druhy - [MySQL]{.software} ([MariaDB]{.software}), [PostgreSQL]{.software}, [SQLite]{.software} atd.
+
+::: {.callout-warning}
+Dokumentace !!!
+:::
+
+## PostgreSQL
+
+- v oblasti "větších" databází aktuálně standard - u lehkých databází převládá MySQL nebo SQLite
+- řada variací a forků - HadoopDB, Postgres Pro Enterprise, Red Hat Database, Redshift, Yahoo! Everest
+- extenze - funkcionalita a nové typy dat (např. geodata - PostGIS)
+- vhodné sledovat vývoj, v poslední době dost výrazné změny zejména v rychlosti
+
+## Import Export dat
+
+- buď SQL soubory
+- nebo tvorba tabulky a import CSV
+- nebo přes komplexnější nástroje - Python, R, DB software, GDAL/OGR
+
+## Konstrukce WITH
+
+- dočasné tabulky pro dotazy
+- lze je i zanořovat do sebe
+
+```SQL
+WITH nazev_tabulky AS (
+  SELECT ....
+)
+```
