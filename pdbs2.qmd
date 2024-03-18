@@ -99,5 +99,5 @@ sudo -u postgres psql template1
 ```sql
 ALTER USER postgres with encrypted password 'heslo';
 ```
-   - příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serverlu `localhost` s uživatelem `postgres` a heslem `heslo` (nastavené výše)
+   - příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru `localhost` s uživatelem `postgres` a heslem `heslo` (nastavené výše)
 
