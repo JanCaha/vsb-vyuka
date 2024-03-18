@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Výuka - Jan Caha - Prostorové databázové systémy 2 (PDBS2)</title>
+<title>Výuka - Jan Caha - Linux Mint</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,10 +63,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./vscode.html" rel="next">
-<link href="./idg.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<link href="./vscode.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -105,95 +102,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-codes .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-codes'] = new List('listing-codes', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-prezentace .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-prezentace'] = new List('listing-prezentace', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Výuka - Jan Caha - Prostorové databázové systémy 2 (PDBS2)">
+<meta property="og:title" content="Výuka - Jan Caha - Linux Mint">
+<meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 
@@ -206,7 +118,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="./pdbs2.html">Prostorové databázové systémy 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vscode.html">Nástroje</a></li><li class="breadcrumb-item"><a href="./linux-mint.html">Linux Mint</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -237,13 +149,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Předměty letní semestr</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pgis2.html" class="sidebar-item-text sidebar-link">
@@ -258,7 +170,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pdbs2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./pdbs2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prostorové databázové systémy 2</span></a>
   </div>
 </li>
@@ -270,13 +182,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Nástroje</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vscode.html" class="sidebar-item-text sidebar-link">
@@ -285,7 +197,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./linux-mint.html" class="sidebar-item-text sidebar-link">
+  <a href="./linux-mint.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Linux Mint</span></a>
   </div>
 </li>
@@ -301,24 +213,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#řešená-témata" id="toc-řešená-témata" class="nav-link active" data-scroll-target="#řešená-témata">📃 Řešená témata</a></li>
-  <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">📑Prezentace</a></li>
-  <li><a href="#data-ke-stažení" id="toc-data-ke-stažení" class="nav-link" data-scroll-target="#data-ke-stažení">🗂️ Data ke stažení</a></li>
-  <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">📚 Zdroje</a></li>
-  <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">💻 Ukázkové kódy</a></li>
-  <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">🖥 Instalace PostregSQL</a>
-  <ul class="collapse">
-  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker">Docker</a></li>
-  </ul></li>
+  <li><a href="#instalace" id="toc-instalace" class="nav-link active" data-scroll-target="#instalace">🖥 Instalace</a></li>
+  <li><a href="#instalace-aktuálních-gis-knihoven-a-softwarů" id="toc-instalace-aktuálních-gis-knihoven-a-softwarů" class="nav-link" data-scroll-target="#instalace-aktuálních-gis-knihoven-a-softwarů">Instalace aktuálních GIS knihoven a softwarů</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="./pdbs2.html">Prostorové databázové systémy 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vscode.html">Nástroje</a></li><li class="breadcrumb-item"><a href="./linux-mint.html">Linux Mint</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Prostorové databázové systémy 2 (PDBS2)</h1>
+<h1 class="title">Linux Mint</h1>
 </div>
 
 
@@ -335,201 +240,28 @@ window.Quarto = {
 </header>
 
 
-<section id="řešená-témata" class="level2">
-<h2 class="anchored" data-anchor-id="řešená-témata">📃 Řešená témata</h2>
+<p>Distribuce Linuxu založené na <a href="https://ubuntu.com/">Ubuntu</a> s méně intruzivním uživatelským prostředím.</p>
+<section id="instalace" class="level2">
+<h2 class="anchored" data-anchor-id="instalace">🖥 Instalace</h2>
 <ul>
-<li>Oracle</li>
-<li>Instalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL</li>
-</ul>
-</section>
-<section id="prezentace" class="level2">
-<h2 class="anchored" data-anchor-id="prezentace">📑Prezentace</h2>
-<div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Prezentace
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1710757953287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
-<td>
-<span class="listing-date">2024-02-19</span>
-</td>
-<td>
-<a href="./PDBS2/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1710757953287" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230" data-listing-title-sort="PostgreSQL (Postgis)" data-listing-filename-sort="02_postgresql.qmd">
-<td>
-<span class="listing-date">2024-03-04</span>
-</td>
-<td>
-<a href="./PDBS2/prezentace/02_postgresql.html" class="title listing-title">PostgreSQL (Postgis)</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="data-ke-stažení" class="level2">
-<h2 class="anchored" data-anchor-id="data-ke-stažení">🗂️ Data ke stažení</h2>
+<li>instalujeme <a href="https://www.linuxmint.com/download.php">Linux Mint - Cinnamon edition</a></li>
+<li>lze instalovat jak do fyzického počítače, tak i do <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a>
 <ul>
-<li><a href="./PDBS2/soubory/uzemni_jednotky.gpkg">GPKG s vrstvami okresů a krajů</a></li>
-<li><a href="./PDBS2/soubory/obyvatele_roky.csv">CSV s údaji o počtu obyvatel</a></li>
-<li><a href="./PDBS2/soubory/ciselnik_csu_ruian.csv">CSV s převodním číselníkem z RUIAN do ČSÚ</a></li>
-</ul>
-</section>
-<section id="zdroje" class="level2">
-<h2 class="anchored" data-anchor-id="zdroje">📚 Zdroje</h2>
-<ul>
-<li><a href="https://www.postgresql.org/docs/14/index.html">PostgreSQL Manuál</a></li>
-<li><a href="https://postgis.net/docs/manual-3.4/">PostGIS Manuál</a></li>
-</ul>
-</section>
-<section id="ukázkové-kódy" class="level2">
-<h2 class="anchored" data-anchor-id="ukázkové-kódy">💻 Ukázkové kódy</h2>
-<div id="listing-codes" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Skript
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1710115200000" data-listing-title-sort="Instalace PostGIS do daného schématu DB">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/01_install_postgis_check_version.sql" class="title listing-title">Instalace PostGIS do daného schématu DB</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1710115200000" data-listing-title-sort="Načtení souboru jako tabulky do PostGIS">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/02_load_data_to_postgis.sh" class="title listing-title">Načtení souboru jako tabulky do PostGIS</a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1710115200000" data-listing-title-sort="Načtení CSV souboru jako tabulky do PostgreSQL">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/03_load_csv.sql" class="title listing-title">Načtení CSV souboru jako tabulky do PostgreSQL</a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1710115200000" data-listing-title-sort="Tvorba tabulek pro import z CSV">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/04_tabulky_pro_import.sql" class="title listing-title">Tvorba tabulek pro import z CSV</a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1710115200000" data-listing-title-sort="Join s dočasnou tabulkou">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/05_join_with.sql" class="title listing-title">Join s dočasnou tabulkou</a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1710115200000" data-listing-title-sort="View">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/06_view.sql" class="title listing-title">View</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="instalace-postregsql" class="level2">
-<h2 class="anchored" data-anchor-id="instalace-postregsql">🖥 Instalace PostregSQL</h2>
-<ul>
-<li>instalujeme <a href="https://www.linuxmint.com/download.php">Linux Mint - Cinnamon edition</a> do prostředí <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a> – celý process je ukázán v <a href="https://www.youtube.com/watch?v=5MwBbgdSZS0">tomto videu</a>, nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval</li>
-<li>důležité je nastavení jména uživatele a hesla</li>
-<li>následně instalace softwarů
-<ul>
-<li>nejdříve nastavíme nezbytnosti pro <a href="https://www.pgadmin.org/download/pgadmin-4-apt/">PG Admin 4</a> (pozor bude požadováno heslo)</li>
+<li>celý process je ukázán v <a href="https://www.youtube.com/watch?v=5MwBbgdSZS0">tomto videu</a></li>
+<li>v případě instalace do VirtualBoxu nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval</li>
 </ul></li>
+<li>důležité je nastavení jména uživatele a hesla</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /etc/os-release</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the public key for the repository (if not done previously):</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsS</span> https://www.pgadmin.org/static/packages_pgadmin_org.pub <span class="kw">|</span> <span class="fu">sudo</span> gpg <span class="at">--dearmor</span> <span class="at">-o</span> /usr/share/keyrings/packages-pgadmin-org.gpg</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the repository configuration file:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/</span><span class="va">$UBUNTU_CODENAME</span><span class="st"> pgadmin4 main"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/sources.list.d/pgadmin4.list</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Update software sources</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade <span class="at">-y</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Install pgAdmin for both desktop and web modes:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> pgadmin4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">-y</span> ppa:ubuntugis/ppa</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> gedit postgresql pgxnclient postgis qgis gdal-bin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>prvotní spuštění PostgreSQL je nutné provést z příkazové řádky</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql template1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>následně spustíme příkaz pro modifikaci hesla hlavní uživatele DB</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="fu">USER</span> postgres <span class="kw">with</span> encrypted <span class="kw">password</span> <span class="st">'heslo'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru <code>localhost</code> s uživatelem <code>postgres</code> a heslem <code>heslo</code> (nastavené výše)</li>
-</ul>
-<section id="docker" class="level3">
-<h3 class="anchored" data-anchor-id="docker">Docker</h3>
-<p>Pro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít <code>docker compose</code> se souborem s nastavením:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.5"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">postgres</span><span class="kw">:</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> postgis</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgis/postgis:16-master</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_USER</span><span class="kw">:</span><span class="at"> admin</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_PASSWORD</span><span class="kw">:</span><span class="at"> root</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">PGDATA</span><span class="kw">:</span><span class="at"> /data/postgres</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> cesta_k_složce_na_disku:/data/postgres</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5432:5432"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Stačí upravit <code>volumes</code> na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.</p>
-
-
-
 </section>
+<section id="instalace-aktuálních-gis-knihoven-a-softwarů" class="level2">
+<h2 class="anchored" data-anchor-id="instalace-aktuálních-gis-knihoven-a-softwarů">Instalace aktuálních GIS knihoven a softwarů</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">-y</span> ppa:ubuntugis/ppa</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> qgis gdal-bin grass-gui</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1088,14 +820,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./idg.html" class="pagination-link" aria-label="Interpretace geodat">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interpretace geodat</span>
+      <a href="./vscode.html" class="pagination-link" aria-label="Visual Studio Code">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Visual Studio Code</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./vscode.html" class="pagination-link" aria-label="Visual Studio Code">
-        <span class="nav-page-text">Visual Studio Code</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
