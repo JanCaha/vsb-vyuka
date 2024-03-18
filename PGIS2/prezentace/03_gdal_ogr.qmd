@@ -17,7 +17,7 @@ execute:
 ## Popis [GDAL/OGR]{.software}
 
 - nízkoúrovňová knihovna
-- v Pythonu zpřístupňujeme její **binding**
+- v Pythonu zpřístupňujeme její **binding** - [dokumentace](https://gdal.org/api/python/osgeo.html)
 - kód knihovny v [C/C++]{.software} -> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)
 - většinu objektů uložených v proměnných je vhodné po použití nastavit na `None`, čímž se explicitně uvolní prostředky
 - knihovna má hlavní modul `osgeo` a několik dílčích modulů
@@ -104,6 +104,14 @@ if __name__ == "__main__":
 
 ## Další ukázky
 - rastrová data
-- operace
 
+## Spouštění operací z GDAL
+
+- hlavní funkce
+- `gdal.VectorTranslate()` pro vektorová data
+- pro rastrová data je funcí vícero `gdal.Translate()` (`gdal.TranslateOptions()`), `gdal.Warp()` (`gdal.WarpOptions()`)
+- mnoho dalších popsaných v dokumentaci
+- množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí
+- všude, kde se používají cesty k souborům lze použít cesty `/vsi*` nebo přímo objekty `gdal.Dataset`
+  
 # Dotazy? {.center}
