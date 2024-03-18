@@ -786,7 +786,12 @@ Jan Caha
 <li><p>ujednoconí struktury - jedna analýza/úkol/problém = jeden projekt/složka</p></li>
 <li><p>snadné přenášení, nehrozí opomenutí dat nebo jiné části - vše na jednom místě</p></li>
 <li><p>za použití balíku <span class="software">renv</span> (<a href="https://rstudio.github.io/renv/articles/renv.html">renv web</a>) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí</p></li>
-<li><p>RStudio projekt - složka s několika spefickými soubory a složkami</p>
+</ul>
+</section>
+<section id="struktura-projektu" class="slide level2">
+<h2>Struktura projektu</h2>
+<ul>
+<li>RStudio projekt - složka s několika spefickými soubory a složkami
 <ul>
 <li><code>.Rproj.user</code> - složka RStudia a jeho nastavení apod.</li>
 <li><code>.Rhistory</code> - textový soubor s posledními příkazy spuštěnými v konzoli</li>
@@ -795,19 +800,18 @@ Jan Caha
 </ul></li>
 </ul>
 </section>
-<section id="doporučená-struktura" class="slide level2">
-<h2>Doporučená struktura</h2>
+<section id="doporučená-struktura---složky" class="slide level2">
+<h2>Doporučená struktura - složky</h2>
 <ul>
-<li><p>složky a jejich obsahy</p></li>
-<li><p><em>data</em></p>
+<li><p><strong>data</strong></p>
 <ul>
-<li><em>raw</em> - surová data, na nichž neprovádíme manuálně žádné úpravy, z této složky pouze čteme</li>
-<li><em>produced</em> - odvozená data, ke každé datově sadě máme skript, který ji vytvořil, případné smazání této složky nepředstavuje problém (čas od času žádoucí)</li>
+<li><strong>raw</strong> - surová data, na nichž neprovádíme manuálně žádné úpravy, z této složky pouze čteme</li>
+<li><strong>produced</strong> - odvozená data, ke každé datově sadě máme skript, který ji vytvořil, případné smazání této složky nepředstavuje problém (čas od času žádoucí)</li>
 </ul></li>
-<li><p><em>scripts</em> - <strong>.R</strong> soubory, obsahující bloky kódu, které v rámci analýzy používáme opakovaně (načtení balíků, či dat)</p></li>
-<li><p><em>reports</em> - <strong>.Rmd</strong> soubory obsahující surové reporty, a jejich přeložené verze (později)</p></li>
-<li><p><em>graphs</em> - uložené grafické výstupy</p></li>
-<li><p>další: např. <em>functions</em>, <em>config</em> atd.</p></li>
+<li><p><strong>scripts</strong> - <strong>.R</strong> soubory, obsahující bloky kódu, které v rámci analýzy používáme opakovaně (načtení balíků, či dat)</p></li>
+<li><p><strong>reports</strong> - <strong>.Rmd</strong> či <strong>.qmd</strong> soubory obsahující surové reporty, a jejich přeložené verze (později)</p></li>
+<li><p><strong>graphs</strong> - uložené grafické výstupy</p></li>
+<li><p>další: např. <strong>functions</strong>, <strong>config</strong> atd.</p></li>
 </ul>
 </section>
 <section id="odkazy-na-soubory-v-projektu" class="slide level2">

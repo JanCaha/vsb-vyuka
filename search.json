@@ -791,7 +791,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.3403035 -0.5733537 -0.2623285 -0.7733668 -0.5399121"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1194033 -1.2949474 -1.0347355 -0.5199868 -0.1748539"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1092,14 +1092,21 @@
     "href": "IDG/prezentace/03_data.html#hlavní-přínosy",
     "title": "Načítání dat, Manipulace s daty",
     "section": "Hlavní přínosy",
-    "text": "Hlavní přínosy\n\nujednoconí struktury - jedna analýza/úkol/problém = jeden projekt/složka\nsnadné přenášení, nehrozí opomenutí dat nebo jiné části - vše na jednom místě\nza použití balíku renv (renv web) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí\nRStudio projekt - složka s několika spefickými soubory a složkami\n\n.Rproj.user - složka RStudia a jeho nastavení apod.\n.Rhistory - textový soubor s posledními příkazy spuštěnými v konzoli\n.RData - tomu se snažíme vyhnout (nastavení RStudia), data neobnovujeme ale vždy znovu načítáme\n*.Rproj - asociační soubor pomocí něhož lze projekt přímo otevřít v RStudiu + některá nastavení"
+    "text": "Hlavní přínosy\n\nujednoconí struktury - jedna analýza/úkol/problém = jeden projekt/složka\nsnadné přenášení, nehrozí opomenutí dat nebo jiné části - vše na jednom místě\nza použití balíku renv (renv web) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí"
   },
   {
-    "objectID": "IDG/prezentace/03_data.html#doporučená-struktura",
-    "href": "IDG/prezentace/03_data.html#doporučená-struktura",
+    "objectID": "IDG/prezentace/03_data.html#struktura-projektu",
+    "href": "IDG/prezentace/03_data.html#struktura-projektu",
     "title": "Načítání dat, Manipulace s daty",
-    "section": "Doporučená struktura",
-    "text": "Doporučená struktura\n\nsložky a jejich obsahy\ndata\n\nraw - surová data, na nichž neprovádíme manuálně žádné úpravy, z této složky pouze čteme\nproduced - odvozená data, ke každé datově sadě máme skript, který ji vytvořil, případné smazání této složky nepředstavuje problém (čas od času žádoucí)\n\nscripts - .R soubory, obsahující bloky kódu, které v rámci analýzy používáme opakovaně (načtení balíků, či dat)\nreports - .Rmd soubory obsahující surové reporty, a jejich přeložené verze (později)\ngraphs - uložené grafické výstupy\ndalší: např. functions, config atd."
+    "section": "Struktura projektu",
+    "text": "Struktura projektu\n\nRStudio projekt - složka s několika spefickými soubory a složkami\n\n.Rproj.user - složka RStudia a jeho nastavení apod.\n.Rhistory - textový soubor s posledními příkazy spuštěnými v konzoli\n.RData - tomu se snažíme vyhnout (nastavení RStudia), data neobnovujeme ale vždy znovu načítáme\n*.Rproj - asociační soubor pomocí něhož lze projekt přímo otevřít v RStudiu + některá nastavení"
+  },
+  {
+    "objectID": "IDG/prezentace/03_data.html#doporučená-struktura---složky",
+    "href": "IDG/prezentace/03_data.html#doporučená-struktura---složky",
+    "title": "Načítání dat, Manipulace s daty",
+    "section": "Doporučená struktura - složky",
+    "text": "Doporučená struktura - složky\n\ndata\n\nraw - surová data, na nichž neprovádíme manuálně žádné úpravy, z této složky pouze čteme\nproduced - odvozená data, ke každé datově sadě máme skript, který ji vytvořil, případné smazání této složky nepředstavuje problém (čas od času žádoucí)\n\nscripts - .R soubory, obsahující bloky kódu, které v rámci analýzy používáme opakovaně (načtení balíků, či dat)\nreports - .Rmd či .qmd soubory obsahující surové reporty, a jejich přeložené verze (později)\ngraphs - uložené grafické výstupy\ndalší: např. functions, config atd."
   },
   {
     "objectID": "IDG/prezentace/03_data.html#odkazy-na-soubory-v-projektu",
