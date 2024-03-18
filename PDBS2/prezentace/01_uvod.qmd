@@ -1,0 +1,63 @@
+---
+title: "Úvodní cvičení"
+subtitle: "Prostorové databázové systémy 2"
+author: "Jan Caha"
+date: 2024-02-19
+date-format: "YYYY-MM-DD"
+format: revealjs
+---
+
+## Náplň
+
+- SŘBD (DBMS)
+- Oracle
+- Postgre SQL, PostGIS (oborový standard)
+- SQLite, SpatialLite (okrajově, ale aplikačně zajímavé)
+  
+
+## O čem to bude
+
+- SQL příkazy - předpokládá se, že základy znáte
+```SQL
+SELECT * FROM table WHERE attribut = 5;
+SELECT * FROM table WHERE attribut LIKE 'hodnota%';
+```
+- funkce pro prostorová data v SQL (Oracle, hlavně PostGIS)
+- zpracování dat a manipulace s nimi skrze SQL (trochu jiný styl práce než normální práce s daty)
+
+## Dílčí úlohy
+
+- práce s daty v DB
+- návrh a tvorba DB 
+- funkce pro geodata v DB
+- připojení k DB ze softwarů, programovacích jazyků
+ 
+
+## V čem budeme pracovat
+
+- SQLDeveloper (pro Oracle)
+- pgAdmin (pro Postgre/Postgis)
+- DBeaver (Community Edition) - grafické návrhy DB
+- QGIS - prostorová data z Postgis - vizualizace i editace
+- DB Browser pro SQLite
+
+## DB Systémy
+
+- virtual PC 
+- z Adelka (\\adelka-nas.vsb.cz\Temp\PDB) soubor PDB_OfficeOracle21c.ova
+- pro Postgre bude vytvořen
+
+## Materiály
+
+- prezentace
+- kód z cvičení
+- budou dostupné (kde upřesním)
+
+## Zápočet
+
+- celkem 33 bodů
+- cvičení Oracle + Postgis 11 bodů (detaily za 14  dnů)
+- projekt PostGIS 11 bodů
+- písemka SQL 11 bodů
+
+# Dotazy? {.center}
