@@ -1,0 +1,24 @@
+---
+title: Linux Mint
+---
+
+Distribuce Linuxu založené na [Ubuntu](https://ubuntu.com/) s méně intruzivním uživatelským prostředím.
+
+
+## 🖥 Instalace
+
+- instalujeme [Linux Mint - Cinnamon edition](https://www.linuxmint.com/download.php)
+- lze instalovat jak do fyzického počítače, tak i do [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 
+  - celý process je ukázán v [tomto videu](https://www.youtube.com/watch?v=5MwBbgdSZS0)
+  - v případě instalace do VirtualBoxu nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval
+- důležité je nastavení jména uživatele a hesla
+
+## Instalace aktuálních GIS knihoven a softwarů
+
+```bash
+# přidání zdroje balíčků GIS nástrojů
+sudo add-apt-repository -y ppa:ubuntugis/ppa
+sudo apt-get update
+
+sudo apt-get install -y qgis gdal-bin grass-gui
+```
