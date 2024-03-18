@@ -8,7 +8,7 @@ from utils import data_path
 gdal.UseExceptions()
 
 if __name__ == "__main__":
-    file = data_path("HYP_HR_SR_OB_DR.tif")
+    file = data_path("HYP_HR_SR_W.tif")
 
     print(file.exists())
 

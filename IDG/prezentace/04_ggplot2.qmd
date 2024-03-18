@@ -1,0 +1,91 @@
+---
+title: "Grafy - ggplot2"
+subtitle: "Interpretace geodat"
+author: "Jan Caha"
+date: 2024-03-18
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Balík ggplot2
+
+- součást [tidyverse]{.software}
+
+- založen na filozifii tzv. grammar of graphics
+
+- mapování složek dat k vizuálním složkám grafů
+
+- grafy jsou principiálně extrémně dlouhými a komplikovanými seznamy, které se teprve při tisku (zobrazení) převádí na grafiku
+
+- jednotlivé části grafů lze ukládat do proměnných a různě s nimi pracovat
+
+- extrémně dobře zpracovaná nápovědy + velké množství tutoriálů online
+
+
+## Zdroje a tutoriály
+
+- [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/)
+
+- [r-statistics.co](http://r-statistics.co/)
+
+- [Top 50 ggplot2 Visualizations - The Master List (With Full R Code)](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
+
+- [The R Graph Gallery](https://www.r-graph-gallery.com/)
+
+- [ggplot2](https://ggplot2.tidyverse.org/)
+
+## Konstrukční prvky grafu
+
+- `ggplot()` - parametry `data`, `mapping`, není nutné uvádět zde, lze uvést u příslušné vrstvy (funkce `geom_*()`)
+
+- funkce `aes()` (aesthetic) - parametry `x` a `y` (není nutné vždy), další dle možní geometrie
+
+- `geom_*()` - parametr pro vykreslení dané geometrie, je možné použít jinou specifikaci dat či aesthetic
+
+## Ukázka jednoduchý bodový graf
+
+- `scale_x_continuous()`, obecně `scale_*_*()`
+
+- `coord_trans()`
+
+- `labs()`
+
+- `theme()` - funkce `element_*()` zejména `element_text()`
+
+- předpřipravená témata
+
+- facety - `facet_grid()`
+
+## Duležité informace
+
+- proměnné specifikované v `aes()` se musí vázat na data
+
+- ty samé proměnné lze specifikovat i přimo v `geom_*()`, ale pak jsou pro celou vrstvu jednotné, např. `size`
+
+- duležité proměnné `geom_*()` jsou `stat` (co se bude počítat), `position` (jestli se budou data nějak odsazovat)
+
+- možnosti funkcí `stat_*()`
+
+## Rozšíření ggplot2
+
+- [Galerie rozšíření](http://www.ggplot2-exts.org/gallery/)
+
+- nejvýznamnější [gganimate, ggthemes, ggstatsplot, ggraph, ggforce, ggalt]{.software} a [cowplot]{.software}
+
+## Interaktivní vizualizace
+
+- zejména balík [plotly]{.software}
+
+- umí převést značné množství grafů vytvořených v [ggplot2]{.software} do interaktivní online verze
+
+- přímo v [plotly]{.software} lze grafy i tvořit, ale přístup je odlišný od [ggplot2]{.software}
+
+
+# Dotazy???

@@ -1,0 +1,45 @@
+---
+title: "Knihovny [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}"
+subtitle: "Programování v GIS 2"
+author: "Jan Caha"
+date: 2024-03-18
+date-format: "YYYY-MM-DD"
+format: 
+    clean-revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Typy knihoven pro Python
+
+- nativní knihovny - pouze Python kód
+- kompilované knihovny - C, C++, Rust nebo i jiné jazyky
+- nativní knihovny fungují automaticky všude, kompilované je nutné sestavit pro danou platformu a verzi Pythonu
+
+## [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}
+
+- kompilované knihovny
+- postavené nad [GDAL/OGR]{.software} (ne nad balíkem `osgeo`)
+- snaha aby pracovaly více jako Python knihovny a méně jako C++ kód
+- o něco měně komplikované než přímé použití [GDAL/OGR]{.software} skrze `osgeo`, o něco horší spolupráce knihoven (zejména fiona a shapely)
+
+## [fiona]{.software}
+
+- knihovna pro práci s vektorovými daty
+- odstraňuje mnoho dílčích kroků, které jsou v `osgeo`
+- souřadnicové systémy a transformace s knihovnou `pyproj`
+- api není bohaté na práci s geometrií
+- přístup např. ke struktuře vrstvy je velice jednoduchý
+- nepodpruje vše co `osgeo`
+
+## [shapely]{.software}
+
+- knihovna založená na [GEOS]{.software}
+- zpracování geometrií
+- při využití s [fiona]{.software} nutné konverze mezi jejich typy
+
+# Dotazy? {.center}

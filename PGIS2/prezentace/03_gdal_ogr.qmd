@@ -101,17 +101,17 @@ if __name__ == "__main__":
     print(layer.GetFeatureCount())
 ```
 
-
-## Další ukázky
-- rastrová data
-
 ## Spouštění operací z GDAL
 
 - hlavní funkce
-- `gdal.VectorTranslate()` pro vektorová data
+- `gdal.VectorTranslate()` (`gdal.VectorTranslateOptions()`) pro vektorová data
 - pro rastrová data je funcí vícero `gdal.Translate()` (`gdal.TranslateOptions()`), `gdal.Warp()` (`gdal.WarpOptions()`)
 - mnoho dalších popsaných v dokumentaci
 - množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí
 - všude, kde se používají cesty k souborům lze použít cesty `/vsi*` nebo přímo objekty `gdal.Dataset`
-  
+
+## Práce s daty v paměti
+
+- viz ukázkový kód
+
 # Dotazy? {.center}
