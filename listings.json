@@ -1,18 +1,25 @@
 [
   {
-    "listing": "/idg.html",
-    "items": [
-      "/IDG/prezentace/01_uvod.html",
-      "/IDG/prezentace/02_uvod_r.html",
-      "/IDG/prezentace/03_data.html"
-    ]
-  },
-  {
     "listing": "/pgis2.html",
     "items": [
       "/PGIS2/prezentace/01_uvod.html",
       "/PGIS2/prezentace/02_opakovani_python.html",
       "/PGIS2/prezentace/03_gdal_ogr.html"
+    ]
+  },
+  {
+    "listing": "/pdbs2.html",
+    "items": [
+      "/PDBS2/prezentace/01_uvod.html",
+      "/PDBS2/prezentace/02_postgresql.html"
+    ]
+  },
+  {
+    "listing": "/idg.html",
+    "items": [
+      "/IDG/prezentace/01_uvod.html",
+      "/IDG/prezentace/02_uvod_r.html",
+      "/IDG/prezentace/03_data.html"
     ]
   }
 ]
