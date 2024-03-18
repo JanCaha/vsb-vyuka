@@ -101,3 +101,25 @@ ALTER USER postgres with encrypted password 'heslo';
 ```
    - příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru `localhost` s uživatelem `postgres` a heslem `heslo` (nastavené výše)
 
+### Docker
+
+Pro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít `docker compose` se souborem s nastavením:
+
+```yaml
+version: "3.5"
+
+services:
+  postgres:
+    container_name: postgis
+    image: postgis/postgis:16-master
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+      PGDATA: /data/postgres
+    volumes:
+      - cesta_k_složce_na_disku:/data/postgres
+    ports:
+      - "5432:5432"
+```
+
+Stačí upravit `volumes` na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.
