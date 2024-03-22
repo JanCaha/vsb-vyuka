@@ -34,12 +34,28 @@ execute:
 - souřadnicové systémy a transformace s knihovnou `pyproj`
 - api není bohaté na práci s geometrií
 - přístup např. ke struktuře vrstvy je velice jednoduchý
-- nepodpruje vše co `osgeo`
+- nepodporuje vše co `osgeo`
+- [dokumentace](https://fiona.readthedocs.io/en/stable/index.html)
 
 ## [shapely]{.software}
 
 - knihovna založená na [GEOS]{.software}
 - zpracování geometrií
 - při využití s [fiona]{.software} nutné konverze mezi jejich typy
+- [dokumntace](https://shapely.readthedocs.io/en/stable/index.html)
+
+## Konvrze geometrií
+
+- modul `shapely.geometry`
+- z [fiona]{.software} do [shapely]{.software} funkce `{python} shape(feature.geometry)`
+- z [shapely]{.software} do [fiona]{.software} funkce `{python} mapping()`
+
+## [rastrio]{.software}
+
+- knihovna pro práci s rastrovými daty
+- platí pro ni v podstatě to samé co pro [fiona]{.software}
+- výrazné propojení s `numpy` (knihovna pro dvou a vícerozměrné matic)
+- oproti `osgeo` jednodušší přístupy
+- [dokumentace](https://fiona.readthedocs.io/en/stable/index.html)
 
 # Dotazy? {.center}
