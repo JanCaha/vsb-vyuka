@@ -39,5 +39,7 @@ jobs:
           FILES="./PGIS2/skripty/*.py"
           for FILE in $FILES
           do
+            echo "--------------------"
+            echo "*** $FILE ***"
             python3 $FILE 
           done
