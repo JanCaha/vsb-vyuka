@@ -57,5 +57,15 @@ execute:
 - výrazné propojení s `numpy` (knihovna pro dvou a vícerozměrné matic)
 - oproti `osgeo` jednodušší přístupy
 - [dokumentace](https://fiona.readthedocs.io/en/stable/index.html)
+- problém s typováním - nutné hodně se opírat o dokumentaci
 
+## [GDAL/OGR]{.software} {{< fa times >}} [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}
+
+- GDAL/OGR má širší možnosti, ale práce je komplikovanější
+- knihovny jsou zjednodušené a přístupnější
+- nástroje `gdal.VectorTranslate()`, `gdal.Warp()`, `gdal.Translate()` atd. určitě využívat z `osgeo`
+- modifikace dat je v 90% případů snadnější z knihoven 
+- komplexní situace lze řešit přímo použítím `osgeo`
+- používat princip **KISS** (Keep it simple, stupid!)  -- začít s jednoduchou verzí, dokud funguje a upgradovat pouze pokud je to nutné
+   
 # Dotazy? {.center}
