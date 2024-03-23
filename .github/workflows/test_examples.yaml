@@ -33,9 +33,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y r-base r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here
       
-      - name: PGIS2
+      - name: PGIS2 data
         run: |
-          ./PGIS2/soubory/get_data.sh  
+          ./PGIS2/soubory/get_data.sh
+
+      - name: PGIS2 skripty
+        run: |
           FILES="./PGIS2/skripty/*.py"
           for FILE in $FILES
           do
