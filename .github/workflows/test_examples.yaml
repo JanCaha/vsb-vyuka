@@ -1,0 +1,43 @@
+name: Test examples
+
+on: push
+
+jobs:
+
+  build-web-and-deploy:
+
+    runs-on: ubuntu-22.04
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    permissions:
+      contents: write
+
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          channels: conda-forge
+          activate-environment: env-project
+          environment-file: conda-environment.yml
+      
+      - name: Setup CRAN Binaries
+        run: |  
+          sudo wget -q https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc -O /etc/apt/trusted.gpg.d/cranapt_key.asc
+          echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main" | sudo tee /etc/apt/sources.list.d/cranapt.list
+          sudo apt-get update
+          sudo apt-get install -y r-base r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here
+      
+      - name: PGIS2
+        run: |
+          ./PGIS2/soubory/get_data.sh  
+          FILES="./PGIS2/skripty/*.py"
+          for FILE in $FILES
+          do
+            python3 $FILE 
+          done
