@@ -74,4 +74,19 @@ WITH nazev_tabulky AS (
 - včetně editace dat
 - ukládání do DB
   
+## PostGIS
+
+- extenze [PostgreSQL]{.software} pro prostorová data
+- stojí na knihovnách [PROJ]{.software}, [GDAL/OGR]{.software}, [GEOS]{.software} a dalších
+- geometrické typy `geometry` (častější) a `geography` (novější)
+- funkce `ST_*`, **spatio-temporal**
+- informace o tabulkách s geometriemi ve **Views**
+- [manuál](https://postgis.net/docs/manual-3.4/)
+  
+## Data
+
+- obvykle vektorová 
+- lze i rastry, ale to má relativně malé přínosy a výrazně to zvětšuje DB
+- rastry se často ukládají mimo a z DB se pouze referencují, tím se nezvětšuje velikost DB ale lze používat funkce
+- funkce pro oba typy data existují
 # Dotazy ???
