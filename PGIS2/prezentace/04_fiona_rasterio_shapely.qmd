@@ -34,12 +34,38 @@ execute:
 - souřadnicové systémy a transformace s knihovnou `pyproj`
 - api není bohaté na práci s geometrií
 - přístup např. ke struktuře vrstvy je velice jednoduchý
-- nepodpruje vše co `osgeo`
+- nepodporuje vše co `osgeo`
+- [dokumentace](https://fiona.readthedocs.io/en/stable/index.html)
 
 ## [shapely]{.software}
 
 - knihovna založená na [GEOS]{.software}
 - zpracování geometrií
 - při využití s [fiona]{.software} nutné konverze mezi jejich typy
+- [dokumntace](https://shapely.readthedocs.io/en/stable/index.html)
 
+## Konvrze geometrií
+
+- modul `shapely.geometry`
+- z [fiona]{.software} do [shapely]{.software} funkce `{python} shape(feature.geometry)`
+- z [shapely]{.software} do [fiona]{.software} funkce `{python} mapping()`
+
+## [rastrio]{.software}
+
+- knihovna pro práci s rastrovými daty
+- platí pro ni v podstatě to samé co pro [fiona]{.software}
+- výrazné propojení s `numpy` (knihovna pro dvou a vícerozměrné matic)
+- oproti `osgeo` jednodušší přístupy
+- [dokumentace](https://fiona.readthedocs.io/en/stable/index.html)
+- problém s typováním - nutné hodně se opírat o dokumentaci
+
+## [GDAL/OGR]{.software} {{< fa times >}} [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}
+
+- GDAL/OGR má širší možnosti, ale práce je komplikovanější
+- knihovny jsou zjednodušené a přístupnější
+- nástroje `gdal.VectorTranslate()`, `gdal.Warp()`, `gdal.Translate()` atd. určitě využívat z `osgeo`
+- modifikace dat je v 90% případů snadnější z knihoven 
+- komplexní situace lze řešit přímo použítím `osgeo`
+- používat princip **KISS** (Keep it simple, stupid!)  -- začít s jednoduchou verzí, dokud funguje a upgradovat pouze pokud je to nutné
+   
 # Dotazy? {.center}

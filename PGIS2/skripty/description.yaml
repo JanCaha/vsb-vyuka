@@ -14,3 +14,15 @@
   author: Jan Caha
   date: 2024-03-18
   path: "PGIS2/skripty/04_fiona.py"
+- title: "Rasterio informace o souboru"
+  author: Jan Caha
+  date: 2024-03-25
+  path: "PGIS2/skripty/05_rasterio_read.py"
+- title: "Rasterio kopírování pásma do nového souboru"
+  author: Jan Caha
+  date: 2024-03-25
+  path: "PGIS2/skripty/06_rasterio_copy_band.py"
+- title: "GDAL manipulace s rastrem"
+  author: Jan Caha
+  date: 2024-03-25
+  path: "PGIS2/skripty/07_gdal_raster_operations.py"

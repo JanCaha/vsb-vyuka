@@ -2,7 +2,6 @@
 # detailů o rastru a pásmu
 
 from osgeo import gdal
-
 from utils import data_path
 
 gdal.UseExceptions()
@@ -24,3 +23,5 @@ if __name__ == "__main__":
 
     print(f"Band Size: {band.XSize} - {band.YSize}")
     print(f"Band data type: {gdal.GetDataTypeName(band.DataType)}")
+
+    data = band.ReadAsArray(0, 0, band.XSize, band.YSize)
