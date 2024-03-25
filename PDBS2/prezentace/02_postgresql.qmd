@@ -44,8 +44,10 @@ Dokumentace !!!
 ## Import Export dat
 
 - buď SQL soubory
-- nebo tvorba tabulky a import CSV
-- nebo přes komplexnější nástroje - Python, R, DB software, GDAL/OGR
+- nebo tvorba tabulky a import CSV (pozor na práva, ne všude může databáze číst - využíváme případně adresář `/tmp`)
+- nebo přes programovací jazyky či komplexnější nástroje - Python, R, DB software, GDAL/OGR
+
+# Příklady - import data z CSV, pomocí GDAL/OGR
 
 ## Konstrukce WITH
 
@@ -60,6 +62,8 @@ WITH nazev_tabulky AS (
 
 - tabulku pak dále použijeme např. v `JOIN`
 
+# Příklad - `JOIN` s dočasnou tabulkou
+
 ## VIEW
 
 - pohled na data
@@ -68,11 +72,15 @@ WITH nazev_tabulky AS (
 - užitečné proti duplikacím dat
 - může být náročné na čas
 
+# Příklad - `VIEW` prostorvých dat s transformací souřadnicového systému
+
 ## Připojení a práce přes QGIS
 
 - možnost připojit data přímo do QGIS
 - včetně editace dat
 - ukládání do DB
+
+# Příklad - připojení dat s PostgreSQL do QGIS
   
 ## PostGIS
 
@@ -89,4 +97,11 @@ WITH nazev_tabulky AS (
 - lze i rastry, ale to má relativně malé přínosy a výrazně to zvětšuje DB
 - rastry se často ukládají mimo a z DB se pouze referencují, tím se nezvětšuje velikost DB ale lze používat funkce
 - funkce pro oba typy data existují
+
+## Seznamy funkce
+
+- [vektorová data](https://postgis.net/docs/manual-3.4/reference.html)
+- [rastrová data](https://postgis.net/docs/manual-3.4/RT_reference.html)
+- [prostorové dotazy](https://postgis.net/docs/manual-3.4/using_postgis_query.html)
+
 # Dotazy ???
