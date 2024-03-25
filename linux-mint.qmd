@@ -13,6 +13,17 @@ Distribuce Linuxu založené na [Ubuntu](https://ubuntu.com/) s méně intruzivn
   - v případě instalace do VirtualBoxu nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval
 - důležité je nastavení jména uživatele a hesla
 
+## Aktualizace
+
+Vhodné čas od času spustit aktualizaci softwarů.
+
+Příkazy pro příkazovou řádku:
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade -y
+```
+
 ## 🖥 Instalace aktuálních GIS knihoven a softwarů
 
 Příkazy pro příkazovou řádku:
