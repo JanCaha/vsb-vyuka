@@ -75,7 +75,10 @@ data(diamonds)
 ggplot(diamonds) +
     geom_point((aes(price, carat, color = color, size = clarity))) +
     scale_color_discrete() +
-    labs(title = "Diamanty", x = "Cena", y = "Karáty", color = "Barva", size = "Čistota") +
+    labs(
+        title = "Diamanty", x = "Cena", y = "Karáty",
+        color = "Barva", size = "Čistota"
+    ) +
     theme_bw() +
     theme(
         axis.title = element_text(size = 16),
@@ -96,7 +99,10 @@ ggplot(diamonds) +
     geom_point((aes(price, carat, color = color, size = clarity))) +
     scale_color_discrete() +
     facet_wrap(vars(cut)) +
-    labs(title = "Diamanty", x = "Cena", y = "Karáty", color = "Barva", size = "Čistota") +
+    labs(
+        title = "Diamanty", x = "Cena", y = "Karáty",
+        color = "Barva", size = "Čistota"
+    ) +
     theme_bw() +
     theme(
         axis.title = element_text(size = 16),
@@ -124,7 +130,10 @@ library(ggplot2)
 data(diamonds)
 
 template <- list(
-    labs(title = "Diamanty", x = "Cena", y = "Karáty", color = "Barva", size = "Čistota"),
+    labs(
+        title = "Diamanty", x = "Cena", y = "Karáty",
+        color = "Barva", size = "Čistota"
+    ),
     theme_bw(),
     theme(
         axis.title = element_text(size = 16),
@@ -167,4 +176,4 @@ ggsave("graf.png", graf, units = "mm", width = 297, height = 210)
 - přímo v [plotly]{.software} lze grafy i tvořit, ale přístup je odlišný od [ggplot2]{.software}
 
 
-# Dotazy???
+# Dotazy?{.center}
