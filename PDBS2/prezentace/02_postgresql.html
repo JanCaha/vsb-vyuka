@@ -454,9 +454,14 @@ Jan Caha
 <h2>Import Export dat</h2>
 <ul>
 <li>buď SQL soubory</li>
-<li>nebo tvorba tabulky a import CSV</li>
-<li>nebo přes komplexnější nástroje - Python, R, DB software, GDAL/OGR</li>
+<li>nebo tvorba tabulky a import CSV (pozor na práva, ne všude může databáze číst - využíváme případně adresář <code>/tmp</code>)</li>
+<li>nebo přes programovací jazyky či komplexnější nástroje - Python, R, DB software, GDAL/OGR</li>
 </ul>
+</section>
+<section>
+<section id="příklady---import-data-z-csv-pomocí-gdalogr" class="title-slide slide level1 center">
+<h1>Příklady - import data z CSV, pomocí GDAL/OGR</h1>
+
 </section>
 <section id="konstrukce-with" class="slide level2">
 <h2>Konstrukce WITH</h2>
@@ -470,6 +475,11 @@ Jan Caha
 <ul>
 <li>tabulku pak dále použijeme např. v <code>JOIN</code></li>
 </ul>
+</section></section>
+<section>
+<section id="příklad---join-s-dočasnou-tabulkou" class="title-slide slide level1 center">
+<h1>Příklad - <code>JOIN</code> s dočasnou tabulkou</h1>
+
 </section>
 <section id="view" class="slide level2">
 <h2>VIEW</h2>
@@ -480,6 +490,11 @@ Jan Caha
 <li>užitečné proti duplikacím dat</li>
 <li>může být náročné na čas</li>
 </ul>
+</section></section>
+<section>
+<section id="příklad---view-prostorvých-dat-s-transformací-souřadnicového-systému" class="title-slide slide level1 center">
+<h1>Příklad - <code>VIEW</code> prostorvých dat s transformací souřadnicového systému</h1>
+
 </section>
 <section id="připojení-a-práce-přes-qgis" class="slide level2">
 <h2>Připojení a práce přes QGIS</h2>
@@ -488,7 +503,40 @@ Jan Caha
 <li>včetně editace dat</li>
 <li>ukládání do DB</li>
 </ul>
+</section></section>
+<section>
+<section id="příklad---připojení-dat-s-postgresql-do-qgis" class="title-slide slide level1 center">
+<h1>Příklad - připojení dat s PostgreSQL do QGIS</h1>
+
 </section>
+<section id="postgis" class="slide level2">
+<h2>PostGIS</h2>
+<ul>
+<li>extenze <span class="software">PostgreSQL</span> pro prostorová data</li>
+<li>stojí na knihovnách <span class="software">PROJ</span>, <span class="software">GDAL/OGR</span>, <span class="software">GEOS</span> a dalších</li>
+<li>geometrické typy <code>geometry</code> (častější) a <code>geography</code> (novější)</li>
+<li>funkce <code>ST_*</code>, <strong>spatio-temporal</strong></li>
+<li>informace o tabulkách s geometriemi ve <strong>Views</strong></li>
+<li><a href="https://postgis.net/docs/manual-3.4/">manuál</a></li>
+</ul>
+</section>
+<section id="data" class="slide level2">
+<h2>Data</h2>
+<ul>
+<li>obvykle vektorová</li>
+<li>lze i rastry, ale to má relativně malé přínosy a výrazně to zvětšuje DB</li>
+<li>rastry se často ukládají mimo a z DB se pouze referencují, tím se nezvětšuje velikost DB ale lze používat funkce</li>
+<li>funkce pro oba typy data existují</li>
+</ul>
+</section>
+<section id="seznamy-funkce" class="slide level2">
+<h2>Seznamy funkce</h2>
+<ul>
+<li><a href="https://postgis.net/docs/manual-3.4/reference.html">vektorová data</a></li>
+<li><a href="https://postgis.net/docs/manual-3.4/RT_reference.html">rastrová data</a></li>
+<li><a href="https://postgis.net/docs/manual-3.4/using_postgis_query.html">prostorové dotazy</a></li>
+</ul>
+</section></section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy ???</h1>
 

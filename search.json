@@ -58,7 +58,7 @@
     "href": "PDBS2/prezentace/02_postgresql.html#import-export-dat",
     "title": "PostgreSQL (Postgis)",
     "section": "Import Export dat",
-    "text": "Import Export dat\n\nbuď SQL soubory\nnebo tvorba tabulky a import CSV\nnebo přes komplexnější nástroje - Python, R, DB software, GDAL/OGR"
+    "text": "Import Export dat\n\nbuď SQL soubory\nnebo tvorba tabulky a import CSV (pozor na práva, ne všude může databáze číst - využíváme případně adresář /tmp)\nnebo přes programovací jazyky či komplexnější nástroje - Python, R, DB software, GDAL/OGR"
   },
   {
     "objectID": "PDBS2/prezentace/02_postgresql.html#konstrukce-with",
@@ -80,6 +80,27 @@
     "title": "PostgreSQL (Postgis)",
     "section": "Připojení a práce přes QGIS",
     "text": "Připojení a práce přes QGIS\n\nmožnost připojit data přímo do QGIS\nvčetně editace dat\nukládání do DB"
+  },
+  {
+    "objectID": "PDBS2/prezentace/02_postgresql.html#postgis",
+    "href": "PDBS2/prezentace/02_postgresql.html#postgis",
+    "title": "PostgreSQL (Postgis)",
+    "section": "PostGIS",
+    "text": "PostGIS\n\nextenze PostgreSQL pro prostorová data\nstojí na knihovnách PROJ, GDAL/OGR, GEOS a dalších\ngeometrické typy geometry (častější) a geography (novější)\nfunkce ST_*, spatio-temporal\ninformace o tabulkách s geometriemi ve Views\nmanuál"
+  },
+  {
+    "objectID": "PDBS2/prezentace/02_postgresql.html#data",
+    "href": "PDBS2/prezentace/02_postgresql.html#data",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Data",
+    "text": "Data\n\nobvykle vektorová\nlze i rastry, ale to má relativně malé přínosy a výrazně to zvětšuje DB\nrastry se často ukládají mimo a z DB se pouze referencují, tím se nezvětšuje velikost DB ale lze používat funkce\nfunkce pro oba typy data existují"
+  },
+  {
+    "objectID": "PDBS2/prezentace/02_postgresql.html#seznamy-funkce",
+    "href": "PDBS2/prezentace/02_postgresql.html#seznamy-funkce",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Seznamy funkce",
+    "text": "Seznamy funkce\n\nvektorová data\nrastrová data\nprostorové dotazy"
   },
   {
     "objectID": "IDG/prezentace/01_uvod.html#náplň",
@@ -142,14 +163,42 @@
     "href": "IDG/prezentace/04_ggplot2.html#konstrukční-prvky-grafu",
     "title": "Grafy - ggplot2",
     "section": "Konstrukční prvky grafu",
-    "text": "Konstrukční prvky grafu\n\nggplot() - parametry data, mapping, není nutné uvádět zde, lze uvést u příslušné vrstvy (funkce geom_*())\nfunkce aes() (aesthetic) - parametry x a y (není nutné vždy), další dle možní geometrie\ngeom_*() - parametr pro vykreslení dané geometrie, je možné použít jinou specifikaci dat či aesthetic"
+    "text": "Konstrukční prvky grafu\n\nggplot() - parametry data, mapping, není nutné uvádět zde, lze uvést u příslušné vrstvy (funkce geom_*())\nfunkce aes() (aesthetic) - parametry x a y (není nutné vždy), další dle možné geometrie, informace získáme u jednotlivých funkcí geom_*\ngeom_*() - parametr pro vykreslení dané geometrie, je možné použít jinou specifikaci dat či aesthetic"
   },
   {
     "objectID": "IDG/prezentace/04_ggplot2.html#ukázka-jednoduchý-bodový-graf",
     "href": "IDG/prezentace/04_ggplot2.html#ukázka-jednoduchý-bodový-graf",
     "title": "Grafy - ggplot2",
     "section": "Ukázka jednoduchý bodový graf",
-    "text": "Ukázka jednoduchý bodový graf\n\nscale_x_continuous(), obecně scale_*_*()\ncoord_trans()\nlabs()\ntheme() - funkce element_*() zejména element_text()\npředpřipravená témata\nfacety - facet_grid()"
+    "text": "Ukázka jednoduchý bodový graf\n\nscale_x_continuous(), obecně scale_*_*() - názvy tvoří proměnná a pak typ škály\ncoord_trans()\nlabs() - popisky grafu\ntheme() stylování grafu, jednotlivé prvky, proměnným se přiřazují výsledky funkcí\n\nfunkce element_*() zejména element_text()\n\npředpřipravená témata - theme_*()\nfacety - facet_grid()"
+  },
+  {
+    "objectID": "IDG/prezentace/04_ggplot2.html#ukázka---jednoduchý-graf",
+    "href": "IDG/prezentace/04_ggplot2.html#ukázka---jednoduchý-graf",
+    "title": "Grafy - ggplot2",
+    "section": "Ukázka - jednoduchý graf",
+    "text": "Ukázka - jednoduchý graf\n\nlibrary(ggplot2)\ndata(diamonds)\n\nggplot(diamonds) +\n    geom_point((aes(price, carat, color = color, size = clarity))) +\n    scale_color_discrete() +\n    labs(\n        title = \"Diamanty\", x = \"Cena\", y = \"Karáty\",\n        color = \"Barva\", size = \"Čistota\"\n    ) +\n    theme_bw() +\n    theme(\n        axis.title = element_text(size = 16),\n        title = element_text(size = 20),\n        axis.text = element_text(size = 14)\n    )"
+  },
+  {
+    "objectID": "IDG/prezentace/04_ggplot2.html#ukázka---jednoduchý-graf-output",
+    "href": "IDG/prezentace/04_ggplot2.html#ukázka---jednoduchý-graf-output",
+    "title": "Grafy - ggplot2",
+    "section": "Ukázka - jednoduchý graf",
+    "text": "Ukázka - jednoduchý graf"
+  },
+  {
+    "objectID": "IDG/prezentace/04_ggplot2.html#ukázka---graf-s-dílčími-grafy",
+    "href": "IDG/prezentace/04_ggplot2.html#ukázka---graf-s-dílčími-grafy",
+    "title": "Grafy - ggplot2",
+    "section": "Ukázka - graf s dílčími grafy",
+    "text": "Ukázka - graf s dílčími grafy\n\nlibrary(ggplot2)\ndata(diamonds)\n\nggplot(diamonds) +\n    geom_point((aes(price, carat, color = color, size = clarity))) +\n    scale_color_discrete() +\n    facet_wrap(vars(cut)) +\n    labs(\n        title = \"Diamanty\", x = \"Cena\", y = \"Karáty\",\n        color = \"Barva\", size = \"Čistota\"\n    ) +\n    theme_bw() +\n    theme(\n        axis.title = element_text(size = 16),\n        title = element_text(size = 20),\n        axis.text = element_text(size = 14)\n    )"
+  },
+  {
+    "objectID": "IDG/prezentace/04_ggplot2.html#ukázka---graf-s-dílčími-grafy-output",
+    "href": "IDG/prezentace/04_ggplot2.html#ukázka---graf-s-dílčími-grafy-output",
+    "title": "Grafy - ggplot2",
+    "section": "Ukázka - graf s dílčími grafy",
+    "text": "Ukázka - graf s dílčími grafy"
   },
   {
     "objectID": "IDG/prezentace/04_ggplot2.html#duležité-informace",
@@ -157,6 +206,27 @@
     "title": "Grafy - ggplot2",
     "section": "Duležité informace",
     "text": "Duležité informace\n\nproměnné specifikované v aes() se musí vázat na data\nty samé proměnné lze specifikovat i přimo v geom_*(), ale pak jsou pro celou vrstvu jednotné, např. size\nduležité proměnné geom_*() jsou stat (co se bude počítat), position (jestli se budou data nějak odsazovat)\nmožnosti funkcí stat_*()"
+  },
+  {
+    "objectID": "IDG/prezentace/04_ggplot2.html#uložení-části-grafu-do-proměnné",
+    "href": "IDG/prezentace/04_ggplot2.html#uložení-části-grafu-do-proměnné",
+    "title": "Grafy - ggplot2",
+    "section": "Uložení části grafu do proměnné",
+    "text": "Uložení části grafu do proměnné\n\nlibrary(ggplot2)\ndata(diamonds)\n\ntemplate &lt;- list(\n    labs(\n        title = \"Diamanty\", x = \"Cena\", y = \"Karáty\",\n        color = \"Barva\", size = \"Čistota\"\n    ),\n    theme_bw(),\n    theme(\n        axis.title = element_text(size = 16),\n        title = element_text(size = 20),\n        axis.text = element_text(size = 14)\n    )\n)\n\nggplot(diamonds) +\n    geom_point((aes(price, carat, color = color, size = clarity))) +\n    scale_color_discrete() +\n    template"
+  },
+  {
+    "objectID": "IDG/prezentace/04_ggplot2.html#uložení-části-grafu-do-proměnné-output",
+    "href": "IDG/prezentace/04_ggplot2.html#uložení-části-grafu-do-proměnné-output",
+    "title": "Grafy - ggplot2",
+    "section": "Uložení části grafu do proměnné",
+    "text": "Uložení části grafu do proměnné"
+  },
+  {
+    "objectID": "IDG/prezentace/04_ggplot2.html#uložení-grafu",
+    "href": "IDG/prezentace/04_ggplot2.html#uložení-grafu",
+    "title": "Grafy - ggplot2",
+    "section": "Uložení grafu",
+    "text": "Uložení grafu\n\ngraf &lt;- ggplot(diamonds) +\n    geom_point((aes(price, carat, color = color, size = clarity))) +\n    template\n\nggsave(\"graf.png\", graf, units = \"mm\", width = 297, height = 210)"
   },
   {
     "objectID": "IDG/prezentace/04_ggplot2.html#rozšíření-ggplot2",
@@ -221,7 +291,7 @@
     "href": "pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2024-03-18\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2024-03-18\n\n\nFiona editace vektorových dat\n\n\n\n\n\nNo matching items",
+    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2024-03-18\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2024-03-18\n\n\nFiona editace vektorových dat\n\n\n\n\n2024-03-25\n\n\nRasterio informace o souboru\n\n\n\n\n2024-03-25\n\n\nRasterio kopírování pásma do nového souboru\n\n\n\n\n2024-03-25\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -268,14 +338,35 @@
     "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#fiona",
     "title": "Knihovny fiona, rasterio, shapely",
     "section": "fiona",
-    "text": "fiona\n\nknihovna pro práci s vektorovými daty\nodstraňuje mnoho dílčích kroků, které jsou v osgeo\nsouřadnicové systémy a transformace s knihovnou pyproj\napi není bohaté na práci s geometrií\npřístup např. ke struktuře vrstvy je velice jednoduchý\nnepodpruje vše co osgeo"
+    "text": "fiona\n\nknihovna pro práci s vektorovými daty\nodstraňuje mnoho dílčích kroků, které jsou v osgeo\nsouřadnicové systémy a transformace s knihovnou pyproj\napi není bohaté na práci s geometrií\npřístup např. ke struktuře vrstvy je velice jednoduchý\nnepodporuje vše co osgeo\ndokumentace"
   },
   {
     "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#shapely",
     "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#shapely",
     "title": "Knihovny fiona, rasterio, shapely",
     "section": "shapely",
-    "text": "shapely\n\nknihovna založená na GEOS\nzpracování geometrií\npři využití s fiona nutné konverze mezi jejich typy"
+    "text": "shapely\n\nknihovna založená na GEOS\nzpracování geometrií\npři využití s fiona nutné konverze mezi jejich typy\ndokumntace"
+  },
+  {
+    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#konvrze-geometrií",
+    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#konvrze-geometrií",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "Konvrze geometrií",
+    "text": "Konvrze geometrií\n\nmodul shapely.geometry\nz fiona do shapely funkce {python} shape(feature.geometry)\nz shapely do fiona funkce {python} mapping()"
+  },
+  {
+    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#rastrio",
+    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#rastrio",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "rastrio",
+    "text": "rastrio\n\nknihovna pro práci s rastrovými daty\nplatí pro ni v podstatě to samé co pro fiona\nvýrazné propojení s numpy (knihovna pro dvou a vícerozměrné matic)\noproti osgeo jednodušší přístupy\ndokumentace\nproblém s typováním - nutné hodně se opírat o dokumentaci"
+  },
+  {
+    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#gdalogr-fiona-rasterio-shapely",
+    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#gdalogr-fiona-rasterio-shapely",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "GDAL/OGR  fiona, rasterio, shapely",
+    "text": "GDAL/OGR  fiona, rasterio, shapely\n\nGDAL/OGR má širší možnosti, ale práce je komplikovanější\nknihovny jsou zjednodušené a přístupnější\nnástroje gdal.VectorTranslate(), gdal.Warp(), gdal.Translate() atd. určitě využívat z osgeo\nmodifikace dat je v 90% případů snadnější z knihoven\nkomplexní situace lze řešit přímo použítím osgeo\npoužívat princip KISS (Keep it simple, stupid!) – začít s jednoduchou verzí, dokud funguje a upgradovat pouze pokud je to nutné"
   },
   {
     "objectID": "PGIS2/prezentace/02_opakovani_python.html#python",
@@ -791,7 +882,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1194033 -1.2949474 -1.0347355 -0.5199868 -0.1748539"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1076607 -0.3336644 -0.8300453 -0.3675617 -0.6993541"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
