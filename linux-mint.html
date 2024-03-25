@@ -214,7 +214,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#instalace" id="toc-instalace" class="nav-link active" data-scroll-target="#instalace">🖥 Instalace</a></li>
-  <li><a href="#instalace-aktuálních-gis-knihoven-a-softwarů" id="toc-instalace-aktuálních-gis-knihoven-a-softwarů" class="nav-link" data-scroll-target="#instalace-aktuálních-gis-knihoven-a-softwarů">Instalace aktuálních GIS knihoven a softwarů</a></li>
+  <li><a href="#aktualizace" id="toc-aktualizace" class="nav-link" data-scroll-target="#aktualizace">Aktualizace</a></li>
+  <li><a href="#instalace-aktuálních-gis-knihoven-a-softwarů" id="toc-instalace-aktuálních-gis-knihoven-a-softwarů" class="nav-link" data-scroll-target="#instalace-aktuálních-gis-knihoven-a-softwarů">🖥 Instalace aktuálních GIS knihoven a softwarů</a></li>
+  <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">🖥 Instalace PostregSQL</a></li>
+  <li><a href="#instalace-vs-code" id="toc-instalace-vs-code" class="nav-link" data-scroll-target="#instalace-vs-code">🖥 Instalace VS Code</a></li>
   </ul>
 </nav>
     </div>
@@ -253,13 +256,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>důležité je nastavení jména uživatele a hesla</li>
 </ul>
 </section>
+<section id="aktualizace" class="level2">
+<h2 class="anchored" data-anchor-id="aktualizace">Aktualizace</h2>
+<p>Vhodné čas od času spustit aktualizaci softwarů.</p>
+<p>Příkazy pro příkazovou řádku:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="instalace-aktuálních-gis-knihoven-a-softwarů" class="level2">
-<h2 class="anchored" data-anchor-id="instalace-aktuálních-gis-knihoven-a-softwarů">Instalace aktuálních GIS knihoven a softwarů</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">-y</span> ppa:ubuntugis/ppa</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> qgis gdal-bin grass-gui</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h2 class="anchored" data-anchor-id="instalace-aktuálních-gis-knihoven-a-softwarů">🖥 Instalace aktuálních GIS knihoven a softwarů</h2>
+<p>Příkazy pro příkazovou řádku:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">-y</span> ppa:ubuntugis/ppa</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> qgis gdal-bin grass-gui</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="instalace-postregsql" class="level2">
+<h2 class="anchored" data-anchor-id="instalace-postregsql">🖥 Instalace PostregSQL</h2>
+<ul>
+<li>nejdříve nastavíme nezbytnosti pro <a href="https://www.pgadmin.org/download/pgadmin-4-apt/">PG Admin 4</a> (pozor bude požadováno heslo)</li>
+</ul>
+<p>Příkazy pro příkazovou řádku:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /etc/os-release</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the public key for the repository (if not done previously):</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsS</span> https://www.pgadmin.org/static/packages_pgadmin_org.pub <span class="kw">|</span> <span class="fu">sudo</span> gpg <span class="at">--dearmor</span> <span class="at">-o</span> /usr/share/keyrings/packages-pgadmin-org.gpg</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the repository configuration file:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/</span><span class="va">$UBUNTU_CODENAME</span><span class="st"> pgadmin4 main"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/sources.list.d/pgadmin4.list</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Update software sources</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade <span class="at">-y</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Install pgAdmin for both desktop and web modes:</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> pgadmin4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">-y</span> ppa:ubuntugis/ppa</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> gedit postgresql pgxnclient postgis qgis gdal-bin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>prvotní spuštění PostgreSQL je nutné provést z příkazové řádky</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql template1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>následně spustíme příkaz pro modifikaci hesla hlavní uživatele DB</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="fu">USER</span> postgres <span class="kw">with</span> encrypted <span class="kw">password</span> <span class="st">'heslo'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru <code>localhost</code> s uživatelem <code>postgres</code> a heslem <code>heslo</code> (nastavené výše)</li>
+</ul>
+</section>
+<section id="instalace-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="instalace-vs-code">🖥 Instalace VS Code</h2>
+<ul>
+<li>manuálně stáhnout z <a href="https://code.visualstudio.com/">webu</a> – <strong>.deb</strong> soubor</li>
+<li>spustit a nainstalovat poklikáním a zadáním hesla</li>
+<li>aktualizace už probíhají automaticky</li>
+</ul>
 
 
 </section>

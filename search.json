@@ -22,11 +22,44 @@
     ]
   },
   {
+    "objectID": "linux-mint.html#aktualizace",
+    "href": "linux-mint.html#aktualizace",
+    "title": "Linux Mint",
+    "section": "Aktualizace",
+    "text": "Aktualizace\nVhodné čas od času spustit aktualizaci softwarů.\nPříkazy pro příkazovou řádku:\nsudo apt-get update\nsudo apt-get upgrade -y",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
     "objectID": "linux-mint.html#instalace-aktuálních-gis-knihoven-a-softwarů",
     "href": "linux-mint.html#instalace-aktuálních-gis-knihoven-a-softwarů",
     "title": "Linux Mint",
-    "section": "Instalace aktuálních GIS knihoven a softwarů",
-    "text": "Instalace aktuálních GIS knihoven a softwarů\n# přidání zdroje balíčků GIS nástrojů\nsudo add-apt-repository -y ppa:ubuntugis/ppa\nsudo apt-get update\n\nsudo apt-get install -y qgis gdal-bin grass-gui",
+    "section": "🖥 Instalace aktuálních GIS knihoven a softwarů",
+    "text": "🖥 Instalace aktuálních GIS knihoven a softwarů\nPříkazy pro příkazovou řádku:\n# přidání zdroje balíčků GIS nástrojů\nsudo add-apt-repository -y ppa:ubuntugis/ppa\nsudo apt-get update\n\nsudo apt-get install -y qgis gdal-bin grass-gui",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "linux-mint.html#instalace-postregsql",
+    "href": "linux-mint.html#instalace-postregsql",
+    "title": "Linux Mint",
+    "section": "🖥 Instalace PostregSQL",
+    "text": "🖥 Instalace PostregSQL\n\nnejdříve nastavíme nezbytnosti pro PG Admin 4 (pozor bude požadováno heslo)\n\nPříkazy pro příkazovou řádku:\nsource /etc/os-release\n\n# Install the public key for the repository (if not done previously):\ncurl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg\n\n# Create the repository configuration file:\necho \"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$UBUNTU_CODENAME pgadmin4 main\" | sudo tee /etc/apt/sources.list.d/pgadmin4.list\n\n# Update software sources\nsudo apt-get update\nsudo apt-get upgrade -y\n\n# Install pgAdmin for both desktop and web modes:\nsudo apt-get install -y pgadmin4\n\nnásledně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL\n\n# přidání zdroje balíčků GIS nástrojů\nsudo add-apt-repository -y ppa:ubuntugis/ppa\nsudo apt-get update\n\nsudo apt-get install -y gedit postgresql pgxnclient postgis qgis gdal-bin\n\nprvotní spuštění PostgreSQL je nutné provést z příkazové řádky\n\nsudo -u postgres psql template1\n\nnásledně spustíme příkaz pro modifikaci hesla hlavní uživatele DB\n\nALTER USER postgres with encrypted password 'heslo';\n\npříkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru localhost s uživatelem postgres a heslem heslo (nastavené výše)",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "linux-mint.html#instalace-vs-code",
+    "href": "linux-mint.html#instalace-vs-code",
+    "title": "Linux Mint",
+    "section": "🖥 Instalace VS Code",
+    "text": "🖥 Instalace VS Code\n\nmanuálně stáhnout z webu – .deb soubor\nspustit a nainstalovat poklikáním a zadáním hesla\naktualizace už probíhají automaticky",
     "crumbs": [
       "Nástroje",
       "Linux Mint"
@@ -352,7 +385,7 @@
     "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#konvrze-geometrií",
     "title": "Knihovny fiona, rasterio, shapely",
     "section": "Konvrze geometrií",
-    "text": "Konvrze geometrií\n\nmodul shapely.geometry\nz fiona do shapely funkce {python} shape(feature.geometry)\nz shapely do fiona funkce {python} mapping()"
+    "text": "Konvrze geometrií\n\nmodul shapely.geometry\nz fiona do shapely funkce shape(feature.geometry)\nz shapely do fiona funkce mapping()"
   },
   {
     "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#rastrio",
@@ -661,7 +694,7 @@
     "href": "pdbs2.html#instalace-postregsql",
     "title": "Prostorové databázové systémy 2 (PDBS2)",
     "section": "🖥 Instalace PostregSQL",
-    "text": "🖥 Instalace PostregSQL\n\ninstalujeme Linux Mint - Cinnamon edition do prostředí VirtualBox – celý process je ukázán v tomto videu, nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval\ndůležité je nastavení jména uživatele a hesla\nnásledně instalace softwarů\n\nnejdříve nastavíme nezbytnosti pro PG Admin 4 (pozor bude požadováno heslo)\n\n\nsource /etc/os-release\n\n# Install the public key for the repository (if not done previously):\ncurl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg\n\n# Create the repository configuration file:\necho \"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$UBUNTU_CODENAME pgadmin4 main\" | sudo tee /etc/apt/sources.list.d/pgadmin4.list\n\n# Update software sources\nsudo apt-get update\nsudo apt-get upgrade -y\n\n# Install pgAdmin for both desktop and web modes:\nsudo apt-get install -y pgadmin4\n\nnásledně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL\n\n# přidání zdroje balíčků GIS nástrojů\nsudo add-apt-repository -y ppa:ubuntugis/ppa\nsudo apt-get update\n\nsudo apt-get install -y gedit postgresql pgxnclient postgis qgis gdal-bin\n\nprvotní spuštění PostgreSQL je nutné provést z příkazové řádky\n\nsudo -u postgres psql template1\n\nnásledně spustíme příkaz pro modifikaci hesla hlavní uživatele DB\n\nALTER USER postgres with encrypted password 'heslo';\n\npříkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru localhost s uživatelem postgres a heslem heslo (nastavené výše)\n\n\nDocker\nPro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít docker compose se souborem s nastavením:\nversion: \"3.5\"\n\nservices:\n  postgres:\n    container_name: postgis\n    image: postgis/postgis:16-master\n    environment:\n      POSTGRES_USER: admin\n      POSTGRES_PASSWORD: root\n      PGDATA: /data/postgres\n    volumes:\n      - cesta_k_složce_na_disku:/data/postgres\n    ports:\n      - \"5432:5432\"\nStačí upravit volumes na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.",
+    "text": "🖥 Instalace PostregSQL\n\nviz odkaz Linux Mint - potřebujeme jednak akktuální GIS softwary a PostgreSQL (detaily na stránce)\n\n\nDocker\nPro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít docker compose se souborem s nastavením:\nversion: \"3.5\"\n\nservices:\n  postgres:\n    container_name: postgis\n    image: postgis/postgis:16-master\n    environment:\n      POSTGRES_USER: admin\n      POSTGRES_PASSWORD: root\n      PGDATA: /data/postgres\n    volumes:\n      - cesta_k_složce_na_disku:/data/postgres\n    ports:\n      - \"5432:5432\"\nStačí upravit volumes na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.",
     "crumbs": [
       "Předměty letní semestr",
       "Prostorové databázové systémy 2"
@@ -882,7 +915,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1076607 -0.3336644 -0.8300453 -0.3675617 -0.6993541"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.13959698 -1.08115391 -0.29614200 -0.35810977 -0.02884427"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
