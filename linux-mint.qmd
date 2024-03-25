@@ -70,3 +70,9 @@ ALTER USER postgres with encrypted password 'heslo';
 ```
 
 - příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru `localhost` s uživatelem `postgres` a heslem `heslo` (nastavené výše)
+
+## 🖥 Instalace VS Code
+
+- manuálně stáhnout z [webu](https://code.visualstudio.com/) -- **.deb** soubor
+- spustit a nainstalovat poklikáním a zadáním hesla
+- aktualizace už probíhají automaticky
