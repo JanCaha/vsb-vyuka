@@ -47,8 +47,8 @@ execute:
 ## Konvrze geometrií
 
 - modul `shapely.geometry`
-- z [fiona]{.software} do [shapely]{.software} funkce `{python} shape(feature.geometry)`
-- z [shapely]{.software} do [fiona]{.software} funkce `{python} mapping()`
+- z [fiona]{.software} do [shapely]{.software} funkce `shape(feature.geometry)`
+- z [shapely]{.software} do [fiona]{.software} funkce `mapping()`
 
 ## [rastrio]{.software}
 
