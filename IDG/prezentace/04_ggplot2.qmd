@@ -45,23 +45,65 @@ execute:
 
 - `ggplot()` - parametry `data`, `mapping`, není nutné uvádět zde, lze uvést u příslušné vrstvy (funkce `geom_*()`)
 
-- funkce `aes()` (aesthetic) - parametry `x` a `y` (není nutné vždy), další dle možní geometrie
+- funkce `aes()` (aesthetic) - parametry `x` a `y` (není nutné vždy), další dle možné geometrie, informace získáme u jednotlivých funkcí `geom_*`
 
 - `geom_*()` - parametr pro vykreslení dané geometrie, je možné použít jinou specifikaci dat či aesthetic
 
 ## Ukázka jednoduchý bodový graf
 
-- `scale_x_continuous()`, obecně `scale_*_*()`
+- `scale_x_continuous()`, obecně `scale_*_*()` - názvy tvoří proměnná a pak typ škály
 
 - `coord_trans()`
 
-- `labs()`
+- `labs()` - popisky grafu
 
-- `theme()` - funkce `element_*()` zejména `element_text()`
+- `theme()` stylování grafu, jednotlivé prvky, proměnným se přiřazují výsledky funkcí 
+   - funkce `element_*()` zejména `element_text()`
 
-- předpřipravená témata
+- předpřipravená témata - `theme_*()`
 
 - facety - `facet_grid()`
+
+## Ukázka - jednoduchý graf
+
+```{r}
+#| echo: true
+#| output-location: slide
+library(ggplot2)
+data(diamonds)
+
+ggplot(diamonds) +
+    geom_point((aes(price, carat, color = color, size = clarity))) +
+    scale_color_discrete() +
+    labs(title = "Diamanty", x = "Cena", y = "Karáty", color = "Barva", size = "Čistota") +
+    theme_bw() +
+    theme(
+        axis.title = element_text(size = 16),
+        title = element_text(size = 20),
+        axis.text = element_text(size = 14)
+    )
+```
+
+## Ukázka - graf s dílčími grafy
+
+```{r}
+#| echo: true
+#| output-location: slide
+library(ggplot2)
+data(diamonds)
+
+ggplot(diamonds) +
+    geom_point((aes(price, carat, color = color, size = clarity))) +
+    scale_color_discrete() +
+    facet_wrap(vars(cut)) +
+    labs(title = "Diamanty", x = "Cena", y = "Karáty", color = "Barva", size = "Čistota") +
+    theme_bw() +
+    theme(
+        axis.title = element_text(size = 16),
+        title = element_text(size = 20),
+        axis.text = element_text(size = 14)
+    )
+```
 
 ## Duležité informace
 
@@ -72,6 +114,43 @@ execute:
 - duležité proměnné `geom_*()` jsou `stat` (co se bude počítat), `position` (jestli se budou data nějak odsazovat)
 
 - možnosti funkcí `stat_*()`
+
+## Uložení části grafu do proměnné
+
+```{r}
+#| echo: true
+#| output-location: slide
+library(ggplot2)
+data(diamonds)
+
+template <- list(
+    labs(title = "Diamanty", x = "Cena", y = "Karáty", color = "Barva", size = "Čistota"),
+    theme_bw(),
+    theme(
+        axis.title = element_text(size = 16),
+        title = element_text(size = 20),
+        axis.text = element_text(size = 14)
+    )
+)
+
+ggplot(diamonds) +
+    geom_point((aes(price, carat, color = color, size = clarity))) +
+    scale_color_discrete() +
+    template
+
+```
+
+## Uložení grafu
+
+```{r}
+#| echo: true
+#| eval: false
+graf <- ggplot(diamonds) +
+    geom_point((aes(price, carat, color = color, size = clarity))) +
+    template
+
+ggsave("graf.png", graf, units = "mm", width = 297, height = 210)
+```
 
 ## Rozšíření ggplot2
 
