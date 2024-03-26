@@ -50,7 +50,7 @@ execute:
 - z [fiona]{.software} do [shapely]{.software} funkce `shape(feature.geometry)`
 - z [shapely]{.software} do [fiona]{.software} funkce `mapping()`
 
-## [rastrio]{.software}
+## [rasterio]{.software}
 
 - knihovna pro práci s rastrovými daty
 - platí pro ni v podstatě to samé co pro [fiona]{.software}
