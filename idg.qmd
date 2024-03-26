@@ -22,8 +22,9 @@ filters:
 
 - úvod do jazyka R
 - načítání dat do R
-- manipulace s daty v R pomocí balíku `dplyr`
-  
+- manipulace s daty v R pomocí balíku `dplyr`, `tidyr`
+- tvorba grafů v pomocí `ggplot2`, dobrá praxe tvorby grafů 
+
 ## 📑Prezentace
 
 ::: {#prezentace}

@@ -34,7 +34,8 @@ filters:
 ## 📃 Řešená témata
 
 - opakování základů Pythonu
--  knihovna GDAL/OGR
+- knihovna GDAL/OGR
+- knihovny rasterio, fiona, shapely
 
 ## 📑Prezentace
 
