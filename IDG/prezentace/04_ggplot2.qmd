@@ -163,8 +163,7 @@ ggsave("graf.png", graf, units = "mm", width = 297, height = 210)
 
 ## Rozšíření ggplot2
 
-- [Galerie rozšíření](http://www.ggplot2-exts.org/gallery/)
-
+- [Galerie rozšíření](https://exts.ggplot2.tidyverse.org/gallery/)
 - nejvýznamnější [gganimate, ggthemes, ggstatsplot, ggraph, ggforce, ggalt]{.software} a [cowplot]{.software}
 
 ## Interaktivní vizualizace
