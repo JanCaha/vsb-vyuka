@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.552">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -218,6 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#instalace-aktuálních-gis-knihoven-a-softwarů" id="toc-instalace-aktuálních-gis-knihoven-a-softwarů" class="nav-link" data-scroll-target="#instalace-aktuálních-gis-knihoven-a-softwarů">🖥 Instalace aktuálních GIS knihoven a softwarů</a></li>
   <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">🖥 Instalace PostregSQL</a></li>
   <li><a href="#instalace-vs-code" id="toc-instalace-vs-code" class="nav-link" data-scroll-target="#instalace-vs-code">🖥 Instalace VS Code</a></li>
+  <li><a href="#instalace-miniconda" id="toc-instalace-miniconda" class="nav-link" data-scroll-target="#instalace-miniconda">🖥 Instalace MiniConda</a></li>
   </ul>
 </nav>
     </div>
@@ -319,6 +320,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>spustit a nainstalovat poklikáním a zadáním hesla</li>
 <li>aktualizace už probíhají automaticky</li>
 </ul>
+</section>
+<section id="instalace-miniconda" class="level2">
+<h2 class="anchored" data-anchor-id="instalace-miniconda">🖥 Instalace MiniConda</h2>
+<p>Příkazy pro příkazovou řádku:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x Miniconda3-latest-Linux-x86_64.sh</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./Miniconda3-latest-Linux-x86_64.sh</span> <span class="at">-b</span> <span class="at">-f</span> <span class="at">-p</span> ~<span class="va">$USER</span>/miniconda3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

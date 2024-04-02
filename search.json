@@ -66,6 +66,17 @@
     ]
   },
   {
+    "objectID": "linux-mint.html#instalace-miniconda",
+    "href": "linux-mint.html#instalace-miniconda",
+    "title": "Linux Mint",
+    "section": "🖥 Instalace MiniConda",
+    "text": "🖥 Instalace MiniConda\nPříkazy pro příkazovou řádku:\ncd /tmp\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nchmod +x Miniconda3-latest-Linux-x86_64.sh\n./Miniconda3-latest-Linux-x86_64.sh -b -f -p ~$USER/miniconda3",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
     "objectID": "PDBS2/prezentace/02_postgresql.html#připojení-a-práce-s-db",
     "href": "PDBS2/prezentace/02_postgresql.html#připojení-a-práce-s-db",
     "title": "PostgreSQL (Postgis)",
@@ -280,7 +291,7 @@
     "href": "pgis2.html",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "",
-    "text": "opakování základů Pythonu\nknihovna GDAL/OGR",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -291,7 +302,7 @@
     "href": "pgis2.html#řešená-témata",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "",
-    "text": "opakování základů Pythonu\nknihovna GDAL/OGR",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -388,11 +399,11 @@
     "text": "Konvrze geometrií\n\nmodul shapely.geometry\nz fiona do shapely funkce shape(feature.geometry)\nz shapely do fiona funkce mapping()"
   },
   {
-    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#rastrio",
-    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#rastrio",
+    "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#rasterio",
+    "href": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#rasterio",
     "title": "Knihovny fiona, rasterio, shapely",
-    "section": "rastrio",
-    "text": "rastrio\n\nknihovna pro práci s rastrovými daty\nplatí pro ni v podstatě to samé co pro fiona\nvýrazné propojení s numpy (knihovna pro dvou a vícerozměrné matic)\noproti osgeo jednodušší přístupy\ndokumentace\nproblém s typováním - nutné hodně se opírat o dokumentaci"
+    "section": "rasterio",
+    "text": "rasterio\n\nknihovna pro práci s rastrovými daty\nplatí pro ni v podstatě to samé co pro fiona\nvýrazné propojení s numpy (knihovna pro dvou a vícerozměrné matic)\noproti osgeo jednodušší přístupy\ndokumentace\nproblém s typováním - nutné hodně se opírat o dokumentaci"
   },
   {
     "objectID": "PGIS2/prezentace/04_fiona_rasterio_shapely.html#gdalogr-fiona-rasterio-shapely",
@@ -518,7 +529,7 @@
     "href": "idg.html",
     "title": "Interpretace geodat (IDG)",
     "section": "",
-    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr",
+    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr, tidyr\ntvorba grafů v pomocí ggplot2, dobrá praxe tvorby grafů",
     "crumbs": [
       "Předměty letní semestr",
       "Interpretace geodat"
@@ -529,7 +540,7 @@
     "href": "idg.html#řešená-témata",
     "title": "Interpretace geodat (IDG)",
     "section": "",
-    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr",
+    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr, tidyr\ntvorba grafů v pomocí ggplot2, dobrá praxe tvorby grafů",
     "crumbs": [
       "Předměty letní semestr",
       "Interpretace geodat"
@@ -915,7 +926,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.13959698 -1.08115391 -0.29614200 -0.35810977 -0.02884427"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.09446175 -0.40867343 -0.64798071 -0.12120720 -0.10574772"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
