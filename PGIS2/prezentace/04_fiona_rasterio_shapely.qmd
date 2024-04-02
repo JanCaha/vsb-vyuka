@@ -5,7 +5,7 @@ author: "Jan Caha"
 date: 2024-03-18
 date-format: "YYYY-MM-DD"
 format: 
-    clean-revealjs:
+    revealjs:
         theme: [../../reveal-custom.scss]
 footer: "{{< var links.web >}}"
 code-line-numbers: false
@@ -50,7 +50,7 @@ execute:
 - z [fiona]{.software} do [shapely]{.software} funkce `shape(feature.geometry)`
 - z [shapely]{.software} do [fiona]{.software} funkce `mapping()`
 
-## [rastrio]{.software}
+## [rasterio]{.software}
 
 - knihovna pro práci s rastrovými daty
 - platí pro ni v podstatě to samé co pro [fiona]{.software}
