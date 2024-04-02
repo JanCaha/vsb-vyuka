@@ -5,7 +5,7 @@ author: "Jan Caha"
 date: 2024-02-26
 date-format: "YYYY-MM-DD"
 format: 
-    clean-revealjs:
+    revealjs:
         theme: [../../reveal-custom.scss]
 footer: "{{< var links.web >}}"
 code-line-numbers: false

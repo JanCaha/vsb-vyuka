@@ -4,7 +4,9 @@ subtitle: "Prostorové databázové systémy 2"
 author: "Jan Caha"
 date: 2024-02-19
 date-format: "YYYY-MM-DD"
-format: revealjs
+format: 
+    revealjs:
+        theme: [../../reveal-custom.scss]
 ---
 
 ## Náplň
