@@ -43,7 +43,6 @@ execute:
 
 ```{r, eval=False}
 #| echo: fenced
-#| eval: false
 x <- 5
 print(x)
 ```
