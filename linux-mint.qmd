@@ -82,6 +82,14 @@ ALTER USER postgres with encrypted password 'heslo';
 
 - příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru `localhost` s uživatelem `postgres` a heslem `heslo` (nastavené výše)
 
+### Připojení k DB z QGIS
+
+Pro připojení k PostGIS databázi z QGIS je třeba přidat nové připojení z **Data Source Manager** v QGIS. Nastavení bude vypada jako na obrázku níže, může být třeba upravit nastavení **Database** a v **Authentication** (@fig-pg-settings) nastavit **Basic authentication** a vyplnit jméno a heslo (@fig-user-settings). 
+
+![Nastavení připojení v QGIS](images/qgis_pg_settings.png){#fig-pg-settings .lightbox}
+
+![Nastavení uživatele v QGIS Authentication](images/qgis_pg_user.png){#fig-user-settings .lightbox}
+
 ## 🖥 Instalace VS Code
 
 - manuálně stáhnout z [webu](https://code.visualstudio.com/) -- **.deb** soubor
