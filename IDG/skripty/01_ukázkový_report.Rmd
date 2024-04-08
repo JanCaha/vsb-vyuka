@@ -1,0 +1,60 @@
+---
+title: "Zkušební Report"
+author: "Autor"
+date: "2024-04-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# nastavení proměnných pro všechny sekce s kódem
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Načtení balíků a dat
+
+Načteme balíky a data:
+
+```{r, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+data(diamonds)
+```
+
+## Výběr dat
+
+Vybereme pouze diamanty s barvou **F**.
+
+```{r}
+diamonds_selected <- diamonds %>% 
+  filter(color == "F")
+```
+
+```{r}
+library(DT)
+DT::datatable(diamonds_selected)
+```
+
+
+## Zhodnocení ceny
+
+```{r}
+mean_price <- mean(diamonds_selected$price)
+```
+
+Průměrná cena diamantů s barvou **F** je: `r mean_price`.
+
+## Karáty versus cena
+
+```{r}
+p <- ggplot(diamonds_selected) +
+  geom_point(aes(price, carat))
+p
+```
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+library(plotly)
+ggplotly(p)
+```
+
+
+

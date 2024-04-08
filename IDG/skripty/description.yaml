@@ -1,0 +1,8 @@
+- title: "Instalace potřebných balíků"
+  author: Jan Caha
+  date: 2024-02-19
+  path: "IDG/skripty/00_packages_install.R"
+- title: "Ukázkový report v rmarkdown"
+  author: Jan Caha
+  date: 2024-04-08
+  path: "IDG/skripty/01_ukázkový_report.Rmd"

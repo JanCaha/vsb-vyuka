@@ -4,5 +4,7 @@ install.packages(c(
     "sf",
     "terra",
     "stars",
-    "tidymodels"
+    "tidymodels",
+    "DT",
+    "rmarkdown"
 ))
