@@ -41,7 +41,7 @@ execute:
 
 - zapisuje do speciální značek (bloků) - v Rstudiu [Levý Ctrl + Levý Alt + I]{.keys} 
 
-```{r, eval=False}
+```{r, eval=FALSE}
 #| echo: fenced
 x <- 5
 print(x)
