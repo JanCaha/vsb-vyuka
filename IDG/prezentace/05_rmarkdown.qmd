@@ -41,12 +41,13 @@ execute:
 
 - zapisuje do speciální značek (bloků) - v Rstudiu [Levý Ctrl + Levý Alt + I]{.keys} 
 
-````rmarkdown
-`r ''````{r}
+```{r, eval=False}
+#| echo: fenced
+#| eval: false
 x <- 5
 print(x)
 ```
-````
+
 
 - `` ` `` uvozují kód (zpětný apostrof angl. backtick), blokový kód pomocí tří, řádkový pomocí jedné
 
