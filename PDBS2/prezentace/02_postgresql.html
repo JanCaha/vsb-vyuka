@@ -8,7 +8,7 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.552">
+  <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2024-03-04">
@@ -486,7 +486,7 @@ Jan Caha
 <ul>
 <li>pohled na data</li>
 <li>reálně neexistující tabulka, která se vytváří na požádání z dat</li>
-<li>updatuje se v podsatě v reálném čase</li>
+<li>updatuje se v podstatě v reálném čase</li>
 <li>užitečné proti duplikacím dat</li>
 <li>může být náročné na čas</li>
 </ul>
@@ -535,6 +535,15 @@ Jan Caha
 <li><a href="https://postgis.net/docs/manual-3.4/reference.html">vektorová data</a></li>
 <li><a href="https://postgis.net/docs/manual-3.4/RT_reference.html">rastrová data</a></li>
 <li><a href="https://postgis.net/docs/manual-3.4/using_postgis_query.html">prostorové dotazy</a></li>
+</ul>
+</section>
+<section id="souřadnicové-systémy" class="slide level2">
+<h2>Souřadnicové systémy</h2>
+<ul>
+<li>ukládají se tabulky <code>spatial_ref_sys</code> ve schématu <code>public</code> při instalaci extenze do DB</li>
+<li>bez této tabulky nemusí PostGIS fungovat korektně</li>
+<li>do tabulky nezasahovat, leda skrze funkce PostGIS, jinak je možné způsobit nefunkčnost extenze</li>
+<li>integerový identfikátor <code>srid</code> obvykle odpovídá <strong>EPSG</strong> kódu, <code>EPSG:5514</code> - <code>5514</code></li>
 </ul>
 </section></section>
 <section id="dotazy" class="title-slide slide level1 center">

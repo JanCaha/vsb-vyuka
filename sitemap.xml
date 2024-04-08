@@ -1,67 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/linux-mint.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/PDBS2/prezentace/02_postgresql.html</loc>
-    <lastmod>2024-04-02T12:53:42.854Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/01_uvod.html</loc>
-    <lastmod>2024-04-02T12:53:42.854Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/04_ggplot2.html</loc>
-    <lastmod>2024-04-02T12:53:42.854Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/pgis2.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/04_fiona_rasterio_shapely.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
-  </url>
-  <url>
     <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/02_opakovani_python.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/idg.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/vscode.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/pdbs2.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
+    <lastmod>2024-04-08T11:55:58.207Z</lastmod>
   </url>
   <url>
     <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/03_gdal_ogr.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
+    <lastmod>2024-04-08T11:55:58.207Z</lastmod>
   </url>
   <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/01_uvod.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
+    <loc>https://jancaha.github.io/vsb-vyuka/pgis2.html</loc>
+    <lastmod>2024-04-08T11:55:58.211Z</lastmod>
   </url>
   <url>
-    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/02_uvod_r.html</loc>
-    <lastmod>2024-04-02T12:53:42.854Z</lastmod>
+    <loc>https://jancaha.github.io/vsb-vyuka/vscode.html</loc>
+    <lastmod>2024-04-08T11:55:58.211Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/pdbs2.html</loc>
+    <lastmod>2024-04-08T11:55:58.211Z</lastmod>
   </url>
   <url>
     <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/03_data.html</loc>
-    <lastmod>2024-04-02T12:53:42.854Z</lastmod>
+    <lastmod>2024-04-08T11:55:58.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/02_uvod_r.html</loc>
+    <lastmod>2024-04-08T11:55:58.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/PDBS2/prezentace/02_postgresql.html</loc>
+    <lastmod>2024-04-08T11:55:58.067Z</lastmod>
   </url>
   <url>
     <loc>https://jancaha.github.io/vsb-vyuka/index.html</loc>
-    <lastmod>2024-04-02T12:53:42.994Z</lastmod>
+    <lastmod>2024-04-08T11:55:58.211Z</lastmod>
   </url>
   <url>
     <loc>https://jancaha.github.io/vsb-vyuka/PDBS2/prezentace/01_uvod.html</loc>
-    <lastmod>2024-04-02T12:53:42.854Z</lastmod>
+    <lastmod>2024-04-08T11:55:58.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/05_rmarkdown.html</loc>
+    <lastmod>2024-04-08T11:55:58.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/01_uvod.html</loc>
+    <lastmod>2024-04-08T11:55:58.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/IDG/prezentace/04_ggplot2.html</loc>
+    <lastmod>2024-04-08T11:55:58.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/idg.html</loc>
+    <lastmod>2024-04-08T11:55:58.207Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/linux-mint.html</loc>
+    <lastmod>2024-04-08T11:55:58.211Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/01_uvod.html</loc>
+    <lastmod>2024-04-08T11:55:58.207Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jancaha.github.io/vsb-vyuka/PGIS2/prezentace/04_fiona_rasterio_shapely.html</loc>
+    <lastmod>2024-04-08T11:55:58.207Z</lastmod>
   </url>
 </urlset>

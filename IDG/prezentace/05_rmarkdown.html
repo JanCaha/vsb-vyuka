@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-02-19">
-  <title>Výuka - Jan Caha - Úvodní cvičení</title>
+  <meta name="dcterms.date" content="2024-04-08">
+  <title>Výuka - Jan Caha - Tvorba reportů, prezentací a dalších</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -321,7 +321,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Výuka - Jan Caha - Úvodní cvičení">
+<meta property="og:title" content="Výuka - Jan Caha - Tvorba reportů, prezentací a dalších">
 <meta property="og:description" content="Interpretace geodat">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -330,7 +330,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Úvodní cvičení</h1>
+  <h1 class="title">Tvorba reportů, prezentací a dalších</h1>
   <p class="subtitle">Interpretace geodat</p>
 
 <div class="quarto-title-authors">
@@ -341,61 +341,99 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-02-19</p>
+  <p class="date">2024-04-08</p>
 </section>
-<section id="náplň" class="slide level2">
-<h2>Náplň</h2>
+<section id="r-markdown" class="slide level2">
+<h2>R Markdown</h2>
 <ul>
-<li>zpracování dat</li>
-<li>operace s daty</li>
-<li>PCA, faktorová analýza, shluková analýza, rozhodovací stromy, data mining</li>
+<li><p>balík <span class="software">rmarkdown</span>, který umožňuje kombinovat psaný text s kódem v R pro tvorbu komplexních reportů</p></li>
+<li><p>podpora pro tuto funkcionalitu je zakomponována přímo do RStudia</p></li>
+<li><p>alternativa jsou R skripty s komentáři, což je ale značně nešikovné a hůře funkční pro delší texty</p></li>
+<li><p><code>RStudio</code> <code>File -&gt; New File -&gt; R Markdown</code> jednoduché okno pro volbu typu reportu (zavisí na nainstalovaných balících)</p></li>
 </ul>
 </section>
-<section id="o-čem-to-bude" class="slide level2">
-<h2>O čem to bude</h2>
+<section id="r-markdown-dokument" class="slide level2">
+<h2>R Markdown dokument</h2>
 <ul>
-<li>jazyk <span class="software">R</span></li>
-<li>balíky pro <span class="software">R</span></li>
-<li>zpracování a vizualizace dat <span class="software">tidyverse</span></li>
-<li>statistické modelování <span class="software">tidymodels</span> a další</li>
-<li>prostorová data - balíky <span class="software">sf</span>, <span class="software">terra</span> a <span class="software">stars</span></li>
-<li>geoinformatické workflow - <span class="software">qgisprocess</span>, <span class="software">qgis</span></li>
+<li><p>začíná hlavičkou, která specifikuje nastavení - např. autor, datum, název a výstupní formát</p></li>
+<li><p>hlavička má formát <strong>yaml</strong> zápisu, který je ale lidsky dobře čitelný</p></li>
+<li><p>zbytek je samotný report, který obsahuje buď text, R kód, či výstupy z R kódu</p></li>
+<li><p>textová část se zapisuje ve formátu <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a></p></li>
+<li><p><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></p></li>
 </ul>
 </section>
-<section id="dílčí-úlohy" class="slide level2">
-<h2>Dílčí úlohy</h2>
+<section id="r-kód" class="slide level2">
+<h2>R kód</h2>
 <ul>
-<li>práce s datovými rámci (tabulkami)</li>
-<li>tvorba workflow pro zpracování dat</li>
-<li>opakovatelnost postupů</li>
-<li>tvorba reportů</li>
+<li>zapisuje do speciální značek (bloků) - v Rstudiu <span class="keys">Levý Ctrl + Levý Alt + I</span></li>
+</ul>
+<pre class="rmarkdown"><code>`r ''````{r}
+x &lt;- 5
+print(x)
+```</code></pre>
+<ul>
+<li><p><code>`</code> uvozují kód (zpětný apostrof angl. backtick), blokový kód pomocí tří, řádkový pomocí jedné</p></li>
+<li><p>tyto bloky se při překladu reporu vyhodnotí (provedou) - překlad pomocí ikony <strong>Knit</strong> nebo <span class="keys">Ctrl + Shift + K</span></p></li>
 </ul>
 </section>
-<section id="v-čem-budeme-pracovat" class="slide level2">
-<h2>V čem budeme pracovat</h2>
+<section id="parametry-bloků-kódu" class="slide level2">
+<h2>Parametry bloků kódu</h2>
 <ul>
-<li><span class="software">R</span> a <span class="software">RStudio</span></li>
-<li>větší množství balíků</li>
+<li><p>lze nastavit jestli se má vkládat kód nebo jen výsledky</p></li>
+<li><p>zda se má daný blok interpretovat</p></li>
+<li><p>parametry obrázků</p></li>
+<li><p>vše jako hlavička bloku kódu např. <code>{r, eval=FALSE}</code></p></li>
 </ul>
 </section>
-<section id="materiály" class="slide level2">
-<h2>Materiály</h2>
+<section id="ukázky" class="slide level2">
+<h2>Ukázky</h2>
 <ul>
-<li>prezentace</li>
-<li>kód z cvičení</li>
-<li>budou dostupné (kde upřesním)</li>
+<li><p>základní šablona Rmd dokumentu</p></li>
+<li><p>jednoduché ukázky</p></li>
 </ul>
 </section>
-<section id="zápočet" class="slide level2">
-<h2>Zápočet</h2>
+<section id="prezentace" class="slide level2">
+<h2>Prezentace</h2>
 <ul>
-<li>40 bodů za seminární úkol
-<ul>
-<li>zpracování vámi vybraných dat, tvorba jednoho komplexního grafického výstupu, reportu, použití alespoň jedné pokročilé statické metody</li>
-</ul></li>
-<li>60 bodů za test</li>
+<li><p>na stejném základu</p></li>
+<li><p>balík <strong>xaringan</strong>, pro stylování potom <strong>xaringanthemer</strong>, instalace z <a href="https://github.com/gadenbuie/xaringanthemer">githubu</a></p></li>
+<li><p>nové slajdy se oddělují <code>---</code></p></li>
+<li><p>formátování slajdů</p></li>
 </ul>
 </section>
+<section id="extenze" class="slide level2">
+<h2>Extenze</h2>
+<ul>
+<li>balíky</li>
+<li><span class="software">bookdown</span> - rozšíření pro psaní knih, ukázky <a href="https://bookdown.org/home/">zde</a></li>
+<li><span class="software">pkgdown</span> - tvorba webu z dokumentace R balíku, např. <a href="https://bookdown.org/">ggplot2</a></li>
+<li>a další možnosti</li>
+</ul>
+</section>
+<section>
+<section id="quarto" class="title-slide slide level1 center">
+<h1>Quarto</h1>
+
+</section>
+<section id="quarto-1" class="slide level2">
+<h2>Quarto</h2>
+<ul>
+<li>nový software (první release 2021) založený na <span class="software">Pandoc</span></li>
+<li>reiterace <span class="software">Rmarkdown</span>, která ale není specifická pro R ale podporuje více jazyků</li>
+<li>volná kombinace textu, kódů a výstupů z kódu</li>
+<li>umožňuje tvorbu dokumentů, prezentací, knih, webových stránek a dalších</li>
+<li><a href="https://quarto.org/">web + dokumentace</a></li>
+</ul>
+</section>
+<section id="quarto-a-rstudio" class="slide level2">
+<h2>Quarto a RStudio</h2>
+<ul>
+<li>obojí vyvíjí firma <strong>Posit</strong> (dříve <strong>RStudio</strong>)</li>
+<li>RStudio je nativní prostředí pro tvorbu <strong>qmd</strong>, ale dobře funguje i <span class="software">VS Code</span></li>
+<li>menší rozdíly od <span class="software">Rmarkdown</span> v zápisech, aby byly zápisy obecnejší a fungovalo s více jazyky</li>
+<li>na určité typy projektů velice vhodné</li>
+</ul>
+</section></section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
 

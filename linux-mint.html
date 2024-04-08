@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.552">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -75,6 +75,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -216,7 +219,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#instalace" id="toc-instalace" class="nav-link active" data-scroll-target="#instalace">🖥 Instalace</a></li>
   <li><a href="#aktualizace" id="toc-aktualizace" class="nav-link" data-scroll-target="#aktualizace">Aktualizace</a></li>
   <li><a href="#instalace-aktuálních-gis-knihoven-a-softwarů" id="toc-instalace-aktuálních-gis-knihoven-a-softwarů" class="nav-link" data-scroll-target="#instalace-aktuálních-gis-knihoven-a-softwarů">🖥 Instalace aktuálních GIS knihoven a softwarů</a></li>
-  <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">🖥 Instalace PostregSQL</a></li>
+  <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">🖥 Instalace PostregSQL</a>
+  <ul class="collapse">
+  <li><a href="#připojení-k-db-z-qgis" id="toc-připojení-k-db-z-qgis" class="nav-link" data-scroll-target="#připojení-k-db-z-qgis">Připojení k DB z QGIS</a></li>
+  </ul></li>
   <li><a href="#instalace-vs-code" id="toc-instalace-vs-code" class="nav-link" data-scroll-target="#instalace-vs-code">🖥 Instalace VS Code</a></li>
   <li><a href="#instalace-miniconda" id="toc-instalace-miniconda" class="nav-link" data-scroll-target="#instalace-miniconda">🖥 Instalace MiniConda</a></li>
   </ul>
@@ -312,6 +318,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru <code>localhost</code> s uživatelem <code>postgres</code> a heslem <code>heslo</code> (nastavené výše)</li>
 </ul>
+<section id="připojení-k-db-z-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="připojení-k-db-z-qgis">Připojení k DB z QGIS</h3>
+<p>Pro připojení k PostGIS databázi z QGIS je třeba přidat nové připojení z <strong>Data Source Manager</strong> v QGIS. Nastavení bude vypada jako na obrázku níže, může být třeba upravit nastavení <strong>Database</strong> a v <strong>Authentication</strong> (<a href="#fig-pg-settings" class="quarto-xref">Obr.&nbsp;1</a>) nastavit <strong>Basic authentication</strong> a vyplnit jméno a heslo (<a href="#fig-user-settings" class="quarto-xref">Obr.&nbsp;2</a>).</p>
+<div id="fig-pg-settings" class="lightbox quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pg-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/qgis_pg_settings.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="images/qgis_pg_settings.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pg-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;1: Nastavení připojení v QGIS
+</figcaption>
+</figure>
+</div>
+<div id="fig-user-settings" class="lightbox quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-user-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/qgis_pg_user.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="images/qgis_pg_user.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-user-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;2: Nastavení uživatele v QGIS Authentication
+</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="instalace-vs-code" class="level2">
 <h2 class="anchored" data-anchor-id="instalace-vs-code">🖥 Instalace VS Code</h2>
@@ -330,6 +360,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./Miniconda3-latest-Linux-x86_64.sh</span> <span class="at">-b</span> <span class="at">-f</span> <span class="at">-p</span> ~<span class="va">$USER</span>/miniconda3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Obr.&nbsp;1: Nastavení připojení v QGIS</span>
+<span class="glightbox-desc lightbox-desc-2">Obr.&nbsp;2: Nastavení uživatele v QGIS Authentication</span>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -909,6 +943,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
