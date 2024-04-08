@@ -674,7 +674,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.52092935 -0.56053512 -0.03257613 -1.25732988 -0.38267693"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.7814752 -0.3918405 -0.1900171 -0.7544495 -0.3704355"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -810,6 +810,118 @@
     "text": "Nejpoužívanější balíky z tidyverse\n\nreadr, readxl - načítání a ukládání dat\ndplyr - základní manipulace s daty\ntidyr - čištění a reformátování dat\nggplot2 - vizualizace, tvorba grafů\nhms, lubridate - práce s datumy a časy\nstringr - práce s textovými daty\npurrr - fukncionální programování"
   },
   {
+    "objectID": "IDG/skripty/01_ukázkový_report.html",
+    "href": "IDG/skripty/01_ukázkový_report.html",
+    "title": "Zkušební Report",
+    "section": "",
+    "text": "Načteme balíky a data:\n\nlibrary(ggplot2)\nlibrary(dplyr)\ndata(diamonds)"
+  },
+  {
+    "objectID": "IDG/skripty/01_ukázkový_report.html#načtení-balíků-a-dat",
+    "href": "IDG/skripty/01_ukázkový_report.html#načtení-balíků-a-dat",
+    "title": "Zkušební Report",
+    "section": "",
+    "text": "Načteme balíky a data:\n\nlibrary(ggplot2)\nlibrary(dplyr)\ndata(diamonds)"
+  },
+  {
+    "objectID": "IDG/skripty/01_ukázkový_report.html#výběr-dat",
+    "href": "IDG/skripty/01_ukázkový_report.html#výběr-dat",
+    "title": "Zkušební Report",
+    "section": "Výběr dat",
+    "text": "Výběr dat\nVybereme pouze diamanty s barvou F.\n\ndiamonds_selected &lt;- diamonds %&gt;% \n  filter(color == \"F\")\n\n\nlibrary(DT)\nDT::datatable(diamonds_selected)"
+  },
+  {
+    "objectID": "IDG/skripty/01_ukázkový_report.html#zhodnocení-ceny",
+    "href": "IDG/skripty/01_ukázkový_report.html#zhodnocení-ceny",
+    "title": "Zkušební Report",
+    "section": "Zhodnocení ceny",
+    "text": "Zhodnocení ceny\n\nmean_price &lt;- mean(diamonds_selected$price)\n\nPrůměrná cena diamantů s barvou F je: 3724.886397."
+  },
+  {
+    "objectID": "IDG/skripty/01_ukázkový_report.html#karáty-versus-cena",
+    "href": "IDG/skripty/01_ukázkový_report.html#karáty-versus-cena",
+    "title": "Zkušební Report",
+    "section": "Karáty versus cena",
+    "text": "Karáty versus cena\n\np &lt;- ggplot(diamonds_selected) +\n  geom_point(aes(price, carat))\np"
+  },
+  {
+    "objectID": "PDBS2/prezentace/01_uvod.html#náplň",
+    "href": "PDBS2/prezentace/01_uvod.html#náplň",
+    "title": "Úvodní cvičení",
+    "section": "Náplň",
+    "text": "Náplň\n\nSŘBD (DBMS)\nOracle\nPostgre SQL, PostGIS (oborový standard)\nSQLite, SpatialLite (okrajově, ale aplikačně zajímavé)"
+  },
+  {
+    "objectID": "PDBS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "href": "PDBS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "title": "Úvodní cvičení",
+    "section": "O čem to bude",
+    "text": "O čem to bude\n\nSQL příkazy - předpokládá se, že základy znáte\n\nSELECT * FROM table WHERE attribut = 5;\nSELECT * FROM table WHERE attribut LIKE 'hodnota%';\n\nfunkce pro prostorová data v SQL (Oracle, hlavně PostGIS)\nzpracování dat a manipulace s nimi skrze SQL (trochu jiný styl práce než normální práce s daty)"
+  },
+  {
+    "objectID": "PDBS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "href": "PDBS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "title": "Úvodní cvičení",
+    "section": "Dílčí úlohy",
+    "text": "Dílčí úlohy\n\npráce s daty v DB\nnávrh a tvorba DB\nfunkce pro geodata v DB\npřipojení k DB ze softwarů, programovacích jazyků"
+  },
+  {
+    "objectID": "PDBS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "href": "PDBS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "title": "Úvodní cvičení",
+    "section": "V čem budeme pracovat",
+    "text": "V čem budeme pracovat\n\nSQLDeveloper (pro Oracle)\npgAdmin (pro Postgre/Postgis)\nDBeaver (Community Edition) - grafické návrhy DB\nQGIS - prostorová data z Postgis - vizualizace i editace\nDB Browser pro SQLite"
+  },
+  {
+    "objectID": "PDBS2/prezentace/01_uvod.html#db-systémy",
+    "href": "PDBS2/prezentace/01_uvod.html#db-systémy",
+    "title": "Úvodní cvičení",
+    "section": "DB Systémy",
+    "text": "DB Systémy\n\nvirtual PC\nz Adelka (\\adelka-nas.vsb.cz) soubor PDB_OfficeOracle21c.ova\npro Postgre bude vytvořen"
+  },
+  {
+    "objectID": "PDBS2/prezentace/01_uvod.html#materiály",
+    "href": "PDBS2/prezentace/01_uvod.html#materiály",
+    "title": "Úvodní cvičení",
+    "section": "Materiály",
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
+  },
+  {
+    "objectID": "PDBS2/prezentace/01_uvod.html#zápočet",
+    "href": "PDBS2/prezentace/01_uvod.html#zápočet",
+    "title": "Úvodní cvičení",
+    "section": "Zápočet",
+    "text": "Zápočet\n\ncelkem 33 bodů\ncvičení Oracle + Postgis 11 bodů (detaily za 14 dnů)\nprojekt PostGIS 11 bodů\npísemka SQL 11 bodů"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Výuka - Jan Caha",
+    "section": "",
+    "text": "Materiály pro moje předměty vyučované v roce 2023/2024 na Katedře Geoinformatiky, HGF, VŠB-TUO."
+  },
+  {
+    "objectID": "index.html#zimní-semestr",
+    "href": "index.html#zimní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Zimní semestr",
+    "text": "Zimní semestr"
+  },
+  {
+    "objectID": "index.html#letní-semestr",
+    "href": "index.html#letní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Letní semestr",
+    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nInterpretace geodat (IDG)\nProstorové databázové systémy 2 (PDBS2)"
+  },
+  {
+    "objectID": "index.html#nástroje",
+    "href": "index.html#nástroje",
+    "title": "Výuka - Jan Caha",
+    "section": "Nástroje",
+    "text": "Nástroje\n\nVisual Studio Code\nLinux Mint"
+  },
+  {
     "objectID": "PDBS2/prezentace/02_postgresql.html#připojení-a-práce-s-db",
     "href": "PDBS2/prezentace/02_postgresql.html#připojení-a-práce-s-db",
     "title": "PostgreSQL (Postgis)",
@@ -887,83 +999,6 @@
     "text": "Souřadnicové systémy\n\nukládají se tabulky spatial_ref_sys ve schématu public při instalaci extenze do DB\nbez této tabulky nemusí PostGIS fungovat korektně\ndo tabulky nezasahovat, leda skrze funkce PostGIS, jinak je možné způsobit nefunkčnost extenze\nintegerový identfikátor srid obvykle odpovídá EPSG kódu, EPSG:5514 - 5514"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Výuka - Jan Caha",
-    "section": "",
-    "text": "Materiály pro moje předměty vyučované v roce 2023/2024 na Katedře Geoinformatiky, HGF, VŠB-TUO."
-  },
-  {
-    "objectID": "index.html#zimní-semestr",
-    "href": "index.html#zimní-semestr",
-    "title": "Výuka - Jan Caha",
-    "section": "Zimní semestr",
-    "text": "Zimní semestr"
-  },
-  {
-    "objectID": "index.html#letní-semestr",
-    "href": "index.html#letní-semestr",
-    "title": "Výuka - Jan Caha",
-    "section": "Letní semestr",
-    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nInterpretace geodat (IDG)\nProstorové databázové systémy 2 (PDBS2)"
-  },
-  {
-    "objectID": "index.html#nástroje",
-    "href": "index.html#nástroje",
-    "title": "Výuka - Jan Caha",
-    "section": "Nástroje",
-    "text": "Nástroje\n\nVisual Studio Code\nLinux Mint"
-  },
-  {
-    "objectID": "PDBS2/prezentace/01_uvod.html#náplň",
-    "href": "PDBS2/prezentace/01_uvod.html#náplň",
-    "title": "Úvodní cvičení",
-    "section": "Náplň",
-    "text": "Náplň\n\nSŘBD (DBMS)\nOracle\nPostgre SQL, PostGIS (oborový standard)\nSQLite, SpatialLite (okrajově, ale aplikačně zajímavé)"
-  },
-  {
-    "objectID": "PDBS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "href": "PDBS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "title": "Úvodní cvičení",
-    "section": "O čem to bude",
-    "text": "O čem to bude\n\nSQL příkazy - předpokládá se, že základy znáte\n\nSELECT * FROM table WHERE attribut = 5;\nSELECT * FROM table WHERE attribut LIKE 'hodnota%';\n\nfunkce pro prostorová data v SQL (Oracle, hlavně PostGIS)\nzpracování dat a manipulace s nimi skrze SQL (trochu jiný styl práce než normální práce s daty)"
-  },
-  {
-    "objectID": "PDBS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "href": "PDBS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "title": "Úvodní cvičení",
-    "section": "Dílčí úlohy",
-    "text": "Dílčí úlohy\n\npráce s daty v DB\nnávrh a tvorba DB\nfunkce pro geodata v DB\npřipojení k DB ze softwarů, programovacích jazyků"
-  },
-  {
-    "objectID": "PDBS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "href": "PDBS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "title": "Úvodní cvičení",
-    "section": "V čem budeme pracovat",
-    "text": "V čem budeme pracovat\n\nSQLDeveloper (pro Oracle)\npgAdmin (pro Postgre/Postgis)\nDBeaver (Community Edition) - grafické návrhy DB\nQGIS - prostorová data z Postgis - vizualizace i editace\nDB Browser pro SQLite"
-  },
-  {
-    "objectID": "PDBS2/prezentace/01_uvod.html#db-systémy",
-    "href": "PDBS2/prezentace/01_uvod.html#db-systémy",
-    "title": "Úvodní cvičení",
-    "section": "DB Systémy",
-    "text": "DB Systémy\n\nvirtual PC\nz Adelka (\\adelka-nas.vsb.cz) soubor PDB_OfficeOracle21c.ova\npro Postgre bude vytvořen"
-  },
-  {
-    "objectID": "PDBS2/prezentace/01_uvod.html#materiály",
-    "href": "PDBS2/prezentace/01_uvod.html#materiály",
-    "title": "Úvodní cvičení",
-    "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
-  },
-  {
-    "objectID": "PDBS2/prezentace/01_uvod.html#zápočet",
-    "href": "PDBS2/prezentace/01_uvod.html#zápočet",
-    "title": "Úvodní cvičení",
-    "section": "Zápočet",
-    "text": "Zápočet\n\ncelkem 33 bodů\ncvičení Oracle + Postgis 11 bodů (detaily za 14 dnů)\nprojekt PostGIS 11 bodů\npísemka SQL 11 bodů"
-  },
-  {
     "objectID": "IDG/prezentace/05_rmarkdown.html#r-markdown",
     "href": "IDG/prezentace/05_rmarkdown.html#r-markdown",
     "title": "Tvorba reportů, prezentací a dalších",
@@ -982,7 +1017,7 @@
     "href": "IDG/prezentace/05_rmarkdown.html#r-kód",
     "title": "Tvorba reportů, prezentací a dalších",
     "section": "R kód",
-    "text": "R kód\n\nzapisuje do speciální značek (bloků) - v Rstudiu Levý Ctrl + Levý Alt + I\n\n\n```{r, eval=False}\n#| eval: false\nx &lt;- 5\nprint(x)\n```\n\n\n` uvozují kód (zpětný apostrof angl. backtick), blokový kód pomocí tří, řádkový pomocí jedné\ntyto bloky se při překladu reporu vyhodnotí (provedou) - překlad pomocí ikony Knit nebo Ctrl + Shift + K"
+    "text": "R kód\n\nzapisuje do speciální značek (bloků) - v Rstudiu Levý Ctrl + Levý Alt + I\n\n\n```{r, eval=FALSE}\nx &lt;- 5\nprint(x)\n```\n\n\n` uvozují kód (zpětný apostrof angl. backtick), blokový kód pomocí tří, řádkový pomocí jedné\ntyto bloky se při překladu reporu vyhodnotí (provedou) - překlad pomocí ikony Knit nebo Ctrl + Shift + K"
   },
   {
     "objectID": "IDG/prezentace/05_rmarkdown.html#parametry-bloků-kódu",
@@ -1003,7 +1038,7 @@
     "href": "IDG/prezentace/05_rmarkdown.html#prezentace",
     "title": "Tvorba reportů, prezentací a dalších",
     "section": "Prezentace",
-    "text": "Prezentace\n\nna stejném základu\nbalík xaringan, pro stylování potom xaringanthemer, instalace z githubu\nnové slajdy se oddělují ---\nformátování slajdů"
+    "text": "Prezentace\n\nna stejném základu\nbalík xaringan, pro stylování potom xaringanthemer, instalace z githubu\nnové slajdy se oddělují ---\nformátování slajdů\n\nturiálová prezentace"
   },
   {
     "objectID": "IDG/prezentace/05_rmarkdown.html#extenze",
@@ -1204,7 +1239,7 @@
     "href": "idg.html#seminární-práce",
     "title": "Interpretace geodat (IDG)",
     "section": "📝 Seminární práce",
-    "text": "📝 Seminární práce\nVyberte si libovolnou otevřenou datovou sadu pro ČR, např. z Národního katalogu otevřených dat či jiného zdroje. Vytvořte buď Rmarkdown nebo Quarto dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující: - načtení dat - modifikace dat, výpočet nových sloupců nebo extrakce dílčích dat ze sloupců do nových sloupců (balík dplyr a další) - extrakce dílčí části dat do menší tabulky a její prezentace v dokumentu - jeden graf se všemi náležitostmi a korektně vizualizovaný z dat (balík ggplot2) - jedna interaktivní vizualizace (balík plotly pro grafy, nebo leaflet pro prostorová data) - statistická sumarizace/vyhodnocení dat - shrnutí, tabulka, vizualizace",
+    "text": "📝 Seminární práce\nVyberte si libovolnou otevřenou datovou sadu pro ČR, např. z Národního katalogu otevřených dat či jiného zdroje. Vytvořte buď Rmarkdown nebo Quarto dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující:\n\nnačtení dat\nmodifikace dat, výpočet nových sloupců nebo extrakce dílčích dat ze sloupců do nových sloupců (balík dplyr a další)\nextrakce dílčí části dat do menší tabulky a její prezentace v dokumentu\njeden graf se všemi náležitostmi a korektně vizualizovaný z dat (balík ggplot2)\njedna interaktivní vizualizace (balík plotly pro grafy, nebo leaflet pro prostorová data)\nstatistická sumarizace/vyhodnocení dat - shrnutí, tabulka, vizualizace",
     "crumbs": [
       "Předměty letní semestr",
       "Interpretace geodat"
@@ -1237,7 +1272,7 @@
     "href": "idg.html#ukázkové-kódy",
     "title": "Interpretace geodat (IDG)",
     "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy",
+    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-02-19\n\n\nInstalace potřebných balíků\n\n\n\n\n2024-04-08\n\n\nUkázkový report v rmarkdown\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Interpretace geodat"
@@ -1248,7 +1283,7 @@
     "href": "idg.html#instalace",
     "title": "Interpretace geodat (IDG)",
     "section": "🖥 Instalace",
-    "text": "🖥 Instalace\n\nR - R CRAN\nIDE - RStudio\n\nV RStudiu nainstalovat balíky následujícím skriptem:\ninstall.packages(c(\n    \"tidyverse\",\n    \"here\",\n    \"sf\",\n    \"terra\",\n    \"stars\",\n    \"tidymodels\"\n))",
+    "text": "🖥 Instalace\n\nR - R CRAN\nIDE - RStudio\n\nV RStudiu nainstalovat balíky následujícím skriptem:\ninstall.packages(c(\n    \"tidyverse\",\n    \"here\",\n    \"sf\",\n    \"terra\",\n    \"stars\",\n    \"tidymodels\",\n    \"DT\",\n    \"rmarkdown\",\n    \"plotly\"\n))",
     "crumbs": [
       "Předměty letní semestr",
       "Interpretace geodat"

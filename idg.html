@@ -133,6 +133,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-codes .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-codes'] = new List('listing-codes', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -331,7 +359,7 @@ Prezentace
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1712578586460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
+<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1712606201051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
 <td>
 <span class="listing-date">2024-02-19</span>
 </td>
@@ -339,7 +367,7 @@ Prezentace
 <a href="./IDG/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1712578586460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1259" data-listing-title-sort="Základní orientace v jazyce [R]{.software}" data-listing-filename-sort="02_uvod_r.qmd">
+<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1712606201051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1259" data-listing-title-sort="Základní orientace v jazyce [R]{.software}" data-listing-filename-sort="02_uvod_r.qmd">
 <td>
 <span class="listing-date">2024-02-26</span>
 </td>
@@ -347,7 +375,7 @@ Prezentace
 <a href="./IDG/prezentace/02_uvod_r.html" class="title listing-title">Základní orientace v jazyce <span class="software">R</span></a>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1712578586460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1425" data-listing-title-sort="Načítání dat, Manipulace s daty" data-listing-filename-sort="03_data.qmd">
+<tr data-index="2" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1712606201051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1425" data-listing-title-sort="Načítání dat, Manipulace s daty" data-listing-filename-sort="03_data.qmd">
 <td>
 <span class="listing-date">2024-03-04</span>
 </td>
@@ -355,7 +383,7 @@ Prezentace
 <a href="./IDG/prezentace/03_data.html" class="title listing-title">Načítání dat, Manipulace s daty</a>
 </td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1710720000000" data-listing-file-modified-sort="1712578586460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="658" data-listing-title-sort="Grafy - ggplot2" data-listing-filename-sort="04_ggplot2.qmd">
+<tr data-index="3" data-listing-date-sort="1710720000000" data-listing-file-modified-sort="1712606201051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="658" data-listing-title-sort="Grafy - ggplot2" data-listing-filename-sort="04_ggplot2.qmd">
 <td>
 <span class="listing-date">2024-03-18</span>
 </td>
@@ -363,7 +391,7 @@ Prezentace
 <a href="./IDG/prezentace/04_ggplot2.html" class="title listing-title">Grafy - ggplot2</a>
 </td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1712534400000" data-listing-file-modified-sort="1712578586460" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="343" data-listing-title-sort="Tvorba reportů, prezentací a dalších" data-listing-filename-sort="05_rmarkdown.qmd">
+<tr data-index="4" data-listing-date-sort="1712534400000" data-listing-file-modified-sort="1712606201051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="344" data-listing-title-sort="Tvorba reportů, prezentací a dalších" data-listing-filename-sort="05_rmarkdown.qmd">
 <td>
 <span class="listing-date">2024-04-08</span>
 </td>
@@ -380,7 +408,15 @@ No matching items
 </section>
 <section id="seminární-práce" class="level2">
 <h2 class="anchored" data-anchor-id="seminární-práce">📝 Seminární práce</h2>
-<p>Vyberte si libovolnou otevřenou datovou sadu pro ČR, např. z <a href="https://data.gov.cz/datov%C3%A9-sady">Národního katalogu otevřených dat</a> či jiného zdroje. Vytvořte buď <code>Rmarkdown</code> nebo <code>Quarto</code> dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující: - načtení dat - modifikace dat, výpočet nových sloupců nebo extrakce dílčích dat ze sloupců do nových sloupců (balík <code>dplyr</code> a další) - extrakce dílčí části dat do menší tabulky a její prezentace v dokumentu - jeden graf se všemi náležitostmi a korektně vizualizovaný z dat (balík <code>ggplot2</code>) - jedna interaktivní vizualizace (balík <code>plotly</code> pro grafy, nebo <code>leaflet</code> pro prostorová data) - statistická sumarizace/vyhodnocení dat - shrnutí, tabulka, vizualizace</p>
+<p>Vyberte si libovolnou otevřenou datovou sadu pro ČR, např. z <a href="https://data.gov.cz/datov%C3%A9-sady">Národního katalogu otevřených dat</a> či jiného zdroje. Vytvořte buď <code>Rmarkdown</code> nebo <code>Quarto</code> dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující:</p>
+<ul>
+<li>načtení dat</li>
+<li>modifikace dat, výpočet nových sloupců nebo extrakce dílčích dat ze sloupců do nových sloupců (balík <code>dplyr</code> a další)</li>
+<li>extrakce dílčí části dat do menší tabulky a její prezentace v dokumentu</li>
+<li>jeden graf se všemi náležitostmi a korektně vizualizovaný z dat (balík <code>ggplot2</code>)</li>
+<li>jedna interaktivní vizualizace (balík <code>plotly</code> pro grafy, nebo <code>leaflet</code> pro prostorová data)</li>
+<li>statistická sumarizace/vyhodnocení dat - shrnutí, tabulka, vizualizace</li>
+</ul>
 </section>
 <section id="zdroje" class="level2">
 <h2 class="anchored" data-anchor-id="zdroje">📚 Zdroje</h2>
@@ -400,6 +436,41 @@ No matching items
 </section>
 <section id="ukázkové-kódy" class="level2">
 <h2 class="anchored" data-anchor-id="ukázkové-kódy">💻 Ukázkové kódy</h2>
+<div id="listing-codes" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Datum
+</th>
+<th>
+Skript
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-title-sort="Instalace potřebných balíků">
+<td>
+<span class="listing-date">2024-02-19</span>
+</td>
+<td>
+<a href="IDG/skripty/00_packages_install.R" class="title listing-title">Instalace potřebných balíků</a>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1712534400000" data-listing-title-sort="Ukázkový report v rmarkdown" data-listing-filename-sort="01_ukázkový_report.Rmd">
+<td>
+<span class="listing-date">2024-04-08</span>
+</td>
+<td>
+<a href="./IDG/skripty/01_ukázkový_report.html" class="title listing-title">Ukázkový report v rmarkdown</a>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
 <section id="instalace" class="level2">
 <h2 class="anchored" data-anchor-id="instalace">🖥 Instalace</h2>
@@ -414,8 +485,11 @@ No matching items
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sf"</span>,</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"terra"</span>,</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"stars"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidymodels"</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidymodels"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"DT"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rmarkdown"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"plotly"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 
