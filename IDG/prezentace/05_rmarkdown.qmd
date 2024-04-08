@@ -1,0 +1,105 @@
+---
+title: "Tvorba reportů, prezentací a dalších"
+subtitle: "Interpretace geodat"
+author: "Jan Caha"
+date: 2024-04-08
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## R Markdown
+
+- balík [rmarkdown]{.software}, který umožňuje kombinovat psaný text s kódem v R pro tvorbu komplexních reportů
+
+- podpora pro tuto funkcionalitu je zakomponována přímo do RStudia
+
+- alternativa jsou R skripty s komentáři, což je ale značně nešikovné a hůře funkční pro delší texty
+
+- `RStudio` `File -> New File -> R Markdown` jednoduché okno pro volbu typu reportu (zavisí na nainstalovaných balících)
+
+
+## R Markdown dokument
+
+- začíná hlavičkou, která specifikuje nastavení - např. autor, datum, název a výstupní formát
+
+- hlavička má formát **yaml** zápisu, který je ale lidsky dobře čitelný
+
+- zbytek je samotný report, který obsahuje buď text, R kód, či výstupy z R kódu
+
+- textová část se zapisuje ve formátu [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+## R kód
+
+- zapisuje do speciální značek (bloků) - v Rstudiu [Levý Ctrl + Levý Alt + I]{.keys} 
+
+````rmarkdown
+`r ''````{r}
+x <- 5
+print(x)
+```
+````
+
+- `` ` `` uvozují kód (zpětný apostrof angl. backtick), blokový kód pomocí tří, řádkový pomocí jedné
+
+- tyto bloky se při překladu reporu vyhodnotí (provedou) - překlad pomocí ikony **Knit** nebo [Ctrl + Shift + K]{.keys}  
+
+## Parametry bloků kódu
+
+- lze nastavit jestli se má vkládat kód nebo jen výsledky
+
+- zda se má daný blok interpretovat
+
+- parametry obrázků
+
+- vše jako hlavička bloku kódu např. `{r, eval=FALSE}`
+
+## Ukázky
+
+- základní šablona Rmd dokumentu
+
+- jednoduché ukázky
+
+## Prezentace
+
+- na stejném základu
+
+- balík **xaringan**, pro stylování potom **xaringanthemer**, instalace z [githubu](https://github.com/gadenbuie/xaringanthemer)
+
+- nové slajdy se oddělují `---`
+
+- formátování slajdů
+
+## Extenze
+
+- balíky
+- [bookdown]{.software} - rozšíření pro psaní knih, ukázky [zde](https://bookdown.org/home/)
+- [pkgdown]{.software} - tvorba webu z dokumentace R balíku, např. [ggplot2](https://bookdown.org/) 
+- a další možnosti
+
+# Quarto{.center}
+
+## Quarto
+
+- nový software (první release 2021) založený na [Pandoc]{.software}
+- reiterace [Rmarkdown]{.software}, která ale není specifická pro R ale podporuje více jazyků
+- volná kombinace textu, kódů a výstupů z kódu
+- umožňuje tvorbu dokumentů, prezentací, knih, webových stránek a dalších
+- [web + dokumentace](https://quarto.org/)
+
+## Quarto a RStudio
+
+- obojí vyvíjí firma **Posit** (dříve **RStudio**)
+- RStudio je nativní prostředí pro tvorbu **qmd**, ale dobře funguje i [VS Code]{.software}
+- menší rozdíly od [Rmarkdown]{.software} v zápisech, aby byly zápisy obecnejší a fungovalo s více jazyky
+- na určité typy projektů velice vhodné 
+
+# Dotazy?{.center}

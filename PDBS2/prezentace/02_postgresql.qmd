@@ -68,7 +68,7 @@ WITH nazev_tabulky AS (
 
 - pohled na data
 - reálně neexistující tabulka, která se vytváří na požádání z dat
-- updatuje se v podsatě v reálném čase
+- updatuje se v podstatě v reálném čase
 - užitečné proti duplikacím dat
 - může být náročné na čas
 
@@ -103,5 +103,12 @@ WITH nazev_tabulky AS (
 - [vektorová data](https://postgis.net/docs/manual-3.4/reference.html)
 - [rastrová data](https://postgis.net/docs/manual-3.4/RT_reference.html)
 - [prostorové dotazy](https://postgis.net/docs/manual-3.4/using_postgis_query.html)
+
+## Souřadnicové systémy
+
+- ukládají se tabulky `spatial_ref_sys` ve schématu `public` při instalaci extenze do DB
+- bez této tabulky nemusí PostGIS fungovat korektně
+- do tabulky nezasahovat, leda skrze funkce PostGIS, jinak je možné způsobit nefunkčnost extenze
+- integerový identfikátor `srid` obvykle odpovídá **EPSG** kódu, `EPSG:5514` - `5514`
 
 # Dotazy ???
