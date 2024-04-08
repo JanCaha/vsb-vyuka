@@ -6,5 +6,6 @@ install.packages(c(
     "stars",
     "tidymodels",
     "DT",
-    "rmarkdown"
+    "rmarkdown",
+    "plotly"
 ))
