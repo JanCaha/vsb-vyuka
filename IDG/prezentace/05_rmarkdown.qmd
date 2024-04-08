@@ -77,12 +77,14 @@ print(x)
 - nové slajdy se oddělují `---`
 
 - formátování slajdů
+- 
+- [turiálová prezentace](https://slides.yihui.org/xaringan)
 
 ## Extenze
 
 - balíky
 - [bookdown]{.software} - rozšíření pro psaní knih, ukázky [zde](https://bookdown.org/home/)
-- [pkgdown]{.software} - tvorba webu z dokumentace R balíku, např. [ggplot2](https://bookdown.org/) 
+- [pkgdown]{.software} - tvorba webu z dokumentace R balíku, např. [ggplot2](https://ggplot2.tidyverse.org/) 
 - a další možnosti
 
 # Quarto{.center}
