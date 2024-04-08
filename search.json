@@ -674,7 +674,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1531029 -0.3373764 -0.5685862 -0.2488183 -0.1883455"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.52092935 -0.56053512 -0.03257613 -1.25732988 -0.38267693"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -982,7 +982,7 @@
     "href": "IDG/prezentace/05_rmarkdown.html#r-kód",
     "title": "Tvorba reportů, prezentací a dalších",
     "section": "R kód",
-    "text": "R kód\n\nzapisuje do speciální značek (bloků) - v Rstudiu Levý Ctrl + Levý Alt + I\n\n`r ''````{r}\nx &lt;- 5\nprint(x)\n```\n\n` uvozují kód (zpětný apostrof angl. backtick), blokový kód pomocí tří, řádkový pomocí jedné\ntyto bloky se při překladu reporu vyhodnotí (provedou) - překlad pomocí ikony Knit nebo Ctrl + Shift + K"
+    "text": "R kód\n\nzapisuje do speciální značek (bloků) - v Rstudiu Levý Ctrl + Levý Alt + I\n\n\n```{r, eval=False}\n#| eval: false\nx &lt;- 5\nprint(x)\n```\n\n\n` uvozují kód (zpětný apostrof angl. backtick), blokový kód pomocí tří, řádkový pomocí jedné\ntyto bloky se při překladu reporu vyhodnotí (provedou) - překlad pomocí ikony Knit nebo Ctrl + Shift + K"
   },
   {
     "objectID": "IDG/prezentace/05_rmarkdown.html#parametry-bloků-kódu",
