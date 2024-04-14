@@ -64,8 +64,12 @@ def fn(a: str, b: int, c: float = 0.5) -> float: ...
 
 ## Objekty
 
-- prvky, které mají vlastní informace a s kterými můžeme vykonávat operace
+- třída je šablona objektu, jednotlivý objekt je pak instancí třídy
+- objekt je prvk, které mají vlastní informace a s kterými můžeme vykonávat operace
+- metody, vlastnosti (property) a atributy
 - složitost se může různit
+- atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) -- v Pythonu se to řeší konvecí, soukromé atributy a metody začínají podtržítkem (např. `_atribut`), tyto metody a atributy nebudou nápovědy v IDE navrhnovat a programátor by se měl ideálně jejich použití vyhnout
+- magické metody objektů (např. `__init__`, `__str__`, `__add__`, `__eq__` a další)
 
 ## Objekt - příklad
 ```{python}
