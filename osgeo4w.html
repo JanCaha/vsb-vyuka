@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Výuka - Jan Caha - Prostorové databázové systémy 2 (PDBS2)</title>
+<title>Výuka - Jan Caha - OSGEO4W</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -63,10 +29,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./vscode.html" rel="next">
-<link href="./idg.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -78,6 +40,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,95 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-codes .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-codes'] = new List('listing-codes', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-prezentace .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-prezentace'] = new List('listing-prezentace', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Výuka - Jan Caha - Prostorové databázové systémy 2 (PDBS2)">
+<meta property="og:title" content="Výuka - Jan Caha - OSGEO4W">
+<meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 
@@ -206,7 +86,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="./pdbs2.html">Prostorové databázové systémy 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Výuka - Jan Caha
+      </li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -237,13 +119,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Předměty letní semestr</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pgis2.html" class="sidebar-item-text sidebar-link">
@@ -258,7 +140,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pdbs2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./pdbs2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prostorové databázové systémy 2</span></a>
   </div>
 </li>
@@ -301,14 +183,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#řešená-témata" id="toc-řešená-témata" class="nav-link active" data-scroll-target="#řešená-témata">📃 Řešená témata</a></li>
-  <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">📑Prezentace</a></li>
-  <li><a href="#data-ke-stažení" id="toc-data-ke-stažení" class="nav-link" data-scroll-target="#data-ke-stažení">🗂️ Data ke stažení</a></li>
-  <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">📚 Zdroje</a></li>
-  <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">💻 Ukázkové kódy</a></li>
-  <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">🖥 Instalace PostregSQL</a>
+  <li><a href="#nástroje" id="toc-nástroje" class="nav-link active" data-scroll-target="#nástroje">Nástroje</a></li>
+  <li><a href="#instalace" id="toc-instalace" class="nav-link" data-scroll-target="#instalace">Instalace</a>
   <ul class="collapse">
-  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker">Docker</a></li>
+  <li><a href="#aktualizace-komponent" id="toc-aktualizace-komponent" class="nav-link" data-scroll-target="#aktualizace-komponent">Aktualizace komponent</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -316,9 +194,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="./pdbs2.html">Prostorové databázové systémy 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Prostorové databázové systémy 2 (PDBS2)</h1>
+<h1 class="title">OSGEO4W</h1>
 </div>
 
 
@@ -335,162 +213,132 @@ window.Quarto = {
 </header>
 
 
-<section id="řešená-témata" class="level2">
-<h2 class="anchored" data-anchor-id="řešená-témata">📃 Řešená témata</h2>
+<p>Nejjednodušším způsobem, jak v prostředí <strong>Windows</strong> nainstalovat značnou část open source GIS knihoven a softwarů (např. <strong>QGIS</strong>, <strong>GRASS</strong>, <strong>SAGA</strong> a další) je použití distribuce <strong>OSGEO4W</strong> z <a href="https://trac.osgeo.org/osgeo4w/">webu projektu</a>, konkrétně odkaz <a href="https://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe">ke stažení instalátoru</a>. Jedná se o klasický průvodce, kde je možnost nakonfigurovat si instalaci podle vlastních potřeb, plná konfigurace je poměrně obáshlá a v mnoha ohledech i zbytečná (např. obsahuje 3 verze QGIS - vývojovou, aktuální a LTR).</p>
+<section id="nástroje" class="level2">
+<h2 class="anchored" data-anchor-id="nástroje">Nástroje</h2>
+<p>Součástí instalace jsou:</p>
 <ul>
-<li>Oracle</li>
-<li>Instalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL</li>
+<li>nástroje <code>ogr2ogr</code>, <code>gdalwarp</code>, <code>gdal_translate</code> a další dostupné skrze <strong>OSGeo4W Shell</strong></li>
+<li><strong>QGIS</strong>, <strong>GRASS</strong></li>
+<li><strong>Python</strong> a jeho knihovny, lze doinstalovat z příkazové řádky (<strong>OSGeo4W Shell</strong>) pomocí <code>pip install *</code></li>
 </ul>
 </section>
-<section id="prezentace" class="level2">
-<h2 class="anchored" data-anchor-id="prezentace">📑Prezentace</h2>
-<div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Prezentace
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1713178967396" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
-<td>
-<span class="listing-date">2024-02-19</span>
-</td>
-<td>
-<a href="./PDBS2/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1713178967396" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="407" data-listing-title-sort="PostgreSQL (Postgis)" data-listing-filename-sort="02_postgresql.qmd">
-<td>
-<span class="listing-date">2024-03-04</span>
-</td>
-<td>
-<a href="./PDBS2/prezentace/02_postgresql.html" class="title listing-title">PostgreSQL (Postgis)</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<section id="instalace" class="level2">
+<h2 class="anchored" data-anchor-id="instalace">Instalace</h2>
+<p>Po spuštění instalátoru je nutné vybrat typ instalace - <strong>Advanced Install</strong>, viz následující obrázek:</p>
+<div id="fig-install-1" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="OSGEO4W volba typu instalace">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="images/osgeo4w/install_1.png" class="img-fluid figure-img" alt="OSGEO4W volba typu instalace"></a>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;1: Volba typu instalace
+</figcaption>
+</figure>
 </div>
-</section>
-<section id="data-ke-stažení" class="level2">
-<h2 class="anchored" data-anchor-id="data-ke-stažení">🗂️ Data ke stažení</h2>
-<ul>
-<li><a href="./PDBS2/soubory/uzemni_jednotky.gpkg">GPKG s vrstvami okresů a krajů</a></li>
-<li><a href="./PDBS2/soubory/obyvatele_roky.csv">CSV s údaji o počtu obyvatel</a></li>
-<li><a href="./PDBS2/soubory/ciselnik_csu_ruian.csv">CSV s převodním číselníkem z RUIAN do ČSÚ</a></li>
-</ul>
-</section>
-<section id="zdroje" class="level2">
-<h2 class="anchored" data-anchor-id="zdroje">📚 Zdroje</h2>
-<ul>
-<li><a href="https://www.postgresql.org/docs/14/index.html">PostgreSQL Manuál</a></li>
-<li><a href="https://postgis.net/docs/manual-3.4/">PostGIS Manuál</a></li>
-</ul>
-</section>
-<section id="ukázkové-kódy" class="level2">
-<h2 class="anchored" data-anchor-id="ukázkové-kódy">💻 Ukázkové kódy</h2>
-<div id="listing-codes" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Skript
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1710115200000" data-listing-title-sort="Instalace PostGIS do daného schématu DB">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/01_install_postgis_check_version.sql" class="title listing-title">Instalace PostGIS do daného schématu DB</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1710115200000" data-listing-title-sort="Načtení souboru jako tabulky do PostGIS">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/02_load_data_to_postgis.sh" class="title listing-title">Načtení souboru jako tabulky do PostGIS</a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1710115200000" data-listing-title-sort="Načtení CSV souboru jako tabulky do PostgreSQL">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/03_load_csv.sql" class="title listing-title">Načtení CSV souboru jako tabulky do PostgreSQL</a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1710115200000" data-listing-title-sort="Tvorba tabulek pro import z CSV">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/04_tabulky_pro_import.sql" class="title listing-title">Tvorba tabulek pro import z CSV</a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1710115200000" data-listing-title-sort="Join s dočasnou tabulkou">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/05_join_with.sql" class="title listing-title">Join s dočasnou tabulkou</a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1710115200000" data-listing-title-sort="View">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/06_view.sql" class="title listing-title">View</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<p>Další položkou je volba instalace z Internetu (používáme nejaktuálnější zdroje).</p>
+<div id="fig-install-2" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="Volba instalace z internetu">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_2.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="images/osgeo4w/install_2.png" class="img-fluid figure-img" alt="Volba instalace z internetu"></a>
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;2: Volba instalace z internetu
+</figcaption>
+</figure>
 </div>
-</section>
-<section id="instalace-postregsql" class="level2">
-<h2 class="anchored" data-anchor-id="instalace-postregsql">🖥 Instalace PostregSQL</h2>
-<ul>
-<li>viz odkaz <a href="./linux-mint.html">Linux Mint</a> - potřebujeme jednak akktuální GIS softwary a PostgreSQL (detaily na stránce)</li>
-</ul>
-<section id="docker" class="level3">
-<h3 class="anchored" data-anchor-id="docker">Docker</h3>
-<p>Pro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít <code>docker compose</code> se souborem s nastavením:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.5"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">postgres</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> postgis</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgis/postgis:16-master</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_USER</span><span class="kw">:</span><span class="at"> admin</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_PASSWORD</span><span class="kw">:</span><span class="at"> root</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">PGDATA</span><span class="kw">:</span><span class="at"> /data/postgres</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> cesta_k_složce_na_disku:/data/postgres</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5432:5432"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Stačí upravit <code>volumes</code> na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.</p>
+<p>Další volbou je umístění instalace. Výchozí nastavení je na disk <code>C:</code>, lze změnit disk, nicméně je vhodné instalovat do co nevyšše umístěné složky, takže např: <code>D:\OSGeo4W</code>, aby nebyla výsledná cesta příliš dlouhá.</p>
+<div id="fig-install-3" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="Umístění instalace">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_3.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="images/osgeo4w/install_3.png" class="img-fluid figure-img" alt="Umístění instalace"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;3: Umístění instalace
+</figcaption>
+</figure>
+</div>
+<p>Následující dva kroky, volbu dočasného adresáře a proxy, lze obvykle nechat na výchozích hodnotách.</p>
+<div id="fig-install-4" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="Volba dočasného adresáře">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_4.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="images/osgeo4w/install_4.png" class="img-fluid figure-img" alt="Volba dočasného adresáře"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;4: Volba dočasného adresáře
+</figcaption>
+</figure>
+</div>
+<div id="fig-install-5" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="Nastavení proxy">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_5.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5"><img src="images/osgeo4w/install_5.png" class="img-fluid figure-img" alt="Nastavení proxy"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;5: Nastavení proxy
+</figcaption>
+</figure>
+</div>
+<p>Následujícím krokem je volba zdrojového serveru, obvykle vyhoví výchozí hodnota.</p>
+<div id="fig-install-6" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="Volba serveru">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_6.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6"><img src="images/osgeo4w/install_6.png" class="img-fluid figure-img" alt="Volba serveru"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;6: Volba serveru
+</figcaption>
+</figure>
+</div>
+<p>V dalším kroce už se dostáváme k volbě komponent, které se mají instalovat. Obvykle věnujeme pozornost zejména položkám <strong>Commandline Utilities</strong> a <strong>Desktop</strong>, knihovny v pložce <strong>Libs</strong> se vyberou dle zvolených komponent automaticky.</p>
+<div id="fig-install-7" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="Seznam komponent dle typu">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_7.png" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7"><img src="images/osgeo4w/install_7.png" class="img-fluid figure-img" alt="Seznam komponent dle typu"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;7: Seznam komponent dle typu
+</figcaption>
+</figure>
+</div>
+<p>Z poskytutého seznamu vybereme potřebné komponenty.</p>
+<div id="fig-install-8" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="Výběr komponent">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_8.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8"><img src="images/osgeo4w/install_8.png" class="img-fluid figure-img" alt="Výběr komponent"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;8: Výběr komponent
+</figcaption>
+</figure>
+</div>
+<p>Následuje potvrzení licencí, samotné stahování a instalace komponent, což může být časově náročnější.</p>
+<div id="fig-install-9" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" alt="Instalace">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-install-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/osgeo4w/install_9.png" class="lightbox" data-glightbox="description: .lightbox-desc-9" data-gallery="quarto-lightbox-gallery-9"><img src="images/osgeo4w/install_9.png" class="img-fluid figure-img" alt="Instalace"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;9: Instalace
+</figcaption>
+</figure>
+</div>
+<section id="aktualizace-komponent" class="level3">
+<h3 class="anchored" data-anchor-id="aktualizace-komponent">Aktualizace komponent</h3>
+<p>Opětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku <a href="#fig-install-8" class="quarto-xref">Obr.&nbsp;8</a> pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.</p>
 
 
-
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Obr.&nbsp;1: Volba typu instalace</span>
+<span class="glightbox-desc lightbox-desc-2">Obr.&nbsp;2: Volba instalace z internetu</span>
+<span class="glightbox-desc lightbox-desc-3">Obr.&nbsp;3: Umístění instalace</span>
+<span class="glightbox-desc lightbox-desc-4">Obr.&nbsp;4: Volba dočasného adresáře</span>
+<span class="glightbox-desc lightbox-desc-5">Obr.&nbsp;5: Nastavení proxy</span>
+<span class="glightbox-desc lightbox-desc-6">Obr.&nbsp;6: Volba serveru</span>
+<span class="glightbox-desc lightbox-desc-7">Obr.&nbsp;7: Seznam komponent dle typu</span>
+<span class="glightbox-desc lightbox-desc-8">Obr.&nbsp;8: Výběr komponent</span>
+<span class="glightbox-desc lightbox-desc-9">Obr.&nbsp;9: Instalace</span>
+</div>
 </section>
 </section>
 
@@ -1048,18 +896,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./idg.html" class="pagination-link" aria-label="Interpretace geodat">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interpretace geodat</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./vscode.html" class="pagination-link" aria-label="Visual Studio Code">
-        <span class="nav-page-text">Visual Studio Code</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1074,6 +910,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

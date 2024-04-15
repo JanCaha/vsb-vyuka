@@ -7,12 +7,14 @@
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-02-26">
-  <title>Výuka - Jan Caha - Opakování Pythonu</title>
+  <meta name="dcterms.date" content="2024-04-15">
+  <title>Výuka - Jan Caha - Prostorová data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,8 +388,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Výuka - Jan Caha - Opakování Pythonu">
-<meta property="og:description" content="Programování v GIS 2">
+<meta property="og:title" content="Výuka - Jan Caha - Prostorová data">
+<meta property="og:description" content="Interpretace geodat">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -395,8 +397,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Opakování Pythonu</h1>
-  <p class="subtitle">Programování v GIS 2</p>
+  <h1 class="title">Prostorová data</h1>
+  <p class="subtitle">Interpretace geodat</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -406,212 +408,101 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-02-26</p>
+  <p class="date">2024-04-15</p>
 </section>
-<section id="python" class="slide level2">
-<h2>Python</h2>
+<section id="balíky" class="slide level2">
+<h2>Balíky</h2>
 <ul>
-<li><strong>interpretovaný</strong> programovací (skriptovací) jazyk</li>
-<li><strong>dynamicky typovaný</strong></li>
-<li>široce využívaný - ať už samostatně, nebo i jako součást jiného softwaru</li>
-<li>snadno propojitelný s dalšími knihovnami i softwarem</li>
-<li>podpora jak objektového, tak i funkcionálního programování</li>
-<li>verze 2.x už nepoužívat, verze 3 ideálně <strong>od 3.10 a novější</strong> (aktuální verze a cca dvě verze zpátky)</li>
+<li><span class="software">sf</span> - <strong>Simple Features</strong> balík založený na <span class="software">GDAL/OGR</span> pro načítání a zpracování zejména vektorových dat</li>
+<li><span class="software">raster</span> a <span class="software">terra</span> (novější iterace) - balíky pro načítání a zpracování rastrových dat</li>
+<li><span class="software">stars</span> - balík pro načítání a zpracování zejména rastrů v podobně multidimenzionálních polí (např. i časové řady)</li>
+<li><span class="software">tmap</span> - tvorba vizualizací prostorových dat</li>
+<li><span class="software">qgisprocess</span> a <span class="software">qgis</span></li>
 </ul>
 </section>
-<section id="vs-code" class="slide level2">
-<h2><span class="software">VS Code</span></h2>
+<section id="sf" class="slide level2">
+<h2><span class="software">sf</span></h2>
 <ul>
-<li>IDE pro řadu jazyků a technologií</li>
-<li>klíčové jsou extenze, které posunují funcionalitu od textového editoru více k “težšímu” IDE</li>
-<li>profily - pro různé technologie či využití</li>
-<li>synchronizace po přihlášení</li>
-<li>instalace - lze bez administrátorských práv</li>
+<li><strong>OGC</strong> standard <strong>simple features</strong></li>
+<li>data se načtou jako standatní <code>data.frame</code> či <code>tibble</code>, geometrie je zvláštní sloupec se specificky uloženými daty</li>
+<li>pro práci s daty je možné použít běžné <code>dplyr</code> funkce (u některých dostáváme “zdarma” prostorové rozšíření - např. kombinace <code>group_by()</code> a <code>summarize()</code> automaticky agreguje i geometrie)</li>
+<li>zvláštní funkce balíku využívají předponu <code>st_*</code> (spatiotemporal)</li>
+<li>další funkce v balíku <span class="software">lwgeom</span></li>
 </ul>
 </section>
-<section id="vs-code-extenze-pro-python" class="slide level2">
-<h2>VS Code extenze pro Python</h2>
+<section id="ukázky-sf" class="slide level2">
+<h2>Ukázky <span class="software">sf</span></h2>
 <ul>
-<li><span class="software">Python, Python Debugger</span></li>
-<li>formátování kódu - <span class="software">Black Formatter, isort</span></li>
-<li>kontroly kódu - <span class="software">autopep8, Flake8, Mypy Type Checker, Pylance, Pylint</span></li>
-<li>generování docstringů - autoDocstring - <span class="software">Python Docstring Generator</span></li>
-<li><span class="software">Github Copilot</span> - přihlášení, pouze pokud máte přístup (studenti mají)</li>
+<li><a href="https://r-spatial.github.io/sf/">vignetty balíku</a></li>
+<li>kniha <a href="https://r.geocompx.org/">Geocomputation with R</a></li>
 </ul>
 </section>
-<section id="conda" class="slide level2">
-<h2>Conda</h2>
+<section id="raster-a-terra" class="slide level2">
+<h2><span class="software">raster</span> a <span class="software">terra</span></h2>
 <ul>
-<li>systém pro správu Pythonu a jeho balíčků</li>
-<li>použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pgis2 python=3.11</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install GDAL</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>v environmentu lze instalovat i skrze <span class="software">pip</span>, ale nelze to doporučit - chybí návaznosti závislostí</li>
-<li>v <span class="software">VS Code</span> nutno nastavit interpretor jazyka</li>
+<li>velice podobné balíky, <span class="software">terra</span> je novější a má některé vylepšení</li>
+<li>pracuje hlavně s rastrovými daty, ale umí i něco málo s vektorovými</li>
+<li>rastry se nenačítají do paměti, pokud o to explicitně nežádáme, drží se v principu odkaz na data + metadata</li>
+<li>data se získavají jako <code>matrix</code></li>
 </ul>
 </section>
-<section>
-<section id="python---použití-jazyka-opakování" class="title-slide slide level1 center">
-<h1>Python - použití jazyka<br>opakování</h1>
-
-</section>
-<section id="proměnné" class="slide level2">
-<h2>Proměnné</h2>
+<section id="ukázky-raster-a-terra" class="slide level2">
+<h2>Ukázky <span class="software">raster</span> a <span class="software">terra</span></h2>
 <ul>
-<li>jednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota</li>
-<li>komplexní - seznam, slovník, tuple</li>
-<li>objekty - např. <code>Path</code> z knihovny <span class="software">pathlib</span></li>
-<li>funkce - lze je také uložit do proměnné (trochu komplikované na představu)</li>
+<li>k <span class="software">terra</span> existuje <a href="https://rspatial.org/">web</a></li>
+<li>částečně opět <a href="https://r.geocompx.org/">Geocomputation with R</a></li>
 </ul>
 </section>
-<section id="podmínky" class="slide level2">
-<h2>Podmínky</h2>
+<section id="stars" class="slide level2">
+<h2><span class="software">stars</span></h2>
 <ul>
-<li>konstrukce <code>if, elif, else</code></li>
+<li>postaveno na principu datových kostek (v GIS relativně málo používané)</li>
+<li>zaměřeno na multidimenzionální data (typicky formát netCDF), často s časovou složkou</li>
+<li>příklady v <a href="https://r-spatial.github.io/stars/">vignetách</a></li>
 </ul>
 </section>
-<section id="cykly" class="slide level2">
-<h2>Cykly</h2>
+<section id="tmap" class="slide level2">
+<h2><span class="software">tmap</span></h2>
 <ul>
-<li>konstrukce <code>for</code> a <code>while</code></li>
-<li>přeskočení v cyklu <code>continue</code> a ukončení cyklu <code>break</code></li>
-<li>speciální případ <code>for</code> s <code>enumerate</code></li>
+<li>balík pro tvorbu vizualizací prostorových dat</li>
+<li>jak statické tak i dynamické vizualizace (s využitím <span class="software">leaflet</span>)</li>
+<li>odvozeno od <span class="software">ggplot2</span> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> podobný zápis, ale nelze kombinovat</li>
+<li>pracuje s vrstvami</li>
+<li>ukázky v <a href="https://r-tmap.github.io/tmap/">vignetách</a></li>
 </ul>
 </section>
-<section id="import-knihoven-či-modulů" class="slide level2">
-<h2>Import knihoven či modulů</h2>
+<section id="qgisprocess-a-qgis" class="slide level2">
+<h2><span class="software">qgisprocess</span> a <span class="software">qgis</span></h2>
 <ul>
-<li>lze importovat objekty, funkce, moduly</li>
-<li>lze buď celým názvem - <code>import pathlib</code></li>
-<li>lokální souboru lze i jako <code>import .muj_soubor</code> (doporučuje se pouze u jednoduchých skriptů, v případě modulů - knihoven lépe importovat plnou cestou)</li>
-<li>lze importovat i s přejmenováním - <code>import numpy as np</code></li>
-<li>kombinace a variace importů občas ztěžují interpretaci kódu</li>
+<li>balíky pro spuštění <strong>QGIS</strong> procesů z <strong>R</strong></li>
+<li><span class="software">qgisprocess</span> je obecnější, ale uživatel musí znát <strong>QGIS</strong> procesy</li>
+<li><span class="software">qgis</span> je nadstavba, která vytváří pro každý QGIS nástroj odpovídající funkci v <strong>R</strong> a to včetně nápovědy</li>
 </ul>
 </section>
-<section id="zpracování-chyb" class="slide level2">
-<h2>Zpracování chyb</h2>
+<section id="ukázky-qgisprocess-a-qgis" class="slide level2">
+<h2>Ukázky <span class="software">qgisprocess</span> a <span class="software">qgis</span></h2>
 <ul>
-<li>konstrukce <code>raise</code></li>
-<li>druhy chyb</li>
-<li>konstrukce <code>try, except, finally</code></li>
+<li>instalace</li>
 </ul>
-</section>
-<section id="magické-proměnné-či-funkce" class="slide level2">
-<h2>Magické proměnné či funkce</h2>
-<ul>
-<li>zapisují je jako <code>__nazev__</code></li>
-<li>odkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování</li>
-<li>ukázka - tvorba objektu a funkce pro tisk</li>
-<li>příklad tvorba objektu a funkce pro tisk</li>
-<li>do této skupiny lze zařadit i soubor <code>__init__.py</code>, jehož existence označuje složku jako Pythonový modul</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>tisk objektu bez funkce <code>__repr__()</code></li>
-<li>tiskne informace o umístění objektu v paměti</li>
-</ul>
-<div id="4255ec2c" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7f7e4b21cf10&gt;</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"qgisprocess"</span>, <span class="st">"remotes"</span>))</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"JanCaha/r_package_qgis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section>
-<section class="slide level2">
-
 <ul>
-<li>tisk objektu s funkcí <code>__repr__()</code></li>
-<li>tiskne řetězec z této funkce</li>
-</ul>
-<div id="e6393899" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Objekt třídy A."</span>  </span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Objekt třídy A.</code></pre>
-</div>
-</div>
-</section>
-<section id="debugování" class="slide level2">
-<h2>Debugování</h2>
-<ul>
-<li>proces nahlížení na stav programu za jeho běhu</li>
-<li>umožňuje nahlížet do paměti programu v jeho různých fázích a stavech</li>
-<li>v Pythonu máme možnost do proměnných za běhu i zasahovat</li>
-<li>ukázka v <span class="software">VS Code</span></li>
+<li>maximálně podporují existující balíky, takže lze předávat jako vstupní data např. <code>data.frame</code> se sloupcem geometrie či <code>raster</code> a <code>stars</code> objekty</li>
+<li>ukázky ve vignetách <a href="https://r-spatial.github.io/qgisprocess/">qgisprocess</a> a <a href="https://jancaha.github.io/r_package_qgis/">qgis</a></li>
 </ul>
 </section>
-<section id="konextové-managery" class="slide level2">
-<h2>Konextové managery</h2>
+<section id="shrnutí" class="slide level2">
+<h2>Shrnutí</h2>
 <ul>
-<li>konstrukce <code>with</code></li>
-<li>vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pěvně pojí</li>
-<li>objekty, které využívají dvou magických metod <code>__enter__</code> a <code>__exit__</code></li>
-<li>ukázka se souborem</li>
-<li>ukázka s vlastním managerem</li>
+<li>poměrně rozsáhlý ekosystém balíků pro práci s prostorovými daty</li>
+<li>lze srovnávat s ekosystémem v jazyce <strong>Python</strong></li>
+<li>více zaměřené na zpracování dat</li>
+<li>lépe řešené vizualizace</li>
+<li>díky základu jazyka <strong>R</strong> lepší integrace s ostatními balíky, odpadají konverze dat mezi formáty různých balíků</li>
 </ul>
 </section>
-<section id="typování-proměnných" class="slide level2">
-<h2>Typování proměnných</h2>
-<ul>
-<li>teoreticky není vůbec nutné</li>
-<li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
-<li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
-</ul>
-<div id="cfef2090" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="instalace-knihoven" class="slide level2">
-<h2>Instalace knihoven</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install black isort mypy pep8 flake8 pylint</span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install shapely fiona rasterio polars pandas geopandas</span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--pre</span> geopolars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>podle osnovy se máme věnovat <code>pandas</code> - <code>polars</code> je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem</li>
-</ul>
-</section>
-<section id="formátování-pomocí-black-a-isort" class="slide level2">
-<h2>Formátování pomocí <span class="software">black</span> a <span class="software">isort</span></h2>
-<ul>
-<li><span class="software">isort</span> řadí importy dle určité logiky</li>
-<li><span class="software">black</span> formátuje kód dle pravidel, má minimum nastavení a tak je vysoce konstantní napříč projekty</li>
-<li>zpočátku obvykle nevyhovuje uživateli na 100%, ale jde o zvyk</li>
-</ul>
-</section>
-<section id="kontroly-pomocí-mypy-pep8-flake8-pylint" class="slide level2">
-<h2>Kontroly pomocí <span class="software">mypy, pep8, flake8, pylint</span></h2>
-<ul>
-<li>zvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu</li>
-<li>ne vždy musí jít o zásadní problém</li>
-<li>v moha situacích to předchází chybám</li>
-<li>např. <span class="software">mypy</span> nutí uživatele psát rozumně typovaný kód a používat ho správně</li>
-<li>celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu</li>
-<li>většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit</li>
-</ul>
-</section></section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
 
@@ -831,6 +722,44 @@ Jan Caha
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-02-26">
-  <title>Výuka - Jan Caha - Opakování Pythonu</title>
+  <meta name="dcterms.date" content="2024-04-15">
+  <title>Výuka - Jan Caha - Funkce a třídy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,7 +386,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Výuka - Jan Caha - Opakování Pythonu">
+<meta property="og:title" content="Výuka - Jan Caha - Funkce a třídy">
 <meta property="og:description" content="Programování v GIS 2">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -395,7 +395,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Opakování Pythonu</h1>
+  <h1 class="title">Funkce a třídy</h1>
   <p class="subtitle">Programování v GIS 2</p>
 
 <div class="quarto-title-authors">
@@ -406,212 +406,123 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-02-26</p>
+  <p class="date">2024-04-15</p>
+</section>
+<section id="programovací-paradigmata" class="slide level2">
+<h2>Programovací paradigmata</h2>
+<ul>
+<li><p>většina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero</p></li>
+<li><p><strong>imperativní</strong> (kód popisuje, co se bude dít)</p>
+<ul>
+<li><strong>procedurální programování</strong> (procedury, které ze vzájmně volají)</li>
+<li><strong>objektové programování</strong> (objekty - data a operace s nimi asociované)</li>
+<li>většina jazyků - např. Python, R, C++</li>
+</ul></li>
+<li><p><strong>deklarativní</strong> (kód popisuje požadovaný výsledek)</p>
+<ul>
+<li><strong>funkcionální</strong>, logické a reaktivní</li>
+<li>např. jazyk SQL, ale i funkcionální přístupy v Pythonu a R</li>
+</ul></li>
+</ul>
 </section>
 <section id="python" class="slide level2">
 <h2>Python</h2>
 <ul>
-<li><strong>interpretovaný</strong> programovací (skriptovací) jazyk</li>
-<li><strong>dynamicky typovaný</strong></li>
-<li>široce využívaný - ať už samostatně, nebo i jako součást jiného softwaru</li>
-<li>snadno propojitelný s dalšími knihovnami i softwarem</li>
-<li>podpora jak objektového, tak i funkcionálního programování</li>
-<li>verze 2.x už nepoužívat, verze 3 ideálně <strong>od 3.10 a novější</strong> (aktuální verze a cca dvě verze zpátky)</li>
+<li>pro běžné použití kombinujeme obvykle procedurální a objektový přístup</li>
+<li>procedurální přístup - <strong>funkce</strong>, které mají parametry</li>
+<li>objektový přístup - <strong>objekty</strong>, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)</li>
 </ul>
 </section>
-<section id="vs-code" class="slide level2">
-<h2><span class="software">VS Code</span></h2>
+<section id="funkce" class="slide level2">
+<h2>Funkce</h2>
 <ul>
-<li>IDE pro řadu jazyků a technologií</li>
-<li>klíčové jsou extenze, které posunují funcionalitu od textového editoru více k “težšímu” IDE</li>
-<li>profily - pro různé technologie či využití</li>
-<li>synchronizace po přihlášení</li>
-<li>instalace - lze bez administrátorských práv</li>
+<li>dělí kód na dílčí logické bloky, které mohou být znovu použitelné</li>
+<li>měly by dělat jednu věc a pouze jednu věc</li>
+<li>délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)</li>
+<li>snaha navrhovat funkce spíše obecně než specificky</li>
+</ul>
+<div id="282807df" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obecné</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="funkce-příklad" class="slide level2">
+<h2>Funkce příklad</h2>
+<div id="ea7dfc4c" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>funkce se třemi proměnnými
+<ul>
+<li>první dvě povinné</li>
+<li>třetí nepovinná s výchozí hodnotou</li>
+</ul></li>
+<li>funkce vrací float</li>
+<li>mohou existovat funkce bez návratové hodnoty <code>None</code></li>
 </ul>
 </section>
-<section id="vs-code-extenze-pro-python" class="slide level2">
-<h2>VS Code extenze pro Python</h2>
+<section id="objekty" class="slide level2">
+<h2>Objekty</h2>
 <ul>
-<li><span class="software">Python, Python Debugger</span></li>
-<li>formátování kódu - <span class="software">Black Formatter, isort</span></li>
-<li>kontroly kódu - <span class="software">autopep8, Flake8, Mypy Type Checker, Pylance, Pylint</span></li>
-<li>generování docstringů - autoDocstring - <span class="software">Python Docstring Generator</span></li>
-<li><span class="software">Github Copilot</span> - přihlášení, pouze pokud máte přístup (studenti mají)</li>
+<li>třída je šablona objektu, jednotlivý objekt je pak instancí třídy</li>
+<li>objekt je prvk, které mají vlastní informace a s kterými můžeme vykonávat operace</li>
+<li>metody, vlastnosti (property) a atributy</li>
+<li>složitost se může různit</li>
 </ul>
 </section>
-<section id="conda" class="slide level2">
-<h2>Conda</h2>
+<section id="objekty-detaily" class="slide level2">
+<h2>Objekty detaily</h2>
 <ul>
-<li>systém pro správu Pythonu a jeho balíčků</li>
-<li>použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pgis2 python=3.11</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install GDAL</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>v environmentu lze instalovat i skrze <span class="software">pip</span>, ale nelze to doporučit - chybí návaznosti závislostí</li>
-<li>v <span class="software">VS Code</span> nutno nastavit interpretor jazyka</li>
+<li>první parametr metody je vždy <code>self</code> (označení instance objektu)</li>
+<li>atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvecí, soukromé atributy a metody začínají podtržítkem (např. <code>_atribut</code>), tyto metody a atributy nebudou nápovědy v IDE navrhnovat a programátor by se měl ideálně jejich použití vyhnout</li>
+<li>magické metody objektů (např. <code>__init__</code>, <code>__str__</code>, <code>__add__</code>, <code>__eq__</code> a další) a jejich použití</li>
 </ul>
 </section>
-<section>
-<section id="python---použití-jazyka-opakování" class="title-slide slide level1 center">
-<h1>Python - použití jazyka<br>opakování</h1>
-
+<section id="objekt---příklad" class="slide level2">
+<h2>Objekt - příklad</h2>
+<div id="f64e34bc" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Zamestnanec:</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jmeno: <span class="bu">str</span>, hodinovy_plat: <span class="bu">float</span>):</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.jmeno <span class="op">=</span> jmeno</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> nastav_plat(<span class="va">self</span>, hodinovy_plat: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
+<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> zvys_plat(<span class="va">self</span>, navyseni_o: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">+=</span> navyseni_o</span>
+<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mesicni_plat(<span class="va">self</span>, odpracovanych_hodin: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb3-16"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">*</span> odpracovanych_hodin</span>
+<span id="cb3-17"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
+<span id="cb3-19"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> denni_plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb3-20"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">/</span> <span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="proměnné" class="slide level2">
-<h2>Proměnné</h2>
-<ul>
-<li>jednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota</li>
-<li>komplexní - seznam, slovník, tuple</li>
-<li>objekty - např. <code>Path</code> z knihovny <span class="software">pathlib</span></li>
-<li>funkce - lze je také uložit do proměnné (trochu komplikované na představu)</li>
-</ul>
-</section>
-<section id="podmínky" class="slide level2">
-<h2>Podmínky</h2>
-<ul>
-<li>konstrukce <code>if, elif, else</code></li>
-</ul>
-</section>
-<section id="cykly" class="slide level2">
-<h2>Cykly</h2>
-<ul>
-<li>konstrukce <code>for</code> a <code>while</code></li>
-<li>přeskočení v cyklu <code>continue</code> a ukončení cyklu <code>break</code></li>
-<li>speciální případ <code>for</code> s <code>enumerate</code></li>
-</ul>
-</section>
-<section id="import-knihoven-či-modulů" class="slide level2">
-<h2>Import knihoven či modulů</h2>
-<ul>
-<li>lze importovat objekty, funkce, moduly</li>
-<li>lze buď celým názvem - <code>import pathlib</code></li>
-<li>lokální souboru lze i jako <code>import .muj_soubor</code> (doporučuje se pouze u jednoduchých skriptů, v případě modulů - knihoven lépe importovat plnou cestou)</li>
-<li>lze importovat i s přejmenováním - <code>import numpy as np</code></li>
-<li>kombinace a variace importů občas ztěžují interpretaci kódu</li>
-</ul>
-</section>
-<section id="zpracování-chyb" class="slide level2">
-<h2>Zpracování chyb</h2>
-<ul>
-<li>konstrukce <code>raise</code></li>
-<li>druhy chyb</li>
-<li>konstrukce <code>try, except, finally</code></li>
-</ul>
-</section>
-<section id="magické-proměnné-či-funkce" class="slide level2">
-<h2>Magické proměnné či funkce</h2>
-<ul>
-<li>zapisují je jako <code>__nazev__</code></li>
-<li>odkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování</li>
-<li>ukázka - tvorba objektu a funkce pro tisk</li>
-<li>příklad tvorba objektu a funkce pro tisk</li>
-<li>do této skupiny lze zařadit i soubor <code>__init__.py</code>, jehož existence označuje složku jako Pythonový modul</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>tisk objektu bez funkce <code>__repr__()</code></li>
-<li>tiskne informace o umístění objektu v paměti</li>
-</ul>
-<div id="4255ec2c" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="použití-objektu" class="slide level2">
+<h2>Použití objektu</h2>
+<div id="be21f348" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>odpracovane_hodiny <span class="op">=</span> <span class="dv">160</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>zam <span class="op">=</span> Zamestnanec(<span class="st">"Testovaci Zamestnanec"</span>, <span class="dv">250</span>)</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>zam.zvys_plat(<span class="dv">50</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat po zvýšení: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7f7e4b21cf10&gt;</code></pre>
+<pre><code>Plat: 40000
+Plat po zvýšení: 48000</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level2">
-
-<ul>
-<li>tisk objektu s funkcí <code>__repr__()</code></li>
-<li>tiskne řetězec z této funkce</li>
-</ul>
-<div id="e6393899" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Objekt třídy A."</span>  </span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Objekt třídy A.</code></pre>
-</div>
-</div>
-</section>
-<section id="debugování" class="slide level2">
-<h2>Debugování</h2>
-<ul>
-<li>proces nahlížení na stav programu za jeho běhu</li>
-<li>umožňuje nahlížet do paměti programu v jeho různých fázích a stavech</li>
-<li>v Pythonu máme možnost do proměnných za běhu i zasahovat</li>
-<li>ukázka v <span class="software">VS Code</span></li>
-</ul>
-</section>
-<section id="konextové-managery" class="slide level2">
-<h2>Konextové managery</h2>
-<ul>
-<li>konstrukce <code>with</code></li>
-<li>vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pěvně pojí</li>
-<li>objekty, které využívají dvou magických metod <code>__enter__</code> a <code>__exit__</code></li>
-<li>ukázka se souborem</li>
-<li>ukázka s vlastním managerem</li>
-</ul>
-</section>
-<section id="typování-proměnných" class="slide level2">
-<h2>Typování proměnných</h2>
-<ul>
-<li>teoreticky není vůbec nutné</li>
-<li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
-<li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
-</ul>
-<div id="cfef2090" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="instalace-knihoven" class="slide level2">
-<h2>Instalace knihoven</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install black isort mypy pep8 flake8 pylint</span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install shapely fiona rasterio polars pandas geopandas</span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--pre</span> geopolars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>podle osnovy se máme věnovat <code>pandas</code> - <code>polars</code> je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem</li>
-</ul>
-</section>
-<section id="formátování-pomocí-black-a-isort" class="slide level2">
-<h2>Formátování pomocí <span class="software">black</span> a <span class="software">isort</span></h2>
-<ul>
-<li><span class="software">isort</span> řadí importy dle určité logiky</li>
-<li><span class="software">black</span> formátuje kód dle pravidel, má minimum nastavení a tak je vysoce konstantní napříč projekty</li>
-<li>zpočátku obvykle nevyhovuje uživateli na 100%, ale jde o zvyk</li>
-</ul>
-</section>
-<section id="kontroly-pomocí-mypy-pep8-flake8-pylint" class="slide level2">
-<h2>Kontroly pomocí <span class="software">mypy, pep8, flake8, pylint</span></h2>
-<ul>
-<li>zvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu</li>
-<li>ne vždy musí jít o zásadní problém</li>
-<li>v moha situacích to předchází chybám</li>
-<li>např. <span class="software">mypy</span> nutí uživatele psát rozumně typovaný kód a používat ho správně</li>
-<li>celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu</li>
-<li>většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit</li>
-</ul>
-</section></section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
 
