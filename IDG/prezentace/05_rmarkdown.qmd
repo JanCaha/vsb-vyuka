@@ -41,12 +41,12 @@ execute:
 
 - zapisuje do speciální značek (bloků) - v Rstudiu [Levý Ctrl + Levý Alt + I]{.keys} 
 
-````rmarkdown
-`r ''````{r}
+```{r, eval=FALSE}
+#| echo: fenced
 x <- 5
 print(x)
 ```
-````
+
 
 - `` ` `` uvozují kód (zpětný apostrof angl. backtick), blokový kód pomocí tří, řádkový pomocí jedné
 
@@ -77,12 +77,14 @@ print(x)
 - nové slajdy se oddělují `---`
 
 - formátování slajdů
+- 
+- [turiálová prezentace](https://slides.yihui.org/xaringan)
 
 ## Extenze
 
 - balíky
 - [bookdown]{.software} - rozšíření pro psaní knih, ukázky [zde](https://bookdown.org/home/)
-- [pkgdown]{.software} - tvorba webu z dokumentace R balíku, např. [ggplot2](https://bookdown.org/) 
+- [pkgdown]{.software} - tvorba webu z dokumentace R balíku, např. [ggplot2](https://ggplot2.tidyverse.org/) 
 - a další možnosti
 
 # Quarto{.center}

@@ -366,6 +366,9 @@ pivot_longer(df,
 
 - za použití balíku [renv]{.software} ([renv web](https://rstudio.github.io/renv/articles/renv.html)) lze pro instalovat balíky přímo do projektu, přenášet je spolu s ním a vytvořit tak extrémně stabilní prostředí
 
+
+## Struktura projektu
+
 - RStudio projekt - složka s několika spefickými soubory a složkami
   - `.Rproj.user` - složka RStudia a jeho nastavení apod.
   - `.Rhistory` - textový soubor s posledními příkazy spuštěnými v konzoli
@@ -373,21 +376,19 @@ pivot_longer(df,
   - `*.Rproj` - asociační soubor pomocí něhož lze projekt přímo otevřít v RStudiu + některá nastavení
 
 
-## Doporučená struktura
+## Doporučená struktura - složky
 
-- složky a jejich obsahy
+- **data**
+  - **raw** - surová data, na nichž neprovádíme manuálně žádné úpravy, z této složky pouze čteme
+  - **produced** - odvozená data, ke každé datově sadě máme skript, který ji vytvořil, případné smazání této složky nepředstavuje problém (čas od času žádoucí)
 
-- _data_ 
-  - _raw_ - surová data, na nichž neprovádíme manuálně žádné úpravy, z této složky pouze čteme
-  - _produced_ - odvozená data, ke každé datově sadě máme skript, který ji vytvořil, případné smazání této složky nepředstavuje problém (čas od času žádoucí)
+- **scripts** - **.R** soubory, obsahující bloky kódu, které v rámci analýzy používáme opakovaně (načtení balíků, či dat)
 
-- _scripts_ - **.R** soubory, obsahující bloky kódu, které v rámci analýzy používáme opakovaně (načtení balíků, či dat)
+- **reports** - **.Rmd** či **.qmd** soubory obsahující surové reporty, a jejich přeložené verze (později)
 
-- _reports_ - **.Rmd** soubory obsahující surové reporty, a jejich přeložené verze (později)
+- **graphs** - uložené grafické výstupy
 
-- _graphs_ - uložené grafické výstupy
-
-- další: např. _functions_, _config_ atd.
+- další: např. **functions**, **config** atd.
 
 
 ## Odkazy na soubory v projektu

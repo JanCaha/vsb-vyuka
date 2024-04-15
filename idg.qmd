@@ -1,19 +1,32 @@
 ---
 title: Interpretace geodat (IDG)
 listing:
-    id: prezentace
-    contents: IDG/prezentace
-    sort-ui: false
-    filter-ui: false
-    type: table
-    date-format: iso
-    sort:
+    - id: prezentace
+      contents: IDG/prezentace
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
         - "date"
-    fields: [date, title] 
-    field-display-names:
+      fields: [date, title] 
+      field-display-names:
         title: "Prezentace"
         date: "Datum"
         author: "Autor"
+    - id: codes
+      contents: IDG/skripty/description.yaml
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+      fields: [date, title] 
+      field-display-names:
+          title: "Skript"
+          date: "Datum"
+          author: "Autor"
 filters:
    - include-code-files
 ---
@@ -35,6 +48,7 @@ filters:
 ## 📝 Seminární práce
 
 Vyberte si libovolnou otevřenou datovou sadu pro ČR, např. z [Národního katalogu otevřených dat](https://data.gov.cz/datov%C3%A9-sady) či jiného zdroje. Vytvořte buď `Rmarkdown` nebo `Quarto` dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující:
+
 - načtení dat
 - modifikace dat, výpočet nových sloupců nebo extrakce dílčích dat ze sloupců do nových sloupců (balík `dplyr` a další)
 - extrakce dílčí části dat do menší tabulky a její prezentace v dokumentu
@@ -56,6 +70,10 @@ Vyberte si libovolnou otevřenou datovou sadu pro ČR, např. z [Národního kat
 
 
 ## 💻 Ukázkové kódy
+
+::: {#codes}
+:::
+
 
 ## 🖥 Instalace
 
