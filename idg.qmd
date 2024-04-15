@@ -25,6 +25,7 @@ filters:
 - manipulace s daty v R pomocí balíku `dplyr`, `tidyr`
 - tvorba grafů v pomocí `ggplot2`, dobrá praxe tvorby grafů 
 - `Rmarkdown` a `Quarto`
+- prostorová data v R, vektorory, rastry, vizualizace a operace s daty
 
 ## 📑Prezentace
 

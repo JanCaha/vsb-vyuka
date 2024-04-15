@@ -4,5 +4,11 @@ install.packages(c(
     "sf",
     "terra",
     "stars",
+    "tmap",
+    "lwgeom",
+    "qgis",
+    "remotes",
     "tidymodels"
 ))
+
+remotes::install_github("JanCaha/r_package_qgis")
