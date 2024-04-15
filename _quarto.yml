@@ -40,6 +40,8 @@ website:
           text: Visual Studio Code
         - href: linux-mint.qmd
           text: Linux Mint
+        - href: osgeo4w.qmd
+          text: OSGeo4W
       
 
 format:
