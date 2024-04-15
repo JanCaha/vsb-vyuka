@@ -36,6 +36,8 @@ filters:
 - opakování základů Pythonu
 - knihovna GDAL/OGR
 - knihovny rasterio, fiona, shapely
+- Github Copilot
+- funkce a objekty v Pythonu 
 
 ## 📑Prezentace
 
@@ -46,6 +48,7 @@ filters:
 
 - data [Natural Earth](https://www.naturalearthdata.com/)
 - [GDAL/OGR Cookbook](https://pcjericks.github.io/py-gdalogr-cookbook/)
+- [Geocomputation with Python](https://py.geocompx.org/)
 
 ## 💻 Ukázkové kódy
 

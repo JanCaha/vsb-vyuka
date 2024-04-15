@@ -1,0 +1,114 @@
+---
+title: "Funkce a třídy"
+subtitle: "Programování v GIS 2"
+author: "Jan Caha"
+date: 2024-04-15
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Programovací paradigmata
+
+- většina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero
+  
+- **imperativní** (kód popisuje, co se bude dít)
+  - **procedurální programování** (procedury, které ze vzájmně volají)
+  - **objektové programování** (objekty - data a operace s nimi asociované)
+  - většina jazyků - např. Python, R, C++ 
+- **deklarativní** (kód popisuje požadovaný výsledek)
+  - **funkcionální**, logické a reaktivní 
+  - např. jazyk SQL, ale i funkcionální přístupy v Pythonu a R
+
+## Python
+
+- pro běžné použití kombinujeme obvykle procedurální a objektový přístup
+- procedurální přístup - **funkce**, které mají parametry
+- objektový přístup - **objekty**, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)
+  
+## Funkce
+
+- dělí kód na dílčí logické bloky, které mohou být znovu použitelné
+- měly by dělat jednu věc a pouze jednu věc
+- délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)
+- snaha navrhovat funkce spíše obecně než specificky
+  
+```{python}
+# specifické
+def vynasob_dvema(a: float) -> float:
+    return a * 2
+
+
+# obecné
+def vynasob(a: float, b: float) -> float:
+    return a * b
+```
+
+## Funkce příklad
+
+```{python}
+def fn(a: str, b: int, c: float = 0.5) -> float: ...
+```
+
+- funkce se třemi proměnnými 
+  - první dvě povinné
+  - třetí nepovinná s výchozí hodnotou
+- funkce vrací float
+- mohou existovat funkce bez návratové hodnoty `None`
+
+## Objekty
+
+- třída je šablona objektu, jednotlivý objekt je pak instancí třídy
+- objekt je prvk, které mají vlastní informace a s kterými můžeme vykonávat operace
+- metody, vlastnosti (property) a atributy
+- složitost se může různit
+
+## Objekty detaily
+
+- první parametr metody je vždy `self` (označení instance objektu)
+- atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) -- v Pythonu se to řeší konvecí, soukromé atributy a metody začínají podtržítkem (např. `_atribut`), tyto metody a atributy nebudou nápovědy v IDE navrhnovat a programátor by se měl ideálně jejich použití vyhnout
+- magické metody objektů (např. `__init__`, `__str__`, `__add__`, `__eq__` a další) a jejich použití
+
+## Objekt - příklad
+```{python}
+class Zamestnanec:
+    def __init__(self, jmeno: str, hodinovy_plat: float):
+        self.jmeno = jmeno
+        self._hodinovy_plat = hodinovy_plat
+
+    def plat(self) -> float:
+        return self._hodinovy_plat
+
+    def nastav_plat(self, hodinovy_plat: float) -> None:
+        self._hodinovy_plat = hodinovy_plat
+
+    def zvys_plat(self, navyseni_o: float) -> None:
+        self._hodinovy_plat += navyseni_o
+
+    def mesicni_plat(self, odpracovanych_hodin: float) -> float:
+        return self._hodinovy_plat * odpracovanych_hodin
+
+    @property
+    def denni_plat(self) -> float:
+        return self._hodinovy_plat / 8
+```
+
+## Použití objektu
+
+```{python}
+odpracovane_hodiny = 160
+zam = Zamestnanec("Testovaci Zamestnanec", 250)
+print(f"Plat: {zam.mesicni_plat(odpracovane_hodiny)}")
+zam.zvys_plat(50)
+print(f"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}")
+```
+
+
+
+# Dotazy? {.center}

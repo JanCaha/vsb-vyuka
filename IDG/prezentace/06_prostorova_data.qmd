@@ -1,0 +1,91 @@
+---
+title: "Prostorová data"
+subtitle: "Interpretace geodat"
+author: "Jan Caha"
+date: 2024-04-15
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Balíky
+
+- [sf]{.software} - **Simple Features** balík založený na [GDAL/OGR]{.software} pro načítání a zpracování zejména vektorových dat
+- [raster]{.software} a [terra]{.software} (novější iterace) - balíky pro načítání a zpracování rastrových dat
+- [stars]{.software} - balík pro načítání a zpracování zejména rastrů v podobně multidimenzionálních polí (např. i časové řady)
+- [tmap]{.software} - tvorba vizualizací prostorových dat
+- [qgisprocess]{.software} a [qgis]{.software}
+
+## [sf]{.software}
+
+- **OGC** standard **simple features**
+- data se načtou jako standatní `data.frame` či `tibble`, geometrie je zvláštní sloupec se specificky uloženými daty
+- pro práci s daty je možné použít běžné `dplyr` funkce (u některých dostáváme "zdarma" prostorové rozšíření - např. kombinace `group_by()` a `summarize()` automaticky agreguje i geometrie)
+- zvláštní funkce balíku využívají předponu `st_*` (spatiotemporal)
+- další funkce v balíku [lwgeom]{.software}
+
+## Ukázky [sf]{.software}
+
+- [vignetty balíku](https://r-spatial.github.io/sf/)
+- kniha [Geocomputation with R](https://r.geocompx.org/)
+
+## [raster]{.software} a [terra]{.software}
+
+- velice podobné balíky, [terra]{.software} je novější a má některé vylepšení
+- pracuje hlavně s rastrovými daty, ale umí i něco málo s vektorovými
+- rastry se nenačítají do paměti, pokud o to explicitně nežádáme, drží se v principu odkaz na data + metadata
+- data se získavají jako `matrix`
+  
+## Ukázky [raster]{.software} a [terra]{.software}
+
+- k [terra]{.software} existuje [web](https://rspatial.org/)
+- částečně opět [Geocomputation with R](https://r.geocompx.org/)
+
+## [stars]{.software}
+
+- postaveno na principu datových kostek (v GIS relativně málo používané)
+- zaměřeno na multidimenzionální data (typicky formát netCDF), často s časovou složkou
+- příklady v [vignetách](https://r-spatial.github.io/stars/)
+
+## [tmap]{.software}
+
+- balík pro tvorbu vizualizací prostorových dat
+- jak statické tak i dynamické vizualizace (s využitím [leaflet]{.software})
+- odvozeno od [ggplot2]{.software} {{< fa arrow-right >}} podobný zápis, ale nelze kombinovat
+- pracuje s vrstvami
+- ukázky v [vignetách](https://r-tmap.github.io/tmap/)
+
+## [qgisprocess]{.software} a [qgis]{.software}
+
+- balíky pro spuštění **QGIS** procesů z **R**
+- [qgisprocess]{.software} je obecnější, ale uživatel musí znát **QGIS** procesy
+- [qgis]{.software} je nadstavba, která vytváří pro každý QGIS nástroj odpovídající funkci v **R** a to včetně nápovědy
+
+## Ukázky [qgisprocess]{.software} a [qgis]{.software}
+
+- instalace 
+  
+```{r}
+#| eval: false
+install.packages(c("qgisprocess", "remotes"))
+remotes::install_github("JanCaha/r_package_qgis")
+```
+
+- maximálně podporují existující balíky, takže lze předávat jako vstupní data např. `data.frame` se sloupcem geometrie či `raster` a `stars` objekty
+- ukázky ve vignetách [qgisprocess](https://r-spatial.github.io/qgisprocess/) a [qgis](https://jancaha.github.io/r_package_qgis/)
+
+## Shrnutí
+
+- poměrně rozsáhlý ekosystém balíků pro práci s prostorovými daty
+- lze srovnávat s ekosystémem v jazyce **Python**
+- více zaměřené na zpracování dat
+- lépe řešené vizualizace
+- díky základu jazyka **R** lepší integrace s ostatními balíky, odpadají konverze dat mezi formáty různých balíků
+
+# Dotazy?{.center}
