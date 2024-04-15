@@ -1,0 +1,53 @@
+---
+title: OSGEO4W
+---
+
+Nejjednodušším způsobem, jak v prostředí **Windows** nainstalovat značnou část open source GIS knihoven a softwarů (např. **QGIS**, **GRASS**, **SAGA** a další) je použití distribuce **OSGEO4W** z [webu projektu](https://trac.osgeo.org/osgeo4w/), konkrétně odkaz [ke stažení instalátoru](https://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe). Jedná se o klasický průvodce, kde je možnost nakonfigurovat si instalaci podle vlastních potřeb, plná konfigurace je poměrně obáshlá a v mnoha ohledech i zbytečná (např. obsahuje 3 verze QGIS - vývojovou, aktuální a LTR).
+
+## Nástroje
+
+Součástí instalace jsou:
+
+- nástroje `ogr2ogr`, `gdalwarp`, `gdal_translate` a další dostupné skrze **OSGeo4W Shell**
+- **QGIS**, **GRASS**
+- **Python** a jeho knihovny, lze doinstalovat z příkazové řádky (**OSGeo4W Shell**) pomocí `pip install *`
+
+## Instalace
+
+Po spuštění instalátoru je nutné vybrat typ instalace - **Advanced Install**, viz následující obrázek:
+
+![Volba typu instalace](images/osgeo4w/install_1.png){fig-alt="OSGEO4W volba typu instalace" .lightbox #fig-install-1}
+
+Další položkou je volba instalace z Internetu (používáme nejaktuálnější zdroje).
+
+![Volba instalace z internetu](images/osgeo4w/install_2.png){fig-alt="Volba instalace z internetu" .lightbox #fig-install-2}
+
+Další volbou je umístění instalace. Výchozí nastavení je na disk `C:`, lze změnit disk, nicméně je vhodné instalovat do co nevyšše umístěné složky, takže např: `D:\OSGeo4W`, aby nebyla výsledná cesta příliš dlouhá.
+
+![Umístění instalace](images/osgeo4w/install_3.png){fig-alt="Umístění instalace" .lightbox #fig-install-3}
+
+Následující dva kroky, volbu dočasného adresáře a proxy, lze obvykle nechat na výchozích hodnotách.
+
+![Volba dočasného adresáře](images/osgeo4w/install_4.png){fig-alt="Volba dočasného adresáře" .lightbox #fig-install-4}
+
+![Nastavení proxy](images/osgeo4w/install_5.png){fig-alt="Nastavení proxy" .lightbox #fig-install-5}
+
+Následujícím krokem je volba zdrojového serveru, obvykle vyhoví výchozí hodnota.
+
+![Volba serveru](images/osgeo4w/install_6.png){fig-alt="Volba serveru" .lightbox #fig-install-6}
+
+V dalším kroce už se dostáváme k volbě komponent, které se mají instalovat. Obvykle věnujeme pozornost zejména položkám **Commandline Utilities** a **Desktop**, knihovny v pložce **Libs** se vyberou dle zvolených komponent automaticky.
+
+![Seznam komponent dle typu](images/osgeo4w/install_7.png){fig-alt="Seznam komponent dle typu" .lightbox #fig-install-7}
+
+Z poskytutého seznamu vybereme potřebné komponenty.
+
+![Výběr komponent](images/osgeo4w/install_8.png){fig-alt="Výběr komponent" .lightbox #fig-install-8}
+
+Následuje potvrzení licencí, samotné stahování a instalace komponent, což může být časově náročnější.
+
+![Instalace](images/osgeo4w/install_9.png){fig-alt="Instalace" .lightbox #fig-install-9}
+
+### Aktualizace komponent
+
+Opětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku @fig-install-8 pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.

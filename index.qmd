@@ -16,3 +16,4 @@ Materiály pro moje předměty vyučované v roce **{{< var dates.school-year >}
 
 - [Visual Studio Code](vscode.qmd)
 - [Linux Mint](linux-mint.qmd)
+- [OSGeo4W](osgeo4w.qmd)
