@@ -48,6 +48,7 @@ filters:
 
 - data [Natural Earth](https://www.naturalearthdata.com/)
 - [GDAL/OGR Cookbook](https://pcjericks.github.io/py-gdalogr-cookbook/)
+- [Geocomputation with Python](https://py.geocompx.org/)
 
 ## 💻 Ukázkové kódy
 
