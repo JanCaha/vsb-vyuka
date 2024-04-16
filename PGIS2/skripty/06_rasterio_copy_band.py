@@ -1,5 +1,5 @@
 import rasterio
-from utils import data_path
+from utils import data_path, save_data_path
 
 if __name__ == "__main__":
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
         data_type = input_ds.dtypes[band_number]
 
         with rasterio.open(
-            data_path("single_band_raster.tif"),
+            save_data_path("single_band_raster.tif"),
             "w",
             driver="GTiff",
             height=input_ds.height,
