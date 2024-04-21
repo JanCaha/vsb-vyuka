@@ -1,0 +1,84 @@
+---
+title: "Statistické testování a modelování"
+subtitle: "Interpretace geodat"
+author: "Jan Caha"
+date: 2024-04-22
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Statistické testování {{< fa times >}} modelování
+
+- statistické testování - zjišťování, zda je nějaký jev statisticky významný
+- modelování - vytváření modelů, které popisují vztahy mezi proměnnými či odvozují nové informace
+
+## Pojmy v [R]{.software}
+
+- formula (vzorec) - zápis modelu v podobě `y ~ x1 + x2 + ...`
+  - `y` je vysvětlovaná proměnná (závislá, výsledek)
+  - `x1` - `xN` jsou vysvětlující proměnné (nezávislé, příčiny, prediktory)
+  - význam operátorů [viz](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/formula)
+  - zápis názvů proměnných (bez uvozovek) - používá se NSE
+- ke vzorci se vždy ve funkci přidávají data ve formátu `data.frame`
+  - např. lineární regrese: `lm(y ~ x1 + x2, data = data)` 
+
+## Testovací a modelovací funkce
+
+- značná část v základním [R]{.software}
+- některé ve speciálních balíčcích
+- problém s roztříštěností implementací těchto funkcí, nic není příliš sjednocené a velice komplikované na použití
+- vzniká problém při složitějších analýzách, kde např. chceme jeden postup a model použít na více datových sadách
+
+## Ujednocení postupů
+
+- vytvoření balíků, které slouží jako univerzální rozhraní pro další funkce
+- sjednocení volání funkcí a formátu výstupů
+- dva metabalíky - [easystats]{.software} a [tidymodels]{.software}
+  
+## [easystats]{.software}
+
+- balík [easystats]{.software} - sjednocení statistických funkcí - [web](https://easystats.github.io/easystats/)
+  - [parameters]{.software} - základní statistické testy
+  - [performance]{.software} - vyhodnocení modelů
+  - [report]{.software} - vytváření reportů
+  - [modelbased]{.software} - modelování
+  - [effectsize]{.software} - velikosti efektu
+  - [bayestestR]{.software} - bayesovské testy
+  - [see]{.software} - vizualizace efektů
+  - [insight]{.software} - interpretace modelů
+
+## Ukázka [easystats]{.software}
+
+- spíš jednotlivé funkce
+- objekty, pro další zpracování a výstupy
+- funguje na řadě objektů z jiných balíků, např. `report()`
+- spíš na jednodušší úlohy, které nemají velké části, které se opakují
+
+## [tidymodels]{.software}
+
+- prvotní návrhy - balíky [broom]{.software} a [modelr]{.software}, které slouží pro zpracování výstupů modelů
+- balík [tidymodels]{.software} - sjednocení framework modelování - [web](https://www.tidymodels.org/)
+  - [recipes]{.software} - příprava dat
+  - [parsnip]{.software} - specifikace modelu a interface pro práci s různými modely, existují k němu doplňovací balíčky pro konkrétní typy modelů
+  - [dials]{.software} - specifikace parametrů modelu
+  - [tune]{.software} - ladění hyperparametrů modelu
+  - [yardstick]{.software} - vyhodnocení modelu
+  - [workflows]{.software} - spojení všech kroků do jednoho objektu
+
+## [tidymodels]{.software} 
+
+- na velice komplexní postupy, kde se velké části kódu či pracovního postupu opakují
+- např. stejné zpracování několik různých datových sad, testování modelu s různými nastaveními, aplikace modelů z různých balíků
+
+## Ukázka [tidymodels]{.software}
+
+- příklad z TidyTuesday zpracovaný [na webu](https://juliasilge.com/blog/palmer-penguins/)
+
+# Dotazy?{.center}
