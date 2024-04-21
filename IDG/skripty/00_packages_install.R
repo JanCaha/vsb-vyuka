@@ -11,7 +11,9 @@ install.packages(c(
     "tidymodels",
     "DT",
     "rmarkdown",
-    "plotly"
+    "plotly",
+    "tidymodels",
+    "easystats",
 ))
 
 remotes::install_github("JanCaha/r_package_qgis")
