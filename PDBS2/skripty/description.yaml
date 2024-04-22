@@ -22,3 +22,15 @@
   author: Jan Caha
   date: 2024-03-11
   path: "PDBS2/skripty/06_view.sql"
+- title: "Tvorba a vyplnění tabulky"
+  author: Jan Caha
+  date: 2024-03-22
+  path: "PDBS2/skripty/07_create_fill_table.sql"
+- title: "Prostorové dotazy"
+  author: Jan Caha
+  date: 2024-03-22
+  path: "PDBS2/skripty/08_spatial_selects.sql"
+- title: "View s modifikací geometrie"
+  author: Jan Caha
+  date: 2024-03-22
+  path: "PDBS2/skripty/09_geometry_scale.sql"
