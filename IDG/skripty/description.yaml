@@ -14,3 +14,7 @@
   author: Jan Caha
   date: 2024-04-22
   path: "IDG/skripty/03_easystats.R"
+- title: "Ukázka tidymodels"
+  author: Jan Caha
+  date: 2024-04-22
+  path: "IDG/skripty/04_tidymodels.R"
