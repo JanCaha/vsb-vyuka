@@ -7,12 +7,14 @@
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-04-15">
-  <title>Výuka - Jan Caha - Funkce a třídy</title>
+  <meta name="dcterms.date" content="2024-04-22">
+  <title>Výuka - Jan Caha - Statistické testování a modelování</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,71 +32,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -386,8 +323,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Výuka - Jan Caha - Funkce a třídy">
-<meta property="og:description" content="Programování v GIS 2">
+<meta property="og:title" content="Výuka - Jan Caha - Statistické testování a modelování">
+<meta property="og:description" content="Interpretace geodat">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -395,8 +332,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Funkce a třídy</h1>
-  <p class="subtitle">Programování v GIS 2</p>
+  <h1 class="title">Statistické testování a modelování</h1>
+  <p class="subtitle">Interpretace geodat</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -406,122 +343,100 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-04-15</p>
+  <p class="date">2024-04-22</p>
 </section>
-<section id="programovací-paradigmata" class="slide level2">
-<h2>Programovací paradigmata</h2>
+<section id="statistické-testování-modelování" class="slide level2">
+<h2>Statistické testování <i class="fa-solid fa-times" aria-label="times"></i> modelování</h2>
 <ul>
-<li><p>většina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero</p></li>
-<li><p><strong>imperativní</strong> (kód popisuje, co se bude dít)</p>
+<li>statistické testování - zjišťování, zda je nějaký jev statisticky významný</li>
+<li>modelování - vytváření modelů, které popisují vztahy mezi proměnnými či odvozují nové informace</li>
+</ul>
+</section>
+<section id="pojmy-v-r" class="slide level2">
+<h2>Pojmy v <span class="software">R</span></h2>
 <ul>
-<li><strong>procedurální programování</strong> (procedury, které ze vzájmně volají)</li>
-<li><strong>objektové programování</strong> (objekty - data a operace s nimi asociované)</li>
-<li>většina jazyků - např. Python, R, C++</li>
+<li>formula (vzorec) - zápis modelu v podobě <code>y ~ x1 + x2 + ...</code>
+<ul>
+<li><code>y</code> je vysvětlovaná proměnná (závislá, výsledek)</li>
+<li><code>x1</code> - <code>xN</code> jsou vysvětlující proměnné (nezávislé, příčiny, prediktory)</li>
+<li>význam operátorů <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/formula">viz</a></li>
+<li>zápis názvů proměnných (bez uvozovek) - používá se NSE</li>
 </ul></li>
-<li><p><strong>deklarativní</strong> (kód popisuje požadovaný výsledek)</p>
+<li>ke vzorci se vždy ve funkci přidávají data ve formátu <code>data.frame</code>
 <ul>
-<li><strong>funkcionální</strong>, logické a reaktivní</li>
-<li>např. jazyk SQL, ale i funkcionální přístupy v Pythonu a R</li>
+<li>např. lineární regrese: <code>lm(y ~ x1 + x2, data = data)</code></li>
 </ul></li>
 </ul>
 </section>
-<section id="python" class="slide level2">
-<h2>Python</h2>
+<section id="testovací-a-modelovací-funkce" class="slide level2">
+<h2>Testovací a modelovací funkce</h2>
 <ul>
-<li>pro běžné použití kombinujeme obvykle procedurální a objektový přístup</li>
-<li>procedurální přístup - <strong>funkce</strong>, které mají parametry</li>
-<li>objektový přístup - <strong>objekty</strong>, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)</li>
+<li>značná část v základním <span class="software">R</span></li>
+<li>některé ve speciálních balíčcích</li>
+<li>problém s roztříštěností implementací těchto funkcí, nic není příliš sjednocené a velice komplikované na použití</li>
+<li>vzniká problém při složitějších analýzách, kde např. chceme jeden postup a model použít na více datových sadách</li>
 </ul>
 </section>
-<section id="funkce" class="slide level2">
-<h2>Funkce</h2>
+<section id="ujednocení-postupů" class="slide level2">
+<h2>Ujednocení postupů</h2>
 <ul>
-<li>dělí kód na dílčí logické bloky, které mohou být znovu použitelné</li>
-<li>měly by dělat jednu věc a pouze jednu věc</li>
-<li>délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)</li>
-<li>snaha navrhovat funkce spíše obecně než specificky</li>
+<li>vytvoření balíků, které slouží jako univerzální rozhraní pro další funkce</li>
+<li>sjednocení volání funkcí a formátu výstupů</li>
+<li>dva metabalíky - <span class="software">easystats</span> a <span class="software">tidymodels</span></li>
 </ul>
-<div id="90eaa800" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obecné</span></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
-<section id="funkce-příklad" class="slide level2">
-<h2>Funkce příklad</h2>
-<div id="99f29f75" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="easystats" class="slide level2">
+<h2><span class="software">easystats</span></h2>
 <ul>
-<li>funkce se třemi proměnnými
+<li>balík <span class="software">easystats</span> - sjednocení statistických funkcí - <a href="https://easystats.github.io/easystats/">web</a>
 <ul>
-<li>první dvě povinné</li>
-<li>třetí nepovinná s výchozí hodnotou</li>
+<li><span class="software">parameters</span> - základní statistické testy</li>
+<li><span class="software">performance</span> - vyhodnocení modelů</li>
+<li><span class="software">report</span> - vytváření reportů</li>
+<li><span class="software">modelbased</span> - modelování</li>
+<li><span class="software">effectsize</span> - velikosti efektu</li>
+<li><span class="software">bayestestR</span> - bayesovské testy</li>
+<li><span class="software">see</span> - vizualizace efektů</li>
+<li><span class="software">insight</span> - interpretace modelů</li>
 </ul></li>
-<li>funkce vrací float</li>
-<li>mohou existovat funkce bez návratové hodnoty <code>None</code></li>
 </ul>
 </section>
-<section id="objekty" class="slide level2">
-<h2>Objekty</h2>
+<section id="ukázka-easystats" class="slide level2">
+<h2>Ukázka <span class="software">easystats</span></h2>
 <ul>
-<li>třída je šablona objektu, jednotlivý objekt je pak instancí třídy</li>
-<li>objekt je prvk, které mají vlastní informace a s kterými můžeme vykonávat operace</li>
-<li>metody, vlastnosti (property) a atributy</li>
-<li>složitost se může různit</li>
+<li>spíš jednotlivé funkce</li>
+<li>objekty, pro další zpracování a výstupy</li>
+<li>funguje na řadě objektů z jiných balíků, např. <code>report()</code></li>
+<li>spíš na jednodušší úlohy, které nemají velké části, které se opakují</li>
 </ul>
 </section>
-<section id="objekty-detaily" class="slide level2">
-<h2>Objekty detaily</h2>
+<section id="tidymodels" class="slide level2">
+<h2><span class="software">tidymodels</span></h2>
 <ul>
-<li>první parametr metody je vždy <code>self</code> (označení instance objektu)</li>
-<li>atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvecí, soukromé atributy a metody začínají podtržítkem (např. <code>_atribut</code>), tyto metody a atributy nebudou nápovědy v IDE navrhnovat a programátor by se měl ideálně jejich použití vyhnout</li>
-<li>magické metody objektů (např. <code>__init__</code>, <code>__str__</code>, <code>__add__</code>, <code>__eq__</code> a další) a jejich použití</li>
+<li>prvotní návrhy - balíky <span class="software">broom</span> a <span class="software">modelr</span>, které slouží pro zpracování výstupů modelů</li>
+<li>balík <span class="software">tidymodels</span> - sjednocení framework modelování - <a href="https://www.tidymodels.org/">web</a>
+<ul>
+<li><span class="software">recipes</span> - příprava dat</li>
+<li><span class="software">parsnip</span> - specifikace modelu a interface pro práci s různými modely, existují k němu doplňovací balíčky pro konkrétní typy modelů</li>
+<li><span class="software">dials</span> - specifikace parametrů modelu</li>
+<li><span class="software">tune</span> - ladění hyperparametrů modelu</li>
+<li><span class="software">yardstick</span> - vyhodnocení modelu</li>
+<li><span class="software">workflows</span> - spojení všech kroků do jednoho objektu</li>
+</ul></li>
 </ul>
 </section>
-<section id="objekt---příklad" class="slide level2">
-<h2>Objekt - příklad</h2>
-<div id="dbd71561" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Zamestnanec:</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jmeno: <span class="bu">str</span>, hodinovy_plat: <span class="bu">float</span>):</span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.jmeno <span class="op">=</span> jmeno</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat</span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> nastav_plat(<span class="va">self</span>, hodinovy_plat: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> zvys_plat(<span class="va">self</span>, navyseni_o: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">+=</span> navyseni_o</span>
-<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mesicni_plat(<span class="va">self</span>, odpracovanych_hodin: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb3-16"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">*</span> odpracovanych_hodin</span>
-<span id="cb3-17"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb3-19"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> denni_plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb3-20"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">/</span> <span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="tidymodels-1" class="slide level2">
+<h2><span class="software">tidymodels</span></h2>
+<ul>
+<li>na velice komplexní postupy, kde se velké části kódu či pracovního postupu opakují</li>
+<li>např. stejné zpracování několik různých datových sad, testování modelu s různými nastaveními, aplikace modelů z různých balíků</li>
+</ul>
 </section>
-<section id="použití-objektu" class="slide level2">
-<h2>Použití objektu</h2>
-<div id="7a53ea6f" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>odpracovane_hodiny <span class="op">=</span> <span class="dv">160</span></span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>zam <span class="op">=</span> Zamestnanec(<span class="st">"Testovaci Zamestnanec"</span>, <span class="dv">250</span>)</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>zam.zvys_plat(<span class="dv">50</span>)</span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat po zvýšení: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Plat: 40000
-Plat po zvýšení: 48000</code></pre>
-</div>
-</div>
+<section id="ukázka-tidymodels" class="slide level2">
+<h2>Ukázka <span class="software">tidymodels</span></h2>
+<ul>
+<li>příklad z TidyTuesday zpracovaný <a href="https://juliasilge.com/blog/palmer-penguins/">na webu</a></li>
+</ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
