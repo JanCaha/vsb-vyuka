@@ -829,7 +829,7 @@
     "href": "idg.html#ukázkové-kódy",
     "title": "Interpretace geodat (IDG)",
     "section": "💻 Ukázkové kódy",
-    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-02-19\n\n\nInstalace potřebných balíků\n\n\n\n\n2024-04-08\n\n\nUkázkový report v rmarkdown\n\n\n\n\n2024-04-15\n\n\nQGIS funkce v R\n\n\n\n\n2024-04-22\n\n\nUkázky easystats\n\n\n\n\n\nNo matching items",
+    "text": "💻 Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-02-19\n\n\nInstalace potřebných balíků\n\n\n\n\n2024-04-08\n\n\nUkázkový report v rmarkdown\n\n\n\n\n2024-04-15\n\n\nQGIS funkce v R\n\n\n\n\n2024-04-22\n\n\nUkázky easystats\n\n\n\n\n2024-04-22\n\n\nUkázka tidymodels\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Interpretace geodat"
@@ -1453,7 +1453,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.41799829 -0.07552616 -0.17901308 -0.28927693 -0.21474452"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.16519664 -0.03393397 -0.09469114 -0.21506187 -1.29061846"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1649,7 +1649,7 @@
     "href": "IDG/prezentace/07_statisticke_testovani_a_modelovani.html#ukázka-tidymodels",
     "title": "Statistické testování a modelování",
     "section": "Ukázka tidymodels",
-    "text": "Ukázka tidymodels\n\npříklad z TidyTuesday zpracovaný na webu"
+    "text": "Ukázka tidymodels\n\npříklad z webu\nklasifikace typu kosatce dle měření okvětních lístků"
   },
   {
     "objectID": "index.html",
