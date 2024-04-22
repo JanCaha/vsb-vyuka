@@ -6,3 +6,11 @@
   author: Jan Caha
   date: 2024-04-08
   path: "IDG/skripty/01_ukázkový_report.Rmd"
+- title: "QGIS funkce v R"
+  author: Jan Caha
+  date: 2024-04-15
+  path: "IDG/skripty/02_qgis.R"
+  - title: "Ukázky easystats"
+  author: Jan Caha
+  date: 2024-04-22
+  path: "IDG/skripty/03_easystats.R"
