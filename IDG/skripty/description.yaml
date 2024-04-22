@@ -10,7 +10,11 @@
   author: Jan Caha
   date: 2024-04-15
   path: "IDG/skripty/02_qgis.R"
-  - title: "Ukázky easystats"
+- title: "Ukázky easystats"
   author: Jan Caha
   date: 2024-04-22
   path: "IDG/skripty/03_easystats.R"
+- title: "Ukázka tidymodels"
+  author: Jan Caha
+  date: 2024-04-22
+  path: "IDG/skripty/04_tidymodels.R"

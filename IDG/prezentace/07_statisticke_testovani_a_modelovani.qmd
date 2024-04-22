@@ -79,6 +79,7 @@ execute:
 
 ## Ukázka [tidymodels]{.software}
 
-- příklad z TidyTuesday zpracovaný [na webu](https://juliasilge.com/blog/palmer-penguins/)
+- [příklad z webu](https://rviews.rstudio.com/2019/06/19/a-gentle-intro-to-tidymodels/)
+- klasifikace typu kosatce dle měření okvětních lístků
 
 # Dotazy?{.center}
