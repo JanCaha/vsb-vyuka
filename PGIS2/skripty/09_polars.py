@@ -31,10 +31,10 @@ if __name__ == "__main__":
 
     price = df_diamonds_e.get_column("price").to_list()
 
-    df_diamonds_grouped = df.groupby(["cut", "color"]).agg(
-        calculate_aggregates("price"),
-        calculate_aggregates("x"),
-    )
+    exprs = calculate_aggregates("price")
+    exprs.extend(calculate_aggregates("x"))
+
+    df_diamonds_grouped = df.group_by(["cut", "color"]).agg(exprs)
 
     print(df_diamonds_grouped)
 
