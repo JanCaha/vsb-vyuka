@@ -38,6 +38,12 @@ filters:
 - knihovny rasterio, fiona, shapely
 - Github Copilot
 - funkce a objekty v Pythonu 
+- Pandas, geopandas, Polars, geopolars
+
+## 📝 Seminární práce
+
+Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte kteroukoliv z knihoven, představených během výuky. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript spolu s testovacími daty odevzdejte e-mailem.
+
 
 ## 📑Prezentace
 

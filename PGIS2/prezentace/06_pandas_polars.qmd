@@ -1,0 +1,50 @@
+---
+title: "Datové rámce v Pythonu - pandas, geopandas a polars a geopolars"
+subtitle: "Programování v GIS 2"
+author: "Jan Caha"
+date: 2024-04-29
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Datové rámce
+
+- [Python]{.software} tento koncept přímo v sobě neobsahuje (na rozdíl třeba od [R]{.software})
+- nejstarší podobná implementace je [numpy]{.software} - což jsou obecně multidimenzionální struktury, ale spíše ve smyslu matic a dalších numerických dat
+- pro práci s tabulkovými daty se používá knihovna [pandas]{.software} a chceme-li pracovat s geografickými daty, tak [geopandas]{.software}
+- efektivně se jedná o komplikovanou strukturu s mnoha funkcemi a metodami, které umožňují práci s daty
+- v poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. [polars]{.software} a [geopolars]{.software}
+- obdobně jako v [R]{.software} se pracuje s konceptem sloupců s jednotným datovým typem a řádky s údajem o jednom objektu
+
+## Pandas a geopandas
+
+- zavisí na řadě knihoven, poměrně "těžké"
+- z historických důvodů zde existuje na řadu problémů několik různých přístupů k řešení stejného problému {{< fa arrow-right >}} může být zmatečné a komplikované na pochopení
+- chybí zcela ujednocující koncepce
+- nesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geoformáty)
+- práci občas stěžuje koncept indexů a jejich správa
+
+## Polars
+
+- modernější iterace na téma datových rámců, značně inspirovaná [dplyr]{.software}
+- napsáno primárně pro [Rust]{.software} a následně portováno do mnoha dalších jazyků (včetně Pythonu)
+- mnohem rychlejší, bezpečnější a efektivnější než [pandas]{.software}
+- podporuje méně formátů než [pandas]{.software}, zejména s ohledem na udržení lehkosti (co se týká závislostí)
+- kód je mnohem čitelnější a obvykle jednodušší na pochopení v porovnání s [pandas]{.software}
+- [user guide](https://docs.pola.rs/) , [Modern Polars](https://kevinheavey.github.io/modern-polars/) - porovnání s [pandas]{.software} a [polars]{.software}
+
+## Geopolars
+
+- geografická extenze [polars]{.software}
+- stále označováno jako experimentální
+- podopruje přímý import velice úzkého spektra formátů (aby se vyhnulo závislosti na [GDAL/OGR]{.software}), ale umí převést data z [geopandas]{.software}
+- workflow, které nemusí dávat smysl z hlediska závislostí atd. ale dává smysl z hlediska rychlosti a efektivity je načítat data přes [geopandas]{.software} a následně je převést do [geopolars]{.software}
+
+# Dotazy? {.center}
