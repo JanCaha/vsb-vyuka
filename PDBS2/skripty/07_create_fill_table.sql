@@ -1,5 +1,5 @@
 DROP TABLE IF EXIST kraje_obyvatele;
-CREATE TABLE kraje_obyvatele;(
+CREATE TABLE kraje_obyvatele(
     id SERIAL PRIMARY KEY,
     pocet_obyvatel integer,
     nazev TEXT,
