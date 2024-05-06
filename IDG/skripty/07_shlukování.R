@@ -34,8 +34,6 @@ plot(x)
 kmeans_clusters <- cluster_analysis(iris_selected, n = 3, method = "kmeans")
 
 kmeans_clusters
-  
-plot(summary(kmeans_clusters))
 
 plot(kmeans_clusters)
 
@@ -47,10 +45,8 @@ iris_selected <- iris %>%
 
 hclust_clusters <- cluster_analysis(iris_selected, n = 3, method = "hclust")
 
-plot(summary(kmeans_clusters))
-
-plot(kmeans_clusters)
+plot(hclust_clusters)
 
 iris_selected <- iris %>% 
-  mutate(predicted_cluster_hclust = predict(kmeans_clusters))
+  mutate(predicted_cluster_hclust = predict(hclust_clusters))
 

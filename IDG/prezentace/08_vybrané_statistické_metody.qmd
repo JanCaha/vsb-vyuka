@@ -1,5 +1,5 @@
 ---
-title: "VYbrané statistické metody"
+title: "Vybrané statistické metody"
 subtitle: "Interpretace geodat"
 author: "Jan Caha"
 date: 2024-05-06
