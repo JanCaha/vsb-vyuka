@@ -18,3 +18,20 @@
   author: Jan Caha
   date: 2024-04-22
   path: "IDG/skripty/04_tidymodels.R"
+- title: "Ukázka faktorové analýzy"
+  author: Jan Caha
+  date: 2024-05-06
+  path: "IDG/skripty/05_faktorová_analýza.R"
+- title: "Ukázka PCA"
+  author: Jan Caha
+  date: 2024-05-06
+  path: "IDG/skripty/06_pca.R"
+- title: "Ukázka shlukování"
+  author: Jan Caha
+  date: 2024-05-06
+  path: "IDG/skripty/07_shlukování.R"
+- title: "Ukázka rozhodovacích stromů"
+  author: Jan Caha
+  date: 2024-05-06
+  path: "IDG/skripty/08_rozhodovací_stromy.R"
+  

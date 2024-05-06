@@ -1,0 +1,45 @@
+---
+title: "VYbrané statistické metody"
+subtitle: "Interpretace geodat"
+author: "Jan Caha"
+date: 2024-05-06
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Faktorová analýza
+
+- snaha zjistit, zda-li pozorované proměnné nejsou projevem několika skrytých faktorů
+- snížení počtu dimenzí dat (méně sloupců)
+- řada metod a hodnotících kritérii
+
+## Principal component analysis (PCA)
+
+- redukce dimenzionality dat výpočem hlavních komponent
+- výsledkem jsou nové proměnné (komponenty) - lineární kombinace původních proměnných
+- výsledné komponenty jsou ortogonální (nejsou korelované)
+- výsledné komponenty jsou seřazeny podle velikosti variance, první komponenta má největší varianci, druhá druhou největší atd.
+- výsledné komponenty mohou být použity jako nové proměnné pro další analýzy
+  
+
+## Shluková analýza
+
+- snaha rozdělit data do skupin (shluků) na základě podobnosti
+- řada method, od jednoduchých (k-means, k-medoids) po složité (hierarchické)
+- u některých nutnost určení počtu shluků, jinde se určí automaticky v rámci výpočtu
+- volba závisí na typu dat a cíli analýzy (nelze obecně určit nejlepší metodu, nutnost experimentovat)
+
+## Rozhodovací stromy
+
+- predikční metoda
+- založená na if/then pravidlech
+- lze klasifikovat kategorie ale i hodnoty (vhodnější patrně na kategorie)
+  
+# Dotazy?{.center}
