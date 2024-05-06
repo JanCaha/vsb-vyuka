@@ -2,7 +2,7 @@
 title: "Knihovna [GDAL/OGR]{.software}"
 subtitle: "Programování v GIS 2"
 author: "Jan Caha"
-date: 2024-02-26
+date: 2024-03-04
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
