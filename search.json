@@ -70,28 +70,28 @@
   {
     "objectID": "IDG/prezentace/08_vybrané_statistické_metody.html#faktorová-analýza",
     "href": "IDG/prezentace/08_vybrané_statistické_metody.html#faktorová-analýza",
-    "title": "VYbrané statistické metody",
+    "title": "Vybrané statistické metody",
     "section": "Faktorová analýza",
     "text": "Faktorová analýza\n\nsnaha zjistit, zda-li pozorované proměnné nejsou projevem několika skrytých faktorů\nsnížení počtu dimenzí dat (méně sloupců)\nřada metod a hodnotících kritérii"
   },
   {
     "objectID": "IDG/prezentace/08_vybrané_statistické_metody.html#principal-component-analysis-pca",
     "href": "IDG/prezentace/08_vybrané_statistické_metody.html#principal-component-analysis-pca",
-    "title": "VYbrané statistické metody",
+    "title": "Vybrané statistické metody",
     "section": "Principal component analysis (PCA)",
     "text": "Principal component analysis (PCA)\n\nredukce dimenzionality dat výpočem hlavních komponent\nvýsledkem jsou nové proměnné (komponenty) - lineární kombinace původních proměnných\nvýsledné komponenty jsou ortogonální (nejsou korelované)\nvýsledné komponenty jsou seřazeny podle velikosti variance, první komponenta má největší varianci, druhá druhou největší atd.\nvýsledné komponenty mohou být použity jako nové proměnné pro další analýzy"
   },
   {
     "objectID": "IDG/prezentace/08_vybrané_statistické_metody.html#shluková-analýza",
     "href": "IDG/prezentace/08_vybrané_statistické_metody.html#shluková-analýza",
-    "title": "VYbrané statistické metody",
+    "title": "Vybrané statistické metody",
     "section": "Shluková analýza",
     "text": "Shluková analýza\n\nsnaha rozdělit data do skupin (shluků) na základě podobnosti\nřada method, od jednoduchých (k-means, k-medoids) po složité (hierarchické)\nu některých nutnost určení počtu shluků, jinde se určí automaticky v rámci výpočtu\nvolba závisí na typu dat a cíli analýzy (nelze obecně určit nejlepší metodu, nutnost experimentovat)"
   },
   {
     "objectID": "IDG/prezentace/08_vybrané_statistické_metody.html#rozhodovací-stromy",
     "href": "IDG/prezentace/08_vybrané_statistické_metody.html#rozhodovací-stromy",
-    "title": "VYbrané statistické metody",
+    "title": "Vybrané statistické metody",
     "section": "Rozhodovací stromy",
     "text": "Rozhodovací stromy\n\npredikční metoda\nzaložená na if/then pravidlech\nlze klasifikovat kategorie ale i hodnoty (vhodnější patrně na kategorie)"
   },
@@ -205,7 +205,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.01563434 -1.16096859 -0.10643332 -0.23035953 -0.34803324"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.7914576 -0.2206694 -0.1830985 -1.0883033 -0.2997921"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1090,7 +1090,7 @@
     "href": "idg.html#prezentace",
     "title": "Interpretace geodat (IDG)",
     "section": "📑Prezentace",
-    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n2024-03-18\n\n\nGrafy - ggplot2\n\n\n\n\n2024-04-08\n\n\nTvorba reportů, prezentací a dalších\n\n\n\n\n2024-04-15\n\n\nProstorová data\n\n\n\n\n2024-04-22\n\n\nStatistické testování a modelování\n\n\n\n\n2024-05-06\n\n\nVYbrané statistické metody\n\n\n\n\n\nNo matching items",
+    "text": "📑Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n2024-03-18\n\n\nGrafy - ggplot2\n\n\n\n\n2024-04-08\n\n\nTvorba reportů, prezentací a dalších\n\n\n\n\n2024-04-15\n\n\nProstorová data\n\n\n\n\n2024-04-22\n\n\nStatistické testování a modelování\n\n\n\n\n2024-05-06\n\n\nVybrané statistické metody\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Interpretace geodat"
