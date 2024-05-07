@@ -24,7 +24,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 ```
 
-## 🖥 Instalace aktuálních GIS knihoven a softwarů
+## 🖥 Instalace aktuálních GIS knihoven a softwarů {#sec-gis}
 
 Příkazy pro příkazovou řádku:
 
@@ -58,15 +58,24 @@ sudo apt-get upgrade -y
 # Install pgAdmin for both desktop and web modes:
 sudo apt-get install -y pgadmin4
 ```
-- následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL
+- následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL (viz [Sekce @sec-gis]) 
 
 ```bash
 # přidání zdroje balíčků GIS nástrojů
-sudo add-apt-repository -y ppa:ubuntugis/ppa
-sudo apt-get update
 
-sudo apt-get install -y gedit postgresql pgxnclient postgis qgis gdal-bin
+sudo apt-get install -y gedit postgresql pgxnclient postgis
 ```
+
+- následně nainstalujeme DBeaver - vizualizace DB and její správa (podobné PGAdmin4, ale s jiným přístupem)
+- pozor instalace se bude tázat na heslo
+  
+```bash
+cd /tmp
+wget https://dbeaver.io/download/?start&os=linux&arch=x86_64&dist=deb
+sudo dpkg -i dbeaver-ce_latest_amd64.deb
+```
+
+### Nastavení PostgreSQL a první spuštění
 
 - prvotní spuštění PostgreSQL je nutné provést z příkazové řádky
 
