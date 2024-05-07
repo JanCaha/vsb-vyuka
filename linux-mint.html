@@ -225,9 +225,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#instalace" id="toc-instalace" class="nav-link active" data-scroll-target="#instalace">🖥 Instalace</a></li>
   <li><a href="#aktualizace" id="toc-aktualizace" class="nav-link" data-scroll-target="#aktualizace">Aktualizace</a></li>
-  <li><a href="#instalace-aktuálních-gis-knihoven-a-softwarů" id="toc-instalace-aktuálních-gis-knihoven-a-softwarů" class="nav-link" data-scroll-target="#instalace-aktuálních-gis-knihoven-a-softwarů">🖥 Instalace aktuálních GIS knihoven a softwarů</a></li>
+  <li><a href="#sec-gis" id="toc-sec-gis" class="nav-link" data-scroll-target="#sec-gis">🖥 Instalace aktuálních GIS knihoven a softwarů</a></li>
   <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">🖥 Instalace PostregSQL</a>
   <ul class="collapse">
+  <li><a href="#nastavení-postgresql-a-první-spuštění" id="toc-nastavení-postgresql-a-první-spuštění" class="nav-link" data-scroll-target="#nastavení-postgresql-a-první-spuštění">Nastavení PostgreSQL a první spuštění</a></li>
   <li><a href="#připojení-k-db-z-qgis" id="toc-připojení-k-db-z-qgis" class="nav-link" data-scroll-target="#připojení-k-db-z-qgis">Připojení k DB z QGIS</a></li>
   </ul></li>
   <li><a href="#instalace-vs-code" id="toc-instalace-vs-code" class="nav-link" data-scroll-target="#instalace-vs-code">🖥 Instalace VS Code</a></li>
@@ -277,8 +278,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalace-aktuálních-gis-knihoven-a-softwarů" class="level2">
-<h2 class="anchored" data-anchor-id="instalace-aktuálních-gis-knihoven-a-softwarů">🖥 Instalace aktuálních GIS knihoven a softwarů</h2>
+<section id="sec-gis" class="level2">
+<h2 class="anchored" data-anchor-id="sec-gis">🖥 Instalace aktuálních GIS knihoven a softwarů</h2>
 <p>Příkazy pro příkazovou řádku:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">-y</span> ppa:ubuntugis/ppa</span>
@@ -307,24 +308,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Install pgAdmin for both desktop and web modes:</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> pgadmin4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL</li>
+<li>následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL (viz <a href="#sec-gis" class="quarto-xref">Sekce&nbsp;3</a>)</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">-y</span> ppa:ubuntugis/ppa</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> gedit postgresql pgxnclient postgis qgis gdal-bin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> gedit postgresql pgxnclient postgis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>následně nainstalujeme DBeaver - vizualizace DB and její správa (podobné PGAdmin4, ale s jiným přístupem)</li>
+<li>pozor instalace se bude tázat na heslo</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://dbeaver.io/download/<span class="pp">?</span>start<span class="kw">&amp;</span><span class="va">os</span><span class="op">=</span>linux<span class="kw">&amp;</span><span class="va">arch</span><span class="op">=</span>x86_64<span class="kw">&amp;</span><span class="va">dist</span><span class="op">=</span>deb</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> dbeaver-ce_latest_amd64.deb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="nastavení-postgresql-a-první-spuštění" class="level3">
+<h3 class="anchored" data-anchor-id="nastavení-postgresql-a-první-spuštění">Nastavení PostgreSQL a první spuštění</h3>
 <ul>
 <li>prvotní spuštění PostgreSQL je nutné provést z příkazové řádky</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql template1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql template1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>následně spustíme příkaz pro modifikaci hesla hlavní uživatele DB</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="fu">USER</span> postgres <span class="kw">with</span> encrypted <span class="kw">password</span> <span class="st">'heslo'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="fu">USER</span> postgres <span class="kw">with</span> encrypted <span class="kw">password</span> <span class="st">'heslo'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru <code>localhost</code> s uživatelem <code>postgres</code> a heslem <code>heslo</code> (nastavené výše)</li>
 </ul>
+</section>
 <section id="připojení-k-db-z-qgis" class="level3">
 <h3 class="anchored" data-anchor-id="připojení-k-db-z-qgis">Připojení k DB z QGIS</h3>
 <p>Pro připojení k PostGIS databázi z QGIS je třeba přidat nové připojení z <strong>Data Source Manager</strong> v QGIS. Nastavení bude vypada jako na obrázku níže, může být třeba upravit nastavení <strong>Database</strong> a v <strong>Authentication</strong> (<a href="#fig-pg-settings" class="quarto-xref">Obr.&nbsp;1</a>) nastavit <strong>Basic authentication</strong> a vyplnit jméno a heslo (<a href="#fig-user-settings" class="quarto-xref">Obr.&nbsp;2</a>).</p>
@@ -361,10 +370,10 @@ Obr.&nbsp;2: Nastavení uživatele v QGIS Authentication
 <section id="instalace-miniconda" class="level2">
 <h2 class="anchored" data-anchor-id="instalace-miniconda">🖥 Instalace MiniConda</h2>
 <p>Příkazy pro příkazovou řádku:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x Miniconda3-latest-Linux-x86_64.sh</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./Miniconda3-latest-Linux-x86_64.sh</span> <span class="at">-b</span> <span class="at">-f</span> <span class="at">-p</span> ~<span class="va">$USER</span>/miniconda3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x Miniconda3-latest-Linux-x86_64.sh</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./Miniconda3-latest-Linux-x86_64.sh</span> <span class="at">-b</span> <span class="at">-f</span> <span class="at">-p</span> ~<span class="va">$USER</span>/miniconda3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 <div class="hidden" aria-hidden="true">
@@ -953,7 +962,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
