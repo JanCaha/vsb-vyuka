@@ -33,36 +33,36 @@
     ]
   },
   {
-    "objectID": "IDG/skripty/01_ukázkový_report.html",
-    "href": "IDG/skripty/01_ukázkový_report.html",
+    "objectID": "IDG/skripty/01_ukazkovy_report.html",
+    "href": "IDG/skripty/01_ukazkovy_report.html",
     "title": "Zkušební Report",
     "section": "",
     "text": "Načteme balíky a data:\n\nlibrary(ggplot2)\nlibrary(dplyr)\ndata(diamonds)"
   },
   {
-    "objectID": "IDG/skripty/01_ukázkový_report.html#načtení-balíků-a-dat",
-    "href": "IDG/skripty/01_ukázkový_report.html#načtení-balíků-a-dat",
+    "objectID": "IDG/skripty/01_ukazkovy_report.html#načtení-balíků-a-dat",
+    "href": "IDG/skripty/01_ukazkovy_report.html#načtení-balíků-a-dat",
     "title": "Zkušební Report",
     "section": "",
     "text": "Načteme balíky a data:\n\nlibrary(ggplot2)\nlibrary(dplyr)\ndata(diamonds)"
   },
   {
-    "objectID": "IDG/skripty/01_ukázkový_report.html#výběr-dat",
-    "href": "IDG/skripty/01_ukázkový_report.html#výběr-dat",
+    "objectID": "IDG/skripty/01_ukazkovy_report.html#výběr-dat",
+    "href": "IDG/skripty/01_ukazkovy_report.html#výběr-dat",
     "title": "Zkušební Report",
     "section": "Výběr dat",
     "text": "Výběr dat\nVybereme pouze diamanty s barvou F.\n\ndiamonds_selected &lt;- diamonds %&gt;% \n  filter(color == \"F\")\n\n\nlibrary(DT)\nDT::datatable(diamonds_selected)"
   },
   {
-    "objectID": "IDG/skripty/01_ukázkový_report.html#zhodnocení-ceny",
-    "href": "IDG/skripty/01_ukázkový_report.html#zhodnocení-ceny",
+    "objectID": "IDG/skripty/01_ukazkovy_report.html#zhodnocení-ceny",
+    "href": "IDG/skripty/01_ukazkovy_report.html#zhodnocení-ceny",
     "title": "Zkušební Report",
     "section": "Zhodnocení ceny",
     "text": "Zhodnocení ceny\n\nmean_price &lt;- mean(diamonds_selected$price)\n\nPrůměrná cena diamantů s barvou F je: 3724.886397."
   },
   {
-    "objectID": "IDG/skripty/01_ukázkový_report.html#karáty-versus-cena",
-    "href": "IDG/skripty/01_ukázkový_report.html#karáty-versus-cena",
+    "objectID": "IDG/skripty/01_ukazkovy_report.html#karáty-versus-cena",
+    "href": "IDG/skripty/01_ukazkovy_report.html#karáty-versus-cena",
     "title": "Zkušební Report",
     "section": "Karáty versus cena",
     "text": "Karáty versus cena\n\np &lt;- ggplot(diamonds_selected) +\n  geom_point(aes(price, carat))\np"
@@ -205,7 +205,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.18768477 -0.19126776 -0.31232322 -0.00912083 -0.24512443"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.09981546 -1.04961157 -0.07053126 -0.52150840 -0.59530033"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
