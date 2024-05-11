@@ -59,6 +59,12 @@ def fn(a: str, b: int, c: float = 0.5) -> float: ...
 - funkce se třemi proměnnými 
   - první dvě povinné
   - třetí nepovinná s výchozí hodnotou
+  
+::: {.callout-warning}
+### Pozor
+Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou {{< fa arrow-right >}} funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.
+:::
+
 - funkce vrací float
 - mohou existovat funkce bez návratové hodnoty `None`
 
