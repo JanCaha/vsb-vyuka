@@ -61,12 +61,12 @@ jobs:
           do
             echo "--------------------"
             echo "*** $FILE ***"
-            RScript $FILE 
+            Rscript $FILE 
           done    
           FILES="./IDG/skripty/*.Rmd"
           for FILE in $FILES
           do
             echo "--------------------"
             echo "*** $FILE ***"
-            RScript -e "rmarkdown::render($FILE)" 
+            Rscript -e "rmarkdown::render($FILE)" 
           done 
