@@ -60,6 +60,8 @@ jobs:
         run:
           echo $R_LIBS_USER
           mkdir -p $R_LIBS_USER
+          ls -l $R_LIBS_USER
+          echo $HOME
 
       - name: Checkout
         uses: actions/checkout@v4
