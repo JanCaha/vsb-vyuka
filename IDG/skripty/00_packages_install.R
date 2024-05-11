@@ -6,14 +6,14 @@ install.packages(c(
     "stars",
     "tmap",
     "lwgeom",
-    "qgis",
+    "qgisprocess",
     "remotes",
     "tidymodels",
     "DT",
     "rmarkdown",
     "plotly",
     "tidymodels",
-    "easystats",
+    "easystats"
 ))
 
 remotes::install_github("JanCaha/r_package_qgis")
