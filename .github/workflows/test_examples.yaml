@@ -102,7 +102,7 @@ jobs:
             r-cran-rmarkdown \
             r-cran-easystats \
             r-cran-plotly \
-            r-cran-DT
+            r-cran-dt
       
       - name: IDG skripty
         run: |
