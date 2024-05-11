@@ -50,6 +50,9 @@ jobs:
 
     permissions:
       contents: write
+    
+    env:
+      R_LIBS_USER: /tmp/Rlibs
 
     steps:
       
@@ -84,5 +87,5 @@ jobs:
           do
             echo "--------------------"
             echo "*** $FILE ***"
-            Rscript -e "rmarkdown::render($FILE)" 
+            Rscript -e "rmarkdown::render('$FILE')" 
           done 
