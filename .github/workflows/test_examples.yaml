@@ -57,12 +57,19 @@ jobs:
     steps:
       
       - name: Test var
-        run:
+        run: |
           echo $R_LIBS_USER
           mkdir -p $R_LIBS_USER
           ls -l $R_LIBS_USER
           echo $HOME
-
+      
+      - name: Renv
+        run: |
+          ls -l $HOME
+          echo "R_LIBS_USER=/tmp/Rlibs" > $HOME/.Renviron
+          cat $HOME/.Renviron
+          ls -l $HOME
+          
       - name: Checkout
         uses: actions/checkout@v4
       
