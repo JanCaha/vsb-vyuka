@@ -29,6 +29,10 @@ jobs:
           activate-environment: env-project
           environment-file: conda-environment.yml
       
+      - name: R apt
+        run: |
+          sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+
       - name: Setup CRAN Binaries
         run: |  
           sudo wget -q https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc -O /etc/apt/trusted.gpg.d/cranapt_key.asc
