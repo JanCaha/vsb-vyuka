@@ -65,6 +65,9 @@ jobs:
     permissions:
       contents: write
     
+    env:
+      R_LIBS_USER: /tmp/Rlibs
+
     steps:
             
       - name: R env setup
