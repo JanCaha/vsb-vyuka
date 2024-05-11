@@ -38,7 +38,7 @@ jobs:
           sudo wget -q https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc -O /etc/apt/trusted.gpg.d/cranapt_key.asc
           echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main" | sudo tee /etc/apt/sources.list.d/cranapt.list
           sudo apt-get update
-          sudo apt-get install -y r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here
+          sudo apt-get install -y r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here r-cran-rmarkdown
       
       - name: PGIS2 data
         run: |
@@ -53,3 +53,20 @@ jobs:
             echo "*** $FILE ***"
             python3 $FILE 
           done
+      
+      - name: IDG skripty
+        run: |
+          FILES="./IDG/skripty/*.R"
+          for FILE in $FILES
+          do
+            echo "--------------------"
+            echo "*** $FILE ***"
+            RScript $FILE 
+          done    
+          FILES="./IDG/skripty/*.Rmd"
+          for FILE in $FILES
+          do
+            echo "--------------------"
+            echo "*** $FILE ***"
+            RScript -e "rmarkdown::render($FILE)" 
+          done 
