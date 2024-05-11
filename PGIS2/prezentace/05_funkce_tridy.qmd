@@ -58,7 +58,7 @@ def fn(a: str, b: int, c: float = 0.5) -> float: ...
 
 - funkce se třemi proměnnými 
   - první dvě povinné
-  - třetí nepovinná s výchozí hodnotou
+  - třetí nepovinná s výchozí hodnotou 
   
 ::: {.callout-warning}
 ### Pozor
@@ -71,7 +71,7 @@ Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hod
 ## Objekty
 
 - třída je šablona objektu, jednotlivý objekt je pak instancí třídy
-- objekt je prvk, které mají vlastní informace a s kterými můžeme vykonávat operace
+- objekt je prvek, které má vlastní informace a s kterými můžeme vykonávat operace
 - metody, vlastnosti (property) a atributy
 - složitost se může různit
 
