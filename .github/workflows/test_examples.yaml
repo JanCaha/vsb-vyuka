@@ -66,25 +66,13 @@ jobs:
     permissions:
       contents: write
     
-    env:
-      R_LIBS_USER: /tmp/Rlibs
-
     steps:
-      
-      - name: Test var
+            
+      - name: R env setup
         run: |
-          echo $R_LIBS_USER
-          mkdir -p $R_LIBS_USER
-          ls -l $R_LIBS_USER
-          echo $HOME
-      
-      - name: Renv
-        run: |
-          ls -l $HOME
           echo "R_LIBS_USER=/tmp/Rlibs" > $HOME/.Renviron
           cat $HOME/.Renviron
-          ls -l $HOME
-          
+
       - name: Checkout
         uses: actions/checkout@v4
       
@@ -95,17 +83,17 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y r-base
 
-      - name: R location
-        run: |
-          Rscript -e "Sys.getenv('R_LIBS_USER')"
-          Rscript -e ".libPaths()"
-
       - name: Setup CRAN Binaries
         run: |  
           sudo wget -q https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc -O /etc/apt/trusted.gpg.d/cranapt_key.asc
           echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main" | sudo tee /etc/apt/sources.list.d/cranapt.list
           sudo apt-get update
-          sudo apt-get install -y r-cran-sf r-cran-terra r-cran-stars r-cran-tidyverse r-cran-tidymodels r-cran-here r-cran-rmarkdown
+          sudo apt-get install -y \
+            r-cran-sf r-cran-raster r-cran-terra r-cran-stars \ 
+            r-cran-tidyverse r-cran-tidymodels \
+            r-cran-here \
+            r-cran-rmarkdown \
+            r-cran-easystats
       
       - name: IDG skripty
         run: |
