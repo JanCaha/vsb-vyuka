@@ -68,6 +68,7 @@ jobs:
 
       - name: R location
         run: |
+          Rscript -e "Sys.getenv('R_LIBS_USER')"
           Rscript -e ".libPaths()"
 
       - name: Setup CRAN Binaries
