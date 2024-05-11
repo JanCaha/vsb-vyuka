@@ -72,7 +72,8 @@ jobs:
             
       - name: R env setup
         run: |
-          echo "R_LIBS_USER=/tmp/Rlibs" > $HOME/.Renviron
+          mkdir -p $R_LIBS_USER
+          echo "R_LIBS_USER=$R_LIBS_USER" > $HOME/.Renviron
           cat $HOME/.Renviron
 
       - name: Checkout
