@@ -5,7 +5,7 @@
 - title: "Ukázkový report v rmarkdown"
   author: Jan Caha
   date: 2024-04-08
-  path: "IDG/skripty/01_ukázkový_report.Rmd"
+  path: "IDG/skripty/01_ukazkovy_report.Rmd"
 - title: "QGIS funkce v R"
   author: Jan Caha
   date: 2024-04-15
@@ -21,7 +21,7 @@
 - title: "Ukázka faktorové analýzy"
   author: Jan Caha
   date: 2024-05-06
-  path: "IDG/skripty/05_faktorová_analýza.R"
+  path: "IDG/skripty/05_faktorová_analyza.R"
 - title: "Ukázka PCA"
   author: Jan Caha
   date: 2024-05-06
@@ -29,9 +29,9 @@
 - title: "Ukázka shlukování"
   author: Jan Caha
   date: 2024-05-06
-  path: "IDG/skripty/07_shlukování.R"
+  path: "IDG/skripty/07_shlukovani.R"
 - title: "Ukázka rozhodovacích stromů"
   author: Jan Caha
   date: 2024-05-06
-  path: "IDG/skripty/08_rozhodovací_stromy.R"
+  path: "IDG/skripty/08_rozhodovaci_stromy.R"
   
