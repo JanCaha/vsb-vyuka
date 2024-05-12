@@ -44,7 +44,7 @@ def eval_file(file: pathlib.Path, conn: psycopg.Connection):
 
     sql_file = re.sub("--[\\w\\s();]+\\n", "", sql_file)
     sql_file = re.sub("\\/\\*[\\w\\s();\\W]+\\*\\/", "", sql_file)
-    sql_file = re.sub("\\n", "", sql_file)
+    sql_file = re.sub("\\n", " ", sql_file)
 
     sqls = sql_file.split(";")
     sqls = [sql.strip() for sql in sqls if sql]
