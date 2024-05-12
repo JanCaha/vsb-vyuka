@@ -53,7 +53,7 @@ jobs:
             echo "*** $FILE ***"
             python3 $FILE 
           done
- 
+
   test-r-examples:
 
     runs-on: ubuntu-22.04
@@ -156,8 +156,8 @@ jobs:
       
       - name: Import spatial data to Postgis
         run: |
-          cd PDBS2/skripty
-          ./02_load_data_to_postgis.sh
+          cd PDBS2/soubory
+          ../skripty/02_load_data_to_postgis.sh
       
       - name: Stop containers
         if: always()
