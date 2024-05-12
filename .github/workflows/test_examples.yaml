@@ -145,9 +145,9 @@ jobs:
         run: |
           sudo apt-get -y install gdal-bin
 
-      - name: PGIS2 data
+      - name: PDBS2 data
         run: |
-          cp -r ./PGIS2/soubory/ /tmp/postgres/
+          cp -r ./PDBS2/soubory/ /tmp/postgres/
           ls -l /tmp/postgres
 
       - name: Pip install psycopg
@@ -161,7 +161,7 @@ jobs:
       
       - name: Run Examples
         run: |
-          python3 PDBS2/soubory/run_examples.py ../skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
+          python3 PDBS2/soubory/run_examples.py PDBS2/skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
 
       - name: Stop containers
         if: always()
