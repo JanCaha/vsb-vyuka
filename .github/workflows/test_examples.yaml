@@ -159,6 +159,10 @@ jobs:
           cd PDBS2/soubory
           ../skripty/02_load_data_to_postgis.sh
       
+      - name: Run Examples
+        run: |
+          python3 PDBS2/soubory/run_examples.py ../skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
+
       - name: Stop containers
         if: always()
         run: docker-compose -f "PDBS2/soubory/postgresql-postgis-compose.yaml" down
