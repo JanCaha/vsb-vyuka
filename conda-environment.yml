@@ -25,6 +25,8 @@ dependencies:
   - pep8
   - flake8
   - pylint
+  # SQL
+  - psycopg
   # install using pip
   - pip:
     # pgis2
