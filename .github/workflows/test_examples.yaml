@@ -54,7 +54,7 @@ jobs:
             python3 $FILE 
           done
  
-  test-r-examples:
+  test-postgresql-examples:
 
     runs-on: ubuntu-22.04
 
@@ -65,58 +65,33 @@ jobs:
     permissions:
       contents: write
     
-    env:
-      R_LIBS_USER: /tmp/Rlibs
-
     steps:
             
-      - name: R env setup
-        run: |
-          mkdir -p $R_LIBS_USER
-          echo "R_LIBS_USER=$R_LIBS_USER" > $HOME/.Renviron
-          cat $HOME/.Renviron
-
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: R apt
+      - name: PostgreSQL
         run: |
-          sudo wget -q https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc -O /etc/apt/trusted.gpg.d/marutter_pubkey.asc
-          echo "deb [signed-by=/etc/apt/trusted.gpg.d/marutter_pubkey.asc] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | sudo tee /etc/apt/sources.list.d/r.list
-          sudo apt-get update
-          sudo apt-get install -y r-base
+          docker-compose -f "PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
 
-      - name: Test install Location
+      - name: Install GDAL
         run: |
-          Rscript -e ".libPaths()"
-    
-      - name: Setup CRAN Binaries
-        run: |  
-          sudo wget -q https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc -O /etc/apt/trusted.gpg.d/cranapt_key.asc
-          echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main" | sudo tee /etc/apt/sources.list.d/cranapt.list
-          sudo apt-get update
-          sudo apt-get install -y \
-            r-cran-sf r-cran-raster r-cran-terra r-cran-stars r-cran-tmap \
-            r-cran-tidyverse r-cran-tidymodels \
-            r-cran-here \
-            r-cran-rmarkdown \
-            r-cran-easystats \
-            r-cran-plotly \
-            r-cran-dt
+          sudo apt-get -y install gdal-bin
+
+      - name: PGIS2 data
+        run: |
+          cp -r ./PGIS2/soubory/ /tmp/postgres/
+          ls -l /tmp/postgres
+
+      - name: Pip install psycopg
+        run: |
+          pip install psycopg
       
-      - name: IDG skripty
+      - name: Import spatial data to Postgis
         run: |
-          FILES="./IDG/skripty/*.R"
-          for FILE in $FILES
-          do
-            echo "--------------------"
-            echo "*** $FILE ***"
-            Rscript $FILE 
-          done    
-          FILES="./IDG/skripty/*.Rmd"
-          for FILE in $FILES
-          do
-            echo "--------------------"
-            echo "*** $FILE ***"
-            Rscript -e "rmarkdown::render('$FILE')" 
-          done 
+          cd PDBS2/skripty
+          ./02_load_data_to_postgis.sh
+      
+      - name: Stop containers
+        if: always()
+        run: docker-compose -f "PDBS2/soubory/postgresql-postgis-compose.yaml" down

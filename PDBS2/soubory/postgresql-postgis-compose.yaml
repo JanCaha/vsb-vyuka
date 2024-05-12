@@ -1,0 +1,12 @@
+services:
+  postgres:
+    container_name: postgis
+    image: postgis/postgis:16-master
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: heslo
+      PGDATA: /data/postgres
+    volumes:
+      - ${HOME}/PG_Data:/data/postgres
+    ports:
+      - "5432:5432"
