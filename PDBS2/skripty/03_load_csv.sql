@@ -1,4 +1,4 @@
-DROP TABLE sample_table IF EXISTS;
+DROP TABLE IF EXISTS sample_table;
 
 CREATE TABLE sample_table (
   id SERIAL,
@@ -17,4 +17,4 @@ e,6
 f,7 
 */
 
-COPY sample_table(text, value) FROM '/tmp/file.csv' DELIMITER ',' CSV HEADER;
+COPY sample_table(text, value) FROM '/tmp/postgres/example_file.csv' DELIMITER ',' CSV HEADER;
