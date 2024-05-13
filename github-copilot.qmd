@@ -1,0 +1,23 @@
+---
+title: Github Copilot
+---
+
+Github Copilot je AI nástroj, napomáhající s programováním a to pomocí tvorby kódu (přednapovídání), nebo pomocí schopnosti vysvětlit či opravit existující kód. Jedná se primárně o placený nástroj, nicméně studenti mají k této službě přístup zdarma.
+
+## Získání studentského přístupu
+
+- zřízení účtu na [Github](github.com), primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu (aby nedošlo k blokaci účtu po ztátě studentského statusu)
+- požádání o studentský přístup na Github dle [článku](https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279), primárně se to řeší na webu [https://education.github.com/](https://education.github.com/pack?WT.mc_id=academic-88217-leestott)
+- ověření nějakou dobou trvá cca. 1-2 dny, ale i týden
+- následně se lze ve **VS Code**, či jiném IDE, které to podporuje (např. RStudio), pomocí tohoto účtu přihlásit a měl by být dostupý **GitHub Copilot**  
+
+## Zprovoznění v VS Code
+
+- instalace extenze **GitHub Copilot**
+- přihlášení do **GitHub Copilot** pomocí **GitHub** účtu, který byl ověřen a má ke službě přistup (viz výše)
+- následně začně fungovat přednapovídání kódu a chatovací okno (dostupné z menu **View** -> **Open View...** -> **Chat**)
+
+## Zprovoznění v RStudio
+
+- vyžaduje verzi novější než 2023.09.0
+- přihlášení pomocí **GitHub účtu** je dostupné přes menu **Tools** -> **Global Options...** -> **Copilot**, zde se lze přihlásit, plus nastavit základní možnosti

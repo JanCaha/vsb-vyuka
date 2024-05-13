@@ -99,11 +99,27 @@ Vynechání složek např. při prohledávání souborů
     },
 ```
 
+## Extenze
+
+- extenze lze instalovat buď globálně do uživatelského profilu a nebo uložit do souboru `.vscode/extensions.json` ve složce projektu, tyto extenze pak budou dostupné specificky pro daný projekt
+
+### Doporučené extenze pro VS Code
+
+V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
+
+- **GitHub Copilot** (GitHub.copilot) - umělá inteligence pro psaní kódu
+- **Czech - Code Spell Checker** (streetsidesoftware.code-spell-checker-czech) - český slovník pro kontroly pravopisu, pokud bude část textů v češtině
+- **SVG** (jock.svg) - zobrazování a úpravy SVG souborů
+- **Todo Highlight** (wayou.vscode-todo-highlight) - zvýraznění TODO a podobných komentářů
+- **YAML** (redhat.vscode-yaml) - podpora YAML formátu
+- **Markdown All in One** (yzhang.markdown-all-in-one) - podpora Markdown formátu
+- **markdownlint** (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu
+
 ### Doporučené extenze pro Python
 
 - některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu [PGIS2](pgis2.qmd)
-- uložit do souboru `.vscode/extensions.json` ve složce projektu
- 
+- níže následuje seznam doporučených extenzí pro Python
+  
 ```json
 {
 	// List of extensions which should be recommended for users of this workspace.
