@@ -1559,7 +1559,7 @@
     "href": "IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.64145385 -0.08038608 -0.15201706 -0.62746898 -0.07779812"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.23498581 -0.50121126 -0.07168453 -0.54396321 -0.84220778"
   },
   {
     "objectID": "IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1783,6 +1783,6 @@
     "href": "github-copilot.html#zprovoznění-v-rstudio",
     "title": "Github Copilot",
     "section": "Zprovoznění v RStudio",
-    "text": "Zprovoznění v RStudio\n\nvyžaduje verzi novější než 2023.09.0\npřihlášení pomocí GitHub účtu je dostupné přes menu Tools -&gt; Global Options… -&gt; Copilot, zde se lze přihlásit, plus nastavit základní možnosti"
+    "text": "Zprovoznění v RStudio\n\nvyžaduje verzi novější než 2023.09.0\npřihlášení pomocí GitHub účtu je dostupné přes menu Tools -&gt; Global Options… -&gt; Copilot, zde se lze přihlásit, plus nastavit základní možnosti\nnásledně začně fungovat přednapovídání kódu, lze i klást otázky a získávat odpovědi - viz detaily"
   }
 ]
