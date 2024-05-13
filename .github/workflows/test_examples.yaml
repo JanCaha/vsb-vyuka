@@ -26,19 +26,9 @@ jobs:
           activate-environment: env-project
           environment-file: conda-environment.yml
       
-      - name: R apt
+      - name: Install R and packages
         run: |
-          sudo wget -q https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc -O /etc/apt/trusted.gpg.d/marutter_pubkey.asc
-          echo "deb [signed-by=/etc/apt/trusted.gpg.d/marutter_pubkey.asc] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | sudo tee /etc/apt/sources.list.d/r.list
-          sudo apt-get update
-          sudo apt-get install -y r-base
-  
-      - name: Setup CRAN Binaries
-        run: |  
-          sudo wget -q https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc -O /etc/apt/trusted.gpg.d/cranapt_key.asc
-          echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main" | sudo tee /etc/apt/sources.list.d/cranapt.list
-          sudo apt-get update
-          sudo apt-get install -y r-cran-ggplot2    
+          sudo ./linux_install_R.sh  -g
 
       - name: PGIS2 data
         run: |
