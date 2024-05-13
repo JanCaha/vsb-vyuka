@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Výuka - Jan Caha - Programování v GIS 2 (PGIS2)</title>
+<title>Výuka - Jan Caha - Github Copilot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -63,9 +29,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./idg.html" rel="next">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,95 +67,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-prezentace .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-prezentace'] = new List('listing-prezentace', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-codes .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-codes'] = new List('listing-codes', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Výuka - Jan Caha - Programování v GIS 2 (PGIS2)">
+<meta property="og:title" content="Výuka - Jan Caha - Github Copilot">
 <meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -206,7 +83,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="./pgis2.html">Programování v GIS 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Výuka - Jan Caha
+      </li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -237,16 +116,16 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Předměty letní semestr</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pgis2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./pgis2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 2</span></a>
   </div>
 </li>
@@ -307,22 +186,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#řešená-témata" id="toc-řešená-témata" class="nav-link active" data-scroll-target="#řešená-témata">📃 Řešená témata</a></li>
-  <li><a href="#seminární-práce" id="toc-seminární-práce" class="nav-link" data-scroll-target="#seminární-práce">📝 Seminární práce</a></li>
-  <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">📑Prezentace</a></li>
-  <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">📚 Zdroje</a></li>
-  <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">💻 Ukázkové kódy</a></li>
-  <li><a href="#instalace" id="toc-instalace" class="nav-link" data-scroll-target="#instalace">🖥 Instalace</a></li>
-  <li><a href="#další" id="toc-další" class="nav-link" data-scroll-target="#další">Další</a></li>
+  <li><a href="#získání-studentského-přístupu" id="toc-získání-studentského-přístupu" class="nav-link active" data-scroll-target="#získání-studentského-přístupu">Získání studentského přístupu</a></li>
+  <li><a href="#zprovoznění-v-vs-code" id="toc-zprovoznění-v-vs-code" class="nav-link" data-scroll-target="#zprovoznění-v-vs-code">Zprovoznění v VS Code</a></li>
+  <li><a href="#zprovoznění-v-rstudio" id="toc-zprovoznění-v-rstudio" class="nav-link" data-scroll-target="#zprovoznění-v-rstudio">Zprovoznění v RStudio</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="./pgis2.html">Programování v GIS 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Programování v GIS 2 (PGIS2)</h1>
+<h1 class="title">Github Copilot</h1>
 </div>
 
 
@@ -339,248 +214,30 @@ window.Quarto = {
 </header>
 
 
-<section id="řešená-témata" class="level2">
-<h2 class="anchored" data-anchor-id="řešená-témata">📃 Řešená témata</h2>
+<p>Github Copilot je AI nástroj, napomáhající s programováním a to pomocí tvorby kódu (přednapovídání), nebo pomocí schopnosti vysvětlit či opravit existující kód. Jedná se primárně o placený nástroj, nicméně studenti mají k této službě přístup zdarma.</p>
+<section id="získání-studentského-přístupu" class="level2">
+<h2 class="anchored" data-anchor-id="získání-studentského-přístupu">Získání studentského přístupu</h2>
 <ul>
-<li>opakování základů Pythonu</li>
-<li>knihovna GDAL/OGR</li>
-<li>knihovny rasterio, fiona, shapely</li>
-<li>Github Copilot</li>
-<li>funkce a objekty v Pythonu</li>
-<li>Pandas, geopandas, Polars, geopolars</li>
+<li>zřízení účtu na <a href="github.com">Github</a>, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu (aby nedošlo k blokaci účtu po ztátě studentského statusu)</li>
+<li>požádání o studentský přístup na Github dle <a href="https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279">článku</a>, primárně se to řeší na webu <a href="https://education.github.com/pack?WT.mc_id=academic-88217-leestott">https://education.github.com/</a></li>
+<li>ověření nějakou dobou trvá cca. 1-2 dny, ale i týden</li>
+<li>následně se lze ve <strong>VS Code</strong>, či jiném IDE, které to podporuje (např. RStudio), pomocí tohoto účtu přihlásit a měl by být dostupý <strong>GitHub Copilot</strong></li>
 </ul>
 </section>
-<section id="seminární-práce" class="level2">
-<h2 class="anchored" data-anchor-id="seminární-práce">📝 Seminární práce</h2>
-<p>Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte kteroukoliv z knihoven, představených během výuky. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript spolu s testovacími daty odevzdejte e-mailem.</p>
-</section>
-<section id="prezentace" class="level2">
-<h2 class="anchored" data-anchor-id="prezentace">📑Prezentace</h2>
-<div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Prezentace
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1715600976560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="126" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
-<td>
-<span class="listing-date">2024-02-19</span>
-</td>
-<td>
-<a href="./PGIS2/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1715600976560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="695" data-listing-title-sort="Opakování Pythonu" data-listing-filename-sort="02_opakovani_python.qmd">
-<td>
-<span class="listing-date">2024-02-26</span>
-</td>
-<td>
-<a href="./PGIS2/prezentace/02_opakovani_python.html" class="title listing-title">Opakování Pythonu</a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1715600976560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="456" data-listing-title-sort="Knihovna [GDAL/OGR]{.software}" data-listing-filename-sort="03_gdal_ogr.qmd">
-<td>
-<span class="listing-date">2024-03-04</span>
-</td>
-<td>
-<a href="./PGIS2/prezentace/03_gdal_ogr.html" class="title listing-title">Knihovna <span class="software">GDAL/OGR</span></a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1710720000000" data-listing-file-modified-sort="1715600976560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="266" data-listing-title-sort="Knihovny [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}" data-listing-filename-sort="04_fiona_rasterio_shapely.qmd">
-<td>
-<span class="listing-date">2024-03-18</span>
-</td>
-<td>
-<a href="./PGIS2/prezentace/04_fiona_rasterio_shapely.html" class="title listing-title">Knihovny <span class="software">fiona</span>, <span class="software">rasterio</span>, <span class="software">shapely</span></a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1713139200000" data-listing-file-modified-sort="1715600976560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="514" data-listing-title-sort="Funkce a třídy" data-listing-filename-sort="05_funkce_tridy.qmd">
-<td>
-<span class="listing-date">2024-04-15</span>
-</td>
-<td>
-<a href="./PGIS2/prezentace/05_funkce_tridy.html" class="title listing-title">Funkce a třídy</a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1714348800000" data-listing-file-modified-sort="1715600976560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="293" data-listing-title-sort="Datové rámce v Pythonu - pandas, geopandas a polars a geopolars" data-listing-filename-sort="06_pandas_polars.qmd">
-<td>
-<span class="listing-date">2024-04-29</span>
-</td>
-<td>
-<a href="./PGIS2/prezentace/06_pandas_polars.html" class="title listing-title">Datové rámce v Pythonu - pandas, geopandas a polars a geopolars</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="zdroje" class="level2">
-<h2 class="anchored" data-anchor-id="zdroje">📚 Zdroje</h2>
+<section id="zprovoznění-v-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="zprovoznění-v-vs-code">Zprovoznění v VS Code</h2>
 <ul>
-<li>data <a href="https://www.naturalearthdata.com/">Natural Earth</a></li>
-<li><a href="https://pcjericks.github.io/py-gdalogr-cookbook/">GDAL/OGR Cookbook</a></li>
-<li><a href="https://py.geocompx.org/">Geocomputation with Python</a></li>
+<li>instalace extenze <strong>GitHub Copilot</strong></li>
+<li>přihlášení do <strong>GitHub Copilot</strong> pomocí <strong>GitHub</strong> účtu, který byl ověřen a má ke službě přistup (viz výše)</li>
+<li>následně začně fungovat přednapovídání kódu a chatovací okno (dostupné z menu <strong>View</strong> -&gt; <strong>Open View…</strong> -&gt; <strong>Chat</strong>)</li>
 </ul>
 </section>
-<section id="ukázkové-kódy" class="level2">
-<h2 class="anchored" data-anchor-id="ukázkové-kódy">💻 Ukázkové kódy</h2>
-<div id="listing-codes" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Skript
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1710115200000" data-listing-title-sort="GDAL/OGR načtení vektorových dat">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PGIS2/skripty/01_ogr.py" class="title listing-title">GDAL/OGR načtení vektorových dat</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1710115200000" data-listing-title-sort="GDAL/OGR načtení rastrových dat">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PGIS2/skripty/02_gdal.py" class="title listing-title">GDAL/OGR načtení rastrových dat</a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1710720000000" data-listing-title-sort="GDAL/OGR editace vektorových dat">
-<td>
-<span class="listing-date">2024-03-18</span>
-</td>
-<td>
-<a href="PGIS2/skripty/03_ogr_edit.py" class="title listing-title">GDAL/OGR editace vektorových dat</a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1710720000000" data-listing-title-sort="Fiona editace vektorových dat">
-<td>
-<span class="listing-date">2024-03-18</span>
-</td>
-<td>
-<a href="PGIS2/skripty/04_fiona.py" class="title listing-title">Fiona editace vektorových dat</a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1711324800000" data-listing-title-sort="Rasterio informace o souboru">
-<td>
-<span class="listing-date">2024-03-25</span>
-</td>
-<td>
-<a href="PGIS2/skripty/05_rasterio_read.py" class="title listing-title">Rasterio informace o souboru</a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1711324800000" data-listing-title-sort="Rasterio kopírování pásma do nového souboru">
-<td>
-<span class="listing-date">2024-03-25</span>
-</td>
-<td>
-<a href="PGIS2/skripty/06_rasterio_copy_band.py" class="title listing-title">Rasterio kopírování pásma do nového souboru</a>
-</td>
-</tr>
-<tr data-index="6" data-listing-date-sort="1711324800000" data-listing-title-sort="GDAL manipulace s rastrem">
-<td>
-<span class="listing-date">2024-03-25</span>
-</td>
-<td>
-<a href="PGIS2/skripty/07_gdal_raster_operations.py" class="title listing-title">GDAL manipulace s rastrem</a>
-</td>
-</tr>
-<tr data-index="7" data-listing-date-sort="1713139200000" data-listing-title-sort="Ukázka tvorby objektu">
-<td>
-<span class="listing-date">2024-04-15</span>
-</td>
-<td>
-<a href="PGIS2/skripty/08_objekt.py" class="title listing-title">Ukázka tvorby objektu</a>
-</td>
-</tr>
-<tr data-index="8" data-listing-date-sort="1713139200000" data-listing-title-sort="Funkce v souboru utils">
-<td>
-<span class="listing-date">2024-04-15</span>
-</td>
-<td>
-<a href="PGIS2/skripty/utils.py" class="title listing-title">Funkce v souboru utils</a>
-</td>
-</tr>
-<tr data-index="9" data-listing-date-sort="1714348800000" data-listing-title-sort="Polars - základní operace">
-<td>
-<span class="listing-date">2024-04-29</span>
-</td>
-<td>
-<a href="PGIS2/skripty/09_polars.py" class="title listing-title">Polars - základní operace</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="instalace" class="level2">
-<h2 class="anchored" data-anchor-id="instalace">🖥 Instalace</h2>
+<section id="zprovoznění-v-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="zprovoznění-v-rstudio">Zprovoznění v RStudio</h2>
 <ul>
-<li>management Pythonu - <a href="https://docs.anaconda.com/free/miniconda/index.html">Miniconda</a></li>
-<li>IDE - <a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
-<li>extenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator</li>
-<li>instalace Conda environmentu</li>
+<li>vyžaduje verzi novější než 2023.09.0</li>
+<li>přihlášení pomocí <strong>GitHub účtu</strong> je dostupné přes menu <strong>Tools</strong> -&gt; <strong>Global Options…</strong> -&gt; <strong>Copilot</strong>, zde se lze přihlásit, plus nastavit základní možnosti</li>
 </ul>
-<p>Definice environment souboru, např. s názvem <code>env-pgis2.yaml</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> pgis2</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> defaults</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dependencies</span><span class="kw">:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> python=3.11</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pip</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> GDAL</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> fiona</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> rasterio</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> shapely</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pandas</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> geopandas</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> polars</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">  # VS Code extensions</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> black</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> isort</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> mypy</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pep8</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> flake8</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> pylint</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">pip</span><span class="kw">:</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> geopolars</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Z conda prompt následně spustit:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-f</span> env-pgis2.yaml</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="další" class="level2">
-<h2 class="anchored" data-anchor-id="další">Další</h2>
-<ul>
-<li>zřízení účtu na <a href="github.com">Github</a>, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu</li>
-<li>požádání o studentský přístup na Github dle <a href="https://techcommunity.microsoft.com/t5/educator-developer-blog/step-by-step-setting-up-github-student-and-github-copilot-as-an/ba-p/3736279">článku</a></li>
-<li>ověření nějakou dobou trvá cca. 1-2 dny</li>
-<li>následně se lze ve <strong>VS Code</strong> pomocí tohoto účtu přihlásit a měl by být dostupý <strong>GitHub Copilot</strong></li>
-</ul>
-
 
 
 </section>
@@ -1139,15 +796,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./idg.html" class="pagination-link" aria-label="Interpretace geodat">
-        <span class="nav-page-text">Interpretace geodat</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
