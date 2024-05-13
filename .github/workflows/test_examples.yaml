@@ -161,7 +161,7 @@ jobs:
       
       - name: Run Examples
         run: |
-          python3 PDBS2/soubory/run_examples.py PDBS2/skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
+          python3 PDBS2/soubory/sql_scripts_runner.py PDBS2/skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
 
       - name: Stop containers
         if: always()

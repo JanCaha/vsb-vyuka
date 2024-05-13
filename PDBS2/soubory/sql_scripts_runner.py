@@ -14,7 +14,7 @@ def parse_args(arg_list: list[str] | None):
     """Parse arguments."""
 
     parser = argparse.ArgumentParser(
-        prog="sql_runner.py",
+        prog="sql_scripts_runner.py",
         description="Run SQL scripts from folder and show outputs.",
         epilog="Author: Jan Caha",
     )
