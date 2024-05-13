@@ -44,6 +44,9 @@ while true; do
   esac
 done
 
+echo "Install all packages - $ALL_PACKAGES"
+echo "Install ggplot2 package - $GGPLOT2"
+
 # Prepare and install R
 sudo wget -q https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc -O /etc/apt/trusted.gpg.d/marutter_pubkey.asc
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/marutter_pubkey.asc] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | sudo tee /etc/apt/sources.list.d/r.list
@@ -56,16 +59,18 @@ echo "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main" | sudo t
 sudo apt-get update
 
 if [ "$ALL_PACKAGES" = true ]; then
-    sudo apt-get install -y \
-        r-cran-sf r-cran-terra r-cran-raster r-cran-stars r-cran-tmap \
-        r-cran-tidyverse r-cran-tidymodels \
-        r-cran-here \
-        r-cran-dt \
-        r-cran-rmarkdown \
-        r-cran-plotly \
-        r-cran-easystats
+  echo "Installing all R packages"
+  sudo apt-get install -y \
+      r-cran-sf r-cran-terra r-cran-raster r-cran-stars r-cran-tmap \
+      r-cran-tidyverse r-cran-tidymodels \
+      r-cran-here \
+      r-cran-dt \
+      r-cran-rmarkdown \
+      r-cran-plotly \
+      r-cran-easystats
 fi
 
 if [ "$GGPLOT2" = true ]; then
-    sudo apt-get install -y r-cran-ggplot2
+  echo "Installing ggplot2 package"
+  sudo apt-get install -y r-cran-ggplot2
 fi
