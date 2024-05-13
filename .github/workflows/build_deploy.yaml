@@ -43,6 +43,8 @@ jobs:
         run: quarto render .    
       
       - name: Publish to GitHub Pages
+        if: 
+          contains('refs/heads/main', github.ref)
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
