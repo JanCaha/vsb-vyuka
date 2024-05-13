@@ -21,3 +21,4 @@ Github Copilot je AI nástroj, napomáhající s programováním a to pomocí tv
 
 - vyžaduje verzi novější než 2023.09.0
 - přihlášení pomocí **GitHub účtu** je dostupné přes menu **Tools** -> **Global Options...** -> **Copilot**, zde se lze přihlásit, plus nastavit základní možnosti
+- následně začně fungovat přednapovídání kódu, lze i klást otázky a získávat odpovědi - [viz detaily](https://docs.posit.co/ide/user/ide/guide/tools/copilot.html)
