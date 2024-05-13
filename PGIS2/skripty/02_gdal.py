@@ -11,11 +11,11 @@ if __name__ == "__main__":
 
     print(file.exists())
 
-    driver: gdal.Driver = gdal.IdentifyDriverEx(file.as_posix())
+    driver: gdal.Driver = gdal.IdentifyDriverEx(file)
 
     print(f"Driver: {driver.LongName}")
 
-    ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+    ds: gdal.Dataset = gdal.OpenEx(file)
 
     print(f"Number of bands: {ds.RasterCount}")
 
@@ -25,3 +25,7 @@ if __name__ == "__main__":
     print(f"Band data type: {gdal.GetDataTypeName(band.DataType)}")
 
     data = band.ReadAsArray(0, 0, band.XSize, band.YSize)
+
+    # je vhodné explicitně uvolnit paměť těchto proměnných
+    band = None
+    ds = None
