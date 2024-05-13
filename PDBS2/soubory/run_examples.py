@@ -42,7 +42,7 @@ def eval_file(file: pathlib.Path, conn: psycopg.Connection):
     with open(file, "r", encoding="UTF-8") as f:
         sql_file = f.read()
 
-    sql_file = re.sub("--[\\w\\s();]+\\n", "", sql_file)
+    sql_file = re.sub("--[\\w\\s();]+?\\n", "", sql_file)
     sql_file = re.sub("\\/\\*[\\w\\s();\\W]+\\*\\/", "", sql_file)
     sql_file = re.sub("\\n", " ", sql_file)
 
@@ -80,4 +80,8 @@ def main(arg_list: list[str] | None = None):
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    eval_files(
+        pathlib.Path("PDBS2/skripty"),
+        psycopg.connect("dbname=postgres host=localhost user=admin port=5432 password=root"),
+    )
