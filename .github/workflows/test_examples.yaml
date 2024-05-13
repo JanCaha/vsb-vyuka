@@ -28,7 +28,7 @@ jobs:
       
       - name: Install R and packages
         run: |
-          sudo ./linux_install_R.sh  -g
+          sudo ./linux_install_R.sh  --ggplot2
 
       - name: PGIS2 data
         run: |
@@ -71,7 +71,7 @@ jobs:
       
       - name: Install R and packages
         run: |
-          sudo ./linux_install_R.sh  -a
+          sudo ./linux_install_R.sh  --all
       
       - name: IDG skripty
         run: |

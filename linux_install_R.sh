@@ -1,19 +1,44 @@
+#!/bin/bash
+
 ALL_PACKAGES=false
 GGPLOT2=false
-while getopts "ag" opt; do
-  case $opt in
-    a)
+
+function usage() {
+    echo "Usage: $0 [OPTIONS]"
+    echo "    -a,--all           Install all R packages."
+    echo "    -g,--ggplot2       Install ggplot2 package."
+    echo "    -h,--help          Display the usage and exit."
+}
+
+OPTS=`getopt --options agh \
+         --long all,ggplot2,help \
+         --name "$0" -- "$@"`
+eval set -- "$OPTS"
+
+while true; do
+  case $1 in
+    -a|--all)
       ALL_PACKAGES=true
+      shift
       ;;
-    g)
-      GGPLOT2==true
+    -g|--ggplot2)
+      GGPLOT2=true
+      shift
       ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      exit 1
+    -h|--help)
+      usage
+      exit 0
       ;;
-    :)
-      echo "Option -$OPTARG requires an argument." >&2
+    --)
+	if [ ! -z $2 ];
+      then
+        echo "Invalid parameter: $2"
+        exit 1
+      fi
+      break
+      ;;
+    *)
+      echo "Invalid option"
       exit 1
       ;;
   esac

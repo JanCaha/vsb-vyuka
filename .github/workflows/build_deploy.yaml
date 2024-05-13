@@ -31,7 +31,7 @@ jobs:
       
       - name: Install R and packages
         run: |
-          sudo ./linux_install_R.sh  -a
+          sudo ./linux_install_R.sh  --all
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
