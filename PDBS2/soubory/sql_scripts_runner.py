@@ -80,8 +80,4 @@ def main(arg_list: list[str] | None = None):
 
 
 if __name__ == "__main__":
-    # main()
-    eval_files(
-        pathlib.Path("PDBS2/skripty"),
-        psycopg.connect("dbname=postgres host=localhost user=admin port=5432 password=root"),
-    )
+    main()
