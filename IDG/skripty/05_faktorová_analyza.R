@@ -1,8 +1,10 @@
 # knihovny ----------------------------------------------------------------
+install.packages(c(psych))
 
 library(tidyverse)
 library(performance) # easystats
 library(parameters) # easystats
+library(psych)
 
 # příprava data -----------------------------------------------------------
 
