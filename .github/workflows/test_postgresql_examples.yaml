@@ -8,6 +8,18 @@ jobs:
 
     runs-on: ubuntu-22.04
 
+    services:
+      postgres:
+        image: postgis/postgis:16-master
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: heslo
+          PGDATA: /data/postgres
+        volumes:
+          - /tmp:/tmp
+        ports:
+          - 5432:5432
+
     defaults:
       run:
         shell: bash -l {0}
@@ -23,10 +35,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: PostgreSQL
-        run: |
-          docker compose -f "subjects/PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
-          
       - name: Pip install psycopg
         run: |
           pip install psycopg
@@ -43,7 +51,6 @@ jobs:
         run: |
           cp -r ./subjects/PDBS2/soubory/ /tmp/postgres/
           ls -l /tmp/postgres
-
       
       - name: Import spatial data to Postgis
         run: |
@@ -53,7 +60,3 @@ jobs:
       - name: Run Examples
         run: |
           python3 subjects/PDBS2/soubory/sql_scripts_runner.py subjects/PDBS2/skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
-
-      - name: Stop containers
-        if: always()
-        run: docker-compose -f "PDBS2/soubory/postgresql-postgis-compose.yaml" down
