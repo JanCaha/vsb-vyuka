@@ -18,6 +18,9 @@ jobs:
     
     steps:
       
+      - name: Stop Postgres
+        run: sudo service postgresql stop
+
       - name: Checkout
         uses: actions/checkout@v4
       
