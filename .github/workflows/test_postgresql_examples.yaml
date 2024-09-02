@@ -39,6 +39,10 @@ jobs:
         run: |
           pip install psycopg --break-system-packages
       
+      - name: Test
+        run: |
+          python3 -c 'import psycopg; psycopg.connect("dbname=postgres host=localhost user=postgres port=5432 password=heslo")'
+
       - name: Import spatial data to Postgis
         run: |
           cd subjects/PDBS2/soubory
