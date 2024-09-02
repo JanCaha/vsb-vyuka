@@ -32,11 +32,11 @@ jobs:
 
       - name: PGIS2 data
         run: |
-          ./PGIS2/soubory/get_data.sh
+          ./subjects/PGIS2/soubory/get_data.sh
 
       - name: PGIS2 skripty
         run: |
-          FILES="./PGIS2/skripty/*.py"
+          FILES="./subjects/PGIS2/skripty/*.py"
           for FILE in $FILES
           do
             echo "--------------------"
@@ -75,14 +75,14 @@ jobs:
       
       - name: IDG skripty
         run: |
-          FILES="./IDG/skripty/*.R"
+          FILES="./subjects/IDG/skripty/*.R"
           for FILE in $FILES
           do
             echo "--------------------"
             echo "*** $FILE ***"
             Rscript $FILE 
           done    
-          FILES="./IDG/skripty/*.Rmd"
+          FILES="./subjects/IDG/skripty/*.Rmd"
           for FILE in $FILES
           do
             echo "--------------------"
@@ -116,7 +116,7 @@ jobs:
 
       - name: PDBS2 data
         run: |
-          cp -r ./PDBS2/soubory/ /tmp/postgres/
+          cp -r ./subjects/PDBS2/soubory/ /tmp/postgres/
           ls -l /tmp/postgres
 
       - name: Pip install psycopg
@@ -125,12 +125,12 @@ jobs:
       
       - name: Import spatial data to Postgis
         run: |
-          cd PDBS2/soubory
+          cd subjects/PDBS2/soubory
           ../skripty/02_load_data_to_postgis.sh
       
       - name: Run Examples
         run: |
-          python3 PDBS2/soubory/sql_scripts_runner.py PDBS2/skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
+          python3 subjects/PDBS2/soubory/sql_scripts_runner.py PDBS2/skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
 
       - name: Stop containers
         if: always()
