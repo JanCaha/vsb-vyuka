@@ -41,8 +41,8 @@ jobs:
       
       - name: Import spatial data to Postgis
         run: |
-          cd subjects/PDBS2
-          ./skripty/02_load_data_to_postgis.sh
+          cd subjects/PDBS2/soubory
+          ../skripty/02_load_data_to_postgis.sh
       
       - name: Run Examples
         run: |
