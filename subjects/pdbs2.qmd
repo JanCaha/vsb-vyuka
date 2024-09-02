@@ -58,7 +58,7 @@ filters:
 
 ## 🖥 Instalace PostregSQL
 
-- viz odkaz [Linux Mint](linux-mint.qmd) - potřebujeme jednak akktuální GIS softwary a PostgreSQL (detaily na stránce)
+- viz odkaz [Linux Mint](../tools/linux-mint.qmd) - potřebujeme jednak akktuální GIS softwary a PostgreSQL (detaily na stránce)
 
 ### Docker
 

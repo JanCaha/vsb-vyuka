@@ -8,9 +8,9 @@ Materiály pro moje předměty vyučované v roce **{{< var dates.school-year >}
 
 ## Letní semestr
 
-- [Programování v GIS 2 (PGIS2)](pgis2.qmd)
-- [Interpretace geodat (IDG)](idg.qmd)
-- [Prostorové databázové systémy 2 (PDBS2)](pdbs2.qmd)
+- [Programování v GIS 2 (PGIS2)](subjects/pgis2.qmd)
+- [Interpretace geodat (IDG)](subjects/idg.qmd)
+- [Prostorové databázové systémy 2 (PDBS2)](subjects/pdbs2.qmd)
 
 ## Nástroje 
 

@@ -27,11 +27,11 @@ website:
     contents:
       - section: Předměty letní semestr
         contents:
-        - href: pgis2.qmd
+        - href: subjects/pgis2.qmd
           text: Programování v GIS 2
-        - href: idg.qmd
+        - href: subjects/idg.qmd
           text: Interpretace geodat
-        - href: pdbs2.qmd
+        - href: subjects/pdbs2.qmd
           text: Prostorové databázové systémy 2
       - section: Předměty zimní semestr
       - section: "Nástroje"
