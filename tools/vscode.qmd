@@ -117,7 +117,7 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 
 ### Doporučené extenze pro Python
 
-- některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu [PGIS2](pgis2.qmd)
+- některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu [PGIS2](../subjects/pgis2.qmd)
 - níže následuje seznam doporučených extenzí pro Python
   
 ```json
