@@ -8,18 +8,6 @@ jobs:
 
     runs-on: ubuntu-22.04
 
-    services:
-      postgres:
-        image: postgis/postgis:16-master
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: heslo
-          PGDATA: /data/postgres
-        volumes:
-          - /tmp:/tmp
-        ports:
-          - 5432:5432
-
     defaults:
       run:
         shell: bash -l {0}
@@ -34,7 +22,11 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
-        
+
+      - name: PostgreSQL
+        run: |
+          docker compose -f "subjects/PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
+          
       - name: Pip install psycopg
         run: |
           pip install psycopg
