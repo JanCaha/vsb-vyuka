@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Výuka - Jan Caha</title>
+<title>Interpretace geodat (IDG) – Výuka - Jan Caha</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../subjects/pdbs2.html" rel="next">
+<link href="../subjects/pgis2.html" rel="prev">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -67,9 +105,95 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-prezentace .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<meta property="og:title" content="Výuka - Jan Caha">
+    const options = {
+      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-prezentace'] = new List('listing-prezentace', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-codes .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-codes'] = new List('listing-codes', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Interpretace geodat (IDG) – Výuka - Jan Caha">
 <meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -83,9 +207,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Výuka - Jan Caha
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/idg.html">Interpretace geodat</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -100,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Výuka - Jan Caha</a> 
+      <a href="../">Výuka - Jan Caha</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/JanCaha/vsb-vyuka" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -116,28 +238,28 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Předměty letní semestr</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pgis2.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pgis2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/idg.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/idg.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Interpretace geodat</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pdbs2.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pdbs2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prostorové databázové systémy 2</span></a>
   </div>
 </li>
@@ -158,25 +280,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/vscode.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/vscode.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visual Studio Code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/linux-mint.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/linux-mint.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux Mint</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OSGeo4W</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/github-copilot.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/github-copilot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Copilot</span></a>
   </div>
 </li>
@@ -192,18 +314,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zimní-semestr" id="toc-zimní-semestr" class="nav-link active" data-scroll-target="#zimní-semestr">Zimní semestr</a></li>
-  <li><a href="#letní-semestr" id="toc-letní-semestr" class="nav-link" data-scroll-target="#letní-semestr">Letní semestr</a></li>
-  <li><a href="#nástroje" id="toc-nástroje" class="nav-link" data-scroll-target="#nástroje">Nástroje</a></li>
+  <li><a href="#řešená-témata" id="toc-řešená-témata" class="nav-link active" data-scroll-target="#řešená-témata">📃 Řešená témata</a></li>
+  <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">📑Prezentace</a></li>
+  <li><a href="#seminární-práce" id="toc-seminární-práce" class="nav-link" data-scroll-target="#seminární-práce">📝 Seminární práce</a></li>
+  <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">📚 Zdroje</a></li>
+  <li><a href="#další-zajímavé-zdroje" id="toc-další-zajímavé-zdroje" class="nav-link" data-scroll-target="#další-zajímavé-zdroje">Další zajímavé zdroje</a></li>
+  <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">💻 Ukázkové kódy</a></li>
+  <li><a href="#instalace" id="toc-instalace" class="nav-link" data-scroll-target="#instalace">🖥 Instalace</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/idg.html">Interpretace geodat</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Výuka - Jan Caha</h1>
+<h1 class="title">Interpretace geodat (IDG)</h1>
 </div>
 
 
@@ -220,26 +346,259 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Materiály pro moje předměty vyučované v roce <strong>2024/2025</strong> na Katedře Geoinformatiky, HGF, VŠB-TUO.</p>
-<section id="zimní-semestr" class="level2">
-<h2 class="anchored" data-anchor-id="zimní-semestr">Zimní semestr</h2>
-</section>
-<section id="letní-semestr" class="level2">
-<h2 class="anchored" data-anchor-id="letní-semestr">Letní semestr</h2>
+<section id="řešená-témata" class="level2">
+<h2 class="anchored" data-anchor-id="řešená-témata">📃 Řešená témata</h2>
 <ul>
-<li><a href="./subjects/pgis2.html">Programování v GIS 2 (PGIS2)</a></li>
-<li><a href="./subjects/idg.html">Interpretace geodat (IDG)</a></li>
-<li><a href="./subjects/pdbs2.html">Prostorové databázové systémy 2 (PDBS2)</a></li>
+<li>úvod do jazyka R</li>
+<li>načítání dat do R</li>
+<li>manipulace s daty v R pomocí balíku <code>dplyr</code>, <code>tidyr</code></li>
+<li>tvorba grafů v pomocí <code>ggplot2</code>, dobrá praxe tvorby grafů</li>
+<li><code>Rmarkdown</code> a <code>Quarto</code></li>
+<li>prostorová data v R, vektorory, rastry, vizualizace a operace s daty</li>
 </ul>
 </section>
-<section id="nástroje" class="level2">
-<h2 class="anchored" data-anchor-id="nástroje">Nástroje</h2>
+<section id="prezentace" class="level2">
+<h2 class="anchored" data-anchor-id="prezentace">📑Prezentace</h2>
+<div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Datum
+</th>
+<th>
+Prezentace
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1725271542051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
+<td>
+<span class="listing-date">2024-02-19</span>
+</td>
+<td>
+<a href="../subjects/IDG/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1725271542051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1259" data-listing-title-sort="Základní orientace v jazyce [R]{.software}" data-listing-filename-sort="02_uvod_r.qmd">
+<td>
+<span class="listing-date">2024-02-26</span>
+</td>
+<td>
+<a href="../subjects/IDG/prezentace/02_uvod_r.html" class="title listing-title">Základní orientace v jazyce <span class="software">R</span></a>
+</td>
+</tr>
+<tr data-index="2" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1725271542051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1425" data-listing-title-sort="Načítání dat, Manipulace s daty" data-listing-filename-sort="03_data.qmd">
+<td>
+<span class="listing-date">2024-03-04</span>
+</td>
+<td>
+<a href="../subjects/IDG/prezentace/03_data.html" class="title listing-title">Načítání dat, Manipulace s daty</a>
+</td>
+</tr>
+<tr data-index="3" data-listing-date-sort="1710720000000" data-listing-file-modified-sort="1725271542051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="658" data-listing-title-sort="Grafy - ggplot2" data-listing-filename-sort="04_ggplot2.qmd">
+<td>
+<span class="listing-date">2024-03-18</span>
+</td>
+<td>
+<a href="../subjects/IDG/prezentace/04_ggplot2.html" class="title listing-title">Grafy - ggplot2</a>
+</td>
+</tr>
+<tr data-index="4" data-listing-date-sort="1712534400000" data-listing-file-modified-sort="1725271542051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="344" data-listing-title-sort="Tvorba reportů, prezentací a dalších" data-listing-filename-sort="05_rmarkdown.qmd">
+<td>
+<span class="listing-date">2024-04-08</span>
+</td>
+<td>
+<a href="../subjects/IDG/prezentace/05_rmarkdown.html" class="title listing-title">Tvorba reportů, prezentací a dalších</a>
+</td>
+</tr>
+<tr data-index="5" data-listing-date-sort="1713139200000" data-listing-file-modified-sort="1725271542051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="360" data-listing-title-sort="Prostorová data" data-listing-filename-sort="06_prostorova_data.qmd">
+<td>
+<span class="listing-date">2024-04-15</span>
+</td>
+<td>
+<a href="../subjects/IDG/prezentace/06_prostorova_data.html" class="title listing-title">Prostorová data</a>
+</td>
+</tr>
+<tr data-index="6" data-listing-date-sort="1713744000000" data-listing-file-modified-sort="1725271542051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="385" data-listing-title-sort="Statistické testování a modelování" data-listing-filename-sort="07_statisticke_testovani_a_modelovani.qmd">
+<td>
+<span class="listing-date">2024-04-22</span>
+</td>
+<td>
+<a href="../subjects/IDG/prezentace/07_statisticke_testovani_a_modelovani.html" class="title listing-title">Statistické testování a modelování</a>
+</td>
+</tr>
+<tr data-index="7" data-listing-date-sort="1714953600000" data-listing-file-modified-sort="1725271542051" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="146" data-listing-title-sort="Vybrané statistické metody" data-listing-filename-sort="08_vybrané_statistické_metody.qmd">
+<td>
+<span class="listing-date">2024-05-06</span>
+</td>
+<td>
+<a href="../subjects/IDG/prezentace/08_vybrané_statistické_metody.html" class="title listing-title">Vybrané statistické metody</a>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="seminární-práce" class="level2">
+<h2 class="anchored" data-anchor-id="seminární-práce">📝 Seminární práce</h2>
+<p>Vyberte si libovolnou otevřenou datovou sadu pro ČR, např. z <a href="https://data.gov.cz/datov%C3%A9-sady">Národního katalogu otevřených dat</a> či jiného zdroje. Vytvořte buď <code>Rmarkdown</code> nebo <code>Quarto</code> dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující:</p>
 <ul>
-<li><a href="./tools/linux-mint.html">Linux Mint</a></li>
-<li><a href="./tools/vscode.html">Visual Studio Code</a></li>
-<li><a href="./tools/osgeo4w.html">OSGeo4W</a></li>
-<li><a href="./tools/github-copilot.html">GitHub Copilot</a></li>
+<li>načtení dat</li>
+<li>modifikace dat, výpočet nových sloupců nebo extrakce dílčích dat ze sloupců do nových sloupců (balík <code>dplyr</code> a další)</li>
+<li>extrakce dílčí části dat do menší tabulky a její prezentace v dokumentu</li>
+<li>jeden graf se všemi náležitostmi a korektně vizualizovaný z dat (balík <code>ggplot2</code>)</li>
+<li>jedna interaktivní vizualizace (balík <code>plotly</code> pro grafy, nebo <code>leaflet</code> pro prostorová data)</li>
+<li>statistická sumarizace/vyhodnocení dat - shrnutí, tabulka, vizualizace</li>
 </ul>
+</section>
+<section id="zdroje" class="level2">
+<h2 class="anchored" data-anchor-id="zdroje">📚 Zdroje</h2>
+<ul>
+<li>kniha <a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a> - shrnuje základní postupy datové vědy (data science) v R</li>
+<li>kniha <a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a> - programování v R</li>
+<li>kniha <a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization</a> - vizualizace dat - příklady v R</li>
+<li>kniha <a href="https://r.geocompx.org/">Geocomputation with R</a> - základy práce s geodaty v R</li>
+</ul>
+</section>
+<section id="další-zajímavé-zdroje" class="level2">
+<h2 class="anchored" data-anchor-id="další-zajímavé-zdroje">Další zajímavé zdroje</h2>
+<ul>
+<li>kniha <a href="https://socviz.co/">Data Visualization</a> - vizualizace dat - příklady v R</li>
+<li>kniha <a href="https://moderndive.com/">Statistical Inference via Data Science</a> - statistické metody/postupy v R</li>
+</ul>
+</section>
+<section id="ukázkové-kódy" class="level2">
+<h2 class="anchored" data-anchor-id="ukázkové-kódy">💻 Ukázkové kódy</h2>
+<div id="listing-codes" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Datum
+</th>
+<th>
+Skript
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-title-sort="Instalace potřebných balíků">
+<td>
+<span class="listing-date">2024-02-19</span>
+</td>
+<td>
+<a href="IDG/skripty/00_packages_install.R" class="title listing-title">Instalace potřebných balíků</a>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1712534400000" data-listing-title-sort="Ukázkový report v rmarkdown" data-listing-filename-sort="01_ukazkovy_report.Rmd">
+<td>
+<span class="listing-date">2024-04-08</span>
+</td>
+<td>
+<a href="../subjects/IDG/skripty/IDG/skripty/01_ukazkovy_report.Rmd" class="title listing-title">Ukázkový report v rmarkdown</a>
+</td>
+</tr>
+<tr data-index="2" data-listing-date-sort="1713139200000" data-listing-title-sort="QGIS funkce v R">
+<td>
+<span class="listing-date">2024-04-15</span>
+</td>
+<td>
+<a href="IDG/skripty/02_qgis.R" class="title listing-title">QGIS funkce v R</a>
+</td>
+</tr>
+<tr data-index="3" data-listing-date-sort="1713744000000" data-listing-title-sort="Ukázky easystats">
+<td>
+<span class="listing-date">2024-04-22</span>
+</td>
+<td>
+<a href="IDG/skripty/03_easystats.R" class="title listing-title">Ukázky easystats</a>
+</td>
+</tr>
+<tr data-index="4" data-listing-date-sort="1713744000000" data-listing-title-sort="Ukázka tidymodels">
+<td>
+<span class="listing-date">2024-04-22</span>
+</td>
+<td>
+<a href="IDG/skripty/04_tidymodels.R" class="title listing-title">Ukázka tidymodels</a>
+</td>
+</tr>
+<tr data-index="5" data-listing-date-sort="1714953600000" data-listing-title-sort="Ukázka faktorové analýzy">
+<td>
+<span class="listing-date">2024-05-06</span>
+</td>
+<td>
+<a href="IDG/skripty/05_faktorová_analyza.R" class="title listing-title">Ukázka faktorové analýzy</a>
+</td>
+</tr>
+<tr data-index="6" data-listing-date-sort="1714953600000" data-listing-title-sort="Ukázka PCA">
+<td>
+<span class="listing-date">2024-05-06</span>
+</td>
+<td>
+<a href="IDG/skripty/06_pca.R" class="title listing-title">Ukázka PCA</a>
+</td>
+</tr>
+<tr data-index="7" data-listing-date-sort="1714953600000" data-listing-title-sort="Ukázka shlukování">
+<td>
+<span class="listing-date">2024-05-06</span>
+</td>
+<td>
+<a href="IDG/skripty/07_shlukovani.R" class="title listing-title">Ukázka shlukování</a>
+</td>
+</tr>
+<tr data-index="8" data-listing-date-sort="1714953600000" data-listing-title-sort="Ukázka rozhodovacích stromů">
+<td>
+<span class="listing-date">2024-05-06</span>
+</td>
+<td>
+<a href="IDG/skripty/08_rozhodovaci_stromy.R" class="title listing-title">Ukázka rozhodovacích stromů</a>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="instalace" class="level2">
+<h2 class="anchored" data-anchor-id="instalace">🖥 Instalace</h2>
+<ul>
+<li>R - <a href="https://cran.r-project.org/bin/windows/base/">R CRAN</a></li>
+<li>IDE - <a href="https://posit.co/download/rstudio-desktop/">RStudio</a></li>
+</ul>
+<p>V RStudiu nainstalovat balíky následujícím skriptem:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>needed_packages <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidyverse"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"here"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sf"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"terra"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"stars"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tmap"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"lwgeom"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"qgisprocess"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"remotes"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidymodels"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"DT"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rmarkdown"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"plotly"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tidymodels"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"easystats"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># nejjednodušší způsob instalace balíčků by bylo prosté volání install.packages(needed_packages),</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ale to by znamenalo, že by se balíčky instalovaly i když už jsou nainstalované, což je zbytečné a zdlouhavé</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># následující kód tedy instaluje jen ty balíčky, které ještě nejsou nainstalované, ale kód je komplikovanější</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>new_packages <span class="ot">&lt;-</span> needed_packages[<span class="sc">!</span>(needed_packages <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[,<span class="st">"Package"</span>])]</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">length</span>(new_packages)) <span class="fu">install.packages</span>(new_packages)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"JanCaha/r_package_qgis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 
 
 </section>
@@ -809,6 +1168,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../subjects/pgis2.html" class="pagination-link" aria-label="Programování v GIS 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Programování v GIS 2</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../subjects/pdbs2.html" class="pagination-link" aria-label="Prostorové databázové systémy 2">
+        <span class="nav-page-text">Prostorové databázové systémy 2</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

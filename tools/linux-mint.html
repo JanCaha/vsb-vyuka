@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Výuka - Jan Caha</title>
+<title>Linux Mint – Výuka - Jan Caha</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,65 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../tools/osgeo4w.html" rel="next">
+<link href="../tools/vscode.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Výuka - Jan Caha">
+<meta property="og:title" content="Linux Mint – Výuka - Jan Caha">
 <meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -83,9 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Výuka - Jan Caha
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tools/vscode.html">Nástroje</a></li><li class="breadcrumb-item"><a href="../tools/linux-mint.html">Linux Mint</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -100,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Výuka - Jan Caha</a> 
+      <a href="../">Výuka - Jan Caha</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/JanCaha/vsb-vyuka" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -125,19 +162,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pgis2.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pgis2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/idg.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/idg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Interpretace geodat</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pdbs2.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pdbs2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prostorové databázové systémy 2</span></a>
   </div>
 </li>
@@ -149,34 +186,34 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Nástroje</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/vscode.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/vscode.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visual Studio Code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/linux-mint.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/linux-mint.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Linux Mint</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OSGeo4W</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/github-copilot.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/github-copilot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Copilot</span></a>
   </div>
 </li>
@@ -192,18 +229,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zimní-semestr" id="toc-zimní-semestr" class="nav-link active" data-scroll-target="#zimní-semestr">Zimní semestr</a></li>
-  <li><a href="#letní-semestr" id="toc-letní-semestr" class="nav-link" data-scroll-target="#letní-semestr">Letní semestr</a></li>
-  <li><a href="#nástroje" id="toc-nástroje" class="nav-link" data-scroll-target="#nástroje">Nástroje</a></li>
+  <li><a href="#instalace" id="toc-instalace" class="nav-link active" data-scroll-target="#instalace">🖥 Instalace</a></li>
+  <li><a href="#aktualizace" id="toc-aktualizace" class="nav-link" data-scroll-target="#aktualizace">Aktualizace</a></li>
+  <li><a href="#sec-gis" id="toc-sec-gis" class="nav-link" data-scroll-target="#sec-gis">🖥 Instalace aktuálních GIS knihoven a softwarů</a></li>
+  <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">🖥 Instalace PostregSQL</a>
+  <ul class="collapse">
+  <li><a href="#nastavení-postgresql-a-první-spuštění" id="toc-nastavení-postgresql-a-první-spuštění" class="nav-link" data-scroll-target="#nastavení-postgresql-a-první-spuštění">Nastavení PostgreSQL a první spuštění</a></li>
+  <li><a href="#připojení-k-db-z-qgis" id="toc-připojení-k-db-z-qgis" class="nav-link" data-scroll-target="#připojení-k-db-z-qgis">Připojení k DB z QGIS</a></li>
+  </ul></li>
+  <li><a href="#instalace-vs-code" id="toc-instalace-vs-code" class="nav-link" data-scroll-target="#instalace-vs-code">🖥 Instalace VS Code</a></li>
+  <li><a href="#instalace-miniconda" id="toc-instalace-miniconda" class="nav-link" data-scroll-target="#instalace-miniconda">🖥 Instalace MiniConda</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tools/vscode.html">Nástroje</a></li><li class="breadcrumb-item"><a href="../tools/linux-mint.html">Linux Mint</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Výuka - Jan Caha</h1>
+<h1 class="title">Linux Mint</h1>
 </div>
 
 
@@ -220,26 +264,122 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Materiály pro moje předměty vyučované v roce <strong>2024/2025</strong> na Katedře Geoinformatiky, HGF, VŠB-TUO.</p>
-<section id="zimní-semestr" class="level2">
-<h2 class="anchored" data-anchor-id="zimní-semestr">Zimní semestr</h2>
-</section>
-<section id="letní-semestr" class="level2">
-<h2 class="anchored" data-anchor-id="letní-semestr">Letní semestr</h2>
+<p>Distribuce Linuxu založené na <a href="https://ubuntu.com/">Ubuntu</a> s méně intruzivním uživatelským prostředím.</p>
+<section id="instalace" class="level2">
+<h2 class="anchored" data-anchor-id="instalace">🖥 Instalace</h2>
 <ul>
-<li><a href="./subjects/pgis2.html">Programování v GIS 2 (PGIS2)</a></li>
-<li><a href="./subjects/idg.html">Interpretace geodat (IDG)</a></li>
-<li><a href="./subjects/pdbs2.html">Prostorové databázové systémy 2 (PDBS2)</a></li>
+<li>instalujeme <a href="https://www.linuxmint.com/download.php">Linux Mint - Cinnamon edition</a></li>
+<li>lze instalovat jak do fyzického počítače, tak i do <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox</a>
+<ul>
+<li>celý process je ukázán v <a href="https://www.youtube.com/watch?v=5MwBbgdSZS0">tomto videu</a></li>
+<li>v případě instalace do VirtualBoxu nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval</li>
+</ul></li>
+<li>důležité je nastavení jména uživatele a hesla</li>
 </ul>
 </section>
-<section id="nástroje" class="level2">
-<h2 class="anchored" data-anchor-id="nástroje">Nástroje</h2>
+<section id="aktualizace" class="level2">
+<h2 class="anchored" data-anchor-id="aktualizace">Aktualizace</h2>
+<p>Vhodné čas od času spustit aktualizaci softwarů.</p>
+<p>Příkazy pro příkazovou řádku:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade <span class="at">-y</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sec-gis" class="level2">
+<h2 class="anchored" data-anchor-id="sec-gis">🖥 Instalace aktuálních GIS knihoven a softwarů</h2>
+<p>Příkazy pro příkazovou řádku:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository <span class="at">-y</span> ppa:ubuntugis/ppa</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> qgis gdal-bin grass-gui</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="instalace-postregsql" class="level2">
+<h2 class="anchored" data-anchor-id="instalace-postregsql">🖥 Instalace PostregSQL</h2>
 <ul>
-<li><a href="./tools/linux-mint.html">Linux Mint</a></li>
-<li><a href="./tools/vscode.html">Visual Studio Code</a></li>
-<li><a href="./tools/osgeo4w.html">OSGeo4W</a></li>
-<li><a href="./tools/github-copilot.html">GitHub Copilot</a></li>
+<li>nejdříve nastavíme nezbytnosti pro <a href="https://www.pgadmin.org/download/pgadmin-4-apt/">PG Admin 4</a> (pozor bude požadováno heslo)</li>
 </ul>
+<p>Příkazy pro příkazovou řádku:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /etc/os-release</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the public key for the repository (if not done previously):</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsS</span> https://www.pgadmin.org/static/packages_pgadmin_org.pub <span class="kw">|</span> <span class="fu">sudo</span> gpg <span class="at">--dearmor</span> <span class="at">-o</span> /usr/share/keyrings/packages-pgadmin-org.gpg</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the repository configuration file:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/</span><span class="va">$UBUNTU_CODENAME</span><span class="st"> pgadmin4 main"</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/sources.list.d/pgadmin4.list</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Update software sources</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade <span class="at">-y</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Install pgAdmin for both desktop and web modes:</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> pgadmin4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>následně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL (viz <a href="#sec-gis" class="quarto-xref">Sekce&nbsp;3</a>)</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># přidání zdroje balíčků GIS nástrojů</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install <span class="at">-y</span> gedit postgresql pgxnclient postgis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>následně nainstalujeme DBeaver - vizualizace DB and její správa (podobné PGAdmin4, ale s jiným přístupem)</li>
+<li>pozor instalace se bude tázat na heslo</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://dbeaver.io/download/<span class="pp">?</span>start<span class="kw">&amp;</span><span class="va">os</span><span class="op">=</span>linux<span class="kw">&amp;</span><span class="va">arch</span><span class="op">=</span>x86_64<span class="kw">&amp;</span><span class="va">dist</span><span class="op">=</span>deb</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg <span class="at">-i</span> dbeaver-ce_latest_amd64.deb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="nastavení-postgresql-a-první-spuštění" class="level3">
+<h3 class="anchored" data-anchor-id="nastavení-postgresql-a-první-spuštění">Nastavení PostgreSQL a první spuštění</h3>
+<ul>
+<li>prvotní spuštění PostgreSQL je nutné provést z příkazové řádky</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql template1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>následně spustíme příkaz pro modifikaci hesla hlavní uživatele DB</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="fu">USER</span> postgres <span class="kw">with</span> encrypted <span class="kw">password</span> <span class="st">'heslo'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>příkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru <code>localhost</code> s uživatelem <code>postgres</code> a heslem <code>heslo</code> (nastavené výše)</li>
+</ul>
+</section>
+<section id="připojení-k-db-z-qgis" class="level3">
+<h3 class="anchored" data-anchor-id="připojení-k-db-z-qgis">Připojení k DB z QGIS</h3>
+<p>Pro připojení k PostGIS databázi z QGIS je třeba přidat nové připojení z <strong>Data Source Manager</strong> v QGIS. Nastavení bude vypada jako na obrázku níže, může být třeba upravit nastavení <strong>Database</strong> a v <strong>Authentication</strong> (<a href="#fig-pg-settings" class="quarto-xref">Obr.&nbsp;1</a>) nastavit <strong>Basic authentication</strong> a vyplnit jméno a heslo (<a href="#fig-user-settings" class="quarto-xref">Obr.&nbsp;2</a>).</p>
+<div id="fig-pg-settings" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pg-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/qgis_pg_settings.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Obr.&nbsp;1: Nastavení připojení v QGIS"><img src="images/qgis_pg_settings.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pg-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;1: Nastavení připojení v QGIS
+</figcaption>
+</figure>
+</div>
+<div id="fig-user-settings" class="lightbox quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-user-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/qgis_pg_user.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Obr.&nbsp;2: Nastavení uživatele v QGIS Authentication"><img src="images/qgis_pg_user.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-user-settings-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Obr.&nbsp;2: Nastavení uživatele v QGIS Authentication
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="instalace-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="instalace-vs-code">🖥 Instalace VS Code</h2>
+<ul>
+<li>manuálně stáhnout z <a href="https://code.visualstudio.com/">webu</a> – <strong>.deb</strong> soubor</li>
+<li>spustit a nainstalovat poklikáním a zadáním hesla</li>
+<li>aktualizace už probíhají automaticky</li>
+</ul>
+</section>
+<section id="instalace-miniconda" class="level2">
+<h2 class="anchored" data-anchor-id="instalace-miniconda">🖥 Instalace MiniConda</h2>
+<p>Příkazy pro příkazovou řádku:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x Miniconda3-latest-Linux-x86_64.sh</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">./Miniconda3-latest-Linux-x86_64.sh</span> <span class="at">-b</span> <span class="at">-f</span> <span class="at">-p</span> ~<span class="va">$USER</span>/miniconda3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -809,6 +949,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../tools/vscode.html" class="pagination-link" aria-label="Visual Studio Code">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Visual Studio Code</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../tools/osgeo4w.html" class="pagination-link" aria-label="OSGeo4W">
+        <span class="nav-page-text">OSGeo4W</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -823,6 +975,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
