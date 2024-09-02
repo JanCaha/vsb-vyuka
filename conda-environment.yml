@@ -28,6 +28,6 @@ dependencies:
   # SQL
   - psycopg
   # install using pip
-  - pip:
+  # - pip:
     # pgis2
-    - geopolars
+    # - geopolars
