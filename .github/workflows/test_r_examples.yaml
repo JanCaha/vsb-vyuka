@@ -17,6 +17,7 @@ jobs:
     
     env:
       R_LIBS_USER: /tmp/Rlibs
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
             
@@ -33,7 +34,7 @@ jobs:
         run: |
           sudo apt-get -y install pandoc
           pandoc --version
-            
+
       - name: Install R and packages
         run: |
           sudo ./linux_install_R.sh  --all
