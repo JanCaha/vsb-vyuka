@@ -36,12 +36,14 @@ website:
       - section: Předměty zimní semestr
       - section: "Nástroje"
         contents:
-        - href: vscode.qmd
+        - href: tools/vscode.qmd
           text: Visual Studio Code
-        - href: linux-mint.qmd
+        - href: tools/linux-mint.qmd
           text: Linux Mint
-        - href: osgeo4w.qmd
+        - href: tools/osgeo4w.qmd
           text: OSGeo4W
+        - href: tools/github-copilot.qmd
+          text: GitHub Copilot
       
 
 format:

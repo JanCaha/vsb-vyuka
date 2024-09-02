@@ -14,7 +14,7 @@ Materiály pro moje předměty vyučované v roce **{{< var dates.school-year >}
 
 ## Nástroje 
 
-- [Linux Mint](linux-mint.qmd)
-- [Visual Studio Code](vscode.qmd)
-- [OSGeo4W](osgeo4w.qmd)
-- [GitHub Copilot](github-copilot.qmd)
+- [Linux Mint](tools/linux-mint.qmd)
+- [Visual Studio Code](tools/vscode.qmd)
+- [OSGeo4W](tools/osgeo4w.qmd)
+- [GitHub Copilot](tools/github-copilot.qmd)
