@@ -102,10 +102,12 @@ jobs:
       contents: write
     
     steps:
-            
+      
+      - uses: KengoTODA/actions-setup-docker-compose@v1
+      
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: PostgreSQL
         run: |
           docker-compose -f "PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
