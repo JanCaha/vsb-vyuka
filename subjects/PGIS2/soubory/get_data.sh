@@ -17,4 +17,4 @@ FILE=HYP_HR_SR_W.zip
 SOURCE_URL=https://naciscdn.org/naturalearth/10m/raster
 getData $FILE $SOURCE_URL
 
-Rscript -e "library(ggplot2);data(diamonds);write.csv(diamonds, '$DATA_DIR/diamonds.csv')"
+wget https://raw.githubusercontent.com/tidyverse/ggplot2/main/data-raw/diamonds.csv -O $DATA_DIR/diamonds.csv
