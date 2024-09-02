@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OSGEO4W – Výuka - Jan Caha</title>
+<title>Programování v GIS 3 (PGIS3) – Výuka - Jan Caha</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tools/github-copilot.html" rel="next">
-<link href="../tools/linux-mint.html" rel="prev">
+<link href="../subjects/pvgis4.html" rel="next">
+<link href="../subjects/pdbs2.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -42,9 +42,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,8 +71,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="OSGEO4W – Výuka - Jan Caha">
-<meta property="og:description" content="Výukové materiály">
+<meta property="og:title" content="Programování v GIS 3 (PGIS3) – Výuka - Jan Caha">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 
@@ -88,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tools/vscode.html">Nástroje</a></li><li class="breadcrumb-item"><a href="../tools/osgeo4w.html">OSGeo4W</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis3.html">Předměty zimní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pgis3.html">Programování v GIS 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,16 +144,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Předměty zimní semestr</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pgis3.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pgis3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Programování v GIS 3</span></a>
   </div>
 </li>
@@ -171,13 +167,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Nástroje</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tools/vscode.html" class="sidebar-item-text sidebar-link">
@@ -192,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tools/osgeo4w.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OSGeo4W</span></a>
   </div>
 </li>
@@ -209,25 +205,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#nástroje" id="toc-nástroje" class="nav-link active" data-scroll-target="#nástroje">Nástroje</a></li>
-  <li><a href="#instalace" id="toc-instalace" class="nav-link" data-scroll-target="#instalace">Instalace</a>
-  <ul class="collapse">
-  <li><a href="#aktualizace-komponent" id="toc-aktualizace-komponent" class="nav-link" data-scroll-target="#aktualizace-komponent">Aktualizace komponent</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tools/vscode.html">Nástroje</a></li><li class="breadcrumb-item"><a href="../tools/osgeo4w.html">OSGeo4W</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis3.html">Předměty zimní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pgis3.html">Programování v GIS 3</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">OSGEO4W</h1>
+<h1 class="title">Programování v GIS 3 (PGIS3)</h1>
 </div>
 
 
@@ -244,123 +230,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Nejjednodušším způsobem, jak v prostředí <strong>Windows</strong> nainstalovat značnou část open source GIS knihoven a softwarů (např. <strong>QGIS</strong>, <strong>GRASS</strong>, <strong>SAGA</strong> a další) je použití distribuce <strong>OSGEO4W</strong> z <a href="https://trac.osgeo.org/osgeo4w/">webu projektu</a>, konkrétně odkaz <a href="https://download.osgeo.org/osgeo4w/v2/osgeo4w-setup.exe">ke stažení instalátoru</a>. Jedná se o klasický průvodce, kde je možnost nakonfigurovat si instalaci podle vlastních potřeb, plná konfigurace je poměrně obáshlá a v mnoha ohledech i zbytečná (např. obsahuje 3 verze QGIS - vývojovou, aktuální a LTR).</p>
-<section id="nástroje" class="level2">
-<h2 class="anchored" data-anchor-id="nástroje">Nástroje</h2>
-<p>Součástí instalace jsou:</p>
-<ul>
-<li>nástroje <code>ogr2ogr</code>, <code>gdalwarp</code>, <code>gdal_translate</code> a další dostupné skrze <strong>OSGeo4W Shell</strong></li>
-<li><strong>QGIS</strong>, <strong>GRASS</strong></li>
-<li><strong>Python</strong> a jeho knihovny, lze doinstalovat z příkazové řádky (<strong>OSGeo4W Shell</strong>) pomocí <code>pip install *</code></li>
-</ul>
-</section>
-<section id="instalace" class="level2">
-<h2 class="anchored" data-anchor-id="instalace">Instalace</h2>
-<p>Po spuštění instalátoru je nutné vybrat typ instalace - <strong>Advanced Install</strong>, viz následující obrázek:</p>
-<div id="fig-install-1" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="OSGEO4W volba typu instalace">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Obr.&nbsp;1: Volba typu instalace"><img src="images/osgeo4w/install_1.png" class="img-fluid figure-img" alt="OSGEO4W volba typu instalace"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;1: Volba typu instalace
-</figcaption>
-</figure>
-</div>
-<p>Další položkou je volba instalace z Internetu (používáme nejaktuálnější zdroje).</p>
-<div id="fig-install-2" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Volba instalace z internetu">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Obr.&nbsp;2: Volba instalace z internetu"><img src="images/osgeo4w/install_2.png" class="img-fluid figure-img" alt="Volba instalace z internetu"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;2: Volba instalace z internetu
-</figcaption>
-</figure>
-</div>
-<p>Další volbou je umístění instalace. Výchozí nastavení je na disk <code>C:</code>, lze změnit disk, nicméně je vhodné instalovat do co nevyšše umístěné složky, takže např: <code>D:\OSGeo4W</code>, aby nebyla výsledná cesta příliš dlouhá.</p>
-<div id="fig-install-3" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Umístění instalace">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Obr.&nbsp;3: Umístění instalace"><img src="images/osgeo4w/install_3.png" class="img-fluid figure-img" alt="Umístění instalace"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;3: Umístění instalace
-</figcaption>
-</figure>
-</div>
-<p>Následující dva kroky, volbu dočasného adresáře a proxy, lze obvykle nechat na výchozích hodnotách.</p>
-<div id="fig-install-4" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Volba dočasného adresáře">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Obr.&nbsp;4: Volba dočasného adresáře"><img src="images/osgeo4w/install_4.png" class="img-fluid figure-img" alt="Volba dočasného adresáře"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;4: Volba dočasného adresáře
-</figcaption>
-</figure>
-</div>
-<div id="fig-install-5" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Nastavení proxy">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Obr.&nbsp;5: Nastavení proxy"><img src="images/osgeo4w/install_5.png" class="img-fluid figure-img" alt="Nastavení proxy"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;5: Nastavení proxy
-</figcaption>
-</figure>
-</div>
-<p>Následujícím krokem je volba zdrojového serveru, obvykle vyhoví výchozí hodnota.</p>
-<div id="fig-install-6" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Volba serveru">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Obr.&nbsp;6: Volba serveru"><img src="images/osgeo4w/install_6.png" class="img-fluid figure-img" alt="Volba serveru"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;6: Volba serveru
-</figcaption>
-</figure>
-</div>
-<p>V dalším kroce už se dostáváme k volbě komponent, které se mají instalovat. Obvykle věnujeme pozornost zejména položkám <strong>Commandline Utilities</strong> a <strong>Desktop</strong>, knihovny v pložce <strong>Libs</strong> se vyberou dle zvolených komponent automaticky.</p>
-<div id="fig-install-7" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Seznam komponent dle typu">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Obr.&nbsp;7: Seznam komponent dle typu"><img src="images/osgeo4w/install_7.png" class="img-fluid figure-img" alt="Seznam komponent dle typu"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;7: Seznam komponent dle typu
-</figcaption>
-</figure>
-</div>
-<p>Z poskytutého seznamu vybereme potřebné komponenty.</p>
-<div id="fig-install-8" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Výběr komponent">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Obr.&nbsp;8: Výběr komponent"><img src="images/osgeo4w/install_8.png" class="img-fluid figure-img" alt="Výběr komponent"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;8: Výběr komponent
-</figcaption>
-</figure>
-</div>
-<p>Následuje potvrzení licencí, samotné stahování a instalace komponent, což může být časově náročnější.</p>
-<div id="fig-install-9" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" alt="Instalace">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-install-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/osgeo4w/install_9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Obr.&nbsp;9: Instalace"><img src="images/osgeo4w/install_9.png" class="img-fluid figure-img" alt="Instalace"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-install-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Obr.&nbsp;9: Instalace
-</figcaption>
-</figure>
-</div>
-<section id="aktualizace-komponent" class="level3">
-<h3 class="anchored" data-anchor-id="aktualizace-komponent">Aktualizace komponent</h3>
-<p>Opětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku <a href="#fig-install-8" class="quarto-xref">Obr.&nbsp;8</a> pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -929,13 +800,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../tools/linux-mint.html" class="pagination-link" aria-label="Linux Mint">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Linux Mint</span>
+      <a href="../subjects/pdbs2.html" class="pagination-link" aria-label="Prostorové databázové systémy 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prostorové databázové systémy 2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tools/github-copilot.html" class="pagination-link" aria-label="GitHub Copilot">
-        <span class="nav-page-text">GitHub Copilot</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../subjects/pvgis4.html" class="pagination-link" aria-label="Programování v GIS 4">
+        <span class="nav-page-text">Programování v GIS 4</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -953,38 +824,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

@@ -902,7 +902,7 @@
     "href": "tools/linux-mint.html#sec-gis",
     "title": "Linux Mint",
     "section": "🖥 Instalace aktuálních GIS knihoven a softwarů",
-    "text": "🖥 Instalace aktuálních GIS knihoven a softwarů\nPříkazy pro příkazovou řádku:\n# přidání zdroje balíčků GIS nástrojů\nsudo add-apt-repository -y ppa:ubuntugis/ppa\nsudo apt-get update\n\nsudo apt-get install -y qgis gdal-bin grass-gui",
+    "text": "🖥 Instalace aktuálních GIS knihoven a softwarů\nPříkazy pro příkazovou řádku:\n# přidání zdroje balíčků GIS nástrojů\nsudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable\nsudo apt-get update\n\nsudo apt-get install -y qgis gdal-bin grass-gui",
     "crumbs": [
       "Nástroje",
       "Linux Mint"
@@ -913,7 +913,7 @@
     "href": "tools/linux-mint.html#instalace-postregsql",
     "title": "Linux Mint",
     "section": "🖥 Instalace PostregSQL",
-    "text": "🖥 Instalace PostregSQL\n\nnejdříve nastavíme nezbytnosti pro PG Admin 4 (pozor bude požadováno heslo)\n\nPříkazy pro příkazovou řádku:\nsource /etc/os-release\n\n# Install the public key for the repository (if not done previously):\ncurl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg\n\n# Create the repository configuration file:\necho \"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$UBUNTU_CODENAME pgadmin4 main\" | sudo tee /etc/apt/sources.list.d/pgadmin4.list\n\n# Update software sources\nsudo apt-get update\nsudo apt-get upgrade -y\n\n# Install pgAdmin for both desktop and web modes:\nsudo apt-get install -y pgadmin4\n\nnásledně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL (viz Sekce 3)\n\n# přidání zdroje balíčků GIS nástrojů\n\nsudo apt-get install -y gedit postgresql pgxnclient postgis\n\nnásledně nainstalujeme DBeaver - vizualizace DB and její správa (podobné PGAdmin4, ale s jiným přístupem)\npozor instalace se bude tázat na heslo\n\ncd /tmp\nwget https://dbeaver.io/download/?start&os=linux&arch=x86_64&dist=deb\nsudo dpkg -i dbeaver-ce_latest_amd64.deb\n\nNastavení PostgreSQL a první spuštění\n\nprvotní spuštění PostgreSQL je nutné provést z příkazové řádky\n\nsudo -u postgres psql template1\n\nnásledně spustíme příkaz pro modifikaci hesla hlavní uživatele DB\n\nALTER USER postgres with encrypted password 'heslo';\n\npříkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru localhost s uživatelem postgres a heslem heslo (nastavené výše)\n\n\n\nPřipojení k DB z QGIS\nPro připojení k PostGIS databázi z QGIS je třeba přidat nové připojení z Data Source Manager v QGIS. Nastavení bude vypada jako na obrázku níže, může být třeba upravit nastavení Database a v Authentication (Obr. 1) nastavit Basic authentication a vyplnit jméno a heslo (Obr. 2).\n\n\n\n\n\n\nObr. 1: Nastavení připojení v QGIS\n\n\n\n\n\n\n\n\n\nObr. 2: Nastavení uživatele v QGIS Authentication",
+    "text": "🖥 Instalace PostregSQL\n\nnejdříve nastavíme nezbytnosti pro PG Admin 4 (pozor bude požadováno heslo)\n\nPříkazy pro příkazovou řádku:\nsource /etc/os-release\n\n# Install the public key for the repository (if not done previously):\ncurl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg\n\n# Create the repository configuration file:\necho \"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$UBUNTU_CODENAME pgadmin4 main\" | sudo tee /etc/apt/sources.list.d/pgadmin4.list\n\n# Update software sources\nsudo apt-get update\nsudo apt-get upgrade -y\n\n# Install pgAdmin for both desktop and web modes:\nsudo apt-get install -y pgadmin4\n\nnásledně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL (viz Sekce 3)\n\n# přidání zdroje balíčků GIS nástrojů\n\nsudo apt-get install -y gedit postgresql pgxnclient postgis\n\nnásledně nainstalujeme DBeaver - vizualizace DB and její správa (podobné PGAdmin4, ale s jiným přístupem)\npozor instalace se bude tázat na heslo\n\ncd /tmp\nwget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb\nsudo dpkg -i dbeaver-ce_latest_amd64.deb\n\nNastavení PostgreSQL a první spuštění\n\nprvotní spuštění PostgreSQL je nutné provést z příkazové řádky\n\nsudo -u postgres psql template1\n\nnásledně spustíme příkaz pro modifikaci hesla hlavní uživatele DB\n\nALTER USER postgres with encrypted password 'heslo';\n\npříkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru localhost s uživatelem postgres a heslem heslo (nastavené výše)\n\n\n\nPřipojení k DB z QGIS\nPro připojení k PostGIS databázi z QGIS je třeba přidat nové připojení z Data Source Manager v QGIS. Nastavení bude vypada jako na obrázku níže, může být třeba upravit nastavení Database a v Authentication (Obr. 1) nastavit Basic authentication a vyplnit jméno a heslo (Obr. 2).\n\n\n\n\n\n\nObr. 1: Nastavení připojení v QGIS\n\n\n\n\n\n\n\n\n\nObr. 2: Nastavení uživatele v QGIS Authentication",
     "crumbs": [
       "Nástroje",
       "Linux Mint"
@@ -935,7 +935,7 @@
     "href": "tools/linux-mint.html#instalace-miniconda",
     "title": "Linux Mint",
     "section": "🖥 Instalace MiniConda",
-    "text": "🖥 Instalace MiniConda\nPříkazy pro příkazovou řádku:\ncd /tmp\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nchmod +x Miniconda3-latest-Linux-x86_64.sh\n./Miniconda3-latest-Linux-x86_64.sh -b -f -p ~$USER/miniconda3",
+    "text": "🖥 Instalace MiniConda\nPříkazy pro příkazovou řádku:\ncd /tmp\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nchmod +x Miniconda3-latest-Linux-x86_64.sh\n./Miniconda3-latest-Linux-x86_64.sh -b -f -p /home/$USER/miniconda3",
     "crumbs": [
       "Nástroje",
       "Linux Mint"
@@ -986,7 +986,7 @@
     "href": "index.html#zimní-semestr",
     "title": "Výuka - Jan Caha",
     "section": "Zimní semestr",
-    "text": "Zimní semestr"
+    "text": "Zimní semestr\n\nProgramování v GIS 3 (PGIS3)\nProgramování v GIS 4 (PvGIS4)"
   },
   {
     "objectID": "index.html#letní-semestr",
@@ -1428,7 +1428,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.99318834 -0.20160446 -0.02738922 -0.22932303 -0.20355523"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.23582699 -0.01449050 -2.47950264 -0.00658388 -0.39411023"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
