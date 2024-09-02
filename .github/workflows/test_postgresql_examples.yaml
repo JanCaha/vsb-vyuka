@@ -27,7 +27,7 @@ jobs:
 
       - name: PostgreSQL
         run: |
-          docker-compose -f "subjects/PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
+          docker compose -f "subjects/PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
 
 
       - name: PDBS2 data
