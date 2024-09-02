@@ -40,8 +40,8 @@ jobs:
 
       - name: Pip install psycopg
         run: |
-          pip install psycopg --break-system-packages
-      
+          pip install psycopg
+     
       - name: Test
         run: |
           python3 -c 'import psycopg; psycopg.connect("dbname=postgres host=localhost user=postgres port=5432 password=heslo")'
