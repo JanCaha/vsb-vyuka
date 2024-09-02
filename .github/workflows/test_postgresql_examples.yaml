@@ -1,0 +1,53 @@
+name: Test PostgreSQL examples
+
+on: push
+
+jobs:
+
+  test-postgresql-examples:
+
+    runs-on: ubuntu-24.04
+
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    permissions:
+      contents: write
+    
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install GDAL
+        run: |
+          sudo apt-get -y install gdal-bin
+
+      - name: PostgreSQL
+        run: |
+          docker-compose -f "subjects/PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
+
+
+      - name: PDBS2 data
+        run: |
+          cp -r ./subjects/PDBS2/soubory/ /tmp/postgres/
+          ls -l /tmp/postgres
+
+      - name: Pip install psycopg
+        run: |
+          pip install psycopg
+      
+      - name: Import spatial data to Postgis
+        run: |
+          cd subjects/PDBS2/soubory
+          ../skripty/02_load_data_to_postgis.sh
+      
+      - name: Run Examples
+        run: |
+          python3 subjects/PDBS2/soubory/sql_scripts_runner.py PDBS2/skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
+
+      - name: Stop containers
+        if: always()
+        run: docker-compose -f "PDBS2/soubory/postgresql-postgis-compose.yaml" down

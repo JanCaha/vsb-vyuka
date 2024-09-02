@@ -1,0 +1,51 @@
+name: Test R examples
+
+on: push
+
+jobs:
+
+  test-r-examples:
+
+    runs-on: ubuntu-22.04
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    permissions:
+      contents: write
+    
+    env:
+      R_LIBS_USER: /tmp/Rlibs
+
+    steps:
+            
+      - name: R env setup
+        run: |
+          mkdir -p $R_LIBS_USER
+          echo "R_LIBS_USER=$R_LIBS_USER" > $HOME/.Renviron
+          cat $HOME/.Renviron
+
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install R and packages
+        run: |
+          sudo ./linux_install_R.sh  --all
+      
+      - name: IDG skripty
+        run: |
+          FILES="./subjects/IDG/skripty/*.R"
+          for FILE in $FILES
+          do
+            echo "--------------------"
+            echo "*** $FILE ***"
+            Rscript $FILE 
+          done    
+          FILES="./subjects/IDG/skripty/*.Rmd"
+          for FILE in $FILES
+          do
+            echo "--------------------"
+            echo "*** $FILE ***"
+            Rscript -e "rmarkdown::render('$FILE')" 
+          done

@@ -1,0 +1,41 @@
+name: Test Python examples
+
+on: push
+
+jobs:
+
+  test-python-examples:
+
+    runs-on: ubuntu-24.04
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    permissions:
+      contents: write
+
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v4
+    
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          channels: conda-forge
+          activate-environment: pgis2
+          environment-file: subjects/PGIS2/soubory/conda-environment.yml
+      
+      - name: PGIS2 data
+        run: |
+          ./subjects/PGIS2/soubory/get_data.sh
+
+      - name: PGIS2 skripty
+        run: |
+          FILES="./subjects/PGIS2/skripty/*.py"
+          for FILE in $FILES
+          do
+            echo "--------------------"
+            echo "*** $FILE ***"
+            python3 $FILE 
+          done
