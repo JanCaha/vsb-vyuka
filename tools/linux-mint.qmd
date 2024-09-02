@@ -30,7 +30,7 @@ Příkazy pro příkazovou řádku:
 
 ```bash
 # přidání zdroje balíčků GIS nástrojů
-sudo add-apt-repository -y ppa:ubuntugis/ppa
+sudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable
 sudo apt-get update
 
 sudo apt-get install -y qgis gdal-bin grass-gui
@@ -71,7 +71,7 @@ sudo apt-get install -y gedit postgresql pgxnclient postgis
   
 ```bash
 cd /tmp
-wget https://dbeaver.io/download/?start&os=linux&arch=x86_64&dist=deb
+wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 sudo dpkg -i dbeaver-ce_latest_amd64.deb
 ```
 
@@ -113,5 +113,5 @@ Příkazy pro příkazovou řádku:
 cd /tmp
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh -b -f -p ~$USER/miniconda3
+./Miniconda3-latest-Linux-x86_64.sh -b -f -p /home/$USER/miniconda3
 ```
