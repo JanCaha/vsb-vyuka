@@ -103,18 +103,17 @@ jobs:
     
     steps:
       
-      - uses: KengoTODA/actions-setup-docker-compose@v1
-      
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install GDAL
+        run: |
+          sudo apt-get -y install gdal-bin docker-compose-plugin
 
       - name: PostgreSQL
         run: |
           docker-compose -f "PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
 
-      - name: Install GDAL
-        run: |
-          sudo apt-get -y install gdal-bin
 
       - name: PDBS2 data
         run: |
