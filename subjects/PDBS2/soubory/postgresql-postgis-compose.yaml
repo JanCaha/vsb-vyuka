@@ -10,4 +10,4 @@ services:
       - ${HOME}/PG_Data:/data/postgres
       - /tmp:/tmp
     ports:
-      - "5433:5433"
+      - "5432:5432"
