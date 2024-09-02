@@ -10,5 +10,3 @@ services:
       - /tmp:/tmp
     ports:
       - 5432:5432
-    healthcheck:
-          test: ["CMD-SHELL", "pg_isready", "-U", "postgres", "-d", "postgres"]
