@@ -8,6 +8,21 @@ jobs:
 
     runs-on: ubuntu-24.04
 
+    services:
+      postgres:
+        container_name: postgis
+        image: postgis/postgis:16-master
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: heslo
+          PGDATA: /data/postgres
+        volumes:
+          - ${HOME}/PG_Data:/data/postgres
+          - /tmp:/tmp
+        ports:
+          - 5432:5432
+        healthcheck:
+              test: ["CMD-SHELL", "pg_isready", "-U", "postgres", "-d", "postgres"]
 
     defaults:
       run:
@@ -25,9 +40,9 @@ jobs:
         run: |
           sudo apt-get -y install gdal-bin
 
-      - name: PostgreSQL
-        run: |
-          docker compose -f "subjects/PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
+      # - name: PostgreSQL
+      #   run: |
+      #     docker compose -f "subjects/PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
 
 
       - name: PDBS2 data
