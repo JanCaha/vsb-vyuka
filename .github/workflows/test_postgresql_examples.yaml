@@ -37,7 +37,7 @@ jobs:
 
       - name: Pip install psycopg
         run: |
-          pip install psycopg
+          pip install psycopg --break-system-packages
       
       - name: Import spatial data to Postgis
         run: |
