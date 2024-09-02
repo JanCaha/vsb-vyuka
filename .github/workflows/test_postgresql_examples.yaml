@@ -23,29 +23,29 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
-      
-      - name: Install GDAL
-        run: |
-          sudo apt-get -y install gdal-bin
-
+        
       - name: PostgreSQL
         run: |
           docker compose -f "subjects/PDBS2/soubory/postgresql-postgis-compose.yaml" up -d --build
-
-
+        
+      - name: Pip install psycopg
+        run: |
+          pip install psycopg
+        
+      - name: Test
+        run: |
+          python3 -c 'import psycopg; psycopg.connect("dbname=postgres host=localhost user=postgres port=5432 password=heslo")'
+        
+      - name: Install GDAL
+        run: |
+          sudo apt-get -y install gdal-bin
+            
       - name: PDBS2 data
         run: |
           cp -r ./subjects/PDBS2/soubory/ /tmp/postgres/
           ls -l /tmp/postgres
 
-      - name: Pip install psycopg
-        run: |
-          pip install psycopg
-     
-      - name: Test
-        run: |
-          python3 -c 'import psycopg; psycopg.connect("dbname=postgres host=localhost user=postgres port=5432 password=heslo")'
-
+      
       - name: Import spatial data to Postgis
         run: |
           cd subjects/PDBS2/soubory
