@@ -6,6 +6,9 @@ Materiály pro moje předměty vyučované v roce **{{< var dates.school-year >}
 
 ## Zimní semestr
 
+- [Programování v GIS 3 (PGIS3)](subjects/pgis3.qmd)
+- [Programování v GIS 4 (PvGIS4)](subjects/pvgis4.qmd)
+
 ## Letní semestr
 
 - [Programování v GIS 2 (PGIS2)](subjects/pgis2.qmd)
