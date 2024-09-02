@@ -29,6 +29,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: Pandoc
+        run: |
+          sudo apt-get -y install pandoc
+          pandoc --version
+            
       - name: Install R and packages
         run: |
           sudo ./linux_install_R.sh  --all
