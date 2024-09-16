@@ -63,4 +63,4 @@ jobs:
       
       - name: Run Examples
         run: |
-          python3 subjects/PDBS2/soubory/sql_scripts_runner.py subjects/PDBS2/skripty $PG_CONN
+          python3 subjects/PDBS2/soubory/sql_scripts_runner.py subjects/PDBS2/skripty "$PG_CONN"
