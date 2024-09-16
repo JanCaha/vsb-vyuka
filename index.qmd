@@ -21,3 +21,7 @@ Materiály pro moje předměty vyučované v roce **{{< var dates.school-year >}
 - [Visual Studio Code](tools/vscode.qmd)
 - [OSGeo4W](tools/osgeo4w.qmd)
 - [GitHub Copilot](tools/github-copilot.qmd)
+
+## Popisy
+
+- [Python Error Traceback](descriptions/python-traceback.qmd)
