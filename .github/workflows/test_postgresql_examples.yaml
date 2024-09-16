@@ -38,10 +38,14 @@ jobs:
       - name: Pip install psycopg
         run: |
           pip install psycopg
-        
+
+      - name: PG CONN ENV
+        run: |
+          echo "PG_CONN="dbname=postgres host=localhost user=postgres port=5432 password=heslo"" >> $GITHUB_ENV
+      
       - name: Test
         run: |
-          python3 -c 'import psycopg; psycopg.connect("dbname=postgres host=localhost user=postgres port=5432 password=heslo")'
+          python3 -c 'import psycopg; import os; psycopg.connect(os.getenv("PG_CONN"))'
         
       - name: Install GDAL
         run: |
@@ -59,4 +63,4 @@ jobs:
       
       - name: Run Examples
         run: |
-          python3 subjects/PDBS2/soubory/sql_scripts_runner.py subjects/PDBS2/skripty "dbname=postgres host=localhost user=postgres port=5432 password=heslo"
+          python3 subjects/PDBS2/soubory/sql_scripts_runner.py subjects/PDBS2/skripty $PG_CONN
