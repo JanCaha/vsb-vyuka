@@ -49,8 +49,11 @@ website:
           text: OSGeo4W
         - href: tools/github-copilot.qmd
           text: GitHub Copilot
-      
-
+      - section: Popisy
+        contents:
+        - href: descriptions/python-traceback.qmd
+          text: Python Error Traceback
+          
 format:
   html:
     theme:

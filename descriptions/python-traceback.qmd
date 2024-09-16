@@ -1,0 +1,62 @@
+---
+title: Python Error Traceback
+format: 
+    html:
+        code-line-numbers: true
+---
+
+`Python Error Traceback` je způsob výpisu kritických chyb u programů napsaných v Pythonu. Tyto chyby se vyskytují za běhu programu a způsobí jeho nestandardní ukončení (právě touto chybou).
+
+Mějme následující ukázkový kód, který se pokouší otevřít soubor pomocí knihovny `GDAL`, přičemž daný soubor **path/to/shapefile.shp** neexistuje.
+
+```{python}
+# | code-line-numbers: true
+# | eval: false
+from pathlib import Path
+
+from osgeo import gdal, ogr
+
+gdal.UseExceptions()
+
+
+def open_vector_layer(path: Path) -> ogr.DataSource:
+    ds: ogr.DataSource = ogr.Open(path, gdal.OF_UPDATE)
+    return ds
+
+
+if __name__ == "__main__":
+    path = Path("path/to/shapefile.shp")
+    ds = open_vector_layer(path)
+    print(ds)
+```
+
+Výpis chyby v konzoli bude následující:
+
+```bash
+Traceback (most recent call last):
+  File "script.py", line 15, in <module>
+    ds = open_vector_layer(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "script.py", line 9, in open_vector_layer
+    ds: ogr.DataSource = ogr.Open(path, gdal.OF_UPDATE)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/miniconda3/envs/env-project/lib/python3.11/site-packages/osgeo/ogr.py", line 7465, in Open
+    return _ogr.Open(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: path/to/shapefile.shp: No such file or directory
+```
+
+Zde je důležité vnímat strukturu chybové hlášky. Každý začátek řádku s textem `File` označuje soubor, kde chyba nastala. O řáděk níže najdeme konkrétní python kód, kde se chyba vyskytla. Takovýchto dvojic může být několik (i poměrně hodně, v ukázce výše jsou 3).
+```bash
+  File "script.py", line 15, in <module>
+    ds = open_vector_layer(path)
+```
+Jako programátora nás obvykle zajímá nejvíce první z těchto chyb, protože ukazuje na náš kód, který chybu vyvolal. A následně poslední řádek s zápisem `File`, neboť ten okazuje na místo, kde již program nemohl pokračovat dále. 
+
+Poslední řádek `traceback` pak vypíše typ chyby a chybovou hlášku. 
+```bash
+RuntimeError: path/to/shapefile.shp: No such file or directory
+```
+Tyto údaje mohou být velice informativní, a nebo také poměrně kryptické, v závislosti na chybě, jejím projevu a co konkrétně ji způsobilo. Zde v tomto případě je poměrně deskriptivní a pomůže nám problém vyřešit.
+
+Obvykle je dobré začít řešení chyby vyhledáním popisu chyby (poslední řádek `traceback`), či konzultací s dokumentací poslední volané funkce (poslední řádek `File`). V některých situacích lze řešení hledat i přímo v kódu, nahlednutím na daný problém. Zde v tomto případě by se jednalo o soubor `/miniconda3/envs/env-project/lib/python3.11/site-packages/osgeo/ogr.py` na řádku 7465. V tomto případě ale nebude tento postup příliš funkční, neboť knihovna **OGR** je **C++ binding** pro **Python**, kde samotný vykonavaný kód přímo nevidíme. V mnoha jiných knihovnách, ale budeme schopní přímo na kód nahlédnout.
