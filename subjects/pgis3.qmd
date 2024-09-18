@@ -1,3 +1,51 @@
 ---
 title: Programování v GIS 3 (PGIS3)
+listing:
+    - id: prezentace
+      contents: PGIS3/prezentace
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+      fields: [date, title] 
+      field-display-names:
+          title: "Prezentace"
+          date: "Datum"
+          author: "Autor"
+    - id: codes
+      contents: PGIS3/skripty/description.yaml
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+      fields: [date, title] 
+      field-display-names:
+          title: "Skript"
+          date: "Datum"
+          author: "Autor"
 ---
+
+## Řešená témata{.topics}
+
+- [ArcPy]{.software}
+
+## Seminární práce{.seminar-work}
+
+Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte knihovnu [ArcPy]{.software}. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript odevzdejte emailem před posledním cvičením. Funkčnost skriptu bude prezentována na posledním cvičení.
+
+
+## Prezentace{.presentations}
+
+::: {#prezentace}
+:::
+
+## Zdroje{.sources}
+
+## Ukázkové kódy{.codes}
+
+::: {#codes}
+:::

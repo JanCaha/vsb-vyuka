@@ -31,7 +31,7 @@ filters:
    - include-code-files
 ---
 
-## 📃 Řešená témata
+## Řešená témata{.topics}
 
 - opakování základů Pythonu
 - knihovna GDAL/OGR
@@ -40,35 +40,37 @@ filters:
 - funkce a objekty v Pythonu 
 - Pandas, geopandas, Polars, geopolars
 
-## 📝 Seminární práce
-
-Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte kteroukoliv z knihoven, představených během výuky. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript spolu s testovacími daty odevzdejte e-mailem.
-
-
-## 📑Prezentace
+## Prezentace{.presentations}
 
 ::: {#prezentace}
 :::
 
-## 📚 Zdroje
+## Seminární práce{.seminar-work}
 
-- data [Natural Earth](https://www.naturalearthdata.com/)
+Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte kteroukoliv z knihoven, představených během výuky. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript spolu s testovacími daty odevzdejte e-mailem.
+
+## Zdroje{.sources}
+
 - [GDAL/OGR Cookbook](https://pcjericks.github.io/py-gdalogr-cookbook/)
 - [Geocomputation with Python](https://py.geocompx.org/)
 
-## 💻 Ukázkové kódy
+## Data ke stažení{.data-sources}
+
+- data [Natural Earth](https://www.naturalearthdata.com/)
+
+## Ukázkové kódy{.codes}
 
 ::: {#codes}
 :::
 
-## 🖥 Instalace
+## Instalace{.instals}
 
 - management Pythonu - [Miniconda](https://docs.anaconda.com/free/miniconda/index.html)
 - IDE - [Visual Studio Code](https://code.visualstudio.com/)
 - extenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator
 - instalace Conda environmentu
 
-Definice environment souboru, např. s názvem `env-pgis2.yaml` 
+Definice environment souboru, např. s názvem `env-pgis2.yaml`
 ```{.yaml include="./PGIS2/soubory/conda-environment.yml"}
 ```
 

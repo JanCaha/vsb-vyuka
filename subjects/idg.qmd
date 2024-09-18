@@ -31,7 +31,7 @@ filters:
    - include-code-files
 ---
 
-## 📃 Řešená témata
+## Řešená témata{.topics}
 
 - úvod do jazyka R
 - načítání dat do R
@@ -40,12 +40,12 @@ filters:
 - `Rmarkdown` a `Quarto`
 - prostorová data v R, vektorory, rastry, vizualizace a operace s daty
 
-## 📑Prezentace
+## Prezentace{.presentations}
 
 ::: {#prezentace}
 :::
 
-## 📝 Seminární práce
+## Seminární práce{.seminar-work}
 
 Vyberte si libovolnou otevřenou datovou sadu pro ČR, např. z [Národního katalogu otevřených dat](https://data.gov.cz/datov%C3%A9-sady) či jiného zdroje. Vytvořte buď `Rmarkdown` nebo `Quarto` dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující:
 
@@ -56,26 +56,26 @@ Vyberte si libovolnou otevřenou datovou sadu pro ČR, např. z [Národního kat
 - jedna interaktivní vizualizace (balík `plotly` pro grafy, nebo `leaflet` pro prostorová data)
 - statistická sumarizace/vyhodnocení dat - shrnutí, tabulka, vizualizace
 
-## 📚 Zdroje
+## Zdroje{.sources}
 
 - kniha [R for Data Science (2e)](https://r4ds.hadley.nz/) - shrnuje základní postupy datové vědy (data science) v R
 - kniha [Hands-On Programming with R](https://rstudio-education.github.io/hopr/) - programování v R 
 - kniha [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) - vizualizace dat - příklady v R
 - kniha [Geocomputation with R](https://r.geocompx.org/) - základy práce s geodaty v R
   
-## Další zajímavé zdroje
+### Další zajímavé zdroje
 
 - kniha [Data Visualization](https://socviz.co/) - vizualizace dat - příklady v R
 - kniha [Statistical Inference via Data Science](https://moderndive.com/) - statistické metody/postupy v R
 
 
-## 💻 Ukázkové kódy
+## Ukázkové kódy{.codes}
 
 ::: {#codes}
 :::
 
 
-## 🖥 Instalace
+## Instalace{.instals}
 
 - R - [R CRAN](https://cran.r-project.org/bin/windows/base/)
 - IDE - [RStudio](https://posit.co/download/rstudio-desktop/)

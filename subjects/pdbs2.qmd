@@ -30,33 +30,33 @@ filters:
    - include-code-files
 ---
 
-## 📃 Řešená témata
+## Řešená témata{.topics}
 
 - Oracle 
 - Instalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL
 
-## 📑Prezentace
+## Prezentace{.presentations}
 
 ::: {#prezentace}
 :::
 
-## 🗂️ Data ke stažení
+## Zdroje{.sources}
+
+- [PostgreSQL Manuál](https://www.postgresql.org/docs/14/index.html)
+- [PostGIS Manuál](https://postgis.net/docs/manual-3.4/)
+
+## Data ke stažení{.data-sources}
 
 - [GPKG s vrstvami okresů a krajů](./PDBS2/soubory/uzemni_jednotky.gpkg)
 - [CSV s údaji o počtu obyvatel](./PDBS2/soubory/obyvatele_roky.csv)
 - [CSV s převodním číselníkem z RUIAN do ČSÚ](./PDBS2/soubory/ciselnik_csu_ruian.csv)
 
-## 📚 Zdroje
-
-- [PostgreSQL Manuál](https://www.postgresql.org/docs/14/index.html)
-- [PostGIS Manuál](https://postgis.net/docs/manual-3.4/)
-
-## 💻 Ukázkové kódy
+## Ukázkové kódy{.codes}
 
 ::: {#codes}
 :::
 
-## 🖥 Instalace PostregSQL
+## Instalace PostregSQL{.instals}
 
 - viz odkaz [Linux Mint](../tools/linux-mint.qmd) - potřebujeme jednak akktuální GIS softwary a PostgreSQL (detaily na stránce)
 
