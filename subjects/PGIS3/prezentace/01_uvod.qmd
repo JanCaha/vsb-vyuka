@@ -1,5 +1,5 @@
 ---
-title: "Úvodní cvičení"
+title: "Úvodní hodina"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
 date: 2024-09-23
@@ -41,7 +41,7 @@ execute:
 - [VS Code]{.software}
 - extenze pro [VS Code]{.software}
 - management Pythonu skrze [Conda]{.software} přímo z [ArcGIS Pro]{.software}
-- použití GitHub Copilot AI viz [zde](../../../tools/github-copilot.qmd)
+- použití [GitHub Copilot AI]{.tool} viz [zde](../../../tools/github-copilot.qmd)
 
 ## Materiály
 
@@ -56,4 +56,4 @@ execute:
   - netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód 
 - písemka - klíčové položky programování v Pythonu a [ArcPy]{.software}
  
-# Dotazy? {.center}
+# Dotazy?{.center}
