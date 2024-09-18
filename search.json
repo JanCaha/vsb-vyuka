@@ -709,42 +709,42 @@
   {
     "objectID": "subjects/PGIS3/prezentace/01_uvod.html#náplň",
     "href": "subjects/PGIS3/prezentace/01_uvod.html#náplň",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "Náplň",
     "text": "Náplň\n\nprogramování v Pythonu s knihovnou ArcPy pro ArcGIS Pro\nzpracování a editace dat pomocí ArcPy, vektorová i rastrová data\nmožnosti automatizace v ArcGIS Pro pomocí ArcPy\nvytváření skriptů a nástrojů pro ArcGIS Pro v Pythonu"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/01_uvod.html#o-čem-to-bude",
     "href": "subjects/PGIS3/prezentace/01_uvod.html#o-čem-to-bude",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "O čem to bude",
     "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\npráce s ArcPy a její dokumentací\noperace s geodaty skrze API ArcPy\nfunkcionální i objektově orientované programování\nodchytávání výjimek"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/01_uvod.html#dílčí-úlohy",
     "href": "subjects/PGIS3/prezentace/01_uvod.html#dílčí-úlohy",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "Dílčí úlohy",
     "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/01_uvod.html#v-čem-budeme-pracovat",
     "href": "subjects/PGIS3/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "V čem budeme pracovat",
     "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code\nmanagement Pythonu skrze Conda přímo z ArcGIS Pro\npoužití GitHub Copilot AI viz zde"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/01_uvod.html#materiály",
     "href": "subjects/PGIS3/prezentace/01_uvod.html#materiály",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "Materiály",
     "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné na jancaha.github.io/vsb-vyuka/\n\ndalší materiály dle potřeby"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/01_uvod.html#zakončení-předmětu",
     "href": "subjects/PGIS3/prezentace/01_uvod.html#zakončení-předmětu",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "Zakončení předmětu",
     "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a ArcPy"
   },
@@ -1094,7 +1094,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-09-23\n\n\nÚvodní cvičení\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-09-23\n\n\nÚvodní hodina\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -1505,7 +1505,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.46742510 -0.02233444 -0.71815058 -0.49577063 -0.34335075"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.0168953 -0.6163582 -0.2017678 -0.5256699 -0.8243353"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
