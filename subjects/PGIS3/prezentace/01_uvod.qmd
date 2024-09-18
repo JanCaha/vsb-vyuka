@@ -1,0 +1,59 @@
+---
+title: "Úvodní cvičení"
+subtitle: "Programování v GIS 3"
+author: "Jan Caha"
+date: 2024-09-23
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Náplň
+
+- programování v [Pythonu]{.software} s knihovnou [ArcPy]{.software} pro [ArcGIS Pro]{.software}
+- zpracování a editace dat pomocí [ArcPy]{.software}, vektorová i rastrová data
+- možnosti automatizace v [ArcGIS Pro]{.software} pomocí [ArcPy]{.software}
+- vytváření skriptů a nástrojů pro [ArcGIS Pro]{.software} v [Pythonu]{.software}
+
+## O čem to bude
+
+- programování skriptů v Pythonu (funkce, objekty, atd.)
+- práce s [ArcPy]{.software} a její [dokumentací](https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm)
+- operace s geodaty skrze API [ArcPy]{.software}
+- funkcionální i objektově orientované programování
+- odchytávání výjimek
+  
+## Dílčí úlohy
+
+- použitelný a čitelný kód 
+- replikovatelné postupy
+- programovací techniky a postupy
+- debugování programů
+
+## V čem budeme pracovat
+
+- [VS Code]{.software}
+- extenze pro [VS Code]{.software}
+- management Pythonu skrze [Conda]{.software} přímo z [ArcGIS Pro]{.software}
+- použití GitHub Copilot AI viz [zde](../../../tools/github-copilot.qmd)
+
+## Materiály
+
+- prezentace
+- kód z cvičení
+- budou dostupné na [jancaha.github.io/vsb-vyuka/](jancaha.github.io/vsb-vyuka/)
+- + další materiály dle potřeby
+
+## Zakončení předmětu
+
+- samostatný projekt
+  - netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód 
+- písemka - klíčové položky programování v Pythonu a [ArcPy]{.software}
+ 
+# Dotazy? {.center}
