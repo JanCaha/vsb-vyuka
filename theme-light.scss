@@ -1,0 +1,26 @@
+/*-- scss:rules --*/
+
+.software {
+    // font-weight: bold;
+    color:rgb(20, 0, 130)
+}
+
+h2.topics::before {
+  content: '📃 ';
+} 
+
+h2.seminar-work::before{
+  content: '📝 ';
+}
+
+h2.sources::before{
+  content: '📚 ';
+}
+
+h2.codes::before{
+  content: '💻 ';
+}
+
+h2.instals::before{
+  content: '🖥 ';
+}
