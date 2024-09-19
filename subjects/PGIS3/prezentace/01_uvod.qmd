@@ -50,6 +50,12 @@ execute:
 - budou dostupné na [jancaha.github.io/vsb-vyuka/](jancaha.github.io/vsb-vyuka/)
 - + další materiály dle potřeby
 
+## Z čeho vycházíme
+
+- znalost Pythonu dle předmetu **Programování v GIS 2**
+- znalost managementu Pythonu skrze [Conda]{.software}
+- znalost [ArcGIS Pro]{.software} a jeho základních funkcí
+
 ## Zakončení předmětu
 
 - samostatný projekt
