@@ -45,6 +45,12 @@ Sestavte Python skript, které provede libovolné netriviální zpracování pro
 
 ## Zdroje{.sources}
 
+- [API ArcPy for ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/arcpy/main/arcgis-pro-arcpy-reference.htm)
+
+## Data ke stažení{.data-sources}
+
+- ukázková data ke knize [Programming ArcGIS Pro with Python – 2nd Edition](https://geospatialtraining.com/books/programming-arcgis-pro-with-python-2nd-edition/)
+
 ## Ukázkové kódy{.codes}
 
 ::: {#codes}
