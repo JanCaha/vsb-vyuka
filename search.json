@@ -164,7 +164,7 @@
     "href": "subjects/PGIS3/prezentace/01_uvod.html#materiály",
     "title": "Úvodní hodina",
     "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné na jancaha.github.io/vsb-vyuka/\n\ndalší materiály dle potřeby"
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné na jancaha.github.io/vsb-vyuka/\ndalší materiály dle potřeby"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/01_uvod.html#z-čeho-vycházíme",
@@ -423,7 +423,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.8128659 -0.4672389 -0.1409415 -0.7184159 -1.3533927"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.07844877 -1.07982955 -0.10714307 -0.47737479 -0.62878053"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1999,7 +1999,7 @@
     "href": "subjects/PGIS4/prezentace/01_uvod.html#materiály",
     "title": "Úvodní hodina",
     "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné na jancaha.github.io/vsb-vyuka/\n\ndalší materiály dle potřeby"
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné na jancaha.github.io/vsb-vyuka/\ndalší materiály dle potřeby"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/01_uvod.html#z-čeho-vycházíme",
@@ -2123,7 +2123,7 @@
     "href": "tools/vscode.html#extenze",
     "title": "Visual Studio Code",
     "section": "Extenze",
-    "text": "Extenze\n\nextenze lze instalovat buď globálně do uživatelského profilu a nebo uložit do souboru .vscode/extensions.json ve složce projektu, tyto extenze pak budou dostupné specificky pro daný projekt\n\n\nDoporučené extenze pro VS Code\nV závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.\n\nGitHub Copilot (GitHub.copilot) - umělá inteligence pro psaní kódu\nCzech - Code Spell Checker (streetsidesoftware.code-spell-checker-czech) - český slovník pro kontroly pravopisu, pokud bude část textů v češtině\nSVG (jock.svg) - zobrazování a úpravy SVG souborů\nTodo Highlight (wayou.vscode-todo-highlight) - zvýraznění TODO a podobných komentářů\nYAML (redhat.vscode-yaml) - podpora YAML formátu\nMarkdown All in One (yzhang.markdown-all-in-one) - podpora Markdown formátu\nmarkdownlint (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu\n\n\n\nDoporučené extenze pro Python\n\nněkteré extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu PGIS2\nníže následuje seznam doporučených extenzí pro Python\n\n{\n    // List of extensions which should be recommended for users of this workspace.\n    \"recommendations\": [\n        \"ms-python.debugpy\",\n        \"ms-python.vscode-pylance\",\n        \"ms-python.autopep8\",\n        \"ms-python.black-formatter\",\n        \"ms-python.flake8\",\n        \"ms-python.isort\",\n        \"ms-python.mypy-type-checker\",\n        \"ms-python.pylint\",\n        \"ms-python.python\"\n        \n    ],\n    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.\n    \"unwantedRecommendations\": [\n    ]\n}",
+    "text": "Extenze\n\nextenze lze instalovat buď globálně do uživatelského profilu a nebo uložit do souboru .vscode/extensions.json ve složce projektu, tyto extenze pak budou dostupné specificky pro daný projekt\n\n\nDoporučené extenze pro VS Code\nV závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.\n\nGitHub Copilot (GitHub.copilot) - umělá inteligence pro psaní kódu\nCzech - Code Spell Checker (streetsidesoftware.code-spell-checker-czech) - český slovník pro kontroly pravopisu, pokud bude část textů v češtině\nSVG (jock.svg) - zobrazování a úpravy SVG souborů\nTodo Highlight (wayou.vscode-todo-highlight) - zvýraznění TODO a podobných komentářů\nYAML (redhat.vscode-yaml) - podpora YAML formátu\nMarkdown All in One (yzhang.markdown-all-in-one) - podpora Markdown formátu\nmarkdownlint (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu\n\n\n\nDoporučené extenze pro Python\n\nněkteré extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu PGIS2\nníže následuje seznam doporučených extenzí pro Python\n\n{\n    // List of extensions which should be recommended for users of this workspace.\n    \"recommendations\": [\n        \"ms-python.debugpy\",\n        \"ms-python.vscode-pylance\",\n        \"ms-python.autopep8\",\n        \"ms-python.black-formatter\",\n        \"ms-python.flake8\",\n        \"ms-python.isort\",\n        \"ms-python.mypy-type-checker\",\n        \"ms-python.pylint\",\n        \"ms-python.python\"\n        \n    ],\n    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.\n    \"unwantedRecommendations\": [\n    ]\n}\n\n\nNastavení projektů využívajících QGIS Python API na Windows\nViz informace u OSGEO4W.",
     "crumbs": [
       "Nástroje",
       "Visual Studio Code"
@@ -2157,6 +2157,17 @@
     "title": "OSGEO4W",
     "section": "Instalace",
     "text": "Instalace\nPo spuštění instalátoru je nutné vybrat typ instalace - Advanced Install, viz následující obrázek:\n\n\n\n\n\n\nObr. 1: Volba typu instalace\n\n\n\nDalší položkou je volba instalace z Internetu (používáme nejaktuálnější zdroje).\n\n\n\n\n\n\nObr. 2: Volba instalace z internetu\n\n\n\nDalší volbou je umístění instalace. Výchozí nastavení je na disk C:, lze změnit disk, nicméně je vhodné instalovat do co nevyšše umístěné složky, takže např: D:\\OSGeo4W, aby nebyla výsledná cesta příliš dlouhá.\n\n\n\n\n\n\nObr. 3: Umístění instalace\n\n\n\nNásledující dva kroky, volbu dočasného adresáře a proxy, lze obvykle nechat na výchozích hodnotách.\n\n\n\n\n\n\nObr. 4: Volba dočasného adresáře\n\n\n\n\n\n\n\n\n\nObr. 5: Nastavení proxy\n\n\n\nNásledujícím krokem je volba zdrojového serveru, obvykle vyhoví výchozí hodnota.\n\n\n\n\n\n\nObr. 6: Volba serveru\n\n\n\nV dalším kroce už se dostáváme k volbě komponent, které se mají instalovat. Obvykle věnujeme pozornost zejména položkám Commandline Utilities a Desktop, knihovny v pložce Libs se vyberou dle zvolených komponent automaticky.\n\n\n\n\n\n\nObr. 7: Seznam komponent dle typu\n\n\n\nZ poskytutého seznamu vybereme potřebné komponenty.\n\n\n\n\n\n\nObr. 8: Výběr komponent\n\n\n\nNásleduje potvrzení licencí, samotné stahování a instalace komponent, což může být časově náročnější.\n\n\n\n\n\n\nObr. 9: Instalace\n\n\n\n\nAktualizace komponent\nOpětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku Obr. 8 pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.",
+    "crumbs": [
+      "Nástroje",
+      "OSGeo4W"
+    ]
+  },
+  {
+    "objectID": "tools/osgeo4w.html#nastavení-python-prostředí-ve-visual-studiu-code-pro-python-i-qgis-python-api",
+    "href": "tools/osgeo4w.html#nastavení-python-prostředí-ve-visual-studiu-code-pro-python-i-qgis-python-api",
+    "title": "OSGEO4W",
+    "section": "Nastavení Python prostředí ve Visual Studiu Code pro Python i QGIS Python API",
+    "text": "Nastavení Python prostředí ve Visual Studiu Code pro Python i QGIS Python API\n{   \n    // aby fungovalo automatické doplňování a další věci v VSCode\n    \"python.autoComplete.extraPaths\": [\"C:\\\\OSGeo4W\\\\apps\\\\qgis\\\\python\"],\n    // interpretor pythonu, který se bude spouštět\n    // !!! zde může být nutné upravit verzi Pythonu, pokud je jiná než 3.9, takže místi Python39 třeba Python311\n    \"python.defaultInterpreterPath\": \"C:\\\\OSGeo4W\\\\apps\\\\Python39\\\\python.exe\",\n    // proměnná pro Python, kde hledat doplňkové balíčky - hlavně pro QGIS, ale je přidaný i aktuální hlavní adresář, \n    // což umožní importovat ze zde vytvořených balíků - např. pro testování\n    \"terminal.integrated.env.windows\": {\n        \"PYTHONPATH\": \"${env:PYTHONPATH};C:\\\\OSGeo4W\\\\apps\\\\qgis\\\\python;${workspaceFolder}\"\n    },\n    // python by měl dělat analýzu těchhle adresářů, věci v IDE budou lépe fungovat, když tady to nastavení bude\n    \"python.analysis.extraPaths\": [\n        \"C:\\\\OSGeo4W\\\\apps\\\\qgis\\\\python\"\n    ],\n\n}",
     "crumbs": [
       "Nástroje",
       "OSGeo4W"
