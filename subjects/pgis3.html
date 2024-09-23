@@ -109,9 +109,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-title","listing-author","listing-date"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -320,6 +320,7 @@ window.Quarto = {
   <li><a href="#seminární-práce" id="toc-seminární-práce" class="nav-link" data-scroll-target="#seminární-práce">Seminární práce</a></li>
   <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">Prezentace</a></li>
   <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">Zdroje</a></li>
+  <li><a href="#data-ke-stažení" id="toc-data-ke-stažení" class="nav-link" data-scroll-target="#data-ke-stažení">Data ke stažení</a></li>
   <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">Ukázkové kódy</a></li>
   </ul>
 </nav>
@@ -371,7 +372,15 @@ Prezentace
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1726663084248" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="149" data-listing-title-sort="Úvodní hodina" data-listing-filename-sort="01_uvod.qmd">
+<tr data-index="0" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1727066643502" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220" data-listing-title-sort="Základ [ArcPy]{.software} pro [ArcGIS Pro]{.software}" data-listing-filename-sort="02_arcpy.qmd">
+<td>
+<span class="listing-date">2024-09-23</span>
+</td>
+<td>
+<a href="../subjects/PGIS3/prezentace/02_arcpy.html" class="title listing-title">Základ <span class="software">ArcPy</span> pro <span class="software">ArcGIS Pro</span></a>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1727066643501" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="172" data-listing-title-sort="Úvodní hodina" data-listing-filename-sort="01_uvod.qmd">
 <td>
 <span class="listing-date">2024-09-23</span>
 </td>
@@ -388,6 +397,15 @@ No matching items
 </section>
 <section id="zdroje" class="level2 sources">
 <h2 class="sources anchored" data-anchor-id="zdroje">Zdroje</h2>
+<ul>
+<li><a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/main/arcgis-pro-arcpy-reference.htm">API ArcPy for ArcGIS Pro</a></li>
+</ul>
+</section>
+<section id="data-ke-stažení" class="level2 data-sources">
+<h2 class="data-sources anchored" data-anchor-id="data-ke-stažení">Data ke stažení</h2>
+<ul>
+<li>ukázková data ke knize <a href="https://geospatialtraining.com/books/programming-arcgis-pro-with-python-2nd-edition/">Programming ArcGIS Pro with Python – 2nd Edition</a></li>
+</ul>
 </section>
 <section id="ukázkové-kódy" class="level2 codes">
 <h2 class="codes anchored" data-anchor-id="ukázkové-kódy">Ukázkové kódy</h2>
@@ -404,6 +422,14 @@ Skript
 </tr>
 </thead>
 <tbody class="list">
+<tr data-index="0" data-listing-date-sort="1727049600000" data-listing-title-sort="utils.py">
+<td>
+<span class="listing-date">2024-09-23</span>
+</td>
+<td>
+<a href="PGIS3/skripty/utils.py" class="title listing-title">utils.py</a>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="listing-no-matching d-none">

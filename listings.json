@@ -1,5 +1,12 @@
 [
   {
+    "listing": "/subjects/pgis3.html",
+    "items": [
+      "/subjects/PGIS3/prezentace/02_arcpy.html",
+      "/subjects/PGIS3/prezentace/01_uvod.html"
+    ]
+  },
+  {
     "listing": "/subjects/pgis2.html",
     "items": [
       "/subjects/PGIS2/prezentace/01_uvod.html",
@@ -11,16 +18,10 @@
     ]
   },
   {
-    "listing": "/subjects/pgis3.html",
+    "listing": "/subjects/pvgis4.html",
     "items": [
-      "/subjects/PGIS3/prezentace/01_uvod.html"
-    ]
-  },
-  {
-    "listing": "/subjects/pdbs2.html",
-    "items": [
-      "/subjects/PDBS2/prezentace/01_uvod.html",
-      "/subjects/PDBS2/prezentace/02_postgresql.html"
+      "/subjects/PGIS4/prezentace/01_uvod.html",
+      "/subjects/PGIS4/prezentace/02_qgis_python_api.html"
     ]
   },
   {
@@ -34,6 +35,13 @@
       "/subjects/IDG/prezentace/06_prostorova_data.html",
       "/subjects/IDG/prezentace/07_statisticke_testovani_a_modelovani.html",
       "/subjects/IDG/prezentace/08_vybrané_statistické_metody.html"
+    ]
+  },
+  {
+    "listing": "/subjects/pdbs2.html",
+    "items": [
+      "/subjects/PDBS2/prezentace/01_uvod.html",
+      "/subjects/PDBS2/prezentace/02_postgresql.html"
     ]
   }
 ]
