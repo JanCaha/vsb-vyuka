@@ -48,7 +48,7 @@ execute:
 - prezentace
 - kód z cvičení
 - budou dostupné na [jancaha.github.io/vsb-vyuka/](jancaha.github.io/vsb-vyuka/)
-- + další materiály dle potřeby
+- další materiály dle potřeby
 
 ## Z čeho vycházíme
 
