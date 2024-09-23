@@ -51,3 +51,25 @@ Následuje potvrzení licencí, samotné stahování a instalace komponent, což
 ### Aktualizace komponent
 
 Opětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku @fig-install-8 pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.
+
+## Nastavení Python prostředí ve Visual Studiu Code pro Python i QGIS Python API
+
+```json
+{   
+    // aby fungovalo automatické doplňování a další věci v VSCode
+    "python.autoComplete.extraPaths": ["C:\\OSGeo4W\\apps\\qgis\\python"],
+    // interpretor pythonu, který se bude spouštět
+    // !!! zde může být nutné upravit verzi Pythonu, pokud je jiná než 3.9, takže místi Python39 třeba Python311
+    "python.defaultInterpreterPath": "C:\\OSGeo4W\\apps\\Python39\\python.exe",
+    // proměnná pro Python, kde hledat doplňkové balíčky - hlavně pro QGIS, ale je přidaný i aktuální hlavní adresář, 
+    // což umožní importovat ze zde vytvořených balíků - např. pro testování
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${env:PYTHONPATH};C:\\OSGeo4W\\apps\\qgis\\python;${workspaceFolder}"
+    },
+    // python by měl dělat analýzu těchhle adresářů, věci v IDE budou lépe fungovat, když tady to nastavení bude
+    "python.analysis.extraPaths": [
+        "C:\\OSGeo4W\\apps\\qgis\\python"
+    ],
+
+}
+```

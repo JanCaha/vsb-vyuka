@@ -140,3 +140,6 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 	]
 }
 ```
+### Nastavení projektů využívajících QGIS Python API na Windows
+
+Viz informace u [OSGEO4W](osgeo4w.qmd##nastavení-python-prostředí-ve-visual-studiu-code-pro-python-i-qgis-python-api).
