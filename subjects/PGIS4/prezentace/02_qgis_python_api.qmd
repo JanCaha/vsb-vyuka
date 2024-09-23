@@ -1,0 +1,68 @@
+---
+title: "Základ [QGIS Python API]{.software}"
+subtitle: "Programování v GIS 4"
+author: "Jan Caha"
+date: 2024-09-23
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## QGIS
+
+- nejrrozšířenější open-source GIS software
+- vychází a staví na mnoha open-source knihovnách - např. [GDAL/OGR]{.software}, [PROJ]{.software}, [GEOS]{.software}, [PostGIS]{.software}, [PDAL]{.software}, [SpatiaLite]{.software}, ale i [GRASS]{.software} a další
+- míra rozšřenosti se výrazně liší regionálně, ale i dle oboru 
+
+## Zdrojový kód QGIS
+
+- většinou [C++]{.software}
+- výrazně se opírá o knihovnu [Qt]{.software}, zejména GUI ale i další části
+- vývojáři QGIS se snaží o co největší modularitu a přehlednost kódu
+- kód je připravován tak, aby byla snadná jeho propojitelnosti s [Pythonem]{.software}, který slouží pro tvorbu pluginů, skriptů a nástrojů
+- zajímavost - většina kódu je sice v C++, ale testuje se z velké části až **Python binding**
+
+## QGIS Python API
+
+- část QGIS API, která je dostupná v [Pythonu]{.software} pro použití vyvojářů
+- umožňuje přístup k třídám a funcím QGIS, stejně jako práci s celým softwarem
+- [dokumentace](https://qgis.org/pyqgis/master/) - v poslední době výrazně vylepšená a rozšířená
+
+## Struktura QGIS Python API
+
+- v pythonu importujeme modul `qgis` a jeho submoduly
+- několiv hlavních částí
+  - `qgis.core` - hlavní a nejdůležitější část, třídy pro reprezentaci klíčových prvků GIS
+  - `qgis.gui` - grafické uživatelské rozhraní a jeho třídy
+  - `qgis.analysis` - třídy pro analýzy a zpracování dat
+  - `qgis.server` - třídy pro práci s QGIS serverem (publikace online map)
+  - `qgis.processing` - třídy pro tvorbu nástrojů v QGIS
+  - `qgis._3d` - 3D funcionalita QGIS
+
+## Vývoj QGIS
+
+- kontinuální vývoj
+- sudé verze - vydávají se (3.32, 3.34, 3.36, ...), liché verze jsou vývojové (3.33, 3.35, 3.37, 3.39, ...)
+- 3 verze ročně - z toho jedná je s dlouhodobou podporou (LTR)
+- financováné skrze sponzory, granty, ale i příspěvky komunity
+- vhodné pravidelně updatovat
+
+## Functionalita QGIS
+
+- samotný software obsahuje značné množství funkcí a nástrojů
+- ale zásadní pro použitelnost a rozšířenost jsou pluginy 
+- [QGIS Python Plugins Repository](https://plugins.qgis.org/plugins/?sort=-downloads)
+- výhodou pluginů je, že jsou psány v Pythonu a tudíž v podstatě "by default" open-source
+- kód většiny pluginů je dostupný na GitHubu či jiné platformě pro sdílení kódu
+
+## Ukázky pluginů
+
+- výběr zajímavých pluginů
+
+## Dotazy?{.center}

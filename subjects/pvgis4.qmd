@@ -1,3 +1,52 @@
 ---
 title: Programování v GIS 4 (PvGIS4)
+listing:
+    - id: prezentace
+      contents: PGIS4/prezentace
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+      fields: [date, title] 
+      field-display-names:
+          title: "Prezentace"
+          date: "Datum"
+          author: "Autor"
+    - id: codes
+      contents: PGIS4/skripty/description.yaml
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+      fields: [date, title] 
+      field-display-names:
+          title: "Skript"
+          date: "Datum"
+          author: "Autor"
 ---
+
+## Řešená témata{.topics}
+
+- [PyQGIS]{.software}
+
+## Seminární práce{.seminar-work}
+
+## Prezentace{.presentations}
+
+::: {#prezentace}
+:::
+
+## Zdroje{.sources}
+
+- [QGIS Python API documentation](https://qgis.org/pyqgis/master/)
+
+## Data ke stažení{.data-sources}
+
+## Ukázkové kódy{.codes}
+
+::: {#codes}
+:::
