@@ -52,24 +52,25 @@ Následuje potvrzení licencí, samotné stahování a instalace komponent, což
 
 Opětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku @fig-install-8 pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.
 
-## Nastavení Python prostředí ve Visual Studiu Code pro Python i QGIS Python API
+## Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API
 
-```json
-{   
-    // aby fungovalo automatické doplňování a další věci v VSCode
-    "python.autoComplete.extraPaths": ["C:\\OSGeo4W\\apps\\qgis\\python"],
-    // interpretor pythonu, který se bude spouštět
-    // !!! zde může být nutné upravit verzi Pythonu, pokud je jiná než 3.9, takže místi Python39 třeba Python311
-    "python.defaultInterpreterPath": "C:\\OSGeo4W\\apps\\Python39\\python.exe",
-    // proměnná pro Python, kde hledat doplňkové balíčky - hlavně pro QGIS, ale je přidaný i aktuální hlavní adresář, 
-    // což umožní importovat ze zde vytvořených balíků - např. pro testování
-    "terminal.integrated.env.windows": {
-        "PYTHONPATH": "${env:PYTHONPATH};C:\\OSGeo4W\\apps\\qgis\\python;${workspaceFolder}"
-    },
-    // python by měl dělat analýzu těchhle adresářů, věci v IDE budou lépe fungovat, když tady to nastavení bude
-    "python.analysis.extraPaths": [
-        "C:\\OSGeo4W\\apps\\qgis\\python"
-    ],
+Před spuštěním **Visual Studia Code** je nutné nastavit prostředí pro Python, aby bylo možné používat knihovny dostupné v **OSGEO4W**. Pro tento účel vytvoříme v adresáři `bin` základního adresáře **OSGEO4W** kopii souboru `python-qgis.bat` a upravíme jeho poslední řádek doplněním cesty pro spuštění **VS Code**. Výsledný soubor může vypadat následovně:
 
-}
 ```
+@echo off
+call "%~dp0\o4w_env.bat"
+@echo off
+path %OSGEO4W_ROOT%\apps\qgis\bin;%PATH%
+set QGIS_PREFIX_PATH=%OSGEO4W_ROOT:\=/%/apps/qgis
+set GDAL_FILENAME_IS_UTF8=YES
+rem Set VSI cache to be used as buffer, see #6448
+set VSI_CACHE=TRUE
+set VSI_CACHE_SIZE=1000000
+set QT_PLUGIN_PATH=%OSGEO4W_ROOT%\apps\qgis\qtplugins;%OSGEO4W_ROOT%\apps\qt5\plugins
+set PYTHONPATH=%OSGEO4W_ROOT%\apps\qgis\python;%PYTHONPATH%
+
+start "VS Code" /B "C:\Users\uzivatel\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+```
+Přes tento soubor budeme následně otevírat **VS Code** a v něm bude dostupné prostředí pro Python s knihovnami z **OSGEO4W**. 
+
+V příslušném projektu ve **VS Code** nesmíme zapomenout nastavit správně interpretor Pythonu na python z adresáře **OSGEO4W**. To provedeme v dolní liště vpravo, kde je možné vybrat interpretor Pythonu.
