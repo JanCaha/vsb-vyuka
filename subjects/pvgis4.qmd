@@ -31,7 +31,9 @@ listing:
 
 ## Řešená témata{.topics}
 
-- [PyQGIS]{.software}
+- základní přehled [QGIS]{.software}
+- úvod [PyQGIS]{.software}
+- zprovoznění Pythonu a QGIS Python API ve [VS Code]{.software} dle [návodu](../tools/osgeo4w.qmd#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api)
 
 ## Seminární práce{.seminar-work}
 
