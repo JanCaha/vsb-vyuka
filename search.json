@@ -1032,7 +1032,7 @@
     "href": "subjects/pvgis4.html",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "",
-    "text": "PyQGIS",
+    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1043,7 +1043,7 @@
     "href": "subjects/pvgis4.html#řešená-témata",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "",
-    "text": "PyQGIS",
+    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1098,7 +1098,7 @@
     "href": "subjects/pvgis4.html#ukázkové-kódy",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1782,7 +1782,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.63814693 -0.64783914 -0.04069428 -0.05191006 -0.27319324"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.2340725 -0.3470888 -0.5261295 -1.0471920 -0.6453961"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2212,11 +2212,11 @@
     ]
   },
   {
-    "objectID": "tools/osgeo4w.html#nastavení-python-prostředí-ve-visual-studiu-code-pro-python-i-qgis-python-api",
-    "href": "tools/osgeo4w.html#nastavení-python-prostředí-ve-visual-studiu-code-pro-python-i-qgis-python-api",
+    "objectID": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
+    "href": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
     "title": "OSGEO4W",
-    "section": "Nastavení Python prostředí ve Visual Studiu Code pro Python i QGIS Python API",
-    "text": "Nastavení Python prostředí ve Visual Studiu Code pro Python i QGIS Python API\n{   \n    // aby fungovalo automatické doplňování a další věci v VSCode\n    \"python.autoComplete.extraPaths\": [\"C:\\\\OSGeo4W\\\\apps\\\\qgis\\\\python\"],\n    // interpretor pythonu, který se bude spouštět\n    // !!! zde může být nutné upravit verzi Pythonu, pokud je jiná než 3.9, takže místi Python39 třeba Python311\n    \"python.defaultInterpreterPath\": \"C:\\\\OSGeo4W\\\\apps\\\\Python39\\\\python.exe\",\n    // proměnná pro Python, kde hledat doplňkové balíčky - hlavně pro QGIS, ale je přidaný i aktuální hlavní adresář, \n    // což umožní importovat ze zde vytvořených balíků - např. pro testování\n    \"terminal.integrated.env.windows\": {\n        \"PYTHONPATH\": \"${env:PYTHONPATH};C:\\\\OSGeo4W\\\\apps\\\\qgis\\\\python;${workspaceFolder}\"\n    },\n    // python by měl dělat analýzu těchhle adresářů, věci v IDE budou lépe fungovat, když tady to nastavení bude\n    \"python.analysis.extraPaths\": [\n        \"C:\\\\OSGeo4W\\\\apps\\\\qgis\\\\python\"\n    ],\n\n}",
+    "section": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API",
+    "text": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API\nPřed spuštěním Visual Studia Code je nutné nastavit prostředí pro Python, aby bylo možné používat knihovny dostupné v OSGEO4W. Pro tento účel vytvoříme v adresáři bin základního adresáře OSGEO4W kopii souboru python-qgis.bat a upravíme jeho poslední řádek doplněním cesty pro spuštění VS Code. Výsledný soubor může vypadat následovně:\n@echo off\ncall \"%~dp0\\o4w_env.bat\"\n@echo off\npath %OSGEO4W_ROOT%\\apps\\qgis\\bin;%PATH%\nset QGIS_PREFIX_PATH=%OSGEO4W_ROOT:\\=/%/apps/qgis\nset GDAL_FILENAME_IS_UTF8=YES\nrem Set VSI cache to be used as buffer, see #6448\nset VSI_CACHE=TRUE\nset VSI_CACHE_SIZE=1000000\nset QT_PLUGIN_PATH=%OSGEO4W_ROOT%\\apps\\qgis\\qtplugins;%OSGEO4W_ROOT%\\apps\\qt5\\plugins\nset PYTHONPATH=%OSGEO4W_ROOT%\\apps\\qgis\\python;%PYTHONPATH%\n\nstart \"VS Code\" /B \"C:\\Users\\uzivatel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\"\nPřes tento soubor budeme následně otevírat VS Code a v něm bude dostupné prostředí pro Python s knihovnami z OSGEO4W.\nV příslušném projektu ve VS Code nesmíme zapomenout nastavit správně interpretor Pythonu na python z adresáře OSGEO4W. To provedeme v dolní liště vpravo, kde je možné vybrat interpretor Pythonu.",
     "crumbs": [
       "Nástroje",
       "OSGeo4W"
