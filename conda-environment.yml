@@ -27,6 +27,8 @@ dependencies:
   - pylint
   # SQL
   - psycopg
+  # GIS
+  - qgis
   # install using pip
   # - pip:
     # pgis2
