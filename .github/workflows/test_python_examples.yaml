@@ -16,7 +16,12 @@ jobs:
       contents: write
 
     steps:
-      
+
+      - name: Modify environment Qt mainly
+        run: | 
+           echo "DEBIAN_FRONTEND=noninteractive" >> $GITHUB_ENV
+           echo "QT_QPA_PLATFORM=offscreen" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
     
@@ -39,3 +44,23 @@ jobs:
             echo "*** $FILE ***"
             python3 $FILE 
           done
+
+      - name: Add qgis to Conda
+        run: |
+          conda install qgis
+
+      - name: PGIS4 data
+        run: |
+          ./subjects/PGIS4/soubory/get_data.sh
+      
+      - name: PGIS4 skripty
+        run: |
+          FILES="./subjects/PGIS4/skripty/*.py"
+          for FILE in $FILES
+          do
+            echo "--------------------"
+            echo "*** $FILE ***"
+            # this causes SEGFAULT in Python for the installed version so we remove it from the scripts
+            sed -i -e 's/qgis.exitQgis()/#qgis.exitQgis()/g' $FILE
+            python3 $FILE 
+          done    
