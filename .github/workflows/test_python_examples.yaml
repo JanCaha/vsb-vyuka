@@ -45,11 +45,9 @@ jobs:
             python3 $FILE 
           done
 
-      - uses: conda-incubator/setup-miniconda@v3
-        with:
-          channels: conda-forge
-          activate-environment: env-project
-          environment-file: conda-environment.yml
+      - name: Add qgis to Conda
+        run: |
+          conda install qgis
 
       - name: PGIS4 data
         run: |
