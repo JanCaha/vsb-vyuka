@@ -1,10 +1,11 @@
 from qgis.core import QgsApplication, QgsFeature, QgsVectorLayer
+from utils import data_path
 
 # incializace QGIS a jeho kompoment
 qgis = QgsApplication([], False)
 qgis.initQgis()
 
-layer = QgsVectorLayer("data/world.gpkg", "World", "ogr")
+layer = QgsVectorLayer(data_path("world.gpkg").as_posix(), "World", "ogr")
 
 print(layer.id())
 print(layer.name())
