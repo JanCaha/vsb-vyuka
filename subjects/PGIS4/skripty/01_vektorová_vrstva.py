@@ -14,10 +14,10 @@ print(layer.featureCount())
 
 feature: QgsFeature
 for feature in layer.getFeatures():
-    # print(feature.attributes())
+    print(feature.attributes())
     geom = feature.geometry().centroid()
-    # print(geom.asWkt())
-    # print("*" * 50)
+    print(geom.asWkt())
+    print("*" * 50)
 
 # korektní ukončení QGIS
 qgis.exitQgis()
