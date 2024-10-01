@@ -39,3 +39,17 @@ jobs:
             echo "*** $FILE ***"
             python3 $FILE 
           done
+
+      - name: PGIS4 data
+        run: |
+          ./subjects/PGIS4/soubory/get_data.sh
+      
+      - name: PGIS4 skripty
+        run: |
+          FILES="./subjects/PGIS4/skripty/*.py"
+          for FILE in $FILES
+          do
+            echo "--------------------"
+            echo "*** $FILE ***"
+            python3 $FILE 
+          done    
