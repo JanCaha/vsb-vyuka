@@ -20,4 +20,4 @@ for feature in layer.getFeatures():
     # print("*" * 50)
 
 # korektní ukončení QGIS
-qgis.exitQgis()
+# qgis.exitQgis()
