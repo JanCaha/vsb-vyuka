@@ -40,6 +40,12 @@ jobs:
             python3 $FILE 
           done
 
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          channels: conda-forge
+          activate-environment: env-project
+          environment-file: conda-environment.yml
+
       - name: PGIS4 data
         run: |
           ./subjects/PGIS4/soubory/get_data.sh
