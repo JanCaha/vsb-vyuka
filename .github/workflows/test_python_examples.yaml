@@ -16,7 +16,13 @@ jobs:
       contents: write
 
     steps:
-      
+
+      - name: Modify environment Qt mainly
+        run: | 
+           echo "DEBIAN_FRONTEND=noninteractive" >> $GITHUB_ENV
+           echo "QT_QPA_PLATFORM=offscreen" >> $GITHUB_ENV
+           echo "XDG_RUNTIME_DIR=/tmp" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
     
