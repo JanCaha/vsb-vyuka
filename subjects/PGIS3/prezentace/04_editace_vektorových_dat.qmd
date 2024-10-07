@@ -1,0 +1,219 @@
+---
+title: "Editace vektorových dat v [ArcPy]{.software}"
+subtitle: "Programování v GIS 3"
+author: "Jan Caha"
+date: 2024-10-07
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Objekty pro práci s vektorovými daty
+
+- `SpatialReference` - souřadnicový systém
+- `Geometry` - geometrie
+
+## `SpatialReference`
+
+- souřadnicový systém s řadou parametrů
+- lze vytvořit nový nebo získat z existujících dat
+- identifikace názvem nebo lépe **EPSG** kódem
+
+```python
+crs_1 = arcpy.SpatialReference("Sinusoidal (world)")
+crs_2 = arcpy.SpatialReference(5514)
+crs_3 = arcpy.Describe("data.shp").spatialReference
+```
+## `Geometry`
+
+- velice komplexní objekt reprezentující geometrii
+- řada metod a vlastností
+- aktuálně nás zajímají funkce pro tvorbu geometrií - `acpy.Point()`, `acrpy.Multipooint()`, `acpy.Polyline()`, `acpy.Polygon()`
+
+## Funkce
+
+- `arcpy.management.CreateFeatureclass()` - vytvoření nové vrstvy
+- `arcpy.management.Copy()` - kopírování dat - vrstvy
+
+## `CreateFeatureclass()`
+
+- vytvoření nové vrstvy dle zadaných parametrů
+- 
+```python
+arcpy.management.CreateFeatureclass(
+    out_path, 
+    out_name, 
+    {geometry_type}, {template}, 
+    {has_m}, {has_z}, {spatial_reference}, 
+    {config_keyword}, {spatial_grid_1}, 
+    {spatial_grid_2}, {spatial_grid_3}, 
+    {out_alias}, {oid_type}
+)
+```
+
+## `Copy()`
+
+- kopie vrstvy
+
+```python
+arcpy.management.Copy(
+    in_data, 
+    out_data, 
+    {data_type}, {associated_data}
+)
+```
+
+## Přístup k vektorovým datům
+
+- pomocí tzv. `cursor` (kurzor) objektů (databázová terminologie)
+- v Pythonu fungují jako kontextové manažery
+  
+```python
+with cursor(parmeter_1, parameter_2, ...) as cursor:
+    for row in cursor:
+        pass
+```
+
+- součást modulu `acrpy.da` (např. `acrpy.da.UpdateCursor`)
+
+::: {.callout-warning}
+### Pozor
+Verze volané přímo z `arcpy` nepoužívat (zastaralé).
+
+Takže `arcpy.UpdateCursor` ne!
+
+Mají i jiné parametry.
+:::
+
+## Objekt `Row`
+
+- objekt reprezentující řádek v tabulce ([dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm))
+- 4 funkce pro přístup k datům
+  - `getValue(field_name)`
+  - `setValue(field_name, value)`
+  - `isNull(field_name)`
+  - `setNull(field_name)`
+
+## Typy kurzorů
+
+- `SearchCursor` - pro čtení a vyhledávání dat
+- `InsertCursor` - pro vkládání nových dat
+- `UpdateCursor` - pro aktualizaci dat
+
+## `SearchCursor`
+
+```python
+SearchCursor (
+    in_table, 
+    field_names, 
+    {where_clause}, 
+    {spatial_reference}, 
+    {explode_to_points}, 
+    {sql_clause}, 
+    {datum_transformation}, 
+    {spatial_filter}, 
+    {spatial_relationship}, 
+    {search_order}
+)
+```
+
+## `SearchCursor` - parametry
+
+- `in_table` - cesta k datové vrstvě (soubor nebo i v databázi)
+- `field_names` - seznam polí, které mají být součast výsledku
+- `where_clause` - část SQL dotazu (označované jako **query expression** viz [dokumentace](https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/write-a-query-in-the-query-builder.htm))
+- `spatial_reference` - souřadnicový systém v nemž bude výsledek (provede se trasformace, je-li třeba)
+- `explode_to_points` - rozbití geometrie na body (pokud je `True`) vzniká záznam (`Row`) pro každý bod
+- `sql_clause` - SQL prefix a postfix (default je `python (None, None)`)
+- `spatial_filter` - prostorový filtr `acrpy.Geometry` objekt
+- `spatial_relationship` - prostorový vztah (default je `INTERSECT`)
+- `search_order` - pořadí filtrů - buď `"ATTRIBUTEFIRST"` nebo `"SPATIALFIRST"` - vliv na dobu trvání dotazu
+
+## Parametr `fields_names`
+
+- lze zadat hodnotu jako `*` pro všechna pole, ale z důvodu výkonu a přehlednosti je lepší zadat jen potřebná pole
+- speciální pole - mají označením `@`
+- id prvku získánme jako `OID@`
+- geometrie prvku jako `SHAPE@` - vrací objekt `Geometry`, ale náročné na výkon
+- `SHAPE@XY` - vrací tuple s X a Y souřadnicemi centroidu geometrie
+- `SHAPE@XYZ`- viz výše, ale s výškou Z
+- `SHAPE@JSON` - Esri JSON reprezentace geometrie
+- `SHAPE@WKT` - WKT reprezentace geometrie
+- `SHAPE@WKB` - WKB reprezentace geometrie
+-  `SHAPE@AREA` - plocha geometrie
+-  `SHAPE@LENGTH` - délka geometrie
+
+## Přístup k hodnotám `Row`
+
+- dle specifikace v `field_names`
+- pomocí indexů
+
+```python
+row[0]  # první pole
+row[1]  # druhé pole
+```
+
+## `UpdateCursor`
+
+```python
+UpdateCursor (
+    in_table, 
+    field_names, 
+    {where_clause}, 
+    {spatial_reference}, 
+    {explode_to_points}, 
+    {sql_clause}, 
+    {datum_transformation}, 
+    {explicit}, 
+    {spatial_filter}, 
+    {spatial_relationship}, 
+    {search_order}
+)
+```
+
+- po úpravě je nutno změnu uložit
+
+```python
+row[0] = "Nová hodnota"
+cursor.updateRow(row)
+```
+
+## `UpdateCursor` - parametry
+
+- `datum_transformation` - transformace souřadnicových systémů (zřídka potřeba nastavovat manuálně)
+- `explicit` - přepis `NULL` na defaultní hodnty (pokud je vrstva má nastavené)
+  
+## Mazání záznamů
+
+- v podstatě update
+- logiku výběru prvků je vhodné řešit v nastavení cursoru
+- teoreticky lze mazat i v nějaké podmínce, ale je to neefektivní
+
+```python
+cursor.updateRow(deleteRow)
+```
+
+## `InsertCursor`
+
+```python
+InsertCursor (
+    in_table, 
+    field_names, 
+    {datum_transformation}, 
+    {explicit}
+)
+```
+
+- vložení do tabulky - jako python `Tuple` (hodnoty v kulatých závorkách)
+
+```python
+cursor.insertRow(("hodnota 1", 23, acrpy.Point(1, 2)))
+```
+
+# Dotazy?{.center}
