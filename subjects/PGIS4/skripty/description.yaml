@@ -2,3 +2,11 @@
   author: Jan Caha
   date: 2024-09-30
   path: "PGIS4skripty/01_vektorová_vrstva.py"
+- title: "Vektorová data - výběr prvků"
+  author: Jan Caha
+  date: 2024-10-07
+  path: "PGIS4skripty/02_vyber_prvku.py"
+- title: "Vektorová data - tvorba dat"
+  author: Jan Caha
+  date: 2024-10-07
+  path: "PGIS4skripty/03_tvorby_polygonove_vrstvy.py"
