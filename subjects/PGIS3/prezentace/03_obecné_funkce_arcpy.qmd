@@ -20,7 +20,7 @@ execute:
 - typicky `arcpy.List*()`
 - slouží pro zjišťování. tam kde programátor nemá předem představu o obsahu
 
-## Příklad `acrpy.ListEnvironments()`
+## Příklad `arcpy.ListEnvironments()`
 
 - vrací seznam promměných geoprocessingu 
 - vše co je dostupné pod `arcpy.env.*`
@@ -42,7 +42,7 @@ execute:
 
 - kontroly dostupnosti licencí a stavu instalace
 - `arcpy.CheckExtension()` - je exteze dostupná?
-- `arcpy.CheckInExtension()`, `acrpy.CheckOutExtension()` - pro sdílené licence
+- `arcpy.CheckInExtension()`, `arcpy.CheckOutExtension()` - pro sdílené licence
 - `arcpy.CheckProduct()`, `arcpy.CheckProduct()` - dostupná úroveň licence + info
 - `acpy.GetInstallInfo()` - info o instalaci
 - `arcpy.ListInstallations()` - typy instalací

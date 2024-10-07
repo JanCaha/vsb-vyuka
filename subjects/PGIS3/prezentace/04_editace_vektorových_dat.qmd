@@ -34,7 +34,7 @@ crs_3 = arcpy.Describe("data.shp").spatialReference
 
 - velice komplexní objekt reprezentující geometrii
 - řada metod a vlastností
-- aktuálně nás zajímají funkce pro tvorbu geometrií - `acpy.Point()`, `acrpy.Multipooint()`, `acpy.Polyline()`, `acpy.Polygon()`
+- aktuálně nás zajímají funkce pro tvorbu geometrií - `arcpy.Point()`, `arcpy.Multipooint()`, `acpy.Polyline()`, `acpy.Polygon()`
 
 ## Funkce
 
@@ -80,7 +80,7 @@ with cursor(parmeter_1, parameter_2, ...) as cursor:
         pass
 ```
 
-- součást modulu `acrpy.da` (např. `acrpy.da.UpdateCursor`)
+- součást modulu `arcpy.da` (např. `arcpy.da.UpdateCursor`)
 
 ::: {.callout-warning}
 ### Pozor
@@ -131,7 +131,7 @@ SearchCursor (
 - `spatial_reference` - souřadnicový systém v nemž bude výsledek (provede se trasformace, je-li třeba)
 - `explode_to_points` - rozbití geometrie na body (pokud je `True`) vzniká záznam (`Row`) pro každý bod
 - `sql_clause` - SQL prefix a postfix (default je `python (None, None)`)
-- `spatial_filter` - prostorový filtr `acrpy.Geometry` objekt
+- `spatial_filter` - prostorový filtr `arcpy.Geometry` objekt
 - `spatial_relationship` - prostorový vztah (default je `INTERSECT`)
 - `search_order` - pořadí filtrů - buď `"ATTRIBUTEFIRST"` nebo `"SPATIALFIRST"` - vliv na dobu trvání dotazu
 
@@ -193,10 +193,11 @@ cursor.updateRow(row)
 
 - v podstatě update
 - logiku výběru prvků je vhodné řešit v nastavení cursoru
+- cursor maže aktivní řádek (určený podmínkou `for row in cursor:`)
 - teoreticky lze mazat i v nějaké podmínce, ale je to neefektivní
 
 ```python
-cursor.updateRow(deleteRow)
+cursor.updateRow()
 ```
 
 ## `InsertCursor`
@@ -213,7 +214,7 @@ InsertCursor (
 - vložení do tabulky - jako python `Tuple` (hodnoty v kulatých závorkách)
 
 ```python
-cursor.insertRow(("hodnota 1", 23, acrpy.Point(1, 2)))
+cursor.insertRow(("hodnota 1", 23, arcpy.Point(1, 2)))
 ```
 
 # Dotazy?{.center}
