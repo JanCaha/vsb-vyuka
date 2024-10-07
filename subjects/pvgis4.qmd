@@ -45,6 +45,7 @@ listing:
 ## Zdroje{.sources}
 
 - [QGIS Python API documentation](https://qgis.org/pyqgis/master/)
+- [QGIS Tutorials and Tips](https://www.qgistutorials.com/en/) - zejména kapitola **Python Scripting (PyQGIS)** ale i další zaměřené na [QGIS]{.software}
 
 ## Data ke stažení{.data-sources}
 
@@ -52,3 +53,9 @@ listing:
 
 ::: {#codes}
 :::
+
+## Další 
+
+Doporučuji zřízení a otestování **GitHub Copilot** dle [návodu](../tools/github-copilot.qmd) pro zjednodušení psaní kódu v Pythonu.
+
+Process nastavení PYthonu a QGIS pro [VS Code]{.software} je popsán [zde](../tools/osgeo4w.qmd#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api).
