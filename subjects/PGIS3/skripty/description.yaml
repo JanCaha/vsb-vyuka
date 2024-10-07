@@ -2,3 +2,19 @@
   author: Jan Caha
   date: 2024-09-23
   path: "PGIS3/skripty/utils.py"
+- title: "Výpisy dat"
+  author: Jan Caha
+  date: 2024-09-23
+  path: "PGIS3/skripty/01_vyýpisy.py"
+- title: "Funkce Describe"
+  author: Jan Caha
+  date: 2024-09-30
+  path: "PGIS3/skripty/02_describe.py"
+- title: "Úvod do kurzorů - vektorová data"
+  author: Jan Caha
+  date: 2024-10-06
+  path: "PGIS3/skripty/03_uvod_cursor.py"
+- title: "Kurzory - editace vektorových dat"
+  author: Jan Caha
+  date: 2024-10-06
+  path: "PGIS3/skripty/04_kurzory.py"
