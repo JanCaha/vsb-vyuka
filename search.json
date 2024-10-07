@@ -398,18 +398,18 @@
     "text": "QgsFeature\n\npřístup k atributům a geometrii\ndo vrstvy se vkládá skrze QgsVectorDataProvider metodami addFeature() nebo addFeatures()\neditace vrstvy pomocí funkcí changeAttributeValue(), changeGeometry(), changeAttributeValues()\nvrstvu je nutné nejdřív otevřít pro editaci pomocí startEditing() následně uzavřít pomocí commitChanges(), nebo změny zrušit pomocí rollBack()"
   },
   {
-    "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#qggeometry",
-    "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#qggeometry",
+    "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#qgsgeometry",
+    "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#qgsgeometry",
     "title": "Vektorová data v QGIS Python API",
-    "section": "QgGeometry",
-    "text": "QgGeometry\n\nhlavní třída pro práci s geometrií\nobsahuje řadu funkcí (i statické)\nexistují ale dilčí třídy odvozené od QgsAbstractGeometry pro konkrétní typy geometrie\n\nQgsPoint, QgsLineString, QgsPolygon\nQgsMultiPoint, QgsMultiLineString, QgsMultiPolygon\nQgsGeometryCollection\nQgsSurface, QgsCurve, QgsCompoundCurve, QgsTriangle"
+    "section": "QgsGeometry",
+    "text": "QgsGeometry\n\nhlavní třída pro práci s geometrií\nobsahuje řadu funkcí (i statické)\nexistují ale dilčí třídy odvozené od QgsAbstractGeometry pro konkrétní typy geometrie\n\nQgsPoint, QgsLineString, QgsPolygon\nQgsMultiPoint, QgsMultiLineString, QgsMultiPolygon\nQgsGeometryCollection\nQgsSurface, QgsCurve, QgsCompoundCurve, QgsTriangle"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-qggeometry",
     "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-qggeometry",
     "title": "Vektorová data v QGIS Python API",
     "section": "Tvorba QgGeometry",
-    "text": "Tvorba QgGeometry\nfrom qgis.core import QgsGeometry, QgsPointXY, QgsPolygon, QgsTriangle\n\np = QgsPolygon(\n    QgsTriangle(\n        QgsPointXY(0, 0),\n        QgsPointXY(1, 0),\n        QgsPointXY(0.5, 1),\n    )\n)\ng = QgsGeometry(p)\n\nprint(g.asWkt())"
+    "text": "Tvorba QgGeometry\nfrom qgis.core import QgsGeometry, QgsPointXY, QgsTriangle\n\nt = QgsTriangle(\n    QgsPointXY(0, 0),\n    QgsPointXY(1, 0),\n    QgsPointXY(0.5, 1),\n)\n\ng = QgsGeometry(t)\n\nprint(g.asWkt())"
   },
   {
     "objectID": "subjects/IDG/skripty/01_ukazkovy_report.html",
@@ -1245,7 +1245,7 @@
     "href": "subjects/pvgis4.html#ukázkové-kódy",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n2024-10-07\n\n\nVektorová data - výběr prvků\n\n\n\n\n2024-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1929,7 +1929,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.94191600 -0.03744075 -0.14978649 -0.09889420 -0.30778179"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1272194 -1.2198264 -0.7232286 -0.4916386 -1.6190104"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",

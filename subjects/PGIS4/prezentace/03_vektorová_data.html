@@ -477,8 +477,8 @@ Jan Caha
 <li>vrstvu je nutné nejdřív otevřít pro editaci pomocí <code>startEditing()</code> následně uzavřít pomocí <code>commitChanges()</code>, nebo změny zrušit pomocí <code>rollBack()</code></li>
 </ul>
 </section>
-<section id="qggeometry" class="slide level2">
-<h2><code>QgGeometry</code></h2>
+<section id="qgsgeometry" class="slide level2">
+<h2><code>QgsGeometry</code></h2>
 <ul>
 <li>hlavní třída pro práci s geometrií</li>
 <li>obsahuje řadu funkcí (i statické)</li>
@@ -493,18 +493,17 @@ Jan Caha
 </section>
 <section id="tvorba-qggeometry" class="slide level2">
 <h2>Tvorba <code>QgGeometry</code></h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY, QgsPolygon, QgsTriangle</span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY, QgsTriangle</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> QgsPolygon(</span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    QgsTriangle(</span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>        QgsPointXY(<span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>        QgsPointXY(<span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>        QgsPointXY(<span class="fl">0.5</span>, <span class="dv">1</span>),</span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> QgsGeometry(p)</span>
-<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g.asWkt())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> QgsTriangle(</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    QgsPointXY(<span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    QgsPointXY(<span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    QgsPointXY(<span class="fl">0.5</span>, <span class="dv">1</span>),</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> QgsGeometry(t)</span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g.asWkt())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
