@@ -79,7 +79,7 @@ field = QgsField("field", QMetaType.Type.Double)
 - editace vrstvy pomocí funkcí `changeAttributeValue()`, `changeGeometry()`, `changeAttributeValues()`
 - vrstvu je nutné nejdřív otevřít pro editaci pomocí `startEditing()` následně uzavřít pomocí `commitChanges()`, nebo změny zrušit pomocí `rollBack()`
   
-## `QgGeometry`
+## `QgsGeometry`
 
 - hlavní třída pro práci s geometrií
 - obsahuje řadu funkcí (i statické)
@@ -92,16 +92,15 @@ field = QgsField("field", QMetaType.Type.Double)
 ## Tvorba `QgGeometry`
 
 ```python
-from qgis.core import QgsGeometry, QgsPointXY, QgsPolygon, QgsTriangle
+from qgis.core import QgsGeometry, QgsPointXY, QgsTriangle
 
-p = QgsPolygon(
-    QgsTriangle(
-        QgsPointXY(0, 0),
-        QgsPointXY(1, 0),
-        QgsPointXY(0.5, 1),
-    )
+t = QgsTriangle(
+    QgsPointXY(0, 0),
+    QgsPointXY(1, 0),
+    QgsPointXY(0.5, 1),
 )
-g = QgsGeometry(p)
+
+g = QgsGeometry(t)
 
 print(g.asWkt())
 ```
