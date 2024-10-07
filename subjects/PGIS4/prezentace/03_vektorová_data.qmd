@@ -1,0 +1,109 @@
+---
+title: "Vektorová data v [QGIS Python API]{.software}"
+subtitle: "Programování v GIS 4"
+author: "Jan Caha"
+date: 2024-10-07
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Objekty pro práci s vektorovými daty
+
+- `QgsVectorLayer` - reprezentace vrstvy v QGIS
+- `QgsVectorDataProvider`- abstrakce čtení a zápisu (pokud je povolen) dat do zdroje dat
+- `QgsFeature` - reprezentace prvku ve vrstvě, přístup jeho geometrii a atributům
+- `QgsGeometry` - reprezentace geometrie prvku
+   - `QgsAbstractGeometry` - abstraktní třída implementace geometrie - součást `QgsGeometry`
+- `QgsFeatureRequest` - objekt pro získání prvku z datového zdroje
+- `QgsCoordinateReferenceSystem` - reprezentace souřadnicového systému
+- `QgsFields` - seznam atributů vrstvy
+- `QgsField`- atribut a jeho definice
+
+## `QgsVectorLayer`
+
+- vytváření jako `QgsVectorLayer(uri,  name, driver)`
+  - `uri`- cesta k souboru, nebo např. připojení do DB
+  - `name` - název vrstvy v QGIS
+  - `driver` - obvykle `ogr` nebo `postgres`, `memory` ale i další
+
+- přístup k prvkům pomocí funkce `getFeatures()` vrací `QgsFeatureIterator`
+  - lze vyspecifikovat buď pomocí `QgsFeatureRequest` nebo `QgsRectangle`
+
+
+## Tvorba vrstvy s `memory` driverem
+
+```python
+from qgis.core import Qgis, QgsFields, QgsMemoryProviderUtils
+
+layer = QgsMemoryProviderUtils.createMemoryLayer(
+    "Sampling Table",
+    fields=QgsFields(),
+    geometryType=Qgis.WkbType.NoGeometry,
+)
+```
+
+## Tvorba vrstvy s `memory` driverem
+
+```python
+from qgis.core import QgsVectorLayer
+
+table = QgsVectorLayer(
+    "NoGeometry?"
+    "field=a:double&"
+    "field=b:int"
+    "source",
+    "memory",
+)
+```
+
+## Tvorba `QgsField`
+
+```python
+from qgis.PyQt.QtCore import QMetaType,
+from qgis.core import QgsField
+
+field = QgsField("field", QMetaType.Type.Double)
+```
+
+## `QgsFeature`
+
+- přístup k atributům a geometrii
+- do vrstvy se vkládá skrze `QgsVectorDataProvider` metodami `addFeature()` nebo `addFeatures()`
+- editace vrstvy pomocí funkcí `changeAttributeValue()`, `changeGeometry()`, `changeAttributeValues()`
+- vrstvu je nutné nejdřív otevřít pro editaci pomocí `startEditing()` následně uzavřít pomocí `commitChanges()`, nebo změny zrušit pomocí `rollBack()`
+  
+## `QgGeometry`
+
+- hlavní třída pro práci s geometrií
+- obsahuje řadu funkcí (i statické)
+- existují ale dilčí třídy odvozené od `QgsAbstractGeometry` pro konkrétní typy geometrie
+    - `QgsPoint`, `QgsLineString`, `QgsPolygon`
+    - `QgsMultiPoint`, `QgsMultiLineString`, `QgsMultiPolygon`
+    - `QgsGeometryCollection`
+    - `QgsSurface`, `QgsCurve`, `QgsCompoundCurve`, `QgsTriangle`
+
+## Tvorba `QgGeometry`
+
+```python
+from qgis.core import QgsGeometry, QgsPointXY, QgsPolygon, QgsTriangle
+
+p = QgsPolygon(
+    QgsTriangle(
+        QgsPointXY(0, 0),
+        QgsPointXY(1, 0),
+        QgsPointXY(0.5, 1),
+    )
+)
+g = QgsGeometry(p)
+
+print(g.asWkt())
+```
+
+# Dotazy?{.center}
