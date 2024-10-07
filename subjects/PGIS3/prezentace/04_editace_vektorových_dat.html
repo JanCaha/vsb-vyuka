@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-02-26">
-  <title>Výuka - Jan Caha – Opakování Pythonu</title>
+  <meta name="dcterms.date" content="2024-10-07">
+  <title>Výuka - Jan Caha – Editace vektorových dat v ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,8 +386,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Opakování Pythonu – Výuka - Jan Caha">
-<meta property="og:description" content="Programování v GIS 2">
+<meta property="og:title" content="Editace vektorových dat v ArcPy – Výuka - Jan Caha">
+<meta property="og:description" content="Programování v GIS 3">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -395,8 +395,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Opakování Pythonu</h1>
-  <p class="subtitle">Programování v GIS 2</p>
+  <h1 class="title">Editace vektorových dat v <span class="software">ArcPy</span></h1>
+  <p class="subtitle">Programování v GIS 3</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -406,212 +406,221 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-02-26</p>
+  <p class="date">2024-10-07</p>
 </section>
-<section id="python" class="slide level2">
-<h2>Python</h2>
+<section id="objekty-pro-práci-s-vektorovými-daty" class="slide level2">
+<h2>Objekty pro práci s vektorovými daty</h2>
 <ul>
-<li><strong>interpretovaný</strong> programovací (skriptovací) jazyk</li>
-<li><strong>dynamicky typovaný</strong></li>
-<li>široce využívaný - ať už samostatně, nebo i jako součást jiného softwaru</li>
-<li>snadno propojitelný s dalšími knihovnami i softwarem</li>
-<li>podpora jak objektového, tak i funkcionálního programování</li>
-<li>verze 2.x už nepoužívat, verze 3 ideálně <strong>od 3.10 a novější</strong> (aktuální verze a cca dvě verze zpátky)</li>
+<li><code>SpatialReference</code> - souřadnicový systém</li>
+<li><code>Geometry</code> - geometrie</li>
 </ul>
 </section>
-<section id="vs-code" class="slide level2">
-<h2><span class="software">VS Code</span></h2>
+<section id="spatialreference" class="slide level2">
+<h2><code>SpatialReference</code></h2>
 <ul>
-<li>IDE pro řadu jazyků a technologií</li>
-<li>klíčové jsou extenze, které posunují funcionalitu od textového editoru více k “težšímu” IDE</li>
-<li>profily - pro různé technologie či využití</li>
-<li>synchronizace po přihlášení</li>
-<li>instalace - lze bez administrátorských práv</li>
+<li>souřadnicový systém s řadou parametrů</li>
+<li>lze vytvořit nový nebo získat z existujících dat</li>
+<li>identifikace názvem nebo lépe <strong>EPSG</strong> kódem</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>crs_1 <span class="op">=</span> arcpy.SpatialReference(<span class="st">"Sinusoidal (world)"</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>crs_2 <span class="op">=</span> arcpy.SpatialReference(<span class="dv">5514</span>)</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>crs_3 <span class="op">=</span> arcpy.Describe(<span class="st">"data.shp"</span>).spatialReference</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="geometry" class="slide level2">
+<h2><code>Geometry</code></h2>
+<ul>
+<li>velice komplexní objekt reprezentující geometrii</li>
+<li>řada metod a vlastností</li>
+<li>aktuálně nás zajímají funkce pro tvorbu geometrií - <code>acpy.Point()</code>, <code>acrpy.Multipooint()</code>, <code>acpy.Polyline()</code>, <code>acpy.Polygon()</code></li>
 </ul>
 </section>
-<section id="vs-code-extenze-pro-python" class="slide level2">
-<h2>VS Code extenze pro Python</h2>
+<section id="funkce" class="slide level2">
+<h2>Funkce</h2>
 <ul>
-<li><span class="software">Python, Python Debugger</span></li>
-<li>formátování kódu - <span class="software">Black Formatter, isort</span></li>
-<li>kontroly kódu - <span class="software">autopep8, Flake8, Mypy Type Checker, Pylance, Pylint</span></li>
-<li>generování docstringů - autoDocstring - <span class="software">Python Docstring Generator</span></li>
-<li><span class="software">Github Copilot</span> - přihlášení, pouze pokud máte přístup (studenti mají)</li>
+<li><code>arcpy.management.CreateFeatureclass()</code> - vytvoření nové vrstvy</li>
+<li><code>arcpy.management.Copy()</code> - kopírování dat - vrstvy</li>
 </ul>
 </section>
-<section id="conda" class="slide level2">
-<h2>Conda</h2>
+<section id="createfeatureclass" class="slide level2">
+<h2><code>CreateFeatureclass()</code></h2>
 <ul>
-<li>systém pro správu Pythonu a jeho balíčků</li>
-<li>použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})</li>
+<li>vytvoření nové vrstvy dle zadaných parametrů</li>
+<li></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pgis2 python=3.11</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install GDAL</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> deactivate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>v environmentu lze instalovat i skrze <span class="software">pip</span>, ale nelze to doporučit - chybí návaznosti závislostí</li>
-<li>v <span class="software">VS Code</span> nutno nastavit interpretor jazyka</li>
-</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>arcpy.management.CreateFeatureclass(</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    out_path, </span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    out_name, </span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    {geometry_type}, {template}, </span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>    {has_m}, {has_z}, {spatial_reference}, </span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    {config_keyword}, {spatial_grid_1}, </span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    {spatial_grid_2}, {spatial_grid_3}, </span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    {out_alias}, {oid_type}</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section>
-<section id="python---použití-jazyka-opakování" class="title-slide slide level1 center">
-<h1>Python - použití jazyka<br>opakování</h1>
-
-</section>
-<section id="proměnné" class="slide level2">
-<h2>Proměnné</h2>
+<section id="copy" class="slide level2">
+<h2><code>Copy()</code></h2>
 <ul>
-<li>jednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota</li>
-<li>komplexní - seznam, slovník, tuple</li>
-<li>objekty - např. <code>Path</code> z knihovny <span class="software">pathlib</span></li>
-<li>funkce - lze je také uložit do proměnné (trochu komplikované na představu)</li>
+<li>kopie vrstvy</li>
 </ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>arcpy.management.Copy(</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    in_data, </span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    out_data, </span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    {data_type}, {associated_data}</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="podmínky" class="slide level2">
-<h2>Podmínky</h2>
+<section id="přístup-k-vektorovým-datům" class="slide level2">
+<h2>Přístup k vektorovým datům</h2>
 <ul>
-<li>konstrukce <code>if, elif, else</code></li>
+<li>pomocí tzv. <code>cursor</code> (kurzor) objektů (databázová terminologie)</li>
+<li>v Pythonu fungují jako kontextové manažery</li>
 </ul>
-</section>
-<section id="cykly" class="slide level2">
-<h2>Cykly</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> cursor(parmeter_1, parameter_2, ...) <span class="im">as</span> cursor:</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> cursor:</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>konstrukce <code>for</code> a <code>while</code></li>
-<li>přeskočení v cyklu <code>continue</code> a ukončení cyklu <code>break</code></li>
-<li>speciální případ <code>for</code> s <code>enumerate</code></li>
+<li>součást modulu <code>acrpy.da</code> (např. <code>acrpy.da.UpdateCursor</code>)</li>
 </ul>
-</section>
-<section id="import-knihoven-či-modulů" class="slide level2">
-<h2>Import knihoven či modulů</h2>
-<ul>
-<li>lze importovat objekty, funkce, moduly</li>
-<li>lze buď celým názvem - <code>import pathlib</code></li>
-<li>lokální souboru lze i jako <code>import .muj_soubor</code> (doporučuje se pouze u jednoduchých skriptů, v případě modulů - knihoven lépe importovat plnou cestou)</li>
-<li>lze importovat i s přejmenováním - <code>import numpy as np</code></li>
-<li>kombinace a variace importů občas ztěžují interpretaci kódu</li>
-</ul>
-</section>
-<section id="zpracování-chyb" class="slide level2">
-<h2>Zpracování chyb</h2>
-<ul>
-<li>konstrukce <code>raise</code></li>
-<li>druhy chyb</li>
-<li>konstrukce <code>try, except, finally</code></li>
-</ul>
-</section>
-<section id="magické-proměnné-či-funkce" class="slide level2">
-<h2>Magické proměnné či funkce</h2>
-<ul>
-<li>zapisují je jako <code>__nazev__</code></li>
-<li>odkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování</li>
-<li>ukázka - tvorba objektu a funkce pro tisk</li>
-<li>příklad tvorba objektu a funkce pro tisk</li>
-<li>do této skupiny lze zařadit i soubor <code>__init__.py</code>, jehož existence označuje složku jako Pythonový modul</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>tisk objektu bez funkce <code>__repr__()</code></li>
-<li>tiskne informace o umístění objektu v paměti</li>
-</ul>
-<div id="d7a006c7" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7f50c8bdbbf0&gt;</code></pre>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pozor</strong></p>
+</div>
+<div class="callout-content">
+<p>Verze volané přímo z <code>arcpy</code> nepoužívat (zastaralé).</p>
+<p>Takže <code>arcpy.UpdateCursor</code> ne!</p>
+<p>Mají i jiné parametry.</p>
+</div>
 </div>
 </div>
 </section>
-<section class="slide level2">
-
+<section id="objekt-row" class="slide level2">
+<h2>Objekt <code>Row</code></h2>
 <ul>
-<li>tisk objektu s funkcí <code>__repr__()</code></li>
-<li>tiskne řetězec z této funkce</li>
-</ul>
-<div id="e861aba4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Objekt třídy A."</span>  </span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Objekt třídy A.</code></pre>
-</div>
-</div>
-</section>
-<section id="debugování" class="slide level2">
-<h2>Debugování</h2>
+<li>objekt reprezentující řádek v tabulce (<a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm">dokumentace</a>)</li>
+<li>4 funkce pro přístup k datům
 <ul>
-<li>proces nahlížení na stav programu za jeho běhu</li>
-<li>umožňuje nahlížet do paměti programu v jeho různých fázích a stavech</li>
-<li>v Pythonu máme možnost do proměnných za běhu i zasahovat</li>
-<li>ukázka v <span class="software">VS Code</span></li>
+<li><code>getValue(field_name)</code></li>
+<li><code>setValue(field_name, value)</code></li>
+<li><code>isNull(field_name)</code></li>
+<li><code>setNull(field_name)</code></li>
+</ul></li>
 </ul>
 </section>
-<section id="konextové-managery" class="slide level2">
-<h2>Konextové managery</h2>
+<section id="typy-kurzorů" class="slide level2">
+<h2>Typy kurzorů</h2>
 <ul>
-<li>konstrukce <code>with</code></li>
-<li>vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pěvně pojí</li>
-<li>objekty, které využívají dvou magických metod <code>__enter__</code> a <code>__exit__</code></li>
-<li>ukázka se souborem</li>
-<li>ukázka s vlastním managerem</li>
+<li><code>SearchCursor</code> - pro čtení a vyhledávání dat</li>
+<li><code>InsertCursor</code> - pro vkládání nových dat</li>
+<li><code>UpdateCursor</code> - pro aktualizaci dat</li>
 </ul>
 </section>
-<section id="typování-proměnných" class="slide level2">
-<h2>Typování proměnných</h2>
-<ul>
-<li>teoreticky není vůbec nutné</li>
-<li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
-<li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
-</ul>
-<div id="82ee254e" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="searchcursor" class="slide level2">
+<h2><code>SearchCursor</code></h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>SearchCursor (</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>    in_table, </span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    field_names, </span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>    {where_clause}, </span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>    {spatial_reference}, </span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>    {explode_to_points}, </span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>    {sql_clause}, </span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>    {datum_transformation}, </span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>    {spatial_filter}, </span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a>    {spatial_relationship}, </span>
+<span id="cb5-11"><a aria-hidden="true" tabindex="-1"></a>    {search_order}</span>
+<span id="cb5-12"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="instalace-knihoven" class="slide level2">
-<h2>Instalace knihoven</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install black isort mypy pep8 flake8 pylint</span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install shapely fiona rasterio polars pandas geopandas</span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--pre</span> geopolars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="searchcursor---parametry" class="slide level2">
+<h2><code>SearchCursor</code> - parametry</h2>
 <ul>
-<li>podle osnovy se máme věnovat <code>pandas</code> - <code>polars</code> je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem</li>
-</ul>
-</section>
-<section id="formátování-pomocí-black-a-isort" class="slide level2">
-<h2>Formátování pomocí <span class="software">black</span> a <span class="software">isort</span></h2>
-<ul>
-<li><span class="software">isort</span> řadí importy dle určité logiky</li>
-<li><span class="software">black</span> formátuje kód dle pravidel, má minimum nastavení a tak je vysoce konstantní napříč projekty</li>
-<li>zpočátku obvykle nevyhovuje uživateli na 100%, ale jde o zvyk</li>
+<li><code>in_table</code> - cesta k datové vrstvě (soubor nebo i v databázi)</li>
+<li><code>field_names</code> - seznam polí, které mají být součast výsledku</li>
+<li><code>where_clause</code> - část SQL dotazu (označované jako <strong>query expression</strong> viz <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/write-a-query-in-the-query-builder.htm">dokumentace</a>)</li>
+<li><code>spatial_reference</code> - souřadnicový systém v nemž bude výsledek (provede se trasformace, je-li třeba)</li>
+<li><code>explode_to_points</code> - rozbití geometrie na body (pokud je <code>True</code>) vzniká záznam (<code>Row</code>) pro každý bod</li>
+<li><code>sql_clause</code> - SQL prefix a postfix (default je <code>python (None, None)</code>)</li>
+<li><code>spatial_filter</code> - prostorový filtr <code>acrpy.Geometry</code> objekt</li>
+<li><code>spatial_relationship</code> - prostorový vztah (default je <code>INTERSECT</code>)</li>
+<li><code>search_order</code> - pořadí filtrů - buď <code>"ATTRIBUTEFIRST"</code> nebo <code>"SPATIALFIRST"</code> - vliv na dobu trvání dotazu</li>
 </ul>
 </section>
-<section id="kontroly-pomocí-mypy-pep8-flake8-pylint" class="slide level2">
-<h2>Kontroly pomocí <span class="software">mypy, pep8, flake8, pylint</span></h2>
+<section id="parametr-fields_names" class="slide level2">
+<h2>Parametr <code>fields_names</code></h2>
 <ul>
-<li>zvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu</li>
-<li>ne vždy musí jít o zásadní problém</li>
-<li>v moha situacích to předchází chybám</li>
-<li>např. <span class="software">mypy</span> nutí uživatele psát rozumně typovaný kód a používat ho správně</li>
-<li>celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu</li>
-<li>většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit</li>
+<li>lze zadat hodnotu jako <code>*</code> pro všechna pole, ale z důvodu výkonu a přehlednosti je lepší zadat jen potřebná pole</li>
+<li>speciální pole - mají označením <code>@</code></li>
+<li>id prvku získánme jako <code>OID@</code></li>
+<li>geometrie prvku jako <code>SHAPE@</code> - vrací objekt <code>Geometry</code>, ale náročné na výkon</li>
+<li><code>SHAPE@XY</code> - vrací tuple s X a Y souřadnicemi centroidu geometrie</li>
+<li><code>SHAPE@XYZ</code>- viz výše, ale s výškou Z</li>
+<li><code>SHAPE@JSON</code> - Esri JSON reprezentace geometrie</li>
+<li><code>SHAPE@WKT</code> - WKT reprezentace geometrie</li>
+<li><code>SHAPE@WKB</code> - WKB reprezentace geometrie</li>
+<li><code>SHAPE@AREA</code> - plocha geometrie</li>
+<li><code>SHAPE@LENGTH</code> - délka geometrie</li>
 </ul>
-</section></section>
+</section>
+<section id="přístup-k-hodnotám-row" class="slide level2">
+<h2>Přístup k hodnotám <code>Row</code></h2>
+<ul>
+<li>dle specifikace v <code>field_names</code></li>
+<li>pomocí indexů</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>row[<span class="dv">0</span>]  <span class="co"># první pole</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>row[<span class="dv">1</span>]  <span class="co"># druhé pole</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="updatecursor" class="slide level2">
+<h2><code>UpdateCursor</code></h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>UpdateCursor (</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>    in_table, </span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>    field_names, </span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>    {where_clause}, </span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>    {spatial_reference}, </span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>    {explode_to_points}, </span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>    {sql_clause}, </span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>    {datum_transformation}, </span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a>    {explicit}, </span>
+<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a>    {spatial_filter}, </span>
+<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a>    {spatial_relationship}, </span>
+<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a>    {search_order}</span>
+<span id="cb7-13"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>po úpravě je nutno změnu uložit</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>row[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"Nová hodnota"</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>cursor.updateRow(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="updatecursor---parametry" class="slide level2">
+<h2><code>UpdateCursor</code> - parametry</h2>
+<ul>
+<li><code>datum_transformation</code> - transformace souřadnicových systémů (zřídka potřeba nastavovat manuálně)</li>
+<li><code>explicit</code> - přepis <code>NULL</code> na defaultní hodnty (pokud je vrstva má nastavené)</li>
+</ul>
+</section>
+<section id="mazání-záznamů" class="slide level2">
+<h2>Mazání záznamů</h2>
+<ul>
+<li>v podstatě update</li>
+<li>logiku výběru prvků je vhodné řešit v nastavení cursoru</li>
+<li>teoreticky lze mazat i v nějaké podmínce, ale je to neefektivní</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cursor.updateRow(deleteRow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="insertcursor" class="slide level2">
+<h2><code>InsertCursor</code></h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>InsertCursor (</span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>    in_table, </span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>    field_names, </span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>    {datum_transformation}, </span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>    {explicit}</span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>vložení do tabulky - jako python <code>Tuple</code> (hodnoty v kulatých závorkách)</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cursor.insertRow((<span class="st">"hodnota 1"</span>, <span class="dv">23</span>, acrpy.Point(<span class="dv">1</span>, <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
 
