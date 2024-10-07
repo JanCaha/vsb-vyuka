@@ -431,7 +431,7 @@ Jan Caha
 <ul>
 <li>velice komplexní objekt reprezentující geometrii</li>
 <li>řada metod a vlastností</li>
-<li>aktuálně nás zajímají funkce pro tvorbu geometrií - <code>acpy.Point()</code>, <code>acrpy.Multipooint()</code>, <code>acpy.Polyline()</code>, <code>acpy.Polygon()</code></li>
+<li>aktuálně nás zajímají funkce pro tvorbu geometrií - <code>arcpy.Point()</code>, <code>arcpy.Multipooint()</code>, <code>acpy.Polyline()</code>, <code>acpy.Polygon()</code></li>
 </ul>
 </section>
 <section id="funkce" class="slide level2">
@@ -478,7 +478,7 @@ Jan Caha
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> cursor:</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>součást modulu <code>acrpy.da</code> (např. <code>acrpy.da.UpdateCursor</code>)</li>
+<li>součást modulu <code>arcpy.da</code> (např. <code>arcpy.da.UpdateCursor</code>)</li>
 </ul>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -541,7 +541,7 @@ Jan Caha
 <li><code>spatial_reference</code> - souřadnicový systém v nemž bude výsledek (provede se trasformace, je-li třeba)</li>
 <li><code>explode_to_points</code> - rozbití geometrie na body (pokud je <code>True</code>) vzniká záznam (<code>Row</code>) pro každý bod</li>
 <li><code>sql_clause</code> - SQL prefix a postfix (default je <code>python (None, None)</code>)</li>
-<li><code>spatial_filter</code> - prostorový filtr <code>acrpy.Geometry</code> objekt</li>
+<li><code>spatial_filter</code> - prostorový filtr <code>arcpy.Geometry</code> objekt</li>
 <li><code>spatial_relationship</code> - prostorový vztah (default je <code>INTERSECT</code>)</li>
 <li><code>search_order</code> - pořadí filtrů - buď <code>"ATTRIBUTEFIRST"</code> nebo <code>"SPATIALFIRST"</code> - vliv na dobu trvání dotazu</li>
 </ul>
@@ -604,9 +604,10 @@ Jan Caha
 <ul>
 <li>v podstatě update</li>
 <li>logiku výběru prvků je vhodné řešit v nastavení cursoru</li>
+<li>cursor maže aktivní řádek (určený podmínkou <code>for row in cursor:</code>)</li>
 <li>teoreticky lze mazat i v nějaké podmínce, ale je to neefektivní</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cursor.updateRow(deleteRow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cursor.updateRow()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="insertcursor" class="slide level2">
 <h2><code>InsertCursor</code></h2>
@@ -619,7 +620,7 @@ Jan Caha
 <ul>
 <li>vložení do tabulky - jako python <code>Tuple</code> (hodnoty v kulatých závorkách)</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cursor.insertRow((<span class="st">"hodnota 1"</span>, <span class="dv">23</span>, acrpy.Point(<span class="dv">1</span>, <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a>cursor.insertRow((<span class="st">"hodnota 1"</span>, <span class="dv">23</span>, arcpy.Point(<span class="dv">1</span>, <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>

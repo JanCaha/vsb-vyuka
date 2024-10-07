@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-09-30">
-  <title>Výuka - Jan Caha – Obecné funkce ArcPy</title>
+  <meta name="dcterms.date" content="2024-10-07">
+  <title>Výuka - Jan Caha – Vektorová data v QGIS Python API</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,8 +386,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Obecné funkce ArcPy – Výuka - Jan Caha">
-<meta property="og:description" content="Programování v GIS 3">
+<meta property="og:title" content="Vektorová data v QGIS Python API – Výuka - Jan Caha">
+<meta property="og:description" content="Programování v GIS 4">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -395,8 +395,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Obecné funkce <span class="software">ArcPy</span></h1>
-  <p class="subtitle">Programování v GIS 3</p>
+  <h1 class="title">Vektorová data v <span class="software">QGIS Python API</span></h1>
+  <p class="subtitle">Programování v GIS 4</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -406,79 +406,105 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-09-30</p>
+  <p class="date">2024-10-07</p>
 </section>
-<section id="funkce-pro-zjištění-proměnných" class="slide level2">
-<h2>Funkce pro zjištění proměnných</h2>
+<section id="objekty-pro-práci-s-vektorovými-daty" class="slide level2">
+<h2>Objekty pro práci s vektorovými daty</h2>
 <ul>
-<li>funkce vracející seznamy (i prázdné)</li>
-<li>typicky <code>arcpy.List*()</code></li>
-<li>slouží pro zjišťování. tam kde programátor nemá předem představu o obsahu</li>
-</ul>
-</section>
-<section id="příklad-arcpy.listenvironments" class="slide level2">
-<h2>Příklad <code>arcpy.ListEnvironments()</code></h2>
+<li><code>QgsVectorLayer</code> - reprezentace vrstvy v QGIS</li>
+<li><code>QgsVectorDataProvider</code>- abstrakce čtení a zápisu (pokud je povolen) dat do zdroje dat</li>
+<li><code>QgsFeature</code> - reprezentace prvku ve vrstvě, přístup jeho geometrii a atributům</li>
+<li><code>QgsGeometry</code> - reprezentace geometrie prvku
 <ul>
-<li>vrací seznam promměných geoprocessingu</li>
-<li>vše co je dostupné pod <code>arcpy.env.*</code></li>
-<li>k proměnným se dostaneme pomocí <code>arcpy.env.proměnná</code> nebo <code>arcpy.env.["proměnná"]</code></li>
-<li>reset proměnných lze provést pomocí <code>arcpy.ResetEnvironments()</code></li>
-</ul>
-</section>
-<section id="příklady---výpisy-dat" class="slide level2">
-<h2>Příklady - výpisy dat</h2>
-<ul>
-<li><code>arcpy.ListDatasets()</code></li>
-<li><code>arcpy.ListFeatureClasses()</code></li>
-<li><code>arcpy.ListFields()</code></li>
-<li><code>arcpy.ListFiles()</code></li>
-<li><code>arcpy.ListIndexes()</code></li>
-<li><code>arcpy.ListRasters()</code></li>
-<li><code>arcpy.ListTables()</code></li>
-<li><code>arcpy.ListWorkspaces()</code></li>
+<li><code>QgsAbstractGeometry</code> - abstraktní třída implementace geometrie - součást <code>QgsGeometry</code></li>
+</ul></li>
+<li><code>QgsFeatureRequest</code> - objekt pro získání prvku z datového zdroje</li>
+<li><code>QgsCoordinateReferenceSystem</code> - reprezentace souřadnicového systému</li>
+<li><code>QgsFields</code> - seznam atributů vrstvy</li>
+<li><code>QgsField</code>- atribut a jeho definice</li>
 </ul>
 </section>
-<section id="licence-a-instalace" class="slide level2">
-<h2>Licence a instalace</h2>
+<section id="qgsvectorlayer" class="slide level2">
+<h2><code>QgsVectorLayer</code></h2>
 <ul>
-<li>kontroly dostupnosti licencí a stavu instalace</li>
-<li><code>arcpy.CheckExtension()</code> - je exteze dostupná?</li>
-<li><code>arcpy.CheckInExtension()</code>, <code>arcpy.CheckOutExtension()</code> - pro sdílené licence</li>
-<li><code>arcpy.CheckProduct()</code>, <code>arcpy.CheckProduct()</code> - dostupná úroveň licence + info</li>
-<li><code>acpy.GetInstallInfo()</code> - info o instalaci</li>
-<li><code>arcpy.ListInstallations()</code> - typy instalací</li>
+<li>vytváření jako <code>QgsVectorLayer(uri,  name, driver)</code>
+<ul>
+<li><code>uri</code>- cesta k souboru, nebo např. připojení do DB</li>
+<li><code>name</code> - název vrstvy v QGIS</li>
+<li><code>driver</code> - obvykle <code>ogr</code> nebo <code>postgres</code>, <code>memory</code> ale i další</li>
+</ul></li>
+<li>přístup k prvkům pomocí funkce <code>getFeatures()</code> vrací <code>QgsFeatureIterator</code>
+<ul>
+<li>lze vyspecifikovat buď pomocí <code>QgsFeatureRequest</code> nebo <code>QgsRectangle</code></li>
+</ul></li>
 </ul>
 </section>
-<section id="popisy-objektů" class="slide level2">
-<h2>Popisy objektů</h2>
+<section id="tvorba-vrstvy-s-memory-driverem" class="slide level2">
+<h2>Tvorba vrstvy s <code>memory</code> driverem</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> Qgis, QgsFields, QgsMemoryProviderUtils</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> QgsMemoryProviderUtils.createMemoryLayer(</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sampling Table"</span>,</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>    fields<span class="op">=</span>QgsFields(),</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    geometryType<span class="op">=</span>Qgis.WkbType.NoGeometry,</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tvorba-vrstvy-s-memory-driverem-1" class="slide level2">
+<h2>Tvorba vrstvy s <code>memory</code> driverem</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsVectorLayer</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> QgsVectorLayer(</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"NoGeometry?"</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"field=a:double&amp;"</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"field=b:int"</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"source"</span>,</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"memory"</span>,</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tvorba-qgsfield" class="slide level2">
+<h2>Tvorba <code>QgsField</code></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.PyQt.QtCore <span class="im">import</span> QMetaType,</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsField</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>field <span class="op">=</span> QgsField(<span class="st">"field"</span>, QMetaType.Type.Double)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="qgsfeature" class="slide level2">
+<h2><code>QgsFeature</code></h2>
 <ul>
-<li><code>arcpy.Describe()</code> - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)</li>
-<li>výsledný objekty se liší dle požadovaného typu objektu - viz <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm">dokumentace</a></li>
-<li>základní minimum informací pro <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe-object-properties.htm">všechny objekty</a></li>
+<li>přístup k atributům a geometrii</li>
+<li>do vrstvy se vkládá skrze <code>QgsVectorDataProvider</code> metodami <code>addFeature()</code> nebo <code>addFeatures()</code></li>
+<li>editace vrstvy pomocí funkcí <code>changeAttributeValue()</code>, <code>changeGeometry()</code>, <code>changeAttributeValues()</code></li>
+<li>vrstvu je nutné nejdřív otevřít pro editaci pomocí <code>startEditing()</code> následně uzavřít pomocí <code>commitChanges()</code>, nebo změny zrušit pomocí <code>rollBack()</code></li>
 </ul>
 </section>
-<section id="práce-s-describe-objekty" class="slide level2">
-<h2>Práce s <code>Describe()</code> objekty</h2>
+<section id="qggeometry" class="slide level2">
+<h2><code>QgGeometry</code></h2>
 <ul>
-<li>je vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce</li>
-</ul>
-<div id="9b710a48" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>desc <span class="op">=</span> arcpy.Describe(<span class="st">"C:/data/soubor.shp"</span>)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">hasattr</span>(desc, <span class="st">"dataType"</span>):</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    data_type <span class="op">=</span> desc.dataType</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(desc.dataType)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<li>hlavní třída pro práci s geometrií</li>
+<li>obsahuje řadu funkcí (i statické)</li>
+<li>existují ale dilčí třídy odvozené od <code>QgsAbstractGeometry</code> pro konkrétní typy geometrie
 <ul>
-<li>předcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)</li>
+<li><code>QgsPoint</code>, <code>QgsLineString</code>, <code>QgsPolygon</code></li>
+<li><code>QgsMultiPoint</code>, <code>QgsMultiLineString</code>, <code>QgsMultiPolygon</code></li>
+<li><code>QgsGeometryCollection</code></li>
+<li><code>QgsSurface</code>, <code>QgsCurve</code>, <code>QgsCompoundCurve</code>, <code>QgsTriangle</code></li>
+</ul></li>
 </ul>
 </section>
-<section id="příklady" class="slide level2">
-<h2>Příklady</h2>
-<ul>
-<li>vektorová data</li>
-<li>rastrová data</li>
-<li>další</li>
-</ul>
+<section id="tvorba-qggeometry" class="slide level2">
+<h2>Tvorba <code>QgGeometry</code></h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY, QgsPolygon, QgsTriangle</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> QgsPolygon(</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    QgsTriangle(</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>        QgsPointXY(<span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>        QgsPointXY(<span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>        QgsPointXY(<span class="fl">0.5</span>, <span class="dv">1</span>),</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> QgsGeometry(p)</span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g.asWkt())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
