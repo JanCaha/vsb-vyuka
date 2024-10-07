@@ -1223,7 +1223,7 @@
     "href": "subjects/pvgis4.html#zdroje",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Zdroje",
-    "text": "Zdroje\n\nQGIS Python API documentation",
+    "text": "Zdroje\n\nQGIS Python API documentation\nQGIS Tutorials and Tips - zejména kapitola Python Scripting (PyQGIS) ale i další zaměřené na QGIS",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1246,6 +1246,17 @@
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
     "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n2024-10-07\n\n\nVektorová data - výběr prvků\n\n\n\n\n2024-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty zimní semestr",
+      "Programování v GIS 4"
+    ]
+  },
+  {
+    "objectID": "subjects/pvgis4.html#další",
+    "href": "subjects/pvgis4.html#další",
+    "title": "Programování v GIS 4 (PvGIS4)",
+    "section": "Další",
+    "text": "Další\nDoporučuji zřízení a otestování GitHub Copilot dle návodu pro zjednodušení psaní kódu v Pythonu.\nProcess nastavení PYthonu a QGIS pro VS Code je popsán zde.",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1929,7 +1940,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.32760888 -0.31704064 -0.31909216 -0.29103368 -0.04539713"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.00548990 -0.05525537 -0.56808081 -0.08266569 -0.74519373"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
