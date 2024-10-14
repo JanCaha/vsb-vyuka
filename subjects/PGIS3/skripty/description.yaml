@@ -16,5 +16,5 @@
   path: "PGIS3/skripty/03_uvod_cursor.py"
 - title: "Kurzory - editace vektorových dat"
   author: Jan Caha
-  date: 2024-10-06
+  date: 2024-10-07
   path: "PGIS3/skripty/04_kurzory.py"

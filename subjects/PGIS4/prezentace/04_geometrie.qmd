@@ -1,0 +1,55 @@
+---
+title: "Geometrie v [QGIS Python API]{.software}"
+subtitle: "Programování v GIS 4"
+author: "Jan Caha"
+date: 2024-10-14
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Rozhraní - interface
+
+- specifikace definice objektů, jeho atributů a tříd, ale bez konkrétních implementací (nebo jejich částí)
+- samotné interface objekty nelze vytvořit (protože se nejedná o kompletní objekty)
+- třídy, které z nich odvozují, musí specifikovat chybějící implementace - vnitřní implementace je věcí objektu
+- důvod - všechny objekty, které **implementují** rozhraní lze využívat zaměnitelně a lze navrhovat funkce, které pracují s rozhraními
+- v [Pythonu]{.software} pomocí třídy `ABC` z modulu `abc`
+
+## Příklad
+
+- viz skripty
+- v realitě mnohem komplexnější - interface třídy mohou definovat i desítky funkcí (část z nich mohou i implementovat), funkce implementující rozhraní mohou funkce přepisovat, upravovat a nadstavovat
+
+## Příklad rozhraní v QGIS
+
+- `QgsMapLayer` - rozhraní pro všechny vrstvy
+- funkce např. `crs()`, `extent()`, `legend()`, `renderer()`, `reload()` a celá řada dalších
+- funkce jsou společné bez ohledu na typ vrstvy
+- vektorové vrstvy, rastrové vrstvy, mesh vrstvy, point cloud vrstvy atd.
+- všechny vrstvy implementují rozhraní `QgsMapLayer` a lze s nimi tudíž nakládat stejně
+- další příklad jsou geometrie 
+
+## `QgsGeometry`
+
+- hlavní třída pro práci s geometrií
+- obsahuje řadu funkcí (i statické)
+- samotná geometrie ve třídě ale pouze odkaz na interface
+  
+## `QgsAbstractGeometry`
+
+- interface pro geometrie
+- komplexně definovány všechny funkce, které by měla geometrie implementovat
+- mnoho tříd geometrií založených na tomto interface
+    - `QgsPoint`, `QgsLineString`, `QgsPolygon`
+    - `QgsMultiPoint`, `QgsMultiLineString`, `QgsMultiPolygon`
+    - `QgsGeometryCollection`
+    - `QgsSurface`, `QgsCurve`, `QgsCompoundCurve`, `QgsTriangle`
+
+# Dotazy?{.center}
