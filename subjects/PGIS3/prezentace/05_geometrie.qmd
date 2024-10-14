@@ -1,0 +1,72 @@
+---
+title: "Geometrie v [ArcPy]{.software}"
+subtitle: "Programování v GIS 3"
+author: "Jan Caha"
+date: 2024-10-14
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## `Geometry`
+
+- základní třída geometrie v [ArcPy]{.software}
+- [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/geometry.htm)
+- lze tvořit přímo `Geometry (geometry, inputs, {spatial_reference}, {has_z}, {has_m}, {has_id})`
+- ale spíše je vhodnější speficiké třídy pro druhy geometrií - `Multipoint`, `PointGeometry`, `Polygon`, `Polyline`
+
+::: {.callout-important}
+### Souřadnicový systém
+
+Přímo součástí třídy `Geometry` může být a často i je definice souřadnicového systému!
+:::
+
+
+## Výpočty na třídě `Geometry`
+
+- např. atributy `lenght`, `lenght3D` nebo `area`, ale i řada funkcí (zejména prostorové vztahy - např. `intersect()`) pracují s 2D kartézkou matematikou
+- z toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!
+- data je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku
+- funkce třídy `Geometry.projectAs (spatial_reference)`
+  
+## Objekt `Array`
+
+- `arcpy.Array()` - speciální objekty [ArcPy]{.software} pro tvorbu polí
+- pole lze i vzájemně zanořovat - tzn. pole polí může existovat
+- zvláštnost API
+- použití např. pro tvorbu linií:
+
+```python
+arcpy.Polyline( 
+    arcpy.Array(
+        [arcpy.Point(-77.4349451, 37.5408265), 
+        arcpy.Point(-78.6384349, 35.7780943)]
+    ),
+    arcpy.SpatialReference(4326)
+)
+```
+
+## Význam operátorů a jejich použití u třídy `Geometry`
+
+- některé jsou zřejmé
+  - `==` - equals
+  - `!=` - not equals
+
+- jiné ne až tolik 
+  - `+` -  intersect (`Geometry.intersect(Geometry)`)
+  - `|` - union (`Geometry.union(Geometry)`)
+  - `-` - difference (`Geometry.difference(Geometry)`)
+  - `^` - symmetricDifference (`Geometry.symmetricDifference(Geometry)`)
+
+## Ukázky použití různých funkcí třídy
+
+- praktické příklady
+- dle dokumentace
+  
+# Dotazy?{.center}
