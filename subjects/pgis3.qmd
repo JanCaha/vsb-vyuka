@@ -31,7 +31,11 @@ listing:
 
 ## Řešená témata{.topics}
 
-- [ArcPy]{.software}
+- [ArcPy]{.software} knihovna
+- funkce pro vypisování seznamů prvků `arcpy.List*()`
+- popis objektů [ArcPy]{.software} pomocí `arcpy.Describe()`
+- kurzory v [ArcPy]{.software} pro vektorová data
+- třída geometrie v [ArcPy]{.software} 
 
 ## Seminární práce{.seminar-work}
 
