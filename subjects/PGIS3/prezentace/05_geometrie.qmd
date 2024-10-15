@@ -31,6 +31,7 @@ Přímo součástí třídy `Geometry` může být a často i je definice souřa
 ## Výpočty na třídě `Geometry`
 
 - např. atributy `lenght`, `lenght3D` nebo `area`, ale i řada funkcí (zejména prostorové vztahy - např. `intersect()`) pracují s 2D kartézkou matematikou
+- u funkcí `getLength()` nebo `getArea()` lze specifikovat `{method}, {units}`, přičemž `method` určuje způsob výpočtu a `units` jednotky výsledku
 - z toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!
 - data je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku
 - funkce třídy `Geometry.projectAs (spatial_reference)`
@@ -45,8 +46,10 @@ Přímo součástí třídy `Geometry` může být a často i je definice souřa
 ```python
 arcpy.Polyline( 
     arcpy.Array(
-        [arcpy.Point(-77.4349451, 37.5408265), 
-        arcpy.Point(-78.6384349, 35.7780943)]
+        [
+          arcpy.Point(-77.4349451, 37.5408265), 
+          arcpy.Point(-78.6384349, 35.7780943),
+        ]
     ),
     arcpy.SpatialReference(4326)
 )

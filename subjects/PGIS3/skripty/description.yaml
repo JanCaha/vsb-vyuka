@@ -5,7 +5,7 @@
 - title: "Výpisy dat"
   author: Jan Caha
   date: 2024-09-23
-  path: "PGIS3/skripty/01_vyýpisy.py"
+  path: "PGIS3/skripty/01_vypisy.py"
 - title: "Funkce Describe"
   author: Jan Caha
   date: 2024-09-30
@@ -18,3 +18,15 @@
   author: Jan Caha
   date: 2024-10-07
   path: "PGIS3/skripty/04_kurzory.py"
+- title: "Konverze geometrie mezi souřadnicovými systémy"
+  author: Jan Caha
+  date: 2024-10-14
+  path: "PGIS3/skripty/05_konverze_geometrie.py"
+- title: "Měření geometrie"
+  author: Jan Caha
+  date: 2024-10-14
+  path: "PGIS3/skripty/06_geometrie_mereni.py"
+- title: "Prostorové vztahy geometrií"
+  author: Jan Caha
+  date: 2024-10-14
+  path: "PGIS3/skripty/07_geometrie_vztahy.py"
