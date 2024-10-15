@@ -35,7 +35,7 @@ listing:
 - úvod [PyQGIS]{.software}
 - zprovoznění Pythonu a QGIS Python API ve [VS Code]{.software} dle [návodu](../tools/osgeo4w.qmd#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api)
 - vektorové vrstvy a práce s nimi
-- geometrie
+- geometrie `QgsGeometry` a `QgsAbstractGeometry`
 
 ## Seminární práce{.seminar-work}
 

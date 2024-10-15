@@ -16,7 +16,7 @@ execute:
 
 ## Rozhraní - interface
 
-- specifikace definice objektů, jeho atributů a tříd, ale bez konkrétních implementací (nebo jejich částí)
+- specifikace definice objektů, jeho atributů a metod (funkcí), ale bez konkrétních implementací (nebo pouze jejich částí)
 - samotné interface objekty nelze vytvořit (protože se nejedná o kompletní objekty)
 - třídy, které z nich odvozují, musí specifikovat chybějící implementace - vnitřní implementace je věcí objektu
 - důvod - všechny objekty, které **implementují** rozhraní lze využívat zaměnitelně a lze navrhovat funkce, které pracují s rozhraními
@@ -24,7 +24,7 @@ execute:
 
 ## Příklad
 
-- viz skripty
+- viz skript
 - v realitě mnohem komplexnější - interface třídy mohou definovat i desítky funkcí (část z nich mohou i implementovat), funkce implementující rozhraní mohou funkce přepisovat, upravovat a nadstavovat
 
 ## Příklad rozhraní v QGIS
