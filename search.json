@@ -81,7 +81,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n2024-09-23\n\n\nVýpisy dat\n\n\n\n\n2024-09-30\n\n\nFunkce Describe\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n2024-09-23\n\n\nVýpisy dat\n\n\n\n\n2024-09-30\n\n\nFunkce Describe\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -617,7 +617,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.01866466 -0.55581166 -0.01023590 -0.95381772 -0.38557856"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.5763166 -0.2016088 -0.2067704 -0.2194330 -0.6517110"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1365,7 +1365,7 @@
     "href": "subjects/pvgis4.html",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "",
-    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie",
+    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1376,7 +1376,7 @@
     "href": "subjects/pvgis4.html#řešená-témata",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "",
-    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie",
+    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1431,7 +1431,7 @@
     "href": "subjects/pvgis4.html#ukázkové-kódy",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n2024-10-07\n\n\nVektorová data - výběr prvků\n\n\n\n\n2024-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n2024-10-14\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n2024-10-07\n\n\nVektorová data - výběr prvků\n\n\n\n\n2024-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n2024-10-14\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n2024-10-14\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n2024-10-14\n\n\nOperace s geometriemi\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1509,14 +1509,14 @@
     "href": "subjects/PGIS3/prezentace/05_geometrie.html#výpočty-na-třídě-geometry",
     "title": "Geometrie v ArcPy",
     "section": "Výpočty na třídě Geometry",
-    "text": "Výpočty na třídě Geometry\n\nnapř. atributy lenght, lenght3D nebo area, ale i řada funkcí (zejména prostorové vztahy - např. intersect()) pracují s 2D kartézkou matematikou\nz toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!\ndata je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku\nfunkce třídy Geometry.projectAs (spatial_reference)"
+    "text": "Výpočty na třídě Geometry\n\nnapř. atributy lenght, lenght3D nebo area, ale i řada funkcí (zejména prostorové vztahy - např. intersect()) pracují s 2D kartézkou matematikou\nu funkcí getLength() nebo getArea() lze specifikovat {method}, {units}, přičemž method určuje způsob výpočtu a units jednotky výsledku\nz toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!\ndata je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku\nfunkce třídy Geometry.projectAs (spatial_reference)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
     "href": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
     "title": "Geometrie v ArcPy",
     "section": "Objekt Array",
-    "text": "Objekt Array\n\narcpy.Array() - speciální objekty ArcPy pro tvorbu polí\npole lze i vzájemně zanořovat - tzn. pole polí může existovat\nzvláštnost API\npoužití např. pro tvorbu linií:\n\narcpy.Polyline( \n    arcpy.Array(\n        [arcpy.Point(-77.4349451, 37.5408265), \n        arcpy.Point(-78.6384349, 35.7780943)]\n    ),\n    arcpy.SpatialReference(4326)\n)"
+    "text": "Objekt Array\n\narcpy.Array() - speciální objekty ArcPy pro tvorbu polí\npole lze i vzájemně zanořovat - tzn. pole polí může existovat\nzvláštnost API\npoužití např. pro tvorbu linií:\n\narcpy.Polyline( \n    arcpy.Array(\n        [\n          arcpy.Point(-77.4349451, 37.5408265), \n          arcpy.Point(-78.6384349, 35.7780943),\n        ]\n    ),\n    arcpy.SpatialReference(4326)\n)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#význam-operátorů-a-jejich-použití-u-třídy-geometry",
@@ -2413,14 +2413,14 @@
     "href": "subjects/PGIS4/prezentace/04_geometrie.html#rozhraní---interface",
     "title": "Geometrie v QGIS Python API",
     "section": "Rozhraní - interface",
-    "text": "Rozhraní - interface\n\nspecifikace definice objektů, jeho atributů a tříd, ale bez konkrétních implementací (nebo jejich částí)\nsamotné interface objekty nelze vytvořit (protože se nejedná o kompletní objekty)\ntřídy, které z nich odvozují, musí specifikovat chybějící implementace - vnitřní implementace je věcí objektu\ndůvod - všechny objekty, které implementují rozhraní lze využívat zaměnitelně a lze navrhovat funkce, které pracují s rozhraními\nv Pythonu pomocí třídy ABC z modulu abc"
+    "text": "Rozhraní - interface\n\nspecifikace definice objektů, jeho atributů a metod (funkcí), ale bez konkrétních implementací (nebo pouze jejich částí)\nsamotné interface objekty nelze vytvořit (protože se nejedná o kompletní objekty)\ntřídy, které z nich odvozují, musí specifikovat chybějící implementace - vnitřní implementace je věcí objektu\ndůvod - všechny objekty, které implementují rozhraní lze využívat zaměnitelně a lze navrhovat funkce, které pracují s rozhraními\nv Pythonu pomocí třídy ABC z modulu abc"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#příklad",
     "href": "subjects/PGIS4/prezentace/04_geometrie.html#příklad",
     "title": "Geometrie v QGIS Python API",
     "section": "Příklad",
-    "text": "Příklad\n\nviz skripty\nv realitě mnohem komplexnější - interface třídy mohou definovat i desítky funkcí (část z nich mohou i implementovat), funkce implementující rozhraní mohou funkce přepisovat, upravovat a nadstavovat"
+    "text": "Příklad\n\nviz skript\nv realitě mnohem komplexnější - interface třídy mohou definovat i desítky funkcí (část z nich mohou i implementovat), funkce implementující rozhraní mohou funkce přepisovat, upravovat a nadstavovat"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#příklad-rozhraní-v-qgis",

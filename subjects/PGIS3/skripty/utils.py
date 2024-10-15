@@ -17,3 +17,7 @@ def setup_env(path: typing.Optional[str] = None) -> None:
         if not exist:
             raise ValueError(f"Workspace path {workspace_path} does not exist!")
     arcpy.env.overwriteOutput = True
+
+
+def is_projected(crs: arcpy.SpatialReference) -> bool:
+    return crs.type == "Projected"

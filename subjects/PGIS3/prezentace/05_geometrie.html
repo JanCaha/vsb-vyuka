@@ -434,6 +434,7 @@ Jan Caha
 <h2>Výpočty na třídě <code>Geometry</code></h2>
 <ul>
 <li>např. atributy <code>lenght</code>, <code>lenght3D</code> nebo <code>area</code>, ale i řada funkcí (zejména prostorové vztahy - např. <code>intersect()</code>) pracují s 2D kartézkou matematikou</li>
+<li>u funkcí <code>getLength()</code> nebo <code>getArea()</code> lze specifikovat <code>{method}, {units}</code>, přičemž <code>method</code> určuje způsob výpočtu a <code>units</code> jednotky výsledku</li>
 <li>z toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!</li>
 <li>data je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku</li>
 <li>funkce třídy <code>Geometry.projectAs (spatial_reference)</code></li>
@@ -449,11 +450,13 @@ Jan Caha
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>arcpy.Polyline( </span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    arcpy.Array(</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>        [arcpy.Point(<span class="op">-</span><span class="fl">77.4349451</span>, <span class="fl">37.5408265</span>), </span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>        arcpy.Point(<span class="op">-</span><span class="fl">78.6384349</span>, <span class="fl">35.7780943</span>)]</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    arcpy.SpatialReference(<span class="dv">4326</span>)</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>        [</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>          arcpy.Point(<span class="op">-</span><span class="fl">77.4349451</span>, <span class="fl">37.5408265</span>), </span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>          arcpy.Point(<span class="op">-</span><span class="fl">78.6384349</span>, <span class="fl">35.7780943</span>),</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    arcpy.SpatialReference(<span class="dv">4326</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="význam-operátorů-a-jejich-použití-u-třídy-geometry" class="slide level2">
 <h2>Význam operátorů a jejich použití u třídy <code>Geometry</code></h2>
