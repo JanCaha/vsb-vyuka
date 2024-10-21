@@ -1,0 +1,62 @@
+---
+title: "Rastrová data v [QGIS Python API]{.software}"
+subtitle: "Programování v GIS 4"
+author: "Jan Caha"
+date: 2024-10-21
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: true
+---
+
+## Rastrová data
+
+- `QgsRasterLayer` - rastrová vrstva
+- `QgsRasterDataProvider` - interface pro poskytovatele rastrových dat
+- `QgsRasterBlock` - blok rastrových dat
+- `QgsRasterIterator` - iterátor přes rastrová data
+- `QgsRasterFileWriter` - zápis nových dat
+
+## `QgsRasterLayer`
+
+- třída pro rastrové vrstvy
+- přes něj se k datům nepřistupuje
+- funkce `dataProvider()` pro přistup k data provideru
+- na rozdíl od vektorovách dat nemáme provider pro uložení dat v paměti, dočasné rastry se ukládají do dočasného adresáře (**temp**) 
+
+## `QgsRasterDataProvider`
+
+- hlavní interface pro rastrová data
+- skrze něj se přistupuje k datům
+- funkce `block()` pro získání bloku dat
+- funkce `writeBlock()` pro zápis bloku dat (funkce `setEditable()`)
+
+## `QgsRasterBlock`
+
+- blok rastrových dat
+- v podstatě 2D pole hodnot + dopňkové informace z data provideru
+- funkce `value()` pro získání hodnoty buď pomocí indexu, nebo dvojici souřadnic řádek, sloupec
+- funkce `isNoData()` pro zjištění zda hodnota odpovídá **NoData** hodnotě
+
+## `QgsRasterIterator`
+
+- iterátor přes rastrová data
+- na rozdíl od `QgsRasterBlock` není nutné provádět kontroly
+- `startRasterRead()` pro zahájení čtení (`stopRasterRead()` pro ukončení iterace)
+- funkce `next()` pro získání dalšího bloku dat
+- funkce `setMaximumTileWidth()` a `setMaximumTileHeight()` pro nastavení maximální velikosti čtecího bloku
+
+## `QgsRasterFileWriter`
+
+- inicializace názvem souboru
+- funkce `setOutputProviderKey()` a `setOutputFormat()`
+- funkce `QgsRasterFileWriter::driverForExtension()`
+- funkce `createOneBandRaster()`
+- funkce `createMultiBandRaster()`
+
+# Dotazy?{.center}
