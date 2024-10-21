@@ -11,81 +11,74 @@
     ]
   },
   {
-    "objectID": "subjects/pgis3.html",
-    "href": "subjects/pgis3.html",
-    "title": "Programování v GIS 3 (PGIS3)",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Výuka - Jan Caha",
     "section": "",
-    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy",
-    "crumbs": [
-      "Předměty zimní semestr",
-      "Programování v GIS 3"
-    ]
+    "text": "Materiály pro moje předměty vyučované v roce 2024/2025 na Katedře Geoinformatiky, HGF, VŠB-TUO."
   },
   {
-    "objectID": "subjects/pgis3.html#řešená-témata",
-    "href": "subjects/pgis3.html#řešená-témata",
-    "title": "Programování v GIS 3 (PGIS3)",
-    "section": "",
-    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy",
-    "crumbs": [
-      "Předměty zimní semestr",
-      "Programování v GIS 3"
-    ]
+    "objectID": "index.html#zimní-semestr",
+    "href": "index.html#zimní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Zimní semestr",
+    "text": "Zimní semestr\n\nProgramování v GIS 3 (PGIS3)\nProgramování v GIS 4 (PvGIS4)"
   },
   {
-    "objectID": "subjects/pgis3.html#seminární-práce",
-    "href": "subjects/pgis3.html#seminární-práce",
-    "title": "Programování v GIS 3 (PGIS3)",
-    "section": "Seminární práce",
-    "text": "Seminární práce\nSestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte knihovnu ArcPy. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript odevzdejte emailem před posledním cvičením. Funkčnost skriptu bude prezentována na posledním cvičení.",
-    "crumbs": [
-      "Předměty zimní semestr",
-      "Programování v GIS 3"
-    ]
+    "objectID": "index.html#letní-semestr",
+    "href": "index.html#letní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Letní semestr",
+    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nInterpretace geodat (IDG)\nProstorové databázové systémy 2 (PDBS2)"
   },
   {
-    "objectID": "subjects/pgis3.html#prezentace",
-    "href": "subjects/pgis3.html#prezentace",
-    "title": "Programování v GIS 3 (PGIS3)",
-    "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-09-23\n\n\nÚvodní hodina\n\n\n\n\n2024-09-23\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n2024-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n2024-10-14\n\n\nRastrová data v ArcPy\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Předměty zimní semestr",
-      "Programování v GIS 3"
-    ]
+    "objectID": "index.html#nástroje",
+    "href": "index.html#nástroje",
+    "title": "Výuka - Jan Caha",
+    "section": "Nástroje",
+    "text": "Nástroje\n\nLinux Mint\nVisual Studio Code\nOSGeo4W\nGitHub Copilot"
   },
   {
-    "objectID": "subjects/pgis3.html#zdroje",
-    "href": "subjects/pgis3.html#zdroje",
-    "title": "Programování v GIS 3 (PGIS3)",
-    "section": "Zdroje",
-    "text": "Zdroje\n\nAPI ArcPy for ArcGIS Pro",
-    "crumbs": [
-      "Předměty zimní semestr",
-      "Programování v GIS 3"
-    ]
+    "objectID": "index.html#popisy",
+    "href": "index.html#popisy",
+    "title": "Výuka - Jan Caha",
+    "section": "Popisy",
+    "text": "Popisy\n\nPython Error Traceback"
   },
   {
-    "objectID": "subjects/pgis3.html#data-ke-stažení",
-    "href": "subjects/pgis3.html#data-ke-stažení",
-    "title": "Programování v GIS 3 (PGIS3)",
-    "section": "Data ke stažení",
-    "text": "Data ke stažení\n\nukázková data ke knize Programming ArcGIS Pro with Python – 2nd Edition",
-    "crumbs": [
-      "Předměty zimní semestr",
-      "Programování v GIS 3"
-    ]
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#rozhraní---interface",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#rozhraní---interface",
+    "title": "Geometrie v QGIS Python API",
+    "section": "Rozhraní - interface",
+    "text": "Rozhraní - interface\n\nspecifikace definice objektů, jeho atributů a metod (funkcí), ale bez konkrétních implementací (nebo pouze jejich částí)\nsamotné interface objekty nelze vytvořit (protože se nejedná o kompletní objekty)\ntřídy, které z nich odvozují, musí specifikovat chybějící implementace - vnitřní implementace je věcí objektu\ndůvod - všechny objekty, které implementují rozhraní lze využívat zaměnitelně a lze navrhovat funkce, které pracují s rozhraními\nv Pythonu pomocí třídy ABC z modulu abc"
   },
   {
-    "objectID": "subjects/pgis3.html#ukázkové-kódy",
-    "href": "subjects/pgis3.html#ukázkové-kódy",
-    "title": "Programování v GIS 3 (PGIS3)",
-    "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n2024-09-23\n\n\nVýpisy dat\n\n\n\n\n2024-09-30\n\n\nFunkce Describe\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Předměty zimní semestr",
-      "Programování v GIS 3"
-    ]
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#příklad",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#příklad",
+    "title": "Geometrie v QGIS Python API",
+    "section": "Příklad",
+    "text": "Příklad\n\nviz skript\nv realitě mnohem komplexnější - interface třídy mohou definovat i desítky funkcí (část z nich mohou i implementovat), funkce implementující rozhraní mohou funkce přepisovat, upravovat a nadstavovat"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#příklad-rozhraní-v-qgis",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#příklad-rozhraní-v-qgis",
+    "title": "Geometrie v QGIS Python API",
+    "section": "Příklad rozhraní v QGIS",
+    "text": "Příklad rozhraní v QGIS\n\nQgsMapLayer - rozhraní pro všechny vrstvy\nfunkce např. crs(), extent(), legend(), renderer(), reload() a celá řada dalších\nfunkce jsou společné bez ohledu na typ vrstvy\nvektorové vrstvy, rastrové vrstvy, mesh vrstvy, point cloud vrstvy atd.\nvšechny vrstvy implementují rozhraní QgsMapLayer a lze s nimi tudíž nakládat stejně\ndalší příklad jsou geometrie"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#qgsgeometry",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#qgsgeometry",
+    "title": "Geometrie v QGIS Python API",
+    "section": "QgsGeometry",
+    "text": "QgsGeometry\n\nhlavní třída pro práci s geometrií\nobsahuje řadu funkcí (i statické)\nsamotná geometrie ve třídě ale pouze odkaz na interface"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#qgsabstractgeometry",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#qgsabstractgeometry",
+    "title": "Geometrie v QGIS Python API",
+    "section": "QgsAbstractGeometry",
+    "text": "QgsAbstractGeometry\n\ninterface pro geometrie\nkomplexně definovány všechny funkce, které by měla geometrie implementovat\nmnoho tříd geometrií založených na tomto interface\n\nQgsPoint, QgsLineString, QgsPolygon\nQgsMultiPoint, QgsMultiLineString, QgsMultiPolygon\nQgsGeometryCollection\nQgsSurface, QgsCurve, QgsCompoundCurve, QgsTriangle"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/02_qgis_python_api.html#qgis",
@@ -617,7 +610,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.47076740 -0.09475704 -0.54557047 -0.08925379 -0.36661945"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.4353902 -0.1979753 -1.1518505 -0.1259994 -0.8983078"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -813,7 +806,7 @@
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator",
     "title": "Rastrová data v ArcPy",
     "section": "RasterCellIterator",
-    "text": "RasterCellIterator\n\nobjekt pro iteraci přes buňky rastru\nv nejjednodušší podobě jako\n\n# | eval: false\nimport arcpy\n\nraster = arcpy.Raster(\"path/to/raster.tif\")\nraster.readOnly = False\n\nfor i, j in raster:\n  print(f\"{i,j} - {raster[i,j]}\")\n  if raster[i,j] &lt;  0:\n    raster[i,j] = 0"
+    "text": "RasterCellIterator\n\nobjekt pro iteraci přes buňky rastru\nv nejjednodušší podobě jako\n\nimport arcpy\n\nraster = arcpy.Raster(\"path/to/raster.tif\")\nraster.readOnly = False\n\nfor i, j in raster:\n  print(f\"{i,j} - {raster[i,j]}\")\n  if raster[i,j] &lt;  0:\n    raster[i,j] = 0"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---indexy",
@@ -827,7 +820,7 @@
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---vícero-rastrů",
     "title": "Rastrová data v ArcPy",
     "section": "RasterCellIterator - vícero rastrů",
-    "text": "RasterCellIterator - vícero rastrů\n\npozor na inicializaci - jedná se o python dictionary s klíči - zde rasters (ale jsou další)\n\n# | eval: false\nwith RasterCellIterator({'rasters':[myRas1, myRas2, outRas1, outRas2]}) as rci:\n    for i,j in rci:\n      pass\n\nprvní rastr určuje nastavení enviromentu - souřadnicový sytém, velikost buňky a extent\ndíky tomu lze iterovat přes vícero rastrů současně\nraster lze předefinovat na dané nastavení pomocí\n\n# | eval: false\nr_1_env = arcpy.sa.ApplyEnvironment(r_1)"
+    "text": "RasterCellIterator - vícero rastrů\n\npozor na inicializaci - jedná se o python dictionary s klíči - zde rasters (ale jsou další)\n\nwith RasterCellIterator({'rasters':[myRas1, myRas2, outRas1, outRas2]}) as rci:\n    for i,j in rci:\n      pass\n\nprvní rastr určuje nastavení enviromentu - souřadnicový sytém, velikost buňky a extent\ndíky tomu lze iterovat přes vícero rastrů současně\nraster lze předefinovat na dané nastavení pomocí\n\nr_1_env = arcpy.sa.ApplyEnvironment(r_1)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---doplnění",
@@ -841,7 +834,7 @@
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#numerické-operace-s-rastry",
     "title": "Rastrová data v ArcPy",
     "section": "Numerické operace s rastry",
-    "text": "Numerické operace s rastry\n\nmapová algebra\nlze provádět na úrovni celého rastru\n\n# | eval: false\nimport arcpy\n\nr_1 = arcpy.Raster(\"path/to/raster.tif\")\n\nr_2 = r_1 + 10\nr_3 = r_1 * r_2\n\nr_3.save(\"path/to/output.tif\")"
+    "text": "Numerické operace s rastry\n\nmapová algebra\nlze provádět na úrovni celého rastru\n\nimport arcpy\n\nr_1 = arcpy.Raster(\"path/to/raster.tif\")\n\nr_2 = r_1 + 10\nr_3 = r_1 * r_2\n\nr_3.save(\"path/to/output.tif\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#funkce-pro-rastry",
@@ -939,7 +932,7 @@
     "href": "subjects/pvgis4.html",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "",
-    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry",
+    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry\nrastrová data",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -950,7 +943,7 @@
     "href": "subjects/pvgis4.html#řešená-témata",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "",
-    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry",
+    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry\nrastrová data",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -972,7 +965,7 @@
     "href": "subjects/pvgis4.html#prezentace",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-09-23\n\n\nÚvodní hodina\n\n\n\n\n2024-09-23\n\n\nZáklad QGIS Python API\n\n\n\n\n2024-10-07\n\n\nVektorová data v QGIS Python API\n\n\n\n\n2024-10-14\n\n\nGeometrie v QGIS Python API\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-09-23\n\n\nÚvodní hodina\n\n\n\n\n2024-09-23\n\n\nZáklad QGIS Python API\n\n\n\n\n2024-10-07\n\n\nVektorová data v QGIS Python API\n\n\n\n\n2024-10-14\n\n\nGeometrie v QGIS Python API\n\n\n\n\n2024-10-21\n\n\nRastrová data v QGIS Python API\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -2472,73 +2465,144 @@
     "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a QGIS"
   },
   {
-    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#rozhraní---interface",
-    "href": "subjects/PGIS4/prezentace/04_geometrie.html#rozhraní---interface",
-    "title": "Geometrie v QGIS Python API",
-    "section": "Rozhraní - interface",
-    "text": "Rozhraní - interface\n\nspecifikace definice objektů, jeho atributů a metod (funkcí), ale bez konkrétních implementací (nebo pouze jejich částí)\nsamotné interface objekty nelze vytvořit (protože se nejedná o kompletní objekty)\ntřídy, které z nich odvozují, musí specifikovat chybějící implementace - vnitřní implementace je věcí objektu\ndůvod - všechny objekty, které implementují rozhraní lze využívat zaměnitelně a lze navrhovat funkce, které pracují s rozhraními\nv Pythonu pomocí třídy ABC z modulu abc"
+    "objectID": "subjects/PGIS4/prezentace/05_rastrova_data.html#rastrová-data",
+    "href": "subjects/PGIS4/prezentace/05_rastrova_data.html#rastrová-data",
+    "title": "Rastrová data v QGIS Python API",
+    "section": "Rastrová data",
+    "text": "Rastrová data\n\nQgsRasterLayer - rastrová vrstva\nQgsRasterDataProvider - interface pro poskytovatele rastrových dat\nQgsRasterBlock - blok rastrových dat\nQgsRasterIterator - iterátor přes rastrová data\nQgsRasterFileWriter - zápis nových dat"
   },
   {
-    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#příklad",
-    "href": "subjects/PGIS4/prezentace/04_geometrie.html#příklad",
-    "title": "Geometrie v QGIS Python API",
-    "section": "Příklad",
-    "text": "Příklad\n\nviz skript\nv realitě mnohem komplexnější - interface třídy mohou definovat i desítky funkcí (část z nich mohou i implementovat), funkce implementující rozhraní mohou funkce přepisovat, upravovat a nadstavovat"
+    "objectID": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasterlayer",
+    "href": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasterlayer",
+    "title": "Rastrová data v QGIS Python API",
+    "section": "QgsRasterLayer",
+    "text": "QgsRasterLayer\n\ntřída pro rastrové vrstvy\npřes něj se k datům nepřistupuje\nfunkce dataProvider() pro přistup k data provideru\nna rozdíl od vektorovách dat nemáme provider pro uložení dat v paměti, dočasné rastry se ukládají do dočasného adresáře (temp)"
   },
   {
-    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#příklad-rozhraní-v-qgis",
-    "href": "subjects/PGIS4/prezentace/04_geometrie.html#příklad-rozhraní-v-qgis",
-    "title": "Geometrie v QGIS Python API",
-    "section": "Příklad rozhraní v QGIS",
-    "text": "Příklad rozhraní v QGIS\n\nQgsMapLayer - rozhraní pro všechny vrstvy\nfunkce např. crs(), extent(), legend(), renderer(), reload() a celá řada dalších\nfunkce jsou společné bez ohledu na typ vrstvy\nvektorové vrstvy, rastrové vrstvy, mesh vrstvy, point cloud vrstvy atd.\nvšechny vrstvy implementují rozhraní QgsMapLayer a lze s nimi tudíž nakládat stejně\ndalší příklad jsou geometrie"
+    "objectID": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasterdataprovider",
+    "href": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasterdataprovider",
+    "title": "Rastrová data v QGIS Python API",
+    "section": "QgsRasterDataProvider",
+    "text": "QgsRasterDataProvider\n\nhlavní interface pro rastrová data\nskrze něj se přistupuje k datům\nfunkce block() pro získání bloku dat\nfunkce writeBlock() pro zápis bloku dat (funkce setEditable())"
   },
   {
-    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#qgsgeometry",
-    "href": "subjects/PGIS4/prezentace/04_geometrie.html#qgsgeometry",
-    "title": "Geometrie v QGIS Python API",
-    "section": "QgsGeometry",
-    "text": "QgsGeometry\n\nhlavní třída pro práci s geometrií\nobsahuje řadu funkcí (i statické)\nsamotná geometrie ve třídě ale pouze odkaz na interface"
+    "objectID": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasterblock",
+    "href": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasterblock",
+    "title": "Rastrová data v QGIS Python API",
+    "section": "QgsRasterBlock",
+    "text": "QgsRasterBlock\n\nblok rastrových dat\nv podstatě 2D pole hodnot + dopňkové informace z data provideru\nfunkce value() pro získání hodnoty buď pomocí indexu, nebo dvojici souřadnic řádek, sloupec\nfunkce isNoData() pro zjištění zda hodnota odpovídá NoData hodnotě"
   },
   {
-    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#qgsabstractgeometry",
-    "href": "subjects/PGIS4/prezentace/04_geometrie.html#qgsabstractgeometry",
-    "title": "Geometrie v QGIS Python API",
-    "section": "QgsAbstractGeometry",
-    "text": "QgsAbstractGeometry\n\ninterface pro geometrie\nkomplexně definovány všechny funkce, které by měla geometrie implementovat\nmnoho tříd geometrií založených na tomto interface\n\nQgsPoint, QgsLineString, QgsPolygon\nQgsMultiPoint, QgsMultiLineString, QgsMultiPolygon\nQgsGeometryCollection\nQgsSurface, QgsCurve, QgsCompoundCurve, QgsTriangle"
+    "objectID": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasteriterator",
+    "href": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasteriterator",
+    "title": "Rastrová data v QGIS Python API",
+    "section": "QgsRasterIterator",
+    "text": "QgsRasterIterator\n\niterátor přes rastrová data\nna rozdíl od QgsRasterBlock není nutné provádět kontroly\nstartRasterRead() pro zahájení čtení (stopRasterRead() pro ukončení iterace)\nfunkce next() pro získání dalšího bloku dat\nfunkce setMaximumTileWidth() a setMaximumTileHeight() pro nastavení maximální velikosti čtecího bloku"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Výuka - Jan Caha",
+    "objectID": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasterfilewriter",
+    "href": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrasterfilewriter",
+    "title": "Rastrová data v QGIS Python API",
+    "section": "QgsRasterFileWriter",
+    "text": "QgsRasterFileWriter\n\ninicializace názvem souboru\nfunkce setOutputProviderKey() a setOutputFormat()\nfunkce QgsRasterFileWriter::driverForExtension()\nfunkce createOneBandRaster()\nfunkce createMultiBandRaster()"
+  },
+  {
+    "objectID": "subjects/pgis3.html",
+    "href": "subjects/pgis3.html",
+    "title": "Programování v GIS 3 (PGIS3)",
     "section": "",
-    "text": "Materiály pro moje předměty vyučované v roce 2024/2025 na Katedře Geoinformatiky, HGF, VŠB-TUO."
+    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy",
+    "crumbs": [
+      "Předměty zimní semestr",
+      "Programování v GIS 3"
+    ]
   },
   {
-    "objectID": "index.html#zimní-semestr",
-    "href": "index.html#zimní-semestr",
-    "title": "Výuka - Jan Caha",
-    "section": "Zimní semestr",
-    "text": "Zimní semestr\n\nProgramování v GIS 3 (PGIS3)\nProgramování v GIS 4 (PvGIS4)"
+    "objectID": "subjects/pgis3.html#řešená-témata",
+    "href": "subjects/pgis3.html#řešená-témata",
+    "title": "Programování v GIS 3 (PGIS3)",
+    "section": "",
+    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy",
+    "crumbs": [
+      "Předměty zimní semestr",
+      "Programování v GIS 3"
+    ]
   },
   {
-    "objectID": "index.html#letní-semestr",
-    "href": "index.html#letní-semestr",
-    "title": "Výuka - Jan Caha",
-    "section": "Letní semestr",
-    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nInterpretace geodat (IDG)\nProstorové databázové systémy 2 (PDBS2)"
+    "objectID": "subjects/pgis3.html#seminární-práce",
+    "href": "subjects/pgis3.html#seminární-práce",
+    "title": "Programování v GIS 3 (PGIS3)",
+    "section": "Seminární práce",
+    "text": "Seminární práce\nSestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte knihovnu ArcPy. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript odevzdejte emailem před posledním cvičením. Funkčnost skriptu bude prezentována na posledním cvičení.",
+    "crumbs": [
+      "Předměty zimní semestr",
+      "Programování v GIS 3"
+    ]
   },
   {
-    "objectID": "index.html#nástroje",
-    "href": "index.html#nástroje",
-    "title": "Výuka - Jan Caha",
-    "section": "Nástroje",
-    "text": "Nástroje\n\nLinux Mint\nVisual Studio Code\nOSGeo4W\nGitHub Copilot"
+    "objectID": "subjects/pgis3.html#prezentace",
+    "href": "subjects/pgis3.html#prezentace",
+    "title": "Programování v GIS 3 (PGIS3)",
+    "section": "Prezentace",
+    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-09-23\n\n\nÚvodní hodina\n\n\n\n\n2024-09-23\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n2024-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty zimní semestr",
+      "Programování v GIS 3"
+    ]
   },
   {
-    "objectID": "index.html#popisy",
-    "href": "index.html#popisy",
-    "title": "Výuka - Jan Caha",
-    "section": "Popisy",
-    "text": "Popisy\n\nPython Error Traceback"
+    "objectID": "subjects/pgis3.html#zdroje",
+    "href": "subjects/pgis3.html#zdroje",
+    "title": "Programování v GIS 3 (PGIS3)",
+    "section": "Zdroje",
+    "text": "Zdroje\n\nAPI ArcPy for ArcGIS Pro",
+    "crumbs": [
+      "Předměty zimní semestr",
+      "Programování v GIS 3"
+    ]
+  },
+  {
+    "objectID": "subjects/pgis3.html#data-ke-stažení",
+    "href": "subjects/pgis3.html#data-ke-stažení",
+    "title": "Programování v GIS 3 (PGIS3)",
+    "section": "Data ke stažení",
+    "text": "Data ke stažení\n\nukázková data ke knize Programming ArcGIS Pro with Python – 2nd Edition",
+    "crumbs": [
+      "Předměty zimní semestr",
+      "Programování v GIS 3"
+    ]
+  },
+  {
+    "objectID": "subjects/pgis3.html#ukázkové-kódy",
+    "href": "subjects/pgis3.html#ukázkové-kódy",
+    "title": "Programování v GIS 3 (PGIS3)",
+    "section": "Ukázkové kódy",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n2024-09-23\n\n\nVýpisy dat\n\n\n\n\n2024-09-30\n\n\nFunkce Describe\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty zimní semestr",
+      "Programování v GIS 3"
+    ]
+  },
+  {
+    "objectID": "descriptions/python.html",
+    "href": "descriptions/python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nLearn Python 3\nIntroduction to Python Programming",
+    "crumbs": [
+      "Popisy",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "descriptions/python.html#základy-jazyka---výukové-materiály",
+    "href": "descriptions/python.html#základy-jazyka---výukové-materiály",
+    "title": "Python",
+    "section": "",
+    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nLearn Python 3\nIntroduction to Python Programming",
+    "crumbs": [
+      "Popisy",
+      "Python"
+    ]
   }
 ]

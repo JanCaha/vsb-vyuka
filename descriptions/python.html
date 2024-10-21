@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Programování v GIS 4 (PvGIS4) – Výuka - Jan Caha</title>
+<title>Python – Výuka - Jan Caha</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,10 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tools/vscode.html" rel="next">
-<link href="../subjects/pgis3.html" rel="prev">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<link href="../descriptions/python-traceback.html" rel="next">
+<link href="../tools/github-copilot.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,96 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-prezentace .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-prezentace'] = new List('listing-prezentace', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-codes .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-codes'] = new List('listing-codes', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Programování v GIS 4 (PvGIS4) – Výuka - Jan Caha">
-<meta property="og:description" content="Výukové materiály">
+<meta property="og:title" content="Python – Výuka - Jan Caha">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 
@@ -173,7 +84,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis3.html">Předměty zimní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pvgis4.html">Programování v GIS 4</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../descriptions/python.html">Popisy</a></li><li class="breadcrumb-item"><a href="../descriptions/python.html">Python</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -233,13 +144,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Předměty zimní semestr</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../subjects/pgis3.html" class="sidebar-item-text sidebar-link">
@@ -248,7 +159,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pvgis4.html" class="sidebar-item-text sidebar-link active">
+  <a href="../subjects/pvgis4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 4</span></a>
   </div>
 </li>
@@ -291,16 +202,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Popisy</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../descriptions/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../descriptions/python.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
@@ -322,22 +233,20 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#řešená-témata" id="toc-řešená-témata" class="nav-link active" data-scroll-target="#řešená-témata">Řešená témata</a></li>
-  <li><a href="#seminární-práce" id="toc-seminární-práce" class="nav-link" data-scroll-target="#seminární-práce">Seminární práce</a></li>
-  <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">Prezentace</a></li>
-  <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">Zdroje</a></li>
-  <li><a href="#data-ke-stažení" id="toc-data-ke-stažení" class="nav-link" data-scroll-target="#data-ke-stažení">Data ke stažení</a></li>
-  <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">Ukázkové kódy</a></li>
-  <li><a href="#další" id="toc-další" class="nav-link" data-scroll-target="#další">Další</a></li>
+  <li><a href="#základy-jazyka---výukové-materiály" id="toc-základy-jazyka---výukové-materiály" class="nav-link active" data-scroll-target="#základy-jazyka---výukové-materiály">Základy jazyka - výukové materiály</a>
+  <ul class="collapse">
+  <li><a href="#youtube-přednášky" id="toc-youtube-přednášky" class="nav-link" data-scroll-target="#youtube-přednášky">Youtube přednášky</a></li>
+  <li><a href="#online-kurzy" id="toc-online-kurzy" class="nav-link" data-scroll-target="#online-kurzy">Online kurzy</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis3.html">Předměty zimní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pvgis4.html">Programování v GIS 4</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../descriptions/python.html">Popisy</a></li><li class="breadcrumb-item"><a href="../descriptions/python.html">Python</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Programování v GIS 4 (PvGIS4)</h1>
+<h1 class="title">Python</h1>
 </div>
 
 
@@ -354,169 +263,23 @@ window.Quarto = {
 </header>
 
 
-<section id="řešená-témata" class="level2 topics">
-<h2 class="topics anchored" data-anchor-id="řešená-témata">Řešená témata</h2>
-<ul>
-<li>základní přehled <span class="software">QGIS</span></li>
-<li>úvod <span class="software">PyQGIS</span></li>
-<li>zprovoznění Pythonu a QGIS Python API ve <span class="software">VS Code</span> dle <a href="../tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api">návodu</a></li>
-<li>vektorové vrstvy a práce s nimi</li>
-<li>geometrie <code>QgsGeometry</code> a <code>QgsAbstractGeometry</code></li>
-<li>rastrová data</li>
-</ul>
+<section id="základy-jazyka---výukové-materiály" class="level2">
+<h2 class="anchored" data-anchor-id="základy-jazyka---výukové-materiály">Základy jazyka - výukové materiály</h2>
+<section id="youtube-přednášky" class="level3">
+<h3 class="anchored" data-anchor-id="youtube-přednášky">Youtube přednášky</h3>
+<p><a href="https://www.youtube.com/watch?v=kqtD5dpn9C8">Python for Beginners - Learn Python in 1 Hour</a></p>
+<p><a href="https://www.youtube.com/watch?v=eWRfhZUzrAc">Python for Beginners – Full Course [Programming Tutorial]</a></p>
+<p><a href="https://www.youtube.com/watch?v=mRMmlo_Uqcs&amp;list=PLIhvC56v63ILPDA2DQBv0IKzqsWTZxCkp">you need to learn Python RIGHT NOW!!</a></p>
+<p><a href="https://www.youtube.com/watch?v=nLRL_NcnK-4">Harvard CS50’s Introduction to Programming with Python – Full University Course</a></p>
 </section>
-<section id="seminární-práce" class="level2 seminar-work">
-<h2 class="seminar-work anchored" data-anchor-id="seminární-práce">Seminární práce</h2>
-</section>
-<section id="prezentace" class="level2 presentations">
-<h2 class="presentations anchored" data-anchor-id="prezentace">Prezentace</h2>
-<div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Prezentace
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1729506779215" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="179" data-listing-title-sort="Úvodní hodina" data-listing-filename-sort="01_uvod.qmd">
-<td>
-<span class="listing-date">2024-09-23</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/01_uvod.html" class="title listing-title">Úvodní hodina</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1729506779215" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317" data-listing-title-sort="Základ [QGIS Python API]{.software}" data-listing-filename-sort="02_qgis_python_api.qmd">
-<td>
-<span class="listing-date">2024-09-23</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/02_qgis_python_api.html" class="title listing-title">Základ <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1729506779215" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="312" data-listing-title-sort="Vektorová data v [QGIS Python API]{.software}" data-listing-filename-sort="03_vektorová_data.qmd">
-<td>
-<span class="listing-date">2024-10-07</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/03_vektorová_data.html" class="title listing-title">Vektorová data v <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1729506779215" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="226" data-listing-title-sort="Geometrie v [QGIS Python API]{.software}" data-listing-filename-sort="04_geometrie.qmd">
-<td>
-<span class="listing-date">2024-10-14</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/04_geometrie.html" class="title listing-title">Geometrie v <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1729468800000" data-listing-file-modified-sort="1729506779215" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="183" data-listing-title-sort="Rastrová data v [QGIS Python API]{.software}" data-listing-filename-sort="05_rastrova_data.qmd">
-<td>
-<span class="listing-date">2024-10-21</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/05_rastrova_data.html" class="title listing-title">Rastrová data v <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="zdroje" class="level2 sources">
-<h2 class="sources anchored" data-anchor-id="zdroje">Zdroje</h2>
-<ul>
-<li><a href="https://qgis.org/pyqgis/master/">QGIS Python API documentation</a></li>
-<li><a href="https://www.qgistutorials.com/en/">QGIS Tutorials and Tips</a> - zejména kapitola <strong>Python Scripting (PyQGIS)</strong> ale i další zaměřené na <span class="software">QGIS</span></li>
-</ul>
-</section>
-<section id="data-ke-stažení" class="level2 data-sources">
-<h2 class="data-sources anchored" data-anchor-id="data-ke-stažení">Data ke stažení</h2>
-</section>
-<section id="ukázkové-kódy" class="level2 codes">
-<h2 class="codes anchored" data-anchor-id="ukázkové-kódy">Ukázkové kódy</h2>
-<div id="listing-codes" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Skript
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1727654400000" data-listing-title-sort="Úvod do vektorových dat">
-<td>
-<span class="listing-date">2024-09-30</span>
-</td>
-<td>
-<a href="PGIS4skripty/01_vektorová_vrstva.py" class="title listing-title">Úvod do vektorových dat</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1728259200000" data-listing-title-sort="Vektorová data - výběr prvků">
-<td>
-<span class="listing-date">2024-10-07</span>
-</td>
-<td>
-<a href="PGIS4skripty/02_vyber_prvku.py" class="title listing-title">Vektorová data - výběr prvků</a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1728259200000" data-listing-title-sort="Vektorová data - tvorba dat">
-<td>
-<span class="listing-date">2024-10-07</span>
-</td>
-<td>
-<a href="PGIS4skripty/03_tvorby_polygonove_vrstvy.py" class="title listing-title">Vektorová data - tvorba dat</a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1728864000000" data-listing-title-sort="Ukázka rozhraní v Pythonu">
-<td>
-<span class="listing-date">2024-10-14</span>
-</td>
-<td>
-<a href="PGIS4/skripty/04_rozhrani.py" class="title listing-title">Ukázka rozhraní v Pythonu</a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1728864000000" data-listing-title-sort="Rozhraní v QgsAbstractGeometry">
-<td>
-<span class="listing-date">2024-10-14</span>
-</td>
-<td>
-<a href="PGIS4/skripty/05_qgsabstractgeometry.py" class="title listing-title">Rozhraní v QgsAbstractGeometry</a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1728864000000" data-listing-title-sort="Operace s geometriemi">
-<td>
-<span class="listing-date">2024-10-14</span>
-</td>
-<td>
-<a href="PGIS4/skripty/06_operace_geometrie.py" class="title listing-title">Operace s geometriemi</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
-<section id="další" class="level2">
-<h2 class="anchored" data-anchor-id="další">Další</h2>
-<p>Doporučuji zřízení a otestování <strong>GitHub Copilot</strong> dle <a href="../tools/github-copilot.html">návodu</a> pro zjednodušení psaní kódu v Pythonu.</p>
-<p>Process nastavení PYthonu a QGIS pro <span class="software">VS Code</span> je popsán <a href="../tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api">zde</a>.</p>
+<section id="online-kurzy" class="level3">
+<h3 class="anchored" data-anchor-id="online-kurzy">Online kurzy</h3>
+<p><a href="https://www.coursera.org/learn/python?irclickid=zZIxyG1pSxyPWtHTP2UiDyJxUkFRy7y8P21s080&amp;irgwc=1&amp;utm_medium=partners&amp;utm_source=impact&amp;utm_campaign=2890636&amp;utm_content=b2c">Programming for Everybody (Getting Started with Python)</a></p>
+<p><a href="https://www.codecademy.com/learn/learn-python-3">Learn Python 3</a></p>
+<p><a href="https://www.udacity.com/course/introduction-to-python--ud1110">Introduction to Python Programming</a></p>
 
 
-
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1086,13 +849,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../subjects/pgis3.html" class="pagination-link" aria-label="Programování v GIS 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Programování v GIS 3</span>
+      <a href="../tools/github-copilot.html" class="pagination-link" aria-label="GitHub Copilot">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GitHub Copilot</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tools/vscode.html" class="pagination-link" aria-label="Visual Studio Code">
-        <span class="nav-page-text">Visual Studio Code</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../descriptions/python-traceback.html" class="pagination-link" aria-label="Python Error Traceback">
+        <span class="nav-page-text">Python Error Traceback</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
