@@ -2,7 +2,7 @@
 title: "Rastrová data v [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2024-10-14
+date: 2024-10-21
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -11,7 +11,7 @@ footer: "{{< var links.web >}}"
 code-line-numbers: false
 execute:
   echo: true
-  eval: true
+  eval: false
 ---
 
 ## Objekty
@@ -42,7 +42,6 @@ execute:
 - v nejjednodušší podobě jako
 
 ```python
-# | eval: false
 import arcpy
 
 raster = arcpy.Raster("path/to/raster.tif")
@@ -67,7 +66,6 @@ for i, j in raster:
 - pozor na inicializaci - jedná se o python **dictionary** s klíči - zde __rasters__ (ale jsou další)
 
 ```python
-# | eval: false
 with RasterCellIterator({'rasters':[myRas1, myRas2, outRas1, outRas2]}) as rci:
     for i,j in rci:
       pass
@@ -78,7 +76,6 @@ with RasterCellIterator({'rasters':[myRas1, myRas2, outRas1, outRas2]}) as rci:
 - raster lze předefinovat na dané nastavení pomocí 
 
 ```python
-# | eval: false
 r_1_env = arcpy.sa.ApplyEnvironment(r_1)
 ```
 
@@ -95,7 +92,6 @@ r_1_env = arcpy.sa.ApplyEnvironment(r_1)
 - lze provádět na úrovni celého rastru
 
 ```python
-# | eval: false
 import arcpy
 
 r_1 = arcpy.Raster("path/to/raster.tif")
