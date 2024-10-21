@@ -1,0 +1,26 @@
+---
+title: Python
+format: 
+    html:
+        code-line-numbers: true
+---
+
+## Základy jazyka - výukové materiály
+
+### Youtube přednášky
+
+[Python for Beginners - Learn Python in 1 Hour](https://www.youtube.com/watch?v=kqtD5dpn9C8)
+
+[Python for Beginners – Full Course [Programming Tutorial]](https://www.youtube.com/watch?v=eWRfhZUzrAc)
+
+[you need to learn Python RIGHT NOW!! ](https://www.youtube.com/watch?v=mRMmlo_Uqcs&list=PLIhvC56v63ILPDA2DQBv0IKzqsWTZxCkp)
+
+[Harvard CS50’s Introduction to Programming with Python – Full University Course](https://www.youtube.com/watch?v=nLRL_NcnK-4)
+
+### Online kurzy
+
+[Programming for Everybody (Getting Started with Python)](https://www.coursera.org/learn/python?irclickid=zZIxyG1pSxyPWtHTP2UiDyJxUkFRy7y8P21s080&irgwc=1&utm_medium=partners&utm_source=impact&utm_campaign=2890636&utm_content=b2c)
+
+[Learn Python 3](https://www.codecademy.com/learn/learn-python-3)
+
+[Introduction to Python Programming](https://www.udacity.com/course/introduction-to-python--ud1110)

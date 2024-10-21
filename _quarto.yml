@@ -51,6 +51,8 @@ website:
           text: GitHub Copilot
       - section: Popisy
         contents:
+        - href: descriptions/python.qmd
+          text: Python
         - href: descriptions/python-traceback.qmd
           text: Python Error Traceback
           
