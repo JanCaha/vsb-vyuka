@@ -24,4 +24,5 @@ Materiály pro moje předměty vyučované v roce **{{< var dates.school-year >}
 
 ## Popisy
 
+- [Python - studijní zdroje](descriptions/python.qmd)
 - [Python Error Traceback](descriptions/python-traceback.qmd)
