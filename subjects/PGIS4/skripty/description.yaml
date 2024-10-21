@@ -22,4 +22,15 @@
   author: Jan Caha
   date: 2024-10-14
   path: "PGIS4/skripty/06_operace_geometrie.py"
-
+- title: "Rastrová data"
+  author: Jan Caha
+  date: 2024-10-21
+  path: "PGIS4/skripty/07_rastrova_data.py"
+- title: "Editace hodnot rastru"
+  author: Jan Caha
+  date: 2024-10-21
+  path: "PGIS4/skripty/08_editace_hodnot_rastru.py"
+- title: "Kopie rastru a jeho hodnot"
+  author: Jan Caha
+  date: 2024-10-21
+  path: "PGIS4/skripty/09_kopie_rastru.py"
