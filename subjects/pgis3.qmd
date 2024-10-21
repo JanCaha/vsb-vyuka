@@ -36,6 +36,7 @@ listing:
 - popis objektů [ArcPy]{.software} pomocí `arcpy.Describe()`
 - kurzory v [ArcPy]{.software} pro vektorová data
 - třída geometrie v [ArcPy]{.software} 
+- rastrová data v [ArcPy]{.software}
 
 ## Seminární práce{.seminar-work}
 
