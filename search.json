@@ -43,7 +43,7 @@
     "href": "index.html#popisy",
     "title": "Výuka - Jan Caha",
     "section": "Popisy",
-    "text": "Popisy\n\nPython Error Traceback"
+    "text": "Popisy\n\nPython - studijní zdroje\nPython Error Traceback"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#rozhraní---interface",
@@ -610,7 +610,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.03649529 -1.17427351 -1.03715179 -0.47785862 -0.04954652"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.94567704 -0.24504743 -0.50380977 -0.07836653 -0.05785029"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2588,7 +2588,7 @@
     "href": "descriptions/python.html",
     "title": "Python",
     "section": "",
-    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nLearn Python 3\nIntroduction to Python Programming",
+    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nPython for Everybody Specialization\nLearn Python 3\nIntroduction to Python Programming",
     "crumbs": [
       "Popisy",
       "Python"
@@ -2599,7 +2599,7 @@
     "href": "descriptions/python.html#základy-jazyka---výukové-materiály",
     "title": "Python",
     "section": "",
-    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nLearn Python 3\nIntroduction to Python Programming",
+    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nPython for Everybody Specialization\nLearn Python 3\nIntroduction to Python Programming",
     "crumbs": [
       "Popisy",
       "Python"
