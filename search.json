@@ -15,7 +15,7 @@
     "href": "subjects/pgis3.html",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "",
-    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy",
+    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -26,7 +26,7 @@
     "href": "subjects/pgis3.html#řešená-témata",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "",
-    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy",
+    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -48,7 +48,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-09-23\n\n\nÚvodní hodina\n\n\n\n\n2024-09-23\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n2024-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-09-23\n\n\nÚvodní hodina\n\n\n\n\n2024-09-23\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n2024-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n2024-10-14\n\n\nRastrová data v ArcPy\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -617,7 +617,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.5763166 -0.2016088 -0.2067704 -0.2194330 -0.6517110"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.47076740 -0.09475704 -0.54557047 -0.08925379 -0.36661945"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -788,577 +788,151 @@
     "text": "Karáty versus cena\n\np &lt;- ggplot(diamonds_selected) +\n  geom_point(aes(price, carat))\np"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#arcpy",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#arcpy",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "ArcPy",
-    "text": "ArcPy\n\nArcPy je knihovna pro Python, která umožňuje přístup k funkcím ArcGIS Pro\numožňuje automatizaci procesů v ArcGIS Pro\numožňuje vytváření vlastních nástrojů (v ArcGIS Pro) a skriptů (samostatných)\njedná je python binding (nejspíše z C++), takže zdrojové kódy nejsou dostupné a knihovna ani není pro python typovaná (podobně jako GDAL/OGR), což komplikuje práci s ní - chybí v IDE napovídání a podobně"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#objekty",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#objekty",
+    "title": "Rastrová data v ArcPy",
+    "section": "Objekty",
+    "text": "Objekty\n\narcpy.Raster - třída pro práci s rastrovými daty\narcpy.RasterInfo - třída vlastností rastru (např. rozměry, souřadnicový systém, atd.)\narcpy.RasterCellIterator - třída pro iteraci přes buňky rastru"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#struktura-arcpy",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#struktura-arcpy",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "Struktura ArcPy",
-    "text": "Struktura ArcPy\n\nčást funkcí dostupná pod arcpy.*\ndalší část v modulech např. Data Access arcpy.da.*, Mapping arcpy.mp.* a další\npodstatné jé číst dokumentaci a vidět příklady použití"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#raster",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#raster",
+    "title": "Rastrová data v ArcPy",
+    "section": "Raster",
+    "text": "Raster\n\nzákladní třída pro rastrová data\nmůže být multidimenzionální (více pásem)\nlze načíst i pouze vybraná pásma (cesta_k_souboru/Band_1)\natributy třídy - informace o rastru, ale i formátu uložení\nfunkce pro práci s rastrem\nfunkce read() a write() pro čtení a zápis hodnot ve formátu NumPy pole"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#objekt-env",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#objekt-env",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "Objekt env",
-    "text": "Objekt env\n\n“prostředí” v němž ArcPy pracuje - známe z GUI ArcGIS Pro\ndostupné jako arcpy.env.* kde za * dosazujeme proměnnou\narcpy.env.workspace - pracovní adresář\narcpy.env.overwriteOutput - přepsat výstupní soubory analýz a dalších operací\narcpy.env.scratchGDB - dočasná databáze pro dílčí výpočty a operace"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rasterinfo",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rasterinfo",
+    "title": "Rastrová data v ArcPy",
+    "section": "RasterInfo",
+    "text": "RasterInfo\n\n“otisk” či definice rastru\nlze jednak získat z objektu Raster funkcí getRasterInfo(), pak má hodnoty z daného rastru\nnebo vytvořit jako prázdný objekt a pak je nutné nastavit potřebné atributy\nna základě objektu RasterInfo lze vytvořit nový rastr (Raster(RasterInfo())), ale bez dat"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#cesty-používané-v-arcpy",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#cesty-používané-v-arcpy",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "Cesty používané v ArcPy",
-    "text": "Cesty používané v ArcPy\n\nbud absolutní cesty na disku (např. C:/data/soubor.shp), nebo C:/data/soubor.gdb/nazev_vrstvy\nnebo relativní cesty, jako je název vrstvy uvažovaný v acpy.env.workspace (např. soubor.shp, nazev_vrstvy)\nu rastrů lze přistpovat i k pásmům jako C:/data/soubor.tif/Band_1\nvždy je třeba myslet na to, kde se nacházíme a jaké cesty používáme"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator",
+    "title": "Rastrová data v ArcPy",
+    "section": "RasterCellIterator",
+    "text": "RasterCellIterator\n\nobjekt pro iteraci přes buňky rastru\nv nejjednodušší podobě jako\n\n# | eval: false\nimport arcpy\n\nraster = arcpy.Raster(\"path/to/raster.tif\")\nraster.readOnly = False\n\nfor i, j in raster:\n  print(f\"{i,j} - {raster[i,j]}\")\n  if raster[i,j] &lt;  0:\n    raster[i,j] = 0"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#popis-objektu",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#popis-objektu",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "Popis objektu",
-    "text": "Popis objektu\n\narcpy.Describe() - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu\nvýstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme)"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---indexy",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---indexy",
+    "title": "Rastrová data v ArcPy",
+    "section": "RasterCellIterator - indexy",
+    "text": "RasterCellIterator - indexy\n\njednopásmové rastry - i, j v pořadí řádek, sloupec\nčíslování začíná v levém horním rohu (buňka 0,0) a pokračuje dolů a doprava\nvícepásmové rastry\n\nbuď k, i, j v pořadí pásmo, řádek, sloupec a vrací jednu hodnotu\nnebo i, j - řádek, sloupec a vrací tuple hodnot pro pásma"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#náplň",
-    "href": "subjects/PGIS3/prezentace/01_uvod.html#náplň",
-    "title": "Úvodní hodina",
-    "section": "Náplň",
-    "text": "Náplň\n\nprogramování v Pythonu s knihovnou ArcPy pro ArcGIS Pro\nzpracování a editace dat pomocí ArcPy, vektorová i rastrová data\nmožnosti automatizace v ArcGIS Pro pomocí ArcPy\nvytváření skriptů a nástrojů pro ArcGIS Pro v Pythonu"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---vícero-rastrů",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---vícero-rastrů",
+    "title": "Rastrová data v ArcPy",
+    "section": "RasterCellIterator - vícero rastrů",
+    "text": "RasterCellIterator - vícero rastrů\n\npozor na inicializaci - jedná se o python dictionary s klíči - zde rasters (ale jsou další)\n\n# | eval: false\nwith RasterCellIterator({'rasters':[myRas1, myRas2, outRas1, outRas2]}) as rci:\n    for i,j in rci:\n      pass\n\nprvní rastr určuje nastavení enviromentu - souřadnicový sytém, velikost buňky a extent\ndíky tomu lze iterovat přes vícero rastrů současně\nraster lze předefinovat na dané nastavení pomocí\n\n# | eval: false\nr_1_env = arcpy.sa.ApplyEnvironment(r_1)"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#o-čem-to-bude",
-    "href": "subjects/PGIS3/prezentace/01_uvod.html#o-čem-to-bude",
-    "title": "Úvodní hodina",
-    "section": "O čem to bude",
-    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\npráce s ArcPy a její dokumentací\noperace s geodaty skrze API ArcPy\nfunkcionální i objektově orientované programování\nodchytávání výjimek"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---doplnění",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---doplnění",
+    "title": "Rastrová data v ArcPy",
+    "section": "RasterCellIterator - doplnění",
+    "text": "RasterCellIterator - doplnění\n\npython hodnota math.nan se implicitně konvertuje na NoData\npři tvorbě RasterCellIterator lze uvést v dictionary tyto klíče\n\n'padding': 2 - vhodné pro jádrové funkce (např. průměry okolí), přednačte iterátor s okolím buňky o velikosti (vlastně matice 5x5) pro rychlejší výpočty\n'skipNoData':[r_1, r_2] - budou se řešit pouze buňky, které u uvedených rastrů nemají hodnotu NoData, jinak se přeskočí (může to výrazně zrychlit výpočty)"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#dílčí-úlohy",
-    "href": "subjects/PGIS3/prezentace/01_uvod.html#dílčí-úlohy",
-    "title": "Úvodní hodina",
-    "section": "Dílčí úlohy",
-    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#numerické-operace-s-rastry",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#numerické-operace-s-rastry",
+    "title": "Rastrová data v ArcPy",
+    "section": "Numerické operace s rastry",
+    "text": "Numerické operace s rastry\n\nmapová algebra\nlze provádět na úrovni celého rastru\n\n# | eval: false\nimport arcpy\n\nr_1 = arcpy.Raster(\"path/to/raster.tif\")\n\nr_2 = r_1 + 10\nr_3 = r_1 * r_2\n\nr_3.save(\"path/to/output.tif\")"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "href": "subjects/PGIS3/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "title": "Úvodní hodina",
-    "section": "V čem budeme pracovat",
-    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code\nmanagement Pythonu skrze Conda přímo z ArcGIS Pro\npoužití GitHub Copilot AI viz zde"
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#funkce-pro-rastry",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#funkce-pro-rastry",
+    "title": "Rastrová data v ArcPy",
+    "section": "Funkce pro rastry",
+    "text": "Funkce pro rastry\n\nfunkce aplikované na zdrojové rastry\narcpy.sa - modul pro prostorovou analýzu"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#materiály",
-    "href": "subjects/PGIS3/prezentace/01_uvod.html#materiály",
-    "title": "Úvodní hodina",
-    "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné na jancaha.github.io/vsb-vyuka/\ndalší materiály dle potřeby"
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#geometry",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#geometry",
+    "title": "Geometrie v ArcPy",
+    "section": "Geometry",
+    "text": "Geometry\n\nzákladní třída geometrie v ArcPy\ndokumentace\nlze tvořit přímo Geometry (geometry, inputs, {spatial_reference}, {has_z}, {has_m}, {has_id})\nale spíše je vhodnější speficiké třídy pro druhy geometrií - Multipoint, PointGeometry, Polygon, Polyline\n\n\n\n\n\n\n\nSouřadnicový systém\n\n\nPřímo součástí třídy Geometry může být a často i je definice souřadnicového systému!"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#z-čeho-vycházíme",
-    "href": "subjects/PGIS3/prezentace/01_uvod.html#z-čeho-vycházíme",
-    "title": "Úvodní hodina",
-    "section": "Z čeho vycházíme",
-    "text": "Z čeho vycházíme\n\nznalost Pythonu dle předmetu Programování v GIS 2\nznalost managementu Pythonu skrze Conda\nznalost ArcGIS Pro a jeho základních funkcí"
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#výpočty-na-třídě-geometry",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#výpočty-na-třídě-geometry",
+    "title": "Geometrie v ArcPy",
+    "section": "Výpočty na třídě Geometry",
+    "text": "Výpočty na třídě Geometry\n\nnapř. atributy lenght, lenght3D nebo area, ale i řada funkcí (zejména prostorové vztahy - např. intersect()) pracují s 2D kartézkou matematikou\nu funkcí getLength() nebo getArea() lze specifikovat {method}, {units}, přičemž method určuje způsob výpočtu a units jednotky výsledku\nz toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!\ndata je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku\nfunkce třídy Geometry.projectAs (spatial_reference)"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#zakončení-předmětu",
-    "href": "subjects/PGIS3/prezentace/01_uvod.html#zakončení-předmětu",
-    "title": "Úvodní hodina",
-    "section": "Zakončení předmětu",
-    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a ArcPy"
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
+    "title": "Geometrie v ArcPy",
+    "section": "Objekt Array",
+    "text": "Objekt Array\n\narcpy.Array() - speciální objekty ArcPy pro tvorbu polí\npole lze i vzájemně zanořovat - tzn. pole polí může existovat\nzvláštnost API\npoužití např. pro tvorbu linií:\n\narcpy.Polyline( \n    arcpy.Array(\n        [\n          arcpy.Point(-77.4349451, 37.5408265), \n          arcpy.Point(-78.6384349, 35.7780943),\n        ]\n    ),\n    arcpy.SpatialReference(4326)\n)"
   },
   {
-    "objectID": "subjects/pdbs2.html",
-    "href": "subjects/pdbs2.html",
-    "title": "Prostorové databázové systémy 2 (PDBS2)",
-    "section": "",
-    "text": "Oracle\nInstalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Prostorové databázové systémy 2"
-    ]
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#význam-operátorů-a-jejich-použití-u-třídy-geometry",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#význam-operátorů-a-jejich-použití-u-třídy-geometry",
+    "title": "Geometrie v ArcPy",
+    "section": "Význam operátorů a jejich použití u třídy Geometry",
+    "text": "Význam operátorů a jejich použití u třídy Geometry\n\nněkteré jsou zřejmé\n\n== - equals\n!= - not equals\n\njiné ne až tolik\n\n+ - intersect (Geometry.intersect(Geometry))\n| - union (Geometry.union(Geometry))\n- - difference (Geometry.difference(Geometry))\n^ - symmetricDifference (Geometry.symmetricDifference(Geometry))"
   },
   {
-    "objectID": "subjects/pdbs2.html#řešená-témata",
-    "href": "subjects/pdbs2.html#řešená-témata",
-    "title": "Prostorové databázové systémy 2 (PDBS2)",
-    "section": "",
-    "text": "Oracle\nInstalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Prostorové databázové systémy 2"
-    ]
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#ukázky-použití-různých-funkcí-třídy",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#ukázky-použití-různých-funkcí-třídy",
+    "title": "Geometrie v ArcPy",
+    "section": "Ukázky použití různých funkcí třídy",
+    "text": "Ukázky použití různých funkcí třídy\n\npraktické příklady\ndle dokumentace"
   },
   {
-    "objectID": "subjects/pdbs2.html#prezentace",
-    "href": "subjects/pdbs2.html#prezentace",
-    "title": "Prostorové databázové systémy 2 (PDBS2)",
-    "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-03-04\n\n\nPostgreSQL (Postgis)\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Prostorové databázové systémy 2"
-    ]
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#funkce-pro-zjištění-proměnných",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#funkce-pro-zjištění-proměnných",
+    "title": "Obecné funkce ArcPy",
+    "section": "Funkce pro zjištění proměnných",
+    "text": "Funkce pro zjištění proměnných\n\nfunkce vracející seznamy (i prázdné)\ntypicky arcpy.List*()\nslouží pro zjišťování. tam kde programátor nemá předem představu o obsahu"
   },
   {
-    "objectID": "subjects/pdbs2.html#zdroje",
-    "href": "subjects/pdbs2.html#zdroje",
-    "title": "Prostorové databázové systémy 2 (PDBS2)",
-    "section": "Zdroje",
-    "text": "Zdroje\n\nPostgreSQL Manuál\nPostGIS Manuál",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Prostorové databázové systémy 2"
-    ]
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklad-arcpy.listenvironments",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklad-arcpy.listenvironments",
+    "title": "Obecné funkce ArcPy",
+    "section": "Příklad arcpy.ListEnvironments()",
+    "text": "Příklad arcpy.ListEnvironments()\n\nvrací seznam promměných geoprocessingu\nvše co je dostupné pod arcpy.env.*\nk proměnným se dostaneme pomocí arcpy.env.proměnná nebo arcpy.env.[\"proměnná\"]\nreset proměnných lze provést pomocí arcpy.ResetEnvironments()"
   },
   {
-    "objectID": "subjects/pdbs2.html#data-ke-stažení",
-    "href": "subjects/pdbs2.html#data-ke-stažení",
-    "title": "Prostorové databázové systémy 2 (PDBS2)",
-    "section": "Data ke stažení",
-    "text": "Data ke stažení\n\nGPKG s vrstvami okresů a krajů\nCSV s údaji o počtu obyvatel\nCSV s převodním číselníkem z RUIAN do ČSÚ",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Prostorové databázové systémy 2"
-    ]
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady---výpisy-dat",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady---výpisy-dat",
+    "title": "Obecné funkce ArcPy",
+    "section": "Příklady - výpisy dat",
+    "text": "Příklady - výpisy dat\n\narcpy.ListDatasets()\narcpy.ListFeatureClasses()\narcpy.ListFields()\narcpy.ListFiles()\narcpy.ListIndexes()\narcpy.ListRasters()\narcpy.ListTables()\narcpy.ListWorkspaces()"
   },
   {
-    "objectID": "subjects/pdbs2.html#ukázkové-kódy",
-    "href": "subjects/pdbs2.html#ukázkové-kódy",
-    "title": "Prostorové databázové systémy 2 (PDBS2)",
-    "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nInstalace PostGIS do daného schématu DB\n\n\n\n\n2024-03-11\n\n\nNačtení souboru jako tabulky do PostGIS\n\n\n\n\n2024-03-11\n\n\nNačtení CSV souboru jako tabulky do PostgreSQL\n\n\n\n\n2024-03-11\n\n\nTvorba tabulek pro import z CSV\n\n\n\n\n2024-03-11\n\n\nJoin s dočasnou tabulkou\n\n\n\n\n2024-03-11\n\n\nView\n\n\n\n\n2024-03-22\n\n\nTvorba a vyplnění tabulky\n\n\n\n\n2024-03-22\n\n\nProstorové dotazy\n\n\n\n\n2024-03-22\n\n\nView s modifikací geometrie\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Prostorové databázové systémy 2"
-    ]
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#licence-a-instalace",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#licence-a-instalace",
+    "title": "Obecné funkce ArcPy",
+    "section": "Licence a instalace",
+    "text": "Licence a instalace\n\nkontroly dostupnosti licencí a stavu instalace\narcpy.CheckExtension() - je exteze dostupná?\narcpy.CheckInExtension(), arcpy.CheckOutExtension() - pro sdílené licence\narcpy.CheckProduct(), arcpy.CheckProduct() - dostupná úroveň licence + info\nacpy.GetInstallInfo() - info o instalaci\narcpy.ListInstallations() - typy instalací"
   },
   {
-    "objectID": "subjects/pdbs2.html#instalace-postregsql",
-    "href": "subjects/pdbs2.html#instalace-postregsql",
-    "title": "Prostorové databázové systémy 2 (PDBS2)",
-    "section": "Instalace PostregSQL",
-    "text": "Instalace PostregSQL\n\nviz odkaz Linux Mint - potřebujeme jednak akktuální GIS softwary a PostgreSQL (detaily na stránce)\n\n\nDocker\nPro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít docker compose se souborem s nastavením:\nversion: \"3.5\"\n\nservices:\n  postgres:\n    container_name: postgis\n    image: postgis/postgis:16-master\n    environment:\n      POSTGRES_USER: admin\n      POSTGRES_PASSWORD: root\n      PGDATA: /data/postgres\n    volumes:\n      - cesta_k_složce_na_disku:/data/postgres\n    ports:\n      - \"5432:5432\"\nStačí upravit volumes na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Prostorové databázové systémy 2"
-    ]
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
+    "title": "Obecné funkce ArcPy",
+    "section": "Popisy objektů",
+    "text": "Popisy objektů\n\narcpy.Describe() - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)\nvýsledný objekty se liší dle požadovaného typu objektu - viz dokumentace\nzákladní minimum informací pro všechny objekty"
   },
   {
-    "objectID": "subjects/idg.html",
-    "href": "subjects/idg.html",
-    "title": "Interpretace geodat (IDG)",
-    "section": "",
-    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr, tidyr\ntvorba grafů v pomocí ggplot2, dobrá praxe tvorby grafů\nRmarkdown a Quarto\nprostorová data v R, vektorory, rastry, vizualizace a operace s daty",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Interpretace geodat"
-    ]
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
+    "title": "Obecné funkce ArcPy",
+    "section": "Práce s Describe() objekty",
+    "text": "Práce s Describe() objekty\n\nje vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce\n\n\ndesc = arcpy.Describe(\"C:/data/soubor.shp\")\nif hasattr(desc, \"dataType\"):\n    data_type = desc.dataType\n    print(desc.dataType)\n\n\npředcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)"
   },
   {
-    "objectID": "subjects/idg.html#řešená-témata",
-    "href": "subjects/idg.html#řešená-témata",
-    "title": "Interpretace geodat (IDG)",
-    "section": "",
-    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr, tidyr\ntvorba grafů v pomocí ggplot2, dobrá praxe tvorby grafů\nRmarkdown a Quarto\nprostorová data v R, vektorory, rastry, vizualizace a operace s daty",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "subjects/idg.html#prezentace",
-    "href": "subjects/idg.html#prezentace",
-    "title": "Interpretace geodat (IDG)",
-    "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n2024-03-18\n\n\nGrafy - ggplot2\n\n\n\n\n2024-04-08\n\n\nTvorba reportů, prezentací a dalších\n\n\n\n\n2024-04-15\n\n\nProstorová data\n\n\n\n\n2024-04-22\n\n\nStatistické testování a modelování\n\n\n\n\n2024-05-06\n\n\nVybrané statistické metody\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "subjects/idg.html#seminární-práce",
-    "href": "subjects/idg.html#seminární-práce",
-    "title": "Interpretace geodat (IDG)",
-    "section": "Seminární práce",
-    "text": "Seminární práce\nVyberte si libovolnou otevřenou datovou sadu pro ČR, např. z Národního katalogu otevřených dat či jiného zdroje. Vytvořte buď Rmarkdown nebo Quarto dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující:\n\nnačtení dat\nmodifikace dat, výpočet nových sloupců nebo extrakce dílčích dat ze sloupců do nových sloupců (balík dplyr a další)\nextrakce dílčí části dat do menší tabulky a její prezentace v dokumentu\njeden graf se všemi náležitostmi a korektně vizualizovaný z dat (balík ggplot2)\njedna interaktivní vizualizace (balík plotly pro grafy, nebo leaflet pro prostorová data)\nstatistická sumarizace/vyhodnocení dat - shrnutí, tabulka, vizualizace",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "subjects/idg.html#zdroje",
-    "href": "subjects/idg.html#zdroje",
-    "title": "Interpretace geodat (IDG)",
-    "section": "Zdroje",
-    "text": "Zdroje\n\nkniha R for Data Science (2e) - shrnuje základní postupy datové vědy (data science) v R\nkniha Hands-On Programming with R - programování v R\nkniha Fundamentals of Data Visualization - vizualizace dat - příklady v R\nkniha Geocomputation with R - základy práce s geodaty v R\n\n\nDalší zajímavé zdroje\n\nkniha Data Visualization - vizualizace dat - příklady v R\nkniha Statistical Inference via Data Science - statistické metody/postupy v R",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "subjects/idg.html#ukázkové-kódy",
-    "href": "subjects/idg.html#ukázkové-kódy",
-    "title": "Interpretace geodat (IDG)",
-    "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-02-19\n\n\nInstalace potřebných balíků\n\n\n\n\n2024-04-08\n\n\nUkázkový report v rmarkdown\n\n\n\n\n2024-04-15\n\n\nQGIS funkce v R\n\n\n\n\n2024-04-22\n\n\nUkázky easystats\n\n\n\n\n2024-04-22\n\n\nUkázka tidymodels\n\n\n\n\n2024-05-06\n\n\nUkázka faktorové analýzy\n\n\n\n\n2024-05-06\n\n\nUkázka PCA\n\n\n\n\n2024-05-06\n\n\nUkázka shlukování\n\n\n\n\n2024-05-06\n\n\nUkázka rozhodovacích stromů\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "subjects/idg.html#instalace",
-    "href": "subjects/idg.html#instalace",
-    "title": "Interpretace geodat (IDG)",
-    "section": "Instalace",
-    "text": "Instalace\n\nR - R CRAN\nIDE - RStudio\n\nV RStudiu nainstalovat balíky následujícím skriptem:\nneeded_packages &lt;- c(\n    \"tidyverse\",\n    \"here\",\n    \"sf\",\n    \"terra\",\n    \"stars\",\n    \"tmap\",\n    \"lwgeom\",\n    \"qgisprocess\",\n    \"remotes\",\n    \"tidymodels\",\n    \"DT\",\n    \"rmarkdown\",\n    \"plotly\",\n    \"tidymodels\",\n    \"easystats\"\n)\n\n# nejjednodušší způsob instalace balíčků by bylo prosté volání install.packages(needed_packages),\n# ale to by znamenalo, že by se balíčky instalovaly i když už jsou nainstalované, což je zbytečné a zdlouhavé\n# následující kód tedy instaluje jen ty balíčky, které ještě nejsou nainstalované, ale kód je komplikovanější\n\nnew_packages &lt;- needed_packages[!(needed_packages %in% installed.packages()[,\"Package\"])]\nif(length(new_packages)) install.packages(new_packages)\n\nremotes::install_github(\"JanCaha/r_package_qgis\")",
-    "crumbs": [
-      "Předměty letní semestr",
-      "Interpretace geodat"
-    ]
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#náplň",
-    "href": "subjects/PDBS2/prezentace/01_uvod.html#náplň",
-    "title": "Úvodní cvičení",
-    "section": "Náplň",
-    "text": "Náplň\n\nSŘBD (DBMS)\nOracle\nPostgre SQL, PostGIS (oborový standard)\nSQLite, SpatialLite (okrajově, ale aplikačně zajímavé)"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "href": "subjects/PDBS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "title": "Úvodní cvičení",
-    "section": "O čem to bude",
-    "text": "O čem to bude\n\nSQL příkazy - předpokládá se, že základy znáte\n\nSELECT * FROM table WHERE attribut = 5;\nSELECT * FROM table WHERE attribut LIKE 'hodnota%';\n\nfunkce pro prostorová data v SQL (Oracle, hlavně PostGIS)\nzpracování dat a manipulace s nimi skrze SQL (trochu jiný styl práce než normální práce s daty)"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "href": "subjects/PDBS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "title": "Úvodní cvičení",
-    "section": "Dílčí úlohy",
-    "text": "Dílčí úlohy\n\npráce s daty v DB\nnávrh a tvorba DB\nfunkce pro geodata v DB\npřipojení k DB ze softwarů, programovacích jazyků"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "href": "subjects/PDBS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "title": "Úvodní cvičení",
-    "section": "V čem budeme pracovat",
-    "text": "V čem budeme pracovat\n\nSQLDeveloper (pro Oracle)\npgAdmin (pro Postgre/Postgis)\nDBeaver (Community Edition) - grafické návrhy DB\nQGIS - prostorová data z Postgis - vizualizace i editace\nDB Browser pro SQLite"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#db-systémy",
-    "href": "subjects/PDBS2/prezentace/01_uvod.html#db-systémy",
-    "title": "Úvodní cvičení",
-    "section": "DB Systémy",
-    "text": "DB Systémy\n\nvirtual PC\nz Adelka (\\adelka-nas.vsb.cz) soubor PDB_OfficeOracle21c.ova\npro Postgre bude vytvořen"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#materiály",
-    "href": "subjects/PDBS2/prezentace/01_uvod.html#materiály",
-    "title": "Úvodní cvičení",
-    "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#zápočet",
-    "href": "subjects/PDBS2/prezentace/01_uvod.html#zápočet",
-    "title": "Úvodní cvičení",
-    "section": "Zápočet",
-    "text": "Zápočet\n\ncelkem 33 bodů\ncvičení Oracle + Postgis 11 bodů (detaily za 14 dnů)\nprojekt PostGIS 11 bodů\npísemka SQL 11 bodů"
-  },
-  {
-    "objectID": "tools/osgeo4w.html",
-    "href": "tools/osgeo4w.html",
-    "title": "OSGEO4W",
-    "section": "",
-    "text": "Nejjednodušším způsobem, jak v prostředí Windows nainstalovat značnou část open source GIS knihoven a softwarů (např. QGIS, GRASS, SAGA a další) je použití distribuce OSGEO4W z webu projektu, konkrétně odkaz ke stažení instalátoru. Jedná se o klasický průvodce, kde je možnost nakonfigurovat si instalaci podle vlastních potřeb, plná konfigurace je poměrně obáshlá a v mnoha ohledech i zbytečná (např. obsahuje 3 verze QGIS - vývojovou, aktuální a LTR).",
-    "crumbs": [
-      "Nástroje",
-      "OSGeo4W"
-    ]
-  },
-  {
-    "objectID": "tools/osgeo4w.html#nástroje",
-    "href": "tools/osgeo4w.html#nástroje",
-    "title": "OSGEO4W",
-    "section": "Nástroje",
-    "text": "Nástroje\nSoučástí instalace jsou:\n\nnástroje ogr2ogr, gdalwarp, gdal_translate a další dostupné skrze OSGeo4W Shell\nQGIS, GRASS\nPython a jeho knihovny, lze doinstalovat z příkazové řádky (OSGeo4W Shell) pomocí pip install *",
-    "crumbs": [
-      "Nástroje",
-      "OSGeo4W"
-    ]
-  },
-  {
-    "objectID": "tools/osgeo4w.html#instalace",
-    "href": "tools/osgeo4w.html#instalace",
-    "title": "OSGEO4W",
-    "section": "Instalace",
-    "text": "Instalace\nPo spuštění instalátoru je nutné vybrat typ instalace - Advanced Install, viz následující obrázek:\n\n\n\n\n\n\nObr. 1: Volba typu instalace\n\n\n\nDalší položkou je volba instalace z Internetu (používáme nejaktuálnější zdroje).\n\n\n\n\n\n\nObr. 2: Volba instalace z internetu\n\n\n\nDalší volbou je umístění instalace. Výchozí nastavení je na disk C:, lze změnit disk, nicméně je vhodné instalovat do co nevyšše umístěné složky, takže např: D:\\OSGeo4W, aby nebyla výsledná cesta příliš dlouhá.\n\n\n\n\n\n\nObr. 3: Umístění instalace\n\n\n\nNásledující dva kroky, volbu dočasného adresáře a proxy, lze obvykle nechat na výchozích hodnotách.\n\n\n\n\n\n\nObr. 4: Volba dočasného adresáře\n\n\n\n\n\n\n\n\n\nObr. 5: Nastavení proxy\n\n\n\nNásledujícím krokem je volba zdrojového serveru, obvykle vyhoví výchozí hodnota.\n\n\n\n\n\n\nObr. 6: Volba serveru\n\n\n\nV dalším kroce už se dostáváme k volbě komponent, které se mají instalovat. Obvykle věnujeme pozornost zejména položkám Commandline Utilities a Desktop, knihovny v pložce Libs se vyberou dle zvolených komponent automaticky.\n\n\n\n\n\n\nObr. 7: Seznam komponent dle typu\n\n\n\nZ poskytutého seznamu vybereme potřebné komponenty.\n\n\n\n\n\n\nObr. 8: Výběr komponent\n\n\n\nNásleduje potvrzení licencí, samotné stahování a instalace komponent, což může být časově náročnější.\n\n\n\n\n\n\nObr. 9: Instalace\n\n\n\n\nAktualizace komponent\nOpětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku Obr. 8 pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.",
-    "crumbs": [
-      "Nástroje",
-      "OSGeo4W"
-    ]
-  },
-  {
-    "objectID": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
-    "href": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
-    "title": "OSGEO4W",
-    "section": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API",
-    "text": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API\nPřed spuštěním Visual Studia Code je nutné nastavit prostředí pro Python, aby bylo možné používat knihovny dostupné v OSGEO4W. Pro tento účel vytvoříme v adresáři bin základního adresáře OSGEO4W kopii souboru python-qgis.bat a upravíme jeho poslední řádek doplněním cesty pro spuštění VS Code. Výsledný soubor může vypadat následovně:\n@echo off\ncall \"%~dp0\\o4w_env.bat\"\n@echo off\npath %OSGEO4W_ROOT%\\apps\\qgis\\bin;%PATH%\nset QGIS_PREFIX_PATH=%OSGEO4W_ROOT:\\=/%/apps/qgis\nset GDAL_FILENAME_IS_UTF8=YES\nrem Set VSI cache to be used as buffer, see #6448\nset VSI_CACHE=TRUE\nset VSI_CACHE_SIZE=1000000\nset QT_PLUGIN_PATH=%OSGEO4W_ROOT%\\apps\\qgis\\qtplugins;%OSGEO4W_ROOT%\\apps\\qt5\\plugins\nset PYTHONPATH=%OSGEO4W_ROOT%\\apps\\qgis\\python;%PYTHONPATH%\n\nstart \"VS Code\" /B \"C:\\Users\\uzivatel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\"\nPřes tento soubor budeme následně otevírat VS Code a v něm bude dostupné prostředí pro Python s knihovnami z OSGEO4W.\nV příslušném projektu ve VS Code nesmíme zapomenout nastavit správně interpretor Pythonu na python z adresáře OSGEO4W. To provedeme v dolní liště vpravo, kde je možné vybrat interpretor Pythonu.",
-    "crumbs": [
-      "Nástroje",
-      "OSGeo4W"
-    ]
-  },
-  {
-    "objectID": "tools/github-copilot.html",
-    "href": "tools/github-copilot.html",
-    "title": "Github Copilot",
-    "section": "",
-    "text": "Github Copilot je AI nástroj, napomáhající s programováním a to pomocí tvorby kódu (přednapovídání), nebo pomocí schopnosti vysvětlit či opravit existující kód. Jedná se primárně o placený nástroj, nicméně studenti mají k této službě přístup zdarma.",
-    "crumbs": [
-      "Nástroje",
-      "GitHub Copilot"
-    ]
-  },
-  {
-    "objectID": "tools/github-copilot.html#získání-studentského-přístupu",
-    "href": "tools/github-copilot.html#získání-studentského-přístupu",
-    "title": "Github Copilot",
-    "section": "Získání studentského přístupu",
-    "text": "Získání studentského přístupu\n\nzřízení účtu na Github, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu (aby nedošlo k blokaci účtu po ztátě studentského statusu)\npožádání o studentský přístup na Github dle článku, primárně se to řeší na webu https://education.github.com/\nověření nějakou dobou trvá cca. 1-2 dny, ale i týden\nnásledně se lze ve VS Code, či jiném IDE, které to podporuje (např. RStudio), pomocí tohoto účtu přihlásit a měl by být dostupý GitHub Copilot",
-    "crumbs": [
-      "Nástroje",
-      "GitHub Copilot"
-    ]
-  },
-  {
-    "objectID": "tools/github-copilot.html#zprovoznění-v-vs-code",
-    "href": "tools/github-copilot.html#zprovoznění-v-vs-code",
-    "title": "Github Copilot",
-    "section": "Zprovoznění v VS Code",
-    "text": "Zprovoznění v VS Code\n\ninstalace extenze GitHub Copilot\npřihlášení do GitHub Copilot pomocí GitHub účtu, který byl ověřen a má ke službě přistup (viz výše)\nnásledně začně fungovat přednapovídání kódu a chatovací okno (dostupné z menu View -&gt; Open View… -&gt; Chat)",
-    "crumbs": [
-      "Nástroje",
-      "GitHub Copilot"
-    ]
-  },
-  {
-    "objectID": "tools/github-copilot.html#zprovoznění-v-rstudio",
-    "href": "tools/github-copilot.html#zprovoznění-v-rstudio",
-    "title": "Github Copilot",
-    "section": "Zprovoznění v RStudio",
-    "text": "Zprovoznění v RStudio\n\nvyžaduje verzi novější než 2023.09.0\npřihlášení pomocí GitHub účtu je dostupné přes menu Tools -&gt; Global Options… -&gt; Copilot, zde se lze přihlásit, plus nastavit základní možnosti\nnásledně začně fungovat přednapovídání kódu, lze i klást otázky a získávat odpovědi - viz detaily",
-    "crumbs": [
-      "Nástroje",
-      "GitHub Copilot"
-    ]
-  },
-  {
-    "objectID": "tools/linux-mint.html",
-    "href": "tools/linux-mint.html",
-    "title": "Linux Mint",
-    "section": "",
-    "text": "Distribuce Linuxu založené na Ubuntu s méně intruzivním uživatelským prostředím.",
-    "crumbs": [
-      "Nástroje",
-      "Linux Mint"
-    ]
-  },
-  {
-    "objectID": "tools/linux-mint.html#instalace",
-    "href": "tools/linux-mint.html#instalace",
-    "title": "Linux Mint",
-    "section": "🖥 Instalace",
-    "text": "🖥 Instalace\n\ninstalujeme Linux Mint - Cinnamon edition\nlze instalovat jak do fyzického počítače, tak i do VirtualBox\n\ncelý process je ukázán v tomto videu\nv případě instalace do VirtualBoxu nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval\n\ndůležité je nastavení jména uživatele a hesla",
-    "crumbs": [
-      "Nástroje",
-      "Linux Mint"
-    ]
-  },
-  {
-    "objectID": "tools/linux-mint.html#aktualizace",
-    "href": "tools/linux-mint.html#aktualizace",
-    "title": "Linux Mint",
-    "section": "Aktualizace",
-    "text": "Aktualizace\nVhodné čas od času spustit aktualizaci softwarů.\nPříkazy pro příkazovou řádku:\nsudo apt-get update\nsudo apt-get upgrade -y",
-    "crumbs": [
-      "Nástroje",
-      "Linux Mint"
-    ]
-  },
-  {
-    "objectID": "tools/linux-mint.html#sec-gis",
-    "href": "tools/linux-mint.html#sec-gis",
-    "title": "Linux Mint",
-    "section": "🖥 Instalace aktuálních GIS knihoven a softwarů",
-    "text": "🖥 Instalace aktuálních GIS knihoven a softwarů\nPříkazy pro příkazovou řádku:\n# přidání zdroje balíčků GIS nástrojů\nsudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable\nsudo apt-get update\n\nsudo apt-get install -y qgis gdal-bin grass-gui",
-    "crumbs": [
-      "Nástroje",
-      "Linux Mint"
-    ]
-  },
-  {
-    "objectID": "tools/linux-mint.html#instalace-postregsql",
-    "href": "tools/linux-mint.html#instalace-postregsql",
-    "title": "Linux Mint",
-    "section": "🖥 Instalace PostregSQL",
-    "text": "🖥 Instalace PostregSQL\n\nnejdříve nastavíme nezbytnosti pro PG Admin 4 (pozor bude požadováno heslo)\n\nPříkazy pro příkazovou řádku:\nsource /etc/os-release\n\n# Install the public key for the repository (if not done previously):\ncurl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg\n\n# Create the repository configuration file:\necho \"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$UBUNTU_CODENAME pgadmin4 main\" | sudo tee /etc/apt/sources.list.d/pgadmin4.list\n\n# Update software sources\nsudo apt-get update\nsudo apt-get upgrade -y\n\n# Install pgAdmin for both desktop and web modes:\nsudo apt-get install -y pgadmin4\n\nnásledně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL (viz Sekce 3)\n\n# přidání zdroje balíčků GIS nástrojů\n\nsudo apt-get install -y gedit postgresql pgxnclient postgis\n\nnásledně nainstalujeme DBeaver - vizualizace DB and její správa (podobné PGAdmin4, ale s jiným přístupem)\npozor instalace se bude tázat na heslo\n\ncd /tmp\nwget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb\nsudo dpkg -i dbeaver-ce_latest_amd64.deb\n\nNastavení PostgreSQL a první spuštění\n\nprvotní spuštění PostgreSQL je nutné provést z příkazové řádky\n\nsudo -u postgres psql template1\n\nnásledně spustíme příkaz pro modifikaci hesla hlavní uživatele DB\n\nALTER USER postgres with encrypted password 'heslo';\n\npříkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru localhost s uživatelem postgres a heslem heslo (nastavené výše)\n\n\n\nPřipojení k DB z QGIS\nPro připojení k PostGIS databázi z QGIS je třeba přidat nové připojení z Data Source Manager v QGIS. Nastavení bude vypada jako na obrázku níže, může být třeba upravit nastavení Database a v Authentication (Obr. 1) nastavit Basic authentication a vyplnit jméno a heslo (Obr. 2).\n\n\n\n\n\n\nObr. 1: Nastavení připojení v QGIS\n\n\n\n\n\n\n\n\n\nObr. 2: Nastavení uživatele v QGIS Authentication",
-    "crumbs": [
-      "Nástroje",
-      "Linux Mint"
-    ]
-  },
-  {
-    "objectID": "tools/linux-mint.html#instalace-vs-code",
-    "href": "tools/linux-mint.html#instalace-vs-code",
-    "title": "Linux Mint",
-    "section": "🖥 Instalace VS Code",
-    "text": "🖥 Instalace VS Code\n\nmanuálně stáhnout z webu – .deb soubor\nspustit a nainstalovat poklikáním a zadáním hesla\naktualizace už probíhají automaticky",
-    "crumbs": [
-      "Nástroje",
-      "Linux Mint"
-    ]
-  },
-  {
-    "objectID": "tools/linux-mint.html#instalace-miniconda",
-    "href": "tools/linux-mint.html#instalace-miniconda",
-    "title": "Linux Mint",
-    "section": "🖥 Instalace MiniConda",
-    "text": "🖥 Instalace MiniConda\nPříkazy pro příkazovou řádku:\ncd /tmp\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nchmod +x Miniconda3-latest-Linux-x86_64.sh\n./Miniconda3-latest-Linux-x86_64.sh -b -f -p /home/$USER/miniconda3",
-    "crumbs": [
-      "Nástroje",
-      "Linux Mint"
-    ]
-  },
-  {
-    "objectID": "tools/vscode.html",
-    "href": "tools/vscode.html",
-    "title": "Visual Studio Code",
-    "section": "",
-    "text": "IDE pro práci s Pythonem, ale i řadou dalších jazyků a technologií, ke stažení zde. Obsahuje synchronizaci nastavení, extenzí a dalších skrze účet Microsoft (školní, či Outlook.com ) nebo GitHub. Veškerá nastavení se ukládají do JSON souborů a lze je tak snadno sdílet a modifikovat.\nPodporuje vytváření profilů pro různé druhy práce. Je vhodné si rovnou vytvořit speciální profil pro různé technologie (např. Python).",
-    "crumbs": [
-      "Nástroje",
-      "Visual Studio Code"
-    ]
-  },
-  {
-    "objectID": "tools/vscode.html#užitečné-klávesové-zkratky",
-    "href": "tools/vscode.html#užitečné-klávesové-zkratky",
-    "title": "Visual Studio Code",
-    "section": "Užitečné klávesové zkratky",
-    "text": "Užitečné klávesové zkratky\n\nF1 - paleta nástrojů - zde se vyhledávají příkazy VS Code",
-    "crumbs": [
-      "Nástroje",
-      "Visual Studio Code"
-    ]
-  },
-  {
-    "objectID": "tools/vscode.html#nastavení-pro-zkopírování-do-příslušných-json-souborů",
-    "href": "tools/vscode.html#nastavení-pro-zkopírování-do-příslušných-json-souborů",
-    "title": "Visual Studio Code",
-    "section": "Nastavení, pro zkopírování do příslušných JSON souborů",
-    "text": "Nastavení, pro zkopírování do příslušných JSON souborů\nVětšina nastavení má dvě úrovně. Globální – uložené v uživatelském profilu a lokální – uložené v projektu ve složce .vscode. Lokální přepisují globální. Pomocí lokálních nastavení lze upravovat specifické chování projektu.\n\nKlávesové zkratky\n\nv paletě nástrojů vyhledat Keyboard Shortcuts (JSON)\n\n{\n    {\n        \"key\": \"ctrl+d\",\n        \"command\": \"editor.action.duplicateSelection\"\n    },\n    {\n        \"key\": \"ctrl+shift+c\",\n        \"command\": \"editor.action.commentLine\",\n        \"when\": \"editorTextFocus && !editorReadonly\"\n    },\n}\n\n\nUživatelská nastavení\n\nv paletě nástrojů buď\n\nUser Settings (JSON) - globální\nWorkspace Settings (JSON) - lokální\n\nuvádíme pouze části JSONu\n\nVS Code nastavení\n    \"editor.suggestSelection\": \"first\",\n    \"editor.bracketPairColorization.enabled\": true,\n    \"workbench.editor.enablePreview\": false,\n    \"editor.guides.bracketPairs\": \"active\",\n    \"explorer.confirmDelete\": false,\n    \"explorer.confirmDragAndDrop\": false,\n    \"workbench.startupEditor\": \"none\",\n    \"git.confirmSync\": false,\n    \"editor.stickyScroll.enabled\": true,\nPython úprava kódu\n    \"[python]\": {\n        \"editor.codeActionsOnSave\": {\n            \"source.organizeImports\": \"explicit\"\n        },\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n    }\nPython extenze\n    \"flake8.args\": [\n        \"--max-line-length\",\n        \"160\"\n    ],\n    \"isort.args\": [\n        \"--profile\",\n        \"black\",\n        \"--line-width\",\n        \"120\"\n    ],\n    \"black-formatter.args\": [\n        \"--line-length\",\n        \"120\"\n    ],\n    \"pylint.args\": [\n        \"--disable=E0611\",\n        \"--max-line-length=160\"\n    ],\nVynechání složek např. při prohledávání souborů\n    \"files.exclude\": {\n        \"**/__pycache__\": true,\n        \"**/.classpath\": true,\n        \"**/.factorypath\": true,\n        \"**/.project\": true,\n        \"**/.settings\": true,\n        \"**/.mypy_cache\": true,\n        \"**/.pytest_cache\": true,\n    },",
-    "crumbs": [
-      "Nástroje",
-      "Visual Studio Code"
-    ]
-  },
-  {
-    "objectID": "tools/vscode.html#extenze",
-    "href": "tools/vscode.html#extenze",
-    "title": "Visual Studio Code",
-    "section": "Extenze",
-    "text": "Extenze\n\nextenze lze instalovat buď globálně do uživatelského profilu a nebo uložit do souboru .vscode/extensions.json ve složce projektu, tyto extenze pak budou dostupné specificky pro daný projekt\n\n\nDoporučené extenze pro VS Code\nV závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.\n\nGitHub Copilot (GitHub.copilot) - umělá inteligence pro psaní kódu\nCzech - Code Spell Checker (streetsidesoftware.code-spell-checker-czech) - český slovník pro kontroly pravopisu, pokud bude část textů v češtině\nSVG (jock.svg) - zobrazování a úpravy SVG souborů\nTodo Highlight (wayou.vscode-todo-highlight) - zvýraznění TODO a podobných komentářů\nYAML (redhat.vscode-yaml) - podpora YAML formátu\nMarkdown All in One (yzhang.markdown-all-in-one) - podpora Markdown formátu\nmarkdownlint (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu\n\n\n\nDoporučené extenze pro Python\n\nněkteré extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu PGIS2\nníže následuje seznam doporučených extenzí pro Python\n\n{\n    // List of extensions which should be recommended for users of this workspace.\n    \"recommendations\": [\n        \"ms-python.debugpy\",\n        \"ms-python.vscode-pylance\",\n        \"ms-python.autopep8\",\n        \"ms-python.black-formatter\",\n        \"ms-python.flake8\",\n        \"ms-python.isort\",\n        \"ms-python.mypy-type-checker\",\n        \"ms-python.pylint\",\n        \"ms-python.python\"\n        \n    ],\n    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.\n    \"unwantedRecommendations\": [\n    ]\n}\n\n\nNastavení projektů využívajících QGIS Python API na Windows\nViz informace u OSGEO4W.",
-    "crumbs": [
-      "Nástroje",
-      "Visual Studio Code"
-    ]
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#připojení-a-práce-s-db",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#připojení-a-práce-s-db",
-    "title": "PostgreSQL (Postgis)",
-    "section": "Připojení a práce s DB",
-    "text": "Připojení a práce s DB\n\nbuď přes specializovaného klienta PGAdmin\nnebo přes obecné klienty k databázím (např. DBeaver a řada dalších)\npřes programovací jazyky - Python (knihovna Psycopg), R(knihovny RPostgres a dbplyr)\nněkteré IDE mají extenze pro DB\njednoúčelové nástroje - např. ogr2ogr z GDAL/OGR\npříkazová řádka"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#sql",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#sql",
-    "title": "PostgreSQL (Postgis)",
-    "section": "SQL",
-    "text": "SQL\n\nodlišný od programovacích jazyků\npopisujeme výsledek, ne process jak se k němu dostat\nzaložený na výrazech (SELECT, INSERT, UPDATE, DROP, ALTER…)\nvariace pro různé druhy - MySQL (MariaDB), PostgreSQL, SQLite atd.\n\n\n\n\n\n\n\nWarning\n\n\nDokumentace !!!"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#postgresql",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#postgresql",
-    "title": "PostgreSQL (Postgis)",
-    "section": "PostgreSQL",
-    "text": "PostgreSQL\n\nv oblasti “větších” databází aktuálně standard - u lehkých databází převládá MySQL nebo SQLite\nřada variací a forků - HadoopDB, Postgres Pro Enterprise, Red Hat Database, Redshift, Yahoo! Everest\nextenze - funkcionalita a nové typy dat (např. geodata - PostGIS)\nvhodné sledovat vývoj, v poslední době dost výrazné změny zejména v rychlosti"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#import-export-dat",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#import-export-dat",
-    "title": "PostgreSQL (Postgis)",
-    "section": "Import Export dat",
-    "text": "Import Export dat\n\nbuď SQL soubory\nnebo tvorba tabulky a import CSV (pozor na práva, ne všude může databáze číst - využíváme případně adresář /tmp)\nnebo přes programovací jazyky či komplexnější nástroje - Python, R, DB software, GDAL/OGR"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#konstrukce-with",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#konstrukce-with",
-    "title": "PostgreSQL (Postgis)",
-    "section": "Konstrukce WITH",
-    "text": "Konstrukce WITH\n\ndočasné tabulky pro dotazy\nlze je i zanořovat do sebe\n\nWITH nazev_tabulky AS (\n  SELECT ...\n)\n\ntabulku pak dále použijeme např. v JOIN"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#view",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#view",
-    "title": "PostgreSQL (Postgis)",
-    "section": "VIEW",
-    "text": "VIEW\n\npohled na data\nreálně neexistující tabulka, která se vytváří na požádání z dat\nupdatuje se v podstatě v reálném čase\nužitečné proti duplikacím dat\nmůže být náročné na čas"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#připojení-a-práce-přes-qgis",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#připojení-a-práce-přes-qgis",
-    "title": "PostgreSQL (Postgis)",
-    "section": "Připojení a práce přes QGIS",
-    "text": "Připojení a práce přes QGIS\n\nmožnost připojit data přímo do QGIS\nvčetně editace dat\nukládání do DB"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#postgis",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#postgis",
-    "title": "PostgreSQL (Postgis)",
-    "section": "PostGIS",
-    "text": "PostGIS\n\nextenze PostgreSQL pro prostorová data\nstojí na knihovnách PROJ, GDAL/OGR, GEOS a dalších\ngeometrické typy geometry (častější) a geography (novější)\nfunkce ST_*, spatio-temporal\ninformace o tabulkách s geometriemi ve Views\nmanuál"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#data",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#data",
-    "title": "PostgreSQL (Postgis)",
-    "section": "Data",
-    "text": "Data\n\nobvykle vektorová\nlze i rastry, ale to má relativně malé přínosy a výrazně to zvětšuje DB\nrastry se často ukládají mimo a z DB se pouze referencují, tím se nezvětšuje velikost DB ale lze používat funkce\nfunkce pro oba typy data existují"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#seznamy-funkce",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#seznamy-funkce",
-    "title": "PostgreSQL (Postgis)",
-    "section": "Seznamy funkce",
-    "text": "Seznamy funkce\n\nvektorová data\nrastrová data\nprostorové dotazy"
-  },
-  {
-    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#souřadnicové-systémy",
-    "href": "subjects/PDBS2/prezentace/02_postgresql.html#souřadnicové-systémy",
-    "title": "PostgreSQL (Postgis)",
-    "section": "Souřadnicové systémy",
-    "text": "Souřadnicové systémy\n\nukládají se tabulky spatial_ref_sys ve schématu public při instalaci extenze do DB\nbez této tabulky nemusí PostGIS fungovat korektně\ndo tabulky nezasahovat, leda skrze funkce PostGIS, jinak je možné způsobit nefunkčnost extenze\nintegerový identfikátor srid obvykle odpovídá EPSG kódu, EPSG:5514 - 5514"
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady",
+    "title": "Obecné funkce ArcPy",
+    "section": "Příklady",
+    "text": "Příklady\n\nvektorová data\nrastrová data\ndalší"
   },
   {
     "objectID": "subjects/pvgis4.html",
@@ -1449,88 +1023,577 @@
     ]
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#funkce-pro-zjištění-proměnných",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#funkce-pro-zjištění-proměnných",
-    "title": "Obecné funkce ArcPy",
-    "section": "Funkce pro zjištění proměnných",
-    "text": "Funkce pro zjištění proměnných\n\nfunkce vracející seznamy (i prázdné)\ntypicky arcpy.List*()\nslouží pro zjišťování. tam kde programátor nemá předem představu o obsahu"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#připojení-a-práce-s-db",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#připojení-a-práce-s-db",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Připojení a práce s DB",
+    "text": "Připojení a práce s DB\n\nbuď přes specializovaného klienta PGAdmin\nnebo přes obecné klienty k databázím (např. DBeaver a řada dalších)\npřes programovací jazyky - Python (knihovna Psycopg), R(knihovny RPostgres a dbplyr)\nněkteré IDE mají extenze pro DB\njednoúčelové nástroje - např. ogr2ogr z GDAL/OGR\npříkazová řádka"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklad-arcpy.listenvironments",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklad-arcpy.listenvironments",
-    "title": "Obecné funkce ArcPy",
-    "section": "Příklad arcpy.ListEnvironments()",
-    "text": "Příklad arcpy.ListEnvironments()\n\nvrací seznam promměných geoprocessingu\nvše co je dostupné pod arcpy.env.*\nk proměnným se dostaneme pomocí arcpy.env.proměnná nebo arcpy.env.[\"proměnná\"]\nreset proměnných lze provést pomocí arcpy.ResetEnvironments()"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#sql",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#sql",
+    "title": "PostgreSQL (Postgis)",
+    "section": "SQL",
+    "text": "SQL\n\nodlišný od programovacích jazyků\npopisujeme výsledek, ne process jak se k němu dostat\nzaložený na výrazech (SELECT, INSERT, UPDATE, DROP, ALTER…)\nvariace pro různé druhy - MySQL (MariaDB), PostgreSQL, SQLite atd.\n\n\n\n\n\n\n\nWarning\n\n\nDokumentace !!!"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady---výpisy-dat",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady---výpisy-dat",
-    "title": "Obecné funkce ArcPy",
-    "section": "Příklady - výpisy dat",
-    "text": "Příklady - výpisy dat\n\narcpy.ListDatasets()\narcpy.ListFeatureClasses()\narcpy.ListFields()\narcpy.ListFiles()\narcpy.ListIndexes()\narcpy.ListRasters()\narcpy.ListTables()\narcpy.ListWorkspaces()"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#postgresql",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#postgresql",
+    "title": "PostgreSQL (Postgis)",
+    "section": "PostgreSQL",
+    "text": "PostgreSQL\n\nv oblasti “větších” databází aktuálně standard - u lehkých databází převládá MySQL nebo SQLite\nřada variací a forků - HadoopDB, Postgres Pro Enterprise, Red Hat Database, Redshift, Yahoo! Everest\nextenze - funkcionalita a nové typy dat (např. geodata - PostGIS)\nvhodné sledovat vývoj, v poslední době dost výrazné změny zejména v rychlosti"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#licence-a-instalace",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#licence-a-instalace",
-    "title": "Obecné funkce ArcPy",
-    "section": "Licence a instalace",
-    "text": "Licence a instalace\n\nkontroly dostupnosti licencí a stavu instalace\narcpy.CheckExtension() - je exteze dostupná?\narcpy.CheckInExtension(), arcpy.CheckOutExtension() - pro sdílené licence\narcpy.CheckProduct(), arcpy.CheckProduct() - dostupná úroveň licence + info\nacpy.GetInstallInfo() - info o instalaci\narcpy.ListInstallations() - typy instalací"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#import-export-dat",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#import-export-dat",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Import Export dat",
+    "text": "Import Export dat\n\nbuď SQL soubory\nnebo tvorba tabulky a import CSV (pozor na práva, ne všude může databáze číst - využíváme případně adresář /tmp)\nnebo přes programovací jazyky či komplexnější nástroje - Python, R, DB software, GDAL/OGR"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
-    "title": "Obecné funkce ArcPy",
-    "section": "Popisy objektů",
-    "text": "Popisy objektů\n\narcpy.Describe() - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)\nvýsledný objekty se liší dle požadovaného typu objektu - viz dokumentace\nzákladní minimum informací pro všechny objekty"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#konstrukce-with",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#konstrukce-with",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Konstrukce WITH",
+    "text": "Konstrukce WITH\n\ndočasné tabulky pro dotazy\nlze je i zanořovat do sebe\n\nWITH nazev_tabulky AS (\n  SELECT ...\n)\n\ntabulku pak dále použijeme např. v JOIN"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
-    "title": "Obecné funkce ArcPy",
-    "section": "Práce s Describe() objekty",
-    "text": "Práce s Describe() objekty\n\nje vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce\n\n\ndesc = arcpy.Describe(\"C:/data/soubor.shp\")\nif hasattr(desc, \"dataType\"):\n    data_type = desc.dataType\n    print(desc.dataType)\n\n\npředcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#view",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#view",
+    "title": "PostgreSQL (Postgis)",
+    "section": "VIEW",
+    "text": "VIEW\n\npohled na data\nreálně neexistující tabulka, která se vytváří na požádání z dat\nupdatuje se v podstatě v reálném čase\nužitečné proti duplikacím dat\nmůže být náročné na čas"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady",
-    "title": "Obecné funkce ArcPy",
-    "section": "Příklady",
-    "text": "Příklady\n\nvektorová data\nrastrová data\ndalší"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#připojení-a-práce-přes-qgis",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#připojení-a-práce-přes-qgis",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Připojení a práce přes QGIS",
+    "text": "Připojení a práce přes QGIS\n\nmožnost připojit data přímo do QGIS\nvčetně editace dat\nukládání do DB"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#geometry",
-    "href": "subjects/PGIS3/prezentace/05_geometrie.html#geometry",
-    "title": "Geometrie v ArcPy",
-    "section": "Geometry",
-    "text": "Geometry\n\nzákladní třída geometrie v ArcPy\ndokumentace\nlze tvořit přímo Geometry (geometry, inputs, {spatial_reference}, {has_z}, {has_m}, {has_id})\nale spíše je vhodnější speficiké třídy pro druhy geometrií - Multipoint, PointGeometry, Polygon, Polyline\n\n\n\n\n\n\n\nSouřadnicový systém\n\n\nPřímo součástí třídy Geometry může být a často i je definice souřadnicového systému!"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#postgis",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#postgis",
+    "title": "PostgreSQL (Postgis)",
+    "section": "PostGIS",
+    "text": "PostGIS\n\nextenze PostgreSQL pro prostorová data\nstojí na knihovnách PROJ, GDAL/OGR, GEOS a dalších\ngeometrické typy geometry (častější) a geography (novější)\nfunkce ST_*, spatio-temporal\ninformace o tabulkách s geometriemi ve Views\nmanuál"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#výpočty-na-třídě-geometry",
-    "href": "subjects/PGIS3/prezentace/05_geometrie.html#výpočty-na-třídě-geometry",
-    "title": "Geometrie v ArcPy",
-    "section": "Výpočty na třídě Geometry",
-    "text": "Výpočty na třídě Geometry\n\nnapř. atributy lenght, lenght3D nebo area, ale i řada funkcí (zejména prostorové vztahy - např. intersect()) pracují s 2D kartézkou matematikou\nu funkcí getLength() nebo getArea() lze specifikovat {method}, {units}, přičemž method určuje způsob výpočtu a units jednotky výsledku\nz toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!\ndata je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku\nfunkce třídy Geometry.projectAs (spatial_reference)"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#data",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#data",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Data",
+    "text": "Data\n\nobvykle vektorová\nlze i rastry, ale to má relativně malé přínosy a výrazně to zvětšuje DB\nrastry se často ukládají mimo a z DB se pouze referencují, tím se nezvětšuje velikost DB ale lze používat funkce\nfunkce pro oba typy data existují"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
-    "href": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
-    "title": "Geometrie v ArcPy",
-    "section": "Objekt Array",
-    "text": "Objekt Array\n\narcpy.Array() - speciální objekty ArcPy pro tvorbu polí\npole lze i vzájemně zanořovat - tzn. pole polí může existovat\nzvláštnost API\npoužití např. pro tvorbu linií:\n\narcpy.Polyline( \n    arcpy.Array(\n        [\n          arcpy.Point(-77.4349451, 37.5408265), \n          arcpy.Point(-78.6384349, 35.7780943),\n        ]\n    ),\n    arcpy.SpatialReference(4326)\n)"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#seznamy-funkce",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#seznamy-funkce",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Seznamy funkce",
+    "text": "Seznamy funkce\n\nvektorová data\nrastrová data\nprostorové dotazy"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#význam-operátorů-a-jejich-použití-u-třídy-geometry",
-    "href": "subjects/PGIS3/prezentace/05_geometrie.html#význam-operátorů-a-jejich-použití-u-třídy-geometry",
-    "title": "Geometrie v ArcPy",
-    "section": "Význam operátorů a jejich použití u třídy Geometry",
-    "text": "Význam operátorů a jejich použití u třídy Geometry\n\nněkteré jsou zřejmé\n\n== - equals\n!= - not equals\n\njiné ne až tolik\n\n+ - intersect (Geometry.intersect(Geometry))\n| - union (Geometry.union(Geometry))\n- - difference (Geometry.difference(Geometry))\n^ - symmetricDifference (Geometry.symmetricDifference(Geometry))"
+    "objectID": "subjects/PDBS2/prezentace/02_postgresql.html#souřadnicové-systémy",
+    "href": "subjects/PDBS2/prezentace/02_postgresql.html#souřadnicové-systémy",
+    "title": "PostgreSQL (Postgis)",
+    "section": "Souřadnicové systémy",
+    "text": "Souřadnicové systémy\n\nukládají se tabulky spatial_ref_sys ve schématu public při instalaci extenze do DB\nbez této tabulky nemusí PostGIS fungovat korektně\ndo tabulky nezasahovat, leda skrze funkce PostGIS, jinak je možné způsobit nefunkčnost extenze\nintegerový identfikátor srid obvykle odpovídá EPSG kódu, EPSG:5514 - 5514"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#ukázky-použití-různých-funkcí-třídy",
-    "href": "subjects/PGIS3/prezentace/05_geometrie.html#ukázky-použití-různých-funkcí-třídy",
-    "title": "Geometrie v ArcPy",
-    "section": "Ukázky použití různých funkcí třídy",
-    "text": "Ukázky použití různých funkcí třídy\n\npraktické příklady\ndle dokumentace"
+    "objectID": "tools/vscode.html",
+    "href": "tools/vscode.html",
+    "title": "Visual Studio Code",
+    "section": "",
+    "text": "IDE pro práci s Pythonem, ale i řadou dalších jazyků a technologií, ke stažení zde. Obsahuje synchronizaci nastavení, extenzí a dalších skrze účet Microsoft (školní, či Outlook.com ) nebo GitHub. Veškerá nastavení se ukládají do JSON souborů a lze je tak snadno sdílet a modifikovat.\nPodporuje vytváření profilů pro různé druhy práce. Je vhodné si rovnou vytvořit speciální profil pro různé technologie (např. Python).",
+    "crumbs": [
+      "Nástroje",
+      "Visual Studio Code"
+    ]
+  },
+  {
+    "objectID": "tools/vscode.html#užitečné-klávesové-zkratky",
+    "href": "tools/vscode.html#užitečné-klávesové-zkratky",
+    "title": "Visual Studio Code",
+    "section": "Užitečné klávesové zkratky",
+    "text": "Užitečné klávesové zkratky\n\nF1 - paleta nástrojů - zde se vyhledávají příkazy VS Code",
+    "crumbs": [
+      "Nástroje",
+      "Visual Studio Code"
+    ]
+  },
+  {
+    "objectID": "tools/vscode.html#nastavení-pro-zkopírování-do-příslušných-json-souborů",
+    "href": "tools/vscode.html#nastavení-pro-zkopírování-do-příslušných-json-souborů",
+    "title": "Visual Studio Code",
+    "section": "Nastavení, pro zkopírování do příslušných JSON souborů",
+    "text": "Nastavení, pro zkopírování do příslušných JSON souborů\nVětšina nastavení má dvě úrovně. Globální – uložené v uživatelském profilu a lokální – uložené v projektu ve složce .vscode. Lokální přepisují globální. Pomocí lokálních nastavení lze upravovat specifické chování projektu.\n\nKlávesové zkratky\n\nv paletě nástrojů vyhledat Keyboard Shortcuts (JSON)\n\n{\n    {\n        \"key\": \"ctrl+d\",\n        \"command\": \"editor.action.duplicateSelection\"\n    },\n    {\n        \"key\": \"ctrl+shift+c\",\n        \"command\": \"editor.action.commentLine\",\n        \"when\": \"editorTextFocus && !editorReadonly\"\n    },\n}\n\n\nUživatelská nastavení\n\nv paletě nástrojů buď\n\nUser Settings (JSON) - globální\nWorkspace Settings (JSON) - lokální\n\nuvádíme pouze části JSONu\n\nVS Code nastavení\n    \"editor.suggestSelection\": \"first\",\n    \"editor.bracketPairColorization.enabled\": true,\n    \"workbench.editor.enablePreview\": false,\n    \"editor.guides.bracketPairs\": \"active\",\n    \"explorer.confirmDelete\": false,\n    \"explorer.confirmDragAndDrop\": false,\n    \"workbench.startupEditor\": \"none\",\n    \"git.confirmSync\": false,\n    \"editor.stickyScroll.enabled\": true,\nPython úprava kódu\n    \"[python]\": {\n        \"editor.codeActionsOnSave\": {\n            \"source.organizeImports\": \"explicit\"\n        },\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n    }\nPython extenze\n    \"flake8.args\": [\n        \"--max-line-length\",\n        \"160\"\n    ],\n    \"isort.args\": [\n        \"--profile\",\n        \"black\",\n        \"--line-width\",\n        \"120\"\n    ],\n    \"black-formatter.args\": [\n        \"--line-length\",\n        \"120\"\n    ],\n    \"pylint.args\": [\n        \"--disable=E0611\",\n        \"--max-line-length=160\"\n    ],\nVynechání složek např. při prohledávání souborů\n    \"files.exclude\": {\n        \"**/__pycache__\": true,\n        \"**/.classpath\": true,\n        \"**/.factorypath\": true,\n        \"**/.project\": true,\n        \"**/.settings\": true,\n        \"**/.mypy_cache\": true,\n        \"**/.pytest_cache\": true,\n    },",
+    "crumbs": [
+      "Nástroje",
+      "Visual Studio Code"
+    ]
+  },
+  {
+    "objectID": "tools/vscode.html#extenze",
+    "href": "tools/vscode.html#extenze",
+    "title": "Visual Studio Code",
+    "section": "Extenze",
+    "text": "Extenze\n\nextenze lze instalovat buď globálně do uživatelského profilu a nebo uložit do souboru .vscode/extensions.json ve složce projektu, tyto extenze pak budou dostupné specificky pro daný projekt\n\n\nDoporučené extenze pro VS Code\nV závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.\n\nGitHub Copilot (GitHub.copilot) - umělá inteligence pro psaní kódu\nCzech - Code Spell Checker (streetsidesoftware.code-spell-checker-czech) - český slovník pro kontroly pravopisu, pokud bude část textů v češtině\nSVG (jock.svg) - zobrazování a úpravy SVG souborů\nTodo Highlight (wayou.vscode-todo-highlight) - zvýraznění TODO a podobných komentářů\nYAML (redhat.vscode-yaml) - podpora YAML formátu\nMarkdown All in One (yzhang.markdown-all-in-one) - podpora Markdown formátu\nmarkdownlint (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu\n\n\n\nDoporučené extenze pro Python\n\nněkteré extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu PGIS2\nníže následuje seznam doporučených extenzí pro Python\n\n{\n    // List of extensions which should be recommended for users of this workspace.\n    \"recommendations\": [\n        \"ms-python.debugpy\",\n        \"ms-python.vscode-pylance\",\n        \"ms-python.autopep8\",\n        \"ms-python.black-formatter\",\n        \"ms-python.flake8\",\n        \"ms-python.isort\",\n        \"ms-python.mypy-type-checker\",\n        \"ms-python.pylint\",\n        \"ms-python.python\"\n        \n    ],\n    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.\n    \"unwantedRecommendations\": [\n    ]\n}\n\n\nNastavení projektů využívajících QGIS Python API na Windows\nViz informace u OSGEO4W.",
+    "crumbs": [
+      "Nástroje",
+      "Visual Studio Code"
+    ]
+  },
+  {
+    "objectID": "tools/linux-mint.html",
+    "href": "tools/linux-mint.html",
+    "title": "Linux Mint",
+    "section": "",
+    "text": "Distribuce Linuxu založené na Ubuntu s méně intruzivním uživatelským prostředím.",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "tools/linux-mint.html#instalace",
+    "href": "tools/linux-mint.html#instalace",
+    "title": "Linux Mint",
+    "section": "🖥 Instalace",
+    "text": "🖥 Instalace\n\ninstalujeme Linux Mint - Cinnamon edition\nlze instalovat jak do fyzického počítače, tak i do VirtualBox\n\ncelý process je ukázán v tomto videu\nv případě instalace do VirtualBoxu nezapomenout na přídavky hosta, aby virtualizovaný počítač lépe fungoval\n\ndůležité je nastavení jména uživatele a hesla",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "tools/linux-mint.html#aktualizace",
+    "href": "tools/linux-mint.html#aktualizace",
+    "title": "Linux Mint",
+    "section": "Aktualizace",
+    "text": "Aktualizace\nVhodné čas od času spustit aktualizaci softwarů.\nPříkazy pro příkazovou řádku:\nsudo apt-get update\nsudo apt-get upgrade -y",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "tools/linux-mint.html#sec-gis",
+    "href": "tools/linux-mint.html#sec-gis",
+    "title": "Linux Mint",
+    "section": "🖥 Instalace aktuálních GIS knihoven a softwarů",
+    "text": "🖥 Instalace aktuálních GIS knihoven a softwarů\nPříkazy pro příkazovou řádku:\n# přidání zdroje balíčků GIS nástrojů\nsudo add-apt-repository -y ppa:ubuntugis/ubuntugis-unstable\nsudo apt-get update\n\nsudo apt-get install -y qgis gdal-bin grass-gui",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "tools/linux-mint.html#instalace-postregsql",
+    "href": "tools/linux-mint.html#instalace-postregsql",
+    "title": "Linux Mint",
+    "section": "🖥 Instalace PostregSQL",
+    "text": "🖥 Instalace PostregSQL\n\nnejdříve nastavíme nezbytnosti pro PG Admin 4 (pozor bude požadováno heslo)\n\nPříkazy pro příkazovou řádku:\nsource /etc/os-release\n\n# Install the public key for the repository (if not done previously):\ncurl -fsS https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /usr/share/keyrings/packages-pgadmin-org.gpg\n\n# Create the repository configuration file:\necho \"deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$UBUNTU_CODENAME pgadmin4 main\" | sudo tee /etc/apt/sources.list.d/pgadmin4.list\n\n# Update software sources\nsudo apt-get update\nsudo apt-get upgrade -y\n\n# Install pgAdmin for both desktop and web modes:\nsudo apt-get install -y pgadmin4\n\nnásledně nainstalujeme Gedit, PostgreSQL, PGXNClient (pro instalaci PG extenzí), PostGIS, QGIS a GDAL (viz Sekce 3)\n\n# přidání zdroje balíčků GIS nástrojů\n\nsudo apt-get install -y gedit postgresql pgxnclient postgis\n\nnásledně nainstalujeme DBeaver - vizualizace DB and její správa (podobné PGAdmin4, ale s jiným přístupem)\npozor instalace se bude tázat na heslo\n\ncd /tmp\nwget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb\nsudo dpkg -i dbeaver-ce_latest_amd64.deb\n\nNastavení PostgreSQL a první spuštění\n\nprvotní spuštění PostgreSQL je nutné provést z příkazové řádky\n\nsudo -u postgres psql template1\n\nnásledně spustíme příkaz pro modifikaci hesla hlavní uživatele DB\n\nALTER USER postgres with encrypted password 'heslo';\n\npříkazovou řádku lze uzavřít a připojit se z GUI PGAdmin4 k serveru localhost s uživatelem postgres a heslem heslo (nastavené výše)\n\n\n\nPřipojení k DB z QGIS\nPro připojení k PostGIS databázi z QGIS je třeba přidat nové připojení z Data Source Manager v QGIS. Nastavení bude vypada jako na obrázku níže, může být třeba upravit nastavení Database a v Authentication (Obr. 1) nastavit Basic authentication a vyplnit jméno a heslo (Obr. 2).\n\n\n\n\n\n\nObr. 1: Nastavení připojení v QGIS\n\n\n\n\n\n\n\n\n\nObr. 2: Nastavení uživatele v QGIS Authentication",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "tools/linux-mint.html#instalace-vs-code",
+    "href": "tools/linux-mint.html#instalace-vs-code",
+    "title": "Linux Mint",
+    "section": "🖥 Instalace VS Code",
+    "text": "🖥 Instalace VS Code\n\nmanuálně stáhnout z webu – .deb soubor\nspustit a nainstalovat poklikáním a zadáním hesla\naktualizace už probíhají automaticky",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "tools/linux-mint.html#instalace-miniconda",
+    "href": "tools/linux-mint.html#instalace-miniconda",
+    "title": "Linux Mint",
+    "section": "🖥 Instalace MiniConda",
+    "text": "🖥 Instalace MiniConda\nPříkazy pro příkazovou řádku:\ncd /tmp\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh\nchmod +x Miniconda3-latest-Linux-x86_64.sh\n./Miniconda3-latest-Linux-x86_64.sh -b -f -p /home/$USER/miniconda3",
+    "crumbs": [
+      "Nástroje",
+      "Linux Mint"
+    ]
+  },
+  {
+    "objectID": "tools/github-copilot.html",
+    "href": "tools/github-copilot.html",
+    "title": "Github Copilot",
+    "section": "",
+    "text": "Github Copilot je AI nástroj, napomáhající s programováním a to pomocí tvorby kódu (přednapovídání), nebo pomocí schopnosti vysvětlit či opravit existující kód. Jedná se primárně o placený nástroj, nicméně studenti mají k této službě přístup zdarma.",
+    "crumbs": [
+      "Nástroje",
+      "GitHub Copilot"
+    ]
+  },
+  {
+    "objectID": "tools/github-copilot.html#získání-studentského-přístupu",
+    "href": "tools/github-copilot.html#získání-studentského-přístupu",
+    "title": "Github Copilot",
+    "section": "Získání studentského přístupu",
+    "text": "Získání studentského přístupu\n\nzřízení účtu na Github, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu (aby nedošlo k blokaci účtu po ztátě studentského statusu)\npožádání o studentský přístup na Github dle článku, primárně se to řeší na webu https://education.github.com/\nověření nějakou dobou trvá cca. 1-2 dny, ale i týden\nnásledně se lze ve VS Code, či jiném IDE, které to podporuje (např. RStudio), pomocí tohoto účtu přihlásit a měl by být dostupý GitHub Copilot",
+    "crumbs": [
+      "Nástroje",
+      "GitHub Copilot"
+    ]
+  },
+  {
+    "objectID": "tools/github-copilot.html#zprovoznění-v-vs-code",
+    "href": "tools/github-copilot.html#zprovoznění-v-vs-code",
+    "title": "Github Copilot",
+    "section": "Zprovoznění v VS Code",
+    "text": "Zprovoznění v VS Code\n\ninstalace extenze GitHub Copilot\npřihlášení do GitHub Copilot pomocí GitHub účtu, který byl ověřen a má ke službě přistup (viz výše)\nnásledně začně fungovat přednapovídání kódu a chatovací okno (dostupné z menu View -&gt; Open View… -&gt; Chat)",
+    "crumbs": [
+      "Nástroje",
+      "GitHub Copilot"
+    ]
+  },
+  {
+    "objectID": "tools/github-copilot.html#zprovoznění-v-rstudio",
+    "href": "tools/github-copilot.html#zprovoznění-v-rstudio",
+    "title": "Github Copilot",
+    "section": "Zprovoznění v RStudio",
+    "text": "Zprovoznění v RStudio\n\nvyžaduje verzi novější než 2023.09.0\npřihlášení pomocí GitHub účtu je dostupné přes menu Tools -&gt; Global Options… -&gt; Copilot, zde se lze přihlásit, plus nastavit základní možnosti\nnásledně začně fungovat přednapovídání kódu, lze i klást otázky a získávat odpovědi - viz detaily",
+    "crumbs": [
+      "Nástroje",
+      "GitHub Copilot"
+    ]
+  },
+  {
+    "objectID": "tools/osgeo4w.html",
+    "href": "tools/osgeo4w.html",
+    "title": "OSGEO4W",
+    "section": "",
+    "text": "Nejjednodušším způsobem, jak v prostředí Windows nainstalovat značnou část open source GIS knihoven a softwarů (např. QGIS, GRASS, SAGA a další) je použití distribuce OSGEO4W z webu projektu, konkrétně odkaz ke stažení instalátoru. Jedná se o klasický průvodce, kde je možnost nakonfigurovat si instalaci podle vlastních potřeb, plná konfigurace je poměrně obáshlá a v mnoha ohledech i zbytečná (např. obsahuje 3 verze QGIS - vývojovou, aktuální a LTR).",
+    "crumbs": [
+      "Nástroje",
+      "OSGeo4W"
+    ]
+  },
+  {
+    "objectID": "tools/osgeo4w.html#nástroje",
+    "href": "tools/osgeo4w.html#nástroje",
+    "title": "OSGEO4W",
+    "section": "Nástroje",
+    "text": "Nástroje\nSoučástí instalace jsou:\n\nnástroje ogr2ogr, gdalwarp, gdal_translate a další dostupné skrze OSGeo4W Shell\nQGIS, GRASS\nPython a jeho knihovny, lze doinstalovat z příkazové řádky (OSGeo4W Shell) pomocí pip install *",
+    "crumbs": [
+      "Nástroje",
+      "OSGeo4W"
+    ]
+  },
+  {
+    "objectID": "tools/osgeo4w.html#instalace",
+    "href": "tools/osgeo4w.html#instalace",
+    "title": "OSGEO4W",
+    "section": "Instalace",
+    "text": "Instalace\nPo spuštění instalátoru je nutné vybrat typ instalace - Advanced Install, viz následující obrázek:\n\n\n\n\n\n\nObr. 1: Volba typu instalace\n\n\n\nDalší položkou je volba instalace z Internetu (používáme nejaktuálnější zdroje).\n\n\n\n\n\n\nObr. 2: Volba instalace z internetu\n\n\n\nDalší volbou je umístění instalace. Výchozí nastavení je na disk C:, lze změnit disk, nicméně je vhodné instalovat do co nevyšše umístěné složky, takže např: D:\\OSGeo4W, aby nebyla výsledná cesta příliš dlouhá.\n\n\n\n\n\n\nObr. 3: Umístění instalace\n\n\n\nNásledující dva kroky, volbu dočasného adresáře a proxy, lze obvykle nechat na výchozích hodnotách.\n\n\n\n\n\n\nObr. 4: Volba dočasného adresáře\n\n\n\n\n\n\n\n\n\nObr. 5: Nastavení proxy\n\n\n\nNásledujícím krokem je volba zdrojového serveru, obvykle vyhoví výchozí hodnota.\n\n\n\n\n\n\nObr. 6: Volba serveru\n\n\n\nV dalším kroce už se dostáváme k volbě komponent, které se mají instalovat. Obvykle věnujeme pozornost zejména položkám Commandline Utilities a Desktop, knihovny v pložce Libs se vyberou dle zvolených komponent automaticky.\n\n\n\n\n\n\nObr. 7: Seznam komponent dle typu\n\n\n\nZ poskytutého seznamu vybereme potřebné komponenty.\n\n\n\n\n\n\nObr. 8: Výběr komponent\n\n\n\nNásleduje potvrzení licencí, samotné stahování a instalace komponent, což může být časově náročnější.\n\n\n\n\n\n\nObr. 9: Instalace\n\n\n\n\nAktualizace komponent\nOpětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku Obr. 8 pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.",
+    "crumbs": [
+      "Nástroje",
+      "OSGeo4W"
+    ]
+  },
+  {
+    "objectID": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
+    "href": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
+    "title": "OSGEO4W",
+    "section": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API",
+    "text": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API\nPřed spuštěním Visual Studia Code je nutné nastavit prostředí pro Python, aby bylo možné používat knihovny dostupné v OSGEO4W. Pro tento účel vytvoříme v adresáři bin základního adresáře OSGEO4W kopii souboru python-qgis.bat a upravíme jeho poslední řádek doplněním cesty pro spuštění VS Code. Výsledný soubor může vypadat následovně:\n@echo off\ncall \"%~dp0\\o4w_env.bat\"\n@echo off\npath %OSGEO4W_ROOT%\\apps\\qgis\\bin;%PATH%\nset QGIS_PREFIX_PATH=%OSGEO4W_ROOT:\\=/%/apps/qgis\nset GDAL_FILENAME_IS_UTF8=YES\nrem Set VSI cache to be used as buffer, see #6448\nset VSI_CACHE=TRUE\nset VSI_CACHE_SIZE=1000000\nset QT_PLUGIN_PATH=%OSGEO4W_ROOT%\\apps\\qgis\\qtplugins;%OSGEO4W_ROOT%\\apps\\qt5\\plugins\nset PYTHONPATH=%OSGEO4W_ROOT%\\apps\\qgis\\python;%PYTHONPATH%\n\nstart \"VS Code\" /B \"C:\\Users\\uzivatel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\"\nPřes tento soubor budeme následně otevírat VS Code a v něm bude dostupné prostředí pro Python s knihovnami z OSGEO4W.\nV příslušném projektu ve VS Code nesmíme zapomenout nastavit správně interpretor Pythonu na python z adresáře OSGEO4W. To provedeme v dolní liště vpravo, kde je možné vybrat interpretor Pythonu.",
+    "crumbs": [
+      "Nástroje",
+      "OSGeo4W"
+    ]
+  },
+  {
+    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#náplň",
+    "href": "subjects/PDBS2/prezentace/01_uvod.html#náplň",
+    "title": "Úvodní cvičení",
+    "section": "Náplň",
+    "text": "Náplň\n\nSŘBD (DBMS)\nOracle\nPostgre SQL, PostGIS (oborový standard)\nSQLite, SpatialLite (okrajově, ale aplikačně zajímavé)"
+  },
+  {
+    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "href": "subjects/PDBS2/prezentace/01_uvod.html#o-čem-to-bude",
+    "title": "Úvodní cvičení",
+    "section": "O čem to bude",
+    "text": "O čem to bude\n\nSQL příkazy - předpokládá se, že základy znáte\n\nSELECT * FROM table WHERE attribut = 5;\nSELECT * FROM table WHERE attribut LIKE 'hodnota%';\n\nfunkce pro prostorová data v SQL (Oracle, hlavně PostGIS)\nzpracování dat a manipulace s nimi skrze SQL (trochu jiný styl práce než normální práce s daty)"
+  },
+  {
+    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "href": "subjects/PDBS2/prezentace/01_uvod.html#dílčí-úlohy",
+    "title": "Úvodní cvičení",
+    "section": "Dílčí úlohy",
+    "text": "Dílčí úlohy\n\npráce s daty v DB\nnávrh a tvorba DB\nfunkce pro geodata v DB\npřipojení k DB ze softwarů, programovacích jazyků"
+  },
+  {
+    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "href": "subjects/PDBS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "title": "Úvodní cvičení",
+    "section": "V čem budeme pracovat",
+    "text": "V čem budeme pracovat\n\nSQLDeveloper (pro Oracle)\npgAdmin (pro Postgre/Postgis)\nDBeaver (Community Edition) - grafické návrhy DB\nQGIS - prostorová data z Postgis - vizualizace i editace\nDB Browser pro SQLite"
+  },
+  {
+    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#db-systémy",
+    "href": "subjects/PDBS2/prezentace/01_uvod.html#db-systémy",
+    "title": "Úvodní cvičení",
+    "section": "DB Systémy",
+    "text": "DB Systémy\n\nvirtual PC\nz Adelka (\\adelka-nas.vsb.cz) soubor PDB_OfficeOracle21c.ova\npro Postgre bude vytvořen"
+  },
+  {
+    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#materiály",
+    "href": "subjects/PDBS2/prezentace/01_uvod.html#materiály",
+    "title": "Úvodní cvičení",
+    "section": "Materiály",
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné (kde upřesním)"
+  },
+  {
+    "objectID": "subjects/PDBS2/prezentace/01_uvod.html#zápočet",
+    "href": "subjects/PDBS2/prezentace/01_uvod.html#zápočet",
+    "title": "Úvodní cvičení",
+    "section": "Zápočet",
+    "text": "Zápočet\n\ncelkem 33 bodů\ncvičení Oracle + Postgis 11 bodů (detaily za 14 dnů)\nprojekt PostGIS 11 bodů\npísemka SQL 11 bodů"
+  },
+  {
+    "objectID": "subjects/idg.html",
+    "href": "subjects/idg.html",
+    "title": "Interpretace geodat (IDG)",
+    "section": "",
+    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr, tidyr\ntvorba grafů v pomocí ggplot2, dobrá praxe tvorby grafů\nRmarkdown a Quarto\nprostorová data v R, vektorory, rastry, vizualizace a operace s daty",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "subjects/idg.html#řešená-témata",
+    "href": "subjects/idg.html#řešená-témata",
+    "title": "Interpretace geodat (IDG)",
+    "section": "",
+    "text": "úvod do jazyka R\nnačítání dat do R\nmanipulace s daty v R pomocí balíku dplyr, tidyr\ntvorba grafů v pomocí ggplot2, dobrá praxe tvorby grafů\nRmarkdown a Quarto\nprostorová data v R, vektorory, rastry, vizualizace a operace s daty",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "subjects/idg.html#prezentace",
+    "href": "subjects/idg.html#prezentace",
+    "title": "Interpretace geodat (IDG)",
+    "section": "Prezentace",
+    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-02-26\n\n\nZákladní orientace v jazyce R\n\n\n\n\n2024-03-04\n\n\nNačítání dat, Manipulace s daty\n\n\n\n\n2024-03-18\n\n\nGrafy - ggplot2\n\n\n\n\n2024-04-08\n\n\nTvorba reportů, prezentací a dalších\n\n\n\n\n2024-04-15\n\n\nProstorová data\n\n\n\n\n2024-04-22\n\n\nStatistické testování a modelování\n\n\n\n\n2024-05-06\n\n\nVybrané statistické metody\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "subjects/idg.html#seminární-práce",
+    "href": "subjects/idg.html#seminární-práce",
+    "title": "Interpretace geodat (IDG)",
+    "section": "Seminární práce",
+    "text": "Seminární práce\nVyberte si libovolnou otevřenou datovou sadu pro ČR, např. z Národního katalogu otevřených dat či jiného zdroje. Vytvořte buď Rmarkdown nebo Quarto dokument, který bude obsahovat veškteré zpracování dat a výstupy. S daty provede minimálně následující:\n\nnačtení dat\nmodifikace dat, výpočet nových sloupců nebo extrakce dílčích dat ze sloupců do nových sloupců (balík dplyr a další)\nextrakce dílčí části dat do menší tabulky a její prezentace v dokumentu\njeden graf se všemi náležitostmi a korektně vizualizovaný z dat (balík ggplot2)\njedna interaktivní vizualizace (balík plotly pro grafy, nebo leaflet pro prostorová data)\nstatistická sumarizace/vyhodnocení dat - shrnutí, tabulka, vizualizace",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "subjects/idg.html#zdroje",
+    "href": "subjects/idg.html#zdroje",
+    "title": "Interpretace geodat (IDG)",
+    "section": "Zdroje",
+    "text": "Zdroje\n\nkniha R for Data Science (2e) - shrnuje základní postupy datové vědy (data science) v R\nkniha Hands-On Programming with R - programování v R\nkniha Fundamentals of Data Visualization - vizualizace dat - příklady v R\nkniha Geocomputation with R - základy práce s geodaty v R\n\n\nDalší zajímavé zdroje\n\nkniha Data Visualization - vizualizace dat - příklady v R\nkniha Statistical Inference via Data Science - statistické metody/postupy v R",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "subjects/idg.html#ukázkové-kódy",
+    "href": "subjects/idg.html#ukázkové-kódy",
+    "title": "Interpretace geodat (IDG)",
+    "section": "Ukázkové kódy",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-02-19\n\n\nInstalace potřebných balíků\n\n\n\n\n2024-04-08\n\n\nUkázkový report v rmarkdown\n\n\n\n\n2024-04-15\n\n\nQGIS funkce v R\n\n\n\n\n2024-04-22\n\n\nUkázky easystats\n\n\n\n\n2024-04-22\n\n\nUkázka tidymodels\n\n\n\n\n2024-05-06\n\n\nUkázka faktorové analýzy\n\n\n\n\n2024-05-06\n\n\nUkázka PCA\n\n\n\n\n2024-05-06\n\n\nUkázka shlukování\n\n\n\n\n2024-05-06\n\n\nUkázka rozhodovacích stromů\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "subjects/idg.html#instalace",
+    "href": "subjects/idg.html#instalace",
+    "title": "Interpretace geodat (IDG)",
+    "section": "Instalace",
+    "text": "Instalace\n\nR - R CRAN\nIDE - RStudio\n\nV RStudiu nainstalovat balíky následujícím skriptem:\nneeded_packages &lt;- c(\n    \"tidyverse\",\n    \"here\",\n    \"sf\",\n    \"terra\",\n    \"stars\",\n    \"tmap\",\n    \"lwgeom\",\n    \"qgisprocess\",\n    \"remotes\",\n    \"tidymodels\",\n    \"DT\",\n    \"rmarkdown\",\n    \"plotly\",\n    \"tidymodels\",\n    \"easystats\"\n)\n\n# nejjednodušší způsob instalace balíčků by bylo prosté volání install.packages(needed_packages),\n# ale to by znamenalo, že by se balíčky instalovaly i když už jsou nainstalované, což je zbytečné a zdlouhavé\n# následující kód tedy instaluje jen ty balíčky, které ještě nejsou nainstalované, ale kód je komplikovanější\n\nnew_packages &lt;- needed_packages[!(needed_packages %in% installed.packages()[,\"Package\"])]\nif(length(new_packages)) install.packages(new_packages)\n\nremotes::install_github(\"JanCaha/r_package_qgis\")",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Interpretace geodat"
+    ]
+  },
+  {
+    "objectID": "subjects/pdbs2.html",
+    "href": "subjects/pdbs2.html",
+    "title": "Prostorové databázové systémy 2 (PDBS2)",
+    "section": "",
+    "text": "Oracle\nInstalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Prostorové databázové systémy 2"
+    ]
+  },
+  {
+    "objectID": "subjects/pdbs2.html#řešená-témata",
+    "href": "subjects/pdbs2.html#řešená-témata",
+    "title": "Prostorové databázové systémy 2 (PDBS2)",
+    "section": "",
+    "text": "Oracle\nInstalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Prostorové databázové systémy 2"
+    ]
+  },
+  {
+    "objectID": "subjects/pdbs2.html#prezentace",
+    "href": "subjects/pdbs2.html#prezentace",
+    "title": "Prostorové databázové systémy 2 (PDBS2)",
+    "section": "Prezentace",
+    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-02-19\n\n\nÚvodní cvičení\n\n\n\n\n2024-03-04\n\n\nPostgreSQL (Postgis)\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Prostorové databázové systémy 2"
+    ]
+  },
+  {
+    "objectID": "subjects/pdbs2.html#zdroje",
+    "href": "subjects/pdbs2.html#zdroje",
+    "title": "Prostorové databázové systémy 2 (PDBS2)",
+    "section": "Zdroje",
+    "text": "Zdroje\n\nPostgreSQL Manuál\nPostGIS Manuál",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Prostorové databázové systémy 2"
+    ]
+  },
+  {
+    "objectID": "subjects/pdbs2.html#data-ke-stažení",
+    "href": "subjects/pdbs2.html#data-ke-stažení",
+    "title": "Prostorové databázové systémy 2 (PDBS2)",
+    "section": "Data ke stažení",
+    "text": "Data ke stažení\n\nGPKG s vrstvami okresů a krajů\nCSV s údaji o počtu obyvatel\nCSV s převodním číselníkem z RUIAN do ČSÚ",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Prostorové databázové systémy 2"
+    ]
+  },
+  {
+    "objectID": "subjects/pdbs2.html#ukázkové-kódy",
+    "href": "subjects/pdbs2.html#ukázkové-kódy",
+    "title": "Prostorové databázové systémy 2 (PDBS2)",
+    "section": "Ukázkové kódy",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nInstalace PostGIS do daného schématu DB\n\n\n\n\n2024-03-11\n\n\nNačtení souboru jako tabulky do PostGIS\n\n\n\n\n2024-03-11\n\n\nNačtení CSV souboru jako tabulky do PostgreSQL\n\n\n\n\n2024-03-11\n\n\nTvorba tabulek pro import z CSV\n\n\n\n\n2024-03-11\n\n\nJoin s dočasnou tabulkou\n\n\n\n\n2024-03-11\n\n\nView\n\n\n\n\n2024-03-22\n\n\nTvorba a vyplnění tabulky\n\n\n\n\n2024-03-22\n\n\nProstorové dotazy\n\n\n\n\n2024-03-22\n\n\nView s modifikací geometrie\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Prostorové databázové systémy 2"
+    ]
+  },
+  {
+    "objectID": "subjects/pdbs2.html#instalace-postregsql",
+    "href": "subjects/pdbs2.html#instalace-postregsql",
+    "title": "Prostorové databázové systémy 2 (PDBS2)",
+    "section": "Instalace PostregSQL",
+    "text": "Instalace PostregSQL\n\nviz odkaz Linux Mint - potřebujeme jednak akktuální GIS softwary a PostgreSQL (detaily na stránce)\n\n\nDocker\nPro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít docker compose se souborem s nastavením:\nversion: \"3.5\"\n\nservices:\n  postgres:\n    container_name: postgis\n    image: postgis/postgis:16-master\n    environment:\n      POSTGRES_USER: admin\n      POSTGRES_PASSWORD: root\n      PGDATA: /data/postgres\n    volumes:\n      - cesta_k_složce_na_disku:/data/postgres\n    ports:\n      - \"5432:5432\"\nStačí upravit volumes na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Prostorové databázové systémy 2"
+    ]
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#náplň",
+    "href": "subjects/PGIS3/prezentace/01_uvod.html#náplň",
+    "title": "Úvodní hodina",
+    "section": "Náplň",
+    "text": "Náplň\n\nprogramování v Pythonu s knihovnou ArcPy pro ArcGIS Pro\nzpracování a editace dat pomocí ArcPy, vektorová i rastrová data\nmožnosti automatizace v ArcGIS Pro pomocí ArcPy\nvytváření skriptů a nástrojů pro ArcGIS Pro v Pythonu"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#o-čem-to-bude",
+    "href": "subjects/PGIS3/prezentace/01_uvod.html#o-čem-to-bude",
+    "title": "Úvodní hodina",
+    "section": "O čem to bude",
+    "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\npráce s ArcPy a její dokumentací\noperace s geodaty skrze API ArcPy\nfunkcionální i objektově orientované programování\nodchytávání výjimek"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#dílčí-úlohy",
+    "href": "subjects/PGIS3/prezentace/01_uvod.html#dílčí-úlohy",
+    "title": "Úvodní hodina",
+    "section": "Dílčí úlohy",
+    "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "href": "subjects/PGIS3/prezentace/01_uvod.html#v-čem-budeme-pracovat",
+    "title": "Úvodní hodina",
+    "section": "V čem budeme pracovat",
+    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code\nmanagement Pythonu skrze Conda přímo z ArcGIS Pro\npoužití GitHub Copilot AI viz zde"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#materiály",
+    "href": "subjects/PGIS3/prezentace/01_uvod.html#materiály",
+    "title": "Úvodní hodina",
+    "section": "Materiály",
+    "text": "Materiály\n\nprezentace\nkód z cvičení\nbudou dostupné na jancaha.github.io/vsb-vyuka/\ndalší materiály dle potřeby"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#z-čeho-vycházíme",
+    "href": "subjects/PGIS3/prezentace/01_uvod.html#z-čeho-vycházíme",
+    "title": "Úvodní hodina",
+    "section": "Z čeho vycházíme",
+    "text": "Z čeho vycházíme\n\nznalost Pythonu dle předmetu Programování v GIS 2\nznalost managementu Pythonu skrze Conda\nznalost ArcGIS Pro a jeho základních funkcí"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/01_uvod.html#zakončení-předmětu",
+    "href": "subjects/PGIS3/prezentace/01_uvod.html#zakončení-předmětu",
+    "title": "Úvodní hodina",
+    "section": "Zakončení předmětu",
+    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a ArcPy"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#arcpy",
+    "href": "subjects/PGIS3/prezentace/02_arcpy.html#arcpy",
+    "title": "Základ ArcPy pro ArcGIS Pro",
+    "section": "ArcPy",
+    "text": "ArcPy\n\nArcPy je knihovna pro Python, která umožňuje přístup k funkcím ArcGIS Pro\numožňuje automatizaci procesů v ArcGIS Pro\numožňuje vytváření vlastních nástrojů (v ArcGIS Pro) a skriptů (samostatných)\njedná je python binding (nejspíše z C++), takže zdrojové kódy nejsou dostupné a knihovna ani není pro python typovaná (podobně jako GDAL/OGR), což komplikuje práci s ní - chybí v IDE napovídání a podobně"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#struktura-arcpy",
+    "href": "subjects/PGIS3/prezentace/02_arcpy.html#struktura-arcpy",
+    "title": "Základ ArcPy pro ArcGIS Pro",
+    "section": "Struktura ArcPy",
+    "text": "Struktura ArcPy\n\nčást funkcí dostupná pod arcpy.*\ndalší část v modulech např. Data Access arcpy.da.*, Mapping arcpy.mp.* a další\npodstatné jé číst dokumentaci a vidět příklady použití"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#objekt-env",
+    "href": "subjects/PGIS3/prezentace/02_arcpy.html#objekt-env",
+    "title": "Základ ArcPy pro ArcGIS Pro",
+    "section": "Objekt env",
+    "text": "Objekt env\n\n“prostředí” v němž ArcPy pracuje - známe z GUI ArcGIS Pro\ndostupné jako arcpy.env.* kde za * dosazujeme proměnnou\narcpy.env.workspace - pracovní adresář\narcpy.env.overwriteOutput - přepsat výstupní soubory analýz a dalších operací\narcpy.env.scratchGDB - dočasná databáze pro dílčí výpočty a operace"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#cesty-používané-v-arcpy",
+    "href": "subjects/PGIS3/prezentace/02_arcpy.html#cesty-používané-v-arcpy",
+    "title": "Základ ArcPy pro ArcGIS Pro",
+    "section": "Cesty používané v ArcPy",
+    "text": "Cesty používané v ArcPy\n\nbud absolutní cesty na disku (např. C:/data/soubor.shp), nebo C:/data/soubor.gdb/nazev_vrstvy\nnebo relativní cesty, jako je název vrstvy uvažovaný v acpy.env.workspace (např. soubor.shp, nazev_vrstvy)\nu rastrů lze přistpovat i k pásmům jako C:/data/soubor.tif/Band_1\nvždy je třeba myslet na to, kde se nacházíme a jaké cesty používáme"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#popis-objektu",
+    "href": "subjects/PGIS3/prezentace/02_arcpy.html#popis-objektu",
+    "title": "Základ ArcPy pro ArcGIS Pro",
+    "section": "Popis objektu",
+    "text": "Popis objektu\n\narcpy.Describe() - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu\nvýstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#objekty-pro-práci-s-vektorovými-daty",

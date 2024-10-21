@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-09-30">
-  <title>Výuka - Jan Caha – Obecné funkce ArcPy</title>
+  <meta name="dcterms.date" content="2024-10-14">
+  <title>Výuka - Jan Caha – Rastrová data v ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -386,7 +386,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Obecné funkce ArcPy – Výuka - Jan Caha">
+<meta property="og:title" content="Rastrová data v ArcPy – Výuka - Jan Caha">
 <meta property="og:description" content="Programování v GIS 3">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -395,7 +395,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Obecné funkce <span class="software">ArcPy</span></h1>
+  <h1 class="title">Rastrová data v <span class="software">ArcPy</span></h1>
   <p class="subtitle">Programování v GIS 3</p>
 
 <div class="quarto-title-authors">
@@ -406,78 +406,114 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-09-30</p>
+  <p class="date">2024-10-14</p>
 </section>
-<section id="funkce-pro-zjištění-proměnných" class="slide level2">
-<h2>Funkce pro zjištění proměnných</h2>
+<section id="objekty" class="slide level2">
+<h2>Objekty</h2>
 <ul>
-<li>funkce vracející seznamy (i prázdné)</li>
-<li>typicky <code>arcpy.List*()</code></li>
-<li>slouží pro zjišťování. tam kde programátor nemá předem představu o obsahu</li>
+<li><code>arcpy.Raster</code> - třída pro práci s rastrovými daty</li>
+<li><code>arcpy.RasterInfo</code> - třída vlastností rastru (např. rozměry, souřadnicový systém, atd.)</li>
+<li><code>arcpy.RasterCellIterator</code> - třída pro iteraci přes buňky rastru</li>
 </ul>
 </section>
-<section id="příklad-arcpy.listenvironments" class="slide level2">
-<h2>Příklad <code>arcpy.ListEnvironments()</code></h2>
+<section id="raster" class="slide level2">
+<h2><code>Raster</code></h2>
 <ul>
-<li>vrací seznam promměných geoprocessingu</li>
-<li>vše co je dostupné pod <code>arcpy.env.*</code></li>
-<li>k proměnným se dostaneme pomocí <code>arcpy.env.proměnná</code> nebo <code>arcpy.env.["proměnná"]</code></li>
-<li>reset proměnných lze provést pomocí <code>arcpy.ResetEnvironments()</code></li>
+<li>základní třída pro rastrová data</li>
+<li>může být multidimenzionální (více pásem)</li>
+<li>lze načíst i pouze vybraná pásma (<code>cesta_k_souboru/Band_1</code>)</li>
+<li>atributy třídy - informace o rastru, ale i formátu uložení</li>
+<li>funkce pro práci s rastrem</li>
+<li>funkce <code>read()</code> a <code>write()</code> pro čtení a zápis hodnot ve formátu <span class="software">NumPy</span> pole</li>
 </ul>
 </section>
-<section id="příklady---výpisy-dat" class="slide level2">
-<h2>Příklady - výpisy dat</h2>
+<section id="rasterinfo" class="slide level2">
+<h2><code>RasterInfo</code></h2>
 <ul>
-<li><code>arcpy.ListDatasets()</code></li>
-<li><code>arcpy.ListFeatureClasses()</code></li>
-<li><code>arcpy.ListFields()</code></li>
-<li><code>arcpy.ListFiles()</code></li>
-<li><code>arcpy.ListIndexes()</code></li>
-<li><code>arcpy.ListRasters()</code></li>
-<li><code>arcpy.ListTables()</code></li>
-<li><code>arcpy.ListWorkspaces()</code></li>
+<li>“otisk” či definice rastru</li>
+<li>lze jednak získat z objektu <code>Raster</code> funkcí <code>getRasterInfo()</code>, pak má hodnoty z daného rastru</li>
+<li>nebo vytvořit jako prázdný objekt a pak je nutné nastavit potřebné atributy</li>
+<li>na základě objektu <code>RasterInfo</code> lze vytvořit nový rastr (<code>Raster(RasterInfo())</code>), ale bez dat</li>
 </ul>
 </section>
-<section id="licence-a-instalace" class="slide level2">
-<h2>Licence a instalace</h2>
+<section id="rastercelliterator" class="slide level2">
+<h2><code>RasterCellIterator</code></h2>
 <ul>
-<li>kontroly dostupnosti licencí a stavu instalace</li>
-<li><code>arcpy.CheckExtension()</code> - je exteze dostupná?</li>
-<li><code>arcpy.CheckInExtension()</code>, <code>arcpy.CheckOutExtension()</code> - pro sdílené licence</li>
-<li><code>arcpy.CheckProduct()</code>, <code>arcpy.CheckProduct()</code> - dostupná úroveň licence + info</li>
-<li><code>acpy.GetInstallInfo()</code> - info o instalaci</li>
-<li><code>arcpy.ListInstallations()</code> - typy instalací</li>
+<li>objekt pro iteraci přes buňky rastru</li>
+<li>v nejjednodušší podobě jako</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: false</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>raster <span class="op">=</span> arcpy.Raster(<span class="st">"path/to/raster.tif"</span>)</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>raster.readOnly <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> raster:</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">,</span>j<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>raster[i,j]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> raster[i,j] <span class="op">&lt;</span>  <span class="dv">0</span>:</span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>    raster[i,j] <span class="op">=</span> <span class="dv">0</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="rastercelliterator---indexy" class="slide level2">
+<h2><code>RasterCellIterator</code> - indexy</h2>
+<ul>
+<li>jednopásmové rastry - <code>i, j</code> v pořadí řádek, sloupec</li>
+<li>číslování začíná v levém horním rohu (buňka 0,0) a pokračuje dolů a doprava</li>
+<li>vícepásmové rastry
+<ul>
+<li>buď <code>k, i, j</code> v pořadí pásmo, řádek, sloupec a vrací jednu hodnotu</li>
+<li>nebo <code>i, j</code> - řádek, sloupec a vrací <code>tuple</code> hodnot pro pásma</li>
+</ul></li>
 </ul>
 </section>
-<section id="popisy-objektů" class="slide level2">
-<h2>Popisy objektů</h2>
+<section id="rastercelliterator---vícero-rastrů" class="slide level2">
+<h2><code>RasterCellIterator</code> - vícero rastrů</h2>
 <ul>
-<li><code>arcpy.Describe()</code> - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)</li>
-<li>výsledný objekty se liší dle požadovaného typu objektu - viz <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm">dokumentace</a></li>
-<li>základní minimum informací pro <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe-object-properties.htm">všechny objekty</a></li>
+<li>pozor na inicializaci - jedná se o python <strong>dictionary</strong> s klíči - zde <strong>rasters</strong> (ale jsou další)</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: false</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> RasterCellIterator({<span class="st">'rasters'</span>:[myRas1, myRas2, outRas1, outRas2]}) <span class="im">as</span> rci:</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i,j <span class="kw">in</span> rci:</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>      <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>první rastr určuje nastavení enviromentu - souřadnicový sytém, velikost buňky a extent</li>
+<li>díky tomu lze iterovat přes vícero rastrů současně</li>
+<li>raster lze předefinovat na dané nastavení pomocí</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: false</span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>r_1_env <span class="op">=</span> arcpy.sa.ApplyEnvironment(r_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="rastercelliterator---doplnění" class="slide level2">
+<h2><code>RasterCellIterator</code> - doplnění</h2>
+<ul>
+<li>python hodnota <code>math.nan</code> se implicitně konvertuje na <strong>NoData</strong></li>
+<li>při tvorbě <code>RasterCellIterator</code> lze uvést v dictionary tyto klíče
+<ul>
+<li><code>'padding': 2</code> - vhodné pro jádrové funkce (např. průměry okolí), přednačte iterátor s okolím buňky o velikosti (vlastně matice 5x5) pro rychlejší výpočty</li>
+<li><code>'skipNoData':[r_1, r_2]</code> - budou se řešit pouze buňky, které u uvedených rastrů nemají hodnotu <strong>NoData</strong>, jinak se přeskočí (může to výrazně zrychlit výpočty)</li>
+</ul></li>
 </ul>
 </section>
-<section id="práce-s-describe-objekty" class="slide level2">
-<h2>Práce s <code>Describe()</code> objekty</h2>
+<section id="numerické-operace-s-rastry" class="slide level2">
+<h2>Numerické operace s rastry</h2>
 <ul>
-<li>je vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce</li>
+<li>mapová algebra</li>
+<li>lze provádět na úrovni celého rastru</li>
 </ul>
-<div id="9b288a93" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>desc <span class="op">=</span> arcpy.Describe(<span class="st">"C:/data/soubor.shp"</span>)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">hasattr</span>(desc, <span class="st">"dataType"</span>):</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    data_type <span class="op">=</span> desc.dataType</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(desc.dataType)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>předcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)</li>
-</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: false</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>r_1 <span class="op">=</span> arcpy.Raster(<span class="st">"path/to/raster.tif"</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>r_2 <span class="op">=</span> r_1 <span class="op">+</span> <span class="dv">10</span></span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>r_3 <span class="op">=</span> r_1 <span class="op">*</span> r_2</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>r_3.save(<span class="st">"path/to/output.tif"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="příklady" class="slide level2">
-<h2>Příklady</h2>
+<section id="funkce-pro-rastry" class="slide level2">
+<h2>Funkce pro rastry</h2>
 <ul>
-<li>vektorová data</li>
-<li>rastrová data</li>
-<li>další</li>
+<li>funkce aplikované na zdrojové rastry</li>
+<li><code>arcpy.sa</code> - modul pro prostorovou analýzu</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">

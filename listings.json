@@ -6,14 +6,17 @@
       "/subjects/PGIS3/prezentace/02_arcpy.html",
       "/subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html",
       "/subjects/PGIS3/prezentace/04_editace_vektorových_dat.html",
-      "/subjects/PGIS3/prezentace/05_geometrie.html"
+      "/subjects/PGIS3/prezentace/05_geometrie.html",
+      "/subjects/PGIS3/prezentace/06_rastrova_data.html"
     ]
   },
   {
-    "listing": "/subjects/pdbs2.html",
+    "listing": "/subjects/pvgis4.html",
     "items": [
-      "/subjects/PDBS2/prezentace/01_uvod.html",
-      "/subjects/PDBS2/prezentace/02_postgresql.html"
+      "/subjects/PGIS4/prezentace/01_uvod.html",
+      "/subjects/PGIS4/prezentace/02_qgis_python_api.html",
+      "/subjects/PGIS4/prezentace/03_vektorová_data.html",
+      "/subjects/PGIS4/prezentace/04_geometrie.html"
     ]
   },
   {
@@ -30,12 +33,10 @@
     ]
   },
   {
-    "listing": "/subjects/pvgis4.html",
+    "listing": "/subjects/pdbs2.html",
     "items": [
-      "/subjects/PGIS4/prezentace/01_uvod.html",
-      "/subjects/PGIS4/prezentace/02_qgis_python_api.html",
-      "/subjects/PGIS4/prezentace/03_vektorová_data.html",
-      "/subjects/PGIS4/prezentace/04_geometrie.html"
+      "/subjects/PDBS2/prezentace/01_uvod.html",
+      "/subjects/PDBS2/prezentace/02_postgresql.html"
     ]
   },
   {
