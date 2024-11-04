@@ -7,14 +7,12 @@
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-04-22">
-  <title>Výuka - Jan Caha – Statistické testování a modelování</title>
+  <meta name="dcterms.date" content="2024-11-03">
+  <title>Výuka - Jan Caha – Správa vlastního kódu pro ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -323,8 +386,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Statistické testování a modelování – Výuka - Jan Caha">
-<meta property="og:description" content="Interpretace geodat">
+<meta property="og:title" content="Správa vlastního kódu pro ArcPy – Výuka - Jan Caha">
+<meta property="og:description" content="Programování v GIS 3">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -332,8 +395,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Statistické testování a modelování</h1>
-  <p class="subtitle">Interpretace geodat</p>
+  <h1 class="title">Správa vlastního kódu pro <span class="software">ArcPy</span></h1>
+  <p class="subtitle">Programování v GIS 3</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -343,100 +406,270 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-04-22</p>
+  <p class="date">2024-11-03</p>
 </section>
-<section id="statistické-testování-modelování" class="slide level2">
-<h2>Statistické testování <i class="fa-solid fa-times" aria-label="times"></i> modelování</h2>
+<section id="funkce" class="slide level2">
+<h2>Funkce</h2>
 <ul>
-<li>statistické testování - zjišťování, zda je nějaký jev statisticky významný</li>
-<li>modelování - vytváření modelů, které popisují vztahy mezi proměnnými či odvozují nové informace</li>
+<li>zjedodušení a zpřehlednění kódu</li>
+<li>opakující se části kódu, znovupoužitelnost</li>
+<li>zvýšení čitelnosti kódu</li>
+<li>snížení chybovosti kódu</li>
+<li>testovatelnost kódu</li>
 </ul>
 </section>
-<section id="pojmy-v-r" class="slide level2">
-<h2>Pojmy v <span class="software">R</span></h2>
+<section id="jak-udržovat-funkce" class="slide level2">
+<h2>Jak udržovat funkce</h2>
 <ul>
-<li>formula (vzorec) - zápis modelu v podobě <code>y ~ x1 + x2 + ...</code>
+<li>soubor (např. <code>utils.py</code>) <span class="math inline">\(\times\)</span> vlastní python balík</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Soubor</th>
+<th>Python balík</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>jednoduché na tvorbu</td>
+<td>složitější na vytvoření</td>
+</tr>
+<tr class="even">
+<td>těžší testování</td>
+<td>snadnější testování</td>
+</tr>
+<tr class="odd">
+<td>náročnější správa závislostí</td>
+<td>snazší správa závislostí</td>
+</tr>
+<tr class="even">
+<td>těžší na správu verzí</td>
+<td>snadnější na správu verzí</td>
+</tr>
+<tr class="odd">
+<td>horší na sdílení</td>
+<td>lepší na sdílení</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="soubor-s-funkcemi-utils.py" class="slide level2">
+<h2>Soubor s funkcemi (<code>utils.py</code>)</h2>
 <ul>
-<li><code>y</code> je vysvětlovaná proměnná (závislá, výsledek)</li>
-<li><code>x1</code> - <code>xN</code> jsou vysvětlující proměnné (nezávislé, příčiny, prediktory)</li>
-<li>význam operátorů <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/formula">viz</a></li>
-<li>zápis názvů proměnných (bez uvozovek) - používá se NSE</li>
+<li>viz cvičení a příklady (už máme odzkoušeno)</li>
+<li>přenášení mezi projekty je problém (která verze souboru je aktuální/poslední?)</li>
+<li>chyby se nikdy neopraví všude (risk že se budou opakovat a projevovat různě)</li>
+<li>testování je složitější (nutnost importovat soubor, který může mít závislosti na jiných souborech, případně se mění jeho umístění na disku)</li>
+</ul>
+</section>
+<section id="python-balík" class="slide level2">
+<h2>Python balík</h2>
+<ul>
+<li>v podstatě základní souborová struktura</li>
+<li>velice malé minimální požadavky (budeme předpokládat trochu vyšší nároky, aby byl použitělější)</li>
+<li>cílem je mít balík hostovaný na GitHubu, automaticky testovaný a nainstalovatelný příkazem</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install git+https://github.com/<span class="op">&lt;</span>username<span class="op">&gt;</span>/<span class="op">&lt;</span>repository-name<span class="op">&gt;</span>.git <span class="at">--upgrade</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>lokálně ze složky lze instalovat</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install . <span class="at">--upgrade</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>i v <span class="software">conda</span> prostředí instalujeme přes <span class="software">pip</span>, kvůli jednoduchosti</li>
+</ul>
+</section>
+<section id="python-balík---struktura-nezbyné" class="slide level2">
+<h2>Python balík - struktura nezbyné</h2>
+<ul>
+<li><code>slozka_projektu</code> - pro <span class="software">VS Code</span> a logické odělení kódu - nemusí se jmenovat přímo jako balík
+<ul>
+<li><code>src</code> - složka zdrojáků - zde vytvoříme složku s jménem balíku</li>
+<li><code>pyproject.toml</code> - soubor popisující balík a jeho vlastnosti</li>
+<li><code>.env</code> - soubor s proměnnými prostředí, zejména <code>PYTHONPATH</code></li>
 </ul></li>
-<li>ke vzorci se vždy ve funkci přidávají data ve formátu <code>data.frame</code>
+</ul>
+</section>
+<section id="python-balík---struktura-doplňkové" class="slide level2">
+<h2>Python balík - struktura doplňkové</h2>
 <ul>
-<li>např. lineární regrese: <code>lm(y ~ x1 + x2, data = data)</code></li>
+<li><code>slozka_projektu</code> - pro <span class="software">VS Code</span> a logické odělení kódu - nemusí se jmenovat přímo jako balík
+<ul>
+<li><code>tests</code> - složka testů</li>
+<li><code>scripts</code> - složka skriptů</li>
+<li><code>.github</code> - složka pro <span class="software">GitHub</span> akce - pokud bude balík hostován na GitHub a budeme chtít nějaké automatické kontroly</li>
+<li><code>README.md</code> - popis balíku</li>
+<li><code>LICENSE</code> - licence balíku</li>
 </ul></li>
 </ul>
 </section>
-<section id="testovací-a-modelovací-funkce" class="slide level2">
-<h2>Testovací a modelovací funkce</h2>
+<section id="python-balík---pyproject.toml" class="slide level2">
+<h2>Python balík - <code>pyproject.toml</code></h2>
 <ul>
-<li>značná část v základním <span class="software">R</span></li>
-<li>některé ve speciálních balíčcích</li>
-<li>problém s roztříštěností implementací těchto funkcí, nic není příliš sjednocené a velice komplikované na použití</li>
-<li>vzniká problém při složitějších analýzách, kde např. chceme jeden postup a model použít na více datových sadách</li>
+<li>základní minimum definice balíku</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"muj_balik"</span></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"0.1.0"</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">authors</span> <span class="op">=</span> <span class="op">[{ </span><span class="dt">"name"</span><span class="op"> =</span> <span class="st">"autor"</span><span class="op">, </span><span class="dt">"email"</span><span class="op"> =</span> <span class="st">"autor@email.cz"</span><span class="op"> }]</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[build-system]</span></span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span><span class="st">"setuptools"</span><span class="op">]</span></span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"setuptools.build_meta"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="python-balík---pyproject.toml-1" class="slide level2">
+<h2>Python balík - <code>pyproject.toml</code></h2>
+<ul>
+<li>doplňující informace</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">readme</span> <span class="op">=</span> <span class="st">"README.md"</span></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Popis balíku"</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;=3.8"</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="dt">keywords</span> <span class="op">=</span> <span class="op">[</span><span class="st">"klíčová"</span><span class="op">,</span> <span class="st">"slova"</span><span class="op">]</span></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="dt">classifiers</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"License :: OSI Approved :: MIT License"</span><span class="op">,</span></span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3"</span><span class="op">,</span></span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.8"</span><span class="op">,</span></span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.9"</span><span class="op">,</span></span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.10"</span><span class="op">,</span></span>
+<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.11"</span><span class="op">,</span></span>
+<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.12"</span><span class="op">,</span></span>
+<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: POSIX :: Linux"</span><span class="op">,</span></span>
+<span id="cb4-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: Microsoft :: Windows"</span><span class="op">,</span></span>
+<span id="cb4-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: MacOS"</span><span class="op">,</span></span>
+<span id="cb4-17"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb4-18"><a aria-hidden="true" tabindex="-1"></a><span class="dt">urls</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">"Documentation"</span><span class="op"> =</span> <span class="st">"https://github.com/*"</span><span class="op"> }</span></span>
+<span id="cb4-19"><a aria-hidden="true" tabindex="-1"></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span><span class="st">"numpy"</span><span class="op">]</span></span>
+<span id="cb4-20"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options]</span></span>
+<span id="cb4-22"><a aria-hidden="true" tabindex="-1"></a><span class="dt">include_package_data</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb4-23"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options.package_data]</span></span>
+<span id="cb4-25"><a aria-hidden="true" tabindex="-1"></a><span class="dt">FuzzyMath</span> <span class="op">=</span> <span class="op">[</span><span class="st">"src/muj_balik/py.typed"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="python-balík---pyproject.toml---nastavení-nástrojů-1" class="slide level2">
+<h2>Python balík - <code>pyproject.toml</code> - nastavení nástrojů 1</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.black]</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.isort]</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="dt">atomic</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="dt">profile</span> <span class="op">=</span> <span class="st">"black"</span></span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a><span class="dt">line_length</span> <span class="op">=</span> <span class="dv">120</span></span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a><span class="dt">skip_gitignore</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.pylint.'</span><span class="dt">MESSAGES CONTROL'</span><span class="kw">]</span></span>
+<span id="cb5-11"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
+<span id="cb5-12"><a aria-hidden="true" tabindex="-1"></a><span class="dt">disable</span> <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb5-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[flake8]</span></span>
+<span id="cb5-15"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="python-balík---pyproject.toml---nastavení-nástrojů-2" class="slide level2">
+<h2>Python balík - <code>pyproject.toml</code> - nastavení nástrojů 2</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options.extras_require]</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">test</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"pytest"</span><span class="op">,</span></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"pytest-cov"</span></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.pytest.ini_options]</span></span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a><span class="dt">addopts</span> <span class="op">=</span> <span class="st">"-v -s --cov=muj_balik --cov-report=term-missing:skip-covered"</span></span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a><span class="dt">testpaths</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests"</span></span>
+<span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a><span class="dt">pythonpath</span> <span class="op">=</span> <span class="op">[</span><span class="st">"src"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="struktura-vlastního-balíku---kódu" class="slide level2">
+<h2>Struktura vlastního balíku - kódu</h2>
+<ul>
+<li><code>src</code> - složka
+<ul>
+<li><code>muj_balik</code> - název složky by měl odpovídat názvu balíku
+<ul>
+<li><code>__init__.py</code> - inicializační soubor - může být prázdný nebo obsahovat importy</li>
+<li><code>dalsi_soubory.py</code> - soubory s funkcemi, třídami, konstantami atd.</li>
+<li><code>py.typed</code> - nepovinný, ale doporučený soubor pro typování</li>
+</ul></li>
+</ul></li>
+<li>praktické ukázky</li>
 </ul>
 </section>
-<section id="ujednocení-postupů" class="slide level2">
-<h2>Ujednocení postupů</h2>
+<section id="testování-balíku" class="slide level2">
+<h2>Testování balíku</h2>
 <ul>
-<li>vytvoření balíků, které slouží jako univerzální rozhraní pro další funkce</li>
-<li>sjednocení volání funkcí a formátu výstupů</li>
-<li>dva metabalíky - <span class="software">easystats</span> a <span class="software">tidymodels</span></li>
+<li>snaha o udržení konzistence a kvality kódu</li>
+<li>předchází chybám a problémům</li>
+<li>zvyšuje důvěryhodnost kódu (slouží i jako ukázky použití)</li>
+<li>pokud se děje automaticky na GitHubu, je to zásadní výhoda a přednost</li>
 </ul>
 </section>
-<section id="easystats" class="slide level2">
-<h2><span class="software">easystats</span></h2>
+<section id="testy" class="slide level2">
+<h2>Testy</h2>
 <ul>
-<li>balík <span class="software">easystats</span> - sjednocení statistických funkcí - <a href="https://easystats.github.io/easystats/">web</a>
+<li>v Pythonu dva hlavní frameworky - <span class="software">unittest</span> a <span class="software">pytest</span></li>
+<li><span class="software">pytest</span> je modernější a “jednodušší” na použití - na ten se zaměříme</li>
+<li>techniky a postupy testování mohou působit složitě, ale základní principy jsou jednoduché</li>
+<li>existuje vícero druhů testů, ale nás zajimají pouze jednotkové testy (unit tests) - testujeme jednotlivé části kódu (funkce či objekty a jejich chování)</li>
+<li>extenze (balíky) rozšiřující funcionalitu <span class="software">pytest</span>, obkvykle <span class="software">pytest-nazev</span>, např <span class="software">pytest-cov</span></li>
+</ul>
+</section>
+<section id="testy---struktura" class="slide level2">
+<h2>Testy - struktura</h2>
 <ul>
-<li><span class="software">parameters</span> - základní statistické testy</li>
-<li><span class="software">performance</span> - vyhodnocení modelů</li>
-<li><span class="software">report</span> - vytváření reportů</li>
-<li><span class="software">modelbased</span> - modelování</li>
-<li><span class="software">effectsize</span> - velikosti efektu</li>
-<li><span class="software">bayestestR</span> - bayesovské testy</li>
-<li><span class="software">see</span> - vizualizace efektů</li>
-<li><span class="software">insight</span> - interpretace modelů</li>
+<li><code>tests</code> - základní složka
+<ul>
+<li><code>data</code> - složka s daty pro testy, pokud jsou potřeba</li>
+<li><code>conftest.py</code> - soubor s konfigurací tzv. <strong>fixtures</strong> - předpřipravené objekty pro testy</li>
+<li><code>test_neco.py</code> - soubor s testy, těch je obvykle celá řada</li>
 </ul></li>
 </ul>
 </section>
-<section id="ukázka-easystats" class="slide level2">
-<h2>Ukázka <span class="software">easystats</span></h2>
+<section id="testy-spouštění" class="slide level2">
+<h2>Testy spouštění</h2>
 <ul>
-<li>spíš jednotlivé funkce</li>
-<li>objekty, pro další zpracování a výstupy</li>
-<li>funguje na řadě objektů z jiných balíků, např. <code>report()</code></li>
-<li>spíš na jednodušší úlohy, které nemají velké části, které se opakují</li>
-</ul>
-</section>
-<section id="tidymodels" class="slide level2">
-<h2><span class="software">tidymodels</span></h2>
+<li>obvykle spouštíme celou baterii testů příkazem <code>pytest</code> v kořenové složce balíku (nastavení je definované v <code>pyproject.toml</code>, jinak je příkaz složitější)</li>
+<li>lze omezit na konrétní soubor ale i funci v rámci souboru</li>
+<li>integrováno ve <span class="software">VS Code</span>, takže testy lze spouštět přímo z IDE
 <ul>
-<li>prvotní návrhy - balíky <span class="software">broom</span> a <span class="software">modelr</span>, které slouží pro zpracování výstupů modelů</li>
-<li>balík <span class="software">tidymodels</span> - sjednocení framework modelování - <a href="https://www.tidymodels.org/">web</a>
-<ul>
-<li><span class="software">recipes</span> - příprava dat</li>
-<li><span class="software">parsnip</span> - specifikace modelu a interface pro práci s různými modely, existují k němu doplňovací balíčky pro konkrétní typy modelů</li>
-<li><span class="software">dials</span> - specifikace parametrů modelu</li>
-<li><span class="software">tune</span> - ladění hyperparametrů modelu</li>
-<li><span class="software">yardstick</span> - vyhodnocení modelu</li>
-<li><span class="software">workflows</span> - spojení všech kroků do jednoho objektu</li>
+<li>výhodou je, že se zobrazí výsledky a chyby přímo v editoru a vizuálně</li>
+<li>lze spouštět i jednotlivé testy, přímo z editoru</li>
+<li>IDE bere v potaz nastavení v <code>pyproject.toml</code></li>
 </ul></li>
 </ul>
 </section>
-<section id="tidymodels-1" class="slide level2">
-<h2><span class="software">tidymodels</span></h2>
+<section id="ukázka-testového-souboru" class="slide level2">
+<h2>Ukázka testového souboru</h2>
 <ul>
-<li>na velice komplexní postupy, kde se velké části kódu či pracovního postupu opakují</li>
-<li>např. stejné zpracování několik různých datových sad, testování modelu s různými nastaveními, aplikace modelů z různých balíků</li>
+<li>klíčové slovo <code>assert</code>, kde první argument je podmínka, která musí být splněna, jinak test selže, pak případně chybové hlášení</li>
 </ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_plus():</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> result <span class="op">==</span> <span class="dv">3</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> result <span class="op">!=</span> <span class="dv">4</span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">isinstance</span>(result, <span class="bu">int</span>)</span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="op">+</span> (<span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> result <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">"Mělo by být větší než 0"</span></span>
+<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">TypeError</span>, match<span class="op">=</span><span class="st">"can only concatenate"</span>):</span>
+<span id="cb7-14"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="st">"a"</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="ukázka-tidymodels" class="slide level2">
-<h2>Ukázka <span class="software">tidymodels</span></h2>
+<section id="proč-tvořit-balík-a-testy" class="slide level2">
+<h2>Proč tvořit balík a testy?</h2>
 <ul>
-<li><a href="https://rviews.rstudio.com/2019/06/19/a-gentle-intro-to-tidymodels/">příklad z webu</a></li>
-<li>klasifikace typu kosatce dle měření okvětních lístků</li>
+<li>pokud máte kód, který chcete dlouhodobě využívat tak se to vyplatí (čas, námaha, nervy)</li>
+<li>kód v čase roste a stává se nepřehledným a hůře udržovatelným, balík to zjednoduší a testy zajistí, že v kódu nedochází k nezamýšleným změnám či chybám</li>
+<li>pokud chcete kód sdílet s ostatními, je to zásadní</li>
+<li>pokud chcete mít kód pod kontrolou a mít jistotu, že funguje, jsou testy nutnost
+<ul>
+<li>v čase se mohou měnit používané funkce, knihovny atd. a jen testy tyto změny dokáží zachytit dřív než se chyba reálně projeví</li>
+</ul></li>
+<li>“progmátorská disciplína” - ke každému kódu by měla existovat dokumentace (klidně kratičká) a test</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
