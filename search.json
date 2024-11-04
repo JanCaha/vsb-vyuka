@@ -1293,7 +1293,7 @@
     "href": "subjects/pvgis4.html#ukázkové-kódy",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n2024-10-07\n\n\nVektorová data - výběr prvků\n\n\n\n\n2024-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n2024-10-14\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n2024-10-14\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n2024-10-14\n\n\nOperace s geometriemi\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n2024-10-21\n\n\nEditace hodnot rastru\n\n\n\n\n2024-10-21\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n2024-10-07\n\n\nVektorová data - výběr prvků\n\n\n\n\n2024-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n2024-10-14\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n2024-10-14\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n2024-10-14\n\n\nOperace s geometriemi\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n2024-10-21\n\n\nEditace hodnot rastru\n\n\n\n\n2024-10-21\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n2024-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -2091,7 +2091,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.10327850 -0.41188303 -0.94753542 -0.87094047 -0.07789595"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.23224907 -0.05720315 -0.05374865 -0.83850854 -0.03241508"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
