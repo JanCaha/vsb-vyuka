@@ -1,0 +1,232 @@
+---
+title: "Správa vlastního kódu pro [ArcPy]{.software}"
+subtitle: "Programování v GIS 3"
+author: "Jan Caha"
+date: 2024-11-03
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: false
+---
+
+## Funkce 
+
+- zjedodušení a zpřehlednění kódu
+- opakující se části kódu, znovupoužitelnost
+- zvýšení čitelnosti kódu
+- snížení chybovosti kódu
+- testovatelnost kódu
+
+## Jak udržovat funkce
+
+- soubor (např. `utils.py`) $\times$ vlastní python balík
+
+| Soubor | Python balík |
+|--------|-------|
+| jednoduché na tvorbu | složitější na vytvoření |
+| těžší testování | snadnější testování |
+| náročnější správa závislostí | snazší správa závislostí |
+| těžší na správu verzí | snadnější na správu verzí |
+| horší na sdílení | lepší na sdílení |
+
+## Soubor s funkcemi (`utils.py`)
+
+- viz cvičení a příklady (už máme odzkoušeno)
+- přenášení mezi projekty je problém (která verze souboru je aktuální/poslední?)
+- chyby se nikdy neopraví všude (risk že se budou opakovat a projevovat různě)
+- testování je složitější (nutnost importovat soubor, který může mít závislosti na jiných souborech, případně se mění jeho umístění na disku)
+
+## Python balík
+
+- v podstatě základní souborová struktura
+- velice malé minimální požadavky (budeme předpokládat trochu vyšší nároky, aby byl použitělější)
+- cílem je mít balík hostovaný na GitHubu, automaticky testovaný a nainstalovatelný příkazem
+  
+```bash
+pip install git+https://github.com/<username>/<repository-name>.git --upgrade
+```
+
+- lokálně ze složky lze instalovat
+
+```bash
+pip install . --upgrade
+```
+- i v [conda]{.software} prostředí instalujeme přes [pip]{.software}, kvůli jednoduchosti 
+
+## Python balík - struktura nezbyné
+
+- `slozka_projektu` - pro [VS Code]{.software} a logické odělení kódu - nemusí se jmenovat přímo jako balík
+  - `src` - složka zdrojáků - zde vytvoříme složku s jménem balíku 
+  - `pyproject.toml` - soubor popisující balík a jeho vlastnosti
+  - `.env` - soubor s proměnnými prostředí, zejména `PYTHONPATH` 
+  
+## Python balík - struktura doplňkové
+
+- `slozka_projektu` - pro [VS Code]{.software} a logické odělení kódu - nemusí se jmenovat přímo jako balík
+  - `tests` - složka testů
+  - `scripts` - složka skriptů
+  - `.github` - složka pro [GitHub]{.software} akce - pokud bude balík hostován na GitHub a budeme chtít nějaké automatické kontroly
+  - `README.md` - popis balíku
+  - `LICENSE` - licence balíku
+
+## Python balík - `pyproject.toml`
+
+- základní minimum definice balíku
+  
+```toml
+[project]
+name = "muj_balik"
+version = "0.1.0"
+authors = [{ "name" = "autor", "email" = "autor@email.cz" }]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+```
+
+## Python balík - `pyproject.toml`
+
+- doplňující informace
+
+```toml
+[project]
+readme = "README.md"
+description = "Popis balíku"
+requires-python = ">=3.8"
+keywords = ["klíčová", "slova"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+]
+urls = { "Documentation" = "https://github.com/*" }
+dependencies = ["numpy"]
+
+[options]
+include_package_data = true
+
+[options.package_data]
+FuzzyMath = ["src/muj_balik/py.typed"]
+```
+
+## Python balík - `pyproject.toml` - nastavení nástrojů 1
+
+```toml
+[tool.black]
+line-length = 120
+
+[tool.isort]
+atomic = true
+profile = "black"
+line_length = 120
+skip_gitignore = true
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 120
+disable = ""
+
+[flake8]
+max-line-length = 120
+```
+
+## Python balík - `pyproject.toml` - nastavení nástrojů 2
+
+```toml
+[options.extras_require]
+test = [
+    "pytest",
+    "pytest-cov"
+]
+
+[tool.pytest.ini_options]
+addopts = "-v -s --cov=muj_balik --cov-report=term-missing:skip-covered"
+testpaths = [
+    "tests"
+]
+pythonpath = ["src"]
+```
+
+## Struktura vlastního balíku - kódu
+
+- `src` - složka
+  - `muj_balik` - název složky by měl odpovídat názvu balíku
+    - `__init__.py` - inicializační soubor - může být prázdný nebo obsahovat importy
+    - `dalsi_soubory.py` - soubory s funkcemi, třídami, konstantami atd.
+    - `py.typed` - nepovinný, ale doporučený soubor pro typování 
+
+- praktické ukázky 
+
+## Testování balíku
+
+- snaha o udržení konzistence a kvality kódu
+- předchází chybám a problémům
+- zvyšuje důvěryhodnost kódu (slouží i jako ukázky použití)
+- pokud se děje automaticky na GitHubu, je to zásadní výhoda a přednost
+
+## Testy
+
+- v Pythonu dva hlavní frameworky - [unittest]{.software} a [pytest]{.software}
+- [pytest]{.software} je modernější a "jednodušší" na použití - na ten se zaměříme
+- techniky a postupy testování mohou působit složitě, ale základní principy jsou jednoduché
+- existuje vícero druhů testů, ale nás zajimají pouze jednotkové testy (unit tests) - testujeme jednotlivé části kódu (funkce či objekty a jejich chování)
+- extenze (balíky) rozšiřující funcionalitu [pytest]{.software}, obkvykle [pytest-nazev]{.software}, např [pytest-cov]{.software}
+ 
+## Testy - struktura 
+
+- `tests` - základní složka
+  - `data` - složka s daty pro testy, pokud jsou potřeba
+  - `conftest.py` - soubor s konfigurací tzv. **fixtures** - předpřipravené objekty pro testy
+  - `test_neco.py` - soubor s testy, těch je obvykle celá řada 
+
+## Testy spouštění
+
+- obvykle spouštíme celou baterii testů příkazem `pytest` v kořenové složce balíku (nastavení je definované v `pyproject.toml`, jinak je příkaz složitější)
+- lze omezit na konrétní soubor ale i funci v rámci souboru
+- integrováno ve [VS Code]{.software}, takže testy lze spouštět přímo z IDE 
+  - výhodou je, že se zobrazí výsledky a chyby přímo v editoru a vizuálně
+  - lze spouštět i jednotlivé testy, přímo z editoru
+  - IDE bere v potaz nastavení v `pyproject.toml`
+
+## Ukázka testového souboru
+
+- klíčové slovo `assert`, kde první argument je podmínka, která musí být splněna, jinak test selže, pak případně chybové hlášení
+
+```python
+import pytest
+
+
+def test_plus():
+    result = 1 + 2
+    assert result == 3
+    assert result != 4
+    assert isinstance(result, int)
+
+    result = -1 + (-2)
+    assert result > 0, "Mělo by být větší než 0"
+
+    with pytest.raises(TypeError, match="can only concatenate"):
+        assert "a" + 1
+```
+
+## Proč tvořit balík a testy?
+
+- pokud máte kód, který chcete dlouhodobě využívat tak se to vyplatí (čas, námaha, nervy)
+- kód v čase roste a stává se nepřehledným a hůře udržovatelným, balík to zjednoduší a testy zajistí, že v kódu nedochází k nezamýšleným změnám či chybám
+- pokud chcete kód sdílet s ostatními, je to zásadní
+- pokud chcete mít kód pod kontrolou a mít jistotu, že funguje, jsou testy nutnost
+     - v čase se mohou měnit používané funkce, knihovny atd. a jen testy tyto změny dokáží zachytit dřív než se chyba reálně projeví
+- "progmátorská disciplína" - ke každému kódu by měla existovat dokumentace (klidně kratičká) a test
+
+# Dotazy?{.center} 
