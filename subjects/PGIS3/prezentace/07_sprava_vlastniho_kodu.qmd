@@ -118,7 +118,7 @@ dependencies = ["numpy"]
 include_package_data = true
 
 [options.package_data]
-FuzzyMath = ["src/muj_balik/py.typed"]
+muj_balik = ["src/muj_balik/py.typed"]
 ```
 
 ## Python balík - `pyproject.toml` - nastavení nástrojů 1
