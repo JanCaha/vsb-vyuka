@@ -49,6 +49,7 @@ listing:
 
 - [QGIS Python API documentation](https://qgis.org/pyqgis/master/)
 - [QGIS Tutorials and Tips](https://www.qgistutorials.com/en/) - zejména kapitola **Python Scripting (PyQGIS)** ale i další zaměřené na [QGIS]{.software}
+- [PyQGIS Developer Cookbook](https://docs.qgis.org/3.34/en/docs/pyqgis_developer_cookbook/index.html)
 
 ## Data ke stažení{.data-sources}
 

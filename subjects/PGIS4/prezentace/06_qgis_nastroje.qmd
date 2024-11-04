@@ -1,0 +1,58 @@
+---
+title: "Processingové nástroje [QGIS Python API]{.software}"
+subtitle: "Programování v GIS 4"
+author: "Jan Caha"
+date: 2024-11-03
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: false
+---
+
+## Processingové nástroje
+
+- objekty odvozené od třídy `QgsProcessingAlgorithm` či `QgsProcessingFeatureBasedAlgorithm`
+- vytváření vlastních nástrojů
+- rozšíření třídy o několik metod
+- přímo v QGIS nachystaná šablona nástroje
+- stačí je nakopírovat do složky a jsou automaticky dostupné v QGIS
+
+## `QgsProcessingAlgorithm`
+
+- metody `name()`, `displayName()`, `group()`, `groupId()`, `shortHelpString()`, `icon()`
+- metoda `initAlgorithm()` kde pomocí funkce `self.addParameter()` přidáváme jednotlivé parametry (třídy odvozené od `QgsProcessingParameterDefinition`)
+- metoda `processAlgorithm()` kde dojde k samotnému zpracování dat
+
+## `QgsProcessingParameterDefinition` a odvozené třídy
+
+- velká řada tříd pro různé typy parametrů
+- umožňují nastavení daného parametru a tvorbu jeho GUI v dialogu
+- lze je pak snadno načíst a zpracovat pomocí funkcí `self.parameterAs...()` v `QgsProcessingAlgorithm` objektu
+
+## Dvě podstatné třídy `QgsProcessingContext` a `QgsProcessingFeedback`
+
+- obě figurují ve funkci `processAlgorithm()`
+- `QgsProcessingFeedback` slouží ke komunikaci s uživatele 
+- `QgsProcessingContext` obsahuje informace o prostředí, ve kterém se algoritmus provádí (často není třeba, ale může se hodit)
+
+## `QgsProcessingFeatureBasedAlgorithm`
+
+- verze `QgsProcessingAlgorithm` určená pro modifikaci vektorových dat
+- hlavní funkce `processFeature()` pro zpracování jednotlivých prvků
+- využivá se měně často než `QgsProcessingAlgorithm`, alespoň v pluginech
+
+## Spouštění nástrojů z kódu
+
+```python
+from qgis import processing
+
+result = processing.run('nazev:algoritmu',{'parametry': 'hodnoty'})
+```
+
+
+# Dotazy?{.center}
