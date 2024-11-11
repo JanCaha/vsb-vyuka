@@ -442,6 +442,25 @@ Jan Caha
 <li><code>QgsProcessingContext</code> obsahuje informace o prostředí, ve kterém se algoritmus provádí (často není třeba, ale může se hodit)</li>
 </ul>
 </section>
+<section id="funkce-pro-kontrolu-vstupních-dat" class="slide level2">
+<h2>Funkce pro kontrolu vstupních dat</h2>
+<ul>
+<li><code>checkParameterValues(self, parameters, context) -&gt; Tuple[bool, str]</code></li>
+<li>kontrola vstupních dat, zda splňují požadavky, ještě před spuštěním nástroje</li>
+<li>vrací <code>True</code> pokud je vše v pořádku, jinak <code>False</code> a chybovou hlášku</li>
+<li>funkce není povinná, existují vychozé implementace v třídě <code>QgsProcessingAlgorithm</code>, která vždy vrací <code>(True, "")</code></li>
+</ul>
+</section>
+<section id="prezentace-výsledku-algoritmu" class="slide level2">
+<h2>Prezentace výsledku algoritmu</h2>
+<ul>
+<li>buď necháme na výchozím QGIS kódu (to je to, co už jsme viděli)</li>
+<li>nebo vytvoříme funkci <code>postProcessAlgorithm(self, context: QgsProcessingContext, feedback: QgsProcessingFeedback)</code>, kde můžeme výsledek algoritmu ještě dále zpracovat</li>
+<li>např. nastavit styl vrstvy atd.</li>
+<li>tato funkce je volána po skončení <code>processAlgorithm()</code> a měla by vrace stejný Python objekt, který byl vrácen v <code>processAlgorithm()</code></li>
+<li>aby byl zajištěň přenos dat mezi <code>processAlgorithm()</code> a <code>postProcessAlgorithm()</code>, je třeba vytvořit proměnnou třídy, která bude uchovávat výsledek (tzn. <code>self.result = ...</code>)</li>
+</ul>
+</section>
 <section id="qgsprocessingfeaturebasedalgorithm" class="slide level2">
 <h2><code>QgsProcessingFeatureBasedAlgorithm</code></h2>
 <ul>
@@ -455,6 +474,17 @@ Jan Caha
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis <span class="im">import</span> processing</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> processing.run(<span class="st">'nazev:algoritmu'</span>,{<span class="st">'parametry'</span>: <span class="st">'hodnoty'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>tento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)</li>
+<li>takto lze řetězit několik nástrojů za sebou (pokud použijeme, pak je vhodné využít <code>QgsProcessingMultiStepFeedback</code> pro zobrazení průběhu)</li>
+</ul>
+</section>
+<section id="zdroje" class="slide level2">
+<h2>Zdroje</h2>
+<ul>
+<li><a href="https://github.com/JanCaha/seminar-GIS_Ostrava_2021">Tvorba nástrojů a pluginů s využitím QGIS Python API</a></li>
+<li><a href="https://github.com/JanCaha/seminar-GIS_Ostrava_2022">QGIS Python API pro tvorbu vlastních nástrojů</a></li>
+</ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>

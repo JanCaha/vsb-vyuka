@@ -7,14 +7,12 @@
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-04-15">
-  <title>Výuka - Jan Caha – Funkce a třídy</title>
+  <meta name="dcterms.date" content="2024-11-11">
+  <title>Výuka - Jan Caha – Python Toolbox ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -388,8 +386,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Funkce a třídy – Výuka - Jan Caha">
-<meta property="og:description" content="Programování v GIS 2">
+<meta property="og:title" content="Python Toolbox ArcPy – Výuka - Jan Caha">
+<meta property="og:description" content="Programování v GIS 3">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -397,8 +395,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Funkce a třídy</h1>
-  <p class="subtitle">Programování v GIS 2</p>
+  <h1 class="title">Python Toolbox <span class="software">ArcPy</span></h1>
+  <p class="subtitle">Programování v GIS 3</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -408,65 +406,22 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-04-15</p>
+  <p class="date">2024-11-11</p>
 </section>
-<section id="programovací-paradigmata" class="slide level2">
-<h2>Programovací paradigmata</h2>
+<section id="python-toolbox" class="slide level2">
+<h2>Python Toolbox</h2>
 <ul>
-<li><p>většina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero</p></li>
-<li><p><strong>imperativní</strong> (kód popisuje, co se bude dít)</p>
-<ul>
-<li><strong>procedurální programování</strong> (procedury, které ze vzájmně volají)</li>
-<li><strong>objektové programování</strong> (objekty - data a operace s nimi asociované)</li>
-<li>většina jazyků - např. Python, R, C++</li>
-</ul></li>
-<li><p><strong>deklarativní</strong> (kód popisuje požadovaný výsledek)</p>
-<ul>
-<li><strong>funkcionální</strong>, logické a reaktivní</li>
-<li>např. jazyk SQL, ale i funkcionální přístupy v Pythonu a R</li>
-</ul></li>
+<li>textový soubor s příponou <strong>.pyt</strong></li>
+<li>vhodné zakládat z catalogu přímo z <span class="software">ArcGIS Pro</span></li>
+<li><a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/using-tools-in-python.htm">kompletní dokumentace</a></li>
 </ul>
 </section>
-<section id="python" class="slide level2">
-<h2>Python</h2>
+<section id="třída-toolbox" class="slide level2">
+<h2>Třída toolbox</h2>
 <ul>
-<li>pro běžné použití kombinujeme obvykle procedurální a objektový přístup</li>
-<li>procedurální přístup - <strong>funkce</strong>, které mají parametry</li>
-<li>objektový přístup - <strong>objekty</strong>, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)</li>
+<li>hlavní třída s nastavením toolboxu a výpisem nástrojů</li>
 </ul>
-</section>
-<section id="funkce" class="slide level2">
-<h2>Funkce</h2>
-<ul>
-<li>dělí kód na dílčí logické bloky, které mohou být znovu použitelné</li>
-<li>měly by dělat jednu věc a pouze jednu věc</li>
-<li>délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)</li>
-<li>snaha navrhovat funkce spíše obecně než specificky</li>
-</ul>
-<div id="c28374c5" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> <span class="dv">2</span></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obecné</span></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="funkce-příklad" class="slide level2">
-<h2>Funkce příklad</h2>
-<div id="e7beeff8" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>funkce se třemi proměnnými
-<ul>
-<li>první dvě povinné</li>
-<li>třetí nepovinná s výchozí hodnotou</li>
-</ul></li>
-</ul>
-<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
@@ -475,68 +430,137 @@ Jan Caha
 <p><strong>Pozor</strong></p>
 </div>
 <div class="callout-content">
-<p>Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.</p>
+<p>V seznamu nástrojů se uvádí název třídy, nikoliv instance nástroje - tzn. <code>Tool</code> nikoliv <code>Tool()</code>.</p>
 </div>
 </div>
 </div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Toolbox:</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.label <span class="op">=</span> <span class="st">"Toolbox"</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.alias <span class="op">=</span> <span class="st">"toolbox"</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.tools <span class="op">=</span> [Tool]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="třída-nástroje" class="slide level2">
+<h2>Třída nástroje</h2>
 <ul>
-<li>funkce vrací float</li>
-<li>mohou existovat funkce bez návratové hodnoty <code>None</code></li>
+<li>python třída, která musí obsahovat následujcí metody - <code>__init__</code>, <code>getParameterInfo</code>, <code>isLicensed</code>, <code>updateParameters</code>, <code>updateMessages</code>, <code>execute</code>, <code>postExecute</code>, s příslušnou signaturou</li>
+<li>všechny metody jsou volány automaticky v rámci dilčích kroků použití nástroje</li>
 </ul>
 </section>
-<section id="objekty" class="slide level2">
-<h2>Objekty</h2>
+<section id="příklad-třídy-nástroje-dle-dokumentace" class="slide level2">
+<h2>Příklad třídy nástroje dle dokumentace</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Tool:</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Define the tool (tool name is the name of the class)."""</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.label <span class="op">=</span> <span class="st">"Tool"</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.description <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> getParameterInfo(<span class="va">self</span>):</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Define the tool parameters."""</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>        params <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> params</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> isLicensed(<span class="va">self</span>):</span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Set whether the tool is licensed to execute."""</span></span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> updateParameters(<span class="va">self</span>, parameters):</span>
+<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Modify the values and properties of parameters before internal</span></span>
+<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a><span class="co">        validation is performed.  This method is called whenever a parameter</span></span>
+<span id="cb2-19"><a aria-hidden="true" tabindex="-1"></a><span class="co">        has been changed."""</span></span>
+<span id="cb2-20"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb2-21"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> updateMessages(<span class="va">self</span>, parameters):</span>
+<span id="cb2-23"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Modify the messages created by internal validation for each tool</span></span>
+<span id="cb2-24"><a aria-hidden="true" tabindex="-1"></a><span class="co">        parameter. This method is called after internal validation."""</span></span>
+<span id="cb2-25"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb2-26"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> execute(<span class="va">self</span>, parameters, messages):</span>
+<span id="cb2-28"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""The source code of the tool."""</span></span>
+<span id="cb2-29"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb2-30"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> postExecute(<span class="va">self</span>, parameters):</span>
+<span id="cb2-32"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""This method takes place after outputs are processed and</span></span>
+<span id="cb2-33"><a aria-hidden="true" tabindex="-1"></a><span class="co">        added to the display."""</span></span>
+<span id="cb2-34"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="parametry-nástroje" class="slide level2">
+<h2>Parametry nástroje</h2>
 <ul>
-<li>třída je šablona objektu, jednotlivý objekt je pak instancí třídy</li>
-<li>objekt je prvek, které má vlastní informace a s kterými můžeme vykonávat operace</li>
-<li>metody, vlastnosti (property) a atributy</li>
-<li>složitost se může různit</li>
+<li><a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameters-in-a-python-toolbox.htm">dokumentace</a></li>
+<li>třída <code>arcpy.Parameter</code> s různými typy parametrů, které vytvoří příslušný objekt</li>
+<li><code>param0 = arcpy.Parameter(displayName, name, datatype, parameterType, direction)</code>, detaily nutné vyčíst v dokumentaci</li>
+<li>parametry se následně shrnou do seznamu a ten je výsledným výstupem metody <code>getParameterInfo</code> - <code>return [param0, param1, ...]</code></li>
 </ul>
 </section>
-<section id="objekty-detaily" class="slide level2">
-<h2>Objekty detaily</h2>
+<section id="závislosti-parametrů" class="slide level2">
+<h2>Závislosti parametrů</h2>
 <ul>
-<li>první parametr metody je vždy <code>self</code> (označení instance objektu)</li>
-<li>atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvecí, soukromé atributy a metody začínají podtržítkem (např. <code>_atribut</code>), tyto metody a atributy nebudou nápovědy v IDE navrhnovat a programátor by se měl ideálně jejich použití vyhnout</li>
-<li>magické metody objektů (např. <code>__init__</code>, <code>__str__</code>, <code>__add__</code>, <code>__eq__</code> a další) a jejich použití</li>
+<li>některé typy parametrů přirozeně vyvolávají vzájemné závislosti</li>
+<li>např. máme <code>param0</code>, který je typu <code>GPFeatureLayer</code> a <code>param1</code>, který je typu <code>GPValueTable</code></li>
+<li>pak lze nastavit doplňkové vlastnosti parametru <code>param1</code>, které závisí na hodnotě parametru <code>param0</code></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>param1.parameterDependencies <span class="op">=</span> [param0.name]</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>param1.columns <span class="op">=</span> [[<span class="st">'Field'</span>, <span class="st">'Field'</span>], [<span class="st">'GPString'</span>, <span class="st">'Statistic Type'</span>]]</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>param1.filters[<span class="dv">1</span>].<span class="bu">type</span> <span class="op">=</span> <span class="st">'ValueList'</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>param1.values <span class="op">=</span> [[<span class="st">'NAME'</span>, <span class="st">'SUM'</span>]]</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>param1.filters[<span class="dv">1</span>].<span class="bu">list</span> <span class="op">=</span> [<span class="st">'SUM'</span>, <span class="st">'MIN'</span>, <span class="st">'MAX'</span>, <span class="st">'STDEV'</span>, <span class="st">'MEAN'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="výchozí-hodnota-parametru" class="slide level2">
+<h2>Výchozí hodnota parametru</h2>
+<ul>
+<li>lze nastavit jako <code>param0.defaultEnvironmentName = "workspace"</code></li>
+<li>či např. jako <code>param0.value = os.path.join(os.path.dirname(__file__), 'Fire_Station.lyrx')</code></li>
 </ul>
 </section>
-<section id="objekt---příklad" class="slide level2">
-<h2>Objekt - příklad</h2>
-<div id="287b4d40" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Zamestnanec:</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jmeno: <span class="bu">str</span>, hodinovy_plat: <span class="bu">float</span>):</span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.jmeno <span class="op">=</span> jmeno</span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat</span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> nastav_plat(<span class="va">self</span>, hodinovy_plat: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> zvys_plat(<span class="va">self</span>, navyseni_o: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">+=</span> navyseni_o</span>
-<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mesicni_plat(<span class="va">self</span>, odpracovanych_hodin: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb3-16"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">*</span> odpracovanych_hodin</span>
-<span id="cb3-17"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb3-19"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> denni_plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb3-20"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">/</span> <span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="filtry" class="slide level2">
+<h2>Filtry</h2>
+<ul>
+<li>samostatná kapitola, umožňuje pro parametry omezovat vstupní hodnoty</li>
+<li>liší se dle typu vstupního parametru</li>
+<li>podle dokumentace</li>
+</ul>
+</section>
+<section id="výstupní-hodnoty" class="slide level2">
+<h2>Výstupní hodnoty</h2>
+<ul>
+<li>lze např. automaticky stylovat výstupní vrstvu pomocí připraveného souboru s nastavením - <code>param1.symbology = os.path.join(os.path.dirname(__file__), 'raster_symbology.lyrx')</code></li>
+</ul>
+</section>
+<section id="použití-vstupních-parametrů" class="slide level2">
+<h2>Použití vstupních parametrů</h2>
+<ul>
+<li>v metodě <code>execute</code></li>
+<li>získávají se z proměnné <code>parameters</code>, obvykle jako test - <code>param0 = parameters[0].valueAsText</code></li>
+</ul>
+</section>
+<section id="komunikace-s-uživatelem" class="slide level2">
+<h2>Komunikace s uživatelem</h2>
+<ul>
+<li>v metodě <code>execute</code> lze využít proměnnou <code>messages</code> pro výpis chyb a informací</li>
+<li><code>messages.addMessage("Message")</code>, <code>messages.addWarning("Warning")</code>, <code>messages.addError("Error")</code></li>
+<li><code>messages.addGPMessages()</code> - přidá všechny zprávy z posledního spuštěného nástroje - užitečné tam, kde v rámci nástroje spouštíme dílčí nástroje</li>
+</ul>
+</section>
+<section id="toolbox" class="slide level2">
+<h2>Toolbox</h2>
+<ul>
+<li>výsledný toolbox lze šifrovat heslem</li>
+<li>bez hesla nelze toolbox otevřít a zobrazit jeho obsah</li>
+<li>heslo se zadává při otevření toolboxu v <span class="software">ArcGIS Pro</span></li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-<section id="použití-objektu" class="slide level2">
-<h2>Použití objektu</h2>
-<div id="8dc386a9" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>odpracovane_hodiny <span class="op">=</span> <span class="dv">160</span></span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>zam <span class="op">=</span> Zamestnanec(<span class="st">"Testovaci Zamestnanec"</span>, <span class="dv">250</span>)</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>zam.zvys_plat(<span class="dv">50</span>)</span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat po zvýšení: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Plat: 40000
-Plat po zvýšení: 48000</code></pre>
+<p><strong>Pozor</strong></p>
+</div>
+<div class="callout-content">
+<p>Heslo nelze obnovit, pokud se zapomene, je toolbox ztracen.</p>
+</div>
 </div>
 </div>
 </section>
