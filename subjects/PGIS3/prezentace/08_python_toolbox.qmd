@@ -1,0 +1,143 @@
+---
+title: "Python Toolbox [ArcPy]{.software}"
+subtitle: "Programování v GIS 3"
+author: "Jan Caha"
+date: 2024-11-11
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: false
+---
+
+## Python Toolbox
+
+- textový soubor s příponou **.pyt**
+- vhodné zakládat z catalogu přímo z [ArcGIS Pro]{.software}
+- [kompletní dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/using-tools-in-python.htm)
+
+## Třída toolbox
+
+- hlavní třída s nastavením toolboxu a výpisem nástrojů
+
+::: {.callout-important}
+### Pozor
+V seznamu nástrojů se uvádí název třídy, nikoliv instance nástroje - tzn. `Tool` nikoliv `Tool()`.
+:::
+
+```python
+class Toolbox:
+    def __init__(self):
+        self.label = "Toolbox"
+        self.alias = "toolbox"
+
+        self.tools = [Tool]
+```
+
+## Třída nástroje
+
+- python třída, která musí obsahovat následujcí metody - `__init__`, `getParameterInfo`, `isLicensed`, `updateParameters`, `updateMessages`, `execute`, `postExecute`, s příslušnou signaturou
+- všechny metody jsou volány automaticky v rámci dilčích kroků použití nástroje
+
+## Příklad třídy nástroje dle dokumentace
+
+```python
+class Tool:
+    def __init__(self):
+        """Define the tool (tool name is the name of the class)."""
+        self.label = "Tool"
+        self.description = ""
+
+    def getParameterInfo(self):
+        """Define the tool parameters."""
+        params = None
+        return params
+
+    def isLicensed(self):
+        """Set whether the tool is licensed to execute."""
+        return True
+
+    def updateParameters(self, parameters):
+        """Modify the values and properties of parameters before internal
+        validation is performed.  This method is called whenever a parameter
+        has been changed."""
+        return
+
+    def updateMessages(self, parameters):
+        """Modify the messages created by internal validation for each tool
+        parameter. This method is called after internal validation."""
+        return
+
+    def execute(self, parameters, messages):
+        """The source code of the tool."""
+        return
+
+    def postExecute(self, parameters):
+        """This method takes place after outputs are processed and
+        added to the display."""
+        return
+```
+
+## Parametry nástroje
+
+- [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameters-in-a-python-toolbox.htm)
+- třída `arcpy.Parameter` s různými typy parametrů, které vytvoří příslušný objekt
+- `param0 = arcpy.Parameter(displayName, name, datatype, parameterType, direction)`, detaily nutné vyčíst v dokumentaci
+- parametry se následně shrnou do seznamu a ten je výsledným výstupem metody `getParameterInfo` - `return [param0, param1, ...]`
+
+## Závislosti parametrů
+
+- některé typy parametrů přirozeně vyvolávají vzájemné závislosti
+- např. máme `param0`, který je typu `GPFeatureLayer` a `param1`, který je typu `GPValueTable`
+- pak lze nastavit doplňkové vlastnosti parametru `param1`, které závisí na hodnotě parametru `param0`
+
+```python
+param1.parameterDependencies = [param0.name]
+param1.columns = [['Field', 'Field'], ['GPString', 'Statistic Type']]
+param1.filters[1].type = 'ValueList'
+param1.values = [['NAME', 'SUM']]
+param1.filters[1].list = ['SUM', 'MIN', 'MAX', 'STDEV', 'MEAN']
+```
+
+## Výchozí hodnota parametru
+
+- lze nastavit jako `param0.defaultEnvironmentName = "workspace"`
+- či např. jako ` param0.value = os.path.join(os.path.dirname(__file__), 'Fire_Station.lyrx')`
+
+## Filtry
+
+- samostatná kapitola, umožňuje pro parametry omezovat vstupní hodnoty 
+- liší se dle typu vstupního parametru
+- podle dokumentace
+
+## Výstupní hodnoty
+
+- lze např. automaticky stylovat výstupní vrstvu pomocí připraveného souboru s nastavením - `param1.symbology = os.path.join(os.path.dirname(__file__), 'raster_symbology.lyrx')`
+
+## Použití vstupních parametrů
+
+- v metodě `execute` 
+- získávají se z proměnné `parameters`, obvykle jako test - `param0 = parameters[0].valueAsText`
+
+## Komunikace s uživatelem
+
+- v metodě `execute` lze využít proměnnou `messages` pro výpis chyb a informací
+- `messages.addMessage("Message")`, `messages.addWarning("Warning")`, `messages.addError("Error")`
+- `messages.addGPMessages()` - přidá všechny zprávy z posledního spuštěného nástroje - užitečné tam, kde v rámci nástroje spouštíme dílčí nástroje
+
+## Toolbox
+
+- výsledný toolbox lze šifrovat heslem
+- bez hesla nelze toolbox otevřít a zobrazit jeho obsah
+- heslo se zadává při otevření toolboxu v [ArcGIS Pro]{.software}
+
+::: {.callout-important}
+### Pozor
+Heslo nelze obnovit, pokud se zapomene, je toolbox ztracen.
+:::
+
+# Dotazy?{.center} 
