@@ -40,6 +40,21 @@ execute:
 - `QgsProcessingFeedback` slouží ke komunikaci s uživatele 
 - `QgsProcessingContext` obsahuje informace o prostředí, ve kterém se algoritmus provádí (často není třeba, ale může se hodit)
 
+## Funkce pro kontrolu vstupních dat
+
+- `checkParameterValues(self, parameters, context) -> Tuple[bool, str]`
+- kontrola vstupních dat, zda splňují požadavky, ještě před spuštěním nástroje
+- vrací `True` pokud je vše v pořádku, jinak `False` a chybovou hlášku
+- funkce není povinná, existují vychozé implementace v třídě `QgsProcessingAlgorithm`, která vždy vrací `(True, "")`
+
+## Prezentace výsledku algoritmu
+
+- buď necháme na výchozím QGIS kódu (to je to, co už jsme viděli)
+- nebo vytvoříme funkci `postProcessAlgorithm(self, context: QgsProcessingContext, feedback: QgsProcessingFeedback)`, kde můžeme výsledek algoritmu ještě dále zpracovat
+- např. nastavit styl vrstvy atd.
+- tato funkce je volána po skončení `processAlgorithm()` a měla by vrace stejný Python objekt, který byl vrácen v `processAlgorithm()`
+- aby byl zajištěň přenos dat mezi `processAlgorithm()` a `postProcessAlgorithm()`, je třeba vytvořit proměnnou třídy, která bude uchovávat výsledek (tzn. `self.result = ...`)
+
 ## `QgsProcessingFeatureBasedAlgorithm`
 
 - verze `QgsProcessingAlgorithm` určená pro modifikaci vektorových dat
@@ -56,5 +71,10 @@ result = processing.run('nazev:algoritmu',{'parametry': 'hodnoty'})
 
 - tento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)
 - takto lze řetězit několik nástrojů za sebou (pokud použijeme, pak je vhodné využít `QgsProcessingMultiStepFeedback` pro zobrazení průběhu)
+
+## Zdroje
+
+- [Tvorba nástrojů a pluginů s využitím QGIS Python API](https://github.com/JanCaha/seminar-GIS_Ostrava_2021)
+- [QGIS Python API pro tvorbu vlastních nástrojů](https://github.com/JanCaha/seminar-GIS_Ostrava_2022)
 
 # Dotazy?{.center}
