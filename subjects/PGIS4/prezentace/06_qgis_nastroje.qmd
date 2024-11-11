@@ -54,5 +54,7 @@ from qgis import processing
 result = processing.run('nazev:algoritmu',{'parametry': 'hodnoty'})
 ```
 
+- tento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)
+- takto lze řetězit několik nástrojů za sebou (pokud použijeme, pak je vhodné využít `QgsProcessingMultiStepFeedback` pro zobrazení průběhu)
 
 # Dotazy?{.center}
