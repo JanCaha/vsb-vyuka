@@ -37,6 +37,7 @@ listing:
 - vektorové vrstvy a práce s nimi
 - geometrie `QgsGeometry` a `QgsAbstractGeometry`
 - rastrová data
+- processingové nástroje pro zpracování dat
 
 ## Seminární práce{.seminar-work}
 

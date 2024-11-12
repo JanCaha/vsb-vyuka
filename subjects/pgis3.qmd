@@ -37,6 +37,8 @@ listing:
 - kurzory v [ArcPy]{.software} pro vektorová data
 - třída geometrie v [ArcPy]{.software} 
 - rastrová data v [ArcPy]{.software}
+- tvorba vlastních balíků (+ jejich tetování)
+- tvorba vlastních toolboxů a nástrojů
 
 ## Seminární práce{.seminar-work}
 
