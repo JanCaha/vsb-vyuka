@@ -517,7 +517,7 @@ Jan Caha
 <li>tisk objektu bez funkce <code>__repr__()</code></li>
 <li>tiskne informace o umístění objektu v paměti</li>
 </ul>
-<div id="a742559b" class="cell" data-execution_count="1">
+<div id="27151ce2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -525,7 +525,7 @@ Jan Caha
 <span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7fe31a99ad80&gt;</code></pre>
+<pre><code>&lt;__main__.A object at 0x7f63d073d700&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -535,7 +535,7 @@ Jan Caha
 <li>tisk objektu s funkcí <code>__repr__()</code></li>
 <li>tiskne řetězec z této funkce</li>
 </ul>
-<div id="058005d5" class="cell" data-execution_count="2">
+<div id="20dd98f4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -576,7 +576,7 @@ Jan Caha
 <li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
 <li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
 </ul>
-<div id="25a029ee" class="cell" data-execution_count="3">
+<div id="7911e0d7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
