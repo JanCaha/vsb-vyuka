@@ -1681,7 +1681,7 @@
     "href": "subjects/pvgis4.html",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "",
-    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry\nrastrová data",
+    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry\nrastrová data\nprocessingové nástroje pro zpracování dat",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1692,7 +1692,7 @@
     "href": "subjects/pvgis4.html#řešená-témata",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "",
-    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry\nrastrová data",
+    "text": "základní přehled QGIS\núvod PyQGIS\nzprovoznění Pythonu a QGIS Python API ve VS Code dle návodu\nvektorové vrstvy a práce s nimi\ngeometrie QgsGeometry a QgsAbstractGeometry\nrastrová data\nprocessingové nástroje pro zpracování dat",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1703,7 +1703,7 @@
     "href": "subjects/pvgis4.html#seminární-práce",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Seminární práce",
-    "text": "Seminární práce",
+    "text": "Seminární práce\nSestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte knihovnu QGIS Python API. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript odevzdejte emailem před posledním cvičením. Funkčnost skriptu bude prezentována na posledním cvičení.",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -2175,7 +2175,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.427023300 -0.683019488 -0.007017785 -0.189797959 -0.067789913"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.01173722 -1.21987956 -3.00547377 -0.46683397 -0.97279964"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2777,7 +2777,7 @@
     "href": "subjects/pgis3.html",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "",
-    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy",
+    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy\ntvorba vlastních balíků (+ jejich tetování)\ntvorba vlastních toolboxů a nástrojů",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -2788,7 +2788,7 @@
     "href": "subjects/pgis3.html#řešená-témata",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "",
-    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy",
+    "text": "ArcPy knihovna\nfunkce pro vypisování seznamů prvků arcpy.List*()\npopis objektů ArcPy pomocí arcpy.Describe()\nkurzory v ArcPy pro vektorová data\ntřída geometrie v ArcPy\nrastrová data v ArcPy\ntvorba vlastních balíků (+ jejich tetování)\ntvorba vlastních toolboxů a nástrojů",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -2843,7 +2843,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n2024-09-23\n\n\nVýpisy dat\n\n\n\n\n2024-09-30\n\n\nFunkce Describe\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n2024-10-21\n\n\nTvorba rastru\n\n\n\n\n2024-10-21\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n2024-09-23\n\n\nVýpisy dat\n\n\n\n\n2024-09-30\n\n\nFunkce Describe\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n2024-10-21\n\n\nTvorba rastru\n\n\n\n\n2024-10-21\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n2024-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
