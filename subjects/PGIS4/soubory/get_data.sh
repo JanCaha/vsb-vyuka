@@ -13,3 +13,4 @@ qgis_process run native:createrandomuniformrasterlayer \
     --OUTPUT=$DATA_DIR/nahodny_raster.tif
 
 cp $DATA_DIR/nahodny_raster.tif $DATA_DIR/nahodny_raster_upravy.tif
+cp $SCRIPT_DIR/projekt1.qgz $DATA_DIR/projekt1.qgz

@@ -38,6 +38,7 @@ listing:
 - geometrie `QgsGeometry` a `QgsAbstractGeometry`
 - rastrová data
 - processingové nástroje pro zpracování dat
+- QGIS projekt a layout
 
 ## Seminární práce{.seminar-work}
 

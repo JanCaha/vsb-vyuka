@@ -1,0 +1,50 @@
+---
+title: "Projekt a Layout [QGIS Python API]{.software}"
+subtitle: "Programování v GIS 4"
+author: "Jan Caha"
+date: 2024-11-25
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: false
+---
+
+## Projekt
+
+- `QgsProject.instance()` - aktuálně otevřený projekt
+- `QgsProject.instance().read("cesta k projektu")` - načtení projektu ze souboru
+- `write()`, `write("cesta_k_souboru.qgz")`
+
+## Layout
+
+- `QgsPrintLayout` - třída reprezentující layout
+- funkce `initializeDefaults()` - bez ní je layout těžko použitelný, nemá např, ani stránky
+- layout může být několika stránkový - `pageCollection()`
+
+## Načtení layout ze šablony
+
+```python
+from qgis.PyQt.QtXml import QDomDocument
+
+with file("path_to_file.qpt", "r") as file:
+    template_content = file.read()
+
+document = QDomDocument()
+document.setContent(template_content)
+context = QgsReadWriteContext()
+layout = QgsPrintLayout(QgsProject.instance())
+layout.loadFromTemplate(document, context)
+```
+
+## Prvky layoutu
+
+- `QgsLayoutItem` - interface reprezentující jednotlivé prvky layoutu, samotné třídy layout pak jsou `QgsLayoutItem*`
+- obecné, určené rozhraním, `QgsLayoutItem`
+- specifické, dané typem prvku, např. `setPicturePath()` pro `QgsLayoutItemPicture` či `setText(), setTextFormat()` pro `QgsLayoutItemLabel`
+
+# Dotazy?{.center}
