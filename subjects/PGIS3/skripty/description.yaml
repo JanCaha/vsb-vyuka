@@ -50,3 +50,11 @@
   author: Jan Caha
   date: 2024-11-18
   path: "PGIS3/skripty/MyToolbox.pyt"
+- title: "Ǔprava projektu a vrstvy v něm"
+  author: Jan Caha
+  date: 2024-11-25
+  path: "PGIS3/skripty/11_projekt.py"
+- title: "Změny Layoutu a jeho export"
+  author: Jan Caha
+  date: 2024-11-25
+  path: "PGIS3/skripty/12_layout_zmeny_export.py"
