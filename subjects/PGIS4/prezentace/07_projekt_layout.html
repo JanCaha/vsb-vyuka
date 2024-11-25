@@ -7,14 +7,12 @@
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-03-04">
-  <title>Výuka - Jan Caha – Knihovna GDAL/OGR</title>
+  <meta name="dcterms.date" content="2024-11-25">
+  <title>Výuka - Jan Caha – Projekt a Layout QGIS Python API</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -388,8 +386,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Knihovna GDAL/OGR – Výuka - Jan Caha">
-<meta property="og:description" content="Programování v GIS 2">
+<meta property="og:title" content="Projekt a Layout QGIS Python API – Výuka - Jan Caha">
+<meta property="og:description" content="Programování v GIS 4">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -397,8 +395,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Knihovna <span class="software">GDAL/OGR</span></h1>
-  <p class="subtitle">Programování v GIS 2</p>
+  <h1 class="title">Projekt a Layout <span class="software">QGIS Python API</span></h1>
+  <p class="subtitle">Programování v GIS 4</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -408,122 +406,43 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-03-04</p>
+  <p class="date">2024-11-25</p>
 </section>
-<section id="popis-gdalogr" class="slide level2">
-<h2>Popis <span class="software">GDAL/OGR</span></h2>
+<section id="projekt" class="slide level2">
+<h2>Projekt</h2>
 <ul>
-<li>nízkoúrovňová knihovna</li>
-<li>v Pythonu zpřístupňujeme její <strong>binding</strong> - <a href="https://gdal.org/api/python/osgeo.html">dokumentace</a></li>
-<li>kód knihovny v <span class="software">C/C++</span> -&gt; odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)</li>
-<li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní prostředky</li>
-<li>knihovna má hlavní modul <code>osgeo</code> a několik dílčích modulů
-<ul>
-<li><code>gdal</code> - rastry</li>
-<li><code>ogr</code> - vektory</li>
-<li><code>osr</code> - souřadnicové systémy</li>
-</ul></li>
-<li>kód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a <span class="software">mypy</span> dobře kontrolovat kód</li>
+<li><code>QgsProject.instance()</code> - aktuálně otevřený projekt</li>
+<li><code>QgsProject.instance().read("cesta k projektu")</code> - načtení projektu ze souboru</li>
+<li><code>write()</code>, <code>write("cesta_k_souboru.qgz")</code></li>
 </ul>
 </section>
-<section id="příklady-typování" class="slide level2">
-<h2>Příklady typování</h2>
-<div id="9a6d46d3" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<section id="layout" class="slide level2">
+<h2>Layout</h2>
+<ul>
+<li><code>QgsPrintLayout</code> - třída reprezentující layout</li>
+<li>funkce <code>initializeDefaults()</code> - bez ní je layout těžko použitelný, nemá např, ani stránky</li>
+<li>layout může být několika stránkový - <code>pageCollection()</code></li>
+</ul>
+</section>
+<section id="načtení-layout-ze-šablony" class="slide level2">
+<h2>Načtení layout ze šablony</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.PyQt.QtXml <span class="im">import</span> QDomDocument</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="st">"soubor.txt"</span></span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">file</span>(<span class="st">"path_to_file.qpt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    template_content <span class="op">=</span> <span class="bu">file</span>.read()</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> QDomDocument()</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>document.setContent(template_content)</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>context <span class="op">=</span> QgsReadWriteContext()</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> QgsPrintLayout(QgsProject.instance())</span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>layout.loadFromTemplate(document, context)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="otevírání-souborů" class="slide level2">
-<h2>Otevírání souborů</h2>
+<section id="prvky-layoutu" class="slide level2">
+<h2>Prvky layoutu</h2>
 <ul>
-<li>funkce <code>gdal.OpenEx()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory)</li>
-<li>jako první první parametr cesta k souboru
-<ul>
-<li>buď lokální - klasický zápis</li>
-<li>nebo virtuální začínající <code>/vsi*</code> kde <code>*</code> je typ virtuální složky</li>
-</ul></li>
-</ul>
-</section>
-<section id="virtuální-složky" class="slide level2">
-<h2>Virtuální složky</h2>
-<ul>
-<li>např. <code>/vsicurl/cesta_k_online.souboru</code> - automaticky stahuje data</li>
-<li><code>/vsizip/cesta_k_lokálnímu.souboru</code> - extrahuje ze zip souboru</li>
-<li><code>/vsis3</code>, <code>/vsigs</code>, <code>/vsiaz</code>, <code>/vsioss</code> pro přístup k online službám</li>
-<li><code>/vsimem</code> - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát</li>
-<li>tyto adresy pak fungují všude, kde je <span class="software">GDAL/OGR</span> využíván (třeba python knihovny ale i <span class="software">QGIS</span>)</li>
-</ul>
-</section>
-<section id="drivery" class="slide level2">
-<h2>Drivery</h2>
-<ul>
-<li>každý podporovaný formát má svůj vlastní</li>
-<li>mohou být pouze pro čtení (<strong>DWG</strong>), značná část ale podporuje i zápis (<strong>GPKG</strong>, <strong>GeoTiff</strong>)</li>
-<li>některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (<strong>GeoJSON</strong>)</li>
-<li>často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je</li>
-<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu</li>
-</ul>
-</section>
-<section id="příklad" class="slide level2">
-<h2>Příklad</h2>
-<ul>
-<li>data z <a href="https://www.naturalearthdata.com/">Natural Earth</a></li>
-<li>otevření souboru (bez i za použití driveru)</li>
-<li>výběr vrstvy</li>
-<li>iterace přes prvky - geometrie i atributy</li>
-<li>definice vrstvy</li>
-</ul>
-</section>
-<section id="načtení-souboru-a-základní-info" class="slide level2">
-<h2>Načtení souboru a základní info</h2>
-<ul>
-<li>další ukázka v příkladech</li>
-</ul>
-<div id="9feb8287" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span> <span class="op">=</span> Path.cwd().parent.parent <span class="op">/</span> <span class="op">\</span></span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"_data"</span> <span class="op">/</span> <span class="st">"ne_10m_admin_0_countries.shp"</span></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.exists())</span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>    ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
-<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>    layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span>
-<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetName())</span>
-<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetFeatureCount())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="spouštění-operací-z-gdal" class="slide level2">
-<h2>Spouštění operací z GDAL</h2>
-<ul>
-<li>hlavní funkce</li>
-<li><code>gdal.VectorTranslate()</code> (<code>gdal.VectorTranslateOptions()</code>) pro vektorová data</li>
-<li>pro rastrová data je funcí vícero <code>gdal.Translate()</code> (<code>gdal.TranslateOptions()</code>), <code>gdal.Warp()</code> (<code>gdal.WarpOptions()</code>)</li>
-<li>mnoho dalších popsaných v dokumentaci</li>
-<li>množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí</li>
-<li>všude, kde se používají cesty k souborům lze použít cesty <code>/vsi*</code> nebo přímo objekty <code>gdal.Dataset</code></li>
-</ul>
-</section>
-<section id="práce-s-daty-v-paměti" class="slide level2">
-<h2>Práce s daty v paměti</h2>
-<ul>
-<li>viz ukázkový kód</li>
+<li><code>QgsLayoutItem</code> - interface reprezentující jednotlivé prvky layoutu, samotné třídy layout pak jsou <code>QgsLayoutItem*</code></li>
+<li>obecné, určené rozhraním, <code>QgsLayoutItem</code></li>
+<li>specifické, dané typem prvku, např. <code>setPicturePath()</code> pro <code>QgsLayoutItemPicture</code> či <code>setText(), setTextFormat()</code> pro <code>QgsLayoutItemLabel</code></li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
