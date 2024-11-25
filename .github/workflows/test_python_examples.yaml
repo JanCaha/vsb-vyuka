@@ -27,7 +27,6 @@ jobs:
     
       - uses: conda-incubator/setup-miniconda@v3
         with:
-          channels: conda-forge
           activate-environment: pgis2
           environment-file: subjects/PGIS2/soubory/conda-environment.yml
       
