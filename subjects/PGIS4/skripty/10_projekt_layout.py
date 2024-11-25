@@ -16,7 +16,7 @@ qgis.initQgis()
 
 # vytvoření instance projektu a načtení ze souboru
 project = QgsProject.instance()
-open = project.read(data_path(r"projekt1.qgz"))
+open = project.read(data_path(r"projekt1.qgz").as_posix())
 # open by měl být TRUE, pokud se projekt načetl správně
 print(open)
 
