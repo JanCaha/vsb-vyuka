@@ -39,6 +39,7 @@ listing:
 - rastrová data v [ArcPy]{.software}
 - tvorba vlastních balíků (+ jejich tetování)
 - tvorba vlastních toolboxů a nástrojů
+- modifikace [ArcGIS Pro]{.software} projektů - modul `arcpy.mp`
 
 ## Seminární práce{.seminar-work}
 

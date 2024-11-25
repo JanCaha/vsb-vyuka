@@ -1,0 +1,79 @@
+---
+title: "Mapping module [ArcPy]{.software}"
+subtitle: "Programování v GIS 3"
+author: "Jan Caha"
+date: 2024-11-25
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs:
+        theme: [../../../reveal-custom.scss]
+footer: "{{< var links.web >}}"
+code-line-numbers: false
+execute:
+  echo: true
+  eval: false
+---
+
+## Mapping module
+
+- `arcpy.mp` module
+- práce s projektem, mapou, vrstvami, layoutem
+- automatizace práce nad těmito prvky
+- [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/introduction-to-arcpy-mp.htm)
+- řada objektů, s kterými lze pracovat, ukázka jen základů a nastínění postupů a možností 
+
+## Načtení projektu
+
+- buď práce s aktuálním projektem nebo s konkrétním projektem uloženým na disku
+
+```python
+aprx = arcpy.mp.ArcGISProject("CURRENT")
+## nebo
+aprx = arcpy.mp.ArcGISProject(r"C:\Projects\YosemiteNP\Yosemite.aprx")
+```
+
+## `ArcGISProject`
+
+- hlavní třída pro práci - rozcestník k dalším položkám
+- řada funkcí pro získání a tvorbu prvků
+- [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/arcgisproject-class.htm)
+- funkce např. `listLayouts()`, `listMaps()`, `listReports()`, nebo `listBrokenDataSources()`
+- funkce pro tvorbu nových prvků - `createLayout()`, `createMap()`, `createTextElement()` a další
+- funkce `deleteItem()` pro smazání prvku
+- při modifikaci buď nutné volat `save()` nebo `saveACopy()`
+
+## `Map`
+
+- individuální mapové okno v projektu
+- lze z něj získat vrstvy `listLayers()`
+- lze přidávat vrstvy `addLayer()` nebo `addLayerToGroup()` či `addTable()` ale i `insertLayer()`
+- 
+
+## `Layer`
+
+- buď prvek `Map` nebo je lze ukládat do `lyr` či `lyrx` souborů
+- přistup k vlastnostem vrstvy, mimo jiné i k nastavené vizualizace (renderer či symbologie)
+
+## Renderery
+
+- různé objekty dle typu
+- příklad [zde](https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/graduatedsymbolsrenderer-class.htm)
+
+## Export do souboru
+
+- exporty layoutu do grafického souboru (typicky PDF)
+
+```python
+p = arcpy.mp.ArcGISProject('current')
+lyt = p.listLayouts()[0]
+
+pdf = arcpy.mp.CreateExportFormat('PDF', r'C:\Temp\PDF_output1.pdf')
+lyt.export(pdf) 
+
+pdf.resolution = 300
+pdf.filePath = r'C:\Temp\PDF_output2.pdf'  
+
+lyt.export(pdf)
+```
+
+# Dotazy?{.center} 
