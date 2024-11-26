@@ -59,7 +59,12 @@ jobs:
           do
             echo "--------------------"
             echo "*** $FILE ***"
-            # this causes SEGFAULT in Python for the installed version so we remove it from the scripts
-            sed -i -e 's/qgis.exitQgis()/#qgis.exitQgis()/g' $FILE
-            python3 $FILE > /dev/null
+            if grep -q "# no GA run" $FILE; then
+                echo "Skipping file on GA."
+            else
+              # this causes SEGFAULT in Python for the installed version so we remove it from the scripts
+              sed -i -e 's/qgis.exitQgis()/#qgis.exitQgis()/g' $FILE
+              python3 $FILE > /dev/null
+            fi
+            
           done    
