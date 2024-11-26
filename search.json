@@ -134,7 +134,7 @@
     "href": "subjects/PGIS4/prezentace/02_qgis_python_api.html#dotazy",
     "title": "Základ QGIS Python API",
     "section": "Dotazy?",
-    "text": "Dotazy?\n\n\n\nMateriály dostupné: https://jancaha.github.io/vsb-vyuka/"
+    "text": "Dotazy?"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/01_uvod.html#náplň",
@@ -666,7 +666,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1213063 -0.6024103 -1.8302043 -0.1065207 -1.1445376"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.2488402 -0.8522838 -0.1119081 -0.4125501 -0.4856848"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",

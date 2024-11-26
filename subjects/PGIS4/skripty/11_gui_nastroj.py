@@ -1,3 +1,4 @@
+# no GA run
 # skript pro spuštění z Python konzole QGIS
 
 # importy teoreticky nejsou třeba, ale pro jistotu a srozumitelnost kódu je ponechávám
