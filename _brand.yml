@@ -27,4 +27,3 @@ defaults:
       h2.data-sources::before{
         content: '🗂️ ';
       }
-

@@ -4,27 +4,3 @@
     // font-weight: bold;
     color:rgb(255, 213, 73)
 }
-
-h2.topics::before {
-  content: '📃 ';
-} 
-
-h2.seminar-work::before{
-  content: '📝 ';
-}
-
-h2.sources::before{
-  content: '📚 ';
-}
-
-h2.codes::before{
-  content: '💻 ';
-}
-
-h2.instals::before{
-  content: '🖥 ';
-}
-
-h2.data-sources::before{
-  content: '🗂️ ';
-}
