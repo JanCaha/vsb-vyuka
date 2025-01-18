@@ -20,13 +20,16 @@ jobs:
       contents: write
     
     env:
-      APT_CACHE_DIR: ~/apt_cache
       CONDA_PKG_DIR: ~/conda_pkgs_dir
       R_LIBS_USER: /tmp/Rlibs
       DEBIAN_FRONTEND: noninteractive
       QT_QPA_PLATFORM: offscreen 
 
     steps:
+
+      - name: Set Env
+        run: |
+          echo "APT_CACHE_DIR=$RUNNER_TEMP/apt_cache" >> $GITHUB_ENV
 
       - name: ATP download settings
         run: |
