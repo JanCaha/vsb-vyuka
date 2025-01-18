@@ -30,6 +30,9 @@ jobs:
 
       - name: ATP download settings
         run: |
+          echo pwd
+          cd ~
+          echo pwd
           mkdir $APT_CACHE_DIR
           mkdir $APT_CACHE_DIR/partial
           echo Dir::Cache::Archives $APT_CACHE_DIR";" | sudo tee /etc/apt/apt.conf.d/50cacheDir
