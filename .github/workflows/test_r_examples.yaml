@@ -62,6 +62,11 @@ jobs:
         run: |
           sudo ./linux_install_R.sh  --all
       
+      - name: List
+        run: |
+          cd $APT_CACHE_DIR
+          ls -l      
+
       - name: IDG skripty
         run: |
           FILES="./subjects/IDG/skripty/*.R"
