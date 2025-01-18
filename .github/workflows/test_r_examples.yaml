@@ -35,6 +35,13 @@ jobs:
           sudo apt-get -y install pandoc
           pandoc --version
 
+      - name: Cache APT packages
+        uses: actions/cache@v2
+        with:
+          path: /var/cache/apt
+          key: ${{ runner.os }}-apt-${{ hashFiles('linux_install_R.sh') }}
+          restore-keys: ${{ runner.os }}-apt-
+
       - name: Install R and packages
         run: |
           sudo ./linux_install_R.sh  --all
