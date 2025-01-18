@@ -36,6 +36,7 @@ jobs:
 
       - uses: conda-incubator/setup-miniconda@v3
         with:
+          auto-update-conda: true
           activate-environment: pgis2
           environment-file: subjects/PGIS2/soubory/conda-environment.yml
           use-only-tar-bz2: true
