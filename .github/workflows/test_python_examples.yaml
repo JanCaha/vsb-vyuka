@@ -20,7 +20,6 @@ jobs:
       contents: write
 
     env:
-      APT_CACHE_DIR: ~/apt_cache
       CONDA_PKG_DIR: ~/conda_pkgs_dir
       R_LIBS_USER: /tmp/Rlibs
       DEBIAN_FRONTEND: noninteractive

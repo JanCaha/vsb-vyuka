@@ -61,16 +61,6 @@ jobs:
       - name: Install R and packages
         run: |
           sudo ./linux_install_R.sh  --all
-      
-      - name: Remove folders
-        run: |
-          sudo rm -rf $APT_CACHE_DIR/lock
-          sudo rm -rf $APT_CACHE_DIR/partial
-
-      - name: List
-        run: |
-          cd $APT_CACHE_DIR
-          ls -l      
 
       - name: IDG skripty
         run: |
@@ -88,3 +78,8 @@ jobs:
             echo "*** $FILE ***"
             Rscript -e "rmarkdown::render('$FILE')" 
           done
+      
+      - name: Remove folders
+        run: |
+          sudo rm -rf $APT_CACHE_DIR/lock
+          sudo rm -rf $APT_CACHE_DIR/partial
