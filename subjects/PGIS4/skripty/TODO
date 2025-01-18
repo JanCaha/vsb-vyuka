@@ -4,3 +4,4 @@ PvGIS 4
 - třída QgsDistanceArea
 - export QgsPrintLayout layout do PDF
 - přidat QgsGeometryEngine a jeho metody pro práci s geometrií
+
