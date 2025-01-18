@@ -1,5 +1,9 @@
 name: Test R examples
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 on: push
 
 jobs:
@@ -29,7 +33,7 @@ jobs:
           cat /etc/apt/apt.conf.d/10keep-cache
           echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/10keep-cache
           cat /etc/apt/apt.conf.d/10keep-cache
-            
+
       - name: R env setup
         run: |
           mkdir -p $R_LIBS_USER
