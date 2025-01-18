@@ -54,9 +54,11 @@ jobs:
       
       - name: Cache APT packages
         uses: actions/cache@v4
+        env:
+          CACHE_NUMBER: 0
         with:
           path: ${{ env.APT_CACHE_DIR}}
-          key: ${{ runner.os }}-apt-${{ hashFiles('linux_install_R.sh') }}-${{ env.WEEK_NUMBER }}
+          key: ${{ runner.os }}-apt-${{ env.CACHE_NUMBER }}-${{ hashFiles('linux_install_R.sh') }}-${{ env.WEEK_NUMBER }}
 
       - name: Install R and packages
         run: |
