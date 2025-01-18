@@ -16,9 +16,11 @@ jobs:
       contents: write
     
     env:
-      R_LIBS_USER: /tmp/Rlibs
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       APT_CACHE_DIR: ~/apt_cache
+      CONDA_PKG_DIR: ~/conda_pkgs_dir
+      R_LIBS_USER: /tmp/Rlibs
+      DEBIAN_FRONTEND: noninteractive
+      QT_QPA_PLATFORM: offscreen 
 
     steps:
             

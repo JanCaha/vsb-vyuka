@@ -17,6 +17,13 @@ jobs:
 
     permissions:
       contents: write
+    
+    env:
+      APT_CACHE_DIR: ~/apt_cache
+      CONDA_PKG_DIR: ~/conda_pkgs_dir
+      R_LIBS_USER: /tmp/Rlibs
+      DEBIAN_FRONTEND: noninteractive
+      QT_QPA_PLATFORM: offscreen 
 
     steps:
       
@@ -28,7 +35,7 @@ jobs:
         env:
           CACHE_NUMBER: 0
         with:
-          path: ~/conda_pkgs_dir
+          path: ${{ env.CONDA_PKG_DIR }}
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-environment.yml') }}
           restore-keys: ${{ runner.os }}-conda-
 
@@ -36,12 +43,12 @@ jobs:
         with:
           activate-environment: env-project
           environment-file: conda-environment.yml
-          use-only-tar-bz2: true
+          pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
       
       - name: Cache APT packages
         uses: actions/cache@v2
         with:
-          path: /var/cache/apt
+          path: ${{ env.APT_CACHE_DIR}}
           key: ${{ runner.os }}-apt-${{ hashFiles('linux_install_R.sh') }}
           restore-keys: ${{ runner.os }}-apt-
 

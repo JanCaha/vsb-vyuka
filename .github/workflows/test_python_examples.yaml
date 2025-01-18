@@ -15,12 +15,14 @@ jobs:
     permissions:
       contents: write
 
-    steps:
+    env:
+      APT_CACHE_DIR: ~/apt_cache
+      CONDA_PKG_DIR: ~/conda_pkgs_dir
+      R_LIBS_USER: /tmp/Rlibs
+      DEBIAN_FRONTEND: noninteractive
+      QT_QPA_PLATFORM: offscreen 
 
-      - name: Modify environment Qt mainly
-        run: | 
-           echo "DEBIAN_FRONTEND=noninteractive" >> $GITHUB_ENV
-           echo "QT_QPA_PLATFORM=offscreen" >> $GITHUB_ENV
+    steps:
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +32,7 @@ jobs:
         env:
           CACHE_NUMBER: 0
         with:
-          path: ~/conda_pkgs_dir
+          path: ${{ env.CONDA_PKG_DIR }}
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-environment.yml') }}
           restore-keys: ${{ runner.os }}-conda-
 
@@ -39,7 +41,7 @@ jobs:
           auto-update-conda: true
           activate-environment: pgis2
           environment-file: subjects/PGIS2/soubory/conda-environment.yml
-          pkgs-dirs: ~/conda_pkgs_dir
+          pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
       
       - name: PGIS2 data
         run: |
