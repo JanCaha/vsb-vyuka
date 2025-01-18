@@ -30,6 +30,7 @@ jobs:
 
       - name: ATP download settings
         run: |
+          grep "Dir::Cache" /etc/apt/apt.conf.d/*
           echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/10keep-cache
 
       - name: R env setup
