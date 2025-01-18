@@ -1,0 +1,59 @@
+[
+  {
+    "listing": "/subjects/pdbs2.html",
+    "items": [
+      "/subjects/PDBS2/prezentace/01_uvod.html",
+      "/subjects/PDBS2/prezentace/02_postgresql.html"
+    ]
+  },
+  {
+    "listing": "/subjects/idg.html",
+    "items": [
+      "/subjects/IDG/prezentace/01_uvod.html",
+      "/subjects/IDG/prezentace/02_uvod_r.html",
+      "/subjects/IDG/prezentace/03_data.html",
+      "/subjects/IDG/prezentace/04_ggplot2.html",
+      "/subjects/IDG/prezentace/05_rmarkdown.html",
+      "/subjects/IDG/prezentace/06_prostorova_data.html",
+      "/subjects/IDG/prezentace/07_statisticke_testovani_a_modelovani.html",
+      "/subjects/IDG/prezentace/08_vybrané_statistické_metody.html"
+    ]
+  },
+  {
+    "listing": "/subjects/pvgis4.html",
+    "items": [
+      "/subjects/PGIS4/prezentace/01_uvod.html",
+      "/subjects/PGIS4/prezentace/02_qgis_python_api.html",
+      "/subjects/PGIS4/prezentace/03_vektorová_data.html",
+      "/subjects/PGIS4/prezentace/04_geometrie.html",
+      "/subjects/PGIS4/prezentace/05_rastrova_data.html",
+      "/subjects/PGIS4/prezentace/06_qgis_nastroje.html",
+      "/subjects/PGIS4/prezentace/07_projekt_layout.html"
+    ]
+  },
+  {
+    "listing": "/subjects/pgis2.html",
+    "items": [
+      "/subjects/PGIS2/prezentace/01_uvod.html",
+      "/subjects/PGIS2/prezentace/02_opakovani_python.html",
+      "/subjects/PGIS2/prezentace/03_gdal_ogr.html",
+      "/subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html",
+      "/subjects/PGIS2/prezentace/05_funkce_tridy.html",
+      "/subjects/PGIS2/prezentace/06_pandas_polars.html"
+    ]
+  },
+  {
+    "listing": "/subjects/pgis3.html",
+    "items": [
+      "/subjects/PGIS3/prezentace/01_uvod.html",
+      "/subjects/PGIS3/prezentace/02_arcpy.html",
+      "/subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html",
+      "/subjects/PGIS3/prezentace/04_editace_vektorových_dat.html",
+      "/subjects/PGIS3/prezentace/05_geometrie.html",
+      "/subjects/PGIS3/prezentace/06_rastrova_data.html",
+      "/subjects/PGIS3/prezentace/07_sprava_vlastniho_kodu.html",
+      "/subjects/PGIS3/prezentace/08_python_toolbox.html",
+      "/subjects/PGIS3/prezentace/09_mappping_module.html"
+    ]
+  }
+]
