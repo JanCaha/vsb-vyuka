@@ -49,8 +49,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.APT_CACHE_DIR}}
-          key: ${{ runner.os }}-apt-${{ hashFiles('linux_install_R.sh') }}
-          restore-keys: ${{ runner.os }}-apt-
+          key: ${{ runner.os }}-apt-${{ hashFiles('linux_install_R.sh') }}-$(date +%V)
 
       - name: Install R and packages
         run: |
