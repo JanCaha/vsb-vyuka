@@ -4,7 +4,12 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-on: push
+on: 
+  push:
+    paths:
+      - '.github/workflows/test_r_examples.yaml'
+      - '**.R'
+      - '**.Rmd'
 
 jobs:
 
