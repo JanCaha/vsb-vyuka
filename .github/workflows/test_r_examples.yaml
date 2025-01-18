@@ -57,6 +57,11 @@ jobs:
         run: |
           sudo ./linux_install_R.sh  --all
       
+      - name: Remove folders
+        run: |
+          sudo rm -rf $APT_CACHE_DIR/lock
+          sudo rm -rf $APT_CACHE_DIR/partial
+
       - name: List
         run: |
           cd $APT_CACHE_DIR
