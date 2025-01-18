@@ -1,13 +1,12 @@
 name: Build website and deploy
 
-on:
-  push:
-    branches: 
-      - main
+on: push
 
 jobs:
 
   build-web-and-deploy:
+
+    if: contains(github.event.head_commit.message, 'preview') || github.ref == 'refs/heads/main'
 
     runs-on: ubuntu-22.04
 
@@ -17,17 +16,50 @@ jobs:
 
     permissions:
       contents: write
+    
+    env:
+      CONDA_PKG_DIR: ~/conda_pkgs_dir
+      R_LIBS_USER: /tmp/Rlibs
+      DEBIAN_FRONTEND: noninteractive
+      QT_QPA_PLATFORM: offscreen 
 
     steps:
+      - name: Set Env
+        run: |
+          echo "APT_CACHE_DIR=$RUNNER_TEMP/apt_cache" >> $GITHUB_ENV
+          echo "WEEK_NUMBER=$(date +%V)" >> $GITHUB_ENV
+
+      - name: ATP download settings
+        run: |
+          mkdir -p $APT_CACHE_DIR/partial
+          echo Dir::Cache::Archives $APT_CACHE_DIR";" | sudo tee /etc/apt/apt.conf.d/50cacheDir
+          echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/10keep-cache
       
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Cache Conda
+        uses: actions/cache@v4
+        env:
+          CACHE_NUMBER: 0
+        with:
+          path: ${{ env.CONDA_PKG_DIR }}
+          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-environment.yml') }}-${{ env.WEEK_NUMBER }}
 
       - uses: conda-incubator/setup-miniconda@v3
         with:
           activate-environment: env-project
           environment-file: conda-environment.yml
+          pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
       
+      - name: Cache APT packages
+        uses: actions/cache@v4
+        env:
+          CACHE_NUMBER: 0
+        with:
+          path: ${{ env.APT_CACHE_DIR}}
+          key: ${{ runner.os }}-apt-${{ env.CACHE_NUMBER }}-${{ hashFiles('linux_install_R.sh') }}-${{ env.WEEK_NUMBER }}
+
       - name: Install R and packages
         run: |
           sudo ./linux_install_R.sh  --all
@@ -50,3 +82,17 @@ jobs:
           render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+      
+      - name: Deploy to Preview
+        if: github.ref != 'refs/heads/main'    
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: _site
+            publish_branch: gh-pages 
+            destination_dir: _preview
+      
+      - name: Remove folders
+        run: |
+          sudo rm -rf $APT_CACHE_DIR/lock
+          sudo rm -rf $APT_CACHE_DIR/partial

@@ -6,7 +6,9 @@ date: 2024-09-30
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
-        theme: [../../../reveal-custom.scss]
+        theme: 
+          - ../../../clean.scss 
+          - ../../../reveal-custom.scss
 footer: "{{< var links.web >}}"
 code-line-numbers: false
 execute:

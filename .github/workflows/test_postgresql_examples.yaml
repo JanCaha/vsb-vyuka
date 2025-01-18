@@ -1,12 +1,20 @@
 name: Test PostgreSQL examples
 
-on: push
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+on: 
+  push:
+    paths:
+      - '.github/workflows/test_postgresql_examples.yaml'
+      - 'subjects/PDBS2/**'
 
 jobs:
 
   test-postgresql-examples:
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     services:
       postgres:

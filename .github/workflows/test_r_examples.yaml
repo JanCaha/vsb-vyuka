@@ -1,6 +1,15 @@
 name: Test R examples
 
-on: push
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+on: 
+  push:
+    paths:
+      - '.github/workflows/test_r_examples.yaml'
+      - '**.R'
+      - '**.Rmd'
 
 jobs:
 
@@ -16,11 +25,24 @@ jobs:
       contents: write
     
     env:
+      CONDA_PKG_DIR: ~/conda_pkgs_dir
       R_LIBS_USER: /tmp/Rlibs
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      DEBIAN_FRONTEND: noninteractive
+      QT_QPA_PLATFORM: offscreen 
 
     steps:
-            
+
+      - name: Set Env
+        run: |
+          echo "APT_CACHE_DIR=$RUNNER_TEMP/apt_cache" >> $GITHUB_ENV
+          echo "WEEK_NUMBER=$(date +%V)" >> $GITHUB_ENV
+
+      - name: ATP download settings
+        run: |
+          mkdir -p $APT_CACHE_DIR/partial
+          echo Dir::Cache::Archives $APT_CACHE_DIR";" | sudo tee /etc/apt/apt.conf.d/50cacheDir
+          echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/10keep-cache
+
       - name: R env setup
         run: |
           mkdir -p $R_LIBS_USER
@@ -30,6 +52,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: Cache APT packages
+        uses: actions/cache@v4
+        env:
+          CACHE_NUMBER: 0
+        with:
+          path: ${{ env.APT_CACHE_DIR}}
+          key: ${{ runner.os }}-apt-${{ env.CACHE_NUMBER }}-${{ hashFiles('linux_install_R.sh') }}-${{ env.WEEK_NUMBER }}
+  
       - name: Pandoc
         run: |
           sudo apt-get -y install pandoc
@@ -38,7 +68,7 @@ jobs:
       - name: Install R and packages
         run: |
           sudo ./linux_install_R.sh  --all
-      
+
       - name: IDG skripty
         run: |
           FILES="./subjects/IDG/skripty/*.R"
@@ -55,3 +85,8 @@ jobs:
             echo "*** $FILE ***"
             Rscript -e "rmarkdown::render('$FILE')" 
           done
+      
+      - name: Remove folders
+        run: |
+          sudo rm -rf $APT_CACHE_DIR/lock
+          sudo rm -rf $APT_CACHE_DIR/partial

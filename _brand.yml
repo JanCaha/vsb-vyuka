@@ -1,0 +1,29 @@
+defaults:
+  bootstrap:
+    # uses: <string>
+    # functions: <string>
+    # mixins: <string>
+    rules: |
+      h2.topics::before {
+        content: '📃 ';
+      }
+
+      h2.seminar-work::before{
+        content: '📝 ';
+      }
+
+      h2.sources::before{
+        content: '📚 ';
+      }
+
+      h2.codes::before{
+        content: '💻 ';
+      }
+
+      h2.instals::before{
+        content: '🖥 ';
+      }
+
+      h2.data-sources::before{
+        content: '🗂️ ';
+      }
