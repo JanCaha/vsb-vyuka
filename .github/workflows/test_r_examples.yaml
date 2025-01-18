@@ -30,6 +30,7 @@ jobs:
 
       - name: ATP download settings
         run: |
+          echo 'Dir::Cache::Archives "$APT_CACHE_DIR";' | sudo tee /etc/apt/apt.conf.d/50cacheDir
           grep "Dir::Cache" /etc/apt/apt.conf.d/*
           echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/10keep-cache
 
