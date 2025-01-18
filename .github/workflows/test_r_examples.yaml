@@ -20,7 +20,7 @@ jobs:
       contents: write
     
     env:
-      APT_CACHE_DIR: ~/apt_cache
+      APT_CACHE_DIR: /home/runner/apt_cache
       CONDA_PKG_DIR: ~/conda_pkgs_dir
       R_LIBS_USER: /tmp/Rlibs
       DEBIAN_FRONTEND: noninteractive
@@ -30,12 +30,6 @@ jobs:
 
       - name: ATP download settings
         run: |
-          echo $(pwd)
-          cd ~
-          echo $(pwd)
-          echo $HOME 
-          cd $HOME
-          echo $(pwd)
           mkdir $APT_CACHE_DIR
           mkdir $APT_CACHE_DIR/partial
           echo Dir::Cache::Archives $APT_CACHE_DIR";" | sudo tee /etc/apt/apt.conf.d/50cacheDir
