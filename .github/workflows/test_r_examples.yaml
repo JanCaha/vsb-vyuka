@@ -20,7 +20,7 @@ jobs:
       contents: write
     
     env:
-      APT_CACHE_DIR: /home/runner/apt_cache
+      APT_CACHE_DIR: ~/apt_cache
       CONDA_PKG_DIR: ~/conda_pkgs_dir
       R_LIBS_USER: /tmp/Rlibs
       DEBIAN_FRONTEND: noninteractive
@@ -30,11 +30,7 @@ jobs:
 
       - name: ATP download settings
         run: |
-          mkdir $APT_CACHE_DIR
-          mkdir $APT_CACHE_DIR/partial
           echo Dir::Cache::Archives $APT_CACHE_DIR";" | sudo tee /etc/apt/apt.conf.d/50cacheDir
-          grep "Dir::Cache" /etc/apt/apt.conf.d/*
-          echo ----------------
           echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/10keep-cache
 
       - name: R env setup
@@ -55,8 +51,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.APT_CACHE_DIR}}
-          key: ${{ runner.os }}-apt-${{ hashFiles('linux_install_R.sh') }}
-          restore-keys: ${{ runner.os }}-apt-
+          key: ${{ runner.os }}-apt-${{ hashFiles('linux_install_R.sh') }}-$(date +%V)
 
       - name: Install R and packages
         run: |
