@@ -27,12 +27,10 @@ jobs:
       QT_QPA_PLATFORM: offscreen 
 
     steps:
-      
+
       - name: ATP download settings
         run: |
-          cat /etc/apt/apt.conf.d/10keep-cache
           echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/10keep-cache
-          cat /etc/apt/apt.conf.d/10keep-cache
 
       - name: R env setup
         run: |
