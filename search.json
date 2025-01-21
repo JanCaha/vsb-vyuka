@@ -687,7 +687,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.6923669 -0.3477389 -0.6117516 -0.7153217 -0.3371391"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.22975417 -0.56160976 -0.03207598 -0.04768346 -0.43059569"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2721,7 +2721,7 @@
     "href": "subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html#shapely",
     "title": "Knihovny fiona, rasterio, shapely",
     "section": "shapely",
-    "text": "shapely\n\nknihovna založená na GEOS\nzpracování geometrií\npři využití s fiona nutné konverze mezi jejich typy\ndokumntace"
+    "text": "shapely\n\nknihovna založená na GEOS\nzpracování geometrií\npři využití s fiona nutné konverze mezi jejich typy\ndokumentace"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html#konverze-geometrií",
@@ -2742,7 +2742,7 @@
     "href": "subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html#gdalogr-fiona-rasterio-shapely",
     "title": "Knihovny fiona, rasterio, shapely",
     "section": "GDAL/OGR  fiona, rasterio, shapely",
-    "text": "GDAL/OGR  fiona, rasterio, shapely\n\nGDAL/OGR má širší možnosti, ale práce je komplikovanější\nknihovny jsou zjednodušené a přístupnější\nnástroje gdal.VectorTranslate(), gdal.Warp(), gdal.Translate() atd. určitě využívat z osgeo\nmodifikace dat je v 90% případů snadnější z knihoven\nkomplexní situace lze řešit přímo použítím osgeo\npoužívat princip KISS (Keep it simple, stupid!) – začít s jednoduchou verzí, dokud funguje a upgradovat pouze pokud je to nutné"
+    "text": "GDAL/OGR  fiona, rasterio, shapely\n\nGDAL/OGR má širší možnosti, ale práce je komplikovanější\nknihovny jsou zjednodušené a přístupnější\nnástroje gdal.VectorTranslate(), gdal.Warp(), gdal.Translate() atd. určitě využívat z osgeo\nzákladní modifikace či zpracování dat je v 90% případů snadnější z knihoven\nkomplexní situace lze řešit přímo použítím osgeo\npoužívat princip KISS (Keep it simple, stupid!) – začít s jednoduchou verzí, dokud funguje a upgradovat pouze pokud je to nutné"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#objekty-pro-práci-s-vektorovými-daty",
