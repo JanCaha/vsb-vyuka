@@ -46,7 +46,7 @@ execute:
 - při využití s [fiona]{.software} nutné konverze mezi jejich typy
 - [dokumntace](https://shapely.readthedocs.io/en/stable/index.html)
 
-## Konvrze geometrií
+## Konverze geometrií
 
 - modul `shapely.geometry`
 - z [fiona]{.software} do [shapely]{.software} funkce `shape(feature.geometry)`
