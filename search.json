@@ -666,7 +666,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.74864419 -0.40956623 -0.11973435 -0.25414120 -0.04509348"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.02414119 -1.18127027 -0.09425728 -0.31657959 -1.11671018"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2426,7 +2426,7 @@
     "href": "subjects/pgis2.html",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "",
-    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely\nGithub Copilot\nfunkce a objekty v Pythonu\nPandas, geopandas, Polars, geopolars",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely\nGithub Copilot - otestování a využití\nfunkce a objekty v Pythonu\nPandas, geopandas, Polars, (geopolars)",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2437,7 +2437,7 @@
     "href": "subjects/pgis2.html#řešená-témata",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "",
-    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely\nGithub Copilot\nfunkce a objekty v Pythonu\nPandas, geopandas, Polars, geopolars",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely\nGithub Copilot - otestování a využití\nfunkce a objekty v Pythonu\nPandas, geopandas, Polars, (geopolars)",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2574,7 +2574,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#vs-code",
     "title": "Opakování Pythonu",
     "section": "VS Code",
-    "text": "VS Code\n\nIDE pro řadu jazyků a technologií\nklíčové jsou extenze, které posunují funcionalitu od textového editoru více k “težšímu” IDE\nprofily - pro různé technologie či využití\nsynchronizace po přihlášení\ninstalace - lze bez administrátorských práv"
+    "text": "VS Code\n\nIDE pro řadu jazyků a technologií\nklíčové jsou extenze, které posunují funkcionalitu od textového editoru více k “težšímu” IDE\nprofily - pro různé technologie či využití\nsynchronizace po přihlášení\ninstalace - lze bez administrátorských práv"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#vs-code-extenze-pro-python",
@@ -2588,7 +2588,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#conda",
     "title": "Opakování Pythonu",
     "section": "Conda",
-    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})\n\nconda create -n pgis2 python=3.11\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
+    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})\n\nconda create -n pgis2 python=3.12\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#proměnné",
@@ -2609,7 +2609,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#cykly",
     "title": "Opakování Pythonu",
     "section": "Cykly",
-    "text": "Cykly\n\nkonstrukce for a while\npřeskočení v cyklu continue a ukončení cyklu break\nspeciální případ for s enumerate"
+    "text": "Cykly\n\nse známým počtem opakování, bez známého počtu opakování\nkonstrukce for a while\npřeskočení v cyklu continue a ukončení cyklu break\nspeciální případ for s enumerate"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#import-knihoven-či-modulů",
@@ -2640,11 +2640,11 @@
     "text": "Debugování\n\nproces nahlížení na stav programu za jeho běhu\numožňuje nahlížet do paměti programu v jeho různých fázích a stavech\nv Pythonu máme možnost do proměnných za běhu i zasahovat\nukázka v VS Code"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#konextové-managery",
-    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#konextové-managery",
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#kontextové-managery",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#kontextové-managery",
     "title": "Opakování Pythonu",
-    "section": "Konextové managery",
-    "text": "Konextové managery\n\nkonstrukce with\nvhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pěvně pojí\nobjekty, které využívají dvou magických metod __enter__ a __exit__\nukázka se souborem\nukázka s vlastním managerem"
+    "section": "Kontextové managery",
+    "text": "Kontextové managery\n\nkonstrukce with\nvhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pevně pojí\n\nnapř. zápis textu do souboru - soubor otevřeme, zapíšeme text a soubor zavřeme (to nemusí být explicitní, může být i “neviditelný”)\n\n\nobjekty, které využívají dvou magických metod __enter__ a __exit__\nukázka se souborem\nukázka s vlastním managerem"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování-proměnných",

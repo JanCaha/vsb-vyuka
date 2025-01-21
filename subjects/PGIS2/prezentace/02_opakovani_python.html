@@ -224,7 +224,7 @@ Jan Caha
 <h2><span class="software">VS Code</span></h2>
 <ul>
 <li>IDE pro řadu jazyků a technologií</li>
-<li>klíčové jsou extenze, které posunují funcionalitu od textového editoru více k “težšímu” IDE</li>
+<li>klíčové jsou extenze, které posunují funkcionalitu od textového editoru více k “težšímu” IDE</li>
 <li>profily - pro různé technologie či využití</li>
 <li>synchronizace po přihlášení</li>
 <li>instalace - lze bez administrátorských práv</li>
@@ -246,7 +246,7 @@ Jan Caha
 <li>systém pro správu Pythonu a jeho balíčků</li>
 <li>použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pgis2 python=3.11</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pgis2 python=3.12</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> config <span class="at">--add</span> channels conda-forge</span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install GDAL</span>
@@ -279,6 +279,7 @@ Jan Caha
 <section id="cykly" class="slide level2">
 <h2>Cykly</h2>
 <ul>
+<li>se známým počtem opakování, bez známého počtu opakování</li>
 <li>konstrukce <code>for</code> a <code>while</code></li>
 <li>přeskočení v cyklu <code>continue</code> a ukončení cyklu <code>break</code></li>
 <li>speciální případ <code>for</code> s <code>enumerate</code></li>
@@ -318,7 +319,7 @@ Jan Caha
 <li>tisk objektu bez funkce <code>__repr__()</code></li>
 <li>tiskne informace o umístění objektu v paměti</li>
 </ul>
-<div id="9b41a97e" class="cell" data-execution_count="1">
+<div id="249b7e2b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -326,7 +327,7 @@ Jan Caha
 <span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7f56c252c9e0&gt;</code></pre>
+<pre><code>&lt;__main__.A object at 0x7f563ed7f1a0&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -336,7 +337,7 @@ Jan Caha
 <li>tisk objektu s funkcí <code>__repr__()</code></li>
 <li>tiskne řetězec z této funkce</li>
 </ul>
-<div id="828d8466" class="cell" data-execution_count="2">
+<div id="38142068" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -360,11 +361,15 @@ Jan Caha
 <li>ukázka v <span class="software">VS Code</span></li>
 </ul>
 </section>
-<section id="konextové-managery" class="slide level2">
-<h2>Konextové managery</h2>
+<section id="kontextové-managery" class="slide level2">
+<h2>Kontextové managery</h2>
 <ul>
 <li>konstrukce <code>with</code></li>
-<li>vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pěvně pojí</li>
+<li>vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pevně pojí
+<ul>
+<li>např. zápis textu do souboru - soubor otevřeme, zapíšeme text a soubor zavřeme (to nemusí být explicitní, může být i “neviditelný”)<br>
+</li>
+</ul></li>
 <li>objekty, které využívají dvou magických metod <code>__enter__</code> a <code>__exit__</code></li>
 <li>ukázka se souborem</li>
 <li>ukázka s vlastním managerem</li>
@@ -377,7 +382,7 @@ Jan Caha
 <li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
 <li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
 </ul>
-<div id="cd281830" class="cell" data-execution_count="3">
+<div id="a2a32dd8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
