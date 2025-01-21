@@ -115,9 +115,28 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 - **Markdown All in One** (yzhang.markdown-all-in-one) - podpora Markdown formátu
 - **markdownlint** (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu
 
+```json
+{
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+		"GitHub.copilot",
+		"streetsidesoftware.code-spell-checker-czech",
+		"jock.svg",
+		"wayou.vscode-todo-highlight",
+		"redhat.vscode-yaml",
+		"yzhang.markdown-all-in-one",
+		"DavidAnson.vscode-markdownlint",
+		
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+	]
+}
+```
+
 ### Doporučené extenze pro Python
 
-- některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu [PGIS2](../subjects/pgis2.qmd)
+- některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda environmentu u předmětu [PGIS2](../subjects/pgis2.qmd)
 - níže následuje seznam doporučených extenzí pro Python
   
 ```json
