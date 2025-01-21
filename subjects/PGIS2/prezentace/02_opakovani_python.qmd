@@ -28,7 +28,7 @@ execute:
 ## [VS Code]{.software}
 
 - IDE pro řadu jazyků a technologií
-- klíčové jsou extenze, které posunují funcionalitu od textového editoru více k "težšímu" IDE
+- klíčové jsou extenze, které posunují funkcionalitu od textového editoru více k "težšímu" IDE
 - profily - pro různé technologie či využití
 - synchronizace po přihlášení
 - instalace - lze bez administrátorských práv
@@ -48,7 +48,7 @@ execute:
 - použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})
   
 ```bash
-conda create -n pgis2 python=3.11
+conda create -n pgis2 python=3.12
 conda activate pgis2
 conda config --add channels conda-forge
 conda install GDAL
@@ -73,6 +73,7 @@ conda deactivate
 
 ## Cykly
 
+- se známým počtem opakování, bez známého počtu opakování
 - konstrukce `for` a `while`
 - přeskočení v cyklu `continue` a ukončení cyklu `break`
 - speciální případ `for` s `enumerate`
@@ -137,10 +138,11 @@ print(a)
 - v Pythonu máme možnost do proměnných za běhu i zasahovat
 - ukázka v [VS Code]{.software}
 
-## Konextové managery
+## Kontextové managery
 
 - konstrukce `with`
-- vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pěvně pojí
+- vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pevně pojí
+  - např. zápis textu do souboru - soubor otevřeme, zapíšeme text a soubor zavřeme (to nemusí být explicitní, může být i "neviditelný")  
 - objekty, které využívají dvou magických metod `__enter__` a `__exit__` 
 - ukázka se souborem
 - ukázka s vlastním managerem
