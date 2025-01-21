@@ -409,31 +409,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Markdown All in One</strong> (yzhang.markdown-all-in-one) - podpora Markdown formátu</li>
 <li><strong>markdownlint</strong> (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu</li>
 </ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">which</span> <span class="er">should</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"recommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"GitHub.copilot"</span><span class="ot">,</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"streetsidesoftware.code-spell-checker-czech"</span><span class="ot">,</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"jock.svg"</span><span class="ot">,</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"wayou.vscode-todo-highlight"</span><span class="ot">,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"redhat.vscode-yaml"</span><span class="ot">,</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"yzhang.markdown-all-in-one"</span><span class="ot">,</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"DavidAnson.vscode-markdownlint"</span><span class="ot">,</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">recommended</span> <span class="er">by</span> <span class="er">VS</span> <span class="er">Code</span> <span class="er">that</span> <span class="er">should</span> <span class="er">not</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"unwantedRecommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="doporučené-extenze-pro-python" class="level3">
 <h3 class="anchored" data-anchor-id="doporučené-extenze-pro-python">Doporučené extenze pro Python</h3>
 <ul>
-<li>některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda eviromentu u předmětu <a href="../subjects/pgis2.html">PGIS2</a></li>
+<li>některé extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda environmentu u předmětu <a href="../subjects/pgis2.html">PGIS2</a></li>
 <li>níže následuje seznam doporučených extenzí pro Python</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">which</span> <span class="er">should</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"recommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.debugpy"</span><span class="ot">,</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.vscode-pylance"</span><span class="ot">,</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.autopep8"</span><span class="ot">,</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.black-formatter"</span><span class="ot">,</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.flake8"</span><span class="ot">,</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.isort"</span><span class="ot">,</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.mypy-type-checker"</span><span class="ot">,</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.pylint"</span><span class="ot">,</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.python"</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">recommended</span> <span class="er">by</span> <span class="er">VS</span> <span class="er">Code</span> <span class="er">that</span> <span class="er">should</span> <span class="er">not</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"unwantedRecommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">which</span> <span class="er">should</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"recommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.debugpy"</span><span class="ot">,</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.vscode-pylance"</span><span class="ot">,</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.autopep8"</span><span class="ot">,</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.black-formatter"</span><span class="ot">,</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.flake8"</span><span class="ot">,</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.isort"</span><span class="ot">,</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.mypy-type-checker"</span><span class="ot">,</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.pylint"</span><span class="ot">,</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.python"</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">recommended</span> <span class="er">by</span> <span class="er">VS</span> <span class="er">Code</span> <span class="er">that</span> <span class="er">should</span> <span class="er">not</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"unwantedRecommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="nastavení-projektů-využívajících-qgis-python-api-na-windows" class="level3">
 <h3 class="anchored" data-anchor-id="nastavení-projektů-využívajících-qgis-python-api-na-windows">Nastavení projektů využívajících QGIS Python API na Windows</h3>
