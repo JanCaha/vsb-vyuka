@@ -33,12 +33,12 @@ filters:
 
 ## Řešená témata{.topics}
 
-- opakování základů Pythonu
-- knihovna GDAL/OGR
-- knihovny rasterio, fiona, shapely
-- Github Copilot
+- opakování základů [Pythonu]{.software} 
+- knihovna [GDAL/OGR]{.software}
+- knihovny [rasterio]{.software}, [fiona]{.software}, [shapely]{.software}
+- Github Copilot - otestování a využití
 - funkce a objekty v Pythonu 
-- Pandas, geopandas, Polars, geopolars
+- [Pandas]{.software}, [geopandas]{.software}, [Polars]{.software}, ([geopolars]{.software})
 
 ## Prezentace{.presentations}
 
