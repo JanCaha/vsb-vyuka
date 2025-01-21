@@ -44,7 +44,7 @@ execute:
 - knihovna založená na [GEOS]{.software}
 - zpracování geometrií
 - při využití s [fiona]{.software} nutné konverze mezi jejich typy
-- [dokumntace](https://shapely.readthedocs.io/en/stable/index.html)
+- [dokumentace](https://shapely.readthedocs.io/en/stable/index.html)
 
 ## Konverze geometrií
 
@@ -66,7 +66,7 @@ execute:
 - GDAL/OGR má širší možnosti, ale práce je komplikovanější
 - knihovny jsou zjednodušené a přístupnější
 - nástroje `gdal.VectorTranslate()`, `gdal.Warp()`, `gdal.Translate()` atd. určitě využívat z `osgeo`
-- modifikace dat je v 90% případů snadnější z knihoven 
+- základní modifikace či zpracování dat je v 90% případů snadnější z knihoven 
 - komplexní situace lze řešit přímo použítím `osgeo`
 - používat princip **KISS** (Keep it simple, stupid!)  -- začít s jednoduchou verzí, dokud funguje a upgradovat pouze pokud je to nutné
    
