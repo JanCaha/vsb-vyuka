@@ -309,14 +309,14 @@
     "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#popis-gdalogr",
     "title": "Knihovna GDAL/OGR",
     "section": "Popis GDAL/OGR",
-    "text": "Popis GDAL/OGR\n\nnízkoúrovňová knihovna\nv Pythonu zpřístupňujeme její binding - dokumentace\nkód knihovny v C/C++ -&gt; odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)\nvětšinu objektů uložených v proměnných je vhodné po použití nastavit na None, čímž se explicitně uvolní prostředky\nknihovna má hlavní modul osgeo a několik dílčích modulů\n\ngdal - rastry\nogr - vektory\nosr - souřadnicové systémy\n\nkód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a mypy dobře kontrolovat kód"
+    "text": "Popis GDAL/OGR\n\nnízkoúrovňová knihovna\nv Pythonu zpřístupňujeme její binding - dokumentace\nkód knihovny v C/C++ -&gt; odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)\nvětšinu objektů uložených v proměnných je vhodné po použití nastavit na None, čímž se explicitně uvolní prostředky\nknihovna má hlavní modul osgeo a několik dílčích modulů\n\ngdal - rastry\nogr - vektory\nosr - souřadnicové systémy\n\nkód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a mypy dobře kontrolovat kód"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#příklady-typování",
     "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#příklady-typování",
     "title": "Knihovna GDAL/OGR",
     "section": "Příklady typování",
-    "text": "Příklady typování\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nfile = \"soubor.txt\"\n\nds: gdal.Dataset = gdal.OpenEx(file.as_posix())\n\nlayer: ogr.Layer = ds.GetLayer()"
+    "text": "Příklady typování\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nfile = Path(__file__).parent / \"soubor.txt\"\n\nds: gdal.Dataset = gdal.OpenEx(file.as_posix())\n\nlayer: ogr.Layer = ds.GetLayer()"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#otevírání-souborů",
@@ -340,6 +340,27 @@
     "text": "Drivery\n\nkaždý podporovaný formát má svůj vlastní\nmohou být pouze pro čtení (DWG), značná část ale podporuje i zápis (GPKG, GeoTiff)\nněkteré drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (GeoJSON)\nčasto není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je\ndrivery MEM - raster a Memory - vektor  pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu"
   },
   {
+    "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#obecné-struktury",
+    "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#obecné-struktury",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Obecné struktury",
+    "text": "Obecné struktury\n\ndrivery gdal.Driver a ogr.Driver - reprezentace jednotlivých driverů\nsouřadnicový systém osr.SpatialReference - reprezentace souřadnicového systému a operací s nimi"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#gdal-struktury",
+    "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#gdal-struktury",
+    "title": "Knihovna GDAL/OGR",
+    "section": "GDAL Struktury",
+    "text": "GDAL Struktury\n\ndatový zdroj gdal.Dataset - základní objekt pro práci s daty, zdroj dat\npásmo gdal.Band - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna\narray gdal.MDArray - sice existuje, ale v Pythonu spíše použímáme numpy.array\na další, ale tyto jsou nejdůležitější"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#ogr-struktury",
+    "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#ogr-struktury",
+    "title": "Knihovna GDAL/OGR",
+    "section": "OGR Struktury",
+    "text": "OGR Struktury\n\ndatový zdroj ogr.DataSource (ale může být i gdal.Dataset) - základní objekt pro práci s daty, zdroj dat\nvrstva ogr.Layer - reprezentace jedné vrstvy v datovém zdroji\ndefinice vrstvy ogr.FeatureDefn - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)\nprvek ogr.Feature - reprezentace jednoho prvku ve vrstvě\ngeometrie ogr.Geometry - reprezentace geometrie prvku\natributy ogr.Field - reprezentace atributu prvku\na další, ale tyto jsou nejdůležitější"
+  },
+  {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#příklad",
     "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#příklad",
     "title": "Knihovna GDAL/OGR",
@@ -358,7 +379,7 @@
     "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#spouštění-operací-z-gdal",
     "title": "Knihovna GDAL/OGR",
     "section": "Spouštění operací z GDAL",
-    "text": "Spouštění operací z GDAL\n\nhlavní funkce\ngdal.VectorTranslate() (gdal.VectorTranslateOptions()) pro vektorová data\npro rastrová data je funcí vícero gdal.Translate() (gdal.TranslateOptions()), gdal.Warp() (gdal.WarpOptions())\nmnoho dalších popsaných v dokumentaci\nmnožství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí\nvšude, kde se používají cesty k souborům lze použít cesty /vsi* nebo přímo objekty gdal.Dataset"
+    "text": "Spouštění operací z GDAL\n\nhlavní funkce\ngdal.VectorTranslate() (gdal.VectorTranslateOptions()) pro vektorová data\npro rastrová data je funkcí vícero gdal.Translate() (gdal.TranslateOptions()), gdal.Warp() (gdal.WarpOptions())\nmnoho dalších popsaných v dokumentaci\nmnožství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí\nvšude, kde se používají cesty k souborům lze použít cesty /vsi* nebo přímo objekty gdal.Dataset"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#práce-s-daty-v-paměti",
@@ -666,7 +687,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.02414119 -1.18127027 -0.09425728 -0.31657959 -1.11671018"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.6923669 -0.3477389 -0.6117516 -0.7153217 -0.3371391"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2703,11 +2724,11 @@
     "text": "shapely\n\nknihovna založená na GEOS\nzpracování geometrií\npři využití s fiona nutné konverze mezi jejich typy\ndokumntace"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html#konvrze-geometrií",
-    "href": "subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html#konvrze-geometrií",
+    "objectID": "subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html#konverze-geometrií",
+    "href": "subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html#konverze-geometrií",
     "title": "Knihovny fiona, rasterio, shapely",
-    "section": "Konvrze geometrií",
-    "text": "Konvrze geometrií\n\nmodul shapely.geometry\nz fiona do shapely funkce shape(feature.geometry)\nz shapely do fiona funkce mapping()"
+    "section": "Konverze geometrií",
+    "text": "Konverze geometrií\n\nmodul shapely.geometry\nz fiona do shapely funkce shape(feature.geometry)\nz shapely do fiona funkce mapping()"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html#rasterio",
