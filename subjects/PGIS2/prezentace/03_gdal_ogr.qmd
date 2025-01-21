@@ -20,7 +20,7 @@ execute:
 
 - nízkoúrovňová knihovna
 - v Pythonu zpřístupňujeme její **binding** - [dokumentace](https://gdal.org/api/python/osgeo.html)
-- kód knihovny v [C/C++]{.software} -> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historckými přístupy)
+- kód knihovny v [C/C++]{.software} -> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)
 - většinu objektů uložených v proměnných je vhodné po použití nastavit na `None`, čímž se explicitně uvolní prostředky
 - knihovna má hlavní modul `osgeo` a několik dílčích modulů
   -  `gdal` - rastry
@@ -31,15 +31,15 @@ execute:
 ## Příklady typování
 
 ```{python}
-#| eval: false
-#| 
+# | eval: false
+# |
 from pathlib import Path
 
 from osgeo import gdal, ogr
 
 gdal.UseExceptions()
 
-file = "soubor.txt"
+file = Path(__file__).parent / "soubor.txt"
 
 ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
 
@@ -68,6 +68,28 @@ layer: ogr.Layer = ds.GetLayer()
 - některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (**GeoJSON**)
 - často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je
 - drivery `MEM` - raster a `Memory` - vektor {{< fa arrow-right >}} pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu
+
+## Obecné struktury
+
+- drivery `gdal.Driver` a `ogr.Driver` - reprezentace jednotlivých driverů
+- souřadnicový systém `osr.SpatialReference` - reprezentace souřadnicového systému a operací s nimi
+
+## GDAL Struktury
+
+- datový zdroj `gdal.Dataset` - základní objekt pro práci s daty, zdroj dat
+- pásmo `gdal.Band` - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna
+- array `gdal.MDArray` - sice existuje, ale v Pythonu spíše použímáme `numpy.array` 
+- a další, ale tyto jsou nejdůležitější
+ 
+## OGR Struktury
+
+- datový zdroj `ogr.DataSource` (ale může být i `gdal.Dataset`) - základní objekt pro práci s daty, zdroj dat
+- vrstva `ogr.Layer` - reprezentace jedné vrstvy v datovém zdroji
+- definice vrstvy `ogr.FeatureDefn` - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)
+- prvek `ogr.Feature` - reprezentace jednoho prvku ve vrstvě
+- geometrie `ogr.Geometry` - reprezentace geometrie prvku
+- atributy `ogr.Field` - reprezentace atributu prvku
+- a další, ale tyto jsou nejdůležitější 
 
 ## Příklad
 
@@ -107,7 +129,7 @@ if __name__ == "__main__":
 
 - hlavní funkce
 - `gdal.VectorTranslate()` (`gdal.VectorTranslateOptions()`) pro vektorová data
-- pro rastrová data je funcí vícero `gdal.Translate()` (`gdal.TranslateOptions()`), `gdal.Warp()` (`gdal.WarpOptions()`)
+- pro rastrová data je funkcí vícero `gdal.Translate()` (`gdal.TranslateOptions()`), `gdal.Warp()` (`gdal.WarpOptions()`)
 - mnoho dalších popsaných v dokumentaci
 - množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí
 - všude, kde se používají cesty k souborům lze použít cesty `/vsi*` nebo přímo objekty `gdal.Dataset`
