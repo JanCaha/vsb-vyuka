@@ -681,7 +681,7 @@
     "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#gdal-struktury",
     "title": "Knihovna GDAL/OGR",
     "section": "GDAL Struktury",
-    "text": "GDAL Struktury\n\ndatový zdroj gdal.Dataset - základní objekt pro práci s daty, zdroj dat\npásmo gdal.Band - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna\narray gdal.MDArray - sice existuje, ale v Pythonu spíše použímáme numpy.array\na další, ale tyto jsou nejdůležitější"
+    "text": "GDAL Struktury\n\ndatový zdroj gdal.Dataset - základní objekt pro práci s daty, zdroj dat\npásmo gdal.Band - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna\narray gdal.MDArray - sice existuje, ale v Pythonu spíše používáme numpy.array\na další, ale tyto jsou nejdůležitější"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#ogr-struktury",
@@ -2366,7 +2366,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.76310635 -0.04710615 -0.08198251 -0.18757885 -1.36716446"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.80680759 -0.66298794 -2.32820158 -0.01078635 -0.47375637"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
