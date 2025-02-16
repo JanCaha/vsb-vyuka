@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-02-26">
+  <meta name="dcterms.date" content="2025-02-17">
   <title>Výuka - Jan Caha – Opakování Pythonu</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -207,7 +207,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-02-26</p>
+  <p class="date">2025-02-17</p>
 </section>
 <section id="python" class="slide level2">
 <h2>Python</h2>
@@ -237,7 +237,7 @@ Jan Caha
 <li>formátování kódu - <span class="software">Black Formatter, isort</span></li>
 <li>kontroly kódu - <span class="software">autopep8, Flake8, Mypy Type Checker, Pylance, Pylint</span></li>
 <li>generování docstringů - autoDocstring - <span class="software">Python Docstring Generator</span></li>
-<li><span class="software">Github Copilot</span> - přihlášení, pouze pokud máte přístup (studenti mají)</li>
+<li><span class="software">Github Copilot</span> - přihlášení, pouze pokud máte přístup (studenti mají) - nově existuje i limitovaná verze zdarma</li>
 </ul>
 </section>
 <section id="conda" class="slide level2">
@@ -245,6 +245,7 @@ Jan Caha
 <ul>
 <li>systém pro správu Pythonu a jeho balíčků</li>
 <li>použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})</li>
+<li>oficiální a neoficiální kanály (<code>conda-forge</code>)</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> pgis2 python=3.12</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
@@ -281,8 +282,8 @@ Jan Caha
 <ul>
 <li>se známým počtem opakování, bez známého počtu opakování</li>
 <li>konstrukce <code>for</code> a <code>while</code></li>
-<li>přeskočení v cyklu <code>continue</code> a ukončení cyklu <code>break</code></li>
-<li>speciální případ <code>for</code> s <code>enumerate</code></li>
+<li>přeskočení iterace v cyklu <code>continue</code> a ukončení cyklu <code>break</code></li>
+<li>speciální případ <code>for</code> s <code>enumerate</code> (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)</li>
 </ul>
 </section>
 <section id="import-knihoven-či-modulů" class="slide level2">
@@ -309,7 +310,6 @@ Jan Caha
 <li>zapisují je jako <code>__nazev__</code></li>
 <li>odkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování</li>
 <li>ukázka - tvorba objektu a funkce pro tisk</li>
-<li>příklad tvorba objektu a funkce pro tisk</li>
 <li>do této skupiny lze zařadit i soubor <code>__init__.py</code>, jehož existence označuje složku jako Pythonový modul</li>
 </ul>
 </section>
@@ -319,7 +319,7 @@ Jan Caha
 <li>tisk objektu bez funkce <code>__repr__()</code></li>
 <li>tiskne informace o umístění objektu v paměti</li>
 </ul>
-<div id="fb33cbaa" class="cell" data-execution_count="1">
+<div id="88f1bfc2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -327,7 +327,7 @@ Jan Caha
 <span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7ffbcc22ffb0&gt;</code></pre>
+<pre><code>&lt;__main__.A object at 0x7f87418ade80&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -337,7 +337,7 @@ Jan Caha
 <li>tisk objektu s funkcí <code>__repr__()</code></li>
 <li>tiskne řetězec z této funkce</li>
 </ul>
-<div id="9cf06492" class="cell" data-execution_count="2">
+<div id="0a253383" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -356,7 +356,7 @@ Jan Caha
 <h2>Debugování</h2>
 <ul>
 <li>proces nahlížení na stav programu za jeho běhu</li>
-<li>umožňuje nahlížet do paměti programu v jeho různých fázích a stavech</li>
+<li>umožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech</li>
 <li>v Pythonu máme možnost do proměnných za běhu i zasahovat</li>
 <li>ukázka v <span class="software">VS Code</span></li>
 </ul>
@@ -365,7 +365,7 @@ Jan Caha
 <h2>Kontextové managery</h2>
 <ul>
 <li>konstrukce <code>with</code></li>
-<li>vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pevně pojí
+<li>vhodné tam kde existuje nějaký logický začátek a konec operace nebo operace, které se s počátkem a koncem pevně pojí
 <ul>
 <li>např. zápis textu do souboru - soubor otevřeme, zapíšeme text a soubor zavřeme (to nemusí být explicitní, může být i “neviditelný”)<br>
 </li>
@@ -382,7 +382,7 @@ Jan Caha
 <li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
 <li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
 </ul>
-<div id="406cd3fd" class="cell" data-execution_count="3">
+<div id="bbc1e4b4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
@@ -416,6 +416,7 @@ Jan Caha
 <li>např. <span class="software">mypy</span> nutí uživatele psát rozumně typovaný kód a používat ho správně</li>
 <li>celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu</li>
 <li>většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit</li>
+<li>konkrétní hlášky lze obvykle potlačit, pokud jsou nežádoucí, buď přímo v kódu, nebo v konfiguraci nástroje</li>
 </ul>
 </section></section>
 <section id="dotazy" class="title-slide slide level1 center">
