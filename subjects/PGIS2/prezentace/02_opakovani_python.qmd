@@ -2,7 +2,7 @@
 title: "Opakování Pythonu"
 subtitle: "Programování v GIS 2"
 author: "Jan Caha"
-date: 2024-02-26
+date: 2025-02-17
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -39,14 +39,15 @@ execute:
 - formátování kódu - [Black Formatter, isort]{.software}
 - kontroly kódu - [autopep8, Flake8, Mypy Type Checker, Pylance, Pylint]{.software}
 - generování docstringů - autoDocstring - [Python Docstring Generator]{.software}
-- [Github Copilot]{.software} - přihlášení, pouze pokud máte přístup (studenti mají)
+- [Github Copilot]{.software} - přihlášení, pouze pokud máte přístup (studenti mají) - nově existuje i limitovaná verze zdarma
   
 
 ## Conda
 
 - systém pro správu Pythonu a jeho balíčků
 - použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})
-  
+- oficiální a neoficiální kanály (`conda-forge`)
+
 ```bash
 conda create -n pgis2 python=3.12
 conda activate pgis2
@@ -75,8 +76,8 @@ conda deactivate
 
 - se známým počtem opakování, bez známého počtu opakování
 - konstrukce `for` a `while`
-- přeskočení v cyklu `continue` a ukončení cyklu `break`
-- speciální případ `for` s `enumerate`
+- přeskočení iterace v cyklu `continue` a ukončení cyklu `break`
+- speciální případ `for` s `enumerate` (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)
    
 ## Import knihoven či modulů
 
@@ -97,7 +98,6 @@ conda deactivate
 - zapisují je jako `__nazev__` 
 - odkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování
 - ukázka - tvorba objektu a funkce pro tisk
-- příklad tvorba objektu a funkce pro tisk
 - do této skupiny lze zařadit i soubor `__init__.py`, jehož existence označuje složku jako Pythonový modul
 
 ---
@@ -134,14 +134,14 @@ print(a)
 ## Debugování
 
 - proces nahlížení na stav programu za jeho běhu
-- umožňuje nahlížet do paměti programu v jeho různých fázích a stavech
+- umožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech
 - v Pythonu máme možnost do proměnných za běhu i zasahovat
 - ukázka v [VS Code]{.software}
 
 ## Kontextové managery
 
 - konstrukce `with`
-- vhodné tam kde existuje nějaký logický začátek a konec operace a operace, které se s počátkem a koncem pevně pojí
+- vhodné tam kde existuje nějaký logický začátek a konec operace nebo operace, které se s počátkem a koncem pevně pojí
   - např. zápis textu do souboru - soubor otevřeme, zapíšeme text a soubor zavřeme (to nemusí být explicitní, může být i "neviditelný")  
 - objekty, které využívají dvou magických metod `__enter__` a `__exit__` 
 - ukázka se souborem
@@ -185,6 +185,7 @@ pip install --pre geopolars
 - např. [mypy]{.software} nutí uživatele psát rozumně typovaný kód a používat ho správně
 - celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu
 - většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit 
+- konkrétní hlášky lze obvykle potlačit, pokud jsou nežádoucí, buď přímo v kódu, nebo v konfiguraci nástroje
 
 # Dotazy? {.center}
 

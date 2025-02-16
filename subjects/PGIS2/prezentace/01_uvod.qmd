@@ -2,7 +2,7 @@
 title: "Úvodní cvičení"
 subtitle: "Programování v GIS 2"
 author: "Jan Caha"
-date: 2024-02-19
+date: 2025-02-17
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -33,7 +33,6 @@ execute:
 - odchytávání výjimek
 - práce s GitHub
   
-  
 ## Dílčí úlohy
 
 - použitelný a čitelný kód 
@@ -50,7 +49,7 @@ execute:
 
 - prezentace
 - kód z cvičení
-- budou dostupné (kde upřesním)
+- budou dostupné (viz link dole)
 
 ## Zakončení předmětu
 
