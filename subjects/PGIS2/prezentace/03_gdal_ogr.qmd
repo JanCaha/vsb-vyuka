@@ -49,7 +49,7 @@ layer: ogr.Layer = ds.GetLayer()
 ## Otevírání souborů
 
 - funkce `gdal.OpenEx()` (rastry i vektory) a `ogr.Open()` (pouze vektory)
-- jako první první parametr cesta k souboru 
+- jako první první parametr cesta k souboru
   - buď lokální - klasický zápis
   - nebo virtuální začínající `/vsi*` kde `*` je typ virtuální složky
 
@@ -78,7 +78,7 @@ layer: ogr.Layer = ds.GetLayer()
 
 - datový zdroj `gdal.Dataset` - základní objekt pro práci s daty, zdroj dat
 - pásmo `gdal.Band` - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna
-- array `gdal.MDArray` - sice existuje, ale v Pythonu spíše použímáme `numpy.array` 
+- array `gdal.MDArray` - sice existuje, ale v Pythonu spíše používáme `numpy.array` 
 - a další, ale tyto jsou nejdůležitější
  
 ## OGR Struktury
