@@ -6,5 +6,15 @@
     //    "C:\\OSGeo4W\\apps\\qgis\\python"
     //],
     "r.lsp.promptToInstall": false,
-    "github.copilot.chat.codeGeneration.instructions": [{"file": ".copilot-instructions.md"}]
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "file": ".copilot-instructions.md"
+        }
+    ],
+    "cSpell.words": [
+        "debugování",
+        "GDAL",
+        "Pythonu",
+        "replikovatelné"
+    ]
 }
