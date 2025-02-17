@@ -209,8 +209,35 @@ Jan Caha
 
   <p class="date">2025-02-17</p>
 </section>
+<section id="práce-s-pythonem" class="slide level2">
+<h2>Práce s Pythonem</h2>
+<ul>
+<li>cílem je naučit se rozumné návyky a postupy při programování v Pythonu</li>
+<li>předcházet nevhodným postupům, návykům a chybám, které komplikují v dlouhodobém horizontu práci</li>
+<li>i když některé postupy vypadají zbytečně složité či nepotřebné, většinou se vyplatí z dlouhodobého hlediska</li>
+<li>většina postupů je založena na zkušenostech a doporučeních z praxe</li>
+<li>“pokud jste nějaký kód neotevřeli 3 měsíce, mohl ho klidně napsat někdo cizí” - potřebujeme tedy kód, který je srozumitelný a použitelný i po delší době a pro někoho cizího</li>
+<li>věci, které jsou “navíc” děláte pro svoje budoucí já a ulehčujete mu tím práci</li>
+</ul>
+</section>
+<section id="ai" class="slide level2">
+<h2>AI</h2>
+<ul>
+<li><span class="software">Github Copilot</span> - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)</li>
+<li>výborná integrace do <span class="software">VS Code</span></li>
+<li>využívá se pro:
+<ul>
+<li>doplňování kódu</li>
+<li>návrhy funkcí a objektů</li>
+<li>konzultace existujícího kódu</li>
+<li>konzultace problémů</li>
+</ul></li>
+<li>využití v tomto ohledu se doporučuje</li>
+<li>neklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)</li>
+</ul>
+</section>
 <section id="python" class="slide level2">
-<h2>Python</h2>
+<h2><span class="software">Python</span></h2>
 <ul>
 <li><strong>interpretovaný</strong> programovací (skriptovací) jazyk</li>
 <li><strong>dynamicky typovaný</strong></li>
@@ -241,7 +268,7 @@ Jan Caha
 </ul>
 </section>
 <section id="conda" class="slide level2">
-<h2>Conda</h2>
+<h2><span class="software">Conda</span></h2>
 <ul>
 <li>systém pro správu Pythonu a jeho balíčků</li>
 <li>použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})</li>
@@ -257,6 +284,27 @@ Jan Caha
 <li>v <span class="software">VS Code</span> nutno nastavit interpretor jazyka</li>
 </ul>
 </section>
+<section id="instalace-knihoven" class="slide level2">
+<h2>Instalace knihoven</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install black isort mypy pep8 flake8 pylint</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install shapely fiona rasterio polars pandas geopandas</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--pre</span> geopolars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>podle osnovy se máme věnovat <code>pandas</code> - <code>polars</code> je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem</li>
+</ul>
+</section>
+<section id="tvorba-conda-prostředí" class="title-slide slide level1 center">
+<h1>Tvorba <span class="software">Conda</span> prostředí</h1>
+<ul>
+<li>ideálně ne manuálně, ale z definičního souboru</li>
+<li><code>yaml</code> soubor s popisem prostředí (název, použité kanály, verze Pythonu, balíčky - klidně i s verzemi)</li>
+<li>tvorba prostředí - <code>conda create -f env-pgis2.yaml</code> - viz stránka předmětu</li>
+<li>odstranění prostředí - <code>conda env remove -n pgis2</code></li>
+<li>je lepší prostředí odstranit, upravit definiční soubor a znovu vytvořit, než jej modifikovat manuálně (hrozí nekonzistence a nezaznamenání změn)</li>
+</ul>
+</section>
+
 <section>
 <section id="python---použití-jazyka-opakování" class="title-slide slide level1 center">
 <h1>Python - použití jazyka<br>opakování</h1>
@@ -300,7 +348,7 @@ Jan Caha
 <h2>Zpracování chyb</h2>
 <ul>
 <li>konstrukce <code>raise</code></li>
-<li>druhy chyb</li>
+<li>druhy chyb - <a href="https://docs.python.org/3.12/tutorial/errors.html#exception-chaining">dokumentace</a></li>
 <li>konstrukce <code>try, except, finally</code></li>
 </ul>
 </section>
@@ -319,15 +367,15 @@ Jan Caha
 <li>tisk objektu bez funkce <code>__repr__()</code></li>
 <li>tiskne informace o umístění objektu v paměti</li>
 </ul>
-<div id="329d9469" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="35491d64" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7f5ab274d850&gt;</code></pre>
+<pre><code>&lt;__main__.A object at 0x7fa9481794f0&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -337,16 +385,16 @@ Jan Caha
 <li>tisk objektu s funkcí <code>__repr__()</code></li>
 <li>tiskne řetězec z této funkce</li>
 </ul>
-<div id="b54525eb" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Objekt třídy A."</span>  </span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9f91c469" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Objekt třídy A."</span>  </span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Objekt třídy A.</code></pre>
 </div>
@@ -355,8 +403,11 @@ Jan Caha
 <section id="debugování" class="slide level2">
 <h2>Debugování</h2>
 <ul>
+<li>závisí na použitém IDE</li>
+<li>občas se nahrazuje použitím <code>print()</code>, ale to nemusí být dostačující</li>
 <li>proces nahlížení na stav programu za jeho běhu</li>
 <li>umožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech</li>
+<li>breakpointy - zastavení programu v určitém místě</li>
 <li>v Pythonu máme možnost do proměnných za běhu i zasahovat</li>
 <li>ukázka v <span class="software">VS Code</span></li>
 </ul>
@@ -382,21 +433,21 @@ Jan Caha
 <li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
 <li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
 </ul>
-<div id="6335169f" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
-<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8328bb15" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>  ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="instalace-knihoven" class="slide level2">
-<h2>Instalace knihoven</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install black isort mypy pep8 flake8 pylint</span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install shapely fiona rasterio polars pandas geopandas</span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">--pre</span> geopolars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="typování---komplexnější" class="slide level2">
+<h2>Typování - komplexnější</h2>
 <ul>
-<li>podle osnovy se máme věnovat <code>pandas</code> - <code>polars</code> je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem</li>
+<li><code>typing.Optional[]</code> - pro proměnné, které mají buď specifickou hodnotu nebo <code>None</code></li>
+<li><code>typing.Union[]</code> - pro proměnné, které mohou mít více typů</li>
+<li><code>typing.Any</code> - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout)</li>
+<li><code>typing.Literal[]</code> - pro proměnné, které mohou mít pouze určité hodnoty, používá se jako <code>typing.Literal["a", "b"]</code></li>
+<li><code>typing.Callable</code> - pro proměnné, které jsou funkce, <code>typing.Callable[[int, int], int]</code> - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)</li>
 </ul>
 </section>
 <section id="formátování-pomocí-black-a-isort" class="slide level2">

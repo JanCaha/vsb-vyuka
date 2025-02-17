@@ -1823,6 +1823,20 @@
     ]
   },
   {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#práce-s-pythonem",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#práce-s-pythonem",
+    "title": "Opakování Pythonu",
+    "section": "Práce s Pythonem",
+    "text": "Práce s Pythonem\n\ncílem je naučit se rozumné návyky a postupy při programování v Pythonu\npředcházet nevhodným postupům, návykům a chybám, které komplikují v dlouhodobém horizontu práci\ni když některé postupy vypadají zbytečně složité či nepotřebné, většinou se vyplatí z dlouhodobého hlediska\nvětšina postupů je založena na zkušenostech a doporučeních z praxe\n“pokud jste nějaký kód neotevřeli 3 měsíce, mohl ho klidně napsat někdo cizí” - potřebujeme tedy kód, který je srozumitelný a použitelný i po delší době a pro někoho cizího\nvěci, které jsou “navíc” děláte pro svoje budoucí já a ulehčujete mu tím práci"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#ai",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#ai",
+    "title": "Opakování Pythonu",
+    "section": "AI",
+    "text": "AI\n\nGithub Copilot - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)\nvýborná integrace do VS Code\nvyužívá se pro:\n\ndoplňování kódu\nnávrhy funkcí a objektů\nkonzultace existujícího kódu\nkonzultace problémů\n\nvyužití v tomto ohledu se doporučuje\nneklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)"
+  },
+  {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#python",
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#python",
     "title": "Opakování Pythonu",
@@ -1849,6 +1863,13 @@
     "title": "Opakování Pythonu",
     "section": "Conda",
     "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})\noficiální a neoficiální kanály (conda-forge)\n\nconda create -n pgis2 python=3.12\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
+    "title": "Opakování Pythonu",
+    "section": "Instalace knihoven",
+    "text": "Instalace knihoven\nconda activate pgis2\nconda install black isort mypy pep8 flake8 pylint\nconda install shapely fiona rasterio polars pandas geopandas\npip install --pre geopolars\n\npodle osnovy se máme věnovat pandas - polars je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#proměnné",
@@ -1883,7 +1904,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#zpracování-chyb",
     "title": "Opakování Pythonu",
     "section": "Zpracování chyb",
-    "text": "Zpracování chyb\n\nkonstrukce raise\ndruhy chyb\nkonstrukce try, except, finally"
+    "text": "Zpracování chyb\n\nkonstrukce raise\ndruhy chyb - dokumentace\nkonstrukce try, except, finally"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-proměnné-či-funkce",
@@ -1897,7 +1918,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#debugování",
     "title": "Opakování Pythonu",
     "section": "Debugování",
-    "text": "Debugování\n\nproces nahlížení na stav programu za jeho běhu\numožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech\nv Pythonu máme možnost do proměnných za běhu i zasahovat\nukázka v VS Code"
+    "text": "Debugování\n\nzávisí na použitém IDE\nobčas se nahrazuje použitím print(), ale to nemusí být dostačující\nproces nahlížení na stav programu za jeho běhu\numožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech\nbreakpointy - zastavení programu v určitém místě\nv Pythonu máme možnost do proměnných za běhu i zasahovat\nukázka v VS Code"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#kontextové-managery",
@@ -1914,11 +1935,11 @@
     "text": "Typování proměnných\n\nteoreticky není vůbec nutné\nzejména u větších knihoven však výrazně pomáhá s managementem kódu\nzastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace\n\n\nimport typing\n\ndef fun(var: typing.List[float], round_up: bool = True) -&gt; typing.List[int]:\n  ..."
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
-    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější",
     "title": "Opakování Pythonu",
-    "section": "Instalace knihoven",
-    "text": "Instalace knihoven\nconda activate pgis2\nconda install black isort mypy pep8 flake8 pylint\nconda install shapely fiona rasterio polars pandas geopandas\npip install --pre geopolars\n\npodle osnovy se máme věnovat pandas - polars je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem"
+    "section": "Typování - komplexnější",
+    "text": "Typování - komplexnější\n\ntyping.Optional[] - pro proměnné, které mají buď specifickou hodnotu nebo None\ntyping.Union[] - pro proměnné, které mohou mít více typů\ntyping.Any - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout)\ntyping.Literal[] - pro proměnné, které mohou mít pouze určité hodnoty, používá se jako typing.Literal[\"a\", \"b\"]\ntyping.Callable - pro proměnné, které jsou funkce, typing.Callable[[int, int], int] - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#formátování-pomocí-black-a-isort",
@@ -2030,7 +2051,7 @@
     "href": "subjects/PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
     "title": "Úvodní cvičení",
     "section": "Zakončení předmětu",
-    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
+    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\nvyužijte kteroukoliv z knihoven, představených během výuky\nzáhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá\nskript spolu s testovacími daty odevzdejte e-mailem (datum upřesníme ve 2 polovině semestru)\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#objekty-pro-práci-s-vektorovými-daty",
@@ -2366,7 +2387,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.80680759 -0.66298794 -2.32820158 -0.01078635 -0.47375637"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.04089902 -0.09441694 -0.60917669 -0.95439923 -0.62843262"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
