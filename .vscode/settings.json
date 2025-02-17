@@ -12,9 +12,22 @@
         }
     ],
     "cSpell.words": [
+        "autopep",
         "debugování",
+        "docstringů",
+        "elif",
+        "environmentu",
         "GDAL",
+        "interpretor",
+        "isort",
+        "Mypy",
+        "numpy",
+        "pathlib",
+        "Pylance",
+        "Pylint",
+        "Pythonový",
         "Pythonu",
-        "replikovatelné"
+        "replikovatelné",
+        "težšímu"
     ]
 }
