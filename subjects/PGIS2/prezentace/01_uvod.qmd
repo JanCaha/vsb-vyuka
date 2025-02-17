@@ -55,6 +55,9 @@ execute:
 
 - samostatný projekt
   - netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód 
+  -  využijte kteroukoliv z knihoven, představených během výuky
+  -  záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá
+  -  skript spolu s testovacími daty odevzdejte e-mailem (datum upřesníme ve 2 polovině semestru)
 - písemka - klíčové položky programování v Pythonu a GIS knihoven
  
 # Dotazy? {.center}
