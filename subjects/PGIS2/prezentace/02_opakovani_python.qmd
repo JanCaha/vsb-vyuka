@@ -16,7 +16,28 @@ execute:
   eval: true
 ---
 
-## Python
+## Práce s Pythonem
+
+- cílem je naučit se rozumné návyky a postupy při programování v Pythonu
+- předcházet nevhodným postupům, návykům a chybám, které komplikují v dlouhodobém horizontu práci
+- i když některé postupy vypadají zbytečně složité či nepotřebné, většinou se vyplatí z dlouhodobého hlediska
+- většina postupů je založena na zkušenostech a doporučeních z praxe
+- "pokud jste nějaký kód neotevřeli 3 měsíce, mohl ho klidně napsat někdo cizí" - potřebujeme tedy kód, který je srozumitelný a použitelný i po delší době a pro někoho cizího
+- věci, které jsou "navíc" děláte pro svoje budoucí já a ulehčujete mu tím práci
+
+## AI  
+
+- [Github Copilot]{.software} - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)
+- výborná integrace do [VS Code]{.software}
+- využívá se pro:
+  -  doplňování kódu
+  -  návrhy funkcí a objektů
+  -  konzultace existujícího kódu
+  -  konzultace problémů
+- využití v tomto ohledu se doporučuje 
+- neklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)
+
+## [Python]{.software}
 
 - **interpretovaný** programovací (skriptovací) jazyk
 - **dynamicky typovaný**
@@ -42,7 +63,7 @@ execute:
 - [Github Copilot]{.software} - přihlášení, pouze pokud máte přístup (studenti mají) - nově existuje i limitovaná verze zdarma
   
 
-## Conda
+## [Conda]{.software}
 
 - systém pro správu Pythonu a jeho balíčků
 - použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})
@@ -58,6 +79,25 @@ conda deactivate
 
 - v environmentu lze instalovat i skrze [pip]{.software}, ale nelze to doporučit - chybí návaznosti závislostí
 - v [VS Code]{.software} nutno nastavit interpretor jazyka
+
+## Instalace knihoven
+
+```bash
+conda activate pgis2
+conda install black isort mypy pep8 flake8 pylint
+conda install shapely fiona rasterio polars pandas geopandas
+pip install --pre geopolars
+```
+
+- podle osnovy se máme věnovat `pandas` - `polars` je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem
+
+# Tvorba [Conda]{.software} prostředí
+
+- ideálně ne manuálně, ale z definičního souboru
+- `yaml` soubor s popisem prostředí (název, použité kanály, verze Pythonu, balíčky - klidně i s verzemi)
+- tvorba prostředí - `conda create -f env-pgis2.yaml` - viz stránka předmětu
+- odstranění prostředí - `conda env remove -n pgis2`
+- je lepší prostředí odstranit, upravit definiční soubor a znovu vytvořit, než jej modifikovat manuálně (hrozí nekonzistence a nezaznamenání změn)
 
 # Python - použití jazyka<br/>opakování{.center}
 
@@ -90,7 +130,7 @@ conda deactivate
 ## Zpracování chyb
 
 - konstrukce `raise`
-- druhy chyb
+- druhy chyb - [dokumentace](https://docs.python.org/3.12/tutorial/errors.html#exception-chaining)
 - konstrukce `try, except, finally`
   
 ## Magické proměnné či funkce
@@ -133,8 +173,11 @@ print(a)
 
 ## Debugování
 
+- závisí na použitém IDE
+- občas se nahrazuje použitím `print()`, ale to nemusí být dostačující
 - proces nahlížení na stav programu za jeho běhu
 - umožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech
+- breakpointy - zastavení programu v určitém místě
 - v Pythonu máme možnost do proměnných za běhu i zasahovat
 - ukázka v [VS Code]{.software}
 
@@ -160,16 +203,15 @@ def fun(var: typing.List[float], round_up: bool = True) -> typing.List[int]:
   ...
 ```
 
-## Instalace knihoven
+## Typování - komplexnější
 
-```bash
-conda activate pgis2
-conda install black isort mypy pep8 flake8 pylint
-conda install shapely fiona rasterio polars pandas geopandas
-pip install --pre geopolars
-```
+- `typing.Optional[]` - pro proměnné, které mají buď specifickou hodnotu nebo `None`
+- `typing.Union[]` - pro proměnné, které mohou mít více typů
+- `typing.Any` - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout) 
+- `typing.Literal[]` - pro proměnné, které mohou mít pouze určité hodnoty, používá se jako `typing.Literal["a", "b"]`
+- `typing.Callable` - pro proměnné, které jsou funkce, `typing.Callable[[int, int], int]` - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)
 
-- podle osnovy se máme věnovat `pandas` - `polars` je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem
+
 
 ## Formátování pomocí [black]{.software} a [isort]{.software}
 
