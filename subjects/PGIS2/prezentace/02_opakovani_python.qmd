@@ -66,7 +66,7 @@ execute:
 ## [Conda]{.software}
 
 - systém pro správu Pythonu a jeho balíčků
-- použití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})
+- použití z příkazové řádky - ale existuje i GUI ([Anaconda]{.software})
 - oficiální a neoficiální kanály (`conda-forge`)
 
 ```bash
@@ -91,7 +91,7 @@ pip install --pre geopolars
 
 - podle osnovy se máme věnovat `pandas` - `polars` je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem
 
-# Tvorba [Conda]{.software} prostředí
+## Tvorba [Conda]{.software} prostředí
 
 - ideálně ne manuálně, ale z definičního souboru
 - `yaml` soubor s popisem prostředí (název, použité kanály, verze Pythonu, balíčky - klidně i s verzemi)
