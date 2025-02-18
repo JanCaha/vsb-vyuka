@@ -229,7 +229,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="cde36136" class="cell" data-execution_count="1">
+<div id="d4de0b6b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -270,8 +270,8 @@ Jan Caha
 <li>každý podporovaný formát má svůj vlastní</li>
 <li>mohou být pouze pro čtení (<strong>DWG</strong>), značná část ale podporuje i zápis (<strong>GPKG</strong>, <strong>GeoTiff</strong>)</li>
 <li>některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (<strong>GeoJSON</strong>)</li>
-<li>často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je</li>
-<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu</li>
+<li>často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je</li>
+<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)</li>
 </ul>
 </section>
 <section id="obecné-struktury" class="slide level2">
@@ -317,7 +317,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="f726c11d" class="cell" data-execution_count="2">
+<div id="acde3fdc" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>

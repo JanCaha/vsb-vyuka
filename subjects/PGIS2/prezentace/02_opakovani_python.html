@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-02-17">
+  <meta name="dcterms.date" content="2025-02-24">
   <title>Výuka - Jan Caha – Opakování Pythonu</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -207,7 +207,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-02-17</p>
+  <p class="date">2025-02-24</p>
 </section>
 <section id="práce-s-pythonem" class="slide level2">
 <h2>Práce s Pythonem</h2>
@@ -299,7 +299,7 @@ Jan Caha
 <ul>
 <li>ideálně ne manuálně, ale z definičního souboru</li>
 <li><code>yaml</code> soubor s popisem prostředí (název, použité kanály, verze Pythonu, balíčky - klidně i s verzemi)</li>
-<li>tvorba prostředí - <code>conda create -f env-pgis2.yaml</code> - viz stránka předmětu</li>
+<li>tvorba prostředí - <code>conda env create -f env-pgis2.yaml</code> - viz stránka předmětu</li>
 <li>odstranění prostředí - <code>conda env remove -n pgis2</code></li>
 <li>je lepší prostředí odstranit, upravit definiční soubor a znovu vytvořit, než jej modifikovat manuálně (hrozí nekonzistence a nezaznamenání změn)</li>
 </ul>
@@ -330,7 +330,8 @@ Jan Caha
 <li>se známým počtem opakování, bez známého počtu opakování</li>
 <li>konstrukce <code>for</code> a <code>while</code></li>
 <li>přeskočení iterace v cyklu <code>continue</code> a ukončení cyklu <code>break</code></li>
-<li>speciální případ <code>for</code> s <code>enumerate</code> (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)</li>
+<li>speciální případ <code>for</code> s <code>enumerate()</code> (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)</li>
+<li><code>range()</code> - funkce pro generování číselné posloupnosti</li>
 </ul>
 </section>
 <section id="import-knihoven-či-modulů" class="slide level2">
@@ -366,7 +367,7 @@ Jan Caha
 <li>tisk objektu bez funkce <code>__repr__()</code></li>
 <li>tiskne informace o umístění objektu v paměti</li>
 </ul>
-<div id="704bf2d0" class="cell" data-execution_count="1">
+<div id="bb0cffb0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -374,7 +375,7 @@ Jan Caha
 <span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
 <span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7f970c0e41d0&gt;</code></pre>
+<pre><code>&lt;__main__.A object at 0x7fa17e1faf00&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -384,7 +385,7 @@ Jan Caha
 <li>tisk objektu s funkcí <code>__repr__()</code></li>
 <li>tiskne řetězec z této funkce</li>
 </ul>
-<div id="e84ed70a" class="cell" data-execution_count="2">
+<div id="c245dc5b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -432,7 +433,7 @@ Jan Caha
 <li>zejména u větších knihoven však výrazně pomáhá s managementem kódu</li>
 <li>zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace</li>
 </ul>
-<div id="ad0d6095" class="cell" data-execution_count="3">
+<div id="c8e0c423" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(var: typing.List[<span class="bu">float</span>], round_up: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>) <span class="op">-&gt;</span> typing.List[<span class="bu">int</span>]:</span>
@@ -467,6 +468,17 @@ Jan Caha
 <li>celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu</li>
 <li>většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit</li>
 <li>konkrétní hlášky lze obvykle potlačit, pokud jsou nežádoucí, buď přímo v kódu, nebo v konfiguraci nástroje</li>
+</ul>
+</section>
+<section id="objekt-path-z-knihovny-pathlib" class="slide level2">
+<h2>Objekt <code>Path</code> z knihovny <span class="software">pathlib</span></h2>
+<ul>
+<li>objekty cesty k souborům a složkám</li>
+<li>umožňuje snadnější manipulaci s cestami</li>
+<li>přepsané magické metody, umožňují spojovat cesty pomocí operátoru <code>/</code> např. <code>cesta = Path("slozka") / "soubor.txt"</code></li>
+<li>umožňuje snadnější práci s cestami, než klasické operace s řetězci</li>
+<li>tyto objekty lze používat na různých místech v Python knihovnách a funkcí (např. <code>open()</code>)</li>
+<li>pokud potřebujeme cestu v podobě textového řetězce, lze ji získat pomocí metody <code>as_posix()</code>, příklad <code>cesta_text = cesta.as_posix()</code></li>
 </ul>
 </section></section>
 <section id="dotazy" class="title-slide slide level1 center">
