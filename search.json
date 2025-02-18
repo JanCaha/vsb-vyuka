@@ -1862,7 +1862,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#conda",
     "title": "Opakování Pythonu",
     "section": "Conda",
-    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI ([Anaconda]]{.software})\noficiální a neoficiální kanály (conda-forge)\n\nconda create -n pgis2 python=3.12\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
+    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI (Anaconda)\noficiální a neoficiální kanály (conda-forge)\n\nconda create -n pgis2 python=3.12\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
@@ -1870,6 +1870,13 @@
     "title": "Opakování Pythonu",
     "section": "Instalace knihoven",
     "text": "Instalace knihoven\nconda activate pgis2\nconda install black isort mypy pep8 flake8 pylint\nconda install shapely fiona rasterio polars pandas geopandas\npip install --pre geopolars\n\npodle osnovy se máme věnovat pandas - polars je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#tvorba-conda-prostředí",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#tvorba-conda-prostředí",
+    "title": "Opakování Pythonu",
+    "section": "Tvorba Conda prostředí",
+    "text": "Tvorba Conda prostředí\n\nideálně ne manuálně, ale z definičního souboru\nyaml soubor s popisem prostředí (název, použité kanály, verze Pythonu, balíčky - klidně i s verzemi)\ntvorba prostředí - conda create -f env-pgis2.yaml - viz stránka předmětu\nodstranění prostředí - conda env remove -n pgis2\nje lepší prostředí odstranit, upravit definiční soubor a znovu vytvořit, než jej modifikovat manuálně (hrozí nekonzistence a nezaznamenání změn)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#proměnné",
@@ -2387,7 +2394,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.04089902 -0.09441694 -0.60917669 -0.95439923 -0.62843262"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.8669656 -0.8629523 -0.6004560 -0.6593297 -0.6008384"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
