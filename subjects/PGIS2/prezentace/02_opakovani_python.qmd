@@ -2,7 +2,7 @@
 title: "Opakování Pythonu"
 subtitle: "Programování v GIS 2"
 author: "Jan Caha"
-date: 2025-02-17
+date: 2025-02-24
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -95,7 +95,7 @@ pip install --pre geopolars
 
 - ideálně ne manuálně, ale z definičního souboru
 - `yaml` soubor s popisem prostředí (název, použité kanály, verze Pythonu, balíčky - klidně i s verzemi)
-- tvorba prostředí - `conda create -f env-pgis2.yaml` - viz stránka předmětu
+- tvorba prostředí - `conda env create -f env-pgis2.yaml` - viz stránka předmětu
 - odstranění prostředí - `conda env remove -n pgis2`
 - je lepší prostředí odstranit, upravit definiční soubor a znovu vytvořit, než jej modifikovat manuálně (hrozí nekonzistence a nezaznamenání změn)
 
@@ -117,7 +117,8 @@ pip install --pre geopolars
 - se známým počtem opakování, bez známého počtu opakování
 - konstrukce `for` a `while`
 - přeskočení iterace v cyklu `continue` a ukončení cyklu `break`
-- speciální případ `for` s `enumerate` (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)
+- speciální případ `for` s `enumerate()` (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)
+- `range()` - funkce pro generování číselné posloupnosti
    
 ## Import knihoven či modulů
 
@@ -211,8 +212,6 @@ def fun(var: typing.List[float], round_up: bool = True) -> typing.List[int]:
 - `typing.Literal[]` - pro proměnné, které mohou mít pouze určité hodnoty, používá se jako `typing.Literal["a", "b"]`
 - `typing.Callable` - pro proměnné, které jsou funkce, `typing.Callable[[int, int], int]` - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)
 
-
-
 ## Formátování pomocí [black]{.software} a [isort]{.software}
 
 - [isort]{.software} řadí importy dle určité logiky
@@ -228,6 +227,15 @@ def fun(var: typing.List[float], round_up: bool = True) -> typing.List[int]:
 - celkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu
 - většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit 
 - konkrétní hlášky lze obvykle potlačit, pokud jsou nežádoucí, buď přímo v kódu, nebo v konfiguraci nástroje
+
+## Objekt `Path` z knihovny [pathlib]{.software}
+
+- objekty cesty k souborům a složkám
+- umožňuje snadnější manipulaci s cestami
+- přepsané magické metody, umožňují spojovat cesty pomocí operátoru `/` např. `cesta = Path("slozka") / "soubor.txt"`
+- umožňuje snadnější práci s cestami, než klasické operace s řetězci
+- tyto objekty lze používat na různých místech v Python knihovnách a funkcí (např. `open()`)
+- pokud potřebujeme cestu v podobě textového řetězce, lze ji získat pomocí metody `as_posix()`, příklad `cesta_text = cesta.as_posix()`
 
 # Dotazy? {.center}
 

@@ -66,8 +66,8 @@ layer: ogr.Layer = ds.GetLayer()
 - každý podporovaný formát má svůj vlastní
 - mohou být pouze pro čtení (**DWG**), značná část ale podporuje i zápis (**GPKG**, **GeoTiff**)
 - některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (**GeoJSON**)
-- často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat to nutné je
-- drivery `MEM` - raster a `Memory` - vektor {{< fa arrow-right >}} pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu
+- často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je
+- drivery `MEM` - raster a `Memory` - vektor {{< fa arrow-right >}} pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)
 
 ## Obecné struktury
 
