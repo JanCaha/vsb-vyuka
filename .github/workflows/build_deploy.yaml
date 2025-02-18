@@ -37,7 +37,7 @@ jobs:
       - name: Set Env
         run: |
           echo "APT_CACHE_DIR=$RUNNER_TEMP/apt_cache" >> $GITHUB_ENV
-          echo "WEEK_NUMBER=$(date +%V)" >> $GITHUB_ENV
+          echo "MONTH=$(date +%B)" >> $GITHUB_ENV
 
       - name: ATP download settings
         run: |
@@ -54,7 +54,7 @@ jobs:
           CACHE_NUMBER: 0
         with:
           path: ${{ env.CONDA_PKG_DIR }}
-          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-environment.yml') }}-${{ env.WEEK_NUMBER }}
+          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-environment.yml') }}-${{ env.MONTH }}
 
       - uses: conda-incubator/setup-miniconda@v3
         with:
@@ -68,7 +68,7 @@ jobs:
           CACHE_NUMBER: 0
         with:
           path: ${{ env.APT_CACHE_DIR}}
-          key: ${{ runner.os }}-apt-${{ env.CACHE_NUMBER }}-${{ hashFiles('linux_install_R.sh') }}-${{ env.WEEK_NUMBER }}
+          key: ${{ runner.os }}-apt-${{ env.CACHE_NUMBER }}-${{ hashFiles('linux_install_R.sh') }}-${{ env.MONTH }}
 
       - name: Install R and packages
         run: |

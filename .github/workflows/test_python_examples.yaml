@@ -31,6 +31,11 @@ jobs:
 
     steps:
 
+      - name: Set Env
+        run: |
+          echo "APT_CACHE_DIR=$RUNNER_TEMP/apt_cache" >> $GITHUB_ENV
+          echo "MONTH=$(date +%B)" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
       
@@ -40,7 +45,7 @@ jobs:
           CACHE_NUMBER: 0
         with:
           path: ${{ env.CONDA_PKG_DIR }}
-          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-environment.yml') }}
+          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-environment.yml') }}-${{ env.MONTH }}
           restore-keys: ${{ runner.os }}-conda-
 
       - uses: conda-incubator/setup-miniconda@v3
