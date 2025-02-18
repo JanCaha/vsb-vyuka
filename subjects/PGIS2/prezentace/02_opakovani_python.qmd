@@ -1,19 +1,6 @@
 ---
 title: "Opakování Pythonu"
-subtitle: "Programování v GIS 2"
-author: "Jan Caha"
 date: 2025-02-24
-date-format: "YYYY-MM-DD"
-format: 
-    revealjs:
-        theme: 
-          - ../../../clean.scss 
-          - ../../../reveal-custom.scss
-footer: "{{< var links.web >}}"
-code-line-numbers: false
-execute:
-  echo: true
-  eval: true
 ---
 
 ## Práce s Pythonem
