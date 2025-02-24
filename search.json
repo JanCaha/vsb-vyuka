@@ -1640,7 +1640,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2024-03-18\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2024-03-18\n\n\nFiona editace vektorových dat\n\n\n\n\n2024-03-25\n\n\nRasterio informace o souboru\n\n\n\n\n2024-03-25\n\n\nRasterio kopírování pásma do nového souboru\n\n\n\n\n2024-03-25\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2024-04-15\n\n\nUkázka tvorby objektu\n\n\n\n\n2024-04-15\n\n\nFunkce v souboru utils\n\n\n\n\n2024-04-29\n\n\nPolars - základní operace\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2024-03-18\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2024-03-18\n\n\nFiona editace vektorových dat\n\n\n\n\n2024-03-25\n\n\nRasterio informace o souboru\n\n\n\n\n2024-03-25\n\n\nRasterio kopírování pásma do nového souboru\n\n\n\n\n2024-03-25\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2024-04-15\n\n\nUkázka tvorby objektu\n\n\n\n\n2024-04-15\n\n\nFunkce v souboru utils\n\n\n\n\n2024-04-29\n\n\nPolars - základní operace\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1869,7 +1869,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
     "title": "Opakování Pythonu",
     "section": "Instalace knihoven",
-    "text": "Instalace knihoven\nconda activate pgis2\nconda install black isort mypy pep8 flake8 pylint\nconda install shapely fiona rasterio polars pandas geopandas\npip install --pre geopolars\n\npodle osnovy se máme věnovat pandas - polars je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem"
+    "text": "Instalace knihoven\nconda activate pgis2\nconda install black isort mypy pep8 flake8 pylint\nconda install shapely fiona rasterio polars pandas geopandas\n\npodle osnovy se máme věnovat pandas - polars je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#tvorba-conda-prostředí",
@@ -1883,7 +1883,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#proměnné",
     "title": "Opakování Pythonu",
     "section": "Proměnné",
-    "text": "Proměnné\n\njednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota\nkomplexní - seznam, slovník, tuple\nobjekty - např. Path z knihovny pathlib\nfunkce - lze je také uložit do proměnné (trochu komplikované na představu)"
+    "text": "Proměnné\n\njednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota\nkomplexní - seznam, slovník, tuple\n\n\nseznam = [1, 2, 3]\nslovnik = {\"a\": 1, \"b\": 2}\nt = (1, 2, 3)\n\n\nobjekty - např. Path z knihovny pathlib\nfunkce - lze je také uložit do proměnné (trochu komplikované na představu)\n\n\ndef fun(): ...\n\n\na = fun\na()"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#podmínky",
@@ -1897,7 +1897,21 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#cykly",
     "title": "Opakování Pythonu",
     "section": "Cykly",
-    "text": "Cykly\n\nse známým počtem opakování, bez známého počtu opakování\nkonstrukce for a while\npřeskočení iterace v cyklu continue a ukončení cyklu break\nspeciální případ for s enumerate() (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)\nrange() - funkce pro generování číselné posloupnosti"
+    "text": "Cykly\n\nse známým počtem opakování, bez známého počtu opakování\nkonstrukce for a while\npřeskočení iterace v cyklu continue a ukončení cyklu break\nspeciální případ for s enumerate() (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)\nrange() - funkce pro generování číselné posloupnosti\n\n\nv = [\"a\", \"b\", \"c\"]\nfor i, x in enumerate(v):\n    print(f\"Na pozici {i} je hodnota {x}\")\n\nNa pozici 0 je hodnota a\nNa pozici 1 je hodnota b\nNa pozici 2 je hodnota c"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#seznamy---comprehensions",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#seznamy---comprehensions",
+    "title": "Opakování Pythonu",
+    "section": "Seznamy - comprehensions",
+    "text": "Seznamy - comprehensions\n\njednoduchá konstrukce na zpracování seznamu\n\n\nvals = [1, 2, 3]\ntext = [f\"cislo {x}\" for x in vals]\nprint(text)\n\n['cislo 1', 'cislo 2', 'cislo 3']\n\n\n\nlze i filtrovat pomocí if\n\n\nvals = [1, 2, 3, 5, 6, 7]\ntext = [str(x) for x in vals if x &gt; 4]\nprint(text)\n\n['5', '6', '7']\n\n\n\nnahrazuje cyklus\nvhodné pouze pro jednoduché operace a filtry, jinak může být nečitelné"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#řetězce",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#řetězce",
+    "title": "Opakování Pythonu",
+    "section": "Řetězce",
+    "text": "Řetězce\n\nčasto potřebujeme spojit řetězec s hodnotou, či podobná operace\nkonstrukce f\"řetězec {promenna}\" - tzv. f-string, vysoce optimalizovaný způsob spojování řetězců\njiné varianty nepoužívat\n\n\"hodnota {}\".format(promenna)\n\"hodnota %s\" % promenna\n\"hodnota \" + str(promenna)\n\ntvorba řetězce z pole\n\n\", \".join([\"a\", \"b\", \"c\"])\nošetří poslední hodnotu a další limitní případy"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#import-knihoven-či-modulů",
@@ -1907,11 +1921,18 @@
     "text": "Import knihoven či modulů\n\nlze importovat objekty, funkce, moduly\nlze buď celým názvem - import pathlib\nlokální souboru lze i jako import .muj_soubor (doporučuje se pouze u jednoduchých skriptů, v případě modulů - knihoven lépe importovat plnou cestou)\nlze importovat i s přejmenováním - import numpy as np\nkombinace a variace importů občas ztěžují interpretaci kódu"
   },
   {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#chyba",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#chyba",
+    "title": "Opakování Pythonu",
+    "section": "Chyba",
+    "text": "Chyba\n\nPočítače mají skvělou vlastnosti, dělají co je jim zadá. Počítače maji jeden zásadní problém, dělají přesně, co se jim zadá.\n\n\nneřešitelná situace v programu\nnelze dál pokračovat - program se zastaví\n\n\n\"a\" + 1\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[6], line 1\n----&gt; 1 \"a\" + 1\n\nTypeError: can only concatenate str (not \"int\") to str"
+  },
+  {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#zpracování-chyb",
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#zpracování-chyb",
     "title": "Opakování Pythonu",
     "section": "Zpracování chyb",
-    "text": "Zpracování chyb\n\nkonstrukce raise\ndruhy chyb - dokumentace\nkonstrukce try, except, finally"
+    "text": "Zpracování chyb\n\nkonstrukce raise\ndruhy chyb - dokumentace\nkonstrukce try, except, finally\n\n\ntry:\n    \"a\" + 1\n    print(\"Toto se nevykoná\")\nexcept TypeError as e:\n    print(f\"Chyba: {e}\")\nfinally:\n    print(\"Konec\")\n\nChyba: can only concatenate str (not \"int\") to str\nKonec"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-proměnné-či-funkce",
@@ -1921,32 +1942,39 @@
     "text": "Magické proměnné či funkce\n\nzapisují je jako __nazev__\nodkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování\nukázka - tvorba objektu a funkce pro tisk\ndo této skupiny lze zařadit i soubor __init__.py, jehož existence označuje složku jako Pythonový modul"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#debugování",
-    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#debugování",
-    "title": "Opakování Pythonu",
-    "section": "Debugování",
-    "text": "Debugování\n\nzávisí na použitém IDE\nobčas se nahrazuje použitím print(), ale to nemusí být dostačující\nproces nahlížení na stav programu za jeho běhu\numožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech\nbreakpointy - zastavení programu v určitém místě\nv Pythonu máme možnost do proměnných za běhu i zasahovat\nukázka v VS Code"
-  },
-  {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#kontextové-managery",
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#kontextové-managery",
     "title": "Opakování Pythonu",
     "section": "Kontextové managery",
-    "text": "Kontextové managery\n\nkonstrukce with\nvhodné tam kde existuje nějaký logický začátek a konec operace nebo operace, které se s počátkem a koncem pevně pojí\n\nnapř. zápis textu do souboru - soubor otevřeme, zapíšeme text a soubor zavřeme (to nemusí být explicitní, může být i “neviditelný”)\n\n\nobjekty, které využívají dvou magických metod __enter__ a __exit__\nukázka se souborem\nukázka s vlastním managerem"
+    "text": "Kontextové managery\n\nkonstrukce with\nvztahují se k veškerému kódu uvnitř bloku (odsazení)\nvhodné tam kde existuje nějaký logický začátek a konec operace nebo operace, které se s počátkem a koncem pevně pojí\n\nnapř. zápis textu do souboru - soubor otevřeme, zapíšeme text a soubor zavřeme (to nemusí být explicitní, může být i “neviditelný”)\n\n\nobjekty, které využívají dvou magických metod __enter__ a __exit__\nukázka se souborem\nukázka s vlastním managerem"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#kontextové-managery-ukázka",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#kontextové-managery-ukázka",
+    "title": "Opakování Pythonu",
+    "section": "Kontextové managery ukázka",
+    "text": "Kontextové managery ukázka\n\nfile = open(\"soubor.txt\", \"w\")\nfile.write(\"Text\")\nfile.close()  # na tohle se často zapomene - může/nemusí být problém\n\n\ns kontextovým managerem\n\n\nwith open(\"soubor.txt\", \"w\") as file:\n    file.write(\"Text\")\n\n\ni komplexnější operace, např. připojení k databázi a uzavření spojení"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování-proměnných",
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování-proměnných",
     "title": "Opakování Pythonu",
     "section": "Typování proměnných",
-    "text": "Typování proměnných\n\nteoreticky není vůbec nutné\nzejména u větších knihoven však výrazně pomáhá s managementem kódu\nzastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace\n\n\nimport typing\n\ndef fun(var: typing.List[float], round_up: bool = True) -&gt; typing.List[int]:\n  ..."
+    "text": "Typování proměnných\n\nteoreticky není vůbec nutné\nzejména u větších knihoven však výrazně pomáhá s managementem kódu\nzastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace\npři vytvoření proměnné v kódu můžeme za : uvést typ proměnné\nobvykle hlavně u funkcí\nza -&gt; uvádíme návratový typ funkce\n\n\nimport typing\n\n\ndef fun(vals: typing.List[float], round_up: bool = True) -&gt; typing.List[int]: ..."
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější",
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější",
     "title": "Opakování Pythonu",
     "section": "Typování - komplexnější",
-    "text": "Typování - komplexnější\n\ntyping.Optional[] - pro proměnné, které mají buď specifickou hodnotu nebo None\ntyping.Union[] - pro proměnné, které mohou mít více typů\ntyping.Any - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout)\ntyping.Literal[] - pro proměnné, které mohou mít pouze určité hodnoty, používá se jako typing.Literal[\"a\", \"b\"]\ntyping.Callable - pro proměnné, které jsou funkce, typing.Callable[[int, int], int] - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)"
+    "text": "Typování - komplexnější\n\ntyping.Optional[] - pro proměnné, které mají buď specifickou hodnotu nebo None\ntyping.Union[float, int] - pro proměnné, které mohou mít více typů\ntyping.Any - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout)\ntyping.Literal[] - pro proměnné, které mohou mít pouze určité hodnoty\n\npoužívá se jako typing.Literal[\"a\", \"b\"]\n\ntyping.Callable - pro proměnné, které jsou funkce\n\ntyping.Callable[[int, int], int] - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#objekt-path-z-knihovny-pathlib",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#objekt-path-z-knihovny-pathlib",
+    "title": "Opakování Pythonu",
+    "section": "Objekt Path z knihovny pathlib",
+    "text": "Objekt Path z knihovny pathlib\n\nobjekty cesty k souborům a složkám\numožňuje snadnější manipulaci s cestami\npřepsané magické metody, umožňují spojovat cesty pomocí operátoru /\n\nnapř. cesta = Path(\"slozka\") / \"soubor.txt\"\n\numožňuje snadnější práci s cestami, než klasické operace s řetězci\ntyto objekty lze používat na různých místech v Python knihovnách a funkcí (např. open())\npokud potřebujeme cestu v podobě textového řetězce, lze ji získat pomocí metody as_posix()\n\ncesta_text = cesta.as_posix()"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#formátování-pomocí-black-a-isort",
@@ -1963,11 +1991,11 @@
     "text": "Kontroly pomocí mypy, pep8, flake8, pylint\n\nzvýrazňování možných chyb, příkladů špatné praxe a dalšího v kódu\nne vždy musí jít o zásadní problém\nv moha situacích to předchází chybám\nnapř. mypy nutí uživatele psát rozumně typovaný kód a používat ho správně\ncelkově dodržování těchto pravidel vede k použitelnému a čitelnému kódu\nvětšina těchto nástrojů má svoje nastavení a možnosti, jak je upravit\nkonkrétní hlášky lze obvykle potlačit, pokud jsou nežádoucí, buď přímo v kódu, nebo v konfiguraci nástroje"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#objekt-path-z-knihovny-pathlib",
-    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#objekt-path-z-knihovny-pathlib",
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#debugování",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#debugování",
     "title": "Opakování Pythonu",
-    "section": "Objekt Path z knihovny pathlib",
-    "text": "Objekt Path z knihovny pathlib\n\nobjekty cesty k souborům a složkám\numožňuje snadnější manipulaci s cestami\npřepsané magické metody, umožňují spojovat cesty pomocí operátoru / např. cesta = Path(\"slozka\") / \"soubor.txt\"\numožňuje snadnější práci s cestami, než klasické operace s řetězci\ntyto objekty lze používat na různých místech v Python knihovnách a funkcí (např. open())\npokud potřebujeme cestu v podobě textového řetězce, lze ji získat pomocí metody as_posix(), příklad cesta_text = cesta.as_posix()"
+    "section": "Debugování",
+    "text": "Debugování\n\nzávisí na použitém IDE\nobčas se nahrazuje použitím print(), ale to nemusí být dostačující\nproces nahlížení na stav programu za jeho běhu\numožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech\nbreakpointy - zastavení programu v určitém místě\nv Pythonu máme možnost do proměnných za běhu i zasahovat\nukázka v VS Code"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_funkce_tridy.html#programovací-paradigmata",
@@ -2401,7 +2429,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.10089752 -0.04085930 -0.06255714 -0.31746842 -1.45925568"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.22340807 -0.30271793 -0.09053159 -0.17737932 -0.14951679"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
