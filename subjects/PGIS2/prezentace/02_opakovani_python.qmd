@@ -73,7 +73,6 @@ conda deactivate
 conda activate pgis2
 conda install black isort mypy pep8 flake8 pylint
 conda install shapely fiona rasterio polars pandas geopandas
-pip install --pre geopolars
 ```
 
 - podle osnovy se máme věnovat `pandas` - `polars` je výrazně rychlejší implementace, novější, s lépe použitelnou syntaxí a čitelnějším kódem
@@ -92,8 +91,20 @@ pip install --pre geopolars
 
 - jednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota
 - komplexní - seznam, slovník, tuple
+```{python}
+seznam = [1, 2, 3]
+slovnik = {"a": 1, "b": 2}
+t = (1, 2, 3)
+```
 - objekty - např. `Path` z knihovny [pathlib]{.software}
 - funkce - lze je také uložit do proměnné (trochu komplikované na představu)
+```{python}
+def fun(): ...
+
+
+a = fun
+a()
+```
 
 ## Podmínky
 
@@ -106,7 +117,45 @@ pip install --pre geopolars
 - přeskočení iterace v cyklu `continue` a ukončení cyklu `break`
 - speciální případ `for` s `enumerate()` (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)
 - `range()` - funkce pro generování číselné posloupnosti
-   
+  
+```{python}
+v = ["a", "b", "c"]
+for i, x in enumerate(v):
+    print(f"Na pozici {i} je hodnota {x}")
+```
+
+## Seznamy - comprehensions
+
+- jednoduchá konstrukce na zpracování seznamu
+```{python}
+vals = [1, 2, 3]
+text = [f"cislo {x}" for x in vals]
+print(text)
+```
+
+- lze i filtrovat pomocí `if`
+
+```{python}
+vals = [1, 2, 3, 5, 6, 7]
+text = [str(x) for x in vals if x > 4]
+print(text)
+```
+
+- nahrazuje cyklus
+- vhodné pouze pro jednoduché operace a filtry, jinak může být nečitelné
+
+## Řetězce
+
+- často potřebujeme spojit řetězec s hodnotou, či podobná operace
+- konstrukce `f"řetězec {promenna}"` - tzv. **f-string**, vysoce optimalizovaný způsob spojování řetězců
+- jiné varianty nepoužívat
+  - `"hodnota {}".format(promenna)` 
+  - `"hodnota %s" % promenna`
+  - `"hodnota " + str(promenna)`
+-  tvorba řetězce z pole 
+   - `", ".join(["a", "b", "c"])`
+   - ošetří poslední hodnotu a další limitní případy
+
 ## Import knihoven či modulů
 
 - lze importovat objekty, funkce, moduly
@@ -114,13 +163,37 @@ pip install --pre geopolars
 - lokální souboru lze i jako `import .muj_soubor` (doporučuje se pouze u jednoduchých skriptů, v případě modulů - knihoven lépe importovat plnou cestou)
 - lze importovat i s přejmenováním - `import numpy as np`
 - kombinace a variace importů občas ztěžují interpretaci kódu
- 
+
+## Chyba
+
+> Počítače mají skvělou vlastnosti, dělají co je jim zadá.
+> Počítače maji jeden zásadní problém, dělají přesně, co se jim zadá.
+
+- neřešitelná situace v programu
+- nelze dál pokračovat - program se zastaví
+
+```{python}
+# | error: true
+"a" + 1
+```
+
 ## Zpracování chyb
 
 - konstrukce `raise`
 - druhy chyb - [dokumentace](https://docs.python.org/3.12/tutorial/errors.html#exception-chaining)
 - konstrukce `try, except, finally`
-  
+
+```{python}
+try:
+    "a" + 1
+    print("Toto se nevykoná")
+except TypeError as e:
+    print(f"Chyba: {e}")
+finally:
+    print("Konec")
+```  
+
+
 ## Magické proměnné či funkce
 
 - zapisují je jako `__nazev__` 
@@ -159,45 +232,69 @@ a = A()
 print(a)
 ```
 
-## Debugování
-
-- závisí na použitém IDE
-- občas se nahrazuje použitím `print()`, ale to nemusí být dostačující
-- proces nahlížení na stav programu za jeho běhu
-- umožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech
-- breakpointy - zastavení programu v určitém místě
-- v Pythonu máme možnost do proměnných za běhu i zasahovat
-- ukázka v [VS Code]{.software}
-
 ## Kontextové managery
 
 - konstrukce `with`
+- vztahují se k veškerému kódu uvnitř bloku (odsazení)
 - vhodné tam kde existuje nějaký logický začátek a konec operace nebo operace, které se s počátkem a koncem pevně pojí
   - např. zápis textu do souboru - soubor otevřeme, zapíšeme text a soubor zavřeme (to nemusí být explicitní, může být i "neviditelný")  
 - objekty, které využívají dvou magických metod `__enter__` a `__exit__` 
 - ukázka se souborem
 - ukázka s vlastním managerem
 
+## Kontextové managery ukázka
+
+```{python}
+file = open("soubor.txt", "w")
+file.write("Text")
+file.close()  # na tohle se často zapomene - může/nemusí být problém
+```
+
+- s kontextovým managerem
+
+```{python}
+with open("soubor.txt", "w") as file:
+    file.write("Text")
+```
+
+- i komplexnější operace, např. připojení k databázi a uzavření spojení
+
 ## Typování proměnných 
 
 - teoreticky není vůbec nutné
 - zejména u větších knihoven však výrazně pomáhá s managementem kódu
 - zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace
-
+- při vytvoření proměnné v kódu můžeme za `:` uvést typ proměnné
+- obvykle hlavně u funkcí
+- za `->` uvádíme návratový typ funkce
+  
 ```{python}
 import typing
 
-def fun(var: typing.List[float], round_up: bool = True) -> typing.List[int]:
-  ...
+
+def fun(vals: typing.List[float], round_up: bool = True) -> typing.List[int]: ...
 ```
 
 ## Typování - komplexnější
 
 - `typing.Optional[]` - pro proměnné, které mají buď specifickou hodnotu nebo `None`
-- `typing.Union[]` - pro proměnné, které mohou mít více typů
+- `typing.Union[float, int]` - pro proměnné, které mohou mít více typů
 - `typing.Any` - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout) 
-- `typing.Literal[]` - pro proměnné, které mohou mít pouze určité hodnoty, používá se jako `typing.Literal["a", "b"]`
-- `typing.Callable` - pro proměnné, které jsou funkce, `typing.Callable[[int, int], int]` - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)
+- `typing.Literal[]` - pro proměnné, které mohou mít pouze určité hodnoty
+  -  používá se jako `typing.Literal["a", "b"]`
+- `typing.Callable` - pro proměnné, které jsou funkce 
+  - `typing.Callable[[int, int], int]` - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)
+
+## Objekt `Path` z knihovny [pathlib]{.software}
+
+- objekty cesty k souborům a složkám
+- umožňuje snadnější manipulaci s cestami
+- přepsané magické metody, umožňují spojovat cesty pomocí operátoru `/` 
+  - např. `cesta = Path("slozka") / "soubor.txt"`
+- umožňuje snadnější práci s cestami, než klasické operace s řetězci
+- tyto objekty lze používat na různých místech v Python knihovnách a funkcí (např. `open()`)
+- pokud potřebujeme cestu v podobě textového řetězce, lze ji získat pomocí metody `as_posix()`
+  - `cesta_text = cesta.as_posix()`
 
 ## Formátování pomocí [black]{.software} a [isort]{.software}
 
@@ -215,14 +312,15 @@ def fun(var: typing.List[float], round_up: bool = True) -> typing.List[int]:
 - většina těchto nástrojů má svoje nastavení a možnosti, jak je upravit 
 - konkrétní hlášky lze obvykle potlačit, pokud jsou nežádoucí, buď přímo v kódu, nebo v konfiguraci nástroje
 
-## Objekt `Path` z knihovny [pathlib]{.software}
+## Debugování
 
-- objekty cesty k souborům a složkám
-- umožňuje snadnější manipulaci s cestami
-- přepsané magické metody, umožňují spojovat cesty pomocí operátoru `/` např. `cesta = Path("slozka") / "soubor.txt"`
-- umožňuje snadnější práci s cestami, než klasické operace s řetězci
-- tyto objekty lze používat na různých místech v Python knihovnách a funkcí (např. `open()`)
-- pokud potřebujeme cestu v podobě textového řetězce, lze ji získat pomocí metody `as_posix()`, příklad `cesta_text = cesta.as_posix()`
+- závisí na použitém IDE
+- občas se nahrazuje použitím `print()`, ale to nemusí být dostačující
+- proces nahlížení na stav programu za jeho běhu
+- umožňuje nahlížet do paměti programu (proměnné a jejich hodnoty) v jeho různých fázích a stavech
+- breakpointy - zastavení programu v určitém místě
+- v Pythonu máme možnost do proměnných za běhu i zasahovat
+- ukázka v [VS Code]{.software}
 
 # Dotazy? {.center}
 
