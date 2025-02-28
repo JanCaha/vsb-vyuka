@@ -1,0 +1,44 @@
+---
+title: Programování v GIS 5 (PvGIS5)
+listing:
+    - id: codes
+      contents: PGIS5/skripty/description.yaml
+      sort-ui: false
+      filter-ui: false
+      type: table
+      date-format: iso
+      sort:
+          - "date"
+          - "path"
+      fields: [date, title] 
+      field-display-names:
+          title: "Skript"
+          date: "Datum"
+          author: "Autor"
+---
+
+## Řešená témata{.topics}
+
+- opakování zpracování geodat dat pomocí [GDAL/OGR]{.software}
+- tvorba uživatelských rozhraní pomocí [PyQt]{.software} 
+
+## Zdroje{.sources}
+
+- brožura (skripta) - [Tvorba GUI aplikací pro geoinformatiku](https://jancaha.github.io/PyQt-GIS-book/)
+
+## Instalace{.instals}
+
+- management Pythonu - [Miniconda](https://docs.anaconda.com/free/miniconda/index.html)
+- IDE - [Visual Studio Code](https://code.visualstudio.com/)
+- extenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator
+- instalace Conda environmentu
+
+Definice environment souboru, např. s názvem `env-pgis5.yaml`
+```{.yaml include="./PGIS5/soubory/env-pgis5.yaml"}
+```
+
+Z conda prompt následně spustit:
+```bash
+conda create -f env-pgis5.yaml
+conda activate pgis5
+```

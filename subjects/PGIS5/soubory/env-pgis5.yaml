@@ -1,0 +1,20 @@
+name: pgis5
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12
+  - pip
+  # GIS tool
+  - GDAL
+  # PyQT
+  - pyqt
+  # VS Code extensions
+  - black
+  - isort
+  - mypy
+  - pep8
+  - flake8
+  - pylint

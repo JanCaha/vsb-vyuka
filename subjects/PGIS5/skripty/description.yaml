@@ -1,0 +1,8 @@
+- title: "Prázdná aplikace"
+  author: Jan Caha
+  date: 2025-02-28
+  path: "PGIS5/skripty/01_empty_application.py"
+- title: "Prázdná aplikace s nastavením"
+  author: Jan Caha
+  date: 2025-02-28
+  path: "PGIS5/skripty/02_empty_application_with_settings.py"
