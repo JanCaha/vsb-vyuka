@@ -1,8 +1,20 @@
 - title: "Prázdná aplikace"
   author: Jan Caha
-  date: 2025-02-28
+  date: 2025-02-17
   path: "PGIS5/skripty/01_empty_application.py"
 - title: "Prázdná aplikace s nastavením"
   author: Jan Caha
-  date: 2025-02-28
+  date: 2025-02-17
   path: "PGIS5/skripty/02_empty_application_with_settings.py"
+- title: "Prázdná aplikace s nastavením - zobrazení nastavení"
+  author: Jan Caha
+  date: 2025-03-03
+  path: "PGIS5/skripty/03_empty_application_with_settings_dialog.py"
+- title: "Prázdná aplikace s nastavením - zobrazení nastavení"
+  author: Jan Caha
+  date: 2025-03-03
+  path: "PGIS5/skripty/04_open_ogr_file.py"
+- title: "Signály a sloty"
+  author: Jan Caha
+  date: 2025-03-03
+  path: "PGIS5/skripty/05_signals_slots.py"
