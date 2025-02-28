@@ -1093,7 +1093,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1271540 -0.1716775 -0.2519769 -0.8442951 -0.4691580"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.68902723 -0.47937374 -0.02371674 -0.31223536 -0.05713074"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2614,6 +2614,17 @@
     "title": "Programování v GIS 5 (PvGIS5)",
     "section": "Zdroje",
     "text": "Zdroje\n\nbrožura (skripta) - Tvorba GUI aplikací pro geoinformatiku",
+    "crumbs": [
+      "Předměty letní semestr",
+      "Programování v GIS 5"
+    ]
+  },
+  {
+    "objectID": "subjects/pvgis5.html#data-ke-stažení",
+    "href": "subjects/pvgis5.html#data-ke-stažení",
+    "title": "Programování v GIS 5 (PvGIS5)",
+    "section": "Data ke stažení",
+    "text": "Data ke stažení\n\ngeopackage s vrstvami North Carolina example",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 5"
