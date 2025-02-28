@@ -1,5 +1,7 @@
 ---
 title: Programování v GIS 5 (PvGIS5)
+filters:
+   - include-code-files
 listing:
     - id: codes
       contents: PGIS5/skripty/description.yaml

@@ -1,5 +1,7 @@
 ---
 title: Programování v GIS 2 (PGIS2)
+filters:
+   - include-code-files
 listing:
     - id: prezentace
       contents: PGIS2/prezentace
@@ -28,8 +30,6 @@ listing:
           title: "Skript"
           date: "Datum"
           author: "Autor"
-filters:
-   - include-code-files
 ---
 
 ## Řešená témata{.topics}
