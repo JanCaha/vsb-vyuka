@@ -1093,7 +1093,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.06582628 -0.30385546 -0.06015704 -0.69235445 -0.16622809"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1271540 -0.1716775 -0.2519769 -0.8442951 -0.4691580"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2624,7 +2624,7 @@
     "href": "subjects/pvgis5.html#instalace",
     "title": "Programování v GIS 5 (PvGIS5)",
     "section": "Instalace",
-    "text": "Instalace\n\nmanagement Pythonu - Miniconda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis5.yaml\n\nZ conda prompt následně spustit:\nconda create -f env-pgis5.yaml\nconda activate pgis5",
+    "text": "Instalace\n\nmanagement Pythonu - Miniconda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis5.yaml\nname: pgis5\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12\n  - pip\n  # GIS tool\n  - GDAL\n  # PyQT\n  - pyqt\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\nZ conda prompt následně spustit:\nconda create -f env-pgis5.yaml\nconda activate pgis5",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 5"
