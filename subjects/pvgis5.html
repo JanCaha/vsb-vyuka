@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Programování v GIS 4 (PvGIS4) – Výuka - Jan Caha</title>
+<title>Programování v GIS 5 (PvGIS5) – Výuka - Jan Caha</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,8 +63,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../tools/vscode.html" rel="next">
-<link href="../subjects/pgis3.html" rel="prev">
+<link href="../subjects/idg.html" rel="next">
+<link href="../subjects/pgis2.html" rel="prev">
 <script src="../site_libs/quarto-listing/list.min.js"></script>
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -72,34 +106,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-prezentace .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-prezentace'] = new List('listing-prezentace', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-codes .list');
@@ -159,7 +165,7 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Programování v GIS 4 (PvGIS4) – Výuka - Jan Caha">
+<meta property="og:title" content="Programování v GIS 5 (PvGIS5) – Výuka - Jan Caha">
 <meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -173,7 +179,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis3.html">Předměty zimní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pvgis4.html">Programování v GIS 4</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pvgis5.html">Programování v GIS 5</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -204,13 +210,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Předměty letní semestr</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../subjects/pgis2.html" class="sidebar-item-text sidebar-link">
@@ -219,7 +225,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pvgis5.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pvgis5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Programování v GIS 5</span></a>
   </div>
 </li>
@@ -239,13 +245,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Předměty zimní semestr</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../subjects/pgis3.html" class="sidebar-item-text sidebar-link">
@@ -254,7 +260,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pvgis4.html" class="sidebar-item-text sidebar-link active">
+  <a href="../subjects/pvgis4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 4</span></a>
   </div>
 </li>
@@ -329,21 +335,17 @@ window.Quarto = {
    
   <ul>
   <li><a href="#řešená-témata" id="toc-řešená-témata" class="nav-link active" data-scroll-target="#řešená-témata">Řešená témata</a></li>
-  <li><a href="#seminární-práce" id="toc-seminární-práce" class="nav-link" data-scroll-target="#seminární-práce">Seminární práce</a></li>
-  <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">Prezentace</a></li>
   <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">Zdroje</a></li>
-  <li><a href="#data-ke-stažení" id="toc-data-ke-stažení" class="nav-link" data-scroll-target="#data-ke-stažení">Data ke stažení</a></li>
-  <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">Ukázkové kódy</a></li>
-  <li><a href="#další" id="toc-další" class="nav-link" data-scroll-target="#další">Další</a></li>
+  <li><a href="#instalace" id="toc-instalace" class="nav-link" data-scroll-target="#instalace">Instalace</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis3.html">Předměty zimní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pvgis4.html">Programování v GIS 4</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pvgis5.html">Programování v GIS 5</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Programování v GIS 4 (PvGIS4)</h1>
+<h1 class="title">Programování v GIS 5 (PvGIS5)</h1>
 </div>
 
 
@@ -363,112 +365,35 @@ window.Quarto = {
 <section id="řešená-témata" class="level2 topics">
 <h2 class="topics anchored" data-anchor-id="řešená-témata">Řešená témata</h2>
 <ul>
-<li>základní přehled <span class="software">QGIS</span></li>
-<li>úvod <span class="software">PyQGIS</span></li>
-<li>zprovoznění Pythonu a QGIS Python API ve <span class="software">VS Code</span> dle <a href="../tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api">návodu</a></li>
-<li>vektorové vrstvy a práce s nimi</li>
-<li>geometrie <code>QgsGeometry</code> a <code>QgsAbstractGeometry</code></li>
-<li>rastrová data</li>
-<li>processingové nástroje pro zpracování dat</li>
-<li>QGIS projekt a layout</li>
+<li>opakování zpracování geodat dat pomocí <span class="software">GDAL/OGR</span></li>
+<li>tvorba uživatelských rozhraní pomocí <span class="software">PyQt</span></li>
 </ul>
-</section>
-<section id="seminární-práce" class="level2 seminar-work">
-<h2 class="seminar-work anchored" data-anchor-id="seminární-práce">Seminární práce</h2>
-<p>Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte knihovnu <span class="software">QGIS Python API</span>. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript odevzdejte emailem před posledním cvičením. Funkčnost skriptu bude prezentována na posledním cvičení.</p>
-</section>
-<section id="prezentace" class="level2 presentations">
-<h2 class="presentations anchored" data-anchor-id="prezentace">Prezentace</h2>
-<div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Datum
-</th>
-<th>
-Prezentace
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1740737810341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="179" data-listing-title-sort="Úvodní hodina" data-listing-filename-sort="01_uvod.qmd">
-<td>
-<span class="listing-date">2024-09-23</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/01_uvod.html" class="title listing-title">Úvodní hodina</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1740737810341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317" data-listing-title-sort="Základ [QGIS Python API]{.software}" data-listing-filename-sort="02_qgis_python_api.qmd">
-<td>
-<span class="listing-date">2024-09-23</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/02_qgis_python_api.html" class="title listing-title">Základ <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1740737810341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="312" data-listing-title-sort="Vektorová data v [QGIS Python API]{.software}" data-listing-filename-sort="03_vektorová_data.qmd">
-<td>
-<span class="listing-date">2024-10-07</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/03_vektorová_data.html" class="title listing-title">Vektorová data v <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1740737810341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="226" data-listing-title-sort="Geometrie v [QGIS Python API]{.software}" data-listing-filename-sort="04_geometrie.qmd">
-<td>
-<span class="listing-date">2024-10-14</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/04_geometrie.html" class="title listing-title">Geometrie v <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1729468800000" data-listing-file-modified-sort="1740737810341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="183" data-listing-title-sort="Rastrová data v [QGIS Python API]{.software}" data-listing-filename-sort="05_rastrova_data.qmd">
-<td>
-<span class="listing-date">2024-10-21</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/05_rastrova_data.html" class="title listing-title">Rastrová data v <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1730592000000" data-listing-file-modified-sort="1740737810341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="342" data-listing-title-sort="Processingové nástroje [QGIS Python API]{.software}" data-listing-filename-sort="06_qgis_nastroje.qmd">
-<td>
-<span class="listing-date">2024-11-03</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/06_qgis_nastroje.html" class="title listing-title">Processingové nástroje <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-<tr data-index="6" data-listing-date-sort="1732492800000" data-listing-file-modified-sort="1740737810341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="99" data-listing-title-sort="Projekt a Layout [QGIS Python API]{.software}" data-listing-filename-sort="07_projekt_layout.qmd">
-<td>
-<span class="listing-date">2024-11-25</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/07_projekt_layout.html" class="title listing-title">Projekt a Layout <span class="software">QGIS Python API</span></a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
 </section>
 <section id="zdroje" class="level2 sources">
 <h2 class="sources anchored" data-anchor-id="zdroje">Zdroje</h2>
 <ul>
-<li><a href="https://qgis.org/pyqgis/master/">QGIS Python API documentation</a></li>
-<li><a href="https://www.qgistutorials.com/en/">QGIS Tutorials and Tips</a> - zejména kapitola <strong>Python Scripting (PyQGIS)</strong> ale i další zaměřené na <span class="software">QGIS</span></li>
-<li><a href="https://docs.qgis.org/3.34/en/docs/pyqgis_developer_cookbook/index.html">PyQGIS Developer Cookbook</a></li>
+<li>brožura (skripta) - <a href="https://jancaha.github.io/PyQt-GIS-book/">Tvorba GUI aplikací pro geoinformatiku</a></li>
 </ul>
 </section>
-<section id="data-ke-stažení" class="level2 data-sources">
-<h2 class="data-sources anchored" data-anchor-id="data-ke-stažení">Data ke stažení</h2>
+<section id="instalace" class="level2 instals">
+<h2 class="instals anchored" data-anchor-id="instalace">Instalace</h2>
+<ul>
+<li>management Pythonu - <a href="https://docs.anaconda.com/free/miniconda/index.html">Miniconda</a></li>
+<li>IDE - <a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+<li>extenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator</li>
+<li>instalace Conda environmentu</li>
+</ul>
+<p>Definice environment souboru, např. s názvem <code>env-pgis5.yaml</code></p>
+<div class="sourceCode" id="cb1" data-include="./PGIS5/soubory/env-pgis5.yaml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Z conda prompt následně spustit:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-f</span> env-pgis5.yaml</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+
 </section>
-<section id="ukázkové-kódy" class="level2 codes">
-<h2 class="codes anchored" data-anchor-id="ukázkové-kódy">Ukázkové kódy</h2>
-<div id="listing-codes" class="quarto-listing quarto-listing-container-table">
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-codes">
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -481,116 +406,20 @@ Skript
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1727654400000" data-listing-title-sort="Úvod do vektorových dat">
+<tr data-index="0" data-listing-date-sort="1740700800000" data-listing-title-sort="Prázdná aplikace">
 <td>
-<span class="listing-date">2024-09-30</span>
+<span class="listing-date">2025-02-28</span>
 </td>
 <td>
-<a href="PGIS4/skripty/01_vektorová_vrstva.py" class="title listing-title">Úvod do vektorových dat</a>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1728259200000" data-listing-title-sort="Vektorová data - výběr prvků">
-<td>
-<span class="listing-date">2024-10-07</span>
-</td>
-<td>
-<a href="PGIS4/skripty/02_vyber_prvku.py" class="title listing-title">Vektorová data - výběr prvků</a>
+<a href="PGIS5/skripty/01_empty_application.py" class="title listing-title">Prázdná aplikace</a>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1728259200000" data-listing-title-sort="Vektorová data - tvorba dat">
+<tr data-index="1" data-listing-date-sort="1740700800000" data-listing-title-sort="Prázdná aplikace s nastavením">
 <td>
-<span class="listing-date">2024-10-07</span>
+<span class="listing-date">2025-02-28</span>
 </td>
 <td>
-<a href="PGIS4/skripty/03_tvorby_polygonove_vrstvy.py" class="title listing-title">Vektorová data - tvorba dat</a>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1728864000000" data-listing-title-sort="Ukázka rozhraní v Pythonu">
-<td>
-<span class="listing-date">2024-10-14</span>
-</td>
-<td>
-<a href="PGIS4/skripty/04_rozhrani.py" class="title listing-title">Ukázka rozhraní v Pythonu</a>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1728864000000" data-listing-title-sort="Rozhraní v QgsAbstractGeometry">
-<td>
-<span class="listing-date">2024-10-14</span>
-</td>
-<td>
-<a href="PGIS4/skripty/05_qgsabstractgeometry.py" class="title listing-title">Rozhraní v QgsAbstractGeometry</a>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1728864000000" data-listing-title-sort="Operace s geometriemi">
-<td>
-<span class="listing-date">2024-10-14</span>
-</td>
-<td>
-<a href="PGIS4/skripty/06_operace_geometrie.py" class="title listing-title">Operace s geometriemi</a>
-</td>
-</tr>
-<tr data-index="6" data-listing-date-sort="1729468800000" data-listing-title-sort="Rastrová data">
-<td>
-<span class="listing-date">2024-10-21</span>
-</td>
-<td>
-<a href="PGIS4/skripty/07_rastrova_data.py" class="title listing-title">Rastrová data</a>
-</td>
-</tr>
-<tr data-index="7" data-listing-date-sort="1729468800000" data-listing-title-sort="Editace hodnot rastru">
-<td>
-<span class="listing-date">2024-10-21</span>
-</td>
-<td>
-<a href="PGIS4/skripty/08_editace_hodnot_rastru.py" class="title listing-title">Editace hodnot rastru</a>
-</td>
-</tr>
-<tr data-index="8" data-listing-date-sort="1729468800000" data-listing-title-sort="Kopie rastru a jeho hodnot">
-<td>
-<span class="listing-date">2024-10-21</span>
-</td>
-<td>
-<a href="PGIS4/skripty/09_kopie_rastru.py" class="title listing-title">Kopie rastru a jeho hodnot</a>
-</td>
-</tr>
-<tr data-index="9" data-listing-date-sort="1730678400000" data-listing-title-sort="Nástroj pro vektorová data">
-<td>
-<span class="listing-date">2024-11-04</span>
-</td>
-<td>
-<a href="PGIS4/skripty/nastroj1.py" class="title listing-title">Nástroj pro vektorová data</a>
-</td>
-</tr>
-<tr data-index="10" data-listing-date-sort="1731888000000" data-listing-title-sort="Ukázkový Plugin">
-<td>
-<span class="listing-date">2024-11-18</span>
-</td>
-<td>
-<a href="PGIS4/skripty/mujplugin.zip" class="title listing-title">Ukázkový Plugin</a>
-</td>
-</tr>
-<tr data-index="11" data-listing-date-sort="1731888000000" data-listing-title-sort="Algoritmus s více kroky">
-<td>
-<span class="listing-date">2024-11-18</span>
-</td>
-<td>
-<a href="PGIS4/skripty/nástroj2.py" class="title listing-title">Algoritmus s více kroky</a>
-</td>
-</tr>
-<tr data-index="12" data-listing-date-sort="1732492800000" data-listing-title-sort="Editace projektu a layoutu">
-<td>
-<span class="listing-date">2024-11-25</span>
-</td>
-<td>
-<a href="PGIS4/skripty/10_projekt_layout.py" class="title listing-title">Editace projektu a layoutu</a>
-</td>
-</tr>
-<tr data-index="13" data-listing-date-sort="1732492800000" data-listing-title-sort="GUI nástroj na kreslení polygonu">
-<td>
-<span class="listing-date">2024-11-25</span>
-</td>
-<td>
-<a href="PGIS4/skripty/11_gui_nastroj.py" class="title listing-title">GUI nástroj na kreslení polygonu</a>
+<a href="PGIS5/skripty/02_empty_application_with_settings.py" class="title listing-title">Prázdná aplikace s nastavením</a>
 </td>
 </tr>
 </tbody>
@@ -598,18 +427,7 @@ Skript
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div>
-</section>
-<section id="další" class="level2">
-<h2 class="anchored" data-anchor-id="další">Další</h2>
-<p>Doporučuji zřízení a otestování <strong>GitHub Copilot</strong> dle <a href="../tools/github-copilot.html">návodu</a> pro zjednodušení psaní kódu v Pythonu.</p>
-<p>Process nastavení PYthonu a QGIS pro <span class="software">VS Code</span> je popsán <a href="../tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api">zde</a>.</p>
-
-
-
-</section>
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1173,13 +991,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../subjects/pgis3.html" class="pagination-link" aria-label="Programování v GIS 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Programování v GIS 3</span>
+      <a href="../subjects/pgis2.html" class="pagination-link" aria-label="Programování v GIS 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Programování v GIS 2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../tools/vscode.html" class="pagination-link" aria-label="Visual Studio Code">
-        <span class="nav-page-text">Visual Studio Code</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../subjects/idg.html" class="pagination-link" aria-label="Interpretace geodat">
+        <span class="nav-page-text">Interpretace geodat</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
