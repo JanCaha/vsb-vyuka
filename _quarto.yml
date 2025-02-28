@@ -29,6 +29,8 @@ website:
         contents:
         - href: subjects/pgis2.qmd
           text: Programování v GIS 2
+        - href: subjects/pvgis5.qmd
+          text: Programování v GIS 5
         - href: subjects/idg.qmd
           text: Interpretace geodat
         - href: subjects/pdbs2.qmd
