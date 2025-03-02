@@ -1,19 +1,19 @@
 ---
 title: "Knihovna [GDAL/OGR]{.software}"
-date: 2024-03-04
+date: 2025-03-03
 ---
 
 ## Popis [GDAL/OGR]{.software}
 
 - nízkoúrovňová knihovna
 - v Pythonu zpřístupňujeme její **binding** - [dokumentace](https://gdal.org/api/python/osgeo.html)
-- kód knihovny v [C/C++]{.software} -> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)
-- většinu objektů uložených v proměnných je vhodné po použití nastavit na `None`, čímž se explicitně uvolní prostředky
+- kód knihovny v [C/C++]{.software} {{< fa arrow-right >}} odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)
+- většinu objektů uložených v proměnných je vhodné po použití nastavit na `None`, čímž se explicitně uvolní paměťové prostředky
 - knihovna má hlavní modul `osgeo` a několik dílčích modulů
   -  `gdal` - rastry
   -  `ogr` - vektory
   -  `osr` - souřadnicové systémy 
-- kód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a [mypy]{.software} dobře kontrolovat kód
+- kód není typovaný jak je Pythonu doporučované a je dobré místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a [mypy]{.software} dobře kontrolovat kód
 
 ## Příklady typování
 
@@ -32,6 +32,11 @@ ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
 
 layer: ogr.Layer = ds.GetLayer()
 ```
+
+## Zdroje informací
+
+- [GDAL/OGR Cookbook](https://pcjericks.github.io/py-gdalogr-cookbook/)
+- řada ukázek a příkladům, které jsou vhodným startovacím bodem
 
 ## Otevírání souborů
 
@@ -54,7 +59,10 @@ layer: ogr.Layer = ds.GetLayer()
 - mohou být pouze pro čtení (**DWG**), značná část ale podporuje i zápis (**GPKG**, **GeoTiff**)
 - některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (**GeoJSON**)
 - často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je
-- drivery `MEM` - raster a `Memory` - vektor {{< fa arrow-right >}} pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)
+- drivery `MEM` - raster a `Memory` - vektor {{< fa arrow-right >}} pro data neuložené fyzicky, ale pouze v RAM 
+  - velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu
+  - nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)
+  - neplést s daty s adresou `/vsimem` - také v RAM, ale mají formát
 
 ## Obecné struktury
 
@@ -81,6 +89,8 @@ layer: ogr.Layer = ds.GetLayer()
 ## Příklad
 
 - data z [Natural Earth](https://www.naturalearthdata.com/)
+    - [vektorová data](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip)
+    - [rastrová data](https://naciscdn.org/naturalearth/10m/raster/HYP_HR_SR_W.zip)
 - otevření souboru (bez i za použití driveru)
 - výběr vrstvy
 - iterace přes prvky - geometrie i atributy
