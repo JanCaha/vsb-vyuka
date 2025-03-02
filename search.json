@@ -424,7 +424,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-03-04\n\n\nKnihovna GDAL/OGR\n\n\n\n\n2024-03-18\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n2024-04-15\n\n\nFunkce a třídy\n\n\n\n\n2024-04-29\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars a geopolars\n\n\n\n\n2025-02-17\n\n\nÚvodní cvičení\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2024-03-18\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n2024-04-15\n\n\nFunkce a třídy\n\n\n\n\n2024-04-29\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars a geopolars\n\n\n\n\n2025-02-17\n\n\nÚvodní cvičení\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1093,7 +1093,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.68902723 -0.47937374 -0.02371674 -0.31223536 -0.05713074"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1937063 -0.6327317 -0.0264362 -0.5204414 -0.3221151"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2304,7 +2304,7 @@
     "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#popis-gdalogr",
     "title": "Knihovna GDAL/OGR",
     "section": "Popis GDAL/OGR",
-    "text": "Popis GDAL/OGR\n\nnízkoúrovňová knihovna\nv Pythonu zpřístupňujeme její binding - dokumentace\nkód knihovny v C/C++ -&gt; odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)\nvětšinu objektů uložených v proměnných je vhodné po použití nastavit na None, čímž se explicitně uvolní prostředky\nknihovna má hlavní modul osgeo a několik dílčích modulů\n\ngdal - rastry\nogr - vektory\nosr - souřadnicové systémy\n\nkód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a mypy dobře kontrolovat kód"
+    "text": "Popis GDAL/OGR\n\nnízkoúrovňová knihovna\nv Pythonu zpřístupňujeme její binding - dokumentace\nkód knihovny v C/C++  odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)\nvětšinu objektů uložených v proměnných je vhodné po použití nastavit na None, čímž se explicitně uvolní paměťové prostředky\nknihovna má hlavní modul osgeo a několik dílčích modulů\n\ngdal - rastry\nogr - vektory\nosr - souřadnicové systémy\n\nkód není typovaný jak je Pythonu doporučované a je dobré místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a mypy dobře kontrolovat kód"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#příklady-typování",
@@ -2312,6 +2312,13 @@
     "title": "Knihovna GDAL/OGR",
     "section": "Příklady typování",
     "text": "Příklady typování\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nfile = Path(__file__).parent / \"soubor.txt\"\n\nds: gdal.Dataset = gdal.OpenEx(file.as_posix())\n\nlayer: ogr.Layer = ds.GetLayer()"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#zdroje-informací",
+    "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#zdroje-informací",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Zdroje informací",
+    "text": "Zdroje informací\n\nGDAL/OGR Cookbook\nřada ukázek a příkladům, které jsou vhodným startovacím bodem"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#otevírání-souborů",
@@ -2332,7 +2339,7 @@
     "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#drivery",
     "title": "Knihovna GDAL/OGR",
     "section": "Drivery",
-    "text": "Drivery\n\nkaždý podporovaný formát má svůj vlastní\nmohou být pouze pro čtení (DWG), značná část ale podporuje i zápis (GPKG, GeoTiff)\nněkteré drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (GeoJSON)\nčasto není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je\ndrivery MEM - raster a Memory - vektor  pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)"
+    "text": "Drivery\n\nkaždý podporovaný formát má svůj vlastní\nmohou být pouze pro čtení (DWG), značná část ale podporuje i zápis (GPKG, GeoTiff)\nněkteré drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (GeoJSON)\nčasto není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je\ndrivery MEM - raster a Memory - vektor  pro data neuložené fyzicky, ale pouze v RAM\n\nvelice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu\nnemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)\nneplést s daty s adresou /vsimem - také v RAM, ale mají formát"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#obecné-struktury",
@@ -2360,7 +2367,7 @@
     "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#příklad",
     "title": "Knihovna GDAL/OGR",
     "section": "Příklad",
-    "text": "Příklad\n\ndata z Natural Earth\notevření souboru (bez i za použití driveru)\nvýběr vrstvy\niterace přes prvky - geometrie i atributy\ndefinice vrstvy"
+    "text": "Příklad\n\ndata z Natural Earth\n\nvektorová data\nrastrová data\n\notevření souboru (bez i za použití driveru)\nvýběr vrstvy\niterace přes prvky - geometrie i atributy\ndefinice vrstvy"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#načtení-souboru-a-základní-info",

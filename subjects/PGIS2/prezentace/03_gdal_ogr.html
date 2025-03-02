@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-03-04">
+  <meta name="dcterms.date" content="2025-03-03">
   <title>Výuka - Jan Caha – Knihovna GDAL/OGR</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -211,27 +211,27 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-03-04</p>
+  <p class="date">2025-03-03</p>
 </section>
 <section id="popis-gdalogr" class="slide level2">
 <h2>Popis <span class="software">GDAL/OGR</span></h2>
 <ul>
 <li>nízkoúrovňová knihovna</li>
 <li>v Pythonu zpřístupňujeme její <strong>binding</strong> - <a href="https://gdal.org/api/python/osgeo.html">dokumentace</a></li>
-<li>kód knihovny v <span class="software">C/C++</span> -&gt; odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)</li>
-<li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní prostředky</li>
+<li>kód knihovny v <span class="software">C/C++</span> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)</li>
+<li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní paměťové prostředky</li>
 <li>knihovna má hlavní modul <code>osgeo</code> a několik dílčích modulů
 <ul>
 <li><code>gdal</code> - rastry</li>
 <li><code>ogr</code> - vektory</li>
 <li><code>osr</code> - souřadnicové systémy</li>
 </ul></li>
-<li>kód není typovaný je tak vhodné místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a <span class="software">mypy</span> dobře kontrolovat kód</li>
+<li>kód není typovaný jak je Pythonu doporučované a je dobré místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a <span class="software">mypy</span> dobře kontrolovat kód</li>
 </ul>
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="6375a48c" class="cell" data-execution_count="1">
+<div id="7c70cc11" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -244,6 +244,13 @@ Jan Caha
 <span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="zdroje-informací" class="slide level2">
+<h2>Zdroje informací</h2>
+<ul>
+<li><a href="https://pcjericks.github.io/py-gdalogr-cookbook/">GDAL/OGR Cookbook</a></li>
+<li>řada ukázek a příkladům, které jsou vhodným startovacím bodem</li>
+</ul>
 </section>
 <section id="otevírání-souborů" class="slide level2">
 <h2>Otevírání souborů</h2>
@@ -273,7 +280,12 @@ Jan Caha
 <li>mohou být pouze pro čtení (<strong>DWG</strong>), značná část ale podporuje i zápis (<strong>GPKG</strong>, <strong>GeoTiff</strong>)</li>
 <li>některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (<strong>GeoJSON</strong>)</li>
 <li>často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je</li>
-<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM (velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu), nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)</li>
+<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM
+<ul>
+<li>velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu</li>
+<li>nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)</li>
+<li>neplést s daty s adresou <code>/vsimem</code> - také v RAM, ale mají formát</li>
+</ul></li>
 </ul>
 </section>
 <section id="obecné-struktury" class="slide level2">
@@ -307,7 +319,11 @@ Jan Caha
 <section id="příklad" class="slide level2">
 <h2>Příklad</h2>
 <ul>
-<li>data z <a href="https://www.naturalearthdata.com/">Natural Earth</a></li>
+<li>data z <a href="https://www.naturalearthdata.com/">Natural Earth</a>
+<ul>
+<li><a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip">vektorová data</a></li>
+<li><a href="https://naciscdn.org/naturalearth/10m/raster/HYP_HR_SR_W.zip">rastrová data</a></li>
+</ul></li>
 <li>otevření souboru (bez i za použití driveru)</li>
 <li>výběr vrstvy</li>
 <li>iterace přes prvky - geometrie i atributy</li>
@@ -319,7 +335,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="f1741acd" class="cell" data-execution_count="2">
+<div id="5e3c0eca" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
