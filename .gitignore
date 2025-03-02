@@ -6,3 +6,4 @@ _freeze
 _site
 .mypy_cache
 _data
+**/tmp/*
