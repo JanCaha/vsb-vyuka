@@ -245,6 +245,7 @@ print(a)
 ## Kontextové managery ukázka
 
 ```{python}
+#| eval: false
 file = open("soubor.txt", "w")
 file.write("Text")
 file.close()  # na tohle se často zapomene - může/nemusí být problém
@@ -253,6 +254,7 @@ file.close()  # na tohle se často zapomene - může/nemusí být problém
 - s kontextovým managerem
 
 ```{python}
+# | eval: false
 with open("soubor.txt", "w") as file:
     file.write("Text")
 ```
@@ -308,7 +310,6 @@ def fun(vals: typing.List[float], round_up: bool = True) -> typing.List[int]: ..
 ## Delší skripty - příklad
 
 ```python
-| eval: false
 def fn_a(): ...
 def fn_b(): ...
 def fn_c(): ...
