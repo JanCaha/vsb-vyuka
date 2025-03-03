@@ -316,7 +316,7 @@ Jan Caha
 <li>jednoduché - celá čísla, čísla s plovoucí desetinnou čárkou, text, pravdivostní hodnota</li>
 <li>komplexní - seznam, slovník, tuple</li>
 </ul>
-<div id="b6e5f84f" class="cell" data-execution_count="1">
+<div id="31f596a5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>seznam <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>slovnik <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>, <span class="st">"b"</span>: <span class="dv">2</span>}</span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -325,7 +325,7 @@ Jan Caha
 <li>objekty - např. <code>Path</code> z knihovny <span class="software">pathlib</span></li>
 <li>funkce - lze je také uložit do proměnné (trochu komplikované na představu)</li>
 </ul>
-<div id="e2af0b1f" class="cell" data-execution_count="2">
+<div id="c266d6e4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun(): ...</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -348,7 +348,7 @@ Jan Caha
 <li>speciální případ <code>for</code> s <code>enumerate()</code> (iterace přes prvky seznamu, nebo slovníku a zároveň získání indexu)</li>
 <li><code>range()</code> - funkce pro generování číselné posloupnosti</li>
 </ul>
-<div id="1133a55f" class="cell" data-execution_count="3">
+<div id="a4ae24b8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>]</span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, x <span class="kw">in</span> <span class="bu">enumerate</span>(v):</span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Na pozici </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> je hodnota </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -364,7 +364,7 @@ Na pozici 2 je hodnota c</code></pre>
 <ul>
 <li>jednoduchá konstrukce na zpracování seznamu</li>
 </ul>
-<div id="3470c878" class="cell" data-execution_count="4">
+<div id="7948c039" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>vals <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> [<span class="ss">f"cislo </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> x <span class="kw">in</span> vals]</span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -375,7 +375,7 @@ Na pozici 2 je hodnota c</code></pre>
 <ul>
 <li>lze i filtrovat pomocí <code>if</code></li>
 </ul>
-<div id="439c62e7" class="cell" data-execution_count="5">
+<div id="e72f23ad" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>vals <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>]</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> [<span class="bu">str</span>(x) <span class="cf">for</span> x <span class="kw">in</span> vals <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">4</span>]</span>
 <span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -425,7 +425,7 @@ Na pozici 2 je hodnota c</code></pre>
 <li>neřešitelná situace v programu</li>
 <li>nelze dál pokračovat - program se zastaví</li>
 </ul>
-<div id="b89ce60a" class="cell" data-execution_count="6">
+<div id="39877669" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="co">"a"</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -446,7 +446,7 @@ Na pozici 2 je hodnota c</code></pre>
 <li>druhy chyb - <a href="https://docs.python.org/3.12/tutorial/errors.html#exception-chaining">dokumentace</a></li>
 <li>konstrukce <code>try, except, finally</code></li>
 </ul>
-<div id="94fead0d" class="cell" data-execution_count="7">
+<div id="315eda18" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co">"a"</span> <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Toto se nevykoná"</span>)</span>
@@ -475,7 +475,7 @@ Konec</code></pre>
 <li>tisk objektu bez funkce <code>__repr__()</code></li>
 <li>tiskne informace o umístění objektu v paměti</li>
 </ul>
-<div id="98913f7b" class="cell" data-execution_count="8">
+<div id="b3041621" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -483,7 +483,7 @@ Konec</code></pre>
 <span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> A()</span>
 <span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.A object at 0x7fab30e52990&gt;</code></pre>
+<pre><code>&lt;__main__.A object at 0x7fea8416ed80&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -493,7 +493,7 @@ Konec</code></pre>
 <li>tisk objektu s funkcí <code>__repr__()</code></li>
 <li>tiskne řetězec z této funkce</li>
 </ul>
-<div id="b8561ed6" class="cell" data-execution_count="9">
+<div id="e104d846" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
@@ -525,7 +525,7 @@ Konec</code></pre>
 </section>
 <section id="kontextové-managery-ukázka" class="slide level2">
 <h2>Kontextové managery ukázka</h2>
-<div id="e0c05daf" class="cell" data-execution_count="10">
+<div id="56fd9a53" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"soubor.txt"</span>, <span class="st">"w"</span>)</span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(<span class="st">"Text"</span>)</span>
 <span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()  <span class="co"># na tohle se často zapomene - může/nemusí být problém</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -533,7 +533,7 @@ Konec</code></pre>
 <ul>
 <li>s kontextovým managerem</li>
 </ul>
-<div id="be3f86d8" class="cell" data-execution_count="11">
+<div id="e89f6f6d" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"soubor.txt"</span>, <span class="st">"w"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">"Text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -551,7 +551,7 @@ Konec</code></pre>
 <li>obvykle hlavně u funkcí</li>
 <li>za <code>-&gt;</code> uvádíme návratový typ funkce</li>
 </ul>
-<div id="b91506c5" class="cell" data-execution_count="12">
+<div id="76bf75fb" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
 <span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -590,6 +590,35 @@ Konec</code></pre>
 <li><code>cesta_text = cesta.as_posix()</code></li>
 </ul></li>
 </ul>
+</section>
+<section id="delší-skripty" class="slide level2">
+<h2>Delší skripty</h2>
+<ul>
+<li>Python pouští skripty standardně celé
+<ul>
+<li>problém se čtením u delších souborů</li>
+<li>při importu se také interpretuje celý soubor (může se spustit kód, který by neměl)</li>
+</ul></li>
+<li>typicky řada funkcí nasledovaná kódem, který má běžet</li>
+<li>část skriptu, která se má spustit uvádět do <code>if __name__ == "__main__":</code>
+<ul>
+<li>tato část se spustí, pouze pokud je spuštěn soubor přímo, nikoliv importován</li>
+</ul></li>
+</ul>
+</section>
+<section id="delší-skripty---příklad" class="slide level2">
+<h2>Delší skripty - příklad</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn_a(): ...</span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn_b(): ...</span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn_c(): ...</span>
+<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span> <span class="co"># kód, který se vykoná vždy (spuštění i import)</span></span>
+<span id="cb21-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb21-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># vykoná se pouze při explicitním spuštění souboru</span></span>
+<span id="cb21-9"><a aria-hidden="true" tabindex="-1"></a>    fn_a()</span>
+<span id="cb21-10"><a aria-hidden="true" tabindex="-1"></a>    fn_b()</span>
+<span id="cb21-11"><a aria-hidden="true" tabindex="-1"></a>    fn_c() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="formátování-pomocí-black-a-isort" class="slide level2">
 <h2>Formátování pomocí <span class="software">black</span> a <span class="software">isort</span></h2>

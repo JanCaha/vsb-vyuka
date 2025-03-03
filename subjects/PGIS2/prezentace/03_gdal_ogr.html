@@ -231,7 +231,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="7c70cc11" class="cell" data-execution_count="1">
+<div id="50ce755d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -335,7 +335,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="5e3c0eca" class="cell" data-execution_count="2">
+<div id="efe0ee43" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -356,6 +356,14 @@ Jan Caha
 <span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetFeatureCount())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="vlastní-kontextové-managery" class="slide level2">
+<h2>Vlastní kontextové managery</h2>
+<ul>
+<li>pro práci s vrstvami, pásmy, ale i datovými zdroji GDAL/OGR může být užitečné vytvořit si vlastní třídy kontextových managerů</li>
+<li>předejdeme tak problémům s uvolněním paměti a zjednodušíme si práci</li>
+<li>příklad na cvičení</li>
+</ul>
+</section>
 <section id="spouštění-operací-z-gdal" class="slide level2">
 <h2>Spouštění operací z GDAL</h2>
 <ul>
@@ -370,7 +378,8 @@ Jan Caha
 <section id="práce-s-daty-v-paměti" class="slide level2">
 <h2>Práce s daty v paměti</h2>
 <ul>
-<li>viz ukázkový kód</li>
+<li>viz ukázkový kód na cvičení</li>
+<li>bez formátu <i class="fa-solid fa-times" aria-label="times"></i> s určitým formátem</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
