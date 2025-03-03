@@ -122,6 +122,12 @@ if __name__ == "__main__":
     print(layer.GetFeatureCount())
 ```
 
+## Vlastní kontextové managery
+
+- pro práci s vrstvami, pásmy, ale i datovými zdroji GDAL/OGR může být užitečné vytvořit si vlastní třídy kontextových managerů
+- předejdeme tak problémům s uvolněním paměti a zjednodušíme si práci
+- příklad na cvičení
+
 ## Spouštění operací z GDAL
 
 - hlavní funkce
@@ -133,6 +139,7 @@ if __name__ == "__main__":
 
 ## Práce s daty v paměti
 
-- viz ukázkový kód
+- viz ukázkový kód na cvičení
+- bez formátu {{<fa times>}} s určitým formátem
 
 # Dotazy? {.center}
