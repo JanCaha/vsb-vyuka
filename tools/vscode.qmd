@@ -30,6 +30,14 @@ Většina nastavení má dvě úrovně. Globální -- uložené v uživatelském
         "command": "editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
     },
+    {
+        "key": "f5",
+        "command": "python.execInTerminal-icon"
+    },
+    {
+        "key": "shift+f5",
+        "command": "debugpy.debugInTerminal"
+    },
 }
 ```
 
