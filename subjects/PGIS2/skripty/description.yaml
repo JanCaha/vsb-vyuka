@@ -9,7 +9,7 @@
 - title: "OGR práce s vrstvou pomocí vlastního kontextového manageru"
   author: Jan Caha
   date: 2025-03-03
-  path: "02_ogr_layer_context_manager.py"
+  path: "PGIS2/skripty/02_ogr_layer_context_manager.py"
 - title: "OGR extrakce dat do nového souboru, funkce `gdal.VectorTranslate()`"
   author: Jan Caha
   date: 2025-03-03
