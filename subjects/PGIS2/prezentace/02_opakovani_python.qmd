@@ -296,6 +296,32 @@ def fun(vals: typing.List[float], round_up: bool = True) -> typing.List[int]: ..
 - pokud potřebujeme cestu v podobě textového řetězce, lze ji získat pomocí metody `as_posix()`
   - `cesta_text = cesta.as_posix()`
 
+## Delší skripty
+
+- Python pouští skripty standardně celé 
+  -  problém se čtením u delších souborů
+  -  při importu se také interpretuje celý soubor (může se spustit kód, který by neměl)
+- typicky řada funkcí nasledovaná kódem, který má běžet
+- část skriptu, která se má spustit uvádět do `if __name__ == "__main__":`
+  - tato část se spustí, pouze pokud je spuštěn soubor přímo, nikoliv importován
+
+## Delší skripty - příklad
+
+```python
+| eval: false
+def fn_a(): ...
+def fn_b(): ...
+def fn_c(): ...
+
+a = 1 + 1 # kód, který se vykoná vždy (spuštění i import)
+
+if __name__ == "__main__":
+    # vykoná se pouze při explicitním spuštění souboru
+    fn_a()
+    fn_b()
+    fn_c() 
+```
+
 ## Formátování pomocí [black]{.software} a [isort]{.software}
 
 - [isort]{.software} řadí importy dle určité logiky
