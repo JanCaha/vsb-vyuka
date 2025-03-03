@@ -1,9 +1,9 @@
 # NOTE: Načtení vektorových dat, získání vrstvy a základní informací o vrstvě,
 # nastavení prostorového filtru a výpis prvků vyhovujících tomuto pravidlu
 from osgeo import gdal, ogr, osr
+from utils import LayerContextManager, data_path
 
-from utils import data_path
-
+# způsobí že chyby v GDAL budou vyvolávat výjimky
 gdal.UseExceptions()
 
 

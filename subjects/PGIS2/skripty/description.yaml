@@ -1,11 +1,19 @@
 - title: "Opakování Pythonu"
   author: Jan Caha
-  date: 2024-02-24
+  date: 2025-02-24
   path: "PGIS2/skripty/0_opakovani_python.py"
 - title: "GDAL/OGR načtení vektorových dat"
   author: Jan Caha
-  date: 2024-03-11
+  date: 2025-03-03
   path: "PGIS2/skripty/01_ogr.py"
+- title: "OGR práce s vrstvou pomocí vlastního kontextového manageru"
+  author: Jan Caha
+  date: 2025-03-03
+  path: "02_ogr_layer_context_manager.py"
+- title: "OGR extrakce dat do nového souboru, funkce `gdal.VectorTranslate()`"
+  author: Jan Caha
+  date: 2025-03-03
+  path: "PGIS2/skripty/03_ogr_extract_data_memory.py"
 - title: "GDAL/OGR načtení rastrových dat"
   author: Jan Caha
   date: 2024-03-11
