@@ -34,7 +34,11 @@ def save_data_path(filename: str, delete_if_exist: bool = False) -> Path:
 class LayerContextManager:
     """Kontextový manager pro otevření OGR Vrstvy"""
 
-    def __init__(self, path: Path, layer: typing.Optional[typing.Union[int, str]] = None):
+    def __init__(
+        self,
+        path: Path,
+        layer: typing.Optional[typing.Union[int, str]] = None,
+    ):
         self.path = path
         self.selected_layer = layer
         self.ds: gdal.Dataset = None

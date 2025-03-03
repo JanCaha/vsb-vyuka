@@ -13,7 +13,7 @@ if __name__ == "__main__":
     options = gdal.VectorTranslateOptions(
         format="Memory",  # memory formát bez specifického typu uložení, existuje pouze v RAM
         dstSRS="EPSG:3857",  # výstupní souřadnicový systém - konverze
-        layerName="ne_10m_admin_0_countries",  # název vrstvy - není povinný, pokud existuje pouze jedna vrstva nebo chceme všechny
+        layerName="ne_10m_admin_0_countries",  # název vrstvy - není povinný, pokud existuje pouze jedna vrstva nebo chceme-li všechny
         spatFilter=(0, 35, 20, 50),  # min_x, min_y, max_x, max_y - velice přibližně střední Evropa
         geometryType=["PROMOTE_TO_MULTI"],  # převedení geometrie na multi geometrii - zabrání výpisu varování
     )
@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     print(layer_extracted.GetFeatureCount())
 
-    # operace s daty z vrstvy zde
+    # operace s daty z vrstvy zde - např. modifikace hodnot
 
     layer_extracted = None  # explicitní uvolnění vrstvy
 
