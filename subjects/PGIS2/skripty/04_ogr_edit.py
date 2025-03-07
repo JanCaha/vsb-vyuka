@@ -15,18 +15,16 @@ def use_memory_driver() -> None:
     # NOTE: pokud se hodnota této proměnné změní, pak už se nebude možné dostat k datům !!!
     ds: gdal.Dataset = gdal.VectorTranslate("", path_data, options=params)
 
-    layer: ogr.Layer = ds.GetLayer()
+    with utils.LayerFromDatasetContextManager(ds) as layer:
 
-    feature: ogr.Feature
+        feature: ogr.Feature
 
-    for feature in layer:
-        geom: ogr.Geometry = feature.GetGeometryRef()
+        for feature in layer:
+            geom: ogr.Geometry = feature.GetGeometryRef()
 
-        feature.SetGeometry(geom.Buffer(10 * 1000))
+            feature.SetGeometry(geom.Buffer(10 * 1000))
 
-        layer.UpsertFeature(feature)
-
-    layer = None
+            layer.UpsertFeature(feature)
 
     gdal.VectorTranslate(path_result_file, ds)
 
@@ -43,18 +41,16 @@ def use_in_memory_data() -> None:
     # NOTE: k datům se lze po dobu běhu skriptu dostat pod uvedenou adresou
     ds: gdal.Dataset = gdal.VectorTranslate("/vsimem/data.gpkg", path_data, options=params)
 
-    layer: ogr.Layer = ds.GetLayer()
+    with utils.LayerFromDatasetContextManager(ds) as layer:
 
-    feature: ogr.Feature
+        feature: ogr.Feature
 
-    for feature in layer:
-        geom: ogr.Geometry = feature.GetGeometryRef()
+        for feature in layer:
+            geom: ogr.Geometry = feature.GetGeometryRef()
 
-        feature.SetGeometry(geom.Buffer(10 * 1000))
+            feature.SetGeometry(geom.Buffer(10 * 1000))
 
-        layer.UpsertFeature(feature)
-
-    layer = None
+            layer.UpsertFeature(feature)
 
     gdal.Sync(
         "/vsimem/",

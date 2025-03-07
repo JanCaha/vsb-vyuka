@@ -231,7 +231,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="baf8698c" class="cell" data-execution_count="1">
+<div id="f15b6658" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -300,7 +300,7 @@ Jan Caha
 <ul>
 <li>datový zdroj <code>gdal.Dataset</code> - základní objekt pro práci s daty, zdroj dat</li>
 <li>pásmo <code>gdal.Band</code> - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna</li>
-<li>array <code>gdal.MDArray</code> - sice existuje, ale v Pythonu spíše používáme <code>numpy.array</code></li>
+<li>array <code>gdal.MDArray</code> - sice existuje, ale v Pythonu spíše používáme <code>numpy.array</code> (funkce <code>ReadAsArray()</code>)</li>
 <li>a další, ale tyto jsou nejdůležitější</li>
 </ul>
 </section>
@@ -335,7 +335,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="627416df" class="cell" data-execution_count="2">
+<div id="10d441ac" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
