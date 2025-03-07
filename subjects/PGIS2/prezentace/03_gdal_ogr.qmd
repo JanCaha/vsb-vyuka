@@ -73,7 +73,7 @@ layer: ogr.Layer = ds.GetLayer()
 
 - datový zdroj `gdal.Dataset` - základní objekt pro práci s daty, zdroj dat
 - pásmo `gdal.Band` - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna
-- array `gdal.MDArray` - sice existuje, ale v Pythonu spíše používáme `numpy.array` 
+- array `gdal.MDArray` - sice existuje, ale v Pythonu spíše používáme `numpy.array` (funkce `ReadAsArray()`)
 - a další, ale tyto jsou nejdůležitější
  
 ## OGR Struktury
