@@ -1907,7 +1907,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-11\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2024-03-18\n\n\nFiona editace vektorových dat\n\n\n\n\n2024-03-25\n\n\nRasterio informace o souboru\n\n\n\n\n2024-03-25\n\n\nRasterio kopírování pásma do nového souboru\n\n\n\n\n2024-03-25\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2024-04-15\n\n\nUkázka tvorby objektu\n\n\n\n\n2024-04-15\n\n\nFunkce v souboru utils\n\n\n\n\n2024-04-29\n\n\nPolars - základní operace\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n2025-03-03\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-17\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2024-03-17\n\n\nGDAL editace hodnot rastru\n\n\n\n\n2024-03-18\n\n\nFiona editace vektorových dat\n\n\n\n\n2024-03-25\n\n\nRasterio informace o souboru\n\n\n\n\n2024-03-25\n\n\nRasterio kopírování pásma do nového souboru\n\n\n\n\n2024-04-15\n\n\nUkázka tvorby objektu\n\n\n\n\n2024-04-15\n\n\nFunkce v souboru utils\n\n\n\n\n2024-04-29\n\n\nPolars - základní operace\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n2025-03-10\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2539,7 +2539,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1186181 -0.3783699 -1.2600906 -0.3207251 -2.0401139"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.00726358 -0.47316587 -0.01923787 -0.35031620 -0.06765395"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",

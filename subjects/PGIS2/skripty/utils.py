@@ -7,23 +7,29 @@ from osgeo import gdal, ogr
 
 
 def base_data_path() -> Path:
-    """Returns a path to the data directory as a Path object."""
+    """Vrací cestu ke složce s daty jako objekt Path."""
     return Path(__file__).parent.parent / "_data"
 
 
 def data_path(filename: str) -> Path:
-    """Returns a path to a file as a Path object or raises an error if file does not exist."""
+    """Vrací cestu k souboru s daným názvem souboru jako objekt Path. Pokud soubor neexistuje vyvolá chybu."""
     file = base_data_path() / filename
     if not file.exists():
         raise ValueError(f"File {file.as_posix()} does not exist.")
     return file
 
 
+def base_save_data_path() -> Path:
+    """Vrací cestu ke složce pro uložení dat jako objekt Path. Pokud složka neexistuje, vytvoří ji."""
+    path = base_data_path() / "saved"
+    if not path.exists():
+        path.mkdir(parents=True)
+    return path
+
+
 def save_data_path(filename: str, delete_if_exist: bool = False) -> Path:
-    """Returns a path to a file as a Path object. If the file exists, it prints a warning. Optionally, the file can be deleted."""
-    path = base_data_path() / "saved" / filename
-    if not path.parent.exists():
-        path.parent.mkdir(parents=True)
+    """Vrací cestu k souboru pro uložení dat jako objekt Path. Pokud soubor existuje, vyvolá varování a pokud je nastaveno delete_if_exist na True, soubor smaže."""
+    path = base_save_data_path() / filename
     if path.exists():
         warnings.warn(f"File {path.as_posix()} exists.")
         if delete_if_exist:
