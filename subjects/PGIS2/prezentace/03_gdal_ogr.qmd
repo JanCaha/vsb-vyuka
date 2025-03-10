@@ -5,7 +5,7 @@ date: 2025-03-03
 
 ## Popis [GDAL/OGR]{.software}
 
-- nízkoúrovňová knihovna
+- nízkoúrovňová open source knihovna
 - v Pythonu zpřístupňujeme její **binding** - [dokumentace](https://gdal.org/api/python/osgeo.html)
 - kód knihovny v [C/C++]{.software} {{< fa arrow-right >}} odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)
 - většinu objektů uložených v proměnných je vhodné po použití nastavit na `None`, čímž se explicitně uvolní paměťové prostředky
@@ -86,6 +86,15 @@ layer: ogr.Layer = ds.GetLayer()
 - atributy `ogr.Field` - reprezentace atributu prvku
 - a další, ale tyto jsou nejdůležitější 
 
+## OGR Geometry
+
+- reprezentace geometrie
+- řada funkcí a operací, přímo na objektu
+- funkce `ogr.GT_*` pro modifikace a konverze
+- `ogr.CreateGeometryFrom*` pro tvorbu geometrie z různých formátů 
+- formáty **WKB** a **WKT**
+- 
+  
 ## Příklad
 
 - data z [Natural Earth](https://www.naturalearthdata.com/)
@@ -141,5 +150,27 @@ if __name__ == "__main__":
 
 - viz ukázkový kód na cvičení
 - bez formátu {{<fa times>}} s určitým formátem
+
+## Výhody GDAL/OGR
+
+- dostupnost
+- přístup k širokému spektru geodat
+- přístup na všech úrovních 
+- široké spektrum možností a nastavení
+- přípravené nástroje
+
+## Nevýhody GDAL/OGR
+
+- někdy ne úplně "pythonový" přístup k operacím
+- komplikovanější postupy
+- někdy až příliš široké možnosti
+- vede ke složitějším skriptům
+
+## Zhodnocení
+
+- nástroj s nejširší nabídkou možností a potenciálem
+- klade vyšší nároky na programátora
+- mohou vznikat "zajímavé" chyby, těžší na odhalení a vyřešení  
+- zcela jistě nástroj o němž má geoinformatik mít přehled a znát ho
 
 # Dotazy? {.center}
