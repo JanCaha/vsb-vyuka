@@ -107,3 +107,29 @@ class LayerFromDatasetContextManager:
         exc_tb: typing.Optional[types.TracebackType],
     ):
         self.layer = None
+
+
+class BandAsArrayContextManager:
+    """Kontextový manager pro otevření rastru a vrácení pásma rastru"""
+
+    def __init__(self, ds: gdal.Dataset, band_number: int = 1):
+        self.band_number = band_number
+        self.ds: gdal.Dataset = ds
+        self.band: gdal.Band = None
+
+    def __enter__(self) -> gdal.Band:
+
+        self.band = self.ds.GetRasterBand(self.band_number)
+
+        if self.band is None:
+            raise ValueError("Band not found.")
+
+        return self.band
+
+    def __exit__(
+        self,
+        exc_type: typing.Optional[typing.Type[BaseException]],
+        exc_val: typing.Optional[BaseException],
+        exc_tb: typing.Optional[types.TracebackType],
+    ):
+        self.band = None
