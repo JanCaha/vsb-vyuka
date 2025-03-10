@@ -86,14 +86,16 @@ layer: ogr.Layer = ds.GetLayer()
 - atributy `ogr.Field` - reprezentace atributu prvku
 - a další, ale tyto jsou nejdůležitější 
 
-## OGR Geometry
+## OGR geometrie
 
-- reprezentace geometrie
-- řada funkcí a operací, přímo na objektu
-- funkce `ogr.GT_*` pro modifikace a konverze
+- funkce `ogr.GT_*()` pro modifikace a konverze (`ForceTo*()`)
 - `ogr.CreateGeometryFrom*` pro tvorbu geometrie z různých formátů 
 - formáty **WKB** a **WKT**
-- 
+- třída `ogr.Geometry` reprezentace geometrie - s i bez informací o souřadnicovém systému
+- řada funkcí a operací, přímo na objektu
+- funkce `SetPrecision()` - přesnost geometrie
+- prostorové operace např. **union**, **intersection** atd.
+- prostorové interakce např. **touches**, **crosses**, **contains** atd. (řešeno přes knihovnu [GEOS]{.software})
   
 ## Příklad
 
