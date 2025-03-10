@@ -216,7 +216,7 @@ Jan Caha
 <section id="popis-gdalogr" class="slide level2">
 <h2>Popis <span class="software">GDAL/OGR</span></h2>
 <ul>
-<li>nízkoúrovňová knihovna</li>
+<li>nízkoúrovňová open source knihovna</li>
 <li>v Pythonu zpřístupňujeme její <strong>binding</strong> - <a href="https://gdal.org/api/python/osgeo.html">dokumentace</a></li>
 <li>kód knihovny v <span class="software">C/C++</span> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)</li>
 <li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní paměťové prostředky</li>
@@ -231,7 +231,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="9900d1b5" class="cell" data-execution_count="1">
+<div id="11c861b9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -316,6 +316,17 @@ Jan Caha
 <li>a další, ale tyto jsou nejdůležitější</li>
 </ul>
 </section>
+<section id="ogr-geometry" class="slide level2">
+<h2>OGR Geometry</h2>
+<ul>
+<li>reprezentace geometrie</li>
+<li>řada funkcí a operací, přímo na objektu</li>
+<li>funkce <code>ogr.GT_*</code> pro modifikace a konverze</li>
+<li><code>ogr.CreateGeometryFrom*</code> pro tvorbu geometrie z různých formátů</li>
+<li>formáty <strong>WKB</strong> a <strong>WKT</strong></li>
+<li></li>
+</ul>
+</section>
 <section id="příklad" class="slide level2">
 <h2>Příklad</h2>
 <ul>
@@ -335,7 +346,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="94b1cc08" class="cell" data-execution_count="2">
+<div id="be93dedd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -380,6 +391,35 @@ Jan Caha
 <ul>
 <li>viz ukázkový kód na cvičení</li>
 <li>bez formátu <i class="fa-solid fa-times" aria-label="times"></i> s určitým formátem</li>
+</ul>
+</section>
+<section id="výhody-gdalogr" class="slide level2">
+<h2>Výhody GDAL/OGR</h2>
+<ul>
+<li>dostupnost</li>
+<li>přístup k širokému spektru geodat</li>
+<li>přístup na všech úrovních</li>
+<li>široké spektrum možností a nastavení</li>
+<li>přípravené nástroje</li>
+</ul>
+</section>
+<section id="nevýhody-gdalogr" class="slide level2">
+<h2>Nevýhody GDAL/OGR</h2>
+<ul>
+<li>někdy ne úplně “pythonový” přístup k operacím</li>
+<li>komplikovanější postupy</li>
+<li>někdy až příliš široké možnosti</li>
+<li>vede ke složitějším skriptům</li>
+</ul>
+</section>
+<section id="zhodnocení" class="slide level2">
+<h2>Zhodnocení</h2>
+<ul>
+<li>nástroj s nejširší nabídkou možností a potenciálem</li>
+<li>klade vyšší nároky na programátora</li>
+<li>mohou vznikat “zajímavé” chyby, těžší na odhalení a vyřešení<br>
+</li>
+<li>zcela jistě nástroj o němž má geoinformatik mít přehled a znát ho</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
