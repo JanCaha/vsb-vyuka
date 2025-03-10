@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import utils
 from osgeo import gdal, ogr
 
@@ -8,7 +6,7 @@ gdal.UseExceptions()
 
 def use_memory_driver() -> None:
     path_data = utils.data_path("ne_10m_admin_0_countries.shp")
-    path_result_file = Path(__file__).parent / "data.gpkg"
+    path_result_file = utils.save_data_path("data.gpkg")
 
     params = gdal.VectorTranslateOptions(format="Memory", dstSRS="EPSG:3857")
 
@@ -20,10 +18,12 @@ def use_memory_driver() -> None:
         feature: ogr.Feature
 
         for feature in layer:
-            geom: ogr.Geometry = feature.GetGeometryRef()
 
+            # úprava geometrie prvku
+            geom: ogr.Geometry = feature.GetGeometryRef()
             feature.SetGeometry(geom.Buffer(10 * 1000))
 
+            # funkce pro nahrazení či vytvoření (pokud neexistuje - identifikace přes FID) prvku
             layer.UpsertFeature(feature)
 
     gdal.VectorTranslate(path_result_file, ds)
@@ -34,7 +34,7 @@ def use_memory_driver() -> None:
 def use_in_memory_data() -> None:
 
     path_data = utils.data_path("ne_10m_admin_0_countries.shp")
-    path_result = Path(__file__).parent
+    path_result = utils.base_save_data_path()
 
     params = gdal.VectorTranslateOptions(dstSRS="EPSG:3857")
 
@@ -46,12 +46,16 @@ def use_in_memory_data() -> None:
         feature: ogr.Feature
 
         for feature in layer:
-            geom: ogr.Geometry = feature.GetGeometryRef()
 
+            # úprava geometrie prvku
+            geom: ogr.Geometry = feature.GetGeometryRef()
             feature.SetGeometry(geom.Buffer(10 * 1000))
 
+            # funkce pro nahrazení či vytvoření (pokud neexistuje - identifikace přes FID) prvku
             layer.UpsertFeature(feature)
 
+    # funkce sychronizuje obsah dvou složek, první je zdrojová lokace, druhá je cílová lokace
+    # první parametr může i odkazovat do /vsimem prostoru
     gdal.Sync(
         "/vsimem/",
         path_result,
@@ -62,4 +66,8 @@ def use_in_memory_data() -> None:
 
 if __name__ == "__main__":
 
+    # použití memory driveru
+    use_memory_driver()
+
+    # použití in-memory dat
     use_in_memory_data()
