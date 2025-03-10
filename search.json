@@ -63,11 +63,11 @@
     "text": "OGR Struktury\n\ndatový zdroj ogr.DataSource (ale může být i gdal.Dataset) - základní objekt pro práci s daty, zdroj dat\nvrstva ogr.Layer - reprezentace jedné vrstvy v datovém zdroji\ndefinice vrstvy ogr.FeatureDefn - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)\nprvek ogr.Feature - reprezentace jednoho prvku ve vrstvě\ngeometrie ogr.Geometry - reprezentace geometrie prvku\natributy ogr.Field - reprezentace atributu prvku\na další, ale tyto jsou nejdůležitější"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#ogr-geometry",
-    "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#ogr-geometry",
+    "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#ogr-geometrie",
+    "href": "subjects/PGIS2/prezentace/03_gdal_ogr.html#ogr-geometrie",
     "title": "Knihovna GDAL/OGR",
-    "section": "OGR Geometry",
-    "text": "OGR Geometry\n\nreprezentace geometrie\nřada funkcí a operací, přímo na objektu\nfunkce ogr.GT_* pro modifikace a konverze\nogr.CreateGeometryFrom* pro tvorbu geometrie z různých formátů\nformáty WKB a WKT"
+    "section": "OGR geometrie",
+    "text": "OGR geometrie\n\nfunkce ogr.GT_*() pro modifikace a konverze (ForceTo*())\nogr.CreateGeometryFrom* pro tvorbu geometrie z různých formátů\nformáty WKB a WKT\ntřída ogr.Geometry reprezentace geometrie - s i bez informací o souřadnicovém systému\nřada funkcí a operací, přímo na objektu\nfunkce SetPrecision() - přesnost geometrie\nprostorové operace např. union, intersection atd.\nprostorové interakce např. touches, crosses, contains atd. (řešeno přes knihovnu GEOS)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#příklad",
@@ -2567,7 +2567,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.95641246 -0.21443594 -0.22873661 -0.43141295 -0.03626142"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.252631943 -0.109411943 -0.526970659 -0.096775614 -0.004198354"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",

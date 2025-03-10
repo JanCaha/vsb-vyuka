@@ -231,7 +231,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="11c861b9" class="cell" data-execution_count="1">
+<div id="db76dc47" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -316,15 +316,17 @@ Jan Caha
 <li>a další, ale tyto jsou nejdůležitější</li>
 </ul>
 </section>
-<section id="ogr-geometry" class="slide level2">
-<h2>OGR Geometry</h2>
+<section id="ogr-geometrie" class="slide level2">
+<h2>OGR geometrie</h2>
 <ul>
-<li>reprezentace geometrie</li>
-<li>řada funkcí a operací, přímo na objektu</li>
-<li>funkce <code>ogr.GT_*</code> pro modifikace a konverze</li>
+<li>funkce <code>ogr.GT_*()</code> pro modifikace a konverze (<code>ForceTo*()</code>)</li>
 <li><code>ogr.CreateGeometryFrom*</code> pro tvorbu geometrie z různých formátů</li>
 <li>formáty <strong>WKB</strong> a <strong>WKT</strong></li>
-<li></li>
+<li>třída <code>ogr.Geometry</code> reprezentace geometrie - s i bez informací o souřadnicovém systému</li>
+<li>řada funkcí a operací, přímo na objektu</li>
+<li>funkce <code>SetPrecision()</code> - přesnost geometrie</li>
+<li>prostorové operace např. <strong>union</strong>, <strong>intersection</strong> atd.</li>
+<li>prostorové interakce např. <strong>touches</strong>, <strong>crosses</strong>, <strong>contains</strong> atd. (řešeno přes knihovnu <span class="software">GEOS</span>)</li>
 </ul>
 </section>
 <section id="příklad" class="slide level2">
@@ -346,7 +348,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="be93dedd" class="cell" data-execution_count="2">
+<div id="2654ea9f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
