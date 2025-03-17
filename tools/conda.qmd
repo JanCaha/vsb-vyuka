@@ -1,0 +1,18 @@
+---
+title: Miniconda - management Python prostředí
+---
+
+## Instalace
+
+### Windows
+
+Stáhnout [instalační soubor](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe) a spustit jej. Nainstalovat dle výchozího nastavení.
+
+### Linux
+
+Spustit následující příkazy v terminálu:
+
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+```
