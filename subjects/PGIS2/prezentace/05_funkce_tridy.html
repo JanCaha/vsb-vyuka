@@ -246,7 +246,7 @@ Jan Caha
 <li>délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)</li>
 <li>snaha navrhovat funkce spíše obecně než specificky</li>
 </ul>
-<div id="4ce20a93" class="cell" data-execution_count="1">
+<div id="b5b7bd28" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> <span class="dv">2</span></span>
@@ -259,7 +259,7 @@ Jan Caha
 </section>
 <section id="funkce-příklad" class="slide level2">
 <h2>Funkce příklad</h2>
-<div id="a7406f45" class="cell" data-execution_count="2">
+<div id="7d9c9c8d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
@@ -306,7 +306,7 @@ Jan Caha
 </section>
 <section id="objekt---příklad" class="slide level2">
 <h2>Objekt - příklad</h2>
-<div id="b793efca" class="cell" data-execution_count="3">
+<div id="21250bad" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Zamestnanec:</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jmeno: <span class="bu">str</span>, hodinovy_plat: <span class="bu">float</span>):</span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.jmeno <span class="op">=</span> jmeno</span>
@@ -331,7 +331,7 @@ Jan Caha
 </section>
 <section id="použití-objektu" class="slide level2">
 <h2>Použití objektu</h2>
-<div id="60969ed0" class="cell" data-execution_count="4">
+<div id="3db369bb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>odpracovane_hodiny <span class="op">=</span> <span class="dv">160</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>zam <span class="op">=</span> Zamestnanec(<span class="st">"Testovaci Zamestnanec"</span>, <span class="dv">250</span>)</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span>

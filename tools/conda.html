@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Výuka - Jan Caha</title>
+<title>Miniconda - management Python prostředí – Výuka - Jan Caha</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-baeb97eba2ed060d52e86d8ae52fd3d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-c3c4120a65dc95787c913f7823cbf5f1.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-baeb97eba2ed060d52e86d8ae52fd3d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-c3c4120a65dc95787c913f7823cbf5f1.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,8 +103,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Výuka - Jan Caha">
-<meta property="og:description" content="Výukové materiály">
+<meta property="og:title" content="Miniconda - management Python prostředí – Výuka - Jan Caha">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 
@@ -100,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Výuka - Jan Caha</a> 
+      <a href="../">Výuka - Jan Caha</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/JanCaha/vsb-vyuka" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -125,25 +158,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pgis2.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pgis2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pvgis5.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pvgis5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/idg.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/idg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Interpretace geodat</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pdbs2.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pdbs2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prostorové databázové systémy 2</span></a>
   </div>
 </li>
@@ -160,13 +193,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pgis3.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pgis3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./subjects/pvgis4.html" class="sidebar-item-text sidebar-link">
+  <a href="../subjects/pvgis4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 4</span></a>
   </div>
 </li>
@@ -183,25 +216,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/vscode.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/vscode.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visual Studio Code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/linux-mint.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/linux-mint.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux Mint</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OSGeo4W</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tools/github-copilot.html" class="sidebar-item-text sidebar-link">
+  <a href="../tools/github-copilot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Copilot</span></a>
   </div>
 </li>
@@ -218,13 +251,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptions/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../descriptions/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./descriptions/python-traceback.html" class="sidebar-item-text sidebar-link">
+  <a href="../descriptions/python-traceback.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Error Traceback</span></a>
   </div>
 </li>
@@ -240,10 +273,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zimní-semestr" id="toc-zimní-semestr" class="nav-link active" data-scroll-target="#zimní-semestr">Zimní semestr</a></li>
-  <li><a href="#letní-semestr" id="toc-letní-semestr" class="nav-link" data-scroll-target="#letní-semestr">Letní semestr</a></li>
-  <li><a href="#nástroje" id="toc-nástroje" class="nav-link" data-scroll-target="#nástroje">Nástroje</a></li>
-  <li><a href="#popisy" id="toc-popisy" class="nav-link" data-scroll-target="#popisy">Popisy</a></li>
+  <li><a href="#instalace" id="toc-instalace" class="nav-link active" data-scroll-target="#instalace">Instalace</a>
+  <ul class="collapse">
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
+  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux">Linux</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Výuka - Jan Caha</h1>
+<h1 class="title">Miniconda - management Python prostředí</h1>
 </div>
 
 
@@ -269,41 +303,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Materiály pro moje předměty vyučované v roce <strong>2024/2025</strong> na Katedře Geoinformatiky, HGF, VŠB-TUO.</p>
-<section id="zimní-semestr" class="level2">
-<h2 class="anchored" data-anchor-id="zimní-semestr">Zimní semestr</h2>
-<ul>
-<li><a href="./subjects/pgis3.html">Programování v GIS 3 (PGIS3)</a></li>
-<li><a href="./subjects/pvgis4.html">Programování v GIS 4 (PvGIS4)</a></li>
-</ul>
+<section id="instalace" class="level2">
+<h2 class="anchored" data-anchor-id="instalace">Instalace</h2>
+<section id="windows" class="level3">
+<h3 class="anchored" data-anchor-id="windows">Windows</h3>
+<p>Stáhnout <a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe">instalační soubor</a> a spustit jej. Nainstalovat dle výchozího nastavení.</p>
 </section>
-<section id="letní-semestr" class="level2">
-<h2 class="anchored" data-anchor-id="letní-semestr">Letní semestr</h2>
-<ul>
-<li><a href="./subjects/pgis2.html">Programování v GIS 2 (PGIS2)</a></li>
-<li><a href="./subjects/pvgis5.html">Programování v GIS 5 (PvGIS5)</a></li>
-<li><a href="./subjects/idg.html">Interpretace geodat (IDG)</a></li>
-<li><a href="./subjects/pdbs2.html">Prostorové databázové systémy 2 (PDBS2)</a></li>
-</ul>
-</section>
-<section id="nástroje" class="level2">
-<h2 class="anchored" data-anchor-id="nástroje">Nástroje</h2>
-<ul>
-<li><a href="./tools/linux-mint.html">Linux Mint</a></li>
-<li><a href="./tools/vscode.html">Visual Studio Code</a></li>
-<li><a href="./tools/osgeo4w.html">OSGeo4W</a></li>
-<li><a href="./tools/github-copilot.html">GitHub Copilot</a></li>
-<li><a href="./tools/conda.html">Conda</a></li>
-</ul>
-</section>
-<section id="popisy" class="level2">
-<h2 class="anchored" data-anchor-id="popisy">Popisy</h2>
-<ul>
-<li><a href="./descriptions/python.html">Python - studijní zdroje</a></li>
-<li><a href="./descriptions/python-traceback.html">Python Error Traceback</a></li>
-</ul>
+<section id="linux" class="level3">
+<h3 class="anchored" data-anchor-id="linux">Linux</h3>
+<p>Spustit následující příkazy v terminálu:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh <span class="at">-O</span> ~/miniconda3/miniconda.sh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> ~/miniconda3/miniconda.sh <span class="at">-b</span> <span class="at">-u</span> <span class="at">-p</span> ~/miniconda3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

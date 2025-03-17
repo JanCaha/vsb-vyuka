@@ -529,7 +529,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.68522116 -0.06002647 -0.21479158 -0.26207939 -0.10489239"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.70752631 -0.19887022 -0.37615777 -0.03485930 -0.09570447"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1240,7 +1240,7 @@
     "href": "subjects/pgis2.html#instalace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Instalace",
-    "text": "Instalace\n\nmanagement Pythonu - Miniconda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1603,74 +1603,6 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Výuka - Jan Caha",
-    "section": "",
-    "text": "Materiály pro moje předměty vyučované v roce 2024/2025 na Katedře Geoinformatiky, HGF, VŠB-TUO."
-  },
-  {
-    "objectID": "index.html#zimní-semestr",
-    "href": "index.html#zimní-semestr",
-    "title": "Výuka - Jan Caha",
-    "section": "Zimní semestr",
-    "text": "Zimní semestr\n\nProgramování v GIS 3 (PGIS3)\nProgramování v GIS 4 (PvGIS4)"
-  },
-  {
-    "objectID": "index.html#letní-semestr",
-    "href": "index.html#letní-semestr",
-    "title": "Výuka - Jan Caha",
-    "section": "Letní semestr",
-    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nProgramování v GIS 5 (PvGIS5)\nInterpretace geodat (IDG)\nProstorové databázové systémy 2 (PDBS2)"
-  },
-  {
-    "objectID": "index.html#nástroje",
-    "href": "index.html#nástroje",
-    "title": "Výuka - Jan Caha",
-    "section": "Nástroje",
-    "text": "Nástroje\n\nLinux Mint\nVisual Studio Code\nOSGeo4W\nGitHub Copilot"
-  },
-  {
-    "objectID": "index.html#popisy",
-    "href": "index.html#popisy",
-    "title": "Výuka - Jan Caha",
-    "section": "Popisy",
-    "text": "Popisy\n\nPython - studijní zdroje\nPython Error Traceback"
-  },
-  {
-    "objectID": "descriptions/python.html",
-    "href": "descriptions/python.html",
-    "title": "Python",
-    "section": "",
-    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nPython for Everybody Specialization\nLearn Python 3\nIntroduction to Python Programming",
-    "crumbs": [
-      "Popisy",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "descriptions/python.html#základy-jazyka---výukové-materiály",
-    "href": "descriptions/python.html#základy-jazyka---výukové-materiály",
-    "title": "Python",
-    "section": "",
-    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nPython for Everybody Specialization\nLearn Python 3\nIntroduction to Python Programming",
-    "crumbs": [
-      "Popisy",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "descriptions/python-traceback.html",
-    "href": "descriptions/python-traceback.html",
-    "title": "Python Error Traceback",
-    "section": "",
-    "text": "Python Error Traceback je způsob výpisu kritických chyb u programů napsaných v Pythonu. Tyto chyby se vyskytují za běhu programu a způsobí jeho nestandardní ukončení (právě touto chybou).\nMějme následující ukázkový kód, který se pokouší otevřít soubor pomocí knihovny GDAL, přičemž daný soubor path/to/shapefile.shp neexistuje.\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\n\ndef open_vector_layer(path: Path) -&gt; ogr.DataSource:\n    ds: ogr.DataSource = ogr.Open(path, gdal.OF_UPDATE)\n    return ds\n\n\nif __name__ == \"__main__\":\n    path = Path(\"path/to/shapefile.shp\")\n    ds = open_vector_layer(path)\n    print(ds)\n\nVýpis chyby v konzoli bude následující:\nTraceback (most recent call last):\n  File \"script.py\", line 15, in &lt;module&gt;\n    ds = open_vector_layer(path)\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"script.py\", line 9, in open_vector_layer\n    ds: ogr.DataSource = ogr.Open(path, gdal.OF_UPDATE)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/miniconda3/envs/env-project/lib/python3.11/site-packages/osgeo/ogr.py\", line 7465, in Open\n    return _ogr.Open(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: path/to/shapefile.shp: No such file or directory\nZde je důležité vnímat strukturu chybové hlášky. Každý začátek řádku s textem File označuje soubor, kde chyba nastala. O řáděk níže najdeme konkrétní python kód, kde se chyba vyskytla. Takovýchto dvojic může být několik (i poměrně hodně, v ukázce výše jsou 3).\n  File \"script.py\", line 15, in &lt;module&gt;\n    ds = open_vector_layer(path)\nJako programátora nás obvykle zajímá nejvíce první z těchto chyb, protože ukazuje na náš kód, který chybu vyvolal. A následně poslední řádek s zápisem File, neboť ten okazuje na místo, kde již program nemohl pokračovat dále.\nPoslední řádek traceback pak vypíše typ chyby a chybovou hlášku.\nRuntimeError: path/to/shapefile.shp: No such file or directory\nTyto údaje mohou být velice informativní, a nebo také poměrně kryptické, v závislosti na chybě, jejím projevu a co konkrétně ji způsobilo. Zde v tomto případě je poměrně deskriptivní a pomůže nám problém vyřešit.\nObvykle je dobré začít řešení chyby vyhledáním popisu chyby (poslední řádek traceback), či konzultací s dokumentací poslední volané funkce (poslední řádek File). V některých situacích lze řešení hledat i přímo v kódu, nahlednutím na daný problém. Zde v tomto případě by se jednalo o soubor /miniconda3/envs/env-project/lib/python3.11/site-packages/osgeo/ogr.py na řádku 7465. V tomto případě ale nebude tento postup příliš funkční, neboť knihovna OGR je C++ binding pro Python, kde samotný vykonavaný kód přímo nevidíme. V mnoha jiných knihovnách, ale budeme schopní přímo na kód nahlédnout.",
-    "crumbs": [
-      "Popisy",
-      "Python Error Traceback"
-    ]
-  },
-  {
     "objectID": "tools/osgeo4w.html",
     "href": "tools/osgeo4w.html",
     "title": "OSGEO4W",
@@ -1713,6 +1645,88 @@
       "Nástroje",
       "OSGeo4W"
     ]
+  },
+  {
+    "objectID": "descriptions/python-traceback.html",
+    "href": "descriptions/python-traceback.html",
+    "title": "Python Error Traceback",
+    "section": "",
+    "text": "Python Error Traceback je způsob výpisu kritických chyb u programů napsaných v Pythonu. Tyto chyby se vyskytují za běhu programu a způsobí jeho nestandardní ukončení (právě touto chybou).\nMějme následující ukázkový kód, který se pokouší otevřít soubor pomocí knihovny GDAL, přičemž daný soubor path/to/shapefile.shp neexistuje.\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\n\ndef open_vector_layer(path: Path) -&gt; ogr.DataSource:\n    ds: ogr.DataSource = ogr.Open(path, gdal.OF_UPDATE)\n    return ds\n\n\nif __name__ == \"__main__\":\n    path = Path(\"path/to/shapefile.shp\")\n    ds = open_vector_layer(path)\n    print(ds)\n\nVýpis chyby v konzoli bude následující:\nTraceback (most recent call last):\n  File \"script.py\", line 15, in &lt;module&gt;\n    ds = open_vector_layer(path)\n         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"script.py\", line 9, in open_vector_layer\n    ds: ogr.DataSource = ogr.Open(path, gdal.OF_UPDATE)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/miniconda3/envs/env-project/lib/python3.11/site-packages/osgeo/ogr.py\", line 7465, in Open\n    return _ogr.Open(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: path/to/shapefile.shp: No such file or directory\nZde je důležité vnímat strukturu chybové hlášky. Každý začátek řádku s textem File označuje soubor, kde chyba nastala. O řáděk níže najdeme konkrétní python kód, kde se chyba vyskytla. Takovýchto dvojic může být několik (i poměrně hodně, v ukázce výše jsou 3).\n  File \"script.py\", line 15, in &lt;module&gt;\n    ds = open_vector_layer(path)\nJako programátora nás obvykle zajímá nejvíce první z těchto chyb, protože ukazuje na náš kód, který chybu vyvolal. A následně poslední řádek s zápisem File, neboť ten okazuje na místo, kde již program nemohl pokračovat dále.\nPoslední řádek traceback pak vypíše typ chyby a chybovou hlášku.\nRuntimeError: path/to/shapefile.shp: No such file or directory\nTyto údaje mohou být velice informativní, a nebo také poměrně kryptické, v závislosti na chybě, jejím projevu a co konkrétně ji způsobilo. Zde v tomto případě je poměrně deskriptivní a pomůže nám problém vyřešit.\nObvykle je dobré začít řešení chyby vyhledáním popisu chyby (poslední řádek traceback), či konzultací s dokumentací poslední volané funkce (poslední řádek File). V některých situacích lze řešení hledat i přímo v kódu, nahlednutím na daný problém. Zde v tomto případě by se jednalo o soubor /miniconda3/envs/env-project/lib/python3.11/site-packages/osgeo/ogr.py na řádku 7465. V tomto případě ale nebude tento postup příliš funkční, neboť knihovna OGR je C++ binding pro Python, kde samotný vykonavaný kód přímo nevidíme. V mnoha jiných knihovnách, ale budeme schopní přímo na kód nahlédnout.",
+    "crumbs": [
+      "Popisy",
+      "Python Error Traceback"
+    ]
+  },
+  {
+    "objectID": "descriptions/python.html",
+    "href": "descriptions/python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nPython for Everybody Specialization\nLearn Python 3\nIntroduction to Python Programming",
+    "crumbs": [
+      "Popisy",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "descriptions/python.html#základy-jazyka---výukové-materiály",
+    "href": "descriptions/python.html#základy-jazyka---výukové-materiály",
+    "title": "Python",
+    "section": "",
+    "text": "Python for Beginners - Learn Python in 1 Hour\nPython for Beginners – Full Course [Programming Tutorial]\nyou need to learn Python RIGHT NOW!!\nHarvard CS50’s Introduction to Programming with Python – Full University Course\n\n\n\nProgramming for Everybody (Getting Started with Python)\nPython for Everybody Specialization\nLearn Python 3\nIntroduction to Python Programming",
+    "crumbs": [
+      "Popisy",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Výuka - Jan Caha",
+    "section": "",
+    "text": "Materiály pro moje předměty vyučované v roce 2024/2025 na Katedře Geoinformatiky, HGF, VŠB-TUO."
+  },
+  {
+    "objectID": "index.html#zimní-semestr",
+    "href": "index.html#zimní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Zimní semestr",
+    "text": "Zimní semestr\n\nProgramování v GIS 3 (PGIS3)\nProgramování v GIS 4 (PvGIS4)"
+  },
+  {
+    "objectID": "index.html#letní-semestr",
+    "href": "index.html#letní-semestr",
+    "title": "Výuka - Jan Caha",
+    "section": "Letní semestr",
+    "text": "Letní semestr\n\nProgramování v GIS 2 (PGIS2)\nProgramování v GIS 5 (PvGIS5)\nInterpretace geodat (IDG)\nProstorové databázové systémy 2 (PDBS2)"
+  },
+  {
+    "objectID": "index.html#nástroje",
+    "href": "index.html#nástroje",
+    "title": "Výuka - Jan Caha",
+    "section": "Nástroje",
+    "text": "Nástroje\n\nLinux Mint\nVisual Studio Code\nOSGeo4W\nGitHub Copilot\nConda"
+  },
+  {
+    "objectID": "index.html#popisy",
+    "href": "index.html#popisy",
+    "title": "Výuka - Jan Caha",
+    "section": "Popisy",
+    "text": "Popisy\n\nPython - studijní zdroje\nPython Error Traceback"
+  },
+  {
+    "objectID": "tools/conda.html",
+    "href": "tools/conda.html",
+    "title": "Miniconda - management Python prostředí",
+    "section": "",
+    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3"
+  },
+  {
+    "objectID": "tools/conda.html#instalace",
+    "href": "tools/conda.html#instalace",
+    "title": "Miniconda - management Python prostředí",
+    "section": "",
+    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3"
   },
   {
     "objectID": "tools/github-copilot.html",
