@@ -1,6 +1,6 @@
 ---
 title: "Knihovny [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}"
-date: 2024-03-18
+date: 2025-03-17
 ---
 
 ## Typy knihoven pro Python
@@ -12,18 +12,18 @@ date: 2024-03-18
 ## [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}
 
 - kompilované knihovny
-- postavené nad [GDAL/OGR]{.software} (ne nad balíkem `osgeo`)
+- postavené nad [GDAL/OGR]{.software} (ne nad balíkem [osgeo]{.software})
 - snaha aby pracovaly více jako Python knihovny a méně jako C++ kód
-- o něco měně komplikované než přímé použití [GDAL/OGR]{.software} skrze `osgeo`, o něco horší spolupráce knihoven (zejména fiona a shapely)
+- o něco měně komplikované než přímé použití [GDAL/OGR]{.software} skrze [osgeo]{.software}, o něco horší spolupráce knihoven (zejména [fiona]{.software} a [shapely]{.software})
 
 ## [fiona]{.software}
 
 - knihovna pro práci s vektorovými daty
-- odstraňuje mnoho dílčích kroků, které jsou v `osgeo`
-- souřadnicové systémy a transformace s knihovnou `pyproj`
+- odstraňuje mnoho dílčích kroků, které jsou v [osgeo]{.software}
+- souřadnicové systémy a transformace s knihovnou [pyproj]{.software}
 - api není bohaté na práci s geometrií
 - přístup např. ke struktuře vrstvy je velice jednoduchý
-- nepodporuje vše co `osgeo`
+- nepodporuje vše co [osgeo]{.software}
 - [dokumentace](https://fiona.readthedocs.io/en/stable/index.html)
 
 ## [shapely]{.software}
@@ -43,18 +43,18 @@ date: 2024-03-18
 
 - knihovna pro práci s rastrovými daty
 - platí pro ni v podstatě to samé co pro [fiona]{.software}
-- výrazné propojení s `numpy` (knihovna pro dvou a vícerozměrné matic)
-- oproti `osgeo` jednodušší přístupy
+- výrazné propojení s [numpy]{.software} (knihovna pro dvou a vícerozměrné matic)
+- oproti [osgeo]{.software} jednodušší přístupy
 - [dokumentace](https://fiona.readthedocs.io/en/stable/index.html)
 - problém s typováním - nutné hodně se opírat o dokumentaci
 
 ## [GDAL/OGR]{.software} {{< fa times >}} [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}
 
-- GDAL/OGR má širší možnosti, ale práce je komplikovanější
+- [GDAL/OGR]{.software} má širší možnosti, ale práce je komplikovanější
 - knihovny jsou zjednodušené a přístupnější
 - nástroje `gdal.VectorTranslate()`, `gdal.Warp()`, `gdal.Translate()` atd. určitě využívat z `osgeo`
 - základní modifikace či zpracování dat je v 90% případů snadnější z knihoven 
-- komplexní situace lze řešit přímo použítím `osgeo`
-- používat princip **KISS** (Keep it simple, stupid!)  -- začít s jednoduchou verzí, dokud funguje a upgradovat pouze pokud je to nutné
+- komplexní situace lze řešit přímo použítím [osgeo]{.software}
+- používat princip **KISS** (Keep it simple, stupid!)  -- začít s jednoduchou verzí, dokud funguje a upgradovat, posouvat dál, pouze pokud je to nutné
    
 # Dotazy? {.center}
