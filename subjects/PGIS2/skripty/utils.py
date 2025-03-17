@@ -1,3 +1,4 @@
+import os
 import types
 import typing
 import warnings
@@ -6,9 +7,19 @@ from pathlib import Path
 from osgeo import gdal, ogr
 
 
+def is_running_on_github_actions() -> bool:
+    """Kontroluje, zda skript běží na GitHub Actions."""
+    return os.getenv("GITHUB_ACTIONS") == "true"
+
+
 def base_data_path() -> Path:
     """Vrací cestu ke složce s daty jako objekt Path."""
-    return Path(__file__).parent.parent / "_data"
+    if is_running_on_github_actions():
+        # speciální složka pro data na GitHub Actions
+        return Path(__file__).parent.parent / "_data"
+    else:
+        # složka pro data v lokálním prostředí
+        return Path(__file__).parent / "data"
 
 
 def data_path(filename: str) -> Path:
