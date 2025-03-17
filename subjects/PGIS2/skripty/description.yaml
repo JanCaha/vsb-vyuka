@@ -30,8 +30,10 @@
   author: Jan Caha
   date: 2024-03-17
   path: "PGIS2/skripty/07_edit_band.py"
-
-
+- title: "Funkce v souboru utils"
+  author: Jan Caha
+  date: 2025-06-03
+  path: "PGIS2/skripty/utils.py"
 
 - title: "Fiona editace vektorových dat"
   author: Jan Caha
@@ -49,10 +51,7 @@
   author: Jan Caha
   date: 2024-04-15
   path: "PGIS2/skripty/08_objekt.py"
-- title: "Funkce v souboru utils"
-  author: Jan Caha
-  date: 2024-04-15
-  path: "PGIS2/skripty/utils.py"
+
 - title: "Polars - základní operace"
   author: Jan Caha
   date: 2024-04-29
