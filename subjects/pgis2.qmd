@@ -66,7 +66,7 @@ Sestavte Python skript, které provede libovolné netriviální zpracování pro
 
 ## Instalace{.instals}
 
-- management Pythonu - [Miniconda](https://docs.anaconda.com/free/miniconda/index.html)
+- management Pythonu - [Miniconda](https://docs.anaconda.com/free/miniconda/index.html) a nebo zde na webu info k instalaci [Conda](../tools/conda.qmd)
 - IDE - [Visual Studio Code](https://code.visualstudio.com/)
 - extenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator
 - instalace Conda environmentu
