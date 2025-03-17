@@ -1,14 +1,14 @@
 {
-    "github.copilot.enable": {"quarto": true},
     // python by měl dělat analýzu těchhle adresářů, věci v IDE budou lépe fungovat, když tady to nastavení bude
     //"python.analysis.extraPaths": [
     //    "${env:CONDA_PREFIX}/apps/qgis/python",
     //    "C:\\OSGeo4W\\apps\\qgis\\python"
     //],
     "r.lsp.promptToInstall": false,
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
     "github.copilot.chat.codeGeneration.instructions": [
         {
-            "file": ".copilot-instructions.md"
+            "file": ".copilot-instructions.md",
         }
     ],
     "cSpell.words": [
@@ -30,5 +30,5 @@
         "replikovatelné",
         "revealjs",
         "težšímu"
-    ]
+    ],
 }
