@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-04-15">
+  <meta name="dcterms.date" content="2025-03-24">
   <title>Výuka - Jan Caha – Funkce a třídy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-5d859ce8248c0e560c7a0d2224581774.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-1b837341cbf0b8dd4ddbce41592a4b11.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -211,7 +211,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-04-15</p>
+  <p class="date">2025-03-24</p>
 </section>
 <section id="programovací-paradigmata" class="slide level2">
 <h2>Programovací paradigmata</h2>
@@ -219,7 +219,7 @@ Jan Caha
 <li><p>většina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero</p></li>
 <li><p><strong>imperativní</strong> (kód popisuje, co se bude dít)</p>
 <ul>
-<li><strong>procedurální programování</strong> (procedury, které ze vzájmně volají)</li>
+<li><strong>procedurální programování</strong> (procedury, které ze vzájemně volají)</li>
 <li><strong>objektové programování</strong> (objekty - data a operace s nimi asociované)</li>
 <li>většina jazyků - např. Python, R, C++</li>
 </ul></li>
@@ -246,7 +246,7 @@ Jan Caha
 <li>délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)</li>
 <li>snaha navrhovat funkce spíše obecně než specificky</li>
 </ul>
-<div id="b5b7bd28" class="cell" data-execution_count="1">
+<div id="c9806aed" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> <span class="dv">2</span></span>
@@ -259,7 +259,7 @@ Jan Caha
 </section>
 <section id="funkce-příklad" class="slide level2">
 <h2>Funkce příklad</h2>
-<div id="7d9c9c8d" class="cell" data-execution_count="2">
+<div id="70bb26cd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
@@ -285,6 +285,7 @@ Jan Caha
 <ul>
 <li>funkce vrací float</li>
 <li>mohou existovat funkce bez návratové hodnoty <code>None</code></li>
+<li>nezapomínat na typování parametrů a návratové hodnoty</li>
 </ul>
 </section>
 <section id="objekty" class="slide level2">
@@ -300,13 +301,14 @@ Jan Caha
 <h2>Objekty detaily</h2>
 <ul>
 <li>první parametr metody je vždy <code>self</code> (označení instance objektu)</li>
-<li>atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvecí, soukromé atributy a metody začínají podtržítkem (např. <code>_atribut</code>), tyto metody a atributy nebudou nápovědy v IDE navrhnovat a programátor by se měl ideálně jejich použití vyhnout</li>
+<li>atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvencí, soukromé atributy a metody začínají podtržítkem (např. <code>_atribut</code>), tyto metody a atributy nebudou nápovědy v IDE navrhovat a programátor by se měl ideálně jejich použití vyhnout</li>
 <li>magické metody objektů (např. <code>__init__</code>, <code>__str__</code>, <code>__add__</code>, <code>__eq__</code> a další) a jejich použití</li>
+<li>vlastnost (property), mohou být buď statické (přímo hodnota objektu) nebo dynamické (metoda s dekorátorem <code>@property</code>)</li>
 </ul>
 </section>
 <section id="objekt---příklad" class="slide level2">
 <h2>Objekt - příklad</h2>
-<div id="21250bad" class="cell" data-execution_count="3">
+<div id="a6123dcc" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Zamestnanec:</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jmeno: <span class="bu">str</span>, hodinovy_plat: <span class="bu">float</span>):</span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.jmeno <span class="op">=</span> jmeno</span>
@@ -326,19 +328,24 @@ Jan Caha
 <span id="cb3-17"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
 <span id="cb3-19"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> denni_plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb3-20"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">/</span> <span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-20"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">*</span> <span class="dv">8</span></span>
+<span id="cb3-21"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb3-23"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Zamestnanec </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>jmeno<span class="sc">}</span><span class="ss"> s platem </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>_hodinovy_plat<span class="sc">}</span><span class="ss"> za hodinu"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="použití-objektu" class="slide level2">
 <h2>Použití objektu</h2>
-<div id="3db369bb" class="cell" data-execution_count="4">
+<div id="a5dc5a25" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>odpracovane_hodiny <span class="op">=</span> <span class="dv">160</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>zam <span class="op">=</span> Zamestnanec(<span class="st">"Testovaci Zamestnanec"</span>, <span class="dv">250</span>)</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>zam.zvys_plat(<span class="dv">50</span>)</span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat po zvýšení: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Denní plat: </span><span class="sc">{</span>zam<span class="sc">.</span>denni_plat<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>zam.zvys_plat(<span class="dv">50</span>)</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat po zvýšení: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Plat: 40000
+<pre><code>Denní plat: 2000
+Plat: 40000
 Plat po zvýšení: 48000</code></pre>
 </div>
 </div>
