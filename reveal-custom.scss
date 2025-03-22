@@ -1,8 +1,8 @@
 /*-- scss:rules --*/
 
 
-code.sourceCode {
-    font-size: x-large;
+.reveal div.sourceCode {
+    font-size: 1.5em;
 }
 
 div.cell-output-error {
@@ -16,7 +16,7 @@ div.cell-output-error {
 
 div.cell-output {
     pre{
-        font-size: x-large;
+        font-size: 1.5em;
     }
 }
 
