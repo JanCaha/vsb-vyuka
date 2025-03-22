@@ -1,6 +1,6 @@
 ---
 title: "Funkce a třídy"
-date: 2024-04-15
+date: 2025-03-24
 ---
 
 ## Programovací paradigmata
@@ -8,7 +8,7 @@ date: 2024-04-15
 - většina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero
   
 - **imperativní** (kód popisuje, co se bude dít)
-  - **procedurální programování** (procedury, které ze vzájmně volají)
+  - **procedurální programování** (procedury, které ze vzájemně volají)
   - **objektové programování** (objekty - data a operace s nimi asociované)
   - většina jazyků - např. Python, R, C++ 
 - **deklarativní** (kód popisuje požadovaný výsledek)
@@ -56,6 +56,7 @@ Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hod
 
 - funkce vrací float
 - mohou existovat funkce bez návratové hodnoty `None`
+- nezapomínat na typování parametrů a návratové hodnoty
 
 ## Objekty
 
@@ -67,8 +68,9 @@ Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hod
 ## Objekty detaily
 
 - první parametr metody je vždy `self` (označení instance objektu)
-- atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) -- v Pythonu se to řeší konvecí, soukromé atributy a metody začínají podtržítkem (např. `_atribut`), tyto metody a atributy nebudou nápovědy v IDE navrhnovat a programátor by se měl ideálně jejich použití vyhnout
+- atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) -- v Pythonu se to řeší konvencí, soukromé atributy a metody začínají podtržítkem (např. `_atribut`), tyto metody a atributy nebudou nápovědy v IDE navrhovat a programátor by se měl ideálně jejich použití vyhnout
 - magické metody objektů (např. `__init__`, `__str__`, `__add__`, `__eq__` a další) a jejich použití
+- vlastnost (property), mohou být buď statické (přímo hodnota objektu) nebo dynamické (metoda s dekorátorem `@property`) 
 
 ## Objekt - příklad
 ```{python}
@@ -91,7 +93,10 @@ class Zamestnanec:
 
     @property
     def denni_plat(self) -> float:
-        return self._hodinovy_plat / 8
+        return self._hodinovy_plat * 8
+
+    def __repr__(self) -> str:
+        return f"Zamestnanec {self.jmeno} s platem {self._hodinovy_plat} za hodinu"
 ```
 
 ## Použití objektu
@@ -99,11 +104,10 @@ class Zamestnanec:
 ```{python}
 odpracovane_hodiny = 160
 zam = Zamestnanec("Testovaci Zamestnanec", 250)
+print(f"Denní plat: {zam.denni_plat}")
 print(f"Plat: {zam.mesicni_plat(odpracovane_hodiny)}")
 zam.zvys_plat(50)
 print(f"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}")
 ```
-
-
 
 # Dotazy? {.center}
