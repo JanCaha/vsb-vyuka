@@ -27,17 +27,6 @@ date: 2025-03-24
 - měly by dělat jednu věc a pouze jednu věc
 - délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)
 - snaha navrhovat funkce spíše obecně než specificky
-  
-```{python}
-# specifické
-def vynasob_dvema(a: float) -> float:
-    return a * 2
-
-
-# obecné
-def vynasob(a: float, b: float) -> float:
-    return a * b
-```
 
 ## Funkce příklad
 
@@ -57,6 +46,32 @@ Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hod
 - funkce vrací float
 - mohou existovat funkce bez návratové hodnoty `None`
 - nezapomínat na typování parametrů a návratové hodnoty
+
+## Funkce obecná {{< fa times >}} specifická
+  
+```{python}
+# specifické
+def vynasob_dvema(a: float) -> float:
+    return a * 2
+
+
+# obecné
+def vynasob(a: float, b: float) -> float:
+    return a * b
+```
+
+## Tvorba upravené funkce (předefinování parametrů)
+
+- funkce `partial` z modulu `functools`
+- vytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné
+
+```{python}
+from functools import partial
+
+# zadáme funkci a potom parametr(y) které chceme předdefinovat
+multiply_hodnotu_dvema = partial(vynasob, b=2)
+hodnota = multiply_hodnotu_dvema(3)
+```
 
 ## Objekty
 
