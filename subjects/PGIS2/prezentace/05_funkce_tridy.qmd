@@ -87,12 +87,18 @@ hodnota = multiply_hodnotu_dvema(3)
 - magické metody objektů (např. `__init__`, `__str__`, `__add__`, `__eq__` a další) a jejich použití
 - vlastnost (property), mohou být buď statické (přímo hodnota objektu) nebo dynamické (metoda s dekorátorem `@property`) 
 
+## Metody objektu
+
+- metody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy `self`
+- metody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy , označují se dekorátorem `@staticmethod`
+
 ## Objekt - příklad
 ```{python}
 class Zamestnanec:
     def __init__(self, jmeno: str, hodinovy_plat: float):
         self.jmeno = jmeno
         self._hodinovy_plat = hodinovy_plat
+        self.uvazek = 1.0
 
     def plat(self) -> float:
         return self._hodinovy_plat
@@ -105,6 +111,10 @@ class Zamestnanec:
 
     def mesicni_plat(self, odpracovanych_hodin: float) -> float:
         return self._hodinovy_plat * odpracovanych_hodin
+
+    @staticmethod
+    def delka_pracovniho_dne(uvazek: float = 1.0) -> float:
+        return 8 * uvazek
 
     @property
     def denni_plat(self) -> float:
@@ -119,6 +129,8 @@ class Zamestnanec:
 ```{python}
 odpracovane_hodiny = 160
 zam = Zamestnanec("Testovaci Zamestnanec", 250)
+print(f"Denní plat: {zam.denni_plat}")
+zam.uvazek = 0.5
 print(f"Denní plat: {zam.denni_plat}")
 print(f"Plat: {zam.mesicni_plat(odpracovane_hodiny)}")
 zam.zvys_plat(50)
