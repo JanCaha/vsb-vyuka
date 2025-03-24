@@ -24,11 +24,11 @@
   path: "PGIS2/skripty/05_gdal_raster.py"
 - title: "GDAL manipulace s rastrem"
   author: Jan Caha
-  date: 2024-03-17
+  date: 2025-03-24
   path: "PGIS2/skripty/06_gdal_raster_operations.py"
 - title: "GDAL editace hodnot rastru"
   author: Jan Caha
-  date: 2024-03-17
+  date: 2025-03-24
   path: "PGIS2/skripty/07_edit_band.py"
 - title: "Funkce v souboru utils"
   author: Jan Caha
@@ -51,7 +51,6 @@
   author: Jan Caha
   date: 2024-04-15
   path: "PGIS2/skripty/08_objekt.py"
-
 - title: "Polars - základní operace"
   author: Jan Caha
   date: 2024-04-29
