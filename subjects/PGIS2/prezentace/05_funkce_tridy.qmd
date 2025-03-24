@@ -20,7 +20,8 @@ date: 2025-03-24
 - pro běžné použití kombinujeme obvykle procedurální a objektový přístup
 - procedurální přístup - **funkce**, které mají parametry
 - objektový přístup - **objekty**, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)
-  
+- není problém s kombinací, viz cvičení ([GDAL/OGR]{.software} má objekty, my si k nim píšeme funkce)
+
 ## Funkce
 
 - dělí kód na dílčí logické bloky, které mohou být znovu použitelné
