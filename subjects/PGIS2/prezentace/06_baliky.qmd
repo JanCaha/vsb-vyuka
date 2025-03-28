@@ -1,0 +1,76 @@
+---
+title: "Python Balíčky"
+date: 2025-03-30
+---
+
+## Modul
+
+- `.py` soubor s funkcemi
+- např. soubor `utils.py` ze cvičení (a ukázek na webu) 
+- lze používat lokálně
+- stačí na jednoduché použití, pro větší projekty nedostačuje
+
+## Balíček
+
+- složka s python soubory, která obsahuje soubor `__init__.py`
+- taková složka je [Pythonem]{.software} identifikována jako balíček (jméno složky odpovídá jménu balíčku)
+- může mít i zanořené dílčí balíčky
+
+## Příklad struktury  
+
+```
+my_package/
+├── __init__.py
+├── module1.py
+├── module2.py
+└── subpackage/
+    ├── __init__.py
+    └── submodule.py
+```
+
+## Balíček - komplexnější
+
+- pokud chceme balíček i s nastavením závislostí, metadatay a testy, chceme obvykle komplexnější strukturu
+- doinstalujeme balík [poetry]{.software} do prostředí [conda]{.software}
+- [poetry]{.software}
+  - umožní postavit strukturu balíčku 
+  - management závislostí
+  - instalace
+
+## Balíček sestavený pomocí [poetry]{.software}
+
+```
+poetry nazev_balicku
+```
+
+```
+nazev_balicku/
+└── src/
+    └── nazev_balicku/
+        └── __init__.py
+├── tests
+    └── __init__.py
+├── pyproject.toml
+└── README.md
+```
+
+## `pyproject.toml`
+
+- specifikace metadata balíčku
+- např. název, verze, autor
+- závislosti - více typů (např. pro spuštění a vývoj)
+
+```
+poetry config virtualenvs.create false --local
+poetry add GDAL
+poetry add --group dev pytest black
+```
+## Instalace
+
+```
+poetry install 
+```
+
+- instalace balíku
+- tzv. **interaktivní** instalace - změny v kódu se projeví se při příštím spuštění [Pythonu]{.software}
+
