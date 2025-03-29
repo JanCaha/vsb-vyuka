@@ -5,7 +5,8 @@ date: 2025-03-30
 
 ## Modul
 
-- `.py` soubor s funkcemi
+- `.py` soubor s funkcemi, proměnnými či objekty 
+- proměnné modulu obvykle zapisujeme velkými písmeny např. `PI` či `DEFAULT_COLOR`
 - např. soubor `utils.py` ze cvičení (a ukázek na webu) 
 - lze používat lokálně
 - stačí na jednoduché použití, pro větší projekty nedostačuje
@@ -15,6 +16,8 @@ date: 2025-03-30
 - složka s python soubory, která obsahuje soubor `__init__.py`
 - taková složka je [Pythonem]{.software} identifikována jako balíček (jméno složky odpovídá jménu balíčku)
 - může mít i zanořené dílčí balíčky
+- kromě kódu může obsahovat i další soubory (např. data)
+- aby [Python]{.software} balíček našel, musí být v některé z cest v `sys.path`, ten lze editovat např. skrze `PYTHONPATH` 
 
 ## Příklad struktury  
 
@@ -26,6 +29,9 @@ my_package/
 └── subpackage/
     ├── __init__.py
     └── submodule.py
+└── data/
+    └── data_file.csv
+    └── data.gpkg
 ```
 
 ## Balíček - komplexnější
@@ -56,6 +62,7 @@ nazev_balicku/
 
 ## `pyproject.toml`
 
+- moderní způsob specifikace nastavení balíčku a nástrojů 
 - specifikace metadata balíčku
 - např. název, verze, autor
 - závislosti - více typů (např. pro spuštění a vývoj)
@@ -65,6 +72,22 @@ poetry config virtualenvs.create false --local
 poetry add GDAL
 poetry add --group dev pytest black
 ```
+
+## `pyproject.toml` úprava přidáním dat k balíčku
+
+- dvě varianty
+
+```
+[tool.poetry]
+include = [
+    "src/nazev_balicku/data/*.tif",
+    "src/nazev_balicku/data/*.gpkg",
+]
+
+[tool.poetry.package-data]
+"nazev_balicku.data" = ["*.tif", "*.gpkg"]
+```
+
 ## Instalace
 
 ```
@@ -73,4 +96,59 @@ poetry install
 
 - instalace balíku
 - tzv. **interaktivní** instalace - změny v kódu se projeví se při příštím spuštění [Pythonu]{.software}
+- stejný výsledek dá i příkaz `pip install -e .`
 
+## Sestavení pro instalaci jinde
+
+```
+poetry build
+```
+
+- vznikne složka `dist/` s balíčkem
+- balíček je ve formátu `.tar.gz` a `.whl`
+- balíček je možné nahrát na [PyPI]{.software} (Python Package Index) - veřejný repozitář balíčků
+- balíček je možné instalovat z `whl` souboru pomocí `pip install nazev_balicku*.whl`
+
+## Použití - struktura
+
+```
+─── src/
+    └── nazev_balicku/
+        └── __init__.py
+        └── modul_path.py
+        └── modul_gdal.py
+```
+
+### Použití - import
+
+```python
+from nazev_balicku.modul_path import fn_1 # funkce
+from nazev_balicku.modul_path import * # všechny funkce
+
+import nazev_balicku # import celého balíčku
+nazev_balicku.modul_path.fn_1() # použití funkce
+```
+
+## Použití - úprava `__init__.py`
+
+```
+from nazev_balicku.modul_path import *
+from nazev_balicku.modul_gdal import *
+```
+
+## Použití - po změně import
+
+- `import nazev_balicku` - import celého balíčku a věcí z `__init__.py`
+
+```python
+from nazev_balicku import fn_1 # funkce
+from nazev_balicku import * # všechny funkce
+```
+## Závěr
+
+- balíčky a moduly jsou důležitou součástí [Pythonu]{.software}
+- umožňují strukturovat kód a znovu ho použít
+- umožňují i sdílet kód s ostatními
+- [poetry]{.software} je vhodný nástroj pro správu balíčků a závislostí
+
+# Dotazy? {.center}
