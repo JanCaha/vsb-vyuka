@@ -6,14 +6,12 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-03-03">
-  <title>Výuka - Jan Caha – Knihovna GDAL/OGR</title>
+  <meta name="dcterms.date" content="2025-03-30">
+  <title>Výuka - Jan Caha – Python Balíčky</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,7 +189,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Knihovna GDAL/OGR – Výuka - Jan Caha">
+<meta property="og:title" content="Python Balíčky – Výuka - Jan Caha">
 <meta property="og:description" content="Programování v GIS 2">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -200,7 +198,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Knihovna <span class="software">GDAL/OGR</span></h1>
+  <h1 class="title">Python Balíčky</h1>
   <p class="subtitle">Programování v GIS 2</p>
 
 <div class="quarto-title-authors">
@@ -211,217 +209,145 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-03-03</p>
+  <p class="date">2025-03-30</p>
 </section>
-<section id="popis-gdalogr" class="slide level2">
-<h2>Popis <span class="software">GDAL/OGR</span></h2>
+<section id="modul" class="slide level2">
+<h2>Modul</h2>
 <ul>
-<li>nízkoúrovňová open source knihovna</li>
-<li>v Pythonu zpřístupňujeme její <strong>binding</strong> - <a href="https://gdal.org/api/python/osgeo.html">dokumentace</a></li>
-<li>kód knihovny v <span class="software">C/C++</span> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)</li>
-<li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní paměťové prostředky</li>
-<li>knihovna má hlavní modul <code>osgeo</code> a několik dílčích modulů
-<ul>
-<li><code>gdal</code> - rastry</li>
-<li><code>ogr</code> - vektory</li>
-<li><code>osr</code> - souřadnicové systémy</li>
-</ul></li>
-<li>kód není typovaný jak je Pythonu doporučované a je dobré místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a <span class="software">mypy</span> dobře kontrolovat kód</li>
+<li><code>.py</code> soubor s funkcemi, proměnnými či objekty</li>
+<li>proměnné modulu obvykle zapisujeme velkými písmeny např. <code>PI</code> či <code>DEFAULT_COLOR</code></li>
+<li>např. soubor <code>utils.py</code> ze cvičení (a ukázek na webu)</li>
+<li>lze používat lokálně</li>
+<li>stačí na jednoduché použití, pro větší projekty nedostačuje</li>
 </ul>
 </section>
-<section id="příklady-typování" class="slide level2">
-<h2>Příklady typování</h2>
-<div id="7b64a17e" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">"soubor.txt"</span></span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="zdroje-informací" class="slide level2">
-<h2>Zdroje informací</h2>
+<section id="balíček" class="slide level2">
+<h2>Balíček</h2>
 <ul>
-<li><a href="https://pcjericks.github.io/py-gdalogr-cookbook/">GDAL/OGR Cookbook</a></li>
-<li>řada ukázek a příkladům, které jsou vhodným startovacím bodem</li>
+<li>složka s python soubory, která obsahuje soubor <code>__init__.py</code></li>
+<li>taková složka je <span class="software">Pythonem</span> identifikována jako balíček (jméno složky odpovídá jménu balíčku)</li>
+<li>může mít i zanořené dílčí balíčky</li>
+<li>kromě kódu může obsahovat i další soubory (např. data)</li>
+<li>aby <span class="software">Python</span> balíček našel, musí být v některé z cest v <code>sys.path</code>, ten lze editovat např. skrze <code>PYTHONPATH</code></li>
 </ul>
 </section>
-<section id="otevírání-souborů" class="slide level2">
-<h2>Otevírání souborů</h2>
+<section id="příklad-struktury" class="slide level2">
+<h2>Příklad struktury</h2>
+<pre><code>my_package/
+├── __init__.py
+├── module1.py
+├── module2.py
+└── subpackage/
+    ├── __init__.py
+    └── submodule.py
+└── data/
+    └── data_file.csv
+    └── data.gpkg</code></pre>
+</section>
+<section id="balíček---komplexnější" class="slide level2">
+<h2>Balíček - komplexnější</h2>
 <ul>
-<li>funkce <code>gdal.OpenEx()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory)</li>
-<li>jako první první parametr cesta k souboru
+<li>pokud chceme balíček i s nastavením závislostí, metadatay a testy, chceme obvykle komplexnější strukturu</li>
+<li>doinstalujeme balík <span class="software">poetry</span> do prostředí <span class="software">conda</span></li>
+<li><span class="software">poetry</span>
 <ul>
-<li>buď lokální - klasický zápis</li>
-<li>nebo virtuální začínající <code>/vsi*</code> kde <code>*</code> je typ virtuální složky</li>
+<li>umožní postavit strukturu balíčku</li>
+<li>management závislostí</li>
+<li>instalace</li>
 </ul></li>
 </ul>
 </section>
-<section id="virtuální-složky" class="slide level2">
-<h2>Virtuální složky</h2>
+<section id="balíček-sestavený-pomocí-poetry" class="slide level2">
+<h2>Balíček sestavený pomocí <span class="software">poetry</span></h2>
+<pre><code>poetry nazev_balicku</code></pre>
+<pre><code>nazev_balicku/
+└── src/
+    └── nazev_balicku/
+        └── __init__.py
+├── tests
+    └── __init__.py
+├── pyproject.toml
+└── README.md</code></pre>
+</section>
+<section id="pyproject.toml" class="slide level2">
+<h2><code>pyproject.toml</code></h2>
 <ul>
-<li>např. <code>/vsicurl/cesta_k_online.souboru</code> - automaticky stahuje data</li>
-<li><code>/vsizip/cesta_k_lokálnímu.souboru</code> - extrahuje ze zip souboru</li>
-<li><code>/vsis3</code>, <code>/vsigs</code>, <code>/vsiaz</code>, <code>/vsioss</code> pro přístup k online službám</li>
-<li><code>/vsimem</code> - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát</li>
-<li>tyto adresy pak fungují všude, kde je <span class="software">GDAL/OGR</span> využíván (třeba python knihovny ale i <span class="software">QGIS</span>)</li>
+<li>moderní způsob specifikace nastavení balíčku a nástrojů</li>
+<li>specifikace metadata balíčku</li>
+<li>např. název, verze, autor</li>
+<li>závislosti - více typů (např. pro spuštění a vývoj)</li>
+</ul>
+<pre><code>poetry config virtualenvs.create false --local
+poetry add GDAL
+poetry add --group dev pytest black</code></pre>
+</section>
+<section id="pyproject.toml-úprava-přidáním-dat-k-balíčku" class="slide level2">
+<h2><code>pyproject.toml</code> úprava přidáním dat k balíčku</h2>
+<ul>
+<li>dvě varianty</li>
+</ul>
+<pre><code>[tool.poetry]
+include = [
+    "src/nazev_balicku/data/*.tif",
+    "src/nazev_balicku/data/*.gpkg",
+]
+
+[tool.poetry.package-data]
+"nazev_balicku.data" = ["*.tif", "*.gpkg"]</code></pre>
+</section>
+<section id="instalace" class="slide level2">
+<h2>Instalace</h2>
+<pre><code>poetry install </code></pre>
+<ul>
+<li>instalace balíku</li>
+<li>tzv. <strong>interaktivní</strong> instalace - změny v kódu se projeví se při příštím spuštění <span class="software">Pythonu</span></li>
+<li>stejný výsledek dá i příkaz <code>pip install -e .</code></li>
 </ul>
 </section>
-<section id="drivery" class="slide level2">
-<h2>Drivery</h2>
+<section id="sestavení-pro-instalaci-jinde" class="slide level2">
+<h2>Sestavení pro instalaci jinde</h2>
+<pre><code>poetry build</code></pre>
 <ul>
-<li>každý podporovaný formát má svůj vlastní</li>
-<li>mohou být pouze pro čtení (<strong>DWG</strong>), značná část ale podporuje i zápis (<strong>GPKG</strong>, <strong>GeoTiff</strong>)</li>
-<li>některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (<strong>GeoJSON</strong>)</li>
-<li>často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je</li>
-<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM
-<ul>
-<li>velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu</li>
-<li>nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)</li>
-<li>neplést s daty s adresou <code>/vsimem</code> - také v RAM, ale mají formát</li>
-</ul></li>
+<li>vznikne složka <code>dist/</code> s balíčkem</li>
+<li>balíček je ve formátu <code>.tar.gz</code> a <code>.whl</code></li>
+<li>balíček je možné nahrát na <span class="software">PyPI</span> (Python Package Index) - veřejný repozitář balíčků</li>
+<li>balíček je možné instalovat z <code>whl</code> souboru pomocí <code>pip install nazev_balicku*.whl</code></li>
 </ul>
 </section>
-<section id="obecné-struktury" class="slide level2">
-<h2>Obecné struktury</h2>
-<ul>
-<li>drivery <code>gdal.Driver</code> a <code>ogr.Driver</code> - reprezentace jednotlivých driverů</li>
-<li>souřadnicový systém <code>osr.SpatialReference</code> - reprezentace souřadnicového systému a operací s nimi</li>
-</ul>
+<section id="použití---struktura" class="slide level2">
+<h2>Použití - struktura</h2>
+<pre><code>─── src/
+    └── nazev_balicku/
+        └── __init__.py
+        └── modul_path.py
+        └── modul_gdal.py</code></pre>
+<h3 id="použití---import">Použití - import</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nazev_balicku <span class="co"># import celého balíčku</span></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku.modul_path.fn_1() <span class="co"># použití funkce</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="gdal-struktury" class="slide level2">
-<h2>GDAL Struktury</h2>
-<ul>
-<li>datový zdroj <code>gdal.Dataset</code> - základní objekt pro práci s daty, zdroj dat</li>
-<li>pásmo <code>gdal.Band</code> - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna</li>
-<li>array <code>gdal.MDArray</code> - sice existuje, ale v Pythonu spíše používáme <code>numpy.array</code> (funkce <code>ReadAsArray()</code>)</li>
-<li>a další, ale tyto jsou nejdůležitější</li>
-</ul>
+<section id="použití---úprava-__init__.py" class="slide level2">
+<h2>Použití - úprava <code>__init__.py</code></h2>
+<pre><code>from nazev_balicku.modul_path import *
+from nazev_balicku.modul_gdal import *</code></pre>
 </section>
-<section id="ogr-struktury" class="slide level2">
-<h2>OGR Struktury</h2>
+<section id="použití---po-změně-import" class="slide level2">
+<h2>Použití - po změně import</h2>
 <ul>
-<li>datový zdroj <code>ogr.DataSource</code> (ale může být i <code>gdal.Dataset</code>) - základní objekt pro práci s daty, zdroj dat</li>
-<li>vrstva <code>ogr.Layer</code> - reprezentace jedné vrstvy v datovém zdroji</li>
-<li>definice vrstvy <code>ogr.FeatureDefn</code> - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)</li>
-<li>prvek <code>ogr.Feature</code> - reprezentace jednoho prvku ve vrstvě</li>
-<li>geometrie <code>ogr.Geometry</code> - reprezentace geometrie prvku</li>
-<li>atributy <code>ogr.Field</code> - reprezentace atributu prvku</li>
-<li>a další, ale tyto jsou nejdůležitější</li>
+<li><code>import nazev_balicku</code> - import celého balíčku a věcí z <code>__init__.py</code></li>
 </ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="ogr-geometrie" class="slide level2">
-<h2>OGR geometrie</h2>
+<section id="závěr" class="slide level2">
+<h2>Závěr</h2>
 <ul>
-<li>funkce <code>ogr.GT_*()</code> pro modifikace a konverze (<code>ForceTo*()</code>)</li>
-<li><code>ogr.CreateGeometryFrom*</code> pro tvorbu geometrie z různých formátů</li>
-<li>formáty <strong>WKB</strong> a <strong>WKT</strong></li>
-<li>třída <code>ogr.Geometry</code> reprezentace geometrie - s i bez informací o souřadnicovém systému</li>
-<li>řada funkcí a operací, přímo na objektu</li>
-<li>funkce <code>SetPrecision()</code> - přesnost geometrie</li>
-<li>prostorové operace např. <strong>union</strong>, <strong>intersection</strong> atd.</li>
-<li>prostorové interakce např. <strong>touches</strong>, <strong>crosses</strong>, <strong>contains</strong> atd. (řešeno přes knihovnu <span class="software">GEOS</span>)</li>
-</ul>
-</section>
-<section id="příklad" class="slide level2">
-<h2>Příklad</h2>
-<ul>
-<li>data z <a href="https://www.naturalearthdata.com/">Natural Earth</a>
-<ul>
-<li><a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip">vektorová data</a></li>
-<li><a href="https://naciscdn.org/naturalearth/10m/raster/HYP_HR_SR_W.zip">rastrová data</a></li>
-</ul></li>
-<li>otevření souboru (bez i za použití driveru)</li>
-<li>výběr vrstvy</li>
-<li>iterace přes prvky - geometrie i atributy</li>
-<li>definice vrstvy</li>
-</ul>
-</section>
-<section id="načtení-souboru-a-základní-info" class="slide level2">
-<h2>Načtení souboru a základní info</h2>
-<ul>
-<li>další ukázka v příkladech</li>
-</ul>
-<div id="7d6935a9" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span> <span class="op">=</span> Path.cwd().parent.parent <span class="op">/</span> <span class="op">\</span></span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"_data"</span> <span class="op">/</span> <span class="st">"ne_10m_admin_0_countries.shp"</span></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.exists())</span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>    ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
-<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>    layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span>
-<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetName())</span>
-<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetFeatureCount())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="vlastní-kontextové-managery" class="slide level2">
-<h2>Vlastní kontextové managery</h2>
-<ul>
-<li>pro práci s vrstvami, pásmy, ale i datovými zdroji GDAL/OGR může být užitečné vytvořit si vlastní třídy kontextových managerů</li>
-<li>předejdeme tak problémům s uvolněním paměti a zjednodušíme si práci</li>
-<li>příklad na cvičení</li>
-</ul>
-</section>
-<section id="spouštění-operací-z-gdal" class="slide level2">
-<h2>Spouštění operací z GDAL</h2>
-<ul>
-<li>hlavní funkce</li>
-<li><code>gdal.VectorTranslate()</code> (<code>gdal.VectorTranslateOptions()</code>) pro vektorová data</li>
-<li>pro rastrová data je funkcí vícero <code>gdal.Translate()</code> (<code>gdal.TranslateOptions()</code>), <code>gdal.Warp()</code> (<code>gdal.WarpOptions()</code>)</li>
-<li>mnoho dalších popsaných v dokumentaci</li>
-<li>množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí</li>
-<li>všude, kde se používají cesty k souborům lze použít cesty <code>/vsi*</code> nebo přímo objekty <code>gdal.Dataset</code></li>
-</ul>
-</section>
-<section id="práce-s-daty-v-paměti" class="slide level2">
-<h2>Práce s daty v paměti</h2>
-<ul>
-<li>viz ukázkový kód na cvičení</li>
-<li>bez formátu <i class="fa-solid fa-times" aria-label="times"></i> s určitým formátem</li>
-</ul>
-</section>
-<section id="výhody-gdalogr" class="slide level2">
-<h2>Výhody GDAL/OGR</h2>
-<ul>
-<li>dostupnost</li>
-<li>přístup k širokému spektru geodat</li>
-<li>přístup na všech úrovních</li>
-<li>široké spektrum možností a nastavení</li>
-<li>přípravené nástroje</li>
-</ul>
-</section>
-<section id="nevýhody-gdalogr" class="slide level2">
-<h2>Nevýhody GDAL/OGR</h2>
-<ul>
-<li>někdy ne úplně “pythonový” přístup k operacím</li>
-<li>komplikovanější postupy</li>
-<li>někdy až příliš široké možnosti</li>
-<li>vede ke složitějším skriptům</li>
-</ul>
-</section>
-<section id="zhodnocení" class="slide level2">
-<h2>Zhodnocení</h2>
-<ul>
-<li>nástroj s nejširší nabídkou možností a potenciálem</li>
-<li>klade vyšší nároky na programátora</li>
-<li>mohou vznikat “zajímavé” chyby, těžší na odhalení a vyřešení<br>
-</li>
-<li>zcela jistě nástroj o němž má geoinformatik mít přehled a znát ho</li>
+<li>balíčky a moduly jsou důležitou součástí <span class="software">Pythonu</span></li>
+<li>umožňují strukturovat kód a znovu ho použít</li>
+<li>umožňují i sdílet kód s ostatními</li>
+<li><span class="software">poetry</span> je vhodný nástroj pro správu balíčků a závislostí</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
