@@ -113,13 +113,18 @@ class Zamestnanec:
     def mesicni_plat(self, odpracovanych_hodin: float) -> float:
         return self._hodinovy_plat * odpracovanych_hodin
 
+    ## statická metoda, jedná se o ukázku, ale zde by mohla být i normální metoda
     @staticmethod
     def delka_pracovniho_dne(uvazek: float = 1.0) -> float:
         return 8 * uvazek
 
     @property
+    def hodin_denne(self) -> float:
+        return self.delka_pracovniho_dne(self.uvazek)
+
+    @property
     def denni_plat(self) -> float:
-        return self._hodinovy_plat * 8
+        return self._hodinovy_plat * self.hodin_denne
 
     def __repr__(self) -> str:
         return f"Zamestnanec {self.jmeno} s platem {self._hodinovy_plat} za hodinu"
