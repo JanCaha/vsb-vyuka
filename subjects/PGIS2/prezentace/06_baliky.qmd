@@ -153,6 +153,7 @@ from nazev_balicku.modul_gdal import *
 from nazev_balicku import fn_1 # funkce
 from nazev_balicku import * # všechny funkce
 ```
+
 ## Závěr
 
 - balíčky a moduly jsou důležitou součástí [Pythonu]{.software}
