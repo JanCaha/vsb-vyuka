@@ -58,7 +58,7 @@ jobs:
 
       - uses: conda-incubator/setup-miniconda@v3
         with:
-          activate-environment: env-project
+          activate-environment: env-vyuka
           environment-file: conda-environment.yml
           pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
       

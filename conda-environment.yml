@@ -1,4 +1,4 @@
-name: env-project
+name: env-vyuka
 
 channels:
   - conda-forge
