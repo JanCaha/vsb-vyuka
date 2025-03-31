@@ -26,7 +26,7 @@ python3 -c "import sys;print(sys.path);import your_package"
 
 ## Příklad struktury  
 
-```txt
+```default
 my_package/
 ├── __init__.py
 ├── module1.py
@@ -54,7 +54,7 @@ my_package/
 poetry new nazev_balicku
 ```
 
-```txt
+```default
 nazev_balicku/
 └── src/
     └── nazev_balicku/
@@ -68,8 +68,33 @@ nazev_balicku/
 ## `pyproject.toml`
 
 - moderní způsob specifikace nastavení balíčku a nástrojů 
-- specifikace metadata balíčku
-- např. název, verze, autor
+- specifikace metadata balíčku - např. název, verze, autor, závislosti
+
+```toml
+[project]
+name = "balicekpgis2"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "autor",email = "email@email.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy (>=2.2.4,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "balicekpgis2", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+```
+
+## Přidání závislostí
+
 - závislosti - více typů (např. pro spuštění a vývoj)
 - parametr `--lock`, zabrání instalaci závislostí do virtualního prostředí (`venv`)
 
@@ -82,7 +107,7 @@ poetry add --group dev pytest black --lock
 
 - dvě varianty
 
-```txt
+```toml
 [tool.poetry]
 include = [
     "src/nazev_balicku/data/*.tif",
@@ -116,7 +141,7 @@ poetry build
 
 ## Použití - struktura
 
-```txt
+```default
 ─── src/
     └── nazev_balicku/
         └── __init__.py
