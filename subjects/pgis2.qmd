@@ -38,8 +38,8 @@ listing:
 - knihovna [GDAL/OGR]{.software}
 - knihovny [rasterio]{.software}, [fiona]{.software}, [shapely]{.software}
 - Github Copilot - otestování a využití
-- funkce a objekty v Pythonu 
-- [Pandas]{.software}, [geopandas]{.software}, [Polars]{.software}, ([geopolars]{.software})
+- funkce, objekty, moduly a balíčky  v Pythonu 
+- [pandas]{.software}, [geopandas]{.software}, [polars]{.software}
 
 ## Prezentace{.presentations}
 
