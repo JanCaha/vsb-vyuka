@@ -17,7 +17,12 @@ date: 2025-03-30
 - taková složka je [Pythonem]{.software} identifikována jako balíček (jméno složky odpovídá jménu balíčku)
 - může mít i zanořené dílčí balíčky
 - kromě kódu může obsahovat i další soubory (např. data)
-- aby [Python]{.software} balíček našel, musí být v některé z cest v `sys.path`, ten lze editovat např. skrze `PYTHONPATH` 
+- aby [Python]{.software} balíček našel, musí být v některé z cest v `sys.path`, ty lze editovat např. skrze systémovou proměnnou `PYTHONPATH` 
+
+```bash
+conda env config vars set PYTHONPATH=$PYTHONPATH:/path/to/your/package
+python3 -c "import sys;print(sys.path);import your_package"
+```
 
 ## Příklad struktury  
 
@@ -45,8 +50,8 @@ my_package/
 
 ## Balíček sestavený pomocí [poetry]{.software}
 
-```
-poetry nazev_balicku
+```bash
+poetry new nazev_balicku
 ```
 
 ```
@@ -66,11 +71,11 @@ nazev_balicku/
 - specifikace metadata balíčku
 - např. název, verze, autor
 - závislosti - více typů (např. pro spuštění a vývoj)
+- parametr `--lock`, zabrání instalaci závislostí do virtualního prostředí (`venv`)
 
-```
-poetry config virtualenvs.create false --local
-poetry add GDAL
-poetry add --group dev pytest black
+```bash
+poetry add GDAL --lock
+poetry add --group dev pytest black --lock
 ```
 
 ## `pyproject.toml` úprava přidáním dat k balíčku
