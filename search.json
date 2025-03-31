@@ -1925,7 +1925,7 @@
     "href": "subjects/pgis2.html",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "",
-    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely\nGithub Copilot - otestování a využití\nfunkce a objekty v Pythonu\nPandas, geopandas, Polars, (geopolars)",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely\nGithub Copilot - otestování a využití\nfunkce, objekty, moduly a balíčky v Pythonu\npandas, geopandas, polars",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1936,7 +1936,7 @@
     "href": "subjects/pgis2.html#řešená-témata",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "",
-    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely\nGithub Copilot - otestování a využití\nfunkce a objekty v Pythonu\nPandas, geopandas, Polars, (geopolars)",
+    "text": "opakování základů Pythonu\nknihovna GDAL/OGR\nknihovny rasterio, fiona, shapely\nGithub Copilot - otestování a využití\nfunkce, objekty, moduly a balíčky v Pythonu\npandas, geopandas, polars",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2623,7 +2623,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.04030166 -0.13734160 -0.38514465 -0.24967603 -0.62651399"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.37372776 -0.16072031 -1.21817877 -0.08554480 -0.06613441"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -3071,7 +3071,14 @@
     "href": "subjects/PGIS2/prezentace/06_baliky.html#pyproject.toml",
     "title": "Python Balíčky",
     "section": "pyproject.toml",
-    "text": "pyproject.toml\n\nmoderní způsob specifikace nastavení balíčku a nástrojů\nspecifikace metadata balíčku\nnapř. název, verze, autor\nzávislosti - více typů (např. pro spuštění a vývoj)\nparametr --lock, zabrání instalaci závislostí do virtualního prostředí (venv)\n\npoetry add GDAL --lock\npoetry add --group dev pytest black --lock"
+    "text": "pyproject.toml\n\nmoderní způsob specifikace nastavení balíčku a nástrojů\nspecifikace metadata balíčku - např. název, verze, autor, závislosti\n\n[project]\nname = \"balicekpgis2\"\nversion = \"0.1.0\"\ndescription = \"\"\nauthors = [\n    {name = \"autor\",email = \"email@email.com\"}\n]\nreadme = \"README.md\"\nrequires-python = \"&gt;=3.12\"\ndependencies = [\n    \"numpy (&gt;=2.2.4,&lt;3.0.0)\"\n]\n\n[tool.poetry]\npackages = [{include = \"balicekpgis2\", from = \"src\"}]\n\n\n[build-system]\nrequires = [\"poetry-core&gt;=2.0.0,&lt;3.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\""
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_baliky.html#přidání-závislostí",
+    "href": "subjects/PGIS2/prezentace/06_baliky.html#přidání-závislostí",
+    "title": "Python Balíčky",
+    "section": "Přidání závislostí",
+    "text": "Přidání závislostí\n\nzávislosti - více typů (např. pro spuštění a vývoj)\nparametr --lock, zabrání instalaci závislostí do virtualního prostředí (venv)\n\npoetry add GDAL --lock\npoetry add --group dev pytest black --lock"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_baliky.html#pyproject.toml-úprava-přidáním-dat-k-balíčku",
