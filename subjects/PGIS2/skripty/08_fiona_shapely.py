@@ -7,6 +7,9 @@ from shapely.geometry import MultiPolygon, mapping, shape
 from shapely.ops import transform
 
 if __name__ == "__main__":
+    import sys
+
+    sys.exit(100)
 
     path_data = utils.data_path("ne_10m_admin_0_countries.shp")
     path_result_file = Path(__file__).parent / "data.gpkg"
