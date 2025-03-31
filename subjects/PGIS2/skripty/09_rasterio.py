@@ -10,11 +10,6 @@ if __name__ == "__main__":
     # context manager rasteru pr čtení
     with rasterio.open(data_path("HYP_HR_SR_W.tif")) as input_ds:
 
-        # informace o rasteru a výpis
-        band_number = 1
-        band_values = input_ds.read(band_number)
-        data_type = input_ds.dtypes[band_number]
-
         print(f"Number of bands: {input_ds.count}.")
         print(f"Size: {input_ds.width} - {input_ds.height}.")
 
@@ -29,10 +24,10 @@ if __name__ == "__main__":
 
         print("-" * 10)
 
-        # načtení pásma
-        band_array = input_ds.read(1)
-
-        print(band_array)
+        # informace o rasteru a výpis
+        band_number = 1
+        band_values = input_ds.read(band_number)
+        data_type = input_ds.dtypes[band_number]
 
         # context manager rasteru pro zápis
         with rasterio.open(

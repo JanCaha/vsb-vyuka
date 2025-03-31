@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import fiona
 import pyproj
 import utils
@@ -9,7 +7,7 @@ from shapely.ops import transform
 if __name__ == "__main__":
 
     path_data = utils.data_path("ne_10m_admin_0_countries.shp")
-    path_result_file = Path(__file__).parent / "data.gpkg"
+    path_result_file = utils.save_data_path("data.gpkg")
 
     # context manager pro čtení dat
     with fiona.open(path_data) as src:
@@ -30,7 +28,7 @@ if __name__ == "__main__":
             path_result_file,
             mode="w",
             layer="countries",
-            crs=src.crs,
+            crs=crs_dst,
             driver="GPKG",
             schema=result_schema,
         ) as dst:
