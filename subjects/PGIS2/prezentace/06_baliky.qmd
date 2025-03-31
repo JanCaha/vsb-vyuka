@@ -26,7 +26,7 @@ python3 -c "import sys;print(sys.path);import your_package"
 
 ## Příklad struktury  
 
-```
+```txt
 my_package/
 ├── __init__.py
 ├── module1.py
@@ -54,7 +54,7 @@ my_package/
 poetry new nazev_balicku
 ```
 
-```
+```txt
 nazev_balicku/
 └── src/
     └── nazev_balicku/
@@ -82,7 +82,7 @@ poetry add --group dev pytest black --lock
 
 - dvě varianty
 
-```
+```txt
 [tool.poetry]
 include = [
     "src/nazev_balicku/data/*.tif",
@@ -95,7 +95,7 @@ include = [
 
 ## Instalace
 
-```
+```bash
 poetry install 
 ```
 
@@ -105,7 +105,7 @@ poetry install
 
 ## Sestavení pro instalaci jinde
 
-```
+```bash
 poetry build
 ```
 
@@ -116,7 +116,7 @@ poetry build
 
 ## Použití - struktura
 
-```
+```txt
 ─── src/
     └── nazev_balicku/
         └── __init__.py
@@ -124,7 +124,7 @@ poetry build
         └── modul_gdal.py
 ```
 
-### Použití - import
+## Použití - import
 
 ```python
 from nazev_balicku.modul_path import fn_1 # funkce
@@ -136,7 +136,11 @@ nazev_balicku.modul_path.fn_1() # použití funkce
 
 ## Použití - úprava `__init__.py`
 
-```
+- z dílčích modulů importujeme funkce do `__init__.py`
+- tím je zpřístupníme i na úrovni balíčku
+- příklad `__init__.py`
+  
+```python
 from nazev_balicku.modul_path import *
 from nazev_balicku.modul_gdal import *
 ```
