@@ -228,8 +228,10 @@ Jan Caha
 <li>taková složka je <span class="software">Pythonem</span> identifikována jako balíček (jméno složky odpovídá jménu balíčku)</li>
 <li>může mít i zanořené dílčí balíčky</li>
 <li>kromě kódu může obsahovat i další soubory (např. data)</li>
-<li>aby <span class="software">Python</span> balíček našel, musí být v některé z cest v <code>sys.path</code>, ten lze editovat např. skrze <code>PYTHONPATH</code></li>
+<li>aby <span class="software">Python</span> balíček našel, musí být v některé z cest v <code>sys.path</code>, ty lze editovat např. skrze systémovou proměnnou <code>PYTHONPATH</code></li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env config vars set PYTHONPATH=<span class="va">$PYTHONPATH</span>:/path/to/your/package</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">"import sys;print(sys.path);import your_package"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="příklad-struktury" class="slide level2">
 <h2>Příklad struktury</h2>
@@ -259,7 +261,7 @@ Jan Caha
 </section>
 <section id="balíček-sestavený-pomocí-poetry" class="slide level2">
 <h2>Balíček sestavený pomocí <span class="software">poetry</span></h2>
-<pre><code>poetry nazev_balicku</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> new nazev_balicku</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>nazev_balicku/
 └── src/
     └── nazev_balicku/
@@ -276,10 +278,10 @@ Jan Caha
 <li>specifikace metadata balíčku</li>
 <li>např. název, verze, autor</li>
 <li>závislosti - více typů (např. pro spuštění a vývoj)</li>
+<li>parametr <code>--lock</code>, zabrání instalaci závislostí do virtualního prostředí (<code>venv</code>)</li>
 </ul>
-<pre><code>poetry config virtualenvs.create false --local
-poetry add GDAL
-poetry add --group dev pytest black</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> add GDAL <span class="at">--lock</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> add <span class="at">--group</span> dev pytest black <span class="at">--lock</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="pyproject.toml-úprava-přidáním-dat-k-balíčku" class="slide level2">
 <h2><code>pyproject.toml</code> úprava přidáním dat k balíčku</h2>
@@ -322,11 +324,11 @@ include = [
         └── modul_path.py
         └── modul_gdal.py</code></pre>
 <h3 id="použití---import">Použití - import</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
-<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span>
-<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nazev_balicku <span class="co"># import celého balíčku</span></span>
-<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku.modul_path.fn_1() <span class="co"># použití funkce</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nazev_balicku <span class="co"># import celého balíčku</span></span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku.modul_path.fn_1() <span class="co"># použití funkce</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="použití---úprava-__init__.py" class="slide level2">
 <h2>Použití - úprava <code>__init__.py</code></h2>
@@ -338,8 +340,8 @@ from nazev_balicku.modul_gdal import *</code></pre>
 <ul>
 <li><code>import nazev_balicku</code> - import celého balíčku a věcí z <code>__init__.py</code></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="závěr" class="slide level2">
 <h2>Závěr</h2>

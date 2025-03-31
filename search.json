@@ -1991,7 +1991,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-03-18\n\n\nFiona editace vektorových dat\n\n\n\n\n2024-03-25\n\n\nRasterio informace o souboru\n\n\n\n\n2024-03-25\n\n\nRasterio kopírování pásma do nového souboru\n\n\n\n\n2024-04-15\n\n\nUkázka tvorby objektu\n\n\n\n\n2024-04-29\n\n\nPolars - základní operace\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n2025-03-10\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n2025-06-03\n\n\nFunkce v souboru utils\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-04-15\n\n\nUkázka tvorby objektu\n\n\n\n\n2024-04-29\n\n\nPolars - základní operace\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n2025-03-10\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n2025-06-03\n\n\nFunkce v souboru utils\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2623,7 +2623,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.04875994 -0.71102305 -0.85429561 -0.88619677 -0.53777733"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.43197729 -0.49343146 -0.59020461 -1.03006116 -0.02619399"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -3022,14 +3022,14 @@
     "href": "subjects/PGIS2/prezentace/05_funkce_tridy.html#objekt---příklad",
     "title": "Funkce a třídy",
     "section": "Objekt - příklad",
-    "text": "Objekt - příklad\n\nclass Zamestnanec:\n    def __init__(self, jmeno: str, hodinovy_plat: float):\n        self.jmeno = jmeno\n        self._hodinovy_plat = hodinovy_plat\n        self.uvazek = 1.0\n\n    def plat(self) -&gt; float:\n        return self._hodinovy_plat\n\n    def nastav_plat(self, hodinovy_plat: float) -&gt; None:\n        self._hodinovy_plat = hodinovy_plat\n\n    def zvys_plat(self, navyseni_o: float) -&gt; None:\n        self._hodinovy_plat += navyseni_o\n\n    def mesicni_plat(self, odpracovanych_hodin: float) -&gt; float:\n        return self._hodinovy_plat * odpracovanych_hodin\n\n    @staticmethod\n    def delka_pracovniho_dne(uvazek: float = 1.0) -&gt; float:\n        return 8 * uvazek\n\n    @property\n    def denni_plat(self) -&gt; float:\n        return self._hodinovy_plat * 8\n\n    def __repr__(self) -&gt; str:\n        return f\"Zamestnanec {self.jmeno} s platem {self._hodinovy_plat} za hodinu\""
+    "text": "Objekt - příklad\n\nclass Zamestnanec:\n    def __init__(self, jmeno: str, hodinovy_plat: float):\n        self.jmeno = jmeno\n        self._hodinovy_plat = hodinovy_plat\n        self.uvazek = 1.0\n\n    def plat(self) -&gt; float:\n        return self._hodinovy_plat\n\n    def nastav_plat(self, hodinovy_plat: float) -&gt; None:\n        self._hodinovy_plat = hodinovy_plat\n\n    def zvys_plat(self, navyseni_o: float) -&gt; None:\n        self._hodinovy_plat += navyseni_o\n\n    def mesicni_plat(self, odpracovanych_hodin: float) -&gt; float:\n        return self._hodinovy_plat * odpracovanych_hodin\n\n    ## statická metoda, jedná se o ukázku, ale zde by mohla být i normální metoda\n    @staticmethod\n    def delka_pracovniho_dne(uvazek: float = 1.0) -&gt; float:\n        return 8 * uvazek\n\n    @property\n    def hodin_denne(self) -&gt; float:\n        return self.delka_pracovniho_dne(self.uvazek)\n\n    @property\n    def denni_plat(self) -&gt; float:\n        return self._hodinovy_plat * self.hodin_denne\n\n    def __repr__(self) -&gt; str:\n        return f\"Zamestnanec {self.jmeno} s platem {self._hodinovy_plat} za hodinu\""
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_funkce_tridy.html#použití-objektu",
     "href": "subjects/PGIS2/prezentace/05_funkce_tridy.html#použití-objektu",
     "title": "Funkce a třídy",
     "section": "Použití objektu",
-    "text": "Použití objektu\n\nodpracovane_hodiny = 160\nzam = Zamestnanec(\"Testovaci Zamestnanec\", 250)\nprint(f\"Denní plat: {zam.denni_plat}\")\nzam.uvazek = 0.5\nprint(f\"Denní plat: {zam.denni_plat}\")\nprint(f\"Plat: {zam.mesicni_plat(odpracovane_hodiny)}\")\nzam.zvys_plat(50)\nprint(f\"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}\")\n\nDenní plat: 2000\nDenní plat: 2000\nPlat: 40000\nPlat po zvýšení: 48000"
+    "text": "Použití objektu\n\nodpracovane_hodiny = 160\nzam = Zamestnanec(\"Testovaci Zamestnanec\", 250)\nprint(f\"Denní plat: {zam.denni_plat}\")\nzam.uvazek = 0.5\nprint(f\"Denní plat: {zam.denni_plat}\")\nprint(f\"Plat: {zam.mesicni_plat(odpracovane_hodiny)}\")\nzam.zvys_plat(50)\nprint(f\"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}\")\n\nDenní plat: 2000.0\nDenní plat: 1000.0\nPlat: 40000\nPlat po zvýšení: 48000"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_baliky.html#modul",
@@ -3043,7 +3043,7 @@
     "href": "subjects/PGIS2/prezentace/06_baliky.html#balíček",
     "title": "Python Balíčky",
     "section": "Balíček",
-    "text": "Balíček\n\nsložka s python soubory, která obsahuje soubor __init__.py\ntaková složka je Pythonem identifikována jako balíček (jméno složky odpovídá jménu balíčku)\nmůže mít i zanořené dílčí balíčky\nkromě kódu může obsahovat i další soubory (např. data)\naby Python balíček našel, musí být v některé z cest v sys.path, ten lze editovat např. skrze PYTHONPATH"
+    "text": "Balíček\n\nsložka s python soubory, která obsahuje soubor __init__.py\ntaková složka je Pythonem identifikována jako balíček (jméno složky odpovídá jménu balíčku)\nmůže mít i zanořené dílčí balíčky\nkromě kódu může obsahovat i další soubory (např. data)\naby Python balíček našel, musí být v některé z cest v sys.path, ty lze editovat např. skrze systémovou proměnnou PYTHONPATH\n\nconda env config vars set PYTHONPATH=$PYTHONPATH:/path/to/your/package\npython3 -c \"import sys;print(sys.path);import your_package\""
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_baliky.html#příklad-struktury",
@@ -3064,14 +3064,14 @@
     "href": "subjects/PGIS2/prezentace/06_baliky.html#balíček-sestavený-pomocí-poetry",
     "title": "Python Balíčky",
     "section": "Balíček sestavený pomocí poetry",
-    "text": "Balíček sestavený pomocí poetry\npoetry nazev_balicku\nnazev_balicku/\n└── src/\n    └── nazev_balicku/\n        └── __init__.py\n├── tests\n    └── __init__.py\n├── pyproject.toml\n└── README.md"
+    "text": "Balíček sestavený pomocí poetry\npoetry new nazev_balicku\nnazev_balicku/\n└── src/\n    └── nazev_balicku/\n        └── __init__.py\n├── tests\n    └── __init__.py\n├── pyproject.toml\n└── README.md"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_baliky.html#pyproject.toml",
     "href": "subjects/PGIS2/prezentace/06_baliky.html#pyproject.toml",
     "title": "Python Balíčky",
     "section": "pyproject.toml",
-    "text": "pyproject.toml\n\nmoderní způsob specifikace nastavení balíčku a nástrojů\nspecifikace metadata balíčku\nnapř. název, verze, autor\nzávislosti - více typů (např. pro spuštění a vývoj)\n\npoetry config virtualenvs.create false --local\npoetry add GDAL\npoetry add --group dev pytest black"
+    "text": "pyproject.toml\n\nmoderní způsob specifikace nastavení balíčku a nástrojů\nspecifikace metadata balíčku\nnapř. název, verze, autor\nzávislosti - více typů (např. pro spuštění a vývoj)\nparametr --lock, zabrání instalaci závislostí do virtualního prostředí (venv)\n\npoetry add GDAL --lock\npoetry add --group dev pytest black --lock"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_baliky.html#pyproject.toml-úprava-přidáním-dat-k-balíčku",
