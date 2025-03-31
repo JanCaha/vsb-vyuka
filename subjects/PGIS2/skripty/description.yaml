@@ -34,19 +34,15 @@
   author: Jan Caha
   date: 2025-06-03
   path: "PGIS2/skripty/utils.py"
+- title: "Fiona editace vektorových dat, Shapely geometrie"
+  author: Jan Caha
+  date: 2025-03-31
+  path: "PGIS2/skripty/08_fiona_shapely.py"
+- title: "Rasterio informace o souboru, kopírování pásma do nového souboru"
+  author: Jan Caha
+  date: 2025-03-25
+  path: "PGIS2/skripty/09_rasterio.py"
 
-- title: "Fiona editace vektorových dat"
-  author: Jan Caha
-  date: 2024-03-18
-  path: "PGIS2/skripty/04_fiona.py"
-- title: "Rasterio informace o souboru"
-  author: Jan Caha
-  date: 2024-03-25
-  path: "PGIS2/skripty/05_rasterio_read.py"
-- title: "Rasterio kopírování pásma do nového souboru"
-  author: Jan Caha
-  date: 2024-03-25
-  path: "PGIS2/skripty/06_rasterio_copy_band.py"
 - title: "Ukázka tvorby objektu"
   author: Jan Caha
   date: 2024-04-15
