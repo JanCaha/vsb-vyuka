@@ -235,16 +235,16 @@ Jan Caha
 </section>
 <section id="příklad-struktury" class="slide level2">
 <h2>Příklad struktury</h2>
-<pre><code>my_package/
-├── __init__.py
-├── module1.py
-├── module2.py
-└── subpackage/
-    ├── __init__.py
-    └── submodule.py
-└── data/
-    └── data_file.csv
-    └── data.gpkg</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>my_package/</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>├── __init__.py</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>├── module1.py</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>├── module2.py</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>└── subpackage/</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    ├── __init__.py</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    └── submodule.py</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>└── data/</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    └── data_file.csv</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    └── data.gpkg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="balíček---komplexnější" class="slide level2">
 <h2>Balíček - komplexnější</h2>
@@ -262,14 +262,14 @@ Jan Caha
 <section id="balíček-sestavený-pomocí-poetry" class="slide level2">
 <h2>Balíček sestavený pomocí <span class="software">poetry</span></h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> new nazev_balicku</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>nazev_balicku/
-└── src/
-    └── nazev_balicku/
-        └── __init__.py
-├── tests
-    └── __init__.py
-├── pyproject.toml
-└── README.md</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku/</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>└── src/</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    └── nazev_balicku/</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>        └── __init__.py</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>├── tests</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    └── __init__.py</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>├── pyproject.toml</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>└── README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="pyproject.toml" class="slide level2">
 <h2><code>pyproject.toml</code></h2>
@@ -288,18 +288,18 @@ Jan Caha
 <ul>
 <li>dvě varianty</li>
 </ul>
-<pre><code>[tool.poetry]
-include = [
-    "src/nazev_balicku/data/*.tif",
-    "src/nazev_balicku/data/*.gpkg",
-]
-
-[tool.poetry.package-data]
-"nazev_balicku.data" = ["*.tif", "*.gpkg"]</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>[tool.poetry]</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>include = [</span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>    "src/nazev_balicku/data/*.tif",</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>    "src/nazev_balicku/data/*.gpkg",</span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a>[tool.poetry.package-data]</span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>"nazev_balicku.data" = ["*.tif", "*.gpkg"]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="instalace" class="slide level2">
 <h2>Instalace</h2>
-<pre><code>poetry install </code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> install </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>instalace balíku</li>
 <li>tzv. <strong>interaktivní</strong> instalace - změny v kódu se projeví se při příštím spuštění <span class="software">Pythonu</span></li>
@@ -308,7 +308,7 @@ include = [
 </section>
 <section id="sestavení-pro-instalaci-jinde" class="slide level2">
 <h2>Sestavení pro instalaci jinde</h2>
-<pre><code>poetry build</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>vznikne složka <code>dist/</code> s balíčkem</li>
 <li>balíček je ve formátu <code>.tar.gz</code> a <code>.whl</code></li>
@@ -318,12 +318,14 @@ include = [
 </section>
 <section id="použití---struktura" class="slide level2">
 <h2>Použití - struktura</h2>
-<pre><code>─── src/
-    └── nazev_balicku/
-        └── __init__.py
-        └── modul_path.py
-        └── modul_gdal.py</code></pre>
-<h3 id="použití---import">Použití - import</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>─── src/</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    └── nazev_balicku/</span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>        └── __init__.py</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>        └── modul_path.py</span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>        └── modul_gdal.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="použití---import" class="slide level2">
+<h2>Použití - import</h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span>
 <span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -332,8 +334,13 @@ include = [
 </section>
 <section id="použití---úprava-__init__.py" class="slide level2">
 <h2>Použití - úprava <code>__init__.py</code></h2>
-<pre><code>from nazev_balicku.modul_path import *
-from nazev_balicku.modul_gdal import *</code></pre>
+<ul>
+<li>z dílčích modulů importujeme funkce do <code>__init__.py</code></li>
+<li>tím je zpřístupníme i na úrovni balíčku</li>
+<li>příklad <code>__init__.py</code></li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_gdal <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="použití---po-změně-import" class="slide level2">
 <h2>Použití - po změně import</h2>

@@ -2623,7 +2623,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.43197729 -0.49343146 -0.59020461 -1.03006116 -0.02619399"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.83169506 -0.28370131 -0.07075097 -0.23679248 -0.18560293"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -3099,14 +3099,21 @@
     "href": "subjects/PGIS2/prezentace/06_baliky.html#použití---struktura",
     "title": "Python Balíčky",
     "section": "Použití - struktura",
-    "text": "Použití - struktura\n─── src/\n    └── nazev_balicku/\n        └── __init__.py\n        └── modul_path.py\n        └── modul_gdal.py\nPoužití - import\nfrom nazev_balicku.modul_path import fn_1 # funkce\nfrom nazev_balicku.modul_path import * # všechny funkce\n\nimport nazev_balicku # import celého balíčku\nnazev_balicku.modul_path.fn_1() # použití funkce"
+    "text": "Použití - struktura\n─── src/\n    └── nazev_balicku/\n        └── __init__.py\n        └── modul_path.py\n        └── modul_gdal.py"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_baliky.html#použití---import",
+    "href": "subjects/PGIS2/prezentace/06_baliky.html#použití---import",
+    "title": "Python Balíčky",
+    "section": "Použití - import",
+    "text": "Použití - import\nfrom nazev_balicku.modul_path import fn_1 # funkce\nfrom nazev_balicku.modul_path import * # všechny funkce\n\nimport nazev_balicku # import celého balíčku\nnazev_balicku.modul_path.fn_1() # použití funkce"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_baliky.html#použití---úprava-__init__.py",
     "href": "subjects/PGIS2/prezentace/06_baliky.html#použití---úprava-__init__.py",
     "title": "Python Balíčky",
     "section": "Použití - úprava __init__.py",
-    "text": "Použití - úprava __init__.py\nfrom nazev_balicku.modul_path import *\nfrom nazev_balicku.modul_gdal import *"
+    "text": "Použití - úprava __init__.py\n\nz dílčích modulů importujeme funkce do __init__.py\ntím je zpřístupníme i na úrovni balíčku\npříklad __init__.py\n\nfrom nazev_balicku.modul_path import *\nfrom nazev_balicku.modul_gdal import *"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_baliky.html#použití---po-změně-import",
