@@ -22,5 +22,7 @@ dependencies:
   - pep8
   - flake8
   - pylint
+  # package dev
+  - poetry
   #- pip:
     #- geopolars
