@@ -151,22 +151,32 @@ Jan Caha
 <section id="datové-rámce" class="slide level2">
 <h2>Datové rámce</h2>
 <ul>
+<li>efektivně tabulka - řádky, sloupce</li>
+<li>sloupce mají jednotný datový typ (číslo, text, datum, …)</li>
+<li>řádky mají stejnou strukturu</li>
+<li>každý řádek představuje jeden objekt (např. jeden záznam o měření)</li>
+<li>sloupce mají jména (např. název měření, datum, …)</li>
+<li>geodata - sloupce se specifickým datovým typem (geometrie)</li>
+<li>efektivně se jedná o komplikovanou strukturu s mnoha funkcemi a metodami, které umožňují práci s daty</li>
+</ul>
+</section>
+<section id="datové-rámce-v-pythonu" class="slide level2">
+<h2>Datové rámce v Pythonu</h2>
+<ul>
 <li><span class="software">Python</span> tento koncept přímo v sobě neobsahuje (na rozdíl třeba od <span class="software">R</span>)</li>
 <li>nejstarší podobná implementace je <span class="software">numpy</span> - což jsou obecně multidimenzionální struktury, ale spíše ve smyslu matic a dalších numerických dat</li>
 <li>pro práci s tabulkovými daty se používá knihovna <span class="software">pandas</span> a chceme-li pracovat s geografickými daty, tak <span class="software">geopandas</span></li>
-<li>efektivně se jedná o komplikovanou strukturu s mnoha funkcemi a metodami, které umožňují práci s daty</li>
-<li>v poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. <span class="software">polars</span> a <span class="software">geopolars</span></li>
-<li>obdobně jako v <span class="software">R</span> se pracuje s konceptem sloupců s jednotným datovým typem a řádky s údajem o jednom objektu</li>
+<li>v poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. <span class="software">polars</span></li>
 </ul>
 </section>
 <section id="pandas-a-geopandas" class="slide level2">
 <h2>Pandas a geopandas</h2>
 <ul>
-<li>zavisí na řadě knihoven, poměrně “těžké”</li>
+<li>závisí na řadě knihoven, poměrně “těžké”</li>
 <li>z historických důvodů zde existuje na řadu problémů několik různých přístupů k řešení stejného problému <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> může být zmatečné a komplikované na pochopení</li>
 <li>chybí zcela ujednocující koncepce</li>
-<li>nesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geoformáty)</li>
-<li>práci občas stěžuje koncept indexů a jejich správa</li>
+<li>nesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geodata)</li>
+<li>práci občas stěžuje koncept indexů a jejich správa a absence jednotného přístupu k práci s daty</li>
 </ul>
 </section>
 <section id="polars" class="slide level2">
@@ -178,15 +188,7 @@ Jan Caha
 <li>podporuje méně formátů než <span class="software">pandas</span>, zejména s ohledem na udržení lehkosti (co se týká závislostí)</li>
 <li>kód je mnohem čitelnější a obvykle jednodušší na pochopení v porovnání s <span class="software">pandas</span></li>
 <li><a href="https://docs.pola.rs/">user guide</a> , <a href="https://kevinheavey.github.io/modern-polars/">Modern Polars</a> - porovnání s <span class="software">pandas</span> a <span class="software">polars</span></li>
-</ul>
-</section>
-<section id="geopolars" class="slide level2">
-<h2>Geopolars</h2>
-<ul>
-<li>geografická extenze <span class="software">polars</span></li>
-<li>stále označováno jako experimentální</li>
-<li>podopruje přímý import velice úzkého spektra formátů (aby se vyhnulo závislosti na <span class="software">GDAL/OGR</span>), ale umí převést data z <span class="software">geopandas</span></li>
-<li>workflow, které nemusí dávat smysl z hlediska závislostí atd. ale dává smysl z hlediska rychlosti a efektivity je načítat data přes <span class="software">geopandas</span> a následně je převést do <span class="software">geopolars</span></li>
+<li>absence podpory prostrorových dat</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">

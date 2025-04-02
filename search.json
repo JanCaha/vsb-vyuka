@@ -1958,7 +1958,7 @@
     "href": "subjects/pgis2.html#seminární-práce",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Seminární práce",
-    "text": "Seminární práce\nSestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte kteroukoliv z knihoven, představených během výuky. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript spolu s testovacími daty odevzdejte e-mailem.",
+    "text": "Seminární práce\nSestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte kteroukoliv z knihoven, představených během výuky. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript spolu s testovacími daty odevzdejte e-mailem. Skript bude mít rozsah cca 30 - 150 řádků kódu, komplexnějši skripty mohou být kratší, skripty zaměřené např. na vizualizaci dat budou logicky delší.",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1991,7 +1991,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-04-15\n\n\nUkázka tvorby objektu\n\n\n\n\n2024-04-29\n\n\nPolars - základní operace\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n2025-03-10\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n2025-06-03\n\n\nFunkce v souboru utils\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-04-07\n\n\nZkušební python balíček\n\n\n\n\n2024-04-29\n\n\nPolars - základní operace\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n2025-03-10\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n2025-04-07\n\n\nUkázka tvorby objektu\n\n\n\n\n2025-06-03\n\n\nFunkce v souboru utils\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2002,7 +2002,7 @@
     "href": "subjects/pgis2.html#instalace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Instalace",
-    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  - poetry\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  - poetry\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  # package dev\n  - poetry\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2623,7 +2623,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.37372776 -0.16072031 -1.21817877 -0.08554480 -0.06613441"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.20953886 -0.06590155 -1.42562527 -1.35693065 -1.12567666"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2931,28 +2931,28 @@
     "href": "subjects/PGIS2/prezentace/06_pandas_polars.html#datové-rámce",
     "title": "Datové rámce v Pythonu - pandas, geopandas a polars a geopolars",
     "section": "Datové rámce",
-    "text": "Datové rámce\n\nPython tento koncept přímo v sobě neobsahuje (na rozdíl třeba od R)\nnejstarší podobná implementace je numpy - což jsou obecně multidimenzionální struktury, ale spíše ve smyslu matic a dalších numerických dat\npro práci s tabulkovými daty se používá knihovna pandas a chceme-li pracovat s geografickými daty, tak geopandas\nefektivně se jedná o komplikovanou strukturu s mnoha funkcemi a metodami, které umožňují práci s daty\nv poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. polars a geopolars\nobdobně jako v R se pracuje s konceptem sloupců s jednotným datovým typem a řádky s údajem o jednom objektu"
+    "text": "Datové rámce\n\nefektivně tabulka - řádky, sloupce\nsloupce mají jednotný datový typ (číslo, text, datum, …)\nřádky mají stejnou strukturu\nkaždý řádek představuje jeden objekt (např. jeden záznam o měření)\nsloupce mají jména (např. název měření, datum, …)\ngeodata - sloupce se specifickým datovým typem (geometrie)\nefektivně se jedná o komplikovanou strukturu s mnoha funkcemi a metodami, které umožňují práci s daty"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_pandas_polars.html#datové-rámce-v-pythonu",
+    "href": "subjects/PGIS2/prezentace/06_pandas_polars.html#datové-rámce-v-pythonu",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars a geopolars",
+    "section": "Datové rámce v Pythonu",
+    "text": "Datové rámce v Pythonu\n\nPython tento koncept přímo v sobě neobsahuje (na rozdíl třeba od R)\nnejstarší podobná implementace je numpy - což jsou obecně multidimenzionální struktury, ale spíše ve smyslu matic a dalších numerických dat\npro práci s tabulkovými daty se používá knihovna pandas a chceme-li pracovat s geografickými daty, tak geopandas\nv poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. polars"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_pandas_polars.html#pandas-a-geopandas",
     "href": "subjects/PGIS2/prezentace/06_pandas_polars.html#pandas-a-geopandas",
     "title": "Datové rámce v Pythonu - pandas, geopandas a polars a geopolars",
     "section": "Pandas a geopandas",
-    "text": "Pandas a geopandas\n\nzavisí na řadě knihoven, poměrně “těžké”\nz historických důvodů zde existuje na řadu problémů několik různých přístupů k řešení stejného problému  může být zmatečné a komplikované na pochopení\nchybí zcela ujednocující koncepce\nnesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geoformáty)\npráci občas stěžuje koncept indexů a jejich správa"
+    "text": "Pandas a geopandas\n\nzávisí na řadě knihoven, poměrně “těžké”\nz historických důvodů zde existuje na řadu problémů několik různých přístupů k řešení stejného problému  může být zmatečné a komplikované na pochopení\nchybí zcela ujednocující koncepce\nnesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geodata)\npráci občas stěžuje koncept indexů a jejich správa a absence jednotného přístupu k práci s daty"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_pandas_polars.html#polars",
     "href": "subjects/PGIS2/prezentace/06_pandas_polars.html#polars",
     "title": "Datové rámce v Pythonu - pandas, geopandas a polars a geopolars",
     "section": "Polars",
-    "text": "Polars\n\nmodernější iterace na téma datových rámců, značně inspirovaná dplyr\nnapsáno primárně pro Rust a následně portováno do mnoha dalších jazyků (včetně Pythonu)\nmnohem rychlejší, bezpečnější a efektivnější než pandas\npodporuje méně formátů než pandas, zejména s ohledem na udržení lehkosti (co se týká závislostí)\nkód je mnohem čitelnější a obvykle jednodušší na pochopení v porovnání s pandas\nuser guide , Modern Polars - porovnání s pandas a polars"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/06_pandas_polars.html#geopolars",
-    "href": "subjects/PGIS2/prezentace/06_pandas_polars.html#geopolars",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars a geopolars",
-    "section": "Geopolars",
-    "text": "Geopolars\n\ngeografická extenze polars\nstále označováno jako experimentální\npodopruje přímý import velice úzkého spektra formátů (aby se vyhnulo závislosti na GDAL/OGR), ale umí převést data z geopandas\nworkflow, které nemusí dávat smysl z hlediska závislostí atd. ale dává smysl z hlediska rychlosti a efektivity je načítat data přes geopandas a následně je převést do geopolars"
+    "text": "Polars\n\nmodernější iterace na téma datových rámců, značně inspirovaná dplyr\nnapsáno primárně pro Rust a následně portováno do mnoha dalších jazyků (včetně Pythonu)\nmnohem rychlejší, bezpečnější a efektivnější než pandas\npodporuje méně formátů než pandas, zejména s ohledem na udržení lehkosti (co se týká závislostí)\nkód je mnohem čitelnější a obvykle jednodušší na pochopení v porovnání s pandas\nuser guide , Modern Polars - porovnání s pandas a polars\nabsence podpory prostrorových dat"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_funkce_tridy.html#programovací-paradigmata",
