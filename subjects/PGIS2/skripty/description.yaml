@@ -42,11 +42,15 @@
   author: Jan Caha
   date: 2025-03-25
   path: "PGIS2/skripty/09_rasterio.py"
-
 - title: "Ukázka tvorby objektu"
   author: Jan Caha
-  date: 2024-04-15
-  path: "PGIS2/skripty/08_objekt.py"
+  date: 2025-04-07
+  path: "PGIS2/skripty/10_objekt.py"
+- title: "Zkušební python balíček"
+  author: Jan Caha
+  date: 2024-04-07
+  path: "PGIS2/skripty/python_balicek.zip"
+
 - title: "Polars - základní operace"
   author: Jan Caha
   date: 2024-04-29
