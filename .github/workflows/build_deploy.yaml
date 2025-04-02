@@ -74,6 +74,10 @@ jobs:
         run: |
           sudo ./linux_install_R.sh  --all
 
+      - name: Prepare DEV stuff
+        run: |
+          ./prepare_dev.sh
+
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         
