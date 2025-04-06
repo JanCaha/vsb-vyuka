@@ -1,6 +1,6 @@
 ---
 title: "Kontroly a formátování kódu"
-date: 2025-04-07
+date: 2025-04-07 
 ---
 
 ## Kontroly kódu
@@ -68,6 +68,8 @@ assert isinstance(promenna, NovaTrida)
 
 ## [black]{.software} a [isort]{.software}
 
-- extenze pro [VS Code]{.software} 321# za tímto kódem už je promměnná typu NovaTrida
+- extenze pro [VS Code]{.software}
+- fungují automaticky, jen vhodná kontrola nastavení ve [VS Code]{.software}
+- parametry pro [black]{.software} a [isort]{.software} lze nastavit v `pyproject.toml`
 
 # Dotazy? {.center}
