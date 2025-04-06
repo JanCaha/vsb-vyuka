@@ -270,7 +270,7 @@
     "href": "subjects/PGIS2/prezentace/07_kontroly_formatovani_kodu.html#black-a-isort",
     "title": "Kontroly a formátování kódu",
     "section": "black a isort",
-    "text": "black a isort\n\nextenze pro VS Code 321# za tímto kódem už je promměnná typu NovaTrida"
+    "text": "black a isort\n\nextenze pro VS Code\nexistují situace, kdy je formátování kódu v konfliktu s kontrolami kódu\nfungují automaticky, jen vhodná kontrola nastavení ve VS Code\nparametry pro black a isort lze nastavit v pyproject.toml"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_pandas_polars.html#datové-rámce",
@@ -578,7 +578,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.11081965 -0.02785342 -0.62734124 -0.13173466 -0.38892184"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.02028603 -0.18416451 -0.11414452 -0.89859846 -0.37794349"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
