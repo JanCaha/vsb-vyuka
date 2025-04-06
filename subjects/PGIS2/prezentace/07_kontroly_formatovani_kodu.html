@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.6.43">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-11-25">
-  <title>Výuka - Jan Caha – Mapping module ArcPy</title>
+  <meta name="dcterms.date" content="2025-04-07">
+  <title>Výuka - Jan Caha – Kontroly a formátování kódu</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -99,6 +99,8 @@
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -187,8 +189,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Mapping module ArcPy – Výuka - Jan Caha">
-<meta property="og:description" content="Programování v GIS 3">
+<meta property="og:title" content="Kontroly a formátování kódu – Výuka - Jan Caha">
+<meta property="og:description" content="Programování v GIS 2">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -196,8 +198,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Mapping module <span class="software">ArcPy</span></h1>
-  <p class="subtitle">Programování v GIS 3</p>
+  <h1 class="title">Kontroly a formátování kódu</h1>
+  <p class="subtitle">Programování v GIS 2</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -207,77 +209,90 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-11-25</p>
+  <p class="date">2025-04-07</p>
 </section>
-<section id="mapping-module" class="slide level2">
-<h2>Mapping module</h2>
+<section id="kontroly-kódu" class="slide level2">
+<h2>Kontroly kódu</h2>
 <ul>
-<li><code>arcpy.mp</code> module</li>
-<li>práce s projektem, mapou, vrstvami, layoutem</li>
-<li>automatizace práce nad těmito prvky</li>
-<li><a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/introduction-to-arcpy-mp.htm">dokumentace</a></li>
-<li>řada objektů, s kterými lze pracovat, ukázka jen základů a nastínění postupů a možností</li>
+<li>kontrola syntaxe, dobré praxe, formátování</li>
+<li>kontrola kvality kódu</li>
+<li>kontrola typů</li>
+<li>a další</li>
+<li>balíčky a extenze pro <span class="software">VSCode</span> ale i pro <span class="software">PyCharm</span></li>
 </ul>
 </section>
-<section id="načtení-projektu" class="slide level2">
-<h2>Načtení projektu</h2>
+<section id="chyby-kontrol-kódu" class="slide level2">
+<h2>Chyby kontrol kódu</h2>
 <ul>
-<li>buď práce s aktuálním projektem nebo s konkrétním projektem uloženým na disku</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"CURRENT"</span>)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## nebo</span></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="vs">r"C:\Projects\YosemiteNP\Yosemite.aprx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="arcgisproject" class="slide level2">
-<h2><code>ArcGISProject</code></h2>
-<ul>
-<li>hlavní třída pro práci - rozcestník k dalším položkám</li>
-<li>řada funkcí pro získání a tvorbu prvků</li>
-<li><a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/arcgisproject-class.htm">dokumentace</a></li>
-<li>funkce např. <code>listLayouts()</code>, <code>listMaps()</code>, <code>listReports()</code>, nebo <code>listBrokenDataSources()</code></li>
-<li>funkce pro tvorbu nových prvků - <code>createLayout()</code>, <code>createMap()</code>, <code>createTextElement()</code> a další</li>
-<li>funkce <code>deleteItem()</code> pro smazání prvku</li>
-<li>při modifikaci buď nutné volat <code>save()</code> nebo <code>saveACopy()</code></li>
+<li>nejedná se o chyby, které by vyvolaly chybu při běhu programu/skriptu</li>
+<li>ale o chyby, které by mohly vést k chybám</li>
+<li>např. špatné pojmenování proměnné, nevyužité proměnné, špatné formátování kódu</li>
+<li>špatné typy proměnných</li>
+<li>špatné použití funkcí</li>
+<li>je vhodné se těmto chybám vyhnout a předcházet jim</li>
+<li>ve <span class="software">VS Code</span> se tyto chyby zobrazují jako podtžení kódu (v různých barvách, dle vážnosti a typu chyby)</li>
 </ul>
 </section>
-<section id="map" class="slide level2">
-<h2><code>Map</code></h2>
+<section id="mypy" class="slide level2">
+<h2>MyPy</h2>
 <ul>
-<li>individuální mapové okno v projektu</li>
-<li>lze z něj získat vrstvy <code>listLayers()</code></li>
-<li>lze přidávat vrstvy <code>addLayer()</code> nebo <code>addLayerToGroup()</code> či <code>addTable()</code> ale i <code>insertLayer()</code></li>
-<li></li>
+<li>kontrola typů proměnných u veškerého typovaného kódu</li>
+<li>někdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce <code>typing.cast()</code></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># přetypování proměnné</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>promenna <span class="op">=</span> typing.cast(NovaTrida, promenna)</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># za tímto kódem už je promměnná typu NovaTrida</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">isinstance</span>(promenna, NovaTrida):</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># za tímto kódem už je promměnná typu NovaTrida</span></span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(promenna, NovaTrida)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="pep8" class="slide level2">
+<h2><span class="software">pep8</span></h2>
+<ul>
+<li>kontroly stylu kódu proti <strong>PEP 8</strong></li>
+<li>neprovádí logickou kontrolu kódu</li>
+<li>mezery v kódu, délka řádků, pojmenování proměnných, atd.</li>
 </ul>
 </section>
-<section id="layer" class="slide level2">
-<h2><code>Layer</code></h2>
+<section id="flake8" class="slide level2">
+<h2><span class="software">flake8</span></h2>
 <ul>
-<li>buď prvek <code>Map</code> nebo je lze ukládat do <code>lyr</code> či <code>lyrx</code> souborů</li>
-<li>přistup k vlastnostem vrstvy, mimo jiné i k nastavené vizualizace (renderer či symbologie)</li>
+<li>kontrola stylu kódu i možných chyb</li>
+<li>kontrola přehnané komplexity kódu</li>
 </ul>
 </section>
-<section id="renderery" class="slide level2">
-<h2>Renderery</h2>
+<section id="pylint" class="slide level2">
+<h2><span class="software">pylint</span></h2>
 <ul>
-<li>různé objekty dle typu</li>
-<li>příklad <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/graduatedsymbolsrenderer-class.htm">zde</a></li>
+<li>kontrola stylu kódu i možných chyb</li>
+<li>vynucuje kódovací standardy, hledá i příklady špatné praxe</li>
+<li>nejkomplexnější kontrola kódu, s detailním hodnocením a reporty</li>
 </ul>
 </section>
-<section id="export-do-souboru" class="slide level2">
-<h2>Export do souboru</h2>
+<section id="konfigurace" class="slide level2">
+<h2>Konfigurace</h2>
 <ul>
-<li>exporty layoutu do grafického souboru (typicky PDF)</li>
+<li>lze buď v nastavení <span class="software">VS Code</span></li>
+<li>nebo v souboru <code>pyproject.toml</code>, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">'current'</span>)</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>lyt <span class="op">=</span> p.listLayouts()[<span class="dv">0</span>]</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> arcpy.mp.CreateExportFormat(<span class="st">'PDF'</span>, <span class="vs">r'C:\Temp\PDF_output1.pdf'</span>)</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf) </span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>pdf.resolution <span class="op">=</span> <span class="dv">300</span></span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>pdf.filePath <span class="op">=</span> <span class="vs">r'C:\Temp\PDF_output2.pdf'</span>  </span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="formátování-kódu" class="slide level2">
+<h2>Formátování kódu</h2>
+<ul>
+<li>úprava kódu do standardizovaného formátu</li>
+<li>úprava importů</li>
+</ul>
+</section>
+<section id="black-a-isort" class="slide level2">
+<h2><span class="software">black</span> a <span class="software">isort</span></h2>
+<ul>
+<li>extenze pro <span class="software">VS Code</span> 321# za tímto kódem už je promměnná typu NovaTrida</li>
+</ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
@@ -298,6 +313,7 @@ Jan Caha
   <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -319,7 +335,8 @@ Jan Caha
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -490,7 +507,7 @@ Jan Caha
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
