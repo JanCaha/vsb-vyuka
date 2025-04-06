@@ -1,0 +1,73 @@
+---
+title: "Kontroly a formátování kódu"
+date: 2025-04-07
+---
+
+## Kontroly kódu
+
+- kontrola syntaxe, dobré praxe, formátování
+- kontrola kvality kódu
+- kontrola typů
+- a další
+- balíčky a extenze pro [VSCode]{.software} ale i pro [PyCharm]{.software}
+
+## Chyby kontrol kódu
+
+- nejedná se o chyby, které by vyvolaly chybu při běhu programu/skriptu
+- ale o chyby, které by mohly vést k chybám
+- např. špatné pojmenování proměnné, nevyužité proměnné, špatné formátování kódu
+- špatné typy proměnných
+- špatné použití funkcí
+- je vhodné se těmto chybám vyhnout a předcházet jim 
+- ve [VS Code]{.software} se tyto chyby zobrazují jako podtžení kódu (v různých barvách, dle vážnosti a typu chyby)
+
+## MyPy
+
+- kontrola typů proměnných u veškerého typovaného kódu 
+- někdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce `typing.cast()`
+
+```python
+import typing
+
+# přetypování proměnné
+promenna = typing.cast(NovaTrida, promenna)
+
+# za tímto kódem už je promměnná typu NovaTrida
+if isinstance(promenna, NovaTrida):
+    ...
+
+# za tímto kódem už je promměnná typu NovaTrida
+assert isinstance(promenna, NovaTrida)
+```
+
+## [pep8]{.software}
+
+- kontroly stylu kódu proti **PEP 8**
+- neprovádí logickou kontrolu kódu
+- mezery v kódu, délka řádků, pojmenování proměnných, atd.
+
+## [flake8]{.software}
+
+- kontrola stylu kódu i možných chyb
+- kontrola přehnané komplexity kódu
+
+## [pylint]{.software}
+- kontrola stylu kódu i možných chyb
+- vynucuje kódovací standardy, hledá i příklady špatné praxe
+- nejkomplexnější kontrola kódu, s detailním hodnocením a reporty
+
+## Konfigurace 
+
+- lze buď v nastavení [VS Code]{.software}
+- nebo v souboru `pyproject.toml`, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou
+
+## Formátování kódu
+
+- úprava kódu do standardizovaného formátu
+- úprava importů
+
+## [black]{.software} a [isort]{.software}
+
+- extenze pro [VS Code]{.software} 321# za tímto kódem už je promměnná typu NovaTrida
+
+# Dotazy? {.center}
