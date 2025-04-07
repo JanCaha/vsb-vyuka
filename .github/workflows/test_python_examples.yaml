@@ -58,6 +58,9 @@ jobs:
       - name: Check if PGIS2 folder was modified
         id: pgis2_modified
         run: |
+          echo "Event before: ${{ github.event.before }}"
+          echo "Event after: ${{ github.sha }}"
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
           if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^subjects/PGIS2/'; then
             echo "PGIS2_MODIFIED=true" >> $GITHUB_ENV
           else
