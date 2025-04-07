@@ -56,11 +56,6 @@ assert isinstance(promenna, NovaTrida)
 - vynucuje kódovací standardy, hledá i příklady špatné praxe
 - nejkomplexnější kontrola kódu, s detailním hodnocením a reporty
 
-## Konfigurace 
-
-- lze buď v nastavení [VS Code]{.software}
-- nebo v souboru `pyproject.toml`, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou
-
 ## Formátování kódu
 
 - úprava kódu do standardizovaného formátu
@@ -72,5 +67,72 @@ assert isinstance(promenna, NovaTrida)
 - existují situace, kdy je formátování kódu v konfliktu s kontrolami kódu 
 - fungují automaticky, jen vhodná kontrola nastavení ve [VS Code]{.software}
 - parametry pro [black]{.software} a [isort]{.software} lze nastavit v `pyproject.toml`
+
+## Konfigurace 
+
+- lze buď v nastavení [VS Code]{.software}
+- nebo v souboru `pyproject.toml`, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou
+
+## Konfigurace v [VS Code]{.software} v `settings.json`
+
+```json
+"flake8.args": [
+    "--max-line-length",
+    "160"
+],
+"pylint.args": [
+    "--disable=E0611",
+    "--max-line-length=160"
+],
+"isort.args": [
+    "--profile",
+    "black",
+    "--line-width",
+    "120"
+],
+"black-formatter.args": [
+    "--line-length",
+    "120"
+]
+```
+
+## Konfigurace v `pyproject.toml`
+
+```toml
+[tool.flake8]
+exclude = [".git", "__pycache__", "tests/*"]
+max-line-length = 120
+ignore = "W293,W504"
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint.messages_control]
+disable = [
+    "redefined-outer-name",
+    "no-name-in-module",
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "invalid-name",
+    "too-many-arguments",
+    "attribute-defined-outside-init",
+]
+
+[tool.mypy]
+follow_imports = "silent"
+ignore_missing_imports = true
+show_column_numbers = true
+no_pretty = true
+no_strict_optional = true
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+skip_gitignore = true
+```
 
 # Dotazy? {.center}
