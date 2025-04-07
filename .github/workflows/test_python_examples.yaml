@@ -44,6 +44,9 @@ jobs:
         run: |
           echo "Event before: ${{ github.event.before }}"
           echo "Event after: ${{ github.sha }}"
+          git show ${{ github.event.before }} --pretty=format:"Commit: %H%nAuthor: %an%nDate: %ad%nMessage: %s" --no-patch
+          git show ${{ github.sha }} --pretty=format:"Commit: %H%nAuthor: %an%nDate: %ad%nMessage: %s" --no-patch
+
           git diff --name-only ${{ github.event.before }} ${{ github.sha }}
           echo "--------------------------------------"
           if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^subjects/PGIS2/'; then
