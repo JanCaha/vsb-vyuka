@@ -1,0 +1,112 @@
+---
+title: "Git, Github"
+date: 2025-04-07 
+---
+
+## Co je [Git]{.software}?
+
+- systém pro správu kódu, jeho vývoje a verzí, který umožňuje sledovat změny v kódu a spolupracovat na projektech
+- umožňuje návrat k předchozím verzím, práci na více větvích a snadnou spolupráci mezi více vývojáři
+- je distribuovaný, což znamená, že každý vývojář má kopii celého repozitáře na svém počítači
+- existuje centrální repozitář (server), který slouží jako hlavní místo pro sdílení kódu
+
+## Autorizace uživatele
+
+- je třeba nastavit uživatelské jméno a e-mail, které budou použity pro identifikaci práce s [Git]{.software}
+- pro autorizaci na serveru je potřeba SSH klíč
+- SSH klíč je pár klíčů (veřejný a soukromý), které slouží k šifrování a dešifrování dat
+- veřejný klíč se nahrává na server, soukromý klíč zůstává na počítači uživatele
+
+## Git pojmy
+
+- **repository (repozitář)** - místo, kde je uložen kód a historie změn
+- **branch (větev)** - samostatná linie vývoje, která umožňuje pracovat na různých funkcích nebo opravách chyb nezávisle na sobě
+- **commit** - snímek stavu kódu v určitém okamžiku, který obsahuje popis změn od posledního commitu
+- **merge** - sloučení změn z jedné větve do druhé
+- **conflict** - situace, kdy dvě větve obsahují změny v té samé části kódu, a není jasné kterou změnu použít
+- **stage area** - dočasné místo, kde jsou změny připravené k potvrzení (commit)
+
+## Vytvoření repositáře
+
+- `git init` - inicializace nového repozitáře, ale pak je potřeba přidat vzdálený repozitář
+- `git clone URL` - klonování existujícího repozitáře, vytvoří se složka s názvem repozitáře a stáhne se jeho obsah
+
+## Sychronizace se serverem
+
+- `git push` - odeslání změn na vzdálený repozitář
+- `git pull` - stažení změn z vzdáleného repozitáře
+- `git sync` - kombinace `git pull` a `git push`, synchronizuje místní a vzdálený repozitář
+- pokud stažené změny obsahují konflikty, je nutné je vyřešit před synchronizací (`git pull` může způsobit konflikt)
+
+## Přidání změn
+
+- `git add .` - přidání všech změn do tzv. "staging area"
+- `git commit -m "Popis změny"` - vytvoření nového commitu
+
+## Práce s větvemi (branches)
+
+- větve umožňují pracovat na různých částech projektu nezávisle na sobě
+- hlavní větev se obvykle nazývá `main` nebo `master`
+- další větve mohou být vytvořeny pro nové funkce, opravy chyb nebo experimenty
+- branch se vytváří vždy z nějaké prvotní větve, obvykle z `main` nebo `master`
+- `git branch nazev-vetve` - vytvoření nové větve
+- `git checkout nazev-vetve` - přepnutí na existující větev
+- `git checkout -b nazev-vetve` - vytvoření a přepnutí na novou větev
+
+### Sloučení větví
+
+- `git merge nazev-vetve` - sloučení změn z jiné větve do aktuální větve
+- při konfliktech je nutné je ručně vyřešit a následně potvrdit změny pomocí `git add` a `git commit`.
+
+### Smazání větve
+
+- `git branch -d nazev-vetve` - smazání větve, pokud byla sloučena
+- `git branch -D nazev-vetve` - vynucené smazání větve
+
+## Doporučené postupy
+
+- pravidelně commitujte a pište srozumitelné zprávy commitů
+- používejte větve pro nové funkce nebo opravy chyb
+- před sloučením větví vždy aktualizujte hlavní větev (`git pull`)
+
+## GitHub
+
+- webová služba pro hostování Git repozitářů
+- funkcionality postavené okolo Git + doplňky pro vývojáře
+  - řešení problému se softwarem, chyby
+  - tvorba vydání softwaru
+  - wiki, či hostování dokumentace (GitHub Pages)
+  - CI/CD - automatizace postupů při vývoje softwaru
+- sociální rozměr
+
+## GitHub - příkazová řádka
+
+- `gh` - příkazová řádka pro GitHub
+- jak management repositářů (alternativa k `git`), tak i další funkcionality na webu
+
+## Provázání s [VS Code]{.software}
+
+- skrze extenze 
+- přímo v editoru, funkce práce s [Git]{.software}
+- může jít jak o jednoduchou práci s repositáři, tak i komplexní funkce GitHubu
+
+## GitHub Actions
+
+- automatizace pracovních postupů
+- CI/CD - Continuous Integration/Continuous Deployment
+- umožňuje spouštět skripty a akce na základě událostí v repozitáři
+- např. při pushnutí kódu, vytvoření pull requestu nebo vydání nové verze
+- umožňuje testování, nasazení a další úkoly
+- akce jsou definovány v YAML souborech a mohou být spouštěny na různých platformách
+- umožňuje vytvářet vlastní akce nebo používat akce od komunity
+- akce mohou být kombinovány do pracovních postupů (workflows), které definují sekvenci kroků, které mají být provedeny
+
+## Alternativy
+
+- [GitLab](https://gitlab.com)
+- [Bitbucket](https://bitbucket.org)
+- [Gitea](https://gitea.io)
+- [Gogs](https://gogs.io)
+- ale reálně jde o naprosté minority
+
+# Dotazy? {.center}
