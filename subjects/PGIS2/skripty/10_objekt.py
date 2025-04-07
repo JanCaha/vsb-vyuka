@@ -1,6 +1,3 @@
-import typing
-
-
 class Zamestnanec:
     """Třída reprezentující zaměstnance. Zaměstnanec má jméno a hodinový plat."""
 
@@ -54,7 +51,7 @@ class Zamestnanec:
 if __name__ == "__main__":
     # tvorba instance třídy zamestnanec
     zam = Zamestnanec("Testovaci Zamestnanec", 250)
-    # nastení odpracovaných hodin
+    # nastavení odpracovaných hodin
     odpracovane_hodiny = 160
     print(f"Denní plat: {zam.denni_plat}")
     print(f"Plat: {zam.mesicni_plat(odpracovane_hodiny)}")
@@ -65,3 +62,9 @@ if __name__ == "__main__":
     # změna úvazku
     zam.uvazek = 0.5
     print(f"Denní plat: {zam.denni_plat} při úvazku {zam.uvazek}")
+
+    # tisk zaměstnance
+    print(zam)
+
+    # porovnání dvou zaměstnanců
+    print(zam == Zamestnanec("Zamestnanec AB", 0))
