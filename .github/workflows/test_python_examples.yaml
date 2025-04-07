@@ -62,9 +62,10 @@ jobs:
         run: |
           if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^subjects/PGIS2/'; then
             echo "modified=true" >> $GITHUB_OUTPUT
+            echo "Running steps for PGIS2!"
           else
             echo "modified=false" >> $GITHUB_OUTPUT
-            echo "Not running steps for PGIS2!!!"
+            echo "Not running steps for PGIS2!"
           fi
 
       - name: PGIS2 data
@@ -87,24 +88,25 @@ jobs:
         id: pgis4_modified
         run: |
           if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^subjects/PGIS4/'; then
-            echo "PGIS4_MODIFIED=true" >> $GITHUB_ENV
+            echo "modified=true" >> $GITHUB_OUTPUT
+            echo "Running steps for PGIS4!"
           else
-            echo "PGIS4_MODIFIED=false" >> $GITHUB_ENV
-            echo "Not running steps for PGIS4!!!"
+            echo "modified=false" >> $GITHUB_OUTPUT
+            echo "Not running steps for PGIS4!"
           fi
 
       - name: Add qgis to Conda
-        if: env.PGIS4_MODIFIED == 'true'
+        if: ${{ steps.pgis4_modified.outputs.modified }}
         run: |
           conda install qgis
 
       - name: PGIS4 data
-        if: env.PGIS4_MODIFIED == 'true'
+        if: ${{ steps.pgis4_modified.outputs.modified }}
         run: |
           ./subjects/PGIS4/soubory/get_data.sh
       
       - name: PGIS4 skripty
-        if: env.PGIS4_MODIFIED == 'true'
+        if: ${{ steps.pgis4_modified.outputs.modified }}
         run: |
           FILES="./subjects/PGIS4/skripty/*.py"
           for FILE in $FILES
