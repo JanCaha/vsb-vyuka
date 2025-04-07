@@ -39,6 +39,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: Check if PGIS2 folder was modified
+        id: pgis2_modified
+        run: |
+          echo "Event before: ${{ github.event.before }}"
+          echo "Event after: ${{ github.sha }}"
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
+          echo "--------------------------------------"
+          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^subjects/PGIS2/'; then
+            echo "PGIS2_MODIFIED=true" >> $GITHUB_ENV
+          else
+            echo "PGIS2_MODIFIED=false" >> $GITHUB_ENV
+          fi
+          echo "PGIS2 modified: ${{ env.PGIS2_MODIFIED }}"
+
       - name: Cache Conda
         uses: actions/cache@v4
         env:
@@ -55,19 +69,6 @@ jobs:
           environment-file: subjects/PGIS2/soubory/conda-environment.yml
           pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
       
-      - name: Check if PGIS2 folder was modified
-        id: pgis2_modified
-        run: |
-          echo "Event before: ${{ github.event.before }}"
-          echo "Event after: ${{ github.sha }}"
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
-          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^subjects/PGIS2/'; then
-            echo "PGIS2_MODIFIED=true" >> $GITHUB_ENV
-          else
-            echo "PGIS2_MODIFIED=false" >> $GITHUB_ENV
-          fi
-          echo "PGIS2 modified: ${{ env.PGIS2_MODIFIED }}"
-
       - name: PGIS2 data
         run: |
           ./subjects/PGIS2/soubory/get_data.sh
