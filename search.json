@@ -462,13 +462,6 @@
     "text": "pylint\n\nkontrola stylu kódu i možných chyb\nvynucuje kódovací standardy, hledá i příklady špatné praxe\nnejkomplexnější kontrola kódu, s detailním hodnocením a reporty"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#konfigurace",
-    "href": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#konfigurace",
-    "title": "Kontroly a formátování kódu",
-    "section": "Konfigurace",
-    "text": "Konfigurace\n\nlze buď v nastavení VS Code\nnebo v souboru pyproject.toml, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou"
-  },
-  {
     "objectID": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#formátování-kódu",
     "href": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#formátování-kódu",
     "title": "Kontroly a formátování kódu",
@@ -481,6 +474,27 @@
     "title": "Kontroly a formátování kódu",
     "section": "black a isort",
     "text": "black a isort\n\nextenze pro VS Code\nexistují situace, kdy je formátování kódu v konfliktu s kontrolami kódu\nfungují automaticky, jen vhodná kontrola nastavení ve VS Code\nparametry pro black a isort lze nastavit v pyproject.toml"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#konfigurace",
+    "href": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#konfigurace",
+    "title": "Kontroly a formátování kódu",
+    "section": "Konfigurace",
+    "text": "Konfigurace\n\nlze buď v nastavení VS Code\nnebo v souboru pyproject.toml, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#konfigurace-v-vs-code-v-settings.json",
+    "href": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#konfigurace-v-vs-code-v-settings.json",
+    "title": "Kontroly a formátování kódu",
+    "section": "Konfigurace v VS Code v settings.json",
+    "text": "Konfigurace v VS Code v settings.json\n\"flake8.args\": [\n    \"--max-line-length\",\n    \"160\"\n],\n\"pylint.args\": [\n    \"--disable=E0611\",\n    \"--max-line-length=160\"\n],\n\"isort.args\": [\n    \"--profile\",\n    \"black\",\n    \"--line-width\",\n    \"120\"\n],\n\"black-formatter.args\": [\n    \"--line-length\",\n    \"120\"\n]"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#konfigurace-v-pyproject.toml",
+    "href": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#konfigurace-v-pyproject.toml",
+    "title": "Kontroly a formátování kódu",
+    "section": "Konfigurace v pyproject.toml",
+    "text": "Konfigurace v pyproject.toml\n[tool.flake8]\nexclude = [\".git\", \"__pycache__\", \"tests/*\"]\nmax-line-length = 120\nignore = \"W293,W504\"\n\n[tool.pylint.format]\nmax-line-length = 120\n\n[tool.pylint.messages_control]\ndisable = [\n    \"redefined-outer-name\",\n    \"no-name-in-module\",\n    \"missing-function-docstring\",\n    \"missing-module-docstring\",\n    \"missing-class-docstring\",\n    \"invalid-name\",\n    \"too-many-arguments\",\n    \"attribute-defined-outside-init\",\n]\n\n[tool.mypy]\nfollow_imports = \"silent\"\nignore_missing_imports = true\nshow_column_numbers = true\nno_pretty = true\nno_strict_optional = true\n\n[tool.black]\nline-length = 120\n\n[tool.isort]\nprofile = \"black\"\nline_length = 120\nskip_gitignore = true"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/09_git_github.html#co-je-git",
@@ -2938,7 +2952,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.7350541 -0.3935433 -1.4541699 -2.1883513 -0.2904289"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.194655944 -0.443586459 -0.002458396 -0.263750219 -0.076242413"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
