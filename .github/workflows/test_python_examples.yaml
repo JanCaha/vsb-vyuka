@@ -64,6 +64,7 @@ jobs:
             echo "PGIS2_MODIFIED=true" >> $GITHUB_ENV
           else
             echo "PGIS2_MODIFIED=false" >> $GITHUB_ENV
+            echo "Not running steps for PGIS2!!!"
           fi
 
       - name: PGIS2 data
@@ -89,9 +90,11 @@ jobs:
             echo "PGIS4_MODIFIED=true" >> $GITHUB_ENV
           else
             echo "PGIS4_MODIFIED=false" >> $GITHUB_ENV
+            echo "Not running steps for PGIS4!!!"
           fi
 
       - name: Add qgis to Conda
+        if: env.PGIS4_MODIFIED == 'true'
         run: |
           conda install qgis
 
