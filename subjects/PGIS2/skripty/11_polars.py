@@ -39,3 +39,5 @@ if __name__ == "__main__":
     print(df_diamonds_grouped)
 
     df_diamonds_grouped.write_csv(save_data_path("diamonds_grouped.csv"))
+
+
