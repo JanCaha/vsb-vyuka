@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-                
+
       - name: Check if PGIS2 folder was modified
         id: pgis2_modified
         run: |
@@ -53,10 +53,11 @@ jobs:
           echo "--------------------------------------"
           if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q '^subjects/PGIS2/'; then
             echo "PGIS2_MODIFIED=true" >> $GITHUB_ENV
+            echo "Modified!!!"
           else
             echo "PGIS2_MODIFIED=false" >> $GITHUB_ENV
+            echo "Not modified!!!"
           fi
-          echo "PGIS2 modified: ${{ env.PGIS2_MODIFIED }}"
 
       - name: Cache Conda
         uses: actions/cache@v4
