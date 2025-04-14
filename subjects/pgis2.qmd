@@ -58,6 +58,10 @@ Sestavte Python skript, které provede libovolné netriviální zpracování pro
 ## Data ke stažení{.data-sources}
 
 - data [Natural Earth](https://www.naturalearthdata.com/)
+  - [vektorová data](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip)
+  - [rastrová data](https://naciscdn.org/naturalearth/10m/raster/HYP_HR_SR_W.zip)
+- data **diamonds** - [https://raw.githubusercontent.com/mwaskom/seaborn-data/master/diamonds.csv](https://raw.githubusercontent.com/mwaskom/seaborn-data/master/diamonds.csv)
+
 
 ## Ukázkové kódy{.codes}
 
