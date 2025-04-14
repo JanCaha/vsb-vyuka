@@ -1095,7 +1095,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.170884592 -0.738366552 -0.582292294 -0.106774732 -0.009271903"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.85438179 -0.01098858 -0.07666614 -0.16276022 -0.09907721"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2894,7 +2894,7 @@
     "href": "subjects/pgis2.html#data-ke-stažení",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Data ke stažení",
-    "text": "Data ke stažení\n\ndata Natural Earth",
+    "text": "Data ke stažení\n\ndata Natural Earth\n\nvektorová data\nrastrová data\n\ndata diamonds - https://raw.githubusercontent.com/mwaskom/seaborn-data/master/diamonds.csv",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
