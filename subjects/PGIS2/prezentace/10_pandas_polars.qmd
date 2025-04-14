@@ -1,6 +1,6 @@
 ---
-title: "Datové rámce v Pythonu - pandas, geopandas a polars a geopolars"
-date: 2024-04-29
+title: "Datové rámce v Pythonu - pandas, geopandas a polars"
+date: 2025-04-14
 ---
 
 ## Datové rámce
@@ -20,17 +20,25 @@ date: 2024-04-29
 - pro práci s tabulkovými daty se používá knihovna [pandas]{.software} a chceme-li pracovat s geografickými daty, tak [geopandas]{.software}
 - v poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. [polars]{.software} 
 
-## Pandas a geopandas
+## [Pandas]{.software}
 
 - závisí na řadě knihoven, poměrně "těžké"
 - z historických důvodů zde existuje na řadu problémů několik různých přístupů k řešení stejného problému {{< fa arrow-right >}} může být zmatečné a komplikované na pochopení
 - chybí zcela ujednocující koncepce
 - nesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geodata)
 - práci občas stěžuje koncept indexů a jejich správa a absence jednotného přístupu k práci s daty
+- hlavní třída `DataFrame` - na ní řada funkcí
+- [Pandas cookbook](https://github.com/jvns/pandas-cookbook?tab=readme-ov-file), [Getting started tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/), [Pandas Tutorial: DataFrames in Python](https://www.datacamp.com/tutorial/pandas-tutorial-dataframe-python)
+
+## [Geopandas]{.software}
+
+- rozšíření [pandas]{.software} pro prostorová data 
+- třída `GeoDataFrame`, rozšíření `DataFrame` (nové funkce)
+- postaveno nad [GDAL/OGR]{.software}, respektive [shapely]{.software} a [pygrio]{.software}
 
 ## Polars
 
-- modernější iterace na téma datových rámců, značně inspirovaná [dplyr]{.software}
+- modernější iterace na téma datových rámců, značně inspirovaná [dplyr]{.software} (balík pro [R]{.software})
 - napsáno primárně pro [Rust]{.software} a následně portováno do mnoha dalších jazyků (včetně Pythonu)
 - mnohem rychlejší, bezpečnější a efektivnější než [pandas]{.software}
 - podporuje méně formátů než [pandas]{.software}, zejména s ohledem na udržení lehkosti (co se týká závislostí)
@@ -38,5 +46,62 @@ date: 2024-04-29
 - [user guide](https://docs.pola.rs/) , [Modern Polars](https://kevinheavey.github.io/modern-polars/) - porovnání s [pandas]{.software} a [polars]{.software}
 - absence podpory prostrorových dat
 
+## Ukázka - selekce
+
+::: {.panel-tabset}
+
+### Pandas
+
+```python
+import pandas as pd
+
+df_pd = pd.read_csv(extracted)
+
+df_pd.loc[12:15, ["Dest", "Tail_Number"]]
+
+df_pd
+    .set_index("IATA_CODE_Reporting_Airline")
+    .loc[['AA', 'DL'], ["Dest", "Tail_Number"]]
+```
+
+### Polars
+
+```python
+import polars as pl
+
+df_pl = pl.read_csv(extracted, truncate_ragged_lines=True)
+
+df_pl.select(["Dest", "Tail_Number"]).head(16).tail(4)
+
+df_pl
+    .filter(pl.col("IATA_CODE_Reporting_Airline").is_in(['AA', 'DL']))
+    .select(["IATA_CODE_Reporting_Airline", "Dest", "Tail_Number"])
+```
+
+:::
+
+## Ukázka - tvorba sloupce
+
+::: {.panel-tabset}
+
+### Pandas
+
+```python
+df_pd["novy_sloupec"] = False
+df_pd["novy_sloupec"] = df_pd["novy_sloupec"].mask(df_pd["sloupec_hodnota"] <= 3, True)
+```
+
+### Polars
+
+```python
+df_pl.with_columns(
+    pl.when(pl.col("sloupec_hodnota") <= 10)
+    .then(True)
+    .otherwise(False)
+    .alias("novy_sloupec")
+)
+```
+
+:::
 
 # Dotazy? {.center}
