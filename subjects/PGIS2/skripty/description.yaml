@@ -50,8 +50,11 @@
   author: Jan Caha
   date: 2024-04-07
   path: "PGIS2/skripty/python_balicek.zip"
-
-- title: "Polars - základní operace"
+- title: Pandas - ukázky
   author: Jan Caha
-  date: 2024-04-29
-  path: "PGIS2/skripty/09_polars.py"
+  date: 2025-04-14
+  path: "PGIS2/skripty/11_pandas.py"
+- title: Polars - ukázky
+  author: Jan Caha
+  date: 2025-04-14
+  path: "PGIS2/skripty/12_polars.py"
