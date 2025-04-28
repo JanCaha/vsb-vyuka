@@ -84,6 +84,17 @@ jobs:
             python3 $FILE > /dev/null
           done
 
+      - name: PGIS2 notebooky
+        if: ${{ steps.pgis2_modified.outputs.modified }}
+        run: |
+          FILES="./subjects/PGIS2/skripty/*.ipynb"
+          for FILE in $FILES
+          do
+            echo "--------------------"
+            echo "*** $FILE ***"
+            jupyter nbconvert --inplace --execute $FILE
+          done
+
       - name: Check if PGIS4 folder was modified
         id: pgis4_modified
         run: |
