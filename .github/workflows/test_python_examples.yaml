@@ -8,6 +8,7 @@ on:
   push:
     paths:
       - '.github/workflows/test_python_examples.yaml'
+      - 'subjects/**conda**.yaml'
       - '**.py'
 
 jobs:
