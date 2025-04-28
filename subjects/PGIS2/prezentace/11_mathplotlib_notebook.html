@@ -13,7 +13,7 @@
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2025-04-28">
-  <title>Výuka - Jan Caha – Mathplotlib, Jupyter Notebook</title>
+  <title>Výuka - Jan Caha – Matplotlib, Jupyter Notebook</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,7 +191,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Mathplotlib, Jupyter Notebook – Výuka - Jan Caha">
+<meta property="og:title" content="Matplotlib, Jupyter Notebook – Výuka - Jan Caha">
 <meta property="og:description" content="Programování v GIS 2">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -200,7 +200,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Mathplotlib, Jupyter Notebook</h1>
+  <h1 class="title">Matplotlib, Jupyter Notebook</h1>
   <p class="subtitle">Programování v GIS 2</p>
 
 <div class="quarto-title-authors">
@@ -214,12 +214,12 @@ Jan Caha
   <p class="date">2025-04-28</p>
 </section>
 <section>
-<section id="mathplotlib" class="title-slide slide level1 center">
-<h1>Mathplotlib</h1>
+<section id="matplotlib" class="title-slide slide level1 center">
+<h1>Matplotlib</h1>
 
 </section>
-<section id="mathplotlib-1" class="slide level2">
-<h2><span class="software">Mathplotlib</span></h2>
+<section id="matplotlib-1" class="slide level2">
+<h2><span class="software">Matplotlib</span></h2>
 <ul>
 <li>v <span class="software">Pythonu</span> v podstatě standard na tvorbu vizualizací a grafů</li>
 <li>napsáno v <span class="software">Pythonu</span> + optimalizace náročných části v <span class="software">C/C++</span></li>
@@ -259,7 +259,7 @@ Jan Caha
 <li>použití globálního stylu v souboru <code>matplotlibrc</code> - soubor se hledá buď v aktuální projektu nebo v uživatelském adresáři</li>
 <li>předpřipravené styly</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mathplotlib</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>matplotlib.style.use(<span class="st">'ggplot'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="dva-způsoby-použití" class="slide level2">
@@ -275,7 +275,7 @@ Jan Caha
 <li>vhodné pro komplexnější grafy, či situace kdy tvoříme vícero grafů v rámci skriptu</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mathplotlib <span class="im">as</span> mpl</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obrázek s 2 grafy - 1 řádek, 2 sloupce</span></span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># velikost obrázku je v palcích</span></span>
 <span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> mpl.pyplot.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">8</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -303,7 +303,7 @@ Jan Caha
 <section id="rozšíření" class="slide level2">
 <h2>Rozšíření</h2>
 <ul>
-<li>existují další knihovny postavené nad <span class="software">Mathplotlib</span>
+<li>existují další knihovny postavené nad <span class="software">Matplotlib</span>
 <ul>
 <li><span class="software">seaborn</span> - <a href="https://seaborn.pydata.org/examples/index.html">ukázky</a></li>
 <li><span class="software">plotnine</span> - <a href="https://plotnine.org/gallery/">ukázky</a></li>

@@ -635,7 +635,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2025-02-17\n\n\nÚvodní cvičení\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nKnihovna GDAL/OGR\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n2025-03-24\n\n\nFunkce a třídy\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n2025-04-07\n\n\nKontroly a formátování kódu\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n2025-04-28\n\n\nMathplotlib, Jupyter Notebook\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\nDatum\n\n\nPrezentace\n\n\n\n\n\n\n2025-02-17\n\n\nÚvodní cvičení\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nKnihovna GDAL/OGR\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n2025-03-24\n\n\nFunkce a třídy\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n2025-04-07\n\n\nKontroly a formátování kódu\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n2025-04-28\n\n\nMatplotlib, Jupyter Notebook\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -690,7 +690,7 @@
     "href": "subjects/pgis2.html#instalace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Instalace",
-    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12.*\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  - poetry\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  # package dev\n  - poetry\n  # git + github\n  - git\n  - gh\n  # grafy\n  - mathplotlib\n  - plotnine\n  # notebooky\n  - jupyter\n  - ipykernel\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12.*\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  - poetry\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  # package dev\n  - poetry\n  # git + github\n  - git\n  - gh\n  # grafy\n  - matplotlib\n  - plotnine\n  # notebooky\n  - jupyter\n  - ipykernel\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1027,7 +1027,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.2096469 -0.4831332 -0.1198806 -0.8908185 -0.6945401"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1983160 -0.2661531 -0.3827396 -0.2960024 -0.2626665"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1992,79 +1992,79 @@
     "text": "Ukázky tvorby grafů pomocí knihoven matplotlib a plotnine.\n\nimport matplotlib\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom plotnine import aes, element_text, geom_line, geom_point, ggplot, labs, scale_color_continuous, theme\n\n\n# Vytvoření dvou proměnných s 15 náhodnými hodnotami\nx = np.random.rand(15)\ny = np.random.rand(15)\n# Vytvoření proměnné z s 15 náhodnými hodnotami z rozsahu 100 až 500\nz = np.random.randint(100, 501, size=15)\n\n# Spojení do pandas dataframe\ndf = pd.DataFrame({\"x\": x, \"y\": y, \"z\": z})\n\n\n# matplotlib z dat numpy array\nfig, ax = plt.subplots()\nax.scatter(x, y)\nax.set_title(\"Bodový graf\")\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\")\nplt.show()\n\n\n# matplotlib z pandas dataframe\nfig, ax = plt.subplots()\nscatter = ax.scatter(df[\"x\"], df[\"y\"], c=df[\"z\"], cmap=\"viridis\")\nfig.colorbar(scatter, ax=ax, label=\"Hodnota z\")\n\nax.set_title(\"Bodový graf\")\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\")\nplt.show()\n\n\n# plotnine na základě pandas dataframe \nplot = (\n    ggplot(df, aes(x=\"x\", y=\"y\", color=\"z\"))\n    + geom_point(size=5)\n    + scale_color_continuous(\"viridis\")\n    + labs(title=\"Scatter Plot\", x=\"x\", y=\"y\")\n)\nplot\n\n\n# plotnine liniový a bodový graf\nplot = (\n    ggplot(df, aes(x=\"x\", y=\"y\"))\n    + geom_line(color=\"blue\", size=1, linetype=\"solid\", alpha=0.8)\n    + geom_point(color=\"blue\", size=3)\n    + labs(\n        title=\"Liniový graf\",\n        x=\"x\",\n        y=\"y\",\n    )\n    + theme(\n        plot_title=element_text(size=16, weight=\"bold\"),\n        axis_title_x=element_text(size=14),\n        axis_title_y=element_text(size=14),\n        axis_text=element_text(size=12),\n        panel_grid_major=element_text(alpha=0.6),\n        panel_grid_minor=element_text(alpha=0.3),\n    )\n)\nplot"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#mathplotlib-1",
-    "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#mathplotlib-1",
-    "title": "Mathplotlib, Jupyter Notebook",
-    "section": "Mathplotlib",
-    "text": "Mathplotlib\n\nv Pythonu v podstatě standard na tvorbu vizualizací a grafů\nnapsáno v Pythonu + optimalizace náročných části v C/C++\nodděluje 3 hlavní složky\n\ninterní model grafu\nAPI pro programátory\nvykreslovací backend\n\nrozdělení umožňuje snadnou rozšiřitelnost\npracuje dobře s numpy i pandas"
+    "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#matplotlib-1",
+    "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#matplotlib-1",
+    "title": "Matplotlib, Jupyter Notebook",
+    "section": "Matplotlib",
+    "text": "Matplotlib\n\nv Pythonu v podstatě standard na tvorbu vizualizací a grafů\nnapsáno v Pythonu + optimalizace náročných části v C/C++\nodděluje 3 hlavní složky\n\ninterní model grafu\nAPI pro programátory\nvykreslovací backend\n\nrozdělení umožňuje snadnou rozšiřitelnost\npracuje dobře s numpy i pandas"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#komponenty",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#komponenty",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Komponenty",
     "text": "Komponenty\n\nArtist - základní třída, všechno co je vidět se od ní odvozuje\nFigure - celý obrázek grafu\nAxes - samotný graf (něco co má osy)\njeden Figure může obsahovat vícero Axes - např. dva grafy vedle sebe"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#backend",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#backend",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Backend",
     "text": "Backend\n\ninteraktivní - třeba pro programy s GUI, nebo i z python skriptů (trochu nešťastné, protože skript se neukončí dokud se obrázek nezavře)\nstatický - tvorba obrázků v různých formátech\nQt5Agg, TkAgg, WebAgg  Agg, PDF, SVG, PS\n\nimport matplotlib\nmatplotlib.use('Agg')"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#stylování-a-konfigurace",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#stylování-a-konfigurace",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Stylování a konfigurace",
-    "text": "Stylování a konfigurace\n\nbuď přímo součást kódu (může být zdlouhavé a opakující se)\npoužití globálního stylu v souboru matplotlibrc - soubor se hledá buď v aktuální projektu nebo v uživatelském adresáři\npředpřipravené styly\n\nimport mathplotlib\nmatplotlib.style.use('ggplot')"
+    "text": "Stylování a konfigurace\n\nbuď přímo součást kódu (může být zdlouhavé a opakující se)\npoužití globálního stylu v souboru matplotlibrc - soubor se hledá buď v aktuální projektu nebo v uživatelském adresáři\npředpřipravené styly\n\nimport matplotlib\nmatplotlib.style.use('ggplot')"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#dva-způsoby-použití",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#dva-způsoby-použití",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Dva způsoby použití",
-    "text": "Dva způsoby použití\n\nsubmodul matplotlib.pyplot kde pracujeme s jedním grafem\n\nvšechny volané funkce pak modifikují jeden graf\nvhodné pro menší skripty a základní ukázky\n\nobjektový přístup - tvorba Figure a Axes a jejich modifikace\n\nvhodné pro komplexnější grafy, či situace kdy tvoříme vícero grafů v rámci skriptu\n\n\nimport mathplotlib as mpl\n# obrázek s 2 grafy - 1 řádek, 2 sloupce\n# velikost obrázku je v palcích\nfig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))\n\nprvek axs je ve skutečnosti pole, jednotlivých prvků s osami, takže přistupujeme jako axs[0] atd."
+    "text": "Dva způsoby použití\n\nsubmodul matplotlib.pyplot kde pracujeme s jedním grafem\n\nvšechny volané funkce pak modifikují jeden graf\nvhodné pro menší skripty a základní ukázky\n\nobjektový přístup - tvorba Figure a Axes a jejich modifikace\n\nvhodné pro komplexnější grafy, či situace kdy tvoříme vícero grafů v rámci skriptu\n\n\nimport matplotlib as mpl\n# obrázek s 2 grafy - 1 řádek, 2 sloupce\n# velikost obrázku je v palcích\nfig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))\n\nprvek axs je ve skutečnosti pole, jednotlivých prvků s osami, takže přistupujeme jako axs[0] atd."
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#objektový-přístup",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#objektový-přístup",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Objektový přístup",
     "text": "Objektový přístup\n\njednotlivé modifikace voláme přímo jako metody prvků Figure a Axes\npřehlednější a lépe přenositelné\nmetody Axes např. set_xlabel(), set_ylabel(), grid(), legend() či bar(), scatter(), plot()\nmetody Figure např. show(), savefig(), suptitle()"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#ukázky",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#ukázky",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Ukázky",
     "text": "Ukázky\n\ngalerie na webu projektu obsahuje i kód\nvyhledávání na githubu pomocí importu knihovny\nhodně pomůže i Copilot s dobrou specifikací dotazu"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#rozšíření",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#rozšíření",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Rozšíření",
-    "text": "Rozšíření\n\nexistují další knihovny postavené nad Mathplotlib\n\nseaborn - ukázky\nplotnine - ukázky\n\nobvykle úprava API do nějakého “vhodnějšího” formátu"
+    "text": "Rozšíření\n\nexistují další knihovny postavené nad Matplotlib\n\nseaborn - ukázky\nplotnine - ukázky\n\nobvykle úprava API do nějakého “vhodnějšího” formátu"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#technický-základ",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#technický-základ",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Technický základ",
     "text": "Technický základ\n\ninteraktivní prostředí pro psaní a spouštění kódu\numožňuje kombinovat text, kód a výstupy (např. obrázky) v jednom souboru\nvhodné pro analýzu dat, explorativní programování, prototypování\nkoncept buňky (angl. Cell) - blok, může být text či kód\n\nkaždou buňku lze spustit samostatně\nnotebook si pamatuje svůj stav (např. provedené předchozí operace) do restartu tzv. kernelu\n\nsoubory s příponou .ipyb (JSON struktura) - reálně použitelné jen z IDE"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#instalace-a-nastavení",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#instalace-a-nastavení",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Instalace a nastavení",
     "text": "Instalace a nastavení\n\ninstalace balíčků ipykernel a jupyter v Conda\npro VS Code extenze Jupyter\n\nnastavení v settings.json\n\"notebook.formatOnSave.enabled\": true,\n\"notebook.defaultFormatter\": \"ms-python.black-formatter\",\n\"notebook.codeActionsOnSave\": {\n    \"source.organizeImports\": true,\n},"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#výhody",
     "href": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#výhody",
-    "title": "Mathplotlib, Jupyter Notebook",
+    "title": "Matplotlib, Jupyter Notebook",
     "section": "Výhody",
     "text": "Výhody\n\nnemusíme kód spouštět kompletně  šetří čas (a trpělivost)\nvytváříme logické bloky kódu\nmůžeme kód prokládat textem\nlze debugovat i pouze dílčí buňky (ve VS Code)\nlze kombinovat s existujícím kódem (balíčky, modulym funkce)\n“hraní si” s kódem, testování postupů, přístupů a možností\nnotebook může být cílový stav (např. analýza dat), ale často je to spíš mezistav pro tvorbu komplexnějšího výstupu (skript, program)"
   },
