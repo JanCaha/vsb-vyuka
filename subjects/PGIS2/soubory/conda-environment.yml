@@ -29,6 +29,7 @@ dependencies:
   - gh
   # grafy
   - mathplotlib
+  - plotnine
   # notebooky
   - jupyter
   - ipykernel
