@@ -1,5 +1,9 @@
 ---
 title: Programování v GIS 3 (PGIS3)
+aliases: 
+  - ./PGIS3/index.html
+  - ./PGIS3/skripty/index.hmtl
+  - ./PGIS3/prezentace/index.html
 listing:
     - id: prezentace
       contents: PGIS3/prezentace

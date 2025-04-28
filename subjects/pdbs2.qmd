@@ -1,5 +1,9 @@
 ---
 title: Prostorové databázové systémy 2 (PDBS2)
+aliases:
+  - ./PDBS2/index.html
+  - ./PDBS2/skripty/index.hmtl
+  - ./PDBS2/prezentace/index.html
 listing:
    - id: codes
      contents: PDBS2/skripty/description.yaml

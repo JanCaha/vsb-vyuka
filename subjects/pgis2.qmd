@@ -1,5 +1,9 @@
 ---
 title: Programování v GIS 2 (PGIS2)
+aliases:
+  - ./PGIS2/index.html
+  - ./PGIS2/skripty/index.hmtl
+  - ./PGIS2/prezentace/index.html
 filters:
    - include-code-files
 listing:

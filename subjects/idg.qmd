@@ -1,5 +1,9 @@
 ---
 title: Interpretace geodat (IDG)
+aliases: 
+  - ./IDG/index.html
+  - ./IDG/skripty/index.html
+  - ./IDG/prezentace/index.html
 listing:
     - id: prezentace
       contents: IDG/prezentace

@@ -1,5 +1,9 @@
 ---
 title: Programování v GIS 5 (PvGIS5)
+aliases: 
+  - ./PGIS5/index.html
+  - ./PGIS5/skripty/index.html
+  - ./PGIS5/prezentace/index.html
 filters:
    - include-code-files
 listing:

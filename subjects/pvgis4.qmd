@@ -1,5 +1,9 @@
 ---
 title: Programování v GIS 4 (PvGIS4)
+aliases: 
+  - ./PGIS4/index.html
+  - ./PGIS4/skripty/index.hmtl
+  - ./PGIS4/prezentace/index.html
 listing:
     - id: prezentace
       contents: PGIS4/prezentace
