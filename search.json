@@ -679,7 +679,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-04-07\n\n\nZkušební python balíček\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n2025-03-10\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n2025-04-07\n\n\nUkázka tvorby objektu\n\n\n\n\n2025-04-14\n\n\nPandas - ukázky\n\n\n\n\n2025-04-14\n\n\nPolars - ukázky\n\n\n\n\n2025-06-03\n\n\nFunkce v souboru utils\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\nDatum\n\n\nSkript\n\n\n\n\n\n\n2024-04-07\n\n\nZkušební python balíček\n\n\n\n\n2025-02-24\n\n\nOpakování Pythonu\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n2025-03-10\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n2025-04-07\n\n\nUkázka tvorby objektu\n\n\n\n\n2025-04-14\n\n\nPandas - ukázky\n\n\n\n\n2025-04-14\n\n\nPolars - ukázky\n\n\n\n\n2025-04-28\n\n\nNotebook + grafy\n\n\n\n\n2025-06-03\n\n\nFunkce v souboru utils\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -690,7 +690,7 @@
     "href": "subjects/pgis2.html#instalace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Instalace",
-    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12.*\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  - poetry\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  # package dev\n  - poetry\n  # git + github\n  - git\n  - gh\n  # grafy\n  - mathplotlib\n  # notebooky\n  - jupyter\n  - ipykernel\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12.*\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  - poetry\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  # package dev\n  - poetry\n  # git + github\n  - git\n  - gh\n  # grafy\n  - mathplotlib\n  - plotnine\n  # notebooky\n  - jupyter\n  - ipykernel\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1027,7 +1027,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.87818878 -0.42435348 -0.25837704 -0.06980878 -0.34643105"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.2096469 -0.4831332 -0.1198806 -0.8908185 -0.6945401"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1762,47 +1762,105 @@
     "text": "Zhodnocení\n\nnástroj s nejširší nabídkou možností a potenciálem\nklade vyšší nároky na programátora\nmohou vznikat “zajímavé” chyby, těžší na odhalení a vyřešení\n\nzcela jistě nástroj o němž má geoinformatik mít přehled a znát ho"
   },
   {
-    "objectID": "tools/github-copilot.html",
-    "href": "tools/github-copilot.html",
-    "title": "Github Copilot",
+    "objectID": "tools/conda.html",
+    "href": "tools/conda.html",
+    "title": "Miniconda - management Python prostředí",
     "section": "",
-    "text": "Github Copilot je AI nástroj, napomáhající s programováním a to pomocí tvorby kódu (přednapovídání), nebo pomocí schopnosti vysvětlit či opravit existující kód. Jedná se primárně o placený nástroj, nicméně studenti mají k této službě přístup zdarma.",
+    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3"
+  },
+  {
+    "objectID": "tools/conda.html#instalace",
+    "href": "tools/conda.html#instalace",
+    "title": "Miniconda - management Python prostředí",
+    "section": "",
+    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3"
+  },
+  {
+    "objectID": "tools/osgeo4w.html",
+    "href": "tools/osgeo4w.html",
+    "title": "OSGEO4W",
+    "section": "",
+    "text": "Nejjednodušším způsobem, jak v prostředí Windows nainstalovat značnou část open source GIS knihoven a softwarů (např. QGIS, GRASS, SAGA a další) je použití distribuce OSGEO4W z webu projektu, konkrétně odkaz ke stažení instalátoru. Jedná se o klasický průvodce, kde je možnost nakonfigurovat si instalaci podle vlastních potřeb, plná konfigurace je poměrně obáshlá a v mnoha ohledech i zbytečná (např. obsahuje 3 verze QGIS - vývojovou, aktuální a LTR).",
     "crumbs": [
       "Nástroje",
-      "GitHub Copilot"
+      "OSGeo4W"
     ]
   },
   {
-    "objectID": "tools/github-copilot.html#získání-studentského-přístupu",
-    "href": "tools/github-copilot.html#získání-studentského-přístupu",
-    "title": "Github Copilot",
-    "section": "Získání studentského přístupu",
-    "text": "Získání studentského přístupu\n\nzřízení účtu na Github, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu (aby nedošlo k blokaci účtu po ztátě studentského statusu)\npožádání o studentský přístup na Github dle článku, primárně se to řeší na webu https://education.github.com/\nověření nějakou dobou trvá cca. 1-2 dny, ale i týden\nnásledně se lze ve VS Code, či jiném IDE, které to podporuje (např. RStudio), pomocí tohoto účtu přihlásit a měl by být dostupý GitHub Copilot",
+    "objectID": "tools/osgeo4w.html#nástroje",
+    "href": "tools/osgeo4w.html#nástroje",
+    "title": "OSGEO4W",
+    "section": "Nástroje",
+    "text": "Nástroje\nSoučástí instalace jsou:\n\nnástroje ogr2ogr, gdalwarp, gdal_translate a další dostupné skrze OSGeo4W Shell\nQGIS, GRASS\nPython a jeho knihovny, lze doinstalovat z příkazové řádky (OSGeo4W Shell) pomocí pip install *",
     "crumbs": [
       "Nástroje",
-      "GitHub Copilot"
+      "OSGeo4W"
     ]
   },
   {
-    "objectID": "tools/github-copilot.html#zprovoznění-v-vs-code",
-    "href": "tools/github-copilot.html#zprovoznění-v-vs-code",
-    "title": "Github Copilot",
-    "section": "Zprovoznění v VS Code",
-    "text": "Zprovoznění v VS Code\n\ninstalace extenze GitHub Copilot\npřihlášení do GitHub Copilot pomocí GitHub účtu, který byl ověřen a má ke službě přistup (viz výše)\nnásledně začně fungovat přednapovídání kódu a chatovací okno (dostupné z menu View -&gt; Open View… -&gt; Chat)",
+    "objectID": "tools/osgeo4w.html#instalace",
+    "href": "tools/osgeo4w.html#instalace",
+    "title": "OSGEO4W",
+    "section": "Instalace",
+    "text": "Instalace\nPo spuštění instalátoru je nutné vybrat typ instalace - Advanced Install, viz následující obrázek:\n\n\n\n\n\n\nObr. 1: Volba typu instalace\n\n\n\nDalší položkou je volba instalace z Internetu (používáme nejaktuálnější zdroje).\n\n\n\n\n\n\nObr. 2: Volba instalace z internetu\n\n\n\nDalší volbou je umístění instalace. Výchozí nastavení je na disk C:, lze změnit disk, nicméně je vhodné instalovat do co nevyšše umístěné složky, takže např: D:\\OSGeo4W, aby nebyla výsledná cesta příliš dlouhá.\n\n\n\n\n\n\nObr. 3: Umístění instalace\n\n\n\nNásledující dva kroky, volbu dočasného adresáře a proxy, lze obvykle nechat na výchozích hodnotách.\n\n\n\n\n\n\nObr. 4: Volba dočasného adresáře\n\n\n\n\n\n\n\n\n\nObr. 5: Nastavení proxy\n\n\n\nNásledujícím krokem je volba zdrojového serveru, obvykle vyhoví výchozí hodnota.\n\n\n\n\n\n\nObr. 6: Volba serveru\n\n\n\nV dalším kroce už se dostáváme k volbě komponent, které se mají instalovat. Obvykle věnujeme pozornost zejména položkám Commandline Utilities a Desktop, knihovny v pložce Libs se vyberou dle zvolených komponent automaticky.\n\n\n\n\n\n\nObr. 7: Seznam komponent dle typu\n\n\n\nZ poskytutého seznamu vybereme potřebné komponenty.\n\n\n\n\n\n\nObr. 8: Výběr komponent\n\n\n\nNásleduje potvrzení licencí, samotné stahování a instalace komponent, což může být časově náročnější.\n\n\n\n\n\n\nObr. 9: Instalace\n\n\n\n\nAktualizace komponent\nOpětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku Obr. 8 pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.",
     "crumbs": [
       "Nástroje",
-      "GitHub Copilot"
+      "OSGeo4W"
     ]
   },
   {
-    "objectID": "tools/github-copilot.html#zprovoznění-v-rstudio",
-    "href": "tools/github-copilot.html#zprovoznění-v-rstudio",
-    "title": "Github Copilot",
-    "section": "Zprovoznění v RStudio",
-    "text": "Zprovoznění v RStudio\n\nvyžaduje verzi novější než 2023.09.0\npřihlášení pomocí GitHub účtu je dostupné přes menu Tools -&gt; Global Options… -&gt; Copilot, zde se lze přihlásit, plus nastavit základní možnosti\nnásledně začně fungovat přednapovídání kódu, lze i klást otázky a získávat odpovědi - viz detaily",
+    "objectID": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
+    "href": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
+    "title": "OSGEO4W",
+    "section": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API",
+    "text": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API\nPřed spuštěním Visual Studia Code je nutné nastavit prostředí pro Python, aby bylo možné používat knihovny dostupné v OSGEO4W. Pro tento účel vytvoříme v adresáři bin základního adresáře OSGEO4W kopii souboru python-qgis.bat a upravíme jeho poslední řádek doplněním cesty pro spuštění VS Code. Výsledný soubor může vypadat následovně:\n@echo off\ncall \"%~dp0\\o4w_env.bat\"\n@echo off\npath %OSGEO4W_ROOT%\\apps\\qgis\\bin;%PATH%\nset QGIS_PREFIX_PATH=%OSGEO4W_ROOT:\\=/%/apps/qgis\nset GDAL_FILENAME_IS_UTF8=YES\nrem Set VSI cache to be used as buffer, see #6448\nset VSI_CACHE=TRUE\nset VSI_CACHE_SIZE=1000000\nset QT_PLUGIN_PATH=%OSGEO4W_ROOT%\\apps\\qgis\\qtplugins;%OSGEO4W_ROOT%\\apps\\qt5\\plugins\nset PYTHONPATH=%OSGEO4W_ROOT%\\apps\\qgis\\python;%PYTHONPATH%\n\nstart \"VS Code\" /B \"C:\\Users\\uzivatel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\"\nPřes tento soubor budeme následně otevírat VS Code a v něm bude dostupné prostředí pro Python s knihovnami z OSGEO4W.\nV příslušném projektu ve VS Code nesmíme zapomenout nastavit správně interpretor Pythonu na python z adresáře OSGEO4W. To provedeme v dolní liště vpravo, kde je možné vybrat interpretor Pythonu.",
     "crumbs": [
       "Nástroje",
-      "GitHub Copilot"
+      "OSGeo4W"
+    ]
+  },
+  {
+    "objectID": "tools/vscode.html",
+    "href": "tools/vscode.html",
+    "title": "Visual Studio Code",
+    "section": "",
+    "text": "IDE pro práci s Pythonem, ale i řadou dalších jazyků a technologií, ke stažení zde. Obsahuje synchronizaci nastavení, extenzí a dalších skrze účet Microsoft (školní, či Outlook.com ) nebo GitHub. Veškerá nastavení se ukládají do JSON souborů a lze je tak snadno sdílet a modifikovat.\nPodporuje vytváření profilů pro různé druhy práce. Je vhodné si rovnou vytvořit speciální profil pro různé technologie (např. Python).",
+    "crumbs": [
+      "Nástroje",
+      "Visual Studio Code"
+    ]
+  },
+  {
+    "objectID": "tools/vscode.html#užitečné-klávesové-zkratky",
+    "href": "tools/vscode.html#užitečné-klávesové-zkratky",
+    "title": "Visual Studio Code",
+    "section": "Užitečné klávesové zkratky",
+    "text": "Užitečné klávesové zkratky\n\nF1 - paleta nástrojů - zde se vyhledávají příkazy VS Code",
+    "crumbs": [
+      "Nástroje",
+      "Visual Studio Code"
+    ]
+  },
+  {
+    "objectID": "tools/vscode.html#nastavení-pro-zkopírování-do-příslušných-json-souborů",
+    "href": "tools/vscode.html#nastavení-pro-zkopírování-do-příslušných-json-souborů",
+    "title": "Visual Studio Code",
+    "section": "Nastavení, pro zkopírování do příslušných JSON souborů",
+    "text": "Nastavení, pro zkopírování do příslušných JSON souborů\nVětšina nastavení má dvě úrovně. Globální – uložené v uživatelském profilu a lokální – uložené v projektu ve složce .vscode. Lokální přepisují globální. Pomocí lokálních nastavení lze upravovat specifické chování projektu.\n\nKlávesové zkratky\n\nv paletě nástrojů vyhledat Keyboard Shortcuts (JSON)\n\n{\n    {\n        \"key\": \"ctrl+d\",\n        \"command\": \"editor.action.duplicateSelection\"\n    },\n    {\n        \"key\": \"ctrl+shift+c\",\n        \"command\": \"editor.action.commentLine\",\n        \"when\": \"editorTextFocus && !editorReadonly\"\n    },\n    {\n        \"key\": \"f5\",\n        \"command\": \"python.execInTerminal-icon\"\n    },\n    {\n        \"key\": \"shift+f5\",\n        \"command\": \"debugpy.debugInTerminal\"\n    },\n}\n\n\nUživatelská nastavení\n\nv paletě nástrojů buď\n\nUser Settings (JSON) - globální\nWorkspace Settings (JSON) - lokální\n\nuvádíme pouze části JSONu\n\nVS Code nastavení\n    \"editor.suggestSelection\": \"first\",\n    \"editor.bracketPairColorization.enabled\": true,\n    \"workbench.editor.enablePreview\": false,\n    \"editor.guides.bracketPairs\": \"active\",\n    \"explorer.confirmDelete\": false,\n    \"explorer.confirmDragAndDrop\": false,\n    \"workbench.startupEditor\": \"none\",\n    \"git.confirmSync\": false,\n    \"editor.stickyScroll.enabled\": true,\nPython úprava kódu\n    \"[python]\": {\n        \"editor.codeActionsOnSave\": {\n            \"source.organizeImports\": \"explicit\"\n        },\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n    }\nPython extenze\n    \"flake8.args\": [\n        \"--max-line-length\",\n        \"160\"\n    ],\n    \"isort.args\": [\n        \"--profile\",\n        \"black\",\n        \"--line-width\",\n        \"120\"\n    ],\n    \"black-formatter.args\": [\n        \"--line-length\",\n        \"120\"\n    ],\n    \"pylint.args\": [\n        \"--disable=E0611\",\n        \"--max-line-length=160\"\n    ],\nVynechání složek např. při prohledávání souborů\n    \"files.exclude\": {\n        \"**/__pycache__\": true,\n        \"**/.classpath\": true,\n        \"**/.factorypath\": true,\n        \"**/.project\": true,\n        \"**/.settings\": true,\n        \"**/.mypy_cache\": true,\n        \"**/.pytest_cache\": true,\n    },",
+    "crumbs": [
+      "Nástroje",
+      "Visual Studio Code"
+    ]
+  },
+  {
+    "objectID": "tools/vscode.html#extenze",
+    "href": "tools/vscode.html#extenze",
+    "title": "Visual Studio Code",
+    "section": "Extenze",
+    "text": "Extenze\n\nextenze lze instalovat buď globálně do uživatelského profilu a nebo uložit do souboru .vscode/extensions.json ve složce projektu, tyto extenze pak budou dostupné specificky pro daný projekt\n\n\nDoporučené extenze pro VS Code\nV závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.\n\nGitHub Copilot (GitHub.copilot) - umělá inteligence pro psaní kódu\nCzech - Code Spell Checker (streetsidesoftware.code-spell-checker-czech) - český slovník pro kontroly pravopisu, pokud bude část textů v češtině\nSVG (jock.svg) - zobrazování a úpravy SVG souborů\nTodo Highlight (wayou.vscode-todo-highlight) - zvýraznění TODO a podobných komentářů\nYAML (redhat.vscode-yaml) - podpora YAML formátu\nMarkdown All in One (yzhang.markdown-all-in-one) - podpora Markdown formátu\nmarkdownlint (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu\n\n{\n    // List of extensions which should be recommended for users of this workspace.\n    \"recommendations\": [\n        \"GitHub.copilot\",\n        \"streetsidesoftware.code-spell-checker-czech\",\n        \"jock.svg\",\n        \"wayou.vscode-todo-highlight\",\n        \"redhat.vscode-yaml\",\n        \"yzhang.markdown-all-in-one\",\n        \"DavidAnson.vscode-markdownlint\",\n        \n    ],\n    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.\n    \"unwantedRecommendations\": [\n    ]\n}\n\n\nDoporučené extenze pro Python\n\nněkteré extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda environmentu u předmětu PGIS2\nníže následuje seznam doporučených extenzí pro Python\n\n{\n    // List of extensions which should be recommended for users of this workspace.\n    \"recommendations\": [\n        \"ms-python.debugpy\",\n        \"ms-python.vscode-pylance\",\n        \"ms-python.autopep8\",\n        \"ms-python.black-formatter\",\n        \"ms-python.flake8\",\n        \"ms-python.isort\",\n        \"ms-python.mypy-type-checker\",\n        \"ms-python.pylint\",\n        \"ms-python.python\"\n        \n    ],\n    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.\n    \"unwantedRecommendations\": [\n    ]\n}\n\n\nNastavení projektů využívajících QGIS Python API na Windows\nViz informace u OSGEO4W.",
+    "crumbs": [
+      "Nástroje",
+      "Visual Studio Code"
     ]
   },
   {
@@ -1883,106 +1941,55 @@
     ]
   },
   {
-    "objectID": "tools/vscode.html",
-    "href": "tools/vscode.html",
-    "title": "Visual Studio Code",
+    "objectID": "tools/github-copilot.html",
+    "href": "tools/github-copilot.html",
+    "title": "Github Copilot",
     "section": "",
-    "text": "IDE pro práci s Pythonem, ale i řadou dalších jazyků a technologií, ke stažení zde. Obsahuje synchronizaci nastavení, extenzí a dalších skrze účet Microsoft (školní, či Outlook.com ) nebo GitHub. Veškerá nastavení se ukládají do JSON souborů a lze je tak snadno sdílet a modifikovat.\nPodporuje vytváření profilů pro různé druhy práce. Je vhodné si rovnou vytvořit speciální profil pro různé technologie (např. Python).",
+    "text": "Github Copilot je AI nástroj, napomáhající s programováním a to pomocí tvorby kódu (přednapovídání), nebo pomocí schopnosti vysvětlit či opravit existující kód. Jedná se primárně o placený nástroj, nicméně studenti mají k této službě přístup zdarma.",
     "crumbs": [
       "Nástroje",
-      "Visual Studio Code"
+      "GitHub Copilot"
     ]
   },
   {
-    "objectID": "tools/vscode.html#užitečné-klávesové-zkratky",
-    "href": "tools/vscode.html#užitečné-klávesové-zkratky",
-    "title": "Visual Studio Code",
-    "section": "Užitečné klávesové zkratky",
-    "text": "Užitečné klávesové zkratky\n\nF1 - paleta nástrojů - zde se vyhledávají příkazy VS Code",
+    "objectID": "tools/github-copilot.html#získání-studentského-přístupu",
+    "href": "tools/github-copilot.html#získání-studentského-přístupu",
+    "title": "Github Copilot",
+    "section": "Získání studentského přístupu",
+    "text": "Získání studentského přístupu\n\nzřízení účtu na Github, primárně na soukroumou e-mailovou adresu a následně doplnit studentskou adresu (aby nedošlo k blokaci účtu po ztátě studentského statusu)\npožádání o studentský přístup na Github dle článku, primárně se to řeší na webu https://education.github.com/\nověření nějakou dobou trvá cca. 1-2 dny, ale i týden\nnásledně se lze ve VS Code, či jiném IDE, které to podporuje (např. RStudio), pomocí tohoto účtu přihlásit a měl by být dostupý GitHub Copilot",
     "crumbs": [
       "Nástroje",
-      "Visual Studio Code"
+      "GitHub Copilot"
     ]
   },
   {
-    "objectID": "tools/vscode.html#nastavení-pro-zkopírování-do-příslušných-json-souborů",
-    "href": "tools/vscode.html#nastavení-pro-zkopírování-do-příslušných-json-souborů",
-    "title": "Visual Studio Code",
-    "section": "Nastavení, pro zkopírování do příslušných JSON souborů",
-    "text": "Nastavení, pro zkopírování do příslušných JSON souborů\nVětšina nastavení má dvě úrovně. Globální – uložené v uživatelském profilu a lokální – uložené v projektu ve složce .vscode. Lokální přepisují globální. Pomocí lokálních nastavení lze upravovat specifické chování projektu.\n\nKlávesové zkratky\n\nv paletě nástrojů vyhledat Keyboard Shortcuts (JSON)\n\n{\n    {\n        \"key\": \"ctrl+d\",\n        \"command\": \"editor.action.duplicateSelection\"\n    },\n    {\n        \"key\": \"ctrl+shift+c\",\n        \"command\": \"editor.action.commentLine\",\n        \"when\": \"editorTextFocus && !editorReadonly\"\n    },\n    {\n        \"key\": \"f5\",\n        \"command\": \"python.execInTerminal-icon\"\n    },\n    {\n        \"key\": \"shift+f5\",\n        \"command\": \"debugpy.debugInTerminal\"\n    },\n}\n\n\nUživatelská nastavení\n\nv paletě nástrojů buď\n\nUser Settings (JSON) - globální\nWorkspace Settings (JSON) - lokální\n\nuvádíme pouze části JSONu\n\nVS Code nastavení\n    \"editor.suggestSelection\": \"first\",\n    \"editor.bracketPairColorization.enabled\": true,\n    \"workbench.editor.enablePreview\": false,\n    \"editor.guides.bracketPairs\": \"active\",\n    \"explorer.confirmDelete\": false,\n    \"explorer.confirmDragAndDrop\": false,\n    \"workbench.startupEditor\": \"none\",\n    \"git.confirmSync\": false,\n    \"editor.stickyScroll.enabled\": true,\nPython úprava kódu\n    \"[python]\": {\n        \"editor.codeActionsOnSave\": {\n            \"source.organizeImports\": \"explicit\"\n        },\n        \"editor.formatOnSave\": true,\n        \"editor.defaultFormatter\": \"ms-python.black-formatter\"\n    }\nPython extenze\n    \"flake8.args\": [\n        \"--max-line-length\",\n        \"160\"\n    ],\n    \"isort.args\": [\n        \"--profile\",\n        \"black\",\n        \"--line-width\",\n        \"120\"\n    ],\n    \"black-formatter.args\": [\n        \"--line-length\",\n        \"120\"\n    ],\n    \"pylint.args\": [\n        \"--disable=E0611\",\n        \"--max-line-length=160\"\n    ],\nVynechání složek např. při prohledávání souborů\n    \"files.exclude\": {\n        \"**/__pycache__\": true,\n        \"**/.classpath\": true,\n        \"**/.factorypath\": true,\n        \"**/.project\": true,\n        \"**/.settings\": true,\n        \"**/.mypy_cache\": true,\n        \"**/.pytest_cache\": true,\n    },",
+    "objectID": "tools/github-copilot.html#zprovoznění-v-vs-code",
+    "href": "tools/github-copilot.html#zprovoznění-v-vs-code",
+    "title": "Github Copilot",
+    "section": "Zprovoznění v VS Code",
+    "text": "Zprovoznění v VS Code\n\ninstalace extenze GitHub Copilot\npřihlášení do GitHub Copilot pomocí GitHub účtu, který byl ověřen a má ke službě přistup (viz výše)\nnásledně začně fungovat přednapovídání kódu a chatovací okno (dostupné z menu View -&gt; Open View… -&gt; Chat)",
     "crumbs": [
       "Nástroje",
-      "Visual Studio Code"
+      "GitHub Copilot"
     ]
   },
   {
-    "objectID": "tools/vscode.html#extenze",
-    "href": "tools/vscode.html#extenze",
-    "title": "Visual Studio Code",
-    "section": "Extenze",
-    "text": "Extenze\n\nextenze lze instalovat buď globálně do uživatelského profilu a nebo uložit do souboru .vscode/extensions.json ve složce projektu, tyto extenze pak budou dostupné specificky pro daný projekt\n\n\nDoporučené extenze pro VS Code\nV závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.\n\nGitHub Copilot (GitHub.copilot) - umělá inteligence pro psaní kódu\nCzech - Code Spell Checker (streetsidesoftware.code-spell-checker-czech) - český slovník pro kontroly pravopisu, pokud bude část textů v češtině\nSVG (jock.svg) - zobrazování a úpravy SVG souborů\nTodo Highlight (wayou.vscode-todo-highlight) - zvýraznění TODO a podobných komentářů\nYAML (redhat.vscode-yaml) - podpora YAML formátu\nMarkdown All in One (yzhang.markdown-all-in-one) - podpora Markdown formátu\nmarkdownlint (DavidAnson.vscode-markdownlint) - kontrola Markdown formátu\n\n{\n    // List of extensions which should be recommended for users of this workspace.\n    \"recommendations\": [\n        \"GitHub.copilot\",\n        \"streetsidesoftware.code-spell-checker-czech\",\n        \"jock.svg\",\n        \"wayou.vscode-todo-highlight\",\n        \"redhat.vscode-yaml\",\n        \"yzhang.markdown-all-in-one\",\n        \"DavidAnson.vscode-markdownlint\",\n        \n    ],\n    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.\n    \"unwantedRecommendations\": [\n    ]\n}\n\n\nDoporučené extenze pro Python\n\nněkteré extenze vyžadují konkrétní Pythonové balíčky - viz definice Conda environmentu u předmětu PGIS2\nníže následuje seznam doporučených extenzí pro Python\n\n{\n    // List of extensions which should be recommended for users of this workspace.\n    \"recommendations\": [\n        \"ms-python.debugpy\",\n        \"ms-python.vscode-pylance\",\n        \"ms-python.autopep8\",\n        \"ms-python.black-formatter\",\n        \"ms-python.flake8\",\n        \"ms-python.isort\",\n        \"ms-python.mypy-type-checker\",\n        \"ms-python.pylint\",\n        \"ms-python.python\"\n        \n    ],\n    // List of extensions recommended by VS Code that should not be recommended for users of this workspace.\n    \"unwantedRecommendations\": [\n    ]\n}\n\n\nNastavení projektů využívajících QGIS Python API na Windows\nViz informace u OSGEO4W.",
+    "objectID": "tools/github-copilot.html#zprovoznění-v-rstudio",
+    "href": "tools/github-copilot.html#zprovoznění-v-rstudio",
+    "title": "Github Copilot",
+    "section": "Zprovoznění v RStudio",
+    "text": "Zprovoznění v RStudio\n\nvyžaduje verzi novější než 2023.09.0\npřihlášení pomocí GitHub účtu je dostupné přes menu Tools -&gt; Global Options… -&gt; Copilot, zde se lze přihlásit, plus nastavit základní možnosti\nnásledně začně fungovat přednapovídání kódu, lze i klást otázky a získávat odpovědi - viz detaily",
     "crumbs": [
       "Nástroje",
-      "Visual Studio Code"
+      "GitHub Copilot"
     ]
   },
   {
-    "objectID": "tools/osgeo4w.html",
-    "href": "tools/osgeo4w.html",
-    "title": "OSGEO4W",
+    "objectID": "subjects/PGIS2/skripty/ukazka_notebook.html",
+    "href": "subjects/PGIS2/skripty/ukazka_notebook.html",
+    "title": "Ukázka použití knihoven pro tvorbu grafů",
     "section": "",
-    "text": "Nejjednodušším způsobem, jak v prostředí Windows nainstalovat značnou část open source GIS knihoven a softwarů (např. QGIS, GRASS, SAGA a další) je použití distribuce OSGEO4W z webu projektu, konkrétně odkaz ke stažení instalátoru. Jedná se o klasický průvodce, kde je možnost nakonfigurovat si instalaci podle vlastních potřeb, plná konfigurace je poměrně obáshlá a v mnoha ohledech i zbytečná (např. obsahuje 3 verze QGIS - vývojovou, aktuální a LTR).",
-    "crumbs": [
-      "Nástroje",
-      "OSGeo4W"
-    ]
-  },
-  {
-    "objectID": "tools/osgeo4w.html#nástroje",
-    "href": "tools/osgeo4w.html#nástroje",
-    "title": "OSGEO4W",
-    "section": "Nástroje",
-    "text": "Nástroje\nSoučástí instalace jsou:\n\nnástroje ogr2ogr, gdalwarp, gdal_translate a další dostupné skrze OSGeo4W Shell\nQGIS, GRASS\nPython a jeho knihovny, lze doinstalovat z příkazové řádky (OSGeo4W Shell) pomocí pip install *",
-    "crumbs": [
-      "Nástroje",
-      "OSGeo4W"
-    ]
-  },
-  {
-    "objectID": "tools/osgeo4w.html#instalace",
-    "href": "tools/osgeo4w.html#instalace",
-    "title": "OSGEO4W",
-    "section": "Instalace",
-    "text": "Instalace\nPo spuštění instalátoru je nutné vybrat typ instalace - Advanced Install, viz následující obrázek:\n\n\n\n\n\n\nObr. 1: Volba typu instalace\n\n\n\nDalší položkou je volba instalace z Internetu (používáme nejaktuálnější zdroje).\n\n\n\n\n\n\nObr. 2: Volba instalace z internetu\n\n\n\nDalší volbou je umístění instalace. Výchozí nastavení je na disk C:, lze změnit disk, nicméně je vhodné instalovat do co nevyšše umístěné složky, takže např: D:\\OSGeo4W, aby nebyla výsledná cesta příliš dlouhá.\n\n\n\n\n\n\nObr. 3: Umístění instalace\n\n\n\nNásledující dva kroky, volbu dočasného adresáře a proxy, lze obvykle nechat na výchozích hodnotách.\n\n\n\n\n\n\nObr. 4: Volba dočasného adresáře\n\n\n\n\n\n\n\n\n\nObr. 5: Nastavení proxy\n\n\n\nNásledujícím krokem je volba zdrojového serveru, obvykle vyhoví výchozí hodnota.\n\n\n\n\n\n\nObr. 6: Volba serveru\n\n\n\nV dalším kroce už se dostáváme k volbě komponent, které se mají instalovat. Obvykle věnujeme pozornost zejména položkám Commandline Utilities a Desktop, knihovny v pložce Libs se vyberou dle zvolených komponent automaticky.\n\n\n\n\n\n\nObr. 7: Seznam komponent dle typu\n\n\n\nZ poskytutého seznamu vybereme potřebné komponenty.\n\n\n\n\n\n\nObr. 8: Výběr komponent\n\n\n\nNásleduje potvrzení licencí, samotné stahování a instalace komponent, což může být časově náročnější.\n\n\n\n\n\n\nObr. 9: Instalace\n\n\n\n\nAktualizace komponent\nOpětovným spuštěním instalátoru dojde k nalezení předchozí instalace, pokud existuje. V předposledním kroku Obr. 8 pak instalátor detekuje existující prvky a lze tyto aktualizovat na novější verze, pokud jsou dostupné.",
-    "crumbs": [
-      "Nástroje",
-      "OSGeo4W"
-    ]
-  },
-  {
-    "objectID": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
-    "href": "tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api",
-    "title": "OSGEO4W",
-    "section": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API",
-    "text": "Nastavení Python prostředí pro Visual Studiu Code včetně Pythonu i QGIS Python API\nPřed spuštěním Visual Studia Code je nutné nastavit prostředí pro Python, aby bylo možné používat knihovny dostupné v OSGEO4W. Pro tento účel vytvoříme v adresáři bin základního adresáře OSGEO4W kopii souboru python-qgis.bat a upravíme jeho poslední řádek doplněním cesty pro spuštění VS Code. Výsledný soubor může vypadat následovně:\n@echo off\ncall \"%~dp0\\o4w_env.bat\"\n@echo off\npath %OSGEO4W_ROOT%\\apps\\qgis\\bin;%PATH%\nset QGIS_PREFIX_PATH=%OSGEO4W_ROOT:\\=/%/apps/qgis\nset GDAL_FILENAME_IS_UTF8=YES\nrem Set VSI cache to be used as buffer, see #6448\nset VSI_CACHE=TRUE\nset VSI_CACHE_SIZE=1000000\nset QT_PLUGIN_PATH=%OSGEO4W_ROOT%\\apps\\qgis\\qtplugins;%OSGEO4W_ROOT%\\apps\\qt5\\plugins\nset PYTHONPATH=%OSGEO4W_ROOT%\\apps\\qgis\\python;%PYTHONPATH%\n\nstart \"VS Code\" /B \"C:\\Users\\uzivatel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe\"\nPřes tento soubor budeme následně otevírat VS Code a v něm bude dostupné prostředí pro Python s knihovnami z OSGEO4W.\nV příslušném projektu ve VS Code nesmíme zapomenout nastavit správně interpretor Pythonu na python z adresáře OSGEO4W. To provedeme v dolní liště vpravo, kde je možné vybrat interpretor Pythonu.",
-    "crumbs": [
-      "Nástroje",
-      "OSGeo4W"
-    ]
-  },
-  {
-    "objectID": "tools/conda.html",
-    "href": "tools/conda.html",
-    "title": "Miniconda - management Python prostředí",
-    "section": "",
-    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3"
-  },
-  {
-    "objectID": "tools/conda.html#instalace",
-    "href": "tools/conda.html#instalace",
-    "title": "Miniconda - management Python prostředí",
-    "section": "",
-    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3"
+    "text": "Ukázky tvorby grafů pomocí knihoven matplotlib a plotnine.\n\nimport matplotlib\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom plotnine import aes, element_text, geom_line, geom_point, ggplot, labs, scale_color_continuous, theme\n\n\n# Vytvoření dvou proměnných s 15 náhodnými hodnotami\nx = np.random.rand(15)\ny = np.random.rand(15)\n# Vytvoření proměnné z s 15 náhodnými hodnotami z rozsahu 100 až 500\nz = np.random.randint(100, 501, size=15)\n\n# Spojení do pandas dataframe\ndf = pd.DataFrame({\"x\": x, \"y\": y, \"z\": z})\n\n\n# matplotlib z dat numpy array\nfig, ax = plt.subplots()\nax.scatter(x, y)\nax.set_title(\"Bodový graf\")\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\")\nplt.show()\n\n\n# matplotlib z pandas dataframe\nfig, ax = plt.subplots()\nscatter = ax.scatter(df[\"x\"], df[\"y\"], c=df[\"z\"], cmap=\"viridis\")\nfig.colorbar(scatter, ax=ax, label=\"Hodnota z\")\n\nax.set_title(\"Bodový graf\")\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\")\nplt.show()\n\n\n# plotnine na základě pandas dataframe \nplot = (\n    ggplot(df, aes(x=\"x\", y=\"y\", color=\"z\"))\n    + geom_point(size=5)\n    + scale_color_continuous(\"viridis\")\n    + labs(title=\"Scatter Plot\", x=\"x\", y=\"y\")\n)\nplot\n\n\n# plotnine liniový a bodový graf\nplot = (\n    ggplot(df, aes(x=\"x\", y=\"y\"))\n    + geom_line(color=\"blue\", size=1, linetype=\"solid\", alpha=0.8)\n    + geom_point(color=\"blue\", size=3)\n    + labs(\n        title=\"Liniový graf\",\n        x=\"x\",\n        y=\"y\",\n    )\n    + theme(\n        plot_title=element_text(size=16, weight=\"bold\"),\n        axis_title_x=element_text(size=14),\n        axis_title_y=element_text(size=14),\n        axis_text=element_text(size=12),\n        panel_grid_major=element_text(alpha=0.6),\n        panel_grid_minor=element_text(alpha=0.3),\n    )\n)\nplot"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/11_mathplotlib_notebook.html#mathplotlib-1",
