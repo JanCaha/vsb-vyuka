@@ -28,7 +28,7 @@ dependencies:
   - git
   - gh
   # grafy
-  - mathplotlib
+  - matplotlib
   - plotnine
   # notebooky
   - jupyter

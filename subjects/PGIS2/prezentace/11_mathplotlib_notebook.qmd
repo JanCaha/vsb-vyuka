@@ -1,11 +1,11 @@
 ---
-title: "Mathplotlib, Jupyter Notebook"
+title: "Matplotlib, Jupyter Notebook"
 date: 2025-04-28
 ---
 
-# Mathplotlib
+# Matplotlib
 
-## [Mathplotlib]{.software}
+## [Matplotlib]{.software}
 
 - v [Pythonu]{.software} v podstatě standard na tvorbu vizualizací a grafů
 - napsáno v [Pythonu]{.software} + optimalizace náročných části v [C/C++]{.software}
@@ -41,7 +41,7 @@ matplotlib.use('Agg')
 - předpřipravené styly
 
 ```python
-import mathplotlib
+import matplotlib
 matplotlib.style.use('ggplot')
 ```
 
@@ -54,7 +54,7 @@ matplotlib.style.use('ggplot')
   - vhodné pro komplexnější grafy, či situace kdy tvoříme vícero grafů v rámci skriptu
 
 ```python
-import mathplotlib as mpl
+import matplotlib as mpl
 # obrázek s 2 grafy - 1 řádek, 2 sloupce
 # velikost obrázku je v palcích
 fig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))
@@ -77,7 +77,7 @@ fig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))
 
 ## Rozšíření
 
-- existují další knihovny postavené nad [Mathplotlib]{.software}
+- existují další knihovny postavené nad [Matplotlib]{.software}
     - [seaborn]{.software} - [ukázky](https://seaborn.pydata.org/examples/index.html) 
     - [plotnine]{.software} - [ukázky](https://plotnine.org/gallery/)
 - obvykle úprava API do nějakého *"vhodnějšího"* formátu
