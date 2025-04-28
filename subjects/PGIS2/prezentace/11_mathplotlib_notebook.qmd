@@ -1,0 +1,121 @@
+---
+title: "Mathplotlib, Jupyter Notebook"
+date: 2025-04-28
+---
+
+# Mathplotlib
+
+## [Mathplotlib]{.software}
+
+- v [Pythonu]{.software} v podstatě standard na tvorbu vizualizací a grafů
+- napsáno v [Pythonu]{.software} + optimalizace náročných části v [C/C++]{.software}
+- odděluje 3 hlavní složky
+  - interní model grafu
+  - API pro programátory
+  - vykreslovací backend 
+- rozdělení umožňuje snadnou rozšiřitelnost
+- pracuje dobře s [numpy]{.software} i [pandas]{.software}
+
+## Komponenty 
+
+- `Artist` - základní třída, všechno co je vidět se od ní odvozuje
+- `Figure` - celý obrázek grafu
+- `Axes` - samotný graf (něco co má osy)
+- jeden `Figure` může obsahovat vícero `Axes` - např. dva grafy vedle sebe
+
+## Backend
+
+- interaktivní - třeba pro programy s **GUI**, nebo i z python skriptů (trochu nešťastné, protože skript se neukončí dokud se obrázek nezavře)
+- statický - tvorba obrázků v různých formátech 
+- **Qt5Agg, TkAgg, WebAgg** {{<fa times>}} **Agg, PDF, SVG, PS**
+
+```python
+import matplotlib
+matplotlib.use('Agg') 
+```
+
+## Stylování a konfigurace
+
+- buď přímo součást kódu (může být zdlouhavé a opakující se)
+- použití globálního stylu v souboru `matplotlibrc` - soubor se hledá buď v aktuální projektu nebo v uživatelském adresáři
+- předpřipravené styly
+
+```python
+import mathplotlib
+matplotlib.style.use('ggplot')
+```
+
+## Dva způsoby použití
+
+- submodul `matplotlib.pyplot` kde pracujeme s jedním grafem
+  - všechny volané funkce pak modifikují jeden graf
+  - vhodné pro menší skripty a základní ukázky
+- objektový přístup - tvorba `Figure` a `Axes` a jejich modifikace 
+  - vhodné pro komplexnější grafy, či situace kdy tvoříme vícero grafů v rámci skriptu
+
+```python
+import mathplotlib as mpl
+# obrázek s 2 grafy - 1 řádek, 2 sloupce
+# velikost obrázku je v palcích
+fig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))
+```
+
+- prvek `axs` je ve skutečnosti pole, jednotlivých prvků s osami, takže přistupujeme jako `axs[0]` atd.
+
+## Objektový přístup
+
+- jednotlivé modifikace voláme přímo jako metody prvků `Figure` a `Axes`
+- přehlednější a lépe přenositelné
+- metody `Axes` např. `set_xlabel(), set_ylabel()`, `grid(), legend()` či `bar(), scatter(), plot()`
+- metody `Figure` např. `show(), savefig()`, `suptitle()`
+
+## Ukázky
+
+- galerie na [webu projektu](https://matplotlib.org/stable/gallery/index.html) obsahuje i kód
+- vyhledávání na githubu pomocí importu knihovny
+- hodně pomůže i [Copilot]{.software} s dobrou specifikací dotazu
+
+## Rozšíření
+
+- existují další knihovny postavené nad [Mathplotlib]{.software}
+    - [seaborn]{.software} - [ukázky](https://seaborn.pydata.org/examples/index.html) 
+    - [plotnine]{.software} - [ukázky](https://plotnine.org/gallery/)
+- obvykle úprava API do nějakého *"vhodnějšího"* formátu
+
+# Jupyter Notebook
+
+## Technický základ 
+
+- interaktivní prostředí pro psaní a spouštění kódu
+- umožňuje kombinovat text, kód a výstupy (např. obrázky) v jednom souboru
+- vhodné pro analýzu dat, explorativní programování, prototypování
+- koncept buňky (angl. **Cell**) - blok, může být text či kód
+  - každou buňku lze spustit samostatně
+  - notebook si pamatuje svůj stav (např. provedené předchozí operace) do restartu tzv. kernelu
+- soubory s příponou `.ipyb` (JSON struktura) - reálně použitelné jen z IDE
+
+## Instalace a nastavení
+
+- instalace balíčků `ipykernel` a `jupyter` v [Conda]{.software}
+- pro [VS Code]{.software} extenze `Jupyter`
+  - nastavení v `settings.json`
+
+    ```json
+    "notebook.formatOnSave.enabled": true,
+    "notebook.defaultFormatter": "ms-python.black-formatter",
+    "notebook.codeActionsOnSave": {
+        "source.organizeImports": true,
+    },
+    ```
+
+## Výhody
+
+- nemusíme kód spouštět kompletně {{<fa arrow-right>}} šetří čas (a trpělivost)
+- vytváříme logické bloky kódu
+- můžeme kód prokládat textem
+- lze debugovat i pouze dílčí buňky (ve [VS Code]{.software})
+- lze kombinovat s existujícím kódem (balíčky, modulym funkce)
+- *"hraní si"* s kódem, testování postupů, přístupů a možností
+- notebook může být cílový stav (např. analýza dat), ale často je to spíš mezistav pro tvorbu komplexnějšího výstupu (skript, program)
+
+# Dotazy? {.center}
