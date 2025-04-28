@@ -58,3 +58,7 @@
   author: Jan Caha
   date: 2025-04-14
   path: "PGIS2/skripty/12_polars.py"
+- title: Notebook + grafy
+  author: Jan Caha
+  date: 2025-04-28
+  path: "PGIS2/skripty/ukazka_notebook.ipynb"
