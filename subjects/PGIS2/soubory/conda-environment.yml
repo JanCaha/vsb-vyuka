@@ -27,5 +27,10 @@ dependencies:
   # git + github
   - git
   - gh
+  # grafy
+  - mathplotlib
+  # notebooky
+  - jupyter
+  - ipykernel
   #- pip:
     #- geopolars
