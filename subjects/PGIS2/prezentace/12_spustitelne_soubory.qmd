@@ -1,0 +1,105 @@
+---
+title: "Spustitelné programy"
+date: 2025-05-05
+---
+
+## Skripty
+
+- dobře se tvoří, používají z prostředí [VS Code]{.software}, kde je možnost přímo upravovat a spouštět python kód
+- pro běžné uživatele už dost komplikované
+- některé parametry jsou dost očiviné a mění se poměrně často (třeba i každým během skriptu)
+- nejjednodušší forma je program z příkazové řádky s parametry příkazové řádky
+
+## Jak řešit v [Pythonu]{.software}
+
+- v rámci pythonu v balíčku [sys]{.software} máme `sys.argv`, kde máme přístup k parametrům skriptů 
+  - velice složité a neflexibilní
+- [argparse]{.software} nativní knihovna pythonu, která umožňuje nastavit parametry skriptu
+- [click]{.software} externí knihovna, která plní podobnou funkci jako [argparse]{.software} ale má komplexnější možnosti
+
+# Použití [argparse]{.software}
+
+## Parametry
+
+- dva druhy 
+  - poziční - nepojmenované a obvykle povinné
+  - pojmenované - obvykle nepovinné, buď předáváme hodnotu nebo pouze parametr (přepínače)
+
+```bash
+program vstupni_souboru [-o vystupni_soubor] [-d] [--calculate_using=scipy]
+```
+
+- v příkladu se `vstupni_soubor` musí zadat, jinak program nebude fungovat
+- v příkladu má výstupní soubor výchozí název (např. `output.pdf`) a dva parametry, které nemusíme zadávat
+
+## Příklad tvorby
+
+```python
+import argparse
+from pathlib import Path
+
+parser = argparse.ArgumentParser(prog="calculate", description='Skript pro výpočet hodnoty.')
+    
+# Definice argumentů
+parser.add_argument('a', help='Hodnota a', type=float)
+parser.add_argument('b', help='Hodnota b', type=float)
+parser.add_argument('-o', '--operator', help='Operátor s hodnotami', default='*', type=str, choices=['*', '/', '+', '-'])
+parser.add_argument('-r', '--result', help='Výsledný soubor', type=Path, default=Path("vysledek.txt"))
+
+```
+
+## Přístup k argumentům
+
+- v proměnné `args` budou všechny proměnné uložené a dostupné
+
+```python
+# Zpracování argumentů
+args = parser.parse_args()
+
+# Příklady
+if args.operator == "*":
+    result = float(args.a) * float(args.b)
+
+with open(args.result, "w", encoding="utf-8") as file:
+    file.write(f"Výsledek: {result}\n")
+```
+
+## Další nastavení
+
+- lze vytvářet i komplexnější nastavení, např. subprogramy 
+
+```bash
+program sub_program_a [argumenty_pro_a]
+program sub_program_b [argumenty_pro_b]
+```
+
+- komplexnější nastavení parametrů
+
+# Tvorba samospustitelných souborů
+
+## [pyinstaller]{.software}
+
+- program, který umí zabalit pythonový skript do samospustitelného souboru
+- funguje dobře, pokud se nevyužívají složité konstrukce pro import externích knihoven (např. [GDAL/OGR]{.software} je na hraně)
+- vznikne exe soubor, pro samostatné spuštění
+- zabalí python interpretor a použité knihovny do jednoho souboru
+- občas je třeba vytvořit konfigurační soubor s definicí co vše se má importovat (externí soubory a knihovny)
+
+```bash
+pip install pyinstaller # (conda install pyinstaller)
+pyinstaller --onefile muj_skript.py
+```
+
+# Závěr předmětu
+
+## Závěr
+
+- [Python]{.software} jako **lingua franca** pro vývoj skriptů a programů
+- nástroje a knihovny pro geoinformatickou práci a práci s prostorovými daty
+- řada možností nástrojů k prozkoumání a otestování
+- použití nástrojů pro psaní čitelnějšího kódu (formátování + hodnocení chyb)
+- psaní "rozumného" kódu - dělení na funkce o rozumné délce, dělení na moduly, tvorba balíčků  
+- vycházet z jednoduchých řešení a postupně nad nimi budovat komplexnější postupy
+- rozumné využití **AI** při programování, nejen nápověda a tvorba kódu, ale i vysvětlení, explorace a hodnocení kódu
+
+## Dotazy?
