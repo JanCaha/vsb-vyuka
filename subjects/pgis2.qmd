@@ -44,6 +44,10 @@ listing:
 - Github Copilot - otestování a využití
 - funkce, objekty, moduly a balíčky  v Pythonu 
 - [pandas]{.software}, [geopandas]{.software}, [polars]{.software}
+- [matplotlib]{.software}, [jupyter notebook]{.software}
+- [Git]{.software}, [GitHub](https://www.github.com)
+- [GitHub Copilot](https://github.com/features/copilot)
+- programy s argumenty
 
 ## Prezentace{.presentations}
 
