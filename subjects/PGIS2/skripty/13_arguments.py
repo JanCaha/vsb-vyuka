@@ -1,4 +1,5 @@
 import argparse
+import sys
 from pathlib import Path
 
 
@@ -37,6 +38,9 @@ def main():
     # Uložení výsledku do souboru
     with open(args.result, "w", encoding="utf-8") as file:
         file.write(f"Výsledek: {result}\n")
+
+    if sys.platform == "win32":
+        input("Stiskněte Enter pro ukončení...")
 
 
 if __name__ == "__main__":
