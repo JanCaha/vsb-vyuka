@@ -7,7 +7,7 @@ date: 2025-05-05
 
 - dobře se tvoří, používají z prostředí [VS Code]{.software}, kde je možnost přímo upravovat a spouštět python kód
 - pro běžné uživatele už dost komplikované
-- některé parametry jsou dost očiviné a mění se poměrně často (třeba i každým během skriptu)
+- některé parametry jsou dost očividné a mění se poměrně často (třeba i každým během skriptu)
 - nejjednodušší forma je program z příkazové řádky s parametry příkazové řádky
 
 ## Jak řešit v [Pythonu]{.software}
