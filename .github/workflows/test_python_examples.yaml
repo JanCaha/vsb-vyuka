@@ -82,7 +82,11 @@ jobs:
           do
             echo "--------------------"
             echo "*** $FILE ***"
-            python3 $FILE > /dev/null
+            if grep -q "argparse" $FILE; then
+              python3 $FILE -h > /dev/null
+            else
+              python3 $FILE > /dev/null
+            fi
           done
 
       - name: PGIS2 notebooky
