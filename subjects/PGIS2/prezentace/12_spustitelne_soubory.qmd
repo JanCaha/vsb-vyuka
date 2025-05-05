@@ -100,6 +100,6 @@ pyinstaller --onefile muj_skript.py
 - použití nástrojů pro psaní čitelnějšího kódu (formátování + hodnocení chyb)
 - psaní "rozumného" kódu - dělení na funkce o rozumné délce, dělení na moduly, tvorba balíčků  
 - vycházet z jednoduchých řešení a postupně nad nimi budovat komplexnější postupy
-- rozumné využití **AI** při programování, nejen nápověda a tvorba kódu, ale i vysvětlení, explorace a hodnocení kódu
+- rozumné využití **AI** při programování, nejen nápověda a tvorba kódu, ale i vysvětlení, explorace a hodnocení kódu {{< fa arrow-right >}} snaha o tvorbu lepších programů
 
 ## Dotazy?
