@@ -2183,21 +2183,21 @@
     "href": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#skripty",
     "title": "Spustitelné programy",
     "section": "Skripty",
-    "text": "Skripty\n\ndobře se tvoří, používají z prostředí VS Code, kde je možnost přímo upravovat a spouštět python kód\npro běžné uživatele už dost komplikované\nněkteré parametry jsou dost očiviné a mění se poměrně často (třeba i každým během skriptu)\nnejjednodušší forma je program z příkazové řádky s parametry příkazové řádky"
+    "text": "Skripty\n\ndobře se tvoří, používají z prostředí VS Code, kde je možnost přímo upravovat a spouštět Python kód\npro běžné uživatele už dost komplikované\nněkteré parametry jsou dost očividné a mění se poměrně často (třeba i každým během skriptu)\nnejjednodušší forma je program z příkazové řádky s parametry příkazové řádky"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#jak-řešit-v-pythonu",
     "href": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#jak-řešit-v-pythonu",
     "title": "Spustitelné programy",
     "section": "Jak řešit v Pythonu",
-    "text": "Jak řešit v Pythonu\n\nv rámci pythonu v balíčku sys máme sys.argv, kde máme přístup k parametrům skriptů\n\nvelice složité a neflexibilní\n\nargparse nativní knihovna pythonu, která umožňuje nastavit parametry skriptu\nclick externí knihovna, která plní podobnou funkci jako argparse ale má komplexnější možnosti"
+    "text": "Jak řešit v Pythonu\n\nv rámci Pythonu v balíčku sys máme sys.argv, kde máme přístup k parametrům skriptů\n\nvelice složité a neflexibilní\n\nargparse nativní knihovna Pythonu, která umožňuje nastavit parametry skriptu\nclick externí knihovna, která plní podobnou funkci jako argparse, ale má komplexnější možnosti"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#parametry",
     "href": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#parametry",
     "title": "Spustitelné programy",
     "section": "Parametry",
-    "text": "Parametry\n\ndva druhy\n\npoziční - nepojmenované a obvykle povinné\npojmenované - obvykle nepovinné, buď předáváme hodnotu nebo pouze parametr (přepínače)\n\n\nprogram vstupni_souboru [-o vystupni_soubor] [-d] [--calculate_using=scipy]\n\nv příkladu se vstupni_soubor musí zadat, jinak program nebude fungovat\nv příkladu má výstupní soubor výchozí název (např. output.pdf) a dva parametry, které nemusíme zadávat"
+    "text": "Parametry\n\ndva druhy\n\npoziční - nepojmenované a obvykle povinné\npojmenované - obvykle nepovinné, buď předáváme hodnotu nebo pouze parametr (přepínače)\n\n\nprogram vstupni_soubor [-o vystupni_soubor] [-d] [--calculate_using=scipy]\n\nv příkladu se vstupni_soubor musí zadat, jinak program nebude fungovat\nv příkladu má výstupní soubor výchozí název (např. output.pdf) a dva parametry, které nemusíme zadávat"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#příklad-tvorby",
@@ -2225,7 +2225,7 @@
     "href": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#pyinstaller",
     "title": "Spustitelné programy",
     "section": "pyinstaller",
-    "text": "pyinstaller\n\nprogram, který umí zabalit pythonový skript do samospustitelného souboru\nfunguje dobře, pokud se nevyužívají složité konstrukce pro import externích knihoven (např. GDAL/OGR je na hraně)\nvznikne exe soubor, pro samostatné spuštění\nzabalí python interpretor a použité knihovny do jednoho souboru\nobčas je třeba vytvořit konfigurační soubor s definicí co vše se má importovat (externí soubory a knihovny)\n\npip install pyinstaller # (conda install pyinstaller)\npyinstaller --onefile muj_skript.py"
+    "text": "pyinstaller\n\nprogram, který umí zabalit Pythonový skript do samospustitelného souboru\nfunguje dobře, pokud se nevyužívají složité konstrukce pro import externích knihoven (např. GDAL/OGR je na hraně)\nvznikne exe soubor, pro samostatné spuštění\nzabalí Python interpretor a použité knihovny do jednoho souboru\nobčas je třeba vytvořit konfigurační soubor s definicí co vše se má importovat (externí soubory a knihovny)\n\npip install pyinstaller # (conda install pyinstaller)\npyinstaller --onefile muj_skript.py"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#závěr",
@@ -3358,7 +3358,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.48255117 -0.05944525 -0.57942800 -0.14788371 -0.15508705"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.72488868 -0.08206785 -0.17159683 -1.67890392 -0.50437539"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",

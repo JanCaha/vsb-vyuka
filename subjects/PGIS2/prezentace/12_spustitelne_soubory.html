@@ -217,21 +217,21 @@ Jan Caha
 <section id="skripty" class="slide level2">
 <h2>Skripty</h2>
 <ul>
-<li>dobře se tvoří, používají z prostředí <span class="software">VS Code</span>, kde je možnost přímo upravovat a spouštět python kód</li>
+<li>dobře se tvoří, používají z prostředí <span class="software">VS Code</span>, kde je možnost přímo upravovat a spouštět Python kód</li>
 <li>pro běžné uživatele už dost komplikované</li>
-<li>některé parametry jsou dost očiviné a mění se poměrně často (třeba i každým během skriptu)</li>
+<li>některé parametry jsou dost očividné a mění se poměrně často (třeba i každým během skriptu)</li>
 <li>nejjednodušší forma je program z příkazové řádky s parametry příkazové řádky</li>
 </ul>
 </section>
 <section id="jak-řešit-v-pythonu" class="slide level2">
 <h2>Jak řešit v <span class="software">Pythonu</span></h2>
 <ul>
-<li>v rámci pythonu v balíčku <span class="software">sys</span> máme <code>sys.argv</code>, kde máme přístup k parametrům skriptů
+<li>v rámci Pythonu v balíčku <span class="software">sys</span> máme <code>sys.argv</code>, kde máme přístup k parametrům skriptů
 <ul>
 <li>velice složité a neflexibilní</li>
 </ul></li>
-<li><span class="software">argparse</span> nativní knihovna pythonu, která umožňuje nastavit parametry skriptu</li>
-<li><span class="software">click</span> externí knihovna, která plní podobnou funkci jako <span class="software">argparse</span> ale má komplexnější možnosti</li>
+<li><span class="software">argparse</span> nativní knihovna Pythonu, která umožňuje nastavit parametry skriptu</li>
+<li><span class="software">click</span> externí knihovna, která plní podobnou funkci jako <span class="software">argparse</span>, ale má komplexnější možnosti</li>
 </ul>
 </section>
 <section>
@@ -248,7 +248,7 @@ Jan Caha
 <li>pojmenované - obvykle nepovinné, buď předáváme hodnotu nebo pouze parametr (přepínače)</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">program</span> vstupni_souboru [-o vystupni_soubor] <span class="pp">[-</span><span class="ss">d</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">calculate_using=scipy</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">program</span> vstupni_soubor [-o vystupni_soubor] <span class="pp">[-</span><span class="ss">d</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">calculate_using=scipy</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>v příkladu se <code>vstupni_soubor</code> musí zadat, jinak program nebude fungovat</li>
 <li>v příkladu má výstupní soubor výchozí název (např. <code>output.pdf</code>) a dva parametry, které nemusíme zadávat</li>
@@ -301,10 +301,10 @@ Jan Caha
 <section id="pyinstaller" class="slide level2">
 <h2><span class="software">pyinstaller</span></h2>
 <ul>
-<li>program, který umí zabalit pythonový skript do samospustitelného souboru</li>
+<li>program, který umí zabalit Pythonový skript do samospustitelného souboru</li>
 <li>funguje dobře, pokud se nevyužívají složité konstrukce pro import externích knihoven (např. <span class="software">GDAL/OGR</span> je na hraně)</li>
 <li>vznikne exe soubor, pro samostatné spuštění</li>
-<li>zabalí python interpretor a použité knihovny do jednoho souboru</li>
+<li>zabalí Python interpretor a použité knihovny do jednoho souboru</li>
 <li>občas je třeba vytvořit konfigurační soubor s definicí co vše se má importovat (externí soubory a knihovny)</li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pyinstaller <span class="co"># (conda install pyinstaller)</span></span>
