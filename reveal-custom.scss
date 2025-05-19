@@ -1,8 +1,7 @@
 /*-- scss:rules --*/
 
-
-.reveal div.sourceCode {
-    font-size: 1.5em;
+div.cell {
+    font-size: 1.1em;
 }
 
 div.cell-output-error {
@@ -11,12 +10,6 @@ div.cell-output-error {
             color: rgb(200, 0, 0);
             font-weight: bold;
         }
-    }
-}
-
-div.cell-output {
-    pre{
-        font-size: 1.5em;
     }
 }
 
