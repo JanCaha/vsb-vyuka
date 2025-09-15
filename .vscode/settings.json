@@ -31,4 +31,7 @@
         "revealjs",
         "težšímu"
     ],
+    "github.copilot.enable": {
+        "quarto": true
+    }
 }
