@@ -2,7 +2,8 @@
 title: "Úvodní hodina"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2024-09-23
+date: 2025-09-16
+year: 2025
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -29,11 +30,11 @@ execute:
 - práce s [ArcPy]{.software} a její [dokumentací](https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/what-is-arcpy-.htm)
 - operace s geodaty skrze API [ArcPy]{.software}
 - funkcionální i objektově orientované programování
-- odchytávání výjimek
+- odchytávání výjimek - práce s nimi
   
 ## Dílčí úlohy
 
-- použitelný a čitelný kód 
+- použitelný a čitelný kód
 - replikovatelné postupy
 - programovací techniky a postupy
 - debugování programů
@@ -61,7 +62,16 @@ execute:
 ## Zakončení předmětu
 
 - samostatný projekt
-  - netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód 
-- písemka - klíčové položky programování v Pythonu a [ArcPy]{.software}
+  - netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód (??? - v řešení)
+- písemka - klíčové položky programování v Pythonu a [ArcPy]{.software}, interpretace kódu
  
+## GitHub Copilot
+
+- budeme s ním zacházet opatrně
+- nenahrazuje znalost programování
+- je v pořádku ✅: napovídání, vysvětlování, revize kódu  
+- není v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (mamé obvykle i dokumentaci) 
+- uživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením
+- **Pravidlo: "Rozumím tomu, co píšu"**  -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat
+
 # Dotazy?{.center}
