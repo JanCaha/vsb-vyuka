@@ -1480,28 +1480,7 @@
     "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#licence-a-instalace",
     "title": "Obecné funkce ArcPy",
     "section": "Licence a instalace",
-    "text": "Licence a instalace\n\nkontroly dostupnosti licencí a stavu instalace\narcpy.CheckExtension() - je exteze dostupná?\narcpy.CheckInExtension(), arcpy.CheckOutExtension() - pro sdílené licence\narcpy.CheckProduct(), arcpy.CheckProduct() - dostupná úroveň licence + info\nacpy.GetInstallInfo() - info o instalaci\narcpy.ListInstallations() - typy instalací"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
-    "title": "Obecné funkce ArcPy",
-    "section": "Popisy objektů",
-    "text": "Popisy objektů\n\narcpy.Describe() - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)\nvýsledný objekty se liší dle požadovaného typu objektu - viz dokumentace\nzákladní minimum informací pro všechny objekty"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
-    "title": "Obecné funkce ArcPy",
-    "section": "Práce s Describe() objekty",
-    "text": "Práce s Describe() objekty\n\nje vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce\n\n\ndesc = arcpy.Describe(\"C:/data/soubor.shp\")\nif hasattr(desc, \"dataType\"):\n    data_type = desc.dataType\n    print(desc.dataType)\n\n\npředcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady",
-    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady",
-    "title": "Obecné funkce ArcPy",
-    "section": "Příklady",
-    "text": "Příklady\n\nvektorová data\nrastrová data\ndalší"
+    "text": "Licence a instalace\n\nkontroly dostupnosti licencí a stavu instalace\narcpy.CheckExtension() - je exteze dostupná?\narcpy.CheckInExtension(), arcpy.CheckOutExtension() - pro sdílené licence\narcpy.CheckProduct() - dostupná úroveň licence + info\nacpy.GetInstallInfo() - info o instalaci\narcpy.ListInstallations() - typy instalací"
   },
   {
     "objectID": "subjects/pvgis4.html",
@@ -1629,7 +1608,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-09-23\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2024-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -1925,35 +1904,56 @@
     "href": "subjects/PGIS3/prezentace/02_arcpy.html#arcpy",
     "title": "Základ ArcPy pro ArcGIS Pro",
     "section": "ArcPy",
-    "text": "ArcPy\n\nArcPy je knihovna pro Python, která umožňuje přístup k funkcím ArcGIS Pro\numožňuje automatizaci procesů v ArcGIS Pro\numožňuje vytváření vlastních nástrojů (v ArcGIS Pro) a skriptů (samostatných)\njedná je python binding (nejspíše z C++), takže zdrojové kódy nejsou dostupné a knihovna ani není pro python typovaná (podobně jako GDAL/OGR), což komplikuje práci s ní - chybí v IDE napovídání a podobně"
+    "text": "ArcPy\n\nArcPy je knihovna pro Python, která umožňuje přístup k funkcím ArcGIS Pro\numožňuje automatizaci procesů v ArcGIS Pro\numožňuje vytváření vlastních nástrojů (v ArcGIS Pro) a skriptů (samostatně spustitelných)\njedná je python binding (nejspíše z C++), takže zdrojové kódy nejsou dostupné a knihovna ani není pro python typovaná (podobně jako GDAL/OGR), což komplikuje práci s ní - chybí v IDE napovídání a podobně"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#struktura-arcpy",
     "href": "subjects/PGIS3/prezentace/02_arcpy.html#struktura-arcpy",
     "title": "Základ ArcPy pro ArcGIS Pro",
     "section": "Struktura ArcPy",
-    "text": "Struktura ArcPy\n\nčást funkcí dostupná pod arcpy.*\ndalší část v modulech např. Data Access arcpy.da.*, Mapping arcpy.mp.* a další\npodstatné jé číst dokumentaci a vidět příklady použití"
+    "text": "Struktura ArcPy\n\nčást funkcí dostupná pod arcpy.*\ndalší část v dílčích modulech např. Data Access arcpy.da.*, Mapping arcpy.mp.* a další\npodstatné jé číst dokumentaci a vidět příklady použití\npozor na verze API, které již jsou nedoporučované či zastaralé (označované jako deprecated)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#objekt-env",
     "href": "subjects/PGIS3/prezentace/02_arcpy.html#objekt-env",
     "title": "Základ ArcPy pro ArcGIS Pro",
     "section": "Objekt env",
-    "text": "Objekt env\n\n“prostředí” v němž ArcPy pracuje - známe z GUI ArcGIS Pro\ndostupné jako arcpy.env.* kde za * dosazujeme proměnnou\narcpy.env.workspace - pracovní adresář\narcpy.env.overwriteOutput - přepsat výstupní soubory analýz a dalších operací\narcpy.env.scratchGDB - dočasná databáze pro dílčí výpočty a operace"
+    "text": "Objekt env\n\n“prostředí” v němž ArcPy pracuje - známe z GUI ArcGIS Pro\ndostupné jako arcpy.env.* kde za * dosazujeme konkrétní proměnnou\narcpy.env.workspace - pracovní adresář\narcpy.env.overwriteOutput - přepsat výstupní soubory analýz a dalších operací\narcpy.env.scratchGDB - dočasná databáze pro dílčí výpočty a operace"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#cesty-používané-v-arcpy",
     "href": "subjects/PGIS3/prezentace/02_arcpy.html#cesty-používané-v-arcpy",
     "title": "Základ ArcPy pro ArcGIS Pro",
     "section": "Cesty používané v ArcPy",
-    "text": "Cesty používané v ArcPy\n\nbud absolutní cesty na disku (např. C:/data/soubor.shp), nebo C:/data/soubor.gdb/nazev_vrstvy\nnebo relativní cesty, jako je název vrstvy uvažovaný v acpy.env.workspace (např. soubor.shp, nazev_vrstvy)\nu rastrů lze přistpovat i k pásmům jako C:/data/soubor.tif/Band_1\nvždy je třeba myslet na to, kde se nacházíme a jaké cesty používáme"
+    "text": "Cesty používané v ArcPy\n\nbud absolutní cesty na disku (např. C:/data/soubor.shp), nebo C:/data/soubor.gdb/nazev_vrstvy\nnebo relativní cesty, jako je název vrstvy uvažovaný v arcpy.env.workspace (např. soubor.shp, nazev_vrstvy)\nu rastrů lze přistupovat i k jednotlivým pásmům jako C:/data/soubor.tif/Band_1\nvždy je třeba myslet na to, kde se nacházíme a jaké cesty používáme"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#popis-objektu",
     "href": "subjects/PGIS3/prezentace/02_arcpy.html#popis-objektu",
     "title": "Základ ArcPy pro ArcGIS Pro",
     "section": "Popis objektu",
-    "text": "Popis objektu\n\narcpy.Describe() - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu\nvýstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme)"
+    "text": "Popis objektu\n\narcpy.Describe() - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu\nvýstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#popisy-objektů",
+    "href": "subjects/PGIS3/prezentace/02_arcpy.html#popisy-objektů",
+    "title": "Základ ArcPy pro ArcGIS Pro",
+    "section": "Popisy objektů",
+    "text": "Popisy objektů\n\narcpy.Describe() - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)\nvýsledný objekty se liší dle požadovaného typu objektu - viz dokumentace\nzákladní minimum informací pro všechny objekty"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#práce-s-describe-objekty",
+    "href": "subjects/PGIS3/prezentace/02_arcpy.html#práce-s-describe-objekty",
+    "title": "Základ ArcPy pro ArcGIS Pro",
+    "section": "Práce s Describe() objekty",
+    "text": "Práce s Describe() objekty\n\nje vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce\n\n\ndesc = arcpy.Describe(\"C:/data/soubor.shp\")\nif hasattr(desc, \"dataType\"):\n    data_type = desc.dataType\n    print(desc.dataType)\n\n\npředcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#příklady",
+    "href": "subjects/PGIS3/prezentace/02_arcpy.html#příklady",
+    "title": "Základ ArcPy pro ArcGIS Pro",
+    "section": "Příklady",
+    "text": "Příklady\n\nvektorová data\nrastrová data\ndalší"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#objekty",
@@ -2969,7 +2969,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.07591454 -1.63369203 -0.01472664 -0.08816800 -1.42405857"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.4050260 -1.2262469 -0.2559726 -0.1937497 -0.4620983"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
