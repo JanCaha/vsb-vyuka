@@ -55,7 +55,7 @@ execute:
 
 ## Z čeho vycházíme
 
-- znalost Pythonu dle předmetu **Programování v GIS 2** a **Programování v GIS 3**
+- znalost Pythonu dle předmětu **Programování v GIS 2** a **Programování v GIS 3**
 - znalost [QGIS]{.software} a jeho základních funkcí
 
 ## Zakončení předmětu
@@ -72,5 +72,5 @@ execute:
 - není v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (mamé obvykle i dokumentaci) 
 - uživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením
 - **Pravidlo: "Rozumím tomu, co píšu"**  -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat
-- 
+
 # Dotazy?{.center}
