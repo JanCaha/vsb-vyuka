@@ -6,10 +6,10 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2025-04-14">
@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -273,7 +273,7 @@ Jan Caha
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Pandas</a></li><li><a href="#tabset-1-2">Polars</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>df_pd <span class="op">=</span> pd.read_csv(extracted)</span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -281,10 +281,10 @@ Jan Caha
 <span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>df_pd</span>
 <span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    .set_index(<span class="st">"IATA_CODE_Reporting_Airline"</span>)</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    .loc[[<span class="st">'AA'</span>, <span class="st">'DL'</span>], [<span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    .loc[[<span class="st">'AA'</span>, <span class="st">'DL'</span>], [<span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>df_pl <span class="op">=</span> pl.read_csv(extracted, truncate_ragged_lines<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -292,7 +292,7 @@ Jan Caha
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>df_pl</span>
 <span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    .<span class="bu">filter</span>(pl.col(<span class="st">"IATA_CODE_Reporting_Airline"</span>).is_in([<span class="st">'AA'</span>, <span class="st">'DL'</span>]))</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    .select([<span class="st">"IATA_CODE_Reporting_Airline"</span>, <span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    .select([<span class="st">"IATA_CODE_Reporting_Airline"</span>, <span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -303,16 +303,16 @@ Jan Caha
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Pandas</a></li><li><a href="#tabset-2-2">Polars</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>df_pd[<span class="st">"novy_sloupec"</span>] <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>df_pd[<span class="st">"novy_sloupec"</span>] <span class="op">=</span> df_pd[<span class="st">"novy_sloupec"</span>].mask(df_pd[<span class="st">"sloupec_hodnota"</span>] <span class="op">&lt;=</span> <span class="dv">3</span>, <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>df_pd[<span class="st">"novy_sloupec"</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>df_pd[<span class="st">"novy_sloupec"</span>] <span class="op">=</span> df_pd[<span class="st">"novy_sloupec"</span>].mask(df_pd[<span class="st">"sloupec_hodnota"</span>] <span class="op">&lt;=</span> <span class="dv">3</span>, <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>df_pl.with_columns(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>df_pl.with_columns(</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>    pl.when(pl.col(<span class="st">"sloupec_hodnota"</span>) <span class="op">&lt;=</span> <span class="dv">10</span>)</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    .then(<span class="va">True</span>)</span>
 <span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    .otherwise(<span class="va">False</span>)</span>
 <span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    .alias(<span class="st">"novy_sloupec"</span>)</span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -513,7 +513,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -587,13 +587,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

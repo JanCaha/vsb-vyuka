@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2025-03-30">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -231,12 +231,12 @@ Jan Caha
 <li>kromě kódu může obsahovat i další soubory (např. data)</li>
 <li>aby <span class="software">Python</span> balíček našel, musí být v některé z cest v <code>sys.path</code>, ty lze editovat např. skrze systémovou proměnnou <code>PYTHONPATH</code></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env config vars set PYTHONPATH=<span class="va">$PYTHONPATH</span>:/path/to/your/package</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">"import sys;print(sys.path);import your_package"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env config vars set PYTHONPATH=<span class="va">$PYTHONPATH</span>:/path/to/your/package</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-c</span> <span class="st">"import sys;print(sys.path);import your_package"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="příklad-struktury" class="slide level2">
 <h2>Příklad struktury</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>my_package/</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>my_package/</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>├── __init__.py</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>├── module1.py</span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>├── module2.py</span>
@@ -245,7 +245,7 @@ Jan Caha
 <span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    └── submodule.py</span>
 <span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>└── data/</span>
 <span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    └── data_file.csv</span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    └── data.gpkg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    └── data.gpkg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="balíček---komplexnější" class="slide level2">
 <h2>Balíček - komplexnější</h2>
@@ -262,15 +262,15 @@ Jan Caha
 </section>
 <section id="balíček-sestavený-pomocí-poetry" class="slide level2">
 <h2>Balíček sestavený pomocí <span class="software">poetry</span></h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> new nazev_balicku</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku/</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> new nazev_balicku</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku/</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>└── src/</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    └── nazev_balicku/</span>
 <span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>        └── __init__.py</span>
 <span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>├── tests</span>
 <span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    └── __init__.py</span>
 <span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>├── pyproject.toml</span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>└── README.md</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>└── README.md</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="pyproject.toml" class="slide level2">
 <h2><code>pyproject.toml</code></h2>
@@ -278,7 +278,7 @@ Jan Caha
 <li>moderní způsob specifikace nastavení balíčku a nástrojů</li>
 <li>specifikace metadata balíčku - např. název, verze, autor, závislosti</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"balicekpgis2"</span></span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"0.1.0"</span></span>
 <span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">""</span></span>
@@ -297,7 +297,7 @@ Jan Caha
 <span id="cb5-17"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-18"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[build-system]</span></span>
 <span id="cb5-19"><a aria-hidden="true" tabindex="-1"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span><span class="st">"poetry-core&gt;=2.0.0,&lt;3.0.0"</span><span class="op">]</span></span>
-<span id="cb5-20"><a aria-hidden="true" tabindex="-1"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"poetry.core.masonry.api"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-20"><a aria-hidden="true" tabindex="-1"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"poetry.core.masonry.api"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="přidání-závislostí" class="slide level2">
 <h2>Přidání závislostí</h2>
@@ -305,26 +305,26 @@ Jan Caha
 <li>závislosti - více typů (např. pro spuštění a vývoj)</li>
 <li>parametr <code>--lock</code>, zabrání instalaci závislostí do virtualního prostředí (<code>venv</code>)</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> add GDAL <span class="at">--lock</span></span>
-<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> add <span class="at">--group</span> dev pytest black <span class="at">--lock</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> add GDAL <span class="at">--lock</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> add <span class="at">--group</span> dev pytest black <span class="at">--lock</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="pyproject.toml-úprava-přidáním-dat-k-balíčku" class="slide level2">
 <h2><code>pyproject.toml</code> úprava přidáním dat k balíčku</h2>
 <ul>
 <li>dvě varianty</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.poetry]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.poetry]</span></span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">include</span> <span class="op">=</span> <span class="op">[</span></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"src/nazev_balicku/data/*.tif"</span><span class="op">,</span></span>
 <span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"src/nazev_balicku/data/*.gpkg"</span><span class="op">,</span></span>
 <span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
 <span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.poetry.package-data]</span></span>
-<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a><span class="dt">"nazev_balicku.data"</span> <span class="op">=</span> <span class="op">[</span><span class="st">"*.tif"</span><span class="op">,</span> <span class="st">"*.gpkg"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a><span class="dt">"nazev_balicku.data"</span> <span class="op">=</span> <span class="op">[</span><span class="st">"*.tif"</span><span class="op">,</span> <span class="st">"*.gpkg"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="instalace" class="slide level2">
 <h2>Instalace</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> install </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> install </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>instalace balíku</li>
 <li>tzv. <strong>interaktivní</strong> instalace - změny v kódu se projeví se při příštím spuštění <span class="software">Pythonu</span></li>
@@ -333,7 +333,7 @@ Jan Caha
 </section>
 <section id="sestavení-pro-instalaci-jinde" class="slide level2">
 <h2>Sestavení pro instalaci jinde</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">poetry</span> build</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>vznikne složka <code>dist/</code> s balíčkem</li>
 <li>balíček je ve formátu <code>.tar.gz</code> a <code>.whl</code></li>
@@ -343,19 +343,19 @@ Jan Caha
 </section>
 <section id="použití---struktura" class="slide level2">
 <h2>Použití - struktura</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>─── src/</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>─── src/</span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>    └── nazev_balicku/</span>
 <span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>        └── __init__.py</span>
 <span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>        └── modul_path.py</span>
-<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>        └── modul_gdal.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>        └── modul_gdal.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="použití---import" class="slide level2">
 <h2>Použití - import</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span>
 <span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nazev_balicku <span class="co"># import celého balíčku</span></span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku.modul_path.fn_1() <span class="co"># použití funkce</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku.modul_path.fn_1() <span class="co"># použití funkce</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="použití---úprava-__init__.py" class="slide level2">
 <h2>Použití - úprava <code>__init__.py</code></h2>
@@ -364,16 +364,16 @@ Jan Caha
 <li>tím je zpřístupníme i na úrovni balíčku</li>
 <li>příklad <code>__init__.py</code></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_gdal <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_gdal <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="použití---po-změně-import" class="slide level2">
 <h2>Použití - po změně import</h2>
 <ul>
 <li><code>import nazev_balicku</code> - import celého balíčku a věcí z <code>__init__.py</code></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="závěr" class="slide level2">
 <h2>Závěr</h2>
@@ -580,7 +580,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -654,13 +654,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

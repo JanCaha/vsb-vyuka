@@ -6,10 +6,10 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2025-05-05">
@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -248,7 +248,7 @@ Jan Caha
 <li>pojmenované - obvykle nepovinné, buď předáváme hodnotu nebo pouze parametr (přepínače)</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">program</span> vstupni_soubor [-o vystupni_soubor] <span class="pp">[-</span><span class="ss">d</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">calculate_using=scipy</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">program</span> vstupni_soubor [-o vystupni_soubor] <span class="pp">[-</span><span class="ss">d</span><span class="pp">]</span> <span class="pp">[--</span><span class="ss">calculate_using=scipy</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>v příkladu se <code>vstupni_soubor</code> musí zadat, jinak program nebude fungovat</li>
 <li>v příkladu má výstupní soubor výchozí název (např. <code>output.pdf</code>) a dva parametry, které nemusíme zadávat</li>
@@ -256,7 +256,7 @@ Jan Caha
 </section>
 <section id="příklad-tvorby" class="slide level2">
 <h2>Příklad tvorby</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>parser <span class="op">=</span> argparse.ArgumentParser(prog<span class="op">=</span><span class="st">"calculate"</span>, description<span class="op">=</span><span class="st">'Skript pro výpočet hodnoty.'</span>)</span>
@@ -265,14 +265,14 @@ Jan Caha
 <span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'a'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Hodnota a'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">float</span>)</span>
 <span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'b'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Hodnota b'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">float</span>)</span>
 <span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'-o'</span>, <span class="st">'--operator'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Operátor s hodnotami'</span>, default<span class="op">=</span><span class="st">'*'</span>, <span class="bu">type</span><span class="op">=</span><span class="bu">str</span>, choices<span class="op">=</span>[<span class="st">'*'</span>, <span class="st">'/'</span>, <span class="st">'+'</span>, <span class="st">'-'</span>])</span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'-r'</span>, <span class="st">'--result'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Výsledný soubor'</span>, <span class="bu">type</span><span class="op">=</span>Path, default<span class="op">=</span>Path(<span class="st">"vysledek.txt"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>parser.add_argument(<span class="st">'-r'</span>, <span class="st">'--result'</span>, <span class="bu">help</span><span class="op">=</span><span class="st">'Výsledný soubor'</span>, <span class="bu">type</span><span class="op">=</span>Path, default<span class="op">=</span>Path(<span class="st">"vysledek.txt"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="přístup-k-argumentům" class="slide level2">
 <h2>Přístup k argumentům</h2>
 <ul>
 <li>v proměnné <code>args</code> budou všechny proměnné uložené a dostupné</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Zpracování argumentů</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Zpracování argumentů</span></span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> parser.parse_args()</span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Příklady</span></span>
@@ -280,15 +280,15 @@ Jan Caha
 <span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="bu">float</span>(args.a) <span class="op">*</span> <span class="bu">float</span>(args.b)</span>
 <span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(args.result, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="ss">f"Výsledek: </span><span class="sc">{</span>result<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="ss">f"Výsledek: </span><span class="sc">{</span>result<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="další-nastavení" class="slide level2">
 <h2>Další nastavení</h2>
 <ul>
 <li>lze vytvářet i komplexnější nastavení, např. subprogramy</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">program</span> sub_program_a <span class="pp">[</span><span class="ss">argumenty_pro_a</span><span class="pp">]</span></span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">program</span> sub_program_b <span class="pp">[</span><span class="ss">argumenty_pro_b</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">program</span> sub_program_a <span class="pp">[</span><span class="ss">argumenty_pro_a</span><span class="pp">]</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">program</span> sub_program_b <span class="pp">[</span><span class="ss">argumenty_pro_b</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>komplexnější nastavení parametrů</li>
 </ul>
@@ -307,8 +307,8 @@ Jan Caha
 <li>zabalí Python interpretor a použité knihovny do jednoho souboru</li>
 <li>občas je třeba vytvořit konfigurační soubor s definicí co vše se má importovat (externí soubory a knihovny)</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pyinstaller <span class="co"># (conda install pyinstaller)</span></span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pyinstaller</span> <span class="at">--onefile</span> muj_skript.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pyinstaller <span class="co"># (conda install pyinstaller)</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pyinstaller</span> <span class="at">--onefile</span> muj_skript.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="závěr-předmětu" class="title-slide slide level1 center">
@@ -524,7 +524,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -598,13 +598,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

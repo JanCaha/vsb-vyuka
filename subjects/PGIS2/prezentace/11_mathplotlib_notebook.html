@@ -6,10 +6,10 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2025-04-28">
@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -250,8 +250,8 @@ Jan Caha
 <li>statický - tvorba obrázků v různých formátech</li>
 <li><strong>Qt5Agg, TkAgg, WebAgg</strong> <i class="fa-solid fa-times" aria-label="times"></i> <strong>Agg, PDF, SVG, PS</strong></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>matplotlib.use(<span class="st">'Agg'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>matplotlib.use(<span class="st">'Agg'</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="stylování-a-konfigurace" class="slide level2">
 <h2>Stylování a konfigurace</h2>
@@ -260,8 +260,8 @@ Jan Caha
 <li>použití globálního stylu v souboru <code>matplotlibrc</code> - soubor se hledá buď v aktuální projektu nebo v uživatelském adresáři</li>
 <li>předpřipravené styly</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>matplotlib.style.use(<span class="st">'ggplot'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>matplotlib.style.use(<span class="st">'ggplot'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dva-způsoby-použití" class="slide level2">
 <h2>Dva způsoby použití</h2>
@@ -276,10 +276,10 @@ Jan Caha
 <li>vhodné pro komplexnější grafy, či situace kdy tvoříme vícero grafů v rámci skriptu</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obrázek s 2 grafy - 1 řádek, 2 sloupce</span></span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># velikost obrázku je v palcích</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> mpl.pyplot.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">8</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> mpl.pyplot.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">8</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>prvek <code>axs</code> je ve skutečnosti pole, jednotlivých prvků s osami, takže přistupujeme jako <code>axs[0]</code> atd.</li>
 </ul>
@@ -338,11 +338,11 @@ Jan Caha
 <li>pro <span class="software">VS Code</span> extenze <code>Jupyter</code>
 <ul>
 <li><p>nastavení v <code>settings.json</code></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="er">"notebook.formatOnSave.enabled":</span> <span class="er">true,</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="er">"notebook.formatOnSave.enabled":</span> <span class="er">true,</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="er">"notebook.defaultFormatter":</span> <span class="er">"ms-python.black-formatter",</span></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="er">"notebook.codeActionsOnSave":</span> <span class="fu">{</span></span>
 <span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"source.organizeImports"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul></li>
 </ul>
 </section>
@@ -554,7 +554,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -628,13 +628,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

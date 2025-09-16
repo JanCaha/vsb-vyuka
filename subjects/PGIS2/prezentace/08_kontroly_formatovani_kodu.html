@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2025-04-07">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -240,7 +240,7 @@ Jan Caha
 <li>kontrola typů proměnných u veškerého typovaného kódu</li>
 <li>někdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce <code>typing.cast()</code></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># přetypování proměnné</span></span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>promenna <span class="op">=</span> typing.cast(NovaTrida, promenna)</span>
@@ -250,7 +250,7 @@ Jan Caha
 <span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    ...</span>
 <span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># za tímto kódem už je promměnná typu NovaTrida</span></span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(promenna, NovaTrida)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(promenna, NovaTrida)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="pep8" class="slide level2">
 <h2><span class="software">pep8</span></h2>
@@ -300,7 +300,7 @@ Jan Caha
 </section>
 <section id="konfigurace-v-vs-code-v-settings.json" class="slide level2">
 <h2>Konfigurace v <span class="software">VS Code</span> v <code>settings.json</code></h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="er">"flake8.args":</span> <span class="ot">[</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="er">"flake8.args":</span> <span class="ot">[</span></span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--max-line-length"</span><span class="ot">,</span></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"160"</span></span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span><span class="er">,</span></span>
@@ -317,11 +317,11 @@ Jan Caha
 <span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a><span class="er">"black-formatter.args":</span> <span class="ot">[</span></span>
 <span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--line-length"</span><span class="ot">,</span></span>
 <span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"120"</span></span>
-<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="konfigurace-v-pyproject.toml" class="slide level2">
 <h2>Konfigurace v <code>pyproject.toml</code></h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.flake8]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.flake8]</span></span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">exclude</span> <span class="op">=</span> <span class="op">[</span><span class="st">".git"</span><span class="op">,</span> <span class="st">"__pycache__"</span><span class="op">,</span> <span class="st">"tests/*"</span><span class="op">]</span></span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
 <span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">ignore</span> <span class="op">=</span> <span class="st">"W293,W504"</span></span>
@@ -354,7 +354,7 @@ Jan Caha
 <span id="cb3-31"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.isort]</span></span>
 <span id="cb3-32"><a aria-hidden="true" tabindex="-1"></a><span class="dt">profile</span> <span class="op">=</span> <span class="st">"black"</span></span>
 <span id="cb3-33"><a aria-hidden="true" tabindex="-1"></a><span class="dt">line_length</span> <span class="op">=</span> <span class="dv">120</span></span>
-<span id="cb3-34"><a aria-hidden="true" tabindex="-1"></a><span class="dt">skip_gitignore</span> <span class="op">=</span> <span class="cn">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-34"><a aria-hidden="true" tabindex="-1"></a><span class="dt">skip_gitignore</span> <span class="op">=</span> <span class="cn">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
@@ -552,7 +552,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -626,13 +626,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

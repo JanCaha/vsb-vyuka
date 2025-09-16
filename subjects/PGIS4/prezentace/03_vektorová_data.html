@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2024-10-07">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -243,17 +243,17 @@ Jan Caha
 </section>
 <section id="tvorba-vrstvy-s-memory-driverem" class="slide level2">
 <h2>Tvorba vrstvy s <code>memory</code> driverem</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> Qgis, QgsFields, QgsMemoryProviderUtils</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> Qgis, QgsFields, QgsMemoryProviderUtils</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> QgsMemoryProviderUtils.createMemoryLayer(</span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sampling Table"</span>,</span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>    fields<span class="op">=</span>QgsFields(),</span>
 <span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    geometryType<span class="op">=</span>Qgis.WkbType.NoGeometry,</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="tvorba-vrstvy-s-memory-driverem-1" class="slide level2">
 <h2>Tvorba vrstvy s <code>memory</code> driverem</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsVectorLayer</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsVectorLayer</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> QgsVectorLayer(</span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"NoGeometry?"</span></span>
@@ -261,14 +261,14 @@ Jan Caha
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"field=b:int"</span></span>
 <span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"source"</span>,</span>
 <span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"memory"</span>,</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="tvorba-qgsfield" class="slide level2">
 <h2>Tvorba <code>QgsField</code></h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.PyQt.QtCore <span class="im">import</span> QMetaType,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.PyQt.QtCore <span class="im">import</span> QMetaType,</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsField</span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>field <span class="op">=</span> QgsField(<span class="st">"field"</span>, QMetaType.Type.Double)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>field <span class="op">=</span> QgsField(<span class="st">"field"</span>, QMetaType.Type.Double)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="qgsfeature" class="slide level2">
 <h2><code>QgsFeature</code></h2>
@@ -295,7 +295,7 @@ Jan Caha
 </section>
 <section id="tvorba-qggeometry" class="slide level2">
 <h2>Tvorba <code>QgGeometry</code></h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY, QgsTriangle</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY, QgsTriangle</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> QgsTriangle(</span>
 <span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    QgsPointXY(<span class="dv">0</span>, <span class="dv">0</span>),</span>
@@ -305,7 +305,7 @@ Jan Caha
 <span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> QgsGeometry(t)</span>
 <span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g.asWkt())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g.asWkt())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
@@ -501,7 +501,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -575,13 +575,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

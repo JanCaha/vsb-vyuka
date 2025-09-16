@@ -6,11 +6,11 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-09-23">
+  <meta name="dcterms.date" content="2025-09-16">
   <title>Výuka - Jan Caha – Úvodní hodina</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -30,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -142,7 +142,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-09-23</p>
+  <p class="date">2025-09-16</p>
 </section>
 <section id="náplň" class="slide level2">
 <h2>Náplň</h2>
@@ -160,7 +160,7 @@ Jan Caha
 <li>práce s <span class="software">QGIS Python API</span> a její <a href="https://qgis.org/pyqgis/master/">dokumentací</a></li>
 <li>operace s geodaty skrze <span class="software">QGIS API</span></li>
 <li>objektově orientované programování (něco málo i funkcionálního programování)</li>
-<li>odchytávání výjimek</li>
+<li>odchytávání výjimek - práce s nimi</li>
 </ul>
 </section>
 <section id="dílčí-úlohy" class="slide level2">
@@ -202,13 +202,23 @@ Jan Caha
 <ul>
 <li>samostatný projekt
 <ul>
-<li>netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód</li>
+<li>netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód (??? - v řešení)</li>
 </ul></li>
-<li>písemka - klíčové položky programování v Pythonu a <span class="software">QGIS</span></li>
+<li>písemka - klíčové položky programování v Pythonu a <span class="software">ArcPy</span>, interpretace kódu</li>
 </ul>
 </section>
-<section id="dotazy" class="title-slide slide level1 center">
-<h1>Dotazy?</h1>
+<section id="github-copilot" class="slide level2">
+<h2>GitHub Copilot</h2>
+<ul>
+<li>budeme s ním zacházet opatrně</li>
+<li>nenahrazuje znalost programování</li>
+<li>je v pořádku ✅: napovídání, vysvětlování, revize kódu<br>
+</li>
+<li>není v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (mamé obvykle i dokumentaci)</li>
+<li>uživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením</li>
+<li><strong>Pravidlo: “Rozumím tomu, co píšu”</strong> -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat</li>
+<li><h1 id="dotazy" class="center">Dotazy?</h1></li>
+</ul>
 
 
 </section>
@@ -401,7 +411,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -475,13 +485,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

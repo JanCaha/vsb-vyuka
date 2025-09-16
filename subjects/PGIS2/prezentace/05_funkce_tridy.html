@@ -6,10 +6,10 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2025-03-24">
@@ -98,7 +98,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -251,8 +251,8 @@ Jan Caha
 </section>
 <section id="funkce-příklad" class="slide level2">
 <h2>Funkce příklad</h2>
-<div id="37362bf8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1f74a297" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>funkce se třemi proměnnými
@@ -282,15 +282,15 @@ Jan Caha
 </section>
 <section id="funkce-obecná-specifická" class="slide level2">
 <h2>Funkce obecná <i class="fa-solid fa-times" aria-label="times"></i> specifická</h2>
-<div id="9d5f6e2e" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
+<div id="88f32c5d" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obecné</span></span>
 <span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="tvorba-upravené-funkce-předefinování-parametrů" class="slide level2">
@@ -299,12 +299,12 @@ Jan Caha
 <li>funkce <code>partial</code> z modulu <code>functools</code></li>
 <li>vytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné</li>
 </ul>
-<div id="94b60c52" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
+<div id="9bbb714c" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># zadáme funkci a potom parametr(y) které chceme předdefinovat</span></span>
 <span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>multiply_hodnotu_dvema <span class="op">=</span> partial(vynasob, b<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>hodnota <span class="op">=</span> multiply_hodnotu_dvema(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>hodnota <span class="op">=</span> multiply_hodnotu_dvema(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="objekty" class="slide level2">
@@ -334,8 +334,8 @@ Jan Caha
 </section>
 <section id="objekt---příklad" class="slide level2">
 <h2>Objekt - příklad</h2>
-<div id="b29ccaed" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Zamestnanec:</span>
+<div id="864c76a9" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Zamestnanec:</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jmeno: <span class="bu">str</span>, hodinovy_plat: <span class="bu">float</span>):</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.jmeno <span class="op">=</span> jmeno</span>
 <span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
@@ -367,20 +367,20 @@ Jan Caha
 <span id="cb4-30"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">*</span> <span class="va">self</span>.hodin_denne</span>
 <span id="cb4-31"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-32"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb4-33"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Zamestnanec </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>jmeno<span class="sc">}</span><span class="ss"> s platem </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>_hodinovy_plat<span class="sc">}</span><span class="ss"> za hodinu"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-33"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Zamestnanec </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>jmeno<span class="sc">}</span><span class="ss"> s platem </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>_hodinovy_plat<span class="sc">}</span><span class="ss"> za hodinu"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="použití-objektu" class="slide level2">
 <h2>Použití objektu</h2>
-<div id="f1f19af7" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>odpracovane_hodiny <span class="op">=</span> <span class="dv">160</span></span>
+<div id="cacec228" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>odpracovane_hodiny <span class="op">=</span> <span class="dv">160</span></span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>zam <span class="op">=</span> Zamestnanec(<span class="st">"Testovaci Zamestnanec"</span>, <span class="dv">250</span>)</span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Denní plat: </span><span class="sc">{</span>zam<span class="sc">.</span>denni_plat<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>zam.uvazek <span class="op">=</span> <span class="fl">0.5</span></span>
 <span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Denní plat: </span><span class="sc">{</span>zam<span class="sc">.</span>denni_plat<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>zam.zvys_plat(<span class="dv">50</span>)</span>
-<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat po zvýšení: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat po zvýšení: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Denní plat: 2000.0
 Denní plat: 1000.0
@@ -585,7 +585,7 @@ Plat po zvýšení: 48000</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -659,13 +659,14 @@ Plat po zvýšení: 48000</code></pre>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

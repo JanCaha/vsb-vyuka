@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2024-11-03">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -272,11 +272,11 @@ Jan Caha
 <li>velice malé minimální požadavky (budeme předpokládat trochu vyšší nároky, aby byl použitělější)</li>
 <li>cílem je mít balík hostovaný na GitHubu, automaticky testovaný a nainstalovatelný příkazem</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install git+https://github.com/<span class="op">&lt;</span>username<span class="op">&gt;</span>/<span class="op">&lt;</span>repository-name<span class="op">&gt;</span>.git <span class="at">--upgrade</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install git+https://github.com/<span class="op">&lt;</span>username<span class="op">&gt;</span>/<span class="op">&lt;</span>repository-name<span class="op">&gt;</span>.git <span class="at">--upgrade</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>lokálně ze složky lze instalovat</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install . <span class="at">--upgrade</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install . <span class="at">--upgrade</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>i v <span class="software">conda</span> prostředí instalujeme přes <span class="software">pip</span>, kvůli jednoduchosti</li>
 </ul>
@@ -310,21 +310,21 @@ Jan Caha
 <ul>
 <li>základní minimum definice balíku</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">"muj_balik"</span></span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">"0.1.0"</span></span>
 <span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">authors</span> <span class="op">=</span> <span class="op">[{ </span><span class="dt">"name"</span><span class="op"> =</span> <span class="st">"autor"</span><span class="op">, </span><span class="dt">"email"</span><span class="op"> =</span> <span class="st">"autor@email.cz"</span><span class="op"> }]</span></span>
 <span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[build-system]</span></span>
 <span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="dt">requires</span> <span class="op">=</span> <span class="op">[</span><span class="st">"setuptools"</span><span class="op">]</span></span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"setuptools.build_meta"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a><span class="dt">build-backend</span> <span class="op">=</span> <span class="st">"setuptools.build_meta"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="python-balík---pyproject.toml-1" class="slide level2">
 <h2>Python balík - <code>pyproject.toml</code></h2>
 <ul>
 <li>doplňující informace</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">readme</span> <span class="op">=</span> <span class="st">"README.md"</span></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Popis balíku"</span></span>
 <span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;=3.8"</span></span>
@@ -348,11 +348,11 @@ Jan Caha
 <span id="cb4-22"><a aria-hidden="true" tabindex="-1"></a><span class="dt">include_package_data</span> <span class="op">=</span> <span class="cn">true</span></span>
 <span id="cb4-23"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-24"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options.package_data]</span></span>
-<span id="cb4-25"><a aria-hidden="true" tabindex="-1"></a><span class="dt">muj_balik</span> <span class="op">=</span> <span class="op">[</span><span class="st">"src/muj_balik/py.typed"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-25"><a aria-hidden="true" tabindex="-1"></a><span class="dt">muj_balik</span> <span class="op">=</span> <span class="op">[</span><span class="st">"src/muj_balik/py.typed"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="python-balík---pyproject.toml---nastavení-nástrojů-1" class="slide level2">
 <h2>Python balík - <code>pyproject.toml</code> - nastavení nástrojů 1</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.black]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.black]</span></span>
 <span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
 <span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.isort]</span></span>
@@ -366,11 +366,11 @@ Jan Caha
 <span id="cb5-12"><a aria-hidden="true" tabindex="-1"></a><span class="dt">disable</span> <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb5-13"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-14"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[flake8]</span></span>
-<span id="cb5-15"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="python-balík---pyproject.toml---nastavení-nástrojů-2" class="slide level2">
 <h2>Python balík - <code>pyproject.toml</code> - nastavení nástrojů 2</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options.extras_require]</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options.extras_require]</span></span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">test</span> <span class="op">=</span> <span class="op">[</span></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"pytest"</span><span class="op">,</span></span>
 <span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"pytest-cov"</span></span>
@@ -381,7 +381,7 @@ Jan Caha
 <span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a><span class="dt">testpaths</span> <span class="op">=</span> <span class="op">[</span></span>
 <span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"tests"</span></span>
 <span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
-<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a><span class="dt">pythonpath</span> <span class="op">=</span> <span class="op">[</span><span class="st">"src"</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a><span class="dt">pythonpath</span> <span class="op">=</span> <span class="op">[</span><span class="st">"src"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="struktura-vlastního-balíku---kódu" class="slide level2">
 <h2>Struktura vlastního balíku - kódu</h2>
@@ -446,7 +446,7 @@ Jan Caha
 <ul>
 <li>klíčové slovo <code>assert</code>, kde první argument je podmínka, která musí být splněna, jinak test selže, pak případně chybové hlášení</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_plus():</span>
@@ -459,7 +459,7 @@ Jan Caha
 <span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> result <span class="op">&gt;</span> <span class="dv">0</span>, <span class="st">"Mělo by být větší než 0"</span></span>
 <span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">TypeError</span>, match<span class="op">=</span><span class="st">"can only concatenate"</span>):</span>
-<span id="cb7-14"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="st">"a"</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-14"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">assert</span> <span class="st">"a"</span> <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="proč-tvořit-balík-a-testy" class="slide level2">
 <h2>Proč tvořit balík a testy?</h2>
@@ -668,7 +668,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -742,13 +742,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

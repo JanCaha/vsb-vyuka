@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,18 +35,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-049bb757564ef9321cc9e204234de359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-80087795ccf6fb8e69f21a1594ffc967.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-049bb757564ef9321cc9e204234de359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d48d0e976c1c799caf626db6d112db69.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-778a258eb4b7d734aa4eb8d659f3b8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d48d0e976c1c799caf626db6d112db69.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -146,7 +147,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -352,13 +353,12 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Výuka - Jan Caha</a> 
-        <div class="sidebar-tools-main">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/JanCaha/vsb-vyuka" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -562,7 +562,7 @@ Prezentace
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1747642456800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317" data-listing-title-sort="Základ [QGIS Python API]{.software}" data-listing-filename-sort="02_qgis_python_api.qmd">
+<tr data-index="0" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1758012649368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="317" data-listing-title-sort="Základ [QGIS Python API]{.software}" data-listing-filename-sort="02_qgis_python_api.qmd">
 <td>
 <span class="listing-date">2024-09-23</span>
 </td>
@@ -572,17 +572,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="1" data-listing-date-sort="1727049600000" data-listing-file-modified-sort="1747642456799" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="179" data-listing-title-sort="Úvodní hodina" data-listing-filename-sort="01_uvod.qmd">
-<td>
-<span class="listing-date">2024-09-23</span>
-</td>
-<td>
-<a href="../subjects/PGIS4/prezentace/01_uvod.html" class="title listing-title">Úvodní hodina</a>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1747642456800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="312" data-listing-title-sort="Vektorová data v [QGIS Python API]{.software}" data-listing-filename-sort="03_vektorová_data.qmd">
+<tr data-index="1" data-listing-date-sort="1728259200000" data-listing-file-modified-sort="1758012649368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="312" data-listing-title-sort="Vektorová data v [QGIS Python API]{.software}" data-listing-filename-sort="03_vektorová_data.qmd">
 <td>
 <span class="listing-date">2024-10-07</span>
 </td>
@@ -592,7 +582,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="3" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1747642456800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="226" data-listing-title-sort="Geometrie v [QGIS Python API]{.software}" data-listing-filename-sort="04_geometrie.qmd">
+<tr data-index="2" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1758012649368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="226" data-listing-title-sort="Geometrie v [QGIS Python API]{.software}" data-listing-filename-sort="04_geometrie.qmd">
 <td>
 <span class="listing-date">2024-10-14</span>
 </td>
@@ -602,7 +592,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="4" data-listing-date-sort="1729468800000" data-listing-file-modified-sort="1747642456800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="183" data-listing-title-sort="Rastrová data v [QGIS Python API]{.software}" data-listing-filename-sort="05_rastrova_data.qmd">
+<tr data-index="3" data-listing-date-sort="1729468800000" data-listing-file-modified-sort="1758012649368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="183" data-listing-title-sort="Rastrová data v [QGIS Python API]{.software}" data-listing-filename-sort="05_rastrova_data.qmd">
 <td>
 <span class="listing-date">2024-10-21</span>
 </td>
@@ -612,7 +602,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="5" data-listing-date-sort="1730592000000" data-listing-file-modified-sort="1747642456800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="342" data-listing-title-sort="Processingové nástroje [QGIS Python API]{.software}" data-listing-filename-sort="06_qgis_nastroje.qmd">
+<tr data-index="4" data-listing-date-sort="1730592000000" data-listing-file-modified-sort="1758012649368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="342" data-listing-title-sort="Processingové nástroje [QGIS Python API]{.software}" data-listing-filename-sort="06_qgis_nastroje.qmd">
 <td>
 <span class="listing-date">2024-11-03</span>
 </td>
@@ -622,12 +612,22 @@ Prezentace
 
 </tr>
 
-<tr data-index="6" data-listing-date-sort="1732492800000" data-listing-file-modified-sort="1747642456800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="99" data-listing-title-sort="Projekt a Layout [QGIS Python API]{.software}" data-listing-filename-sort="07_projekt_layout.qmd">
+<tr data-index="5" data-listing-date-sort="1732492800000" data-listing-file-modified-sort="1758012649368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="99" data-listing-title-sort="Projekt a Layout [QGIS Python API]{.software}" data-listing-filename-sort="07_projekt_layout.qmd">
 <td>
 <span class="listing-date">2024-11-25</span>
 </td>
 <td>
 <a href="../subjects/PGIS4/prezentace/07_projekt_layout.html" class="title listing-title">Projekt a Layout <span class="software">QGIS Python API</span></a>
+</td>
+
+</tr>
+
+<tr data-index="6" data-listing-date-sort="1757980800000" data-listing-file-modified-sort="1758012649368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="273" data-listing-title-sort="Úvodní hodina" data-listing-filename-sort="01_uvod.qmd">
+<td>
+<span class="listing-date">2025-09-16</span>
+</td>
+<td>
+<a href="../subjects/PGIS4/prezentace/01_uvod.html" class="title listing-title">Úvodní hodina</a>
 </td>
 
 </tr>
@@ -886,13 +886,14 @@ Skript
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

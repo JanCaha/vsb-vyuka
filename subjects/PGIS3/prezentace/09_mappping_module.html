@@ -6,8 +6,8 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2024-11-25">
@@ -96,7 +96,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-151b3420a633a00f793c5f28bb86c0ce.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -225,9 +225,9 @@ Jan Caha
 <ul>
 <li>buď práce s aktuálním projektem nebo s konkrétním projektem uloženým na disku</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"CURRENT"</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"CURRENT"</span>)</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## nebo</span></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="vs">r"C:</span><span class="er">\</span><span class="vs">Projects</span><span class="er">\</span><span class="vs">YosemiteNP</span><span class="er">\</span><span class="vs">Yosemite</span><span class="dv">.</span><span class="vs">aprx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="vs">r"C:</span><span class="er">\</span><span class="vs">Projects</span><span class="er">\</span><span class="vs">YosemiteNP</span><span class="er">\</span><span class="vs">Yosemite</span><span class="dv">.</span><span class="vs">aprx"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="arcgisproject" class="slide level2">
 <h2><code>ArcGISProject</code></h2>
@@ -269,7 +269,7 @@ Jan Caha
 <ul>
 <li>exporty layoutu do grafického souboru (typicky PDF)</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">'current'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">'current'</span>)</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>lyt <span class="op">=</span> p.listLayouts()[<span class="dv">0</span>]</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> arcpy.mp.CreateExportFormat(<span class="st">'PDF'</span>, <span class="vs">r'C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output1</span><span class="dv">.</span><span class="vs">pdf'</span>)</span>
@@ -278,7 +278,7 @@ Jan Caha
 <span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>pdf.resolution <span class="op">=</span> <span class="dv">300</span></span>
 <span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>pdf.filePath <span class="op">=</span> <span class="vs">r'C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output2</span><span class="dv">.</span><span class="vs">pdf'</span>  </span>
 <span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
@@ -474,7 +474,7 @@ Jan Caha
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -548,13 +548,14 @@ Jan Caha
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

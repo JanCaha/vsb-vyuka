@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,18 +69,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-049bb757564ef9321cc9e204234de359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-80087795ccf6fb8e69f21a1594ffc967.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-049bb757564ef9321cc9e204234de359.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d48d0e976c1c799caf626db6d112db69.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-778a258eb4b7d734aa4eb8d659f3b8b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d48d0e976c1c799caf626db6d112db69.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -180,7 +181,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -386,13 +387,12 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Výuka - Jan Caha</a> 
-        <div class="sidebar-tools-main">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
     <a href="https://github.com/JanCaha/vsb-vyuka" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -595,7 +595,7 @@ Prezentace
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
+<tr data-index="0" data-listing-date-sort="1739750400000" data-listing-file-modified-sort="1758012649364" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
 <td>
 <span class="listing-date">2025-02-17</span>
 </td>
@@ -605,7 +605,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="1" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1578" data-listing-title-sort="Opakování Pythonu" data-listing-filename-sort="02_opakovani_python.qmd">
+<tr data-index="1" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1758012649364" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1578" data-listing-title-sort="Opakování Pythonu" data-listing-filename-sort="02_opakovani_python.qmd">
 <td>
 <span class="listing-date">2025-02-24</span>
 </td>
@@ -615,7 +615,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="2" data-listing-date-sort="1740960000000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="842" data-listing-title-sort="Knihovna [GDAL/OGR]{.software}" data-listing-filename-sort="03_gdal_ogr.qmd">
+<tr data-index="2" data-listing-date-sort="1740960000000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="842" data-listing-title-sort="Knihovna [GDAL/OGR]{.software}" data-listing-filename-sort="03_gdal_ogr.qmd">
 <td>
 <span class="listing-date">2025-03-03</span>
 </td>
@@ -625,7 +625,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="3" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="271" data-listing-title-sort="Knihovny [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}" data-listing-filename-sort="04_fiona_rasterio_shapely.qmd">
+<tr data-index="3" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="271" data-listing-title-sort="Knihovny [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}" data-listing-filename-sort="04_fiona_rasterio_shapely.qmd">
 <td>
 <span class="listing-date">2025-03-17</span>
 </td>
@@ -635,7 +635,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="4" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="351" data-listing-title-sort="Visual Studio Code a Github Copilot" data-listing-filename-sort="07_vs_code_github_copilot.qmd">
+<tr data-index="4" data-listing-date-sort="1742169600000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="351" data-listing-title-sort="Visual Studio Code a Github Copilot" data-listing-filename-sort="07_vs_code_github_copilot.qmd">
 <td>
 <span class="listing-date">2025-03-17</span>
 </td>
@@ -645,7 +645,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="5" data-listing-date-sort="1742774400000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734" data-listing-title-sort="Funkce a třídy" data-listing-filename-sort="05_funkce_tridy.qmd">
+<tr data-index="5" data-listing-date-sort="1742774400000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734" data-listing-title-sort="Funkce a třídy" data-listing-filename-sort="05_funkce_tridy.qmd">
 <td>
 <span class="listing-date">2025-03-24</span>
 </td>
@@ -655,7 +655,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="6" data-listing-date-sort="1743292800000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="521" data-listing-title-sort="Python Balíčky" data-listing-filename-sort="06_baliky.qmd">
+<tr data-index="6" data-listing-date-sort="1743292800000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="521" data-listing-title-sort="Python Balíčky" data-listing-filename-sort="06_baliky.qmd">
 <td>
 <span class="listing-date">2025-03-30</span>
 </td>
@@ -665,7 +665,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="7" data-listing-date-sort="1743984000000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="635" data-listing-title-sort="Git, Github" data-listing-filename-sort="09_git_github.qmd">
+<tr data-index="7" data-listing-date-sort="1743984000000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="635" data-listing-title-sort="Git, Github" data-listing-filename-sort="09_git_github.qmd">
 <td>
 <span class="listing-date">2025-04-07</span>
 </td>
@@ -675,7 +675,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="8" data-listing-date-sort="1743984000000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="377" data-listing-title-sort="Kontroly a formátování kódu" data-listing-filename-sort="08_kontroly_formatovani_kodu.qmd">
+<tr data-index="8" data-listing-date-sort="1743984000000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="377" data-listing-title-sort="Kontroly a formátování kódu" data-listing-filename-sort="08_kontroly_formatovani_kodu.qmd">
 <td>
 <span class="listing-date">2025-04-07</span>
 </td>
@@ -685,7 +685,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="9" data-listing-date-sort="1744588800000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="390" data-listing-title-sort="Datové rámce v Pythonu - pandas, geopandas a polars" data-listing-filename-sort="10_pandas_polars.qmd">
+<tr data-index="9" data-listing-date-sort="1744588800000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="390" data-listing-title-sort="Datové rámce v Pythonu - pandas, geopandas a polars" data-listing-filename-sort="10_pandas_polars.qmd">
 <td>
 <span class="listing-date">2025-04-14</span>
 </td>
@@ -695,7 +695,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="10" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="539" data-listing-title-sort="Matplotlib, Jupyter Notebook" data-listing-filename-sort="11_mathplotlib_notebook.qmd">
+<tr data-index="10" data-listing-date-sort="1745798400000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="539" data-listing-title-sort="Matplotlib, Jupyter Notebook" data-listing-filename-sort="11_mathplotlib_notebook.qmd">
 <td>
 <span class="listing-date">2025-04-28</span>
 </td>
@@ -705,7 +705,7 @@ Prezentace
 
 </tr>
 
-<tr data-index="11" data-listing-date-sort="1746403200000" data-listing-file-modified-sort="1747642456797" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="412" data-listing-title-sort="Spustitelné programy" data-listing-filename-sort="12_spustitelne_soubory.qmd">
+<tr data-index="11" data-listing-date-sort="1746403200000" data-listing-file-modified-sort="1758012649365" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="412" data-listing-title-sort="Spustitelné programy" data-listing-filename-sort="12_spustitelne_soubory.qmd">
 <td>
 <span class="listing-date">2025-05-05</span>
 </td>
@@ -945,7 +945,7 @@ Skript
 <li>instalace Conda environmentu</li>
 </ul>
 <p>Definice environment souboru, např. s názvem <code>env-pgis2.yaml</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> pgis2</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> pgis2</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> conda-forge</span></span>
@@ -981,10 +981,10 @@ Skript
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> jupyter</span></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> ipykernel</span></span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">  #- pip:</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">    #- geopolars</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co">    #- geopolars</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Z conda prompt následně spustit:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-f</span> env-pgis2.yaml</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-f</span> env-pgis2.yaml</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate pgis2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="další" class="level2">
 <h2 class="anchored" data-anchor-id="další">Další</h2>
@@ -1064,13 +1064,14 @@ Skript
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
