@@ -2,7 +2,7 @@
 title: "Základ [ArcPy]{.software} pro [ArcGIS Pro]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2024-09-23
+date: 2025-09-16
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -20,19 +20,20 @@ execute:
 
 - [ArcPy]{.software} je knihovna pro Python, která umožňuje přístup k funkcím [ArcGIS Pro]{.software}
 - umožňuje automatizaci procesů v [ArcGIS Pro]{.software}
-- umožňuje vytváření vlastních nástrojů (v ArcGIS Pro) a skriptů (samostatných)
+- umožňuje vytváření vlastních nástrojů (v ArcGIS Pro) a skriptů (samostatně spustitelných)
 - jedná je python binding (nejspíše z C++), takže zdrojové kódy nejsou dostupné a knihovna ani není pro python typovaná (podobně jako [GDAL/OGR]{.software}), což komplikuje práci s ní - chybí v IDE napovídání a podobně
 
 ## Struktura ArcPy{.software}
 
 - část funkcí dostupná pod `arcpy.*`
-- další část v modulech např. **Data Access** `arcpy.da.*`, **Mapping** `arcpy.mp.*` a další
+- další část v dílčích modulech např. **Data Access** `arcpy.da.*`, **Mapping** `arcpy.mp.*` a další
 - podstatné jé číst dokumentaci a vidět příklady použití
+- pozor na verze API, které již jsou nedoporučované či zastaralé (označované jako **deprecated**)
  
 ## Objekt **env**
 
 - "prostředí" v němž [ArcPy]{.software} pracuje - známe z GUI [ArcGIS Pro]{.software}
-- dostupné jako `arcpy.env.*` kde za `*` dosazujeme proměnnou
+- dostupné jako `arcpy.env.*` kde za `*` dosazujeme konkrétní proměnnou
 - `arcpy.env.workspace` - pracovní adresář
 - `arcpy.env.overwriteOutput` - přepsat výstupní soubory analýz a dalších operací
 - `arcpy.env.scratchGDB` - dočasná databáze pro dílčí výpočty a operace
@@ -40,13 +41,13 @@ execute:
 ## Cesty používané v ArcPy{.software}
 
 - bud absolutní cesty na disku (např. `C:/data/soubor.shp`), nebo `C:/data/soubor.gdb/nazev_vrstvy`
-- nebo relativní cesty, jako je název vrstvy uvažovaný v `acpy.env.workspace` (např. `soubor.shp`, `nazev_vrstvy`)
-- u rastrů lze přistpovat i k pásmům jako `C:/data/soubor.tif/Band_1`
+- nebo relativní cesty, jako je název vrstvy uvažovaný v `arcpy.env.workspace` (např. `soubor.shp`, `nazev_vrstvy`)
+- u rastrů lze přistupovat i k jednotlivým pásmům jako `C:/data/soubor.tif/Band_1`
 - vždy je třeba myslet na to, kde se nacházíme a jaké cesty používáme
 
 ## Popis objektu
 
 - `arcpy.Describe()` - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu
-- výstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme)
+- výstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)
   
 # Dotazy?{.center}
