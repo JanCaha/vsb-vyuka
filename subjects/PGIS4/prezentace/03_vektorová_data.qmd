@@ -2,7 +2,7 @@
 title: "Vektorová data v [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2024-10-07
+date: 2025-09-30
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -37,7 +37,6 @@ execute:
 
 - přístup k prvkům pomocí funkce `getFeatures()` vrací `QgsFeatureIterator`
   - lze vyspecifikovat buď pomocí `QgsFeatureRequest` nebo `QgsRectangle`
-
 
 ## Tvorba vrstvy s `memory` driverem
 
