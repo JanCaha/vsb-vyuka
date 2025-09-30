@@ -19,5 +19,6 @@ for feature in layer.getFeatures():
     print(geom.asWkt())
     print("*" * 50)
 
-# korektní ukončení QGIS
-qgis.exitQgis()
+# korektní ukončení QGIS ale není vhodné volat samostatně, dojde k tomu automaticky
+# manuální ukončení vypíše do konzole chybu "segmentation fault (core dumped)" - což není výrazný problém, ale lepší se tomu vyhnout
+# qgis.exitQgis()

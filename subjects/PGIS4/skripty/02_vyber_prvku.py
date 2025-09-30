@@ -27,5 +27,3 @@ feature_req.setOrderBy(order_by)
 feature: QgsFeature
 for feature in layer.getFeatures(feature_req):
     print(feature.attributes())
-
-qgis.exitQgis()
