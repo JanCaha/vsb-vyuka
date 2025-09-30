@@ -84,5 +84,6 @@ V souboru `.vscode/settings.json` ve složce projektu přidejte:
         "C:/OSGeo4W64/apps/qgis/python/plugins"
     ]
 }
+```
 
 Pokud pracujete na Windows v [Conda]{.software} prostředí, bude cesta jiná, ale hledáte nadřazené složky, které obsahují soubory s příponou **.pyd**.
