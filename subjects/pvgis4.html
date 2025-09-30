@@ -168,6 +168,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   })
   </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="Programování v GIS 4 (PvGIS4) – Výuka - Jan Caha">
 <meta property="og:description" content="Výukové materiály">
@@ -553,7 +582,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="prezentace" class="level2 presentations">
 <h2 class="presentations anchored" data-anchor-id="prezentace">Prezentace</h2>
 <div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
 
+<th>
+Datum
+</th>
+
+<th>
+Prezentace
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1759224686868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="226" data-listing-title-sort="Geometrie v [QGIS Python API]{.software}" data-listing-filename-sort="04_geometrie.qmd">
+<td>
+<span class="listing-date">2024-10-14</span>
+</td>
+<td>
+<a href="../subjects/PGIS4/prezentace/04_geometrie.html" class="title listing-title">Geometrie v <span class="software">QGIS Python API</span></a>
+</td>
+
+</tr>
+
+<tr data-index="1" data-listing-date-sort="1729468800000" data-listing-file-modified-sort="1759224686868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="183" data-listing-title-sort="Rastrová data v [QGIS Python API]{.software}" data-listing-filename-sort="05_rastrova_data.qmd">
+<td>
+<span class="listing-date">2024-10-21</span>
+</td>
+<td>
+<a href="../subjects/PGIS4/prezentace/05_rastrova_data.html" class="title listing-title">Rastrová data v <span class="software">QGIS Python API</span></a>
+</td>
+
+</tr>
+
+<tr data-index="2" data-listing-date-sort="1730592000000" data-listing-file-modified-sort="1759224686869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="342" data-listing-title-sort="Processingové nástroje [QGIS Python API]{.software}" data-listing-filename-sort="06_qgis_nastroje.qmd">
+<td>
+<span class="listing-date">2024-11-03</span>
+</td>
+<td>
+<a href="../subjects/PGIS4/prezentace/06_qgis_nastroje.html" class="title listing-title">Processingové nástroje <span class="software">QGIS Python API</span></a>
+</td>
+
+</tr>
+
+<tr data-index="3" data-listing-date-sort="1732492800000" data-listing-file-modified-sort="1759224686869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="99" data-listing-title-sort="Projekt a Layout [QGIS Python API]{.software}" data-listing-filename-sort="07_projekt_layout.qmd">
+<td>
+<span class="listing-date">2024-11-25</span>
+</td>
+<td>
+<a href="../subjects/PGIS4/prezentace/07_projekt_layout.html" class="title listing-title">Projekt a Layout <span class="software">QGIS Python API</span></a>
+</td>
+
+</tr>
+
+<tr data-index="4" data-listing-date-sort="1757980800000" data-listing-file-modified-sort="1759224686868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="272" data-listing-title-sort="Úvodní hodina" data-listing-filename-sort="01_uvod.qmd">
+<td>
+<span class="listing-date">2025-09-16</span>
+</td>
+<td>
+<a href="../subjects/PGIS4/prezentace/01_uvod.html" class="title listing-title">Úvodní hodina</a>
+</td>
+
+</tr>
+
+<tr data-index="5" data-listing-date-sort="1757980800000" data-listing-file-modified-sort="1759224686868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="315" data-listing-title-sort="Základ [QGIS Python API]{.software}" data-listing-filename-sort="02_qgis_python_api.qmd">
+<td>
+<span class="listing-date">2025-09-16</span>
+</td>
+<td>
+<a href="../subjects/PGIS4/prezentace/02_qgis_python_api.html" class="title listing-title">Základ <span class="software">QGIS Python API</span></a>
+</td>
+
+</tr>
+
+<tr data-index="6" data-listing-date-sort="1759190400000" data-listing-file-modified-sort="1759224686868" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="312" data-listing-title-sort="Vektorová data v [QGIS Python API]{.software}" data-listing-filename-sort="03_vektorová_data.qmd">
+<td>
+<span class="listing-date">2025-09-30</span>
+</td>
+<td>
+<a href="../subjects/PGIS4/prezentace/03_vektorová_data.html" class="title listing-title">Vektorová data v <span class="software">QGIS Python API</span></a>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
 <section id="zdroje" class="level2 sources">
@@ -570,162 +687,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ukázkové-kódy" class="level2 codes">
 <h2 class="codes anchored" data-anchor-id="ukázkové-kódy">Ukázkové kódy</h2>
 <div id="listing-codes" class="quarto-listing quarto-listing-container-table">
-
-</div>
-</section>
-<section id="další" class="level2">
-<h2 class="anchored" data-anchor-id="další">Další</h2>
-<p>Doporučuji zřízení a otestování <strong>GitHub Copilot</strong> dle <a href="../tools/github-copilot.html">návodu</a> pro zjednodušení psaní kódu v Pythonu.</p>
-<p>Process nastavení PYthonu a QGIS pro <span class="software">VS Code</span> je popsán <a href="../tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api">zde</a>.</p>
-</section>
-<section id="nastavení-vs-code-pro-práci-s-qgis-api" class="level2">
-<h2 class="anchored" data-anchor-id="nastavení-vs-code-pro-práci-s-qgis-api">Nastavení VS Code pro práci s QGIS API</h2>
-<p>V souboru <code>.vscode/settings.json</code> ve složce projektu přidejte:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"python.autoComplete.extraPaths"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"C:/OSGeo4W64/apps/qgis/python"</span><span class="ot">,</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"C:/OSGeo4W64/apps/qgis/python/plugins"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="er">Pokud</span> <span class="er">pracujete</span> <span class="er">na</span> <span class="er">Windows</span> <span class="er">v</span> <span class="ot">[</span><span class="er">Conda</span><span class="ot">]</span><span class="fu">{</span><span class="er">.software</span><span class="fu">}</span> <span class="er">prostředí,</span> <span class="er">bude</span> <span class="er">cesta</span> <span class="er">jiná,</span> <span class="er">ale</span> <span class="er">hledáte</span> <span class="er">nadřazené</span> <span class="er">složky,</span> <span class="er">které</span> <span class="er">obsahují</span> <span class="er">soubory</span> <span class="er">s</span> <span class="er">příponou</span> <span class="er">**.pyd**.</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="er">:::</span><span class="fu">{</span><span class="er">#quarto-navigation-envelope</span> <span class="er">.hidden</span><span class="fu">}</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Výuka</span> <span class="er">-</span> <span class="er">Jan</span> <span class="er">Caha</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl"</span><span class="fu">}</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Výuka</span> <span class="er">-</span> <span class="er">Jan</span> <span class="er">Caha</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1uYXZiYXItdGl0bGU="</span><span class="fu">}</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Visual</span> <span class="er">Studio</span> <span class="er">Code</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1uZXh0"</span><span class="fu">}</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Programování</span> <span class="er">v</span> <span class="er">GIS</span> <span class="dv">3</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1wcmV2"</span><span class="fu">}</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Předměty</span> <span class="er">letní</span> <span class="er">semestr</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMQ=="</span><span class="fu">}</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Programování</span> <span class="er">v</span> <span class="er">GIS</span> <span class="dv">2</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi9zdWJqZWN0cy9wZ2lzMi5odG1sUHJvZ3JhbW92w6Fuw60tdi1HSVMtMg=="</span><span class="fu">}</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Programování</span> <span class="er">v</span> <span class="er">GIS</span> <span class="dv">5</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi9zdWJqZWN0cy9wdmdpczUuaHRtbFByb2dyYW1vdsOhbsOtLXYtR0lTLTU="</span><span class="fu">}</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Interpretace</span> <span class="er">geodat</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi9zdWJqZWN0cy9pZGcuaHRtbEludGVycHJldGFjZS1nZW9kYXQ="</span><span class="fu">}</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Prostorové</span> <span class="er">databázové</span> <span class="er">systémy</span> <span class="dv">2</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi9zdWJqZWN0cy9wZGJzMi5odG1sUHJvc3Rvcm92w6ktZGF0YWLDoXpvdsOpLXN5c3TDqW15LTI="</span><span class="fu">}</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Předměty</span> <span class="er">zimní</span> <span class="er">semestr</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMg=="</span><span class="fu">}</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Programování</span> <span class="er">v</span> <span class="er">GIS</span> <span class="dv">3</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi9zdWJqZWN0cy9wZ2lzMy5odG1sUHJvZ3JhbW92w6Fuw60tdi1HSVMtMw=="</span><span class="fu">}</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Programování</span> <span class="er">v</span> <span class="er">GIS</span> <span class="dv">4</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi9zdWJqZWN0cy9wdmdpczQuaHRtbFByb2dyYW1vdsOhbsOtLXYtR0lTLTQ="</span><span class="fu">}</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Nástroje</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMw=="</span><span class="fu">}</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Visual</span> <span class="er">Studio</span> <span class="er">Code</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi90b29scy92c2NvZGUuaHRtbFZpc3VhbC1TdHVkaW8tQ29kZQ=="</span><span class="fu">}</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Linux</span> <span class="er">Mint</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi90b29scy9saW51eC1taW50Lmh0bWxMaW51eC1NaW50"</span><span class="fu">}</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">OSGeo4W</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi90b29scy9vc2dlbzR3Lmh0bWxPU0dlbzRX"</span><span class="fu">}</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">GitHub</span> <span class="er">Copilot</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi90b29scy9naXRodWItY29waWxvdC5odG1sR2l0SHViLUNvcGlsb3Q="</span><span class="fu">}</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Popisy</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNA=="</span><span class="fu">}</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Python</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi9kZXNjcmlwdGlvbnMvcHl0aG9uLmh0bWxQeXRob24="</span><span class="fu">}</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Python</span> <span class="er">Error</span> <span class="er">Traceback</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWludC1zaWRlYmFyOi9kZXNjcmlwdGlvbnMvcHl0aG9uLXRyYWNlYmFjay5odG1sUHl0aG9uLUVycm9yLVRyYWNlYmFjaw=="</span><span class="fu">}</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Předměty</span> <span class="er">zimní</span> <span class="er">semestr</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWJyZWFkY3J1bWJzLVDFmWVkbcSbdHktemltbsOtLXNlbWVzdHI="</span><span class="fu">}</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">Programování</span> <span class="er">v</span> <span class="er">GIS</span> <span class="dv">4</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWJyZWFkY3J1bWJzLVByb2dyYW1vdsOhbsOtLXYtR0lTLTQ="</span><span class="fu">}</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="er">:::</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"Zm9vdGVyLWxlZnQ="</span><span class="fu">}</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="er">&amp;copy;</span> <span class="er">Copyright</span> <span class="er">2025,</span> <span class="er">Jan</span> <span class="er">Caha</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="er">:::</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="er">:::</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"Zm9vdGVyLXJpZ2h0"</span><span class="fu">}</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="er">This</span> <span class="er">page</span> <span class="er">is</span> <span class="er">built</span> <span class="er">with</span> <span class="ot">[</span><span class="er">Quarto</span><span class="ot">]</span><span class="er">(https://quarto.org/).</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="er">:::</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="er">:::</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="er">:::</span><span class="fu">{</span><span class="er">#quarto-listing-pipeline</span> <span class="er">.hidden</span><span class="fu">}</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ot">[</span><span class="er">$e</span> <span class="er">=</span> <span class="er">mC^</span><span class="dv">2</span><span class="er">$</span><span class="ot">]</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cXVhcnRvLWVuYWJsZS1tYXRoLWlubGluZQ=="</span><span class="fu">}</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="er">:::</span><span class="fu">{</span><span class="er">.hidden</span> <span class="er">.quarto-markdown-envelope-contents</span> <span class="er">render-id=</span><span class="dt">"cGlwZWxpbmUtbGlzdGluZy1wcmV6ZW50YWNl"</span><span class="fu">}</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="er">```</span><span class="fu">{</span><span class="er">=html</span><span class="fu">}</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;table</span> <span class="er">class="quarto-listing-table</span> <span class="er">table"&gt;</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;thead&gt;</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;tr&gt;</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;th&gt;</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="er">Datum</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/th&gt;</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;th&gt;</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="er">Prezentace</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/th&gt;</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/tr&gt;</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;/thead&gt;</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;tbody</span> <span class="er">class="list"&gt;</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;tr</span> <span class="er">data-index='0'</span> <span class="er">data-listing-date-sort='1728864000000'</span> <span class="er">data-listing-file-modified-sort='1759223607316'</span> <span class="er">data-listing-date-modified-sort='NaN'</span> <span class="er">data-listing-reading-time-sort='2'</span> <span class="er">data-listing-word-count-sort='226'</span> <span class="er">data-listing-title-sort='Geometrie</span> <span class="er">v</span> <span class="ot">[</span><span class="er">QGIS</span> <span class="er">Python</span> <span class="er">API</span><span class="ot">]</span><span class="fu">{</span><span class="er">.software</span><span class="fu">}</span><span class="er">'</span> <span class="er">data-listing-filename-sort='04_geometrie.qmd'&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-
-<span class="listing-date">2024-10-14</span>
-
-
-<a href="../subjects/PGIS4/prezentace/04_geometrie.html" class="title listing-title">Geometrie v <span class="software">QGIS Python API</span></a>
-
-
-
-
-
-
-<span class="listing-date">2024-10-21</span>
-
-
-<a href="../subjects/PGIS4/prezentace/05_rastrova_data.html" class="title listing-title">Rastrová data v <span class="software">QGIS Python API</span></a>
-
-
-
-
-
-
-<span class="listing-date">2024-11-03</span>
-
-
-<a href="../subjects/PGIS4/prezentace/06_qgis_nastroje.html" class="title listing-title">Processingové nástroje <span class="software">QGIS Python API</span></a>
-
-
-
-
-
-
-<span class="listing-date">2024-11-25</span>
-
-
-<a href="../subjects/PGIS4/prezentace/07_projekt_layout.html" class="title listing-title">Projekt a Layout <span class="software">QGIS Python API</span></a>
-
-
-
-
-
-
-<span class="listing-date">2025-09-16</span>
-
-
-<a href="../subjects/PGIS4/prezentace/01_uvod.html" class="title listing-title">Úvodní hodina</a>
-
-
-
-
-
-
-<span class="listing-date">2025-09-16</span>
-
-
-<a href="../subjects/PGIS4/prezentace/02_qgis_python_api.html" class="title listing-title">Základ <span class="software">QGIS Python API</span></a>
-
-
-
-
-
-
-<span class="listing-date">2025-09-30</span>
-
-
-<a href="../subjects/PGIS4/prezentace/03_vektorová_data.html" class="title listing-title">Vektorová data v <span class="software">QGIS Python API</span></a>
-
-
-
-
-
-
-<div class="listing-no-matching d-none">No matching items</div>
-<p>:::</p>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="cGlwZWxpbmUtbGlzdGluZy1jb2Rlcw==">
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -886,7 +847,24 @@ Skript
 </table>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
-<p>:::</p>
+</section>
+<section id="další" class="level2">
+<h2 class="anchored" data-anchor-id="další">Další</h2>
+<p>Doporučuji zřízení a otestování <strong>GitHub Copilot</strong> dle <a href="../tools/github-copilot.html">návodu</a> pro zjednodušení psaní kódu v Pythonu.</p>
+<p>Process nastavení PYthonu a QGIS pro <span class="software">VS Code</span> je popsán <a href="../tools/osgeo4w.html#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api">zde</a>.</p>
+</section>
+<section id="nastavení-vs-code-pro-práci-s-qgis-api" class="level2">
+<h2 class="anchored" data-anchor-id="nastavení-vs-code-pro-práci-s-qgis-api">Nastavení VS Code pro práci s QGIS API</h2>
+<p>V souboru <code>.vscode/settings.json</code> ve složce projektu přidejte:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"python.autoComplete.extraPaths"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"C:/OSGeo4W64/apps/qgis/python"</span><span class="ot">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"C:/OSGeo4W64/apps/qgis/python/plugins"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pokud pracujete na Windows v <span class="software">Conda</span> prostředí, bude cesta jiná, ale hledáte nadřazené složky, které obsahují soubory s příponou <strong>.pyd</strong>.</p>
+
+
 
 </section>
 
@@ -1320,14 +1298,14 @@ Skript
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      <div class="footer-contents">© Copyright 2025, Jan Caha</div>  
-    </div>   
+<p>© Copyright 2025, Jan Caha</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-      <div class="footer-contents">This page is built with [Quarto](https://quarto.org/).</div>  
-    </div>
+<p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
   </div>
 </footer>
 
