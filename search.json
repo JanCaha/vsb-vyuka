@@ -185,7 +185,7 @@
     "href": "subjects/PGIS4/prezentace/02_qgis_python_api.html#qgis",
     "title": "Základ QGIS Python API",
     "section": "QGIS",
-    "text": "QGIS\n\nnejrrozšířenější open-source GIS software\nvychází a staví na mnoha open-source knihovnách - např. GDAL/OGR, PROJ, GEOS, PostGIS, PDAL, SpatiaLite, ale i GRASS a další\nmíra rozšřenosti se výrazně liší regionálně, ale i dle oboru"
+    "text": "QGIS\n\nnejrozšířenější open-source GIS software\nvychází a staví na mnoha open-source knihovnách - např. GDAL/OGR, PROJ, GEOS, PostGIS, PDAL, SpatiaLite, ale i GRASS a další\nmíra rozšířenosti se výrazně liší regionálně, ale i dle oboru"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/02_qgis_python_api.html#zdrojový-kód-qgis",
@@ -199,7 +199,7 @@
     "href": "subjects/PGIS4/prezentace/02_qgis_python_api.html#qgis-python-api",
     "title": "Základ QGIS Python API",
     "section": "QGIS Python API",
-    "text": "QGIS Python API\n\nčást QGIS API, která je dostupná v Pythonu pro použití vyvojářů\numožňuje přístup k třídám a funcím QGIS, stejně jako práci s celým softwarem\ndokumentace - v poslední době výrazně vylepšená a rozšířená"
+    "text": "QGIS Python API\n\nčást QGIS API, která je dostupná v Pythonu pro použití vyvojářů\numožňuje přístup k třídám a funkcím QGIS, stejně jako práci s celým softwarem\ndokumentace - v poslední době výrazně vylepšená a rozšířená"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/02_qgis_python_api.html#struktura-qgis-python-api",
@@ -213,7 +213,7 @@
     "href": "subjects/PGIS4/prezentace/02_qgis_python_api.html#vývoj-qgis",
     "title": "Základ QGIS Python API",
     "section": "Vývoj QGIS",
-    "text": "Vývoj QGIS\n\nkontinuální vývoj\nsudé verze - vydávají se (3.32, 3.34, 3.36, …), liché verze jsou vývojové (3.33, 3.35, 3.37, 3.39, …)\n3 verze ročně - z toho jedná je s dlouhodobou podporou (LTR)\nfinancováné skrze sponzory, granty, ale i příspěvky komunity\nvhodné pravidelně updatovat"
+    "text": "Vývoj QGIS\n\nkontinuální vývoj\nsudé verze - vydávají se (3.40, 3.42, 3.44, …), liché verze jsou vývojové (3.41, 3.43, 3.45, 3.99, …)\n3 verze ročně - z toho jedná je s dlouhodobou podporou (LTR)\nfinancováno skrze sponzory, granty, ale i příspěvky komunity\nvhodné pravidelně updatovat"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/02_qgis_python_api.html#functionalita-qgis",
@@ -1520,7 +1520,7 @@
     "href": "subjects/pvgis4.html#prezentace",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-09-23\n\n\nZáklad QGIS Python API\n\n\n\n\n\n\n2024-10-07\n\n\nVektorová data v QGIS Python API\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v QGIS Python API\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v QGIS Python API\n\n\n\n\n\n\n2024-11-03\n\n\nProcessingové nástroje QGIS Python API\n\n\n\n\n\n\n2024-11-25\n\n\nProjekt a Layout QGIS Python API\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v QGIS Python API\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v QGIS Python API\n\n\n\n\n\n\n2024-11-03\n\n\nProcessingové nástroje QGIS Python API\n\n\n\n\n\n\n2024-11-25\n\n\nProjekt a Layout QGIS Python API\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad QGIS Python API\n\n\n\n\n\n\n2025-09-30\n\n\nVektorová data v QGIS Python API\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -2969,7 +2969,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.4050260 -1.2262469 -0.2559726 -0.1937497 -0.4620983"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.584635286 -0.008535442 -0.001487813 -0.098892778 -0.064428106"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -3298,7 +3298,7 @@
     "href": "subjects/PGIS4/prezentace/01_uvod.html#z-čeho-vycházíme",
     "title": "Úvodní hodina",
     "section": "Z čeho vycházíme",
-    "text": "Z čeho vycházíme\n\nznalost Pythonu dle předmetu Programování v GIS 2 a Programování v GIS 3\nznalost QGIS a jeho základních funkcí"
+    "text": "Z čeho vycházíme\n\nznalost Pythonu dle předmětu Programování v GIS 2 a Programování v GIS 3\nznalost QGIS a jeho základních funkcí"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/01_uvod.html#zakončení-předmětu",
@@ -3312,7 +3312,7 @@
     "href": "subjects/PGIS4/prezentace/01_uvod.html#github-copilot",
     "title": "Úvodní hodina",
     "section": "GitHub Copilot",
-    "text": "GitHub Copilot\n\nbudeme s ním zacházet opatrně\nnenahrazuje znalost programování\nje v pořádku ✅: napovídání, vysvětlování, revize kódu\n\nnení v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (mamé obvykle i dokumentaci)\nuživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením\nPravidlo: “Rozumím tomu, co píšu” -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat\nDotazy?"
+    "text": "GitHub Copilot\n\nbudeme s ním zacházet opatrně\nnenahrazuje znalost programování\nje v pořádku ✅: napovídání, vysvětlování, revize kódu\n\nnení v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (mamé obvykle i dokumentaci)\nuživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením\nPravidlo: “Rozumím tomu, co píšu” -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/06_qgis_nastroje.html#processingové-nástroje",

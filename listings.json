@@ -15,13 +15,13 @@
   {
     "listing": "/subjects/pvgis4.html",
     "items": [
-      "/subjects/PGIS4/prezentace/02_qgis_python_api.html",
-      "/subjects/PGIS4/prezentace/03_vektorová_data.html",
       "/subjects/PGIS4/prezentace/04_geometrie.html",
       "/subjects/PGIS4/prezentace/05_rastrova_data.html",
       "/subjects/PGIS4/prezentace/06_qgis_nastroje.html",
       "/subjects/PGIS4/prezentace/07_projekt_layout.html",
-      "/subjects/PGIS4/prezentace/01_uvod.html"
+      "/subjects/PGIS4/prezentace/01_uvod.html",
+      "/subjects/PGIS4/prezentace/02_qgis_python_api.html",
+      "/subjects/PGIS4/prezentace/03_vektorová_data.html"
     ]
   },
   {
