@@ -72,3 +72,17 @@ Sestavte Python skript, které provede libovolné netriviální zpracování pro
 Doporučuji zřízení a otestování **GitHub Copilot** dle [návodu](../tools/github-copilot.qmd) pro zjednodušení psaní kódu v Pythonu.
 
 Process nastavení PYthonu a QGIS pro [VS Code]{.software} je popsán [zde](../tools/osgeo4w.qmd#nastavení-python-prostředí-pro-visual-studiu-code-včetně-pythonu-i-qgis-python-api).
+
+## Nastavení VS Code pro práci s QGIS API
+
+V souboru `.vscode/settings.json` ve složce projektu přidejte:
+
+```json
+{
+    "python.autoComplete.extraPaths": [
+        "C:/OSGeo4W64/apps/qgis/python",
+        "C:/OSGeo4W64/apps/qgis/python/plugins"
+    ]
+}
+
+Pokud pracujete na Windows v [Conda]{.software} prostředí, bude cesta jiná, ale hledáte nadřazené složky, které obsahují soubory s příponou **.pyd**.
