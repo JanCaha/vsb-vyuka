@@ -2,7 +2,7 @@
 title: "Obecné funkce [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2024-09-30
+date: 2025-09-30
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -15,6 +15,37 @@ execute:
   echo: true
   eval: true
 ---
+
+## Popis objektu
+
+- `arcpy.Describe()` - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu
+- výstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)
+
+## Popisy objektů
+
+- `arcpy.Describe()` - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)
+- výsledný objekty se liší dle požadovaného typu objektu - viz [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm)
+- základní minimum informací pro [všechny objekty](https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe-object-properties.htm)
+
+## Práce s `Describe()` objekty
+
+- je vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce
+
+```{python}
+#| eval: false
+desc = arcpy.Describe("C:/data/soubor.shp")
+if hasattr(desc, "dataType"):
+    data_type = desc.dataType
+    print(desc.dataType)
+```
+
+- předcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)
+
+## Příklady
+
+- vektorová data
+- rastrová data
+- další
 
 ## Funkce pro zjištění proměnných 
 
