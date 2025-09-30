@@ -1,24 +1,27 @@
 # ukázka výběru prvků pomocí QgsFeatureRequest
 
 from qgis.core import QgsApplication, QgsFeature, QgsFeatureRequest, QgsRectangle, QgsVectorLayer
+from utils import data_path
 
 qgis = QgsApplication([], False)
 qgis.initQgis()
 
-layer = QgsVectorLayer("data/world.gpkg", "World", "ogr")
+layer_path = data_path("world.gpkg").as_posix()
+# cesta_k_souboru|layername=jmeno_vrstvy
+layer = QgsVectorLayer(f"{layer_path}|layername=countries", "World", "ogr")
 
 # zájmové území
 rectangle = QgsRectangle(0, 45, 20, 55)
 
 # filtr hodnot
-expression = " \"NAME\" LIKE '%a%' "
+expression = " \"NAME\" LIKE '%u%' "
 
 # vytvoření objektu pro výběr prvků
 feature_req = QgsFeatureRequest()
 feature_req.setFilterRect(rectangle)
 feature_req.setFilterExpression(expression)
 
-# settřídění prvků
+# setřídění prvků
 clause = QgsFeatureRequest.OrderByClause("Name", ascending=False)
 order_by = QgsFeatureRequest.OrderBy([clause])
 
