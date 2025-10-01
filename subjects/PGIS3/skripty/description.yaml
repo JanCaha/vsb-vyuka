@@ -4,11 +4,11 @@
   path: "PGIS3/skripty/utils.py"
 - title: "Výpisy dat"
   author: Jan Caha
-  date: 2024-09-23
+  date: 2025-09-30
   path: "PGIS3/skripty/01_vypisy.py"
 - title: "Funkce Describe"
   author: Jan Caha
-  date: 2024-09-30
+  date: 2025-09-30
   path: "PGIS3/skripty/02_describe.py"
 - title: "Úvod do kurzorů - vektorová data"
   author: Jan Caha
