@@ -47,7 +47,7 @@ if hasattr(desc, "dataType"):
 - rastrová data
 - další
 
-## Funkce pro zjištění proměnných 
+## Funkce pro zjištění proměnných
 
 - funkce vracející seznamy (i prázdné)
 - typicky `arcpy.List*()`
@@ -55,10 +55,10 @@ if hasattr(desc, "dataType"):
 
 ## Příklad `arcpy.ListEnvironments()`
 
-- vrací seznam promměných geoprocessingu 
+- vrací seznam proměnných geoprocessingu
 - vše co je dostupné pod `arcpy.env.*`
-- k proměnným se dostaneme pomocí `arcpy.env.proměnná` nebo `arcpy.env.["proměnná"]`
-- reset proměnných lze provést pomocí `arcpy.ResetEnvironments()` 
+- k proměnným se dostaneme pomocí `arcpy.env.proměnná` nebo `arcpy.env["proměnná"]`
+- reset proměnných lze provést pomocí `arcpy.ResetEnvironments()`
 
 ## Příklady - výpisy dat
 
