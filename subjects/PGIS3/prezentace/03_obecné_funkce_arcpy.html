@@ -230,7 +230,7 @@ Jan Caha
 <ul>
 <li>je vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce</li>
 </ul>
-<div id="a79b5a13" class="cell" data-execution_count="1">
+<div id="af832701" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>desc <span class="op">=</span> arcpy.Describe(<span class="st">"C:/data/soubor.shp"</span>)</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">hasattr</span>(desc, <span class="st">"dataType"</span>):</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    data_type <span class="op">=</span> desc.dataType</span>
@@ -259,9 +259,9 @@ Jan Caha
 <section id="příklad-arcpy.listenvironments" class="slide level2">
 <h2>Příklad <code>arcpy.ListEnvironments()</code></h2>
 <ul>
-<li>vrací seznam promměných geoprocessingu</li>
+<li>vrací seznam proměnných geoprocessingu</li>
 <li>vše co je dostupné pod <code>arcpy.env.*</code></li>
-<li>k proměnným se dostaneme pomocí <code>arcpy.env.proměnná</code> nebo <code>arcpy.env.["proměnná"]</code></li>
+<li>k proměnným se dostaneme pomocí <code>arcpy.env.proměnná</code> nebo <code>arcpy.env["proměnná"]</code></li>
 <li>reset proměnných lze provést pomocí <code>arcpy.ResetEnvironments()</code></li>
 </ul>
 </section>

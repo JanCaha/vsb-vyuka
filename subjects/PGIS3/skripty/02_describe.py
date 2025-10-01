@@ -2,8 +2,10 @@
 import arcpy
 import utils
 
+# nastavení workspace
 utils.setup_env("ProgrammingPro/Databases/Trippville_GIS.gdb")
 
+# popis workspace
 desc = arcpy.Describe(arcpy.env.workspace)
 
 print(desc)
@@ -20,6 +22,7 @@ print(desc.release)
 
 print("*" * 50)
 
+# popis FeatureClass
 desc_fc = arcpy.Describe("Wetlands")
 
 print(desc_fc.dataType)
@@ -37,6 +40,7 @@ else:
 
 print("*" * 50)
 
+# popis Raster
 desc_raster = arcpy.Describe("DEM")
 
 print(desc_raster.name)
@@ -48,6 +52,7 @@ print(desc_raster.format)
 
 print("*" * 50)
 
+# popis RasterBand
 desc_raster_band = arcpy.Describe("DEM/Band_1")
 
 print(desc_raster_band.name)

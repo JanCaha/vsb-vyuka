@@ -1494,7 +1494,7 @@
     "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklad-arcpy.listenvironments",
     "title": "Obecné funkce ArcPy",
     "section": "Příklad arcpy.ListEnvironments()",
-    "text": "Příklad arcpy.ListEnvironments()\n\nvrací seznam promměných geoprocessingu\nvše co je dostupné pod arcpy.env.*\nk proměnným se dostaneme pomocí arcpy.env.proměnná nebo arcpy.env.[\"proměnná\"]\nreset proměnných lze provést pomocí arcpy.ResetEnvironments()"
+    "text": "Příklad arcpy.ListEnvironments()\n\nvrací seznam proměnných geoprocessingu\nvše co je dostupné pod arcpy.env.*\nk proměnným se dostaneme pomocí arcpy.env.proměnná nebo arcpy.env[\"proměnná\"]\nreset proměnných lze provést pomocí arcpy.ResetEnvironments()"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady---výpisy-dat",
@@ -1680,7 +1680,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-09-23\n\n\nVýpisy dat\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n\n\n2024-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2024-10-21\n\n\nTvorba rastru\n\n\n\n\n\n\n2024-10-21\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2024-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2024-10-21\n\n\nTvorba rastru\n\n\n\n\n\n\n2024-10-21\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2024-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -2980,7 +2980,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.05709730 -0.11058072 -1.89422662 -0.08470385 -0.09074163"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1790378 -0.1150917 -0.1693696 -0.2611770 -0.2443091"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
