@@ -1455,6 +1455,34 @@
     "text": "GitHub Copilot\n\nbudeme s ním zacházet opatrně\nnenahrazuje znalost programování\nje v pořádku ✅: napovídání, vysvětlování, revize kódu\n\nnení v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (mamé obvykle i dokumentaci)\nuživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením\nPravidlo: “Rozumím tomu, co píšu” -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat"
   },
   {
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popis-objektu",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popis-objektu",
+    "title": "Obecné funkce ArcPy",
+    "section": "Popis objektu",
+    "text": "Popis objektu\n\narcpy.Describe() - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu\nvýstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
+    "title": "Obecné funkce ArcPy",
+    "section": "Popisy objektů",
+    "text": "Popisy objektů\n\narcpy.Describe() - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)\nvýsledný objekty se liší dle požadovaného typu objektu - viz dokumentace\nzákladní minimum informací pro všechny objekty"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
+    "title": "Obecné funkce ArcPy",
+    "section": "Práce s Describe() objekty",
+    "text": "Práce s Describe() objekty\n\nje vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce\n\n\ndesc = arcpy.Describe(\"C:/data/soubor.shp\")\nif hasattr(desc, \"dataType\"):\n    data_type = desc.dataType\n    print(desc.dataType)\n\n\npředcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady",
+    "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#příklady",
+    "title": "Obecné funkce ArcPy",
+    "section": "Příklady",
+    "text": "Příklady\n\nvektorová data\nrastrová data\ndalší"
+  },
+  {
     "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#funkce-pro-zjištění-proměnných",
     "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#funkce-pro-zjištění-proměnných",
     "title": "Obecné funkce ArcPy",
@@ -1619,7 +1647,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -1937,34 +1965,6 @@
     "title": "Základ ArcPy pro ArcGIS Pro",
     "section": "Cesty používané v ArcPy",
     "text": "Cesty používané v ArcPy\n\nbud absolutní cesty na disku (např. C:/data/soubor.shp), nebo C:/data/soubor.gdb/nazev_vrstvy\nnebo relativní cesty, jako je název vrstvy uvažovaný v arcpy.env.workspace (např. soubor.shp, nazev_vrstvy)\nu rastrů lze přistupovat i k jednotlivým pásmům jako C:/data/soubor.tif/Band_1\nvždy je třeba myslet na to, kde se nacházíme a jaké cesty používáme"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#popis-objektu",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#popis-objektu",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "Popis objektu",
-    "text": "Popis objektu\n\narcpy.Describe() - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu\nvýstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#popisy-objektů",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#popisy-objektů",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "Popisy objektů",
-    "text": "Popisy objektů\n\narcpy.Describe() - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)\nvýsledný objekty se liší dle požadovaného typu objektu - viz dokumentace\nzákladní minimum informací pro všechny objekty"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#práce-s-describe-objekty",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#práce-s-describe-objekty",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "Práce s Describe() objekty",
-    "text": "Práce s Describe() objekty\n\nje vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce\n\n\ndesc = arcpy.Describe(\"C:/data/soubor.shp\")\nif hasattr(desc, \"dataType\"):\n    data_type = desc.dataType\n    print(desc.dataType)\n\n\npředcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/02_arcpy.html#příklady",
-    "href": "subjects/PGIS3/prezentace/02_arcpy.html#příklady",
-    "title": "Základ ArcPy pro ArcGIS Pro",
-    "section": "Příklady",
-    "text": "Příklady\n\nvektorová data\nrastrová data\ndalší"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#objekty",
@@ -2980,7 +2980,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.04149359 -0.34603562 -0.65319715 -0.58986804 -0.27665836"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.05709730 -0.11058072 -1.89422662 -0.08470385 -0.09074163"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
