@@ -32,6 +32,7 @@ dependencies:
   # GIS
   - qgis
   # install using pip
-  # - pip:
+  - pip:
     # pgis2
     # - geopolars
+    - PyQt5-stubs
