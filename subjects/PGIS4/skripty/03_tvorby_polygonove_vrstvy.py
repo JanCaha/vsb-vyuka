@@ -1,3 +1,6 @@
+import typing
+
+import utils
 from qgis.core import (
     Qgis,
     QgsApplication,
@@ -5,7 +8,6 @@ from qgis.core import (
     QgsFeature,
     QgsFeatureRequest,
     QgsField,
-    QgsGeometry,
     QgsMemoryProviderUtils,
     QgsPoint,
     QgsRectangle,
@@ -18,7 +20,7 @@ from qgis.PyQt.QtCore import QMetaType
 qgis = QgsApplication([], False)
 qgis.initQgis()
 
-layer = QgsVectorLayer("data/world.gpkg", "World", "ogr")
+layer = QgsVectorLayer(utils.data_path("world.gpkg").as_posix(), "World", "ogr")
 
 rectangle = QgsRectangle(0, 45, 20, 55)
 expression = " \"NAME\" LIKE '%a%' "
@@ -48,6 +50,9 @@ memory_layer = QgsMemoryProviderUtils.createMemoryLayer(
     Qgis.WkbType.Polygon,
     layer.crs(),
 )
+
+layer = typing.cast(QgsVectorLayer, layer)
+memory_layer = typing.cast(QgsVectorLayer, memory_layer)
 
 print(memory_layer.featureCount())
 
@@ -95,9 +100,7 @@ options.actionOnExistingFile = QgsVectorFileWriter.ActionOnExistingFile.CreateOr
 # uložení vrstvy do souboru
 QgsVectorFileWriter.writeAsVectorFormatV3(
     memory_layer,
-    f"data/{memory_layer.name()}.gpkg",
+    utils.save_data_path(f"{memory_layer.name()}.gpkg", delete_if_exist=True).as_posix(),
     QgsCoordinateTransformContext(),
     options,
 )
-
-qgis.exitQgis()
