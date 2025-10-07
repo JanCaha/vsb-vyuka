@@ -10,3 +10,9 @@
 
 <!-- badges: end -->
 
+## Setup precommits
+
+```bash
+sudo apt-get install pre-commit
+pre-commit install -f
+```

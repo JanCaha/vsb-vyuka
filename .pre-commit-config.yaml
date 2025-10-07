@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: conda-version
+        name: 'Update conda version'
+        entry: './scripts/precommit-qmd-reveal-date.sh'
+        language: script
+        files: \.qmd$
+      
