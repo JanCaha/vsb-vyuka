@@ -38,36 +38,11 @@ execute:
 - přístup k prvkům pomocí funkce `getFeatures()` vrací `QgsFeatureIterator`
   - lze vyspecifikovat buď pomocí `QgsFeatureRequest` nebo `QgsRectangle`
 
-## Tvorba vrstvy s `memory` driverem
-
-```python
-from qgis.core import Qgis, QgsFields, QgsMemoryProviderUtils
-
-layer = QgsMemoryProviderUtils.createMemoryLayer(
-    "Sampling Table",
-    fields=QgsFields(),
-    geometryType=Qgis.WkbType.NoGeometry,
-)
-```
-
-## Tvorba vrstvy s `memory` driverem
-
-```python
-from qgis.core import QgsVectorLayer
-
-table = QgsVectorLayer(
-    "NoGeometry?"
-    "field=a:double&"
-    "field=b:int"
-    "source",
-    "memory",
-)
-```
 
 ## Tvorba `QgsField`
 
 ```python
-from qgis.PyQt.QtCore import QMetaType,
+from qgis.PyQt.QtCore import QMetaType
 from qgis.core import QgsField
 
 field = QgsField("field", QMetaType.Type.Double)
@@ -104,6 +79,56 @@ t = QgsTriangle(
 g = QgsGeometry(t)
 
 print(g.asWkt())
+```
+
+## Tvorba vrstvy s `memory` driverem
+
+- data uložená v RAM paměti, po dobu běhu QGIS, nebo skriptu 
+
+```python
+from qgis.core import Qgis, QgsFields, QgsMemoryProviderUtils
+
+layer = QgsMemoryProviderUtils.createMemoryLayer(
+    "Sampling Table",
+    fields=QgsFields(),
+    geometryType=Qgis.WkbType.NoGeometry,
+)
+```
+
+## Tvorba vrstvy s `memory` driverem
+
+```python
+from qgis.core import QgsVectorLayer
+
+table = QgsVectorLayer(
+    "NoGeometry?"
+    "field=a:double&"
+    "field=b:int"
+    "source",
+    "memory",
+)
+```
+
+## Řešení problému s potenciálním návratem `None`
+
+- velká část funkcí `qgis` může vracet buď **objekt** případně `None`, pokud operace neproběhne korektně
+- např. `QgsVectorLayer()` pokud se nepodaří načíst data ze zdroje
+- problém je, že [mypy]{.software} pak označuje velkou část kódu jako potenciálně problematickou
+- řešení je několik, nejsnazší a nejméně narušující je použití `cast(...)` z modulu `typing`
+
+## Ukázka
+
+```python
+from qgis.core import QgsVectorLayer
+from typing import cast
+
+layer = QgsVectorLayer("cesta/k/souboru.gpkg", "vrstva", "ogr")
+
+print(layer.featureCount())  # mypy hlásí chybu, layer může být None
+
+layer = cast(QgsVectorLayer, layer)  
+
+print(layer.featureCount())  # zde mypy už nehlásí chybu
 ```
 
 # Dotazy?{.center}

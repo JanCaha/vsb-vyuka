@@ -32,6 +32,7 @@ crs_1 = arcpy.SpatialReference("Sinusoidal (world)")
 crs_2 = arcpy.SpatialReference(5514)
 crs_3 = arcpy.Describe("data.shp").spatialReference
 ```
+
 ## `Geometry`
 
 - velice komplexní objekt reprezentující geometrii
@@ -86,21 +87,13 @@ with cursor(parmeter_1, parameter_2, ...) as cursor:
 
 ::: {.callout-warning}
 ### Pozor
-Verze volané přímo z `arcpy` nepoužívat (zastaralé).
+Verze volané přímo z `arcpy` nepoužívat (zastaralé - **deprecated**).
 
 Takže `arcpy.UpdateCursor` ne!
 
 Mají i jiné parametry.
 :::
 
-## Objekt `Row`
-
-- objekt reprezentující řádek v tabulce ([dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm))
-- 4 funkce pro přístup k datům
-  - `getValue(field_name)`
-  - `setValue(field_name, value)`
-  - `isNull(field_name)`
-  - `setNull(field_name)`
 
 ## Typy kurzorů
 
@@ -128,9 +121,9 @@ SearchCursor (
 ## `SearchCursor` - parametry
 
 - `in_table` - cesta k datové vrstvě (soubor nebo i v databázi)
-- `field_names` - seznam polí, které mají být součast výsledku
+- `field_names` - seznam polí, které mají být součástí výsledku
 - `where_clause` - část SQL dotazu (označované jako **query expression** viz [dokumentace](https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/write-a-query-in-the-query-builder.htm))
-- `spatial_reference` - souřadnicový systém v nemž bude výsledek (provede se trasformace, je-li třeba)
+- `spatial_reference` - souřadnicový systém v němž bude výsledek (provede se trasformace, je-li třeba)
 - `explode_to_points` - rozbití geometrie na body (pokud je `True`) vzniká záznam (`Row`) pro každý bod
 - `sql_clause` - SQL prefix a postfix (default je `python (None, None)`)
 - `spatial_filter` - prostorový filtr `arcpy.Geometry` objekt
@@ -141,15 +134,24 @@ SearchCursor (
 
 - lze zadat hodnotu jako `*` pro všechna pole, ale z důvodu výkonu a přehlednosti je lepší zadat jen potřebná pole
 - speciální pole - mají označením `@`
-- id prvku získánme jako `OID@`
+- id prvku získáme jako `OID@`
 - geometrie prvku jako `SHAPE@` - vrací objekt `Geometry`, ale náročné na výkon
-- `SHAPE@XY` - vrací tuple s X a Y souřadnicemi centroidu geometrie
-- `SHAPE@XYZ`- viz výše, ale s výškou Z
-- `SHAPE@JSON` - Esri JSON reprezentace geometrie
-- `SHAPE@WKT` - WKT reprezentace geometrie
-- `SHAPE@WKB` - WKB reprezentace geometrie
--  `SHAPE@AREA` - plocha geometrie
--  `SHAPE@LENGTH` - délka geometrie
+  - `SHAPE@XY` - vrací tuple s X a Y souřadnicemi centroidu geometrie
+  - `SHAPE@XYZ`- viz výše, ale s výškou Z
+  - `SHAPE@JSON` - Esri JSON reprezentace geometrie
+  - `SHAPE@WKT` - WKT reprezentace geometrie
+  - `SHAPE@WKB` - WKB reprezentace geometrie
+  - `SHAPE@AREA` - plocha geometrie
+  - `SHAPE@LENGTH` - délka geometrie
+
+## Objekt `Row`
+
+- objekt reprezentující řádek v tabulce ([dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm))
+- 4 funkce pro přístup k datům
+  - `getValue(field_name)`
+  - `setValue(field_name, value)`
+  - `isNull(field_name)`
+  - `setNull(field_name)`
 
 ## Přístup k hodnotám `Row`
 
@@ -189,7 +191,7 @@ cursor.updateRow(row)
 ## `UpdateCursor` - parametry
 
 - `datum_transformation` - transformace souřadnicových systémů (zřídka potřeba nastavovat manuálně)
-- `explicit` - přepis `NULL` na defaultní hodnty (pokud je vrstva má nastavené)
+- `explicit` - přepis `NULL` na defaultní hodnoty (pokud je vrstva má nastavené)
   
 ## Mazání záznamů
 
@@ -199,7 +201,7 @@ cursor.updateRow(row)
 - teoreticky lze mazat i v nějaké podmínce, ale je to neefektivní
 
 ```python
-cursor.updateRow()
+cursor.deleteRow()
 ```
 
 ## `InsertCursor`
