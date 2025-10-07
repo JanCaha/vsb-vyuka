@@ -2,7 +2,7 @@
 title: "Editace vektorových dat v [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2025-12-07
+date: 2025-10-07
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
