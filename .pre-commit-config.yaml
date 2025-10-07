@@ -5,5 +5,5 @@ repos:
         name: 'Check qmd revealjs date'
         entry: './scripts/precommit-qmd-reveal-date.sh'
         language: script
-        files: \.qmd$
+        files: .*\.qmd$
       
