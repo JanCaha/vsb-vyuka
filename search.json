@@ -1291,14 +1291,7 @@
     "href": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#přístup-k-vektorovým-datům",
     "title": "Editace vektorových dat v ArcPy",
     "section": "Přístup k vektorovým datům",
-    "text": "Přístup k vektorovým datům\n\npomocí tzv. cursor (kurzor) objektů (databázová terminologie)\nv Pythonu fungují jako kontextové manažery\n\nwith cursor(parmeter_1, parameter_2, ...) as cursor:\n    for row in cursor:\n        pass\n\nsoučást modulu arcpy.da (např. arcpy.da.UpdateCursor)\n\n\n\n\n\n\n\nPozor\n\n\nVerze volané přímo z arcpy nepoužívat (zastaralé).\nTakže arcpy.UpdateCursor ne!\nMají i jiné parametry."
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#objekt-row",
-    "href": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#objekt-row",
-    "title": "Editace vektorových dat v ArcPy",
-    "section": "Objekt Row",
-    "text": "Objekt Row\n\nobjekt reprezentující řádek v tabulce (dokumentace)\n4 funkce pro přístup k datům\n\ngetValue(field_name)\nsetValue(field_name, value)\nisNull(field_name)\nsetNull(field_name)"
+    "text": "Přístup k vektorovým datům\n\npomocí tzv. cursor (kurzor) objektů (databázová terminologie)\nv Pythonu fungují jako kontextové manažery\n\nwith cursor(parmeter_1, parameter_2, ...) as cursor:\n    for row in cursor:\n        pass\n\nsoučást modulu arcpy.da (např. arcpy.da.UpdateCursor)\n\n\n\n\n\n\n\nPozor\n\n\nVerze volané přímo z arcpy nepoužívat (zastaralé - deprecated).\nTakže arcpy.UpdateCursor ne!\nMají i jiné parametry."
   },
   {
     "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#typy-kurzorů",
@@ -1319,14 +1312,21 @@
     "href": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#searchcursor---parametry",
     "title": "Editace vektorových dat v ArcPy",
     "section": "SearchCursor - parametry",
-    "text": "SearchCursor - parametry\n\nin_table - cesta k datové vrstvě (soubor nebo i v databázi)\nfield_names - seznam polí, které mají být součast výsledku\nwhere_clause - část SQL dotazu (označované jako query expression viz dokumentace)\nspatial_reference - souřadnicový systém v nemž bude výsledek (provede se trasformace, je-li třeba)\nexplode_to_points - rozbití geometrie na body (pokud je True) vzniká záznam (Row) pro každý bod\nsql_clause - SQL prefix a postfix (default je python (None, None))\nspatial_filter - prostorový filtr arcpy.Geometry objekt\nspatial_relationship - prostorový vztah (default je INTERSECT)\nsearch_order - pořadí filtrů - buď \"ATTRIBUTEFIRST\" nebo \"SPATIALFIRST\" - vliv na dobu trvání dotazu"
+    "text": "SearchCursor - parametry\n\nin_table - cesta k datové vrstvě (soubor nebo i v databázi)\nfield_names - seznam polí, které mají být součástí výsledku\nwhere_clause - část SQL dotazu (označované jako query expression viz dokumentace)\nspatial_reference - souřadnicový systém v němž bude výsledek (provede se trasformace, je-li třeba)\nexplode_to_points - rozbití geometrie na body (pokud je True) vzniká záznam (Row) pro každý bod\nsql_clause - SQL prefix a postfix (default je python (None, None))\nspatial_filter - prostorový filtr arcpy.Geometry objekt\nspatial_relationship - prostorový vztah (default je INTERSECT)\nsearch_order - pořadí filtrů - buď \"ATTRIBUTEFIRST\" nebo \"SPATIALFIRST\" - vliv na dobu trvání dotazu"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#parametr-fields_names",
     "href": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#parametr-fields_names",
     "title": "Editace vektorových dat v ArcPy",
     "section": "Parametr fields_names",
-    "text": "Parametr fields_names\n\nlze zadat hodnotu jako * pro všechna pole, ale z důvodu výkonu a přehlednosti je lepší zadat jen potřebná pole\nspeciální pole - mají označením @\nid prvku získánme jako OID@\ngeometrie prvku jako SHAPE@ - vrací objekt Geometry, ale náročné na výkon\nSHAPE@XY - vrací tuple s X a Y souřadnicemi centroidu geometrie\nSHAPE@XYZ- viz výše, ale s výškou Z\nSHAPE@JSON - Esri JSON reprezentace geometrie\nSHAPE@WKT - WKT reprezentace geometrie\nSHAPE@WKB - WKB reprezentace geometrie\nSHAPE@AREA - plocha geometrie\nSHAPE@LENGTH - délka geometrie"
+    "text": "Parametr fields_names\n\nlze zadat hodnotu jako * pro všechna pole, ale z důvodu výkonu a přehlednosti je lepší zadat jen potřebná pole\nspeciální pole - mají označením @\nid prvku získáme jako OID@\ngeometrie prvku jako SHAPE@ - vrací objekt Geometry, ale náročné na výkon\n\nSHAPE@XY - vrací tuple s X a Y souřadnicemi centroidu geometrie\nSHAPE@XYZ- viz výše, ale s výškou Z\nSHAPE@JSON - Esri JSON reprezentace geometrie\nSHAPE@WKT - WKT reprezentace geometrie\nSHAPE@WKB - WKB reprezentace geometrie\nSHAPE@AREA - plocha geometrie\nSHAPE@LENGTH - délka geometrie"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#objekt-row",
+    "href": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#objekt-row",
+    "title": "Editace vektorových dat v ArcPy",
+    "section": "Objekt Row",
+    "text": "Objekt Row\n\nobjekt reprezentující řádek v tabulce (dokumentace)\n4 funkce pro přístup k datům\n\ngetValue(field_name)\nsetValue(field_name, value)\nisNull(field_name)\nsetNull(field_name)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#přístup-k-hodnotám-row",
@@ -1347,14 +1347,14 @@
     "href": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#updatecursor---parametry",
     "title": "Editace vektorových dat v ArcPy",
     "section": "UpdateCursor - parametry",
-    "text": "UpdateCursor - parametry\n\ndatum_transformation - transformace souřadnicových systémů (zřídka potřeba nastavovat manuálně)\nexplicit - přepis NULL na defaultní hodnty (pokud je vrstva má nastavené)"
+    "text": "UpdateCursor - parametry\n\ndatum_transformation - transformace souřadnicových systémů (zřídka potřeba nastavovat manuálně)\nexplicit - přepis NULL na defaultní hodnoty (pokud je vrstva má nastavené)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#mazání-záznamů",
     "href": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#mazání-záznamů",
     "title": "Editace vektorových dat v ArcPy",
     "section": "Mazání záznamů",
-    "text": "Mazání záznamů\n\nv podstatě update\nlogiku výběru prvků je vhodné řešit v nastavení cursoru\ncursor maže aktivní řádek (určený podmínkou for row in cursor:)\nteoreticky lze mazat i v nějaké podmínce, ale je to neefektivní\n\ncursor.updateRow()"
+    "text": "Mazání záznamů\n\nv podstatě update\nlogiku výběru prvků je vhodné řešit v nastavení cursoru\ncursor maže aktivní řádek (určený podmínkou for row in cursor:)\nteoreticky lze mazat i v nějaké podmínce, ale je to neefektivní\n\ncursor.deleteRow()"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#insertcursor",
@@ -2980,7 +2980,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1790378 -0.1150917 -0.1693696 -0.2611770 -0.2443091"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1994802 -0.2199829 -1.5212854 -0.8422096 -0.3998977"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -3403,25 +3403,11 @@
     "text": "QgsVectorLayer\n\nvytváření jako QgsVectorLayer(uri,  name, driver)\n\nuri- cesta k souboru, nebo např. připojení do DB\nname - název vrstvy v QGIS\ndriver - obvykle ogr nebo postgres, memory ale i další\n\npřístup k prvkům pomocí funkce getFeatures() vrací QgsFeatureIterator\n\nlze vyspecifikovat buď pomocí QgsFeatureRequest nebo QgsRectangle"
   },
   {
-    "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem",
-    "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem",
-    "title": "Vektorová data v QGIS Python API",
-    "section": "Tvorba vrstvy s memory driverem",
-    "text": "Tvorba vrstvy s memory driverem\nfrom qgis.core import Qgis, QgsFields, QgsMemoryProviderUtils\n\nlayer = QgsMemoryProviderUtils.createMemoryLayer(\n    \"Sampling Table\",\n    fields=QgsFields(),\n    geometryType=Qgis.WkbType.NoGeometry,\n)"
-  },
-  {
-    "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem-1",
-    "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem-1",
-    "title": "Vektorová data v QGIS Python API",
-    "section": "Tvorba vrstvy s memory driverem",
-    "text": "Tvorba vrstvy s memory driverem\nfrom qgis.core import QgsVectorLayer\n\ntable = QgsVectorLayer(\n    \"NoGeometry?\"\n    \"field=a:double&\"\n    \"field=b:int\"\n    \"source\",\n    \"memory\",\n)"
-  },
-  {
     "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-qgsfield",
     "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-qgsfield",
     "title": "Vektorová data v QGIS Python API",
     "section": "Tvorba QgsField",
-    "text": "Tvorba QgsField\nfrom qgis.PyQt.QtCore import QMetaType,\nfrom qgis.core import QgsField\n\nfield = QgsField(\"field\", QMetaType.Type.Double)"
+    "text": "Tvorba QgsField\nfrom qgis.PyQt.QtCore import QMetaType\nfrom qgis.core import QgsField\n\nfield = QgsField(\"field\", QMetaType.Type.Double)"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#qgsfeature",
@@ -3443,6 +3429,34 @@
     "title": "Vektorová data v QGIS Python API",
     "section": "Tvorba QgGeometry",
     "text": "Tvorba QgGeometry\nfrom qgis.core import QgsGeometry, QgsPointXY, QgsTriangle\n\nt = QgsTriangle(\n    QgsPointXY(0, 0),\n    QgsPointXY(1, 0),\n    QgsPointXY(0.5, 1),\n)\n\ng = QgsGeometry(t)\n\nprint(g.asWkt())"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem",
+    "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem",
+    "title": "Vektorová data v QGIS Python API",
+    "section": "Tvorba vrstvy s memory driverem",
+    "text": "Tvorba vrstvy s memory driverem\n\ndata uložená v RAM paměti, po dobu běhu QGIS, nebo skriptu\n\nfrom qgis.core import Qgis, QgsFields, QgsMemoryProviderUtils\n\nlayer = QgsMemoryProviderUtils.createMemoryLayer(\n    \"Sampling Table\",\n    fields=QgsFields(),\n    geometryType=Qgis.WkbType.NoGeometry,\n)"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem-1",
+    "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem-1",
+    "title": "Vektorová data v QGIS Python API",
+    "section": "Tvorba vrstvy s memory driverem",
+    "text": "Tvorba vrstvy s memory driverem\nfrom qgis.core import QgsVectorLayer\n\ntable = QgsVectorLayer(\n    \"NoGeometry?\"\n    \"field=a:double&\"\n    \"field=b:int\"\n    \"source\",\n    \"memory\",\n)"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#řešení-problému-s-potenciálním-návratem-none",
+    "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#řešení-problému-s-potenciálním-návratem-none",
+    "title": "Vektorová data v QGIS Python API",
+    "section": "Řešení problému s potenciálním návratem None",
+    "text": "Řešení problému s potenciálním návratem None\n\nvelká část funkcí qgis může vracet buď objekt případně None, pokud operace neproběhne korektně\nnapř. QgsVectorLayer() pokud se nepodaří načíst data ze zdroje\nproblém je, že mypy pak označuje velkou část kódu jako potenciálně problematickou\nřešení je několik, nejsnazší a nejméně narušující je použití cast(...) z modulu typing"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#ukázka",
+    "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#ukázka",
+    "title": "Vektorová data v QGIS Python API",
+    "section": "Ukázka",
+    "text": "Ukázka\nfrom qgis.core import QgsVectorLayer\nfrom typing import cast\n\nlayer = QgsVectorLayer(\"cesta/k/souboru.gpkg\", \"vrstva\", \"ogr\")\n\nprint(layer.featureCount())  # mypy hlásí chybu, layer může být None\n\nlayer = cast(QgsVectorLayer, layer)  \n\nprint(layer.featureCount())  # zde mypy už nehlásí chybu"
   },
   {
     "objectID": "subjects/pvgis5.html",

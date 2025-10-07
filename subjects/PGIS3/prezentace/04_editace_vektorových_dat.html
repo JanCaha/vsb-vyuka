@@ -291,25 +291,12 @@ Jan Caha
 <p><strong>Pozor</strong></p>
 </div>
 <div class="callout-content">
-<p>Verze volané přímo z <code>arcpy</code> nepoužívat (zastaralé).</p>
+<p>Verze volané přímo z <code>arcpy</code> nepoužívat (zastaralé - <strong>deprecated</strong>).</p>
 <p>Takže <code>arcpy.UpdateCursor</code> ne!</p>
 <p>Mají i jiné parametry.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="objekt-row" class="slide level2">
-<h2>Objekt <code>Row</code></h2>
-<ul>
-<li>objekt reprezentující řádek v tabulce (<a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm">dokumentace</a>)</li>
-<li>4 funkce pro přístup k datům
-<ul>
-<li><code>getValue(field_name)</code></li>
-<li><code>setValue(field_name, value)</code></li>
-<li><code>isNull(field_name)</code></li>
-<li><code>setNull(field_name)</code></li>
-</ul></li>
-</ul>
 </section>
 <section id="typy-kurzorů" class="slide level2">
 <h2>Typy kurzorů</h2>
@@ -338,9 +325,9 @@ Jan Caha
 <h2><code>SearchCursor</code> - parametry</h2>
 <ul>
 <li><code>in_table</code> - cesta k datové vrstvě (soubor nebo i v databázi)</li>
-<li><code>field_names</code> - seznam polí, které mají být součast výsledku</li>
+<li><code>field_names</code> - seznam polí, které mají být součástí výsledku</li>
 <li><code>where_clause</code> - část SQL dotazu (označované jako <strong>query expression</strong> viz <a href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/navigation/write-a-query-in-the-query-builder.htm">dokumentace</a>)</li>
-<li><code>spatial_reference</code> - souřadnicový systém v nemž bude výsledek (provede se trasformace, je-li třeba)</li>
+<li><code>spatial_reference</code> - souřadnicový systém v němž bude výsledek (provede se trasformace, je-li třeba)</li>
 <li><code>explode_to_points</code> - rozbití geometrie na body (pokud je <code>True</code>) vzniká záznam (<code>Row</code>) pro každý bod</li>
 <li><code>sql_clause</code> - SQL prefix a postfix (default je <code>python (None, None)</code>)</li>
 <li><code>spatial_filter</code> - prostorový filtr <code>arcpy.Geometry</code> objekt</li>
@@ -353,8 +340,9 @@ Jan Caha
 <ul>
 <li>lze zadat hodnotu jako <code>*</code> pro všechna pole, ale z důvodu výkonu a přehlednosti je lepší zadat jen potřebná pole</li>
 <li>speciální pole - mají označením <code>@</code></li>
-<li>id prvku získánme jako <code>OID@</code></li>
-<li>geometrie prvku jako <code>SHAPE@</code> - vrací objekt <code>Geometry</code>, ale náročné na výkon</li>
+<li>id prvku získáme jako <code>OID@</code></li>
+<li>geometrie prvku jako <code>SHAPE@</code> - vrací objekt <code>Geometry</code>, ale náročné na výkon
+<ul>
 <li><code>SHAPE@XY</code> - vrací tuple s X a Y souřadnicemi centroidu geometrie</li>
 <li><code>SHAPE@XYZ</code>- viz výše, ale s výškou Z</li>
 <li><code>SHAPE@JSON</code> - Esri JSON reprezentace geometrie</li>
@@ -362,6 +350,20 @@ Jan Caha
 <li><code>SHAPE@WKB</code> - WKB reprezentace geometrie</li>
 <li><code>SHAPE@AREA</code> - plocha geometrie</li>
 <li><code>SHAPE@LENGTH</code> - délka geometrie</li>
+</ul></li>
+</ul>
+</section>
+<section id="objekt-row" class="slide level2">
+<h2>Objekt <code>Row</code></h2>
+<ul>
+<li>objekt reprezentující řádek v tabulce (<a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm">dokumentace</a>)</li>
+<li>4 funkce pro přístup k datům
+<ul>
+<li><code>getValue(field_name)</code></li>
+<li><code>setValue(field_name, value)</code></li>
+<li><code>isNull(field_name)</code></li>
+<li><code>setNull(field_name)</code></li>
+</ul></li>
 </ul>
 </section>
 <section id="přístup-k-hodnotám-row" class="slide level2">
@@ -398,7 +400,7 @@ Jan Caha
 <h2><code>UpdateCursor</code> - parametry</h2>
 <ul>
 <li><code>datum_transformation</code> - transformace souřadnicových systémů (zřídka potřeba nastavovat manuálně)</li>
-<li><code>explicit</code> - přepis <code>NULL</code> na defaultní hodnty (pokud je vrstva má nastavené)</li>
+<li><code>explicit</code> - přepis <code>NULL</code> na defaultní hodnoty (pokud je vrstva má nastavené)</li>
 </ul>
 </section>
 <section id="mazání-záznamů" class="slide level2">
@@ -409,7 +411,7 @@ Jan Caha
 <li>cursor maže aktivní řádek (určený podmínkou <code>for row in cursor:</code>)</li>
 <li>teoreticky lze mazat i v nějaké podmínce, ale je to neefektivní</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cursor.updateRow()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a>cursor.deleteRow()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="insertcursor" class="slide level2">
 <h2><code>InsertCursor</code></h2>
