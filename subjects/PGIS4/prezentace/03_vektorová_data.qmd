@@ -103,7 +103,7 @@ from qgis.core import QgsVectorLayer
 table = QgsVectorLayer(
     "NoGeometry?"
     "field=a:double&"
-    "field=b:int"
+    "field=b:int",
     "source",
     "memory",
 )
