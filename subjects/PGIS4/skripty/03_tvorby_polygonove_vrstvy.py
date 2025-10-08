@@ -1,6 +1,5 @@
 import typing
 
-import utils
 from qgis.core import (
     Qgis,
     QgsApplication,
@@ -16,11 +15,15 @@ from qgis.core import (
     QgsVectorLayer,
 )
 from qgis.PyQt.QtCore import QMetaType
+from utils import data_path, save_data_path
 
 qgis = QgsApplication([], False)
 qgis.initQgis()
 
-layer = QgsVectorLayer(utils.data_path("world.gpkg").as_posix(), "World", "ogr")
+layer_path = data_path("world.gpkg").as_posix()
+# cesta_k_souboru|layername=jmeno_vrstvy
+layer = QgsVectorLayer(f"{layer_path}|layername=countries", "World", "ogr")
+layer = typing.cast(QgsVectorLayer, layer)
 
 rectangle = QgsRectangle(0, 45, 20, 55)
 expression = " \"NAME\" LIKE '%a%' "
@@ -34,7 +37,7 @@ order_by = QgsFeatureRequest.OrderBy([clause])
 
 feature_req.setOrderBy(order_by)
 
-# úprava atributtů přidáním nového pole
+# úprava atributů přidáním nového pole
 fields = layer.fields()
 fields.append(
     QgsField(
@@ -45,13 +48,11 @@ fields.append(
 
 # vytvoření vrstvy v paměti
 memory_layer = QgsMemoryProviderUtils.createMemoryLayer(
-    "filtered",
-    fields,
-    Qgis.WkbType.Polygon,
-    layer.crs(),
+    name="filtered",
+    fields=fields,
+    geometryType=Qgis.WkbType.Polygon,
+    crs=layer.crs(),
 )
-
-layer = typing.cast(QgsVectorLayer, layer)
 memory_layer = typing.cast(QgsVectorLayer, memory_layer)
 
 print(memory_layer.featureCount())
@@ -97,10 +98,13 @@ print(memory_layer.featureCount())
 options = QgsVectorFileWriter.SaveVectorOptions()
 options.actionOnExistingFile = QgsVectorFileWriter.ActionOnExistingFile.CreateOrOverwriteFile
 
+# cesta k uložení souboru s vrstvou
+file_path = save_data_path(f"{memory_layer.name()}.gpkg", delete_if_exist=True).as_posix()
+
 # uložení vrstvy do souboru
 QgsVectorFileWriter.writeAsVectorFormatV3(
     memory_layer,
-    utils.save_data_path(f"{memory_layer.name()}.gpkg", delete_if_exist=True).as_posix(),
+    file_path,
     QgsCoordinateTransformContext(),
     options,
 )

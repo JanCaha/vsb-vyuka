@@ -1581,7 +1581,7 @@
     "href": "subjects/pvgis4.html#ukázkové-kódy",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n\n\n2024-10-14\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\n\n2024-10-14\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n\n\n2024-10-14\n\n\nOperace s geometriemi\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2024-10-21\n\n\nEditace hodnot rastru\n\n\n\n\n\n\n2024-10-21\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\n\n2024-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\n\n2024-11-18\n\n\nUkázkový Plugin\n\n\n\n\n\n\n2024-11-18\n\n\nAlgoritmus s více kroky\n\n\n\n\n\n\n2024-11-25\n\n\nEditace projektu a layoutu\n\n\n\n\n\n\n2024-11-25\n\n\nGUI nástroj na kreslení polygonu\n\n\n\n\n\n\n2025-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n\n\n2025-09-30\n\n\nVektorová data - výběr prvků\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-10-14\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\n\n2024-10-14\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n\n\n2024-10-14\n\n\nOperace s geometriemi\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2024-10-21\n\n\nEditace hodnot rastru\n\n\n\n\n\n\n2024-10-21\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\n\n2024-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\n\n2024-11-18\n\n\nUkázkový Plugin\n\n\n\n\n\n\n2024-11-18\n\n\nAlgoritmus s více kroky\n\n\n\n\n\n\n2024-11-25\n\n\nEditace projektu a layoutu\n\n\n\n\n\n\n2024-11-25\n\n\nGUI nástroj na kreslení polygonu\n\n\n\n\n\n\n2025-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n\n\n2025-09-30\n\n\nVektorová data - výběr prvků\n\n\n\n\n\n\n2025-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1647,7 +1647,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -1680,7 +1680,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n\n\n2024-10-06\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2024-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2024-10-21\n\n\nTvorba rastru\n\n\n\n\n\n\n2024-10-21\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2024-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2024-10-21\n\n\nTvorba rastru\n\n\n\n\n\n\n2024-10-21\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2024-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -2980,7 +2980,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1994802 -0.2199829 -1.5212854 -0.8422096 -0.3998977"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.02023236 -0.10507707 -0.06840148 -0.64507631 -0.01549215"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -3442,7 +3442,7 @@
     "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#tvorba-vrstvy-s-memory-driverem-1",
     "title": "Vektorová data v QGIS Python API",
     "section": "Tvorba vrstvy s memory driverem",
-    "text": "Tvorba vrstvy s memory driverem\nfrom qgis.core import QgsVectorLayer\n\ntable = QgsVectorLayer(\n    \"NoGeometry?\"\n    \"field=a:double&\"\n    \"field=b:int\"\n    \"source\",\n    \"memory\",\n)"
+    "text": "Tvorba vrstvy s memory driverem\nfrom qgis.core import QgsVectorLayer\n\ntable = QgsVectorLayer(\n    \"NoGeometry?\"\n    \"field=a:double&\"\n    \"field=b:int\",\n    \"source\",\n    \"memory\",\n)"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#řešení-problému-s-potenciálním-návratem-none",
