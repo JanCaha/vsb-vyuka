@@ -25,8 +25,10 @@ feature_req.setFilterExpression(expression)
 clause = QgsFeatureRequest.OrderByClause("Name", ascending=False)
 order_by = QgsFeatureRequest.OrderBy([clause])
 
+# aplikace setřídění do požadavku
 feature_req.setOrderBy(order_by)
 
+# průchod vybranými prvky
 feature: QgsFeature
 for feature in layer.getFeatures(feature_req):
     print(feature.attributes())
