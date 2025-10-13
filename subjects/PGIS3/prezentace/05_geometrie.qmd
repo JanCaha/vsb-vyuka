@@ -2,7 +2,7 @@
 title: "Geometrie v [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2024-10-14
+date: 2025-10-14
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -32,11 +32,33 @@ Přímo součástí třídy `Geometry` může být a často i je definice souřa
 
 ## Výpočty na třídě `Geometry`
 
-- např. atributy `lenght`, `lenght3D` nebo `area`, ale i řada funkcí (zejména prostorové vztahy - např. `intersect()`) pracují s 2D kartézkou matematikou
-- u funkcí `getLength()` nebo `getArea()` lze specifikovat `{method}, {units}`, přičemž `method` určuje způsob výpočtu a `units` jednotky výsledku
-- z toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!
-- data je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku
-- funkce třídy `Geometry.projectAs (spatial_reference)`
+- např. atributy `length`, `length3D` nebo `area`, ale i řada funkcí (zejména prostorové vztahy – např. `intersect()`) pracují s 2D kartézskou matematikou
+- u metod `getLength({method}, {units})` nebo `getArea({method}, {units})` lze specifikovat `method` (způsob výpočtu: PLANAR/GEODESIC/aj.) a `units` (jednotky výsledku)
+- z toho plyne, že při PLANAR výpočtech v geografických SRS (souřadnicových systémech) nedostanete korektní geodetické vzdálenosti/plochy
+- řešení: buď použít vhodný projektovaný SRS a PLANAR metody, nebo v GCS použít geodetické metody (`GEODESIC`, `GREAT_ELLIPTIC`, …) s příslušnými jednotkami
+- metoda pro změnu SRS: `Geometry.projectAs(spatial_reference, {transformation_name})` – u změny mezi různými daty je vhodné uvést transformační název
+
+## Výpočet délky polyline ve WGS84
+
+```python
+# Výpočet geodetické délky polyline v kilometrech bez projekce do PCS
+import arcpy
+
+# Vytvoření jednoduché linie ve WGS84
+line = arcpy.Polyline(
+  arcpy.Array(
+    [
+      arcpy.Point(-77.4349451, 37.5408265),
+      arcpy.Point(-78.6384349, 35.7780943),
+    ]
+  ),
+  arcpy.SpatialReference(4326),
+)
+
+# Geodetická délka (GEODESIC) v km
+length_km = line.getLength("GEODESIC", "Kilometers")
+print(f"Geodesic length: {length_km:.2f} km")
+```
   
 ## Objekt `Array`
 
@@ -57,17 +79,42 @@ arcpy.Polyline(
 )
 ```
 
-## Význam operátorů a jejich použití u třídy `Geometry`
+## Geometrické operace
 
-- některé jsou zřejmé
-  - `==` - equals
-  - `!=` - not equals
+- `Geometry.intersect(other, dimension)`
+- `Geometry.union(other)`
+- `Geometry.difference(other)`
+- `Geometry.symmetricDifference(other)`
 
-- jiné ne až tolik 
-  - `+` -  intersect (`Geometry.intersect(Geometry)`)
-  - `|` - union (`Geometry.union(Geometry)`)
-  - `-` - difference (`Geometry.difference(Geometry)`)
-  - `^` - symmetricDifference (`Geometry.symmetricDifference(Geometry)`)
+## Ukázka práce s geometrií a výpočtem plochy
+
+```python
+import arcpy
+
+# Jednoduchý polygon (čtverec) v projektovaném SRS (Web Mercator)
+poly = arcpy.Polygon(
+  arcpy.Array(
+    [
+      arcpy.Point(1350000, 6250000),
+      arcpy.Point(2100000, 6250000),
+      arcpy.Point(2100000, 6620000),
+      arcpy.Point(1350000, 6620000),
+      arcpy.Point(1350000, 6250000),]
+  ),
+  arcpy.SpatialReference(3857),
+)
+
+# PLANAR plocha v m^2 (PCS jednotky)
+area_m2 = poly.getArea("PLANAR", "SquareMeters")
+print(f"Planar area: {area_m2:.0f} m^2")
+
+# Projekce na WGS84 s transformačním názvem (pokud je potřeba)
+poly_wgs84 = poly.projectAs(arcpy.SpatialReference(4326))
+
+# GEODESIC plocha v km^2
+area_km2 = poly_wgs84.getArea("GEODESIC", "SquareKilometers")
+print(f"Geodesic area: {area_km2:.3f} km^2")
+```
 
 ## Ukázky použití různých funkcí třídy
 
