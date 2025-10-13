@@ -15,6 +15,7 @@
         "arcpy",
         "autopep",
         "debugování",
+        "defaultní",
         "docstringů",
         "elif",
         "environmentu",
@@ -34,5 +35,11 @@
     ],
     "github.copilot.enable": {
         "quarto": true
-    }
+    },
+    "python.analysis.extraPaths": [
+        "${env:CONDA_PREFIX}/share/qgis/python/plugins",
+        "${env:CONDA_PREFIX}/share/qgis/python"
+    ],
+    "python.terminal.activateEnvironment": true,
+    "python.defaultInterpreterPath": "${env:CONDA_PREFIX}/bin/python",
 }
