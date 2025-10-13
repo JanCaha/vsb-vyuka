@@ -1375,7 +1375,14 @@
     "href": "subjects/PGIS3/prezentace/05_geometrie.html#výpočty-na-třídě-geometry",
     "title": "Geometrie v ArcPy",
     "section": "Výpočty na třídě Geometry",
-    "text": "Výpočty na třídě Geometry\n\nnapř. atributy lenght, lenght3D nebo area, ale i řada funkcí (zejména prostorové vztahy - např. intersect()) pracují s 2D kartézkou matematikou\nu funkcí getLength() nebo getArea() lze specifikovat {method}, {units}, přičemž method určuje způsob výpočtu a units jednotky výsledku\nz toho plyne, že v případě geografických souřadnicových systémů nebudou dávat správné výsledky!\ndata je nutné převést do vhodného projektovaného souřadnicového systému a potom vypočítat požadovanou charakteristiku\nfunkce třídy Geometry.projectAs (spatial_reference)"
+    "text": "Výpočty na třídě Geometry\n\nnapř. atributy length, length3D nebo area, ale i řada funkcí (zejména prostorové vztahy – např. intersect()) pracují s 2D kartézskou matematikou\nu metod getLength({method}, {units}) nebo getArea({method}, {units}) lze specifikovat method (způsob výpočtu: PLANAR/GEODESIC/aj.) a units (jednotky výsledku)\nz toho plyne, že při PLANAR výpočtech v geografických SRS (souřadnicových systémech) nedostanete korektní geodetické vzdálenosti/plochy\nřešení: buď použít vhodný projektovaný SRS a PLANAR metody, nebo v GCS použít geodetické metody (GEODESIC, GREAT_ELLIPTIC, …) s příslušnými jednotkami\nmetoda pro změnu SRS: Geometry.projectAs(spatial_reference, {transformation_name}) – u změny mezi různými daty je vhodné uvést transformační název"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#výpočet-délky-polyline-ve-wgs84",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#výpočet-délky-polyline-ve-wgs84",
+    "title": "Geometrie v ArcPy",
+    "section": "Výpočet délky polyline ve WGS84",
+    "text": "Výpočet délky polyline ve WGS84\n# Výpočet geodetické délky polyline v kilometrech bez projekce do PCS\nimport arcpy\n\n# Vytvoření jednoduché linie ve WGS84\nline = arcpy.Polyline(\n  arcpy.Array(\n    [\n      arcpy.Point(-77.4349451, 37.5408265),\n      arcpy.Point(-78.6384349, 35.7780943),\n    ]\n  ),\n  arcpy.SpatialReference(4326),\n)\n\n# Geodetická délka (GEODESIC) v km\nlength_km = line.getLength(\"GEODESIC\", \"Kilometers\")\nprint(f\"Geodesic length: {length_km:.2f} km\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
@@ -1385,11 +1392,18 @@
     "text": "Objekt Array\n\narcpy.Array() - speciální objekty ArcPy pro tvorbu polí\npole lze i vzájemně zanořovat - tzn. pole polí může existovat\nzvláštnost API\npoužití např. pro tvorbu linií:\n\narcpy.Polyline( \n    arcpy.Array(\n        [\n          arcpy.Point(-77.4349451, 37.5408265), \n          arcpy.Point(-78.6384349, 35.7780943),\n        ]\n    ),\n    arcpy.SpatialReference(4326)\n)"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#význam-operátorů-a-jejich-použití-u-třídy-geometry",
-    "href": "subjects/PGIS3/prezentace/05_geometrie.html#význam-operátorů-a-jejich-použití-u-třídy-geometry",
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#geometrické-operace",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#geometrické-operace",
     "title": "Geometrie v ArcPy",
-    "section": "Význam operátorů a jejich použití u třídy Geometry",
-    "text": "Význam operátorů a jejich použití u třídy Geometry\n\nněkteré jsou zřejmé\n\n== - equals\n!= - not equals\n\njiné ne až tolik\n\n+ - intersect (Geometry.intersect(Geometry))\n| - union (Geometry.union(Geometry))\n- - difference (Geometry.difference(Geometry))\n^ - symmetricDifference (Geometry.symmetricDifference(Geometry))"
+    "section": "Geometrické operace",
+    "text": "Geometrické operace\n\nGeometry.intersect(other, dimension)\nGeometry.union(other)\nGeometry.difference(other)\nGeometry.symmetricDifference(other)"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#ukázka-práce-s-geometrií-a-výpočtem-plochy",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#ukázka-práce-s-geometrií-a-výpočtem-plochy",
+    "title": "Geometrie v ArcPy",
+    "section": "Ukázka práce s geometrií a výpočtem plochy",
+    "text": "Ukázka práce s geometrií a výpočtem plochy\nimport arcpy\n\n# Jednoduchý polygon (čtverec) v projektovaném SRS (Web Mercator)\npoly = arcpy.Polygon(\n  arcpy.Array(\n    [\n      arcpy.Point(1350000, 6250000),\n      arcpy.Point(2100000, 6250000),\n      arcpy.Point(2100000, 6620000),\n      arcpy.Point(1350000, 6620000),\n      arcpy.Point(1350000, 6250000),]\n  ),\n  arcpy.SpatialReference(3857),\n)\n\n# PLANAR plocha v m^2 (PCS jednotky)\narea_m2 = poly.getArea(\"PLANAR\", \"SquareMeters\")\nprint(f\"Planar area: {area_m2:.0f} m^2\")\n\n# Projekce na WGS84 s transformačním názvem (pokud je potřeba)\npoly_wgs84 = poly.projectAs(arcpy.SpatialReference(4326))\n\n# GEODESIC plocha v km^2\narea_km2 = poly_wgs84.getArea(\"GEODESIC\", \"SquareKilometers\")\nprint(f\"Geodesic area: {area_km2:.3f} km^2\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#ukázky-použití-různých-funkcí-třídy",
@@ -1647,7 +1661,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -2980,7 +2994,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.02023236 -0.10507707 -0.06840148 -0.64507631 -0.01549215"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.35654151 -0.48901024 -0.09431486 -0.78866230 -0.02629764"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
