@@ -21,7 +21,7 @@ execute:
 - základní třída geometrie v [ArcPy]{.software}
 - [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/geometry.htm)
 - lze tvořit přímo `Geometry (geometry, inputs, {spatial_reference}, {has_z}, {has_m}, {has_id})`
-- ale spíše je vhodnější speficiké třídy pro druhy geometrií - `Multipoint`, `PointGeometry`, `Polygon`, `Polyline`
+- ale spíše je vhodnější specifické třídy pro druhy geometrií - `Multipoint`, `PointGeometry`, `Polygon`, `Polyline`
 
 ::: {.callout-important}
 ### Souřadnicový systém
@@ -37,6 +37,12 @@ Přímo součástí třídy `Geometry` může být a často i je definice souřa
 - z toho plyne, že při PLANAR výpočtech v geografických SRS (souřadnicových systémech) nedostanete korektní geodetické vzdálenosti/plochy
 - řešení: buď použít vhodný projektovaný SRS a PLANAR metody, nebo v GCS použít geodetické metody (`GEODESIC`, `GREAT_ELLIPTIC`, …) s příslušnými jednotkami
 - metoda pro změnu SRS: `Geometry.projectAs(spatial_reference, {transformation_name})` – u změny mezi různými daty je vhodné uvést transformační název
+
+::: {.callout-important}
+### Vztah k souřadnicovému systému
+
+Ne všechny kombinace metod a typu souřadnicového systému dávají smysl a jsou možné!
+:::
 
 ## Výpočet délky polyline ve WGS84
 
