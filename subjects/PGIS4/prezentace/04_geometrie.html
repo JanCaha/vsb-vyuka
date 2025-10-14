@@ -237,23 +237,6 @@ Jan Caha
 <li>všechny vrstvy implementují rozhraní <code>QgsMapLayer</code> a lze s nimi tudíž nakládat stejně</li>
 <li>další příklad jsou geometrie</li>
 </ul>
-<h3 id="hierarchie-geometrií-v-qgis">Hierarchie geometrií v QGIS</h3>
-<ul>
-<li><code>QgsAbstractGeometry</code> – společné rozhraní pro všechny geometrie</li>
-<li>Základní geometrie:
-<ul>
-<li><code>QgsPoint</code>, <code>QgsLineString</code>, <code>QgsPolygon</code></li>
-</ul></li>
-<li>Multi-geometrie:
-<ul>
-<li><code>QgsMultiPoint</code>, <code>QgsMultiLineString</code>, <code>QgsMultiPolygon</code></li>
-</ul></li>
-<li>Kolekce a další specializace:
-<ul>
-<li><code>QgsGeometryCollection</code>, <code>QgsSurface</code>, <code>QgsCurve</code>, <code>QgsCompoundCurve</code>, <code>QgsTriangle</code></li>
-</ul></li>
-</ul>
-<p>Poznámka: Třída <code>QgsGeometry</code> je „obal“ kolem konkrétní implementace rozhraní <code>QgsAbstractGeometry</code> a poskytuje nadstavbové funkce (transformace, serializace WKT/WKB, validace, prostorové operace atp.).</p>
 </section>
 <section id="qgsgeometry" class="slide level2">
 <h2><code>QgsGeometry</code></h2>
@@ -262,7 +245,9 @@ Jan Caha
 <li>obsahuje řadu funkcí (i statické)</li>
 <li>samotná geometrie ve třídě ale pouze odkaz na interface</li>
 </ul>
-<h3 id="praktické-tipy">Praktické tipy</h3>
+</section>
+<section id="praktické-tipy" class="slide level2">
+<h2>Praktické tipy</h2>
 <ul>
 <li>vytvářejte geometrie přes konkrétní třídy (<code>QgsPoint</code>, <code>QgsLineString</code>, …), případně pomocí WKT/WKB</li>
 <li><code>QgsGeometry</code> využijte pro transformace, serializaci (<code>asWkt()</code>, <code>asWkb()</code>), validitu (<code>isGeosValid()</code>), prostorové operace (<code>buffer()</code>, <code>centroid()</code>, <code>intersection()</code>, …)</li>
@@ -282,7 +267,28 @@ Jan Caha
 <li><code>QgsSurface</code>, <code>QgsCurve</code>, <code>QgsCompoundCurve</code>, <code>QgsTriangle</code></li>
 </ul></li>
 </ul>
-<h3 id="krátká-ukázka-python">Krátká ukázka (Python)</h3>
+</section>
+<section id="hierarchie-geometrií-v-qgis" class="slide level2">
+<h2>Hierarchie geometrií v QGIS</h2>
+<ul>
+<li><code>QgsAbstractGeometry</code> – společné rozhraní pro všechny geometrie</li>
+<li>Základní geometrie:
+<ul>
+<li><code>QgsPoint</code>, <code>QgsLineString</code>, <code>QgsPolygon</code></li>
+</ul></li>
+<li>Multi-geometrie:
+<ul>
+<li><code>QgsMultiPoint</code>, <code>QgsMultiLineString</code>, <code>QgsMultiPolygon</code></li>
+</ul></li>
+<li>Kolekce a další specializace:
+<ul>
+<li><code>QgsGeometryCollection</code>, <code>QgsSurface</code>, <code>QgsCurve</code>, <code>QgsCompoundCurve</code>, <code>QgsTriangle</code></li>
+</ul></li>
+</ul>
+<p>Poznámka: Třída <code>QgsGeometry</code> je „obal“ kolem konkrétní implementace rozhraní <code>QgsAbstractGeometry</code> a poskytuje nadstavbové funkce (transformace, serializace WKT/WKB, validace, prostorové operace atp.).</p>
+</section>
+<section id="krátká-ukázka-python" class="slide level2">
+<h2>Krátká ukázka (Python)</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPoint, QgsTriangle</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># vytvoření trojúhelníku z bodů (QgsTriangle implementuje QgsAbstractGeometry)</span></span>
@@ -302,10 +308,12 @@ Jan Caha
 <span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a><span class="co"># jednoduchá operace nad geometrií – densifikace</span></span>
 <span id="cb1-18"><a aria-hidden="true" tabindex="-1"></a>densified <span class="op">=</span> geom.densifyByDistance(<span class="fl">0.3</span>)</span>
 <span id="cb1-19"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(densified.asWkt())  <span class="co"># výstup ve formátu WKT</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<h3 id="další-poznámky">Další poznámky</h3>
+</section>
+<section id="další-poznámky" class="slide level2">
+<h2>Další poznámky</h2>
 <ul>
 <li>většina metod je definována v rozhraní a implementována v konkrétních třídách</li>
-<li><code>partCount()</code> a <code>ringCount()</code> dávají smysl pro vícedílné nebo polygonové geometrie; u bodů vrací typicky 1/0</li>
+<li><code>partCount()</code> a <code>ringCount()</code> dávají smysl pro vícedílné nebo polygonové geometrie; u bodů vrací typicky 1/1</li>
 <li>pro práci s kolekcemi (<code>QgsGeometryCollection</code>) je vhodné hlídat typy prvků uvnitř kolekce</li>
 </ul>
 </section>

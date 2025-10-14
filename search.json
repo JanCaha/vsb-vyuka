@@ -325,21 +325,49 @@
     "href": "subjects/PGIS4/prezentace/04_geometrie.html#příklad-rozhraní-v-qgis",
     "title": "Geometrie v QGIS Python API",
     "section": "Příklad rozhraní v QGIS",
-    "text": "Příklad rozhraní v QGIS\n\nQgsMapLayer - rozhraní pro všechny vrstvy\nfunkce např. crs(), extent(), legend(), renderer(), reload() a celá řada dalších\nfunkce jsou společné bez ohledu na typ vrstvy\nvektorové vrstvy, rastrové vrstvy, mesh vrstvy, point cloud vrstvy atd.\nvšechny vrstvy implementují rozhraní QgsMapLayer a lze s nimi tudíž nakládat stejně\ndalší příklad jsou geometrie\n\nHierarchie geometrií v QGIS\n\nQgsAbstractGeometry – společné rozhraní pro všechny geometrie\nZákladní geometrie:\n\nQgsPoint, QgsLineString, QgsPolygon\n\nMulti-geometrie:\n\nQgsMultiPoint, QgsMultiLineString, QgsMultiPolygon\n\nKolekce a další specializace:\n\nQgsGeometryCollection, QgsSurface, QgsCurve, QgsCompoundCurve, QgsTriangle\n\n\nPoznámka: Třída QgsGeometry je „obal“ kolem konkrétní implementace rozhraní QgsAbstractGeometry a poskytuje nadstavbové funkce (transformace, serializace WKT/WKB, validace, prostorové operace atp.)."
+    "text": "Příklad rozhraní v QGIS\n\nQgsMapLayer - rozhraní pro všechny vrstvy\nfunkce např. crs(), extent(), legend(), renderer(), reload() a celá řada dalších\nfunkce jsou společné bez ohledu na typ vrstvy\nvektorové vrstvy, rastrové vrstvy, mesh vrstvy, point cloud vrstvy atd.\nvšechny vrstvy implementují rozhraní QgsMapLayer a lze s nimi tudíž nakládat stejně\ndalší příklad jsou geometrie"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#qgsgeometry",
     "href": "subjects/PGIS4/prezentace/04_geometrie.html#qgsgeometry",
     "title": "Geometrie v QGIS Python API",
     "section": "QgsGeometry",
-    "text": "QgsGeometry\n\nhlavní třída pro práci s geometrií\nobsahuje řadu funkcí (i statické)\nsamotná geometrie ve třídě ale pouze odkaz na interface\n\nPraktické tipy\n\nvytvářejte geometrie přes konkrétní třídy (QgsPoint, QgsLineString, …), případně pomocí WKT/WKB\nQgsGeometry využijte pro transformace, serializaci (asWkt(), asWkb()), validitu (isGeosValid()), prostorové operace (buffer(), centroid(), intersection(), …)\nmějte na paměti, že dostupné funkce a jejich význam se liší podle typu geometrie (např. area() dává smysl pro plochy, nikoliv pro body/linie)"
+    "text": "QgsGeometry\n\nhlavní třída pro práci s geometrií\nobsahuje řadu funkcí (i statické)\nsamotná geometrie ve třídě ale pouze odkaz na interface"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#praktické-tipy",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#praktické-tipy",
+    "title": "Geometrie v QGIS Python API",
+    "section": "Praktické tipy",
+    "text": "Praktické tipy\n\nvytvářejte geometrie přes konkrétní třídy (QgsPoint, QgsLineString, …), případně pomocí WKT/WKB\nQgsGeometry využijte pro transformace, serializaci (asWkt(), asWkb()), validitu (isGeosValid()), prostorové operace (buffer(), centroid(), intersection(), …)\nmějte na paměti, že dostupné funkce a jejich význam se liší podle typu geometrie (např. area() dává smysl pro plochy, nikoliv pro body/linie)"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#qgsabstractgeometry",
     "href": "subjects/PGIS4/prezentace/04_geometrie.html#qgsabstractgeometry",
     "title": "Geometrie v QGIS Python API",
     "section": "QgsAbstractGeometry",
-    "text": "QgsAbstractGeometry\n\ninterface pro geometrie\nkomplexně definovány všechny funkce, které by měla geometrie implementovat\nmnoho tříd geometrií založených na tomto interface\n\nQgsPoint, QgsLineString, QgsPolygon\nQgsMultiPoint, QgsMultiLineString, QgsMultiPolygon\nQgsGeometryCollection\nQgsSurface, QgsCurve, QgsCompoundCurve, QgsTriangle\n\n\nKrátká ukázka (Python)\nfrom qgis.core import QgsGeometry, QgsPoint, QgsTriangle\n\n# vytvoření trojúhelníku z bodů (QgsTriangle implementuje QgsAbstractGeometry)\ntriangle = QgsTriangle(\n  QgsPoint(0, 0),\n  QgsPoint(1, 0),\n  QgsPoint(0.5, 2),\n)\n\n# metriky přímo nad abstraktní geometrií\nprint(f\"Area: {triangle.area()}\")      # plocha trojúhelníku\nprint(f\"Length: {triangle.length()}\")  # obvod trojúhelníku\n\n# převod na hlavní třídu QgsGeometry (wrapper kolem abstraktní geometrie)\ngeom = QgsGeometry(triangle)\n\n# jednoduchá operace nad geometrií – densifikace\ndensified = geom.densifyByDistance(0.3)\nprint(densified.asWkt())  # výstup ve formátu WKT\nDalší poznámky\n\nvětšina metod je definována v rozhraní a implementována v konkrétních třídách\npartCount() a ringCount() dávají smysl pro vícedílné nebo polygonové geometrie; u bodů vrací typicky 1/0\npro práci s kolekcemi (QgsGeometryCollection) je vhodné hlídat typy prvků uvnitř kolekce"
+    "text": "QgsAbstractGeometry\n\ninterface pro geometrie\nkomplexně definovány všechny funkce, které by měla geometrie implementovat\nmnoho tříd geometrií založených na tomto interface\n\nQgsPoint, QgsLineString, QgsPolygon\nQgsMultiPoint, QgsMultiLineString, QgsMultiPolygon\nQgsGeometryCollection\nQgsSurface, QgsCurve, QgsCompoundCurve, QgsTriangle"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#hierarchie-geometrií-v-qgis",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#hierarchie-geometrií-v-qgis",
+    "title": "Geometrie v QGIS Python API",
+    "section": "Hierarchie geometrií v QGIS",
+    "text": "Hierarchie geometrií v QGIS\n\nQgsAbstractGeometry – společné rozhraní pro všechny geometrie\nZákladní geometrie:\n\nQgsPoint, QgsLineString, QgsPolygon\n\nMulti-geometrie:\n\nQgsMultiPoint, QgsMultiLineString, QgsMultiPolygon\n\nKolekce a další specializace:\n\nQgsGeometryCollection, QgsSurface, QgsCurve, QgsCompoundCurve, QgsTriangle\n\n\nPoznámka: Třída QgsGeometry je „obal“ kolem konkrétní implementace rozhraní QgsAbstractGeometry a poskytuje nadstavbové funkce (transformace, serializace WKT/WKB, validace, prostorové operace atp.)."
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#krátká-ukázka-python",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#krátká-ukázka-python",
+    "title": "Geometrie v QGIS Python API",
+    "section": "Krátká ukázka (Python)",
+    "text": "Krátká ukázka (Python)\nfrom qgis.core import QgsGeometry, QgsPoint, QgsTriangle\n\n# vytvoření trojúhelníku z bodů (QgsTriangle implementuje QgsAbstractGeometry)\ntriangle = QgsTriangle(\n  QgsPoint(0, 0),\n  QgsPoint(1, 0),\n  QgsPoint(0.5, 2),\n)\n\n# metriky přímo nad abstraktní geometrií\nprint(f\"Area: {triangle.area()}\")      # plocha trojúhelníku\nprint(f\"Length: {triangle.length()}\")  # obvod trojúhelníku\n\n# převod na hlavní třídu QgsGeometry (wrapper kolem abstraktní geometrie)\ngeom = QgsGeometry(triangle)\n\n# jednoduchá operace nad geometrií – densifikace\ndensified = geom.densifyByDistance(0.3)\nprint(densified.asWkt())  # výstup ve formátu WKT"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/04_geometrie.html#další-poznámky",
+    "href": "subjects/PGIS4/prezentace/04_geometrie.html#další-poznámky",
+    "title": "Geometrie v QGIS Python API",
+    "section": "Další poznámky",
+    "text": "Další poznámky\n\nvětšina metod je definována v rozhraní a implementována v konkrétních třídách\npartCount() a ringCount() dávají smysl pro vícedílné nebo polygonové geometrie; u bodů vrací typicky 1/1\npro práci s kolekcemi (QgsGeometryCollection) je vhodné hlídat typy prvků uvnitř kolekce"
   },
   {
     "objectID": "subjects/PDBS2/prezentace/01_uvod.html#náplň",
@@ -1473,14 +1501,14 @@
     "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popis-objektu",
     "title": "Obecné funkce ArcPy",
     "section": "Popis objektu",
-    "text": "Popis objektu\n\narcpy.Describe() - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu\nvýstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)"
+    "text": "Popis objektu\n\narcpy.Describe() - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu\nvýstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)\narcpy.da.Describe() - modernější verze, která vrací python slovník (dictionary) s informacemi o objektu (mnohem lépe zpracovatelné a čitelnější)\nk informacím se přistupuje jako k hodnotám ve slovníku, např. desc[\"dataType\"]"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
     "href": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#popisy-objektů",
     "title": "Obecné funkce ArcPy",
     "section": "Popisy objektů",
-    "text": "Popisy objektů\n\narcpy.Describe() - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)\nvýsledný objekty se liší dle požadovaného typu objektu - viz dokumentace\nzákladní minimum informací pro všechny objekty"
+    "text": "Popisy objektů\n\narcpy.da.Describe() - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)\nvýsledný objekty se liší dle požadovaného typu objektu - viz dokumentace\nzákladní minimum informací pro všechny objekty"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/03_obecné_funkce_arcpy.html#práce-s-describe-objekty",
@@ -1694,7 +1722,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-09-23\n\n\nutils.py\n\n\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2024-10-21\n\n\nTvorba rastru\n\n\n\n\n\n\n2024-10-21\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2024-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-10-14\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2024-10-14\n\n\nMěření geometrie\n\n\n\n\n\n\n2024-10-14\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2024-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2024-10-21\n\n\nTvorba rastru\n\n\n\n\n\n\n2024-10-21\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2024-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nutils.py\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -2994,7 +3022,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.01845797 -0.03912478 -0.33596790 -0.64944995 -0.21835126"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.80904612 -0.52034968 -0.04074282 -1.25086515 -0.53085416"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
