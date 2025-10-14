@@ -1,13 +1,15 @@
 # soubor funkcí používaných napříč skripty a ukázkami
 
 import typing
+from pathlib import Path
 
 import arcpy
 
 
 def setup_env(path: typing.Optional[str] = None) -> None:
     """Nastavení workspace pro práci."""
-    base_path = "Projekty/PGIS3/data"
+    file_path = Path(__file__)
+    base_path = file_path.parent / "data"
     if path is None:
         arcpy.env.workspace = base_path
     else:
