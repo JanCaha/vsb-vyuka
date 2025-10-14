@@ -1,0 +1,26 @@
+# Copilot instructions
+
+## Quarto documents
+
+Documents in quarto (file extension .qmd and generally use markdown structure) are written in Czech language but the code should be in English (variables, functions, etc. but the comments in code should be in Czech language).
+
+## Code
+
+This project contains codes written in Python and R. The code is written in English language, but any comments with the code should be in Czech so that they are understandable to czech students. Prints and outputs from scripts and programs should be in English.
+
+### Python
+
+- all code should be formatted using `black` formatter
+- we work with several GIS libraries and API, those include `gdal`, `rasterio`, `fiona`, `shapely`, `QGIS API`, `ArcPy`, `pandas`, `geopandas`, `numpy`, `polars`, `geopolars`
+- when creating classes, use underscore to mark private methods and variables (e.g. `_private_method()` and `self._private_variable`)
+- use type hints everywhere, especially in function definitions and class definitions
+- use good and suggested practices
+
+### R
+
+- all code should be formatted using `styler` formatter
+- prefer use of `tidyverse` package for data manipulation and approach to data analysis
+- use `ggplot2` for graphs and plots
+- we use several GIS libraries and API, those include `sf`, `raster`, `terra`, `leaflet`, `tmap`, `mapview`, `qgisprocess`, `qgis`
+- for statistical analysis use approach with `easystats` package (and its dependencies) where possible
+- for more complex statistical analysis use approach with `tidymodels` package (and its dependencies)
