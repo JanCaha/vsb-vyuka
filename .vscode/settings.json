@@ -6,11 +6,6 @@
     //],
     "r.lsp.promptToInstall": false,
     "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-    "github.copilot.chat.codeGeneration.instructions": [
-        {
-            "file": ".copilot-instructions.md",
-        }
-    ],
     "cSpell.words": [
         "arcpy",
         "autopep",
