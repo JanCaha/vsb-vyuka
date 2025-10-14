@@ -38,25 +38,13 @@ execute:
 - všechny vrstvy implementují rozhraní `QgsMapLayer` a lze s nimi tudíž nakládat stejně
 - další příklad jsou geometrie 
 
-### Hierarchie geometrií v QGIS
-
-- `QgsAbstractGeometry` – společné rozhraní pro všechny geometrie
-- Základní geometrie:
-  - `QgsPoint`, `QgsLineString`, `QgsPolygon`
-- Multi-geometrie:
-  - `QgsMultiPoint`, `QgsMultiLineString`, `QgsMultiPolygon`
-- Kolekce a další specializace:
-  - `QgsGeometryCollection`, `QgsSurface`, `QgsCurve`, `QgsCompoundCurve`, `QgsTriangle`
-
-Poznámka: Třída `QgsGeometry` je „obal“ kolem konkrétní implementace rozhraní `QgsAbstractGeometry` a poskytuje nadstavbové funkce (transformace, serializace WKT/WKB, validace, prostorové operace atp.).
-
 ## `QgsGeometry`
 
 - hlavní třída pro práci s geometrií
 - obsahuje řadu funkcí (i statické)
 - samotná geometrie ve třídě ale pouze odkaz na interface
   
-### Praktické tipy
+## Praktické tipy
 
 - vytvářejte geometrie přes konkrétní třídy (`QgsPoint`, `QgsLineString`, …), případně pomocí WKT/WKB
 - `QgsGeometry` využijte pro transformace, serializaci (`asWkt()`, `asWkb()`), validitu (`isGeosValid()`), prostorové operace (`buffer()`, `centroid()`, `intersection()`, …)
@@ -72,7 +60,19 @@ Poznámka: Třída `QgsGeometry` je „obal“ kolem konkrétní implementace ro
     - `QgsGeometryCollection`
     - `QgsSurface`, `QgsCurve`, `QgsCompoundCurve`, `QgsTriangle`
 
-### Krátká ukázka (Python)
+## Hierarchie geometrií v QGIS
+
+- `QgsAbstractGeometry` – společné rozhraní pro všechny geometrie
+- Základní geometrie:
+  - `QgsPoint`, `QgsLineString`, `QgsPolygon`
+- Multi-geometrie:
+  - `QgsMultiPoint`, `QgsMultiLineString`, `QgsMultiPolygon`
+- Kolekce a další specializace:
+  - `QgsGeometryCollection`, `QgsSurface`, `QgsCurve`, `QgsCompoundCurve`, `QgsTriangle`
+
+Poznámka: Třída `QgsGeometry` je „obal“ kolem konkrétní implementace rozhraní `QgsAbstractGeometry` a poskytuje nadstavbové funkce (transformace, serializace WKT/WKB, validace, prostorové operace atp.).
+
+## Krátká ukázka (Python)
 
 ```python
 from qgis.core import QgsGeometry, QgsPoint, QgsTriangle
@@ -96,10 +96,10 @@ densified = geom.densifyByDistance(0.3)
 print(densified.asWkt())  # výstup ve formátu WKT
 ```
 
-### Další poznámky
+## Další poznámky
 
 - většina metod je definována v rozhraní a implementována v konkrétních třídách
-- `partCount()` a `ringCount()` dávají smysl pro vícedílné nebo polygonové geometrie; u bodů vrací typicky 1/0
+- `partCount()` a `ringCount()` dávají smysl pro vícedílné nebo polygonové geometrie; u bodů vrací typicky 1/1
 - pro práci s kolekcemi (`QgsGeometryCollection`) je vhodné hlídat typy prvků uvnitř kolekce
 
 # Dotazy?{.center}
