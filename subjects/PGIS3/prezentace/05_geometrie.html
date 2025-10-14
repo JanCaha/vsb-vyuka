@@ -216,7 +216,7 @@ Jan Caha
 <li>základní třída geometrie v <span class="software">ArcPy</span></li>
 <li><a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/geometry.htm">dokumentace</a></li>
 <li>lze tvořit přímo <code>Geometry (geometry, inputs, {spatial_reference}, {has_z}, {has_m}, {has_id})</code></li>
-<li>ale spíše je vhodnější speficiké třídy pro druhy geometrií - <code>Multipoint</code>, <code>PointGeometry</code>, <code>Polygon</code>, <code>Polyline</code></li>
+<li>ale spíše je vhodnější specifické třídy pro druhy geometrií - <code>Multipoint</code>, <code>PointGeometry</code>, <code>Polygon</code>, <code>Polyline</code></li>
 </ul>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -241,6 +241,19 @@ Jan Caha
 <li>řešení: buď použít vhodný projektovaný SRS a PLANAR metody, nebo v GCS použít geodetické metody (<code>GEODESIC</code>, <code>GREAT_ELLIPTIC</code>, …) s příslušnými jednotkami</li>
 <li>metoda pro změnu SRS: <code>Geometry.projectAs(spatial_reference, {transformation_name})</code> – u změny mezi různými daty je vhodné uvést transformační název</li>
 </ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Vztah k souřadnicovému systému</strong></p>
+</div>
+<div class="callout-content">
+<p>Ne všechny kombinace metod a typu souřadnicového systému dávají smysl a jsou možné!</p>
+</div>
+</div>
+</div>
 </section>
 <section id="výpočet-délky-polyline-ve-wgs84" class="slide level2">
 <h2>Výpočet délky polyline ve WGS84</h2>
