@@ -21,9 +21,13 @@ execute:
 - `arcpy.Describe()` - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu
 - výstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)
 
+- `arcpy.da.Describe()` - modernější verze, která vrací python slovník (dictionary) s informacemi o objektu (mnohem lépe zpracovatelné a čitelnější)
+- k informacím se přistupuje jako k hodnotám ve slovníku, např. `desc["dataType"]` 
+
+
 ## Popisy objektů
 
-- `arcpy.Describe()` - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)
+- `arcpy.da.Describe()` - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)
 - výsledný objekty se liší dle požadovaného typu objektu - viz [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm)
 - základní minimum informací pro [všechny objekty](https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe-object-properties.htm)
 
@@ -32,7 +36,7 @@ execute:
 - je vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce
 
 ```{python}
-#| eval: false
+# | eval: false
 desc = arcpy.Describe("C:/data/soubor.shp")
 if hasattr(desc, "dataType"):
     data_type = desc.dataType
