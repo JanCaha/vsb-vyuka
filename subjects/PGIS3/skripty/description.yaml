@@ -1,6 +1,6 @@
 - title: "utils.py"
   author: Jan Caha
-  date: 2024-09-23
+  date: 2025-10-14
   path: "PGIS3/skripty/utils.py"
 - title: "Výpisy dat"
   author: Jan Caha
@@ -18,6 +18,10 @@
   author: Jan Caha
   date: 2025-10-07
   path: "PGIS3/skripty/04_kurzory.py"
+- title: "Kurzory - kopírování vektorových dat"
+  author: Jan Caha
+  date: 2025-10-14
+  path: "PGIS3/skripty/05_kopirovani_dat_kurzory.py"
 - title: "Konverze geometrie mezi souřadnicovými systémy"
   author: Jan Caha
   date: 2024-10-14
