@@ -2,7 +2,7 @@
 title: "Rastrová data v [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2024-10-21
+date: 2025-10-21
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -41,7 +41,7 @@ execute:
 ## `QgsRasterBlock`
 
 - blok rastrových dat
-- v podstatě 2D pole hodnot + dopňkové informace z data provideru
+- v podstatě 2D pole hodnot + doplňkové informace z data provideru
 - funkce `value()` pro získání hodnoty buď pomocí indexu, nebo dvojici souřadnic řádek, sloupec
 - funkce `isNoData()` pro zjištění zda hodnota odpovídá **NoData** hodnotě
 
