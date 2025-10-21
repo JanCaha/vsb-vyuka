@@ -1,4 +1,4 @@
-from qgis.core import QgsApplication, QgsRasterIterator, QgsRasterLayer, QgsRectangle
+from qgis.core import QgsApplication, QgsRasterIterator, QgsRasterLayer
 from utils import data_path
 
 qgis = QgsApplication([], False)
@@ -36,5 +36,3 @@ while returned:
 
     # další blok rastru pro cyklus
     returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
-
-qgis.exitQgis()

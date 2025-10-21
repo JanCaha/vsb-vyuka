@@ -1,8 +1,6 @@
-from pathlib import Path
-
 from qgis.core import QgsApplication, QgsRasterFileWriter, QgsRasterIterator, QgsRasterLayer
 from utils import data_path
-
+from qgis.analysis
 qgis = QgsApplication([], False)
 qgis.initQgis()
 
@@ -46,5 +44,3 @@ while returned:
 
     # další blok rastru pro cyklus
     returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
-
-qgis.exitQgis()
