@@ -5,7 +5,7 @@ qgis = QgsApplication([], False)
 qgis.initQgis()
 
 # raster layer
-raster_layer = QgsRasterLayer(data_path("nahodny_raster.tif").as_posix(), "nahodný raster", "gdal")
+raster_layer = QgsRasterLayer(data_path("nahodny_raster.tif").as_posix(), "náhodný raster", "gdal")
 
 # info o rasteru
 print(raster_layer.crs())
@@ -60,5 +60,3 @@ while returned:
     count += 1
     # další blok dat pro cyklus
     returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
-
-qgis.exitQgis()
