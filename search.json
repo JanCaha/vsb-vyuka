@@ -570,7 +570,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.11955063 -0.05292056 -0.10385069 -0.32065746 -0.19329876"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.24564667 -0.15938020 -0.05815897 -0.42557443 -0.14599261"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1317,7 +1317,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\nInvalid Date\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-11-03\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
