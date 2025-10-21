@@ -25,6 +25,7 @@ line = arcpy.Polyline(
 print(line.WKT)
 print(line.length)
 
+# konverze do S-JTSK
 line_sjtsk: arcpy.Geometry = line.projectAs(crs_sjtsk)
 
 # délka v S-JTSK dává smysl - metry, vyděleno 1000 pro km
