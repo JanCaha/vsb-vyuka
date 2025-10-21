@@ -1,6 +1,6 @@
 from qgis.core import QgsApplication, QgsRasterFileWriter, QgsRasterIterator, QgsRasterLayer
 from utils import data_path
-from qgis.analysis
+
 qgis = QgsApplication([], False)
 qgis.initQgis()
 
