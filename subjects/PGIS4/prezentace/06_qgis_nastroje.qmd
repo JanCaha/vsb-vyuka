@@ -2,7 +2,7 @@
 title: "Processingové nástroje [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2024-11-03
+date: 2025-11-04
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -44,7 +44,7 @@ execute:
 
 ## Funkce pro kontrolu vstupních dat
 
-- `checkParameterValues(self, parameters, context) -> Tuple[bool, str]`
+- `checkParameterValues(self, parameters: dict[str, Any], context: QgsProcessingContext) -> Tuple[bool, str]`
 - kontrola vstupních dat, zda splňují požadavky, ještě před spuštěním nástroje
 - vrací `True` pokud je vše v pořádku, jinak `False` a chybovou hlášku
 - funkce není povinná, existují vychozé implementace v třídě `QgsProcessingAlgorithm`, která vždy vrací `(True, "")`
@@ -71,7 +71,13 @@ from processing.core.Processing import Processing
 
 Processing.initialize()
 
-result = processing.run('nazev:algoritmu', {'parametry': 'hodnoty'})
+result = processing.run(
+  'nazev:algoritmu', 
+  {'parametry': 'hodnoty'}, 
+  context=context,
+  feedback=feedback,
+  is_child_algorithm=True
+)
 ```
 
 - tento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)
