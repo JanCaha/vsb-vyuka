@@ -351,11 +351,11 @@ Jan Caha
 </section>
 <section id="použití---import" class="slide level2">
 <h2>Použití - import</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
-<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span>
-<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nazev_balicku <span class="co"># import celého balíčku</span></span>
-<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku.modul_path.fn_1() <span class="co"># použití funkce</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nazev_balicku  <span class="co"># import celého balíčku</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span>  <span class="co"># všechny funkce</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> fn_1  <span class="co"># funkce</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>nazev_balicku.modul_path.fn_1()  <span class="co"># použití funkce</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="použití---úprava-__init__.py" class="slide level2">
 <h2>Použití - úprava <code>__init__.py</code></h2>
@@ -364,16 +364,16 @@ Jan Caha
 <li>tím je zpřístupníme i na úrovni balíčku</li>
 <li>příklad <code>__init__.py</code></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_gdal <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_gdal <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku.modul_path <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="použití---po-změně-import" class="slide level2">
 <h2>Použití - po změně import</h2>
 <ul>
 <li><code>import nazev_balicku</code> - import celého balíčku a věcí z <code>__init__.py</code></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> fn_1 <span class="co"># funkce</span></span>
-<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> <span class="op">*</span> <span class="co"># všechny funkce</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> <span class="op">*</span>  <span class="co"># všechny funkce</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nazev_balicku <span class="im">import</span> fn_1  <span class="co"># funkce</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="závěr" class="slide level2">
 <h2>Závěr</h2>

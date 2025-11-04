@@ -250,25 +250,27 @@ Jan Caha
 <li></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>arcpy.management.CreateFeatureclass(</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    out_path, </span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    out_name, </span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    {geometry_type}, {template}, </span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>    {has_m}, {has_z}, {spatial_reference}, </span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    {config_keyword}, {spatial_grid_1}, </span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    {spatial_grid_2}, {spatial_grid_3}, </span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    {out_alias}, {oid_type}</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    out_path,</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    out_name,</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    {geometry_type},</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>    {template},</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    {has_m},</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    {has_z},</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    {spatial_reference},</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    {config_keyword},</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    {spatial_grid_1},</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    {spatial_grid_2},</span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    {spatial_grid_3},</span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>    {out_alias},</span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>    {oid_type},</span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="copy" class="slide level2">
 <h2><code>Copy()</code></h2>
 <ul>
 <li>kopie vrstvy</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>arcpy.management.Copy(</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    in_data, </span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>    out_data, </span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    {data_type}, {associated_data}</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>arcpy.management.Copy(in_data, out_data, {data_type}, {associated_data})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="přístup-k-vektorovým-datům" class="slide level2">
 <h2>Přístup k vektorovým datům</h2>
@@ -308,17 +310,17 @@ Jan Caha
 </section>
 <section id="searchcursor" class="slide level2">
 <h2><code>SearchCursor</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>SearchCursor (</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>    in_table, </span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    field_names, </span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>    {where_clause}, </span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>    {spatial_reference}, </span>
-<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>    {explode_to_points}, </span>
-<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>    {sql_clause}, </span>
-<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>    {datum_transformation}, </span>
-<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>    {spatial_filter}, </span>
-<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a>    {spatial_relationship}, </span>
-<span id="cb5-11"><a aria-hidden="true" tabindex="-1"></a>    {search_order}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>SearchCursor(</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>    in_table,</span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    field_names,</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>    {where_clause},</span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>    {spatial_reference},</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>    {explode_to_points},</span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>    {sql_clause},</span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>    {datum_transformation},</span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>    {spatial_filter},</span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a>    {spatial_relationship},</span>
+<span id="cb5-11"><a aria-hidden="true" tabindex="-1"></a>    {search_order},</span>
 <span id="cb5-12"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="searchcursor---parametry" class="slide level2">
@@ -377,18 +379,18 @@ Jan Caha
 </section>
 <section id="updatecursor" class="slide level2">
 <h2><code>UpdateCursor</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>UpdateCursor (</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>    in_table, </span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>    field_names, </span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>    {where_clause}, </span>
-<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>    {spatial_reference}, </span>
-<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>    {explode_to_points}, </span>
-<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>    {sql_clause}, </span>
-<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>    {datum_transformation}, </span>
-<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a>    {explicit}, </span>
-<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a>    {spatial_filter}, </span>
-<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a>    {spatial_relationship}, </span>
-<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a>    {search_order}</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>UpdateCursor(</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>    in_table,</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>    field_names,</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>    {where_clause},</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>    {spatial_reference},</span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>    {explode_to_points},</span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>    {sql_clause},</span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>    {datum_transformation},</span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a>    {explicit},</span>
+<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a>    {spatial_filter},</span>
+<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a>    {spatial_relationship},</span>
+<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a>    {search_order},</span>
 <span id="cb7-13"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>po úpravě je nutno změnu uložit</li>
@@ -415,12 +417,7 @@ Jan Caha
 </section>
 <section id="insertcursor" class="slide level2">
 <h2><code>InsertCursor</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>InsertCursor (</span>
-<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>    in_table, </span>
-<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a>    field_names, </span>
-<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a>    {datum_transformation}, </span>
-<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a>    {explicit}</span>
-<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a>InsertCursor(in_table, field_names, {datum_transformation}, {explicit})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>vložení do tabulky - jako python <code>Tuple</code> (hodnoty v kulatých závorkách)</li>
 </ul>

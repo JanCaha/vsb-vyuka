@@ -250,9 +250,9 @@ Jan Caha
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>raster.readOnly <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> raster:</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">,</span>j<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>raster[i,j]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> raster[i,j] <span class="op">&lt;</span>  <span class="dv">0</span>:</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    raster[i,j] <span class="op">=</span> <span class="dv">0</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">,</span>j<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>raster[i,j]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> raster[i, j] <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>        raster[i, j] <span class="op">=</span> <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="rastercelliterator---indexy" class="slide level2">
 <h2><code>RasterCellIterator</code> - indexy</h2>
@@ -271,9 +271,9 @@ Jan Caha
 <ul>
 <li>pozor na inicializaci - jedná se o python <strong>dictionary</strong> s klíči - zde <strong>rasters</strong> (ale jsou další)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> RasterCellIterator({<span class="st">'rasters'</span>:[myRas1, myRas2, outRas1, outRas2]}) <span class="im">as</span> rci:</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i,j <span class="kw">in</span> rci:</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>      <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> RasterCellIterator({<span class="st">"rasters"</span>: [myRas1, myRas2, outRas1, outRas2]}) <span class="im">as</span> rci:</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, j <span class="kw">in</span> rci:</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>první rastr určuje nastavení enviromentu - souřadnicový sytém, velikost buňky a extent</li>
 <li>díky tomu lze iterovat přes vícero rastrů současně</li>

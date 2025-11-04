@@ -269,14 +269,14 @@ Jan Caha
 <ul>
 <li>exporty layoutu do grafického souboru (typicky PDF)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">'current'</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"current"</span>)</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>lyt <span class="op">=</span> p.listLayouts()[<span class="dv">0</span>]</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> arcpy.mp.CreateExportFormat(<span class="st">'PDF'</span>, <span class="vs">r'C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output1</span><span class="dv">.</span><span class="vs">pdf'</span>)</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf) </span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> arcpy.mp.CreateExportFormat(<span class="st">"PDF"</span>, <span class="vs">r"C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output1</span><span class="dv">.</span><span class="vs">pdf"</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>pdf.resolution <span class="op">=</span> <span class="dv">300</span></span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>pdf.filePath <span class="op">=</span> <span class="vs">r'C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output2</span><span class="dv">.</span><span class="vs">pdf'</span>  </span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>pdf.filePath <span class="op">=</span> <span class="vs">r"C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output2</span><span class="dv">.</span><span class="vs">pdf"</span></span>
 <span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>

@@ -259,8 +259,8 @@ Jan Caha
 <li>buď necháme na výchozím QGIS kódu (to je to, co už jsme viděli)</li>
 <li>nebo vytvoříme funkci <code>postProcessAlgorithm(self, context: QgsProcessingContext, feedback: QgsProcessingFeedback)</code>, kde můžeme výsledek algoritmu ještě dále zpracovat</li>
 <li>např. nastavit styl vrstvy atd.</li>
-<li>tato funkce je volána po skončení <code>processAlgorithm()</code> a měla by vrace stejný Python objekt, který byl vrácen v <code>processAlgorithm()</code></li>
-<li>aby byl zajištěň přenos dat mezi <code>processAlgorithm()</code> a <code>postProcessAlgorithm()</code>, je třeba vytvořit proměnnou třídy, která bude uchovávat výsledek (tzn. <code>self.result = ...</code>)</li>
+<li>tato funkce je volána po skončení <code>processAlgorithm()</code> a měla by vracet stejný Python objekt, který byl vrácen v <code>processAlgorithm()</code></li>
+<li>aby byl zajištěn přenos dat mezi <code>processAlgorithm()</code> a <code>postProcessAlgorithm()</code>, je třeba vytvořit proměnnou třídy, která bude uchovávat výsledek (tzn. <code>self.result = ...</code>)</li>
 </ul>
 </section>
 <section id="qgsprocessingfeaturebasedalgorithm" class="slide level2">
@@ -268,14 +268,17 @@ Jan Caha
 <ul>
 <li>verze <code>QgsProcessingAlgorithm</code> určená pro modifikaci vektorových dat</li>
 <li>hlavní funkce <code>processFeature()</code> pro zpracování jednotlivých prvků</li>
-<li>využivá se měně často než <code>QgsProcessingAlgorithm</code>, alespoň v pluginech</li>
+<li>využívá se měně často než <code>QgsProcessingAlgorithm</code>, alespoň v pluginech</li>
 </ul>
 </section>
 <section id="spouštění-nástrojů-z-kódu" class="slide level2">
 <h2>Spouštění nástrojů z kódu</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis <span class="im">import</span> processing</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> processing.run(<span class="st">'nazev:algoritmu'</span>,{<span class="st">'parametry'</span>: <span class="st">'hodnoty'</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> processing.core.Processing <span class="im">import</span> Processing</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis <span class="im">import</span> processing</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>Processing.initialize()</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> processing.run(<span class="st">"nazev:algoritmu"</span>, {<span class="st">"parametry"</span>: <span class="st">"hodnoty"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>tento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)</li>
 <li>takto lze řetězit několik nástrojů za sebou (pokud použijeme, pak je vhodné využít <code>QgsProcessingMultiStepFeedback</code> pro zobrazení průběhu)</li>

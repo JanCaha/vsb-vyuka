@@ -243,8 +243,8 @@ Jan Caha
 </section>
 <section id="tvorba-qgsfield" class="slide level2">
 <h2>Tvorba <code>QgsField</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.PyQt.QtCore <span class="im">import</span> QMetaType</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsField</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsField</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.PyQt.QtCore <span class="im">import</span> QMetaType</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>field <span class="op">=</span> QgsField(<span class="st">"field"</span>, QMetaType.Type.Double)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
@@ -303,12 +303,10 @@ Jan Caha
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsVectorLayer</span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> QgsVectorLayer(</span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"NoGeometry?"</span></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"field=a:double&amp;"</span></span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"field=b:int"</span>,</span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"source"</span>,</span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"memory"</span>,</span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"NoGeometry?"</span> <span class="st">"field=a:double&amp;"</span> <span class="st">"field=b:int"</span>,</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"source"</span>,</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"memory"</span>,</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="řešení-problému-s-potenciálním-návratem-none" class="slide level2">
 <h2>Řešení problému s potenciálním návratem <code>None</code></h2>
@@ -321,16 +319,17 @@ Jan Caha
 </section>
 <section id="ukázka" class="slide level2">
 <h2>Ukázka</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsVectorLayer</span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> cast</span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> QgsVectorLayer(<span class="st">"cesta/k/souboru.gpkg"</span>, <span class="st">"vrstva"</span>, <span class="st">"ogr"</span>)</span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(layer.featureCount())  <span class="co"># mypy hlásí chybu, layer může být None</span></span>
-<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> cast(QgsVectorLayer, layer)  </span>
-<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(layer.featureCount())  <span class="co"># zde mypy už nehlásí chybu</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> cast</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsVectorLayer</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> QgsVectorLayer(<span class="st">"cesta/k/souboru.gpkg"</span>, <span class="st">"vrstva"</span>, <span class="st">"ogr"</span>)</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(layer.featureCount())  <span class="co"># mypy hlásí chybu, layer může být None</span></span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> cast(QgsVectorLayer, layer)</span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(layer.featureCount())  <span class="co"># zde mypy už nehlásí chybu</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>

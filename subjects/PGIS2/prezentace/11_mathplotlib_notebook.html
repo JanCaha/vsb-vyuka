@@ -251,7 +251,8 @@ Jan Caha
 <li><strong>Qt5Agg, TkAgg, WebAgg</strong> <i class="fa-solid fa-times" aria-label="times"></i> <strong>Agg, PDF, SVG, PS</strong></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>matplotlib.use(<span class="st">'Agg'</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>matplotlib.use(<span class="st">"Agg"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="stylování-a-konfigurace" class="slide level2">
 <h2>Stylování a konfigurace</h2>
@@ -261,7 +262,8 @@ Jan Caha
 <li>předpřipravené styly</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>matplotlib.style.use(<span class="st">'ggplot'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>matplotlib.style.use(<span class="st">"ggplot"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dva-způsoby-použití" class="slide level2">
 <h2>Dva způsoby použití</h2>
@@ -277,9 +279,10 @@ Jan Caha
 </ul></li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obrázek s 2 grafy - 1 řádek, 2 sloupce</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># velikost obrázku je v palcích</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> mpl.pyplot.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">8</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obrázek s 2 grafy - 1 řádek, 2 sloupce</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># velikost obrázku je v palcích</span></span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> mpl.pyplot.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">8</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>prvek <code>axs</code> je ve skutečnosti pole, jednotlivých prvků s osami, takže přistupujeme jako <code>axs[0]</code> atd.</li>
 </ul>
