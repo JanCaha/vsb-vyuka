@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-11-03">
+  <meta name="dcterms.date" content="2025-11-04">
   <title>Výuka - Jan Caha – Processingové nástroje QGIS Python API</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -208,7 +208,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-11-03</p>
+  <p class="date">2025-11-04</p>
 </section>
 <section id="processingové-nástroje" class="slide level2">
 <h2>Processingové nástroje</h2>
@@ -247,7 +247,7 @@ Jan Caha
 <section id="funkce-pro-kontrolu-vstupních-dat" class="slide level2">
 <h2>Funkce pro kontrolu vstupních dat</h2>
 <ul>
-<li><code>checkParameterValues(self, parameters, context) -&gt; Tuple[bool, str]</code></li>
+<li><code>checkParameterValues(self, parameters: dict[str, Any], context: QgsProcessingContext) -&gt; Tuple[bool, str]</code></li>
 <li>kontrola vstupních dat, zda splňují požadavky, ještě před spuštěním nástroje</li>
 <li>vrací <code>True</code> pokud je vše v pořádku, jinak <code>False</code> a chybovou hlášku</li>
 <li>funkce není povinná, existují vychozé implementace v třídě <code>QgsProcessingAlgorithm</code>, která vždy vrací <code>(True, "")</code></li>
@@ -278,7 +278,13 @@ Jan Caha
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>Processing.initialize()</span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> processing.run(<span class="st">"nazev:algoritmu"</span>, {<span class="st">"parametry"</span>: <span class="st">"hodnoty"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> processing.run(</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"nazev:algoritmu"</span>,</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    {<span class="st">"parametry"</span>: <span class="st">"hodnoty"</span>},</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    context<span class="op">=</span>context,</span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>    feedback<span class="op">=</span>feedback,</span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>    is_child_algorithm<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>tento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)</li>
 <li>takto lze řetězit několik nástrojů za sebou (pokud použijeme, pak je vhodné využít <code>QgsProcessingMultiStepFeedback</code> pro zobrazení průběhu)</li>

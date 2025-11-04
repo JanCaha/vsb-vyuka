@@ -22,7 +22,8 @@ data = data * 1000
 raster_new.write(data, upper_left_corner=(500, 500))
 
 # zápis do nového rastru
-raster_new.save("New_Raster")
+raster_new.save("Raster_krat_1000")
+print("Rastr x 1000 uložen.")
 
 # tvorba nového rastru dle objektu RasterInfo z prázdného objektu
 raster_info_2 = arcpy.RasterInfo()
@@ -37,7 +38,10 @@ raster_new_2 = arcpy.Raster(raster_info_2)
 data = raster_new_2.read()
 
 # tvar dat - rozměry
+print("=== Rozměry dat nového rastru ===")
 print(data.shape)
+print(data)
+print("======")
 
 # vypnění dat hodnotami
 for i in range(data.shape[0]):
@@ -46,4 +50,5 @@ for i in range(data.shape[0]):
 
 # zapis pole do rastru a uložení
 raster_new_2.write(data)
-raster_new_2.save("New_Raster_2")
+raster_new_2.save("Raster_hodnoty_i_j")
+print("Rastr hodnot i * j uložen.")

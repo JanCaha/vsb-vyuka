@@ -1,10 +1,12 @@
-import typing
+from typing import Any, Optional, Tuple
 
 from qgis import processing
 from qgis.core import (
-    QgsProcessing,
+    Qgis,
     QgsProcessingAlgorithm,
+    QgsProcessingContext,
     QgsProcessingException,
+    QgsProcessingFeedback,
     QgsProcessingMultiStepFeedback,
     QgsProcessingParameterFeatureSink,
     QgsProcessingParameterVectorLayer,
@@ -19,31 +21,33 @@ class ExampleMultiStepProcessingAlgorithm(QgsProcessingAlgorithm):
     def createInstance(self):
         return ExampleMultiStepProcessingAlgorithm()
 
-    def name(self):
+    def name(self) -> str:
         return "examplemultistepalgorithm"
 
-    def displayName(self):
+    def displayName(self) -> str:
         return "Example multistep algorithm"
 
-    def group(self):
+    def group(self) -> str:
         return "Example scripts"
 
-    def groupId(self):
+    def groupId(self) -> str:
         return "examplescripts"
 
-    def shortHelpString(self):
+    def shortHelpString(self) -> str:
         return "Example multistep algorithm "
 
-    def initAlgorithm(self, config=None):
+    def initAlgorithm(self, config: Optional[dict[str, Any]] = None):
         self.addParameter(
-            QgsProcessingParameterVectorLayer(
-                self.INPUT, "Input layer", [QgsProcessing.SourceType.TypeVectorAnyGeometry]
-            )
+            QgsProcessingParameterVectorLayer(self.INPUT, "Input layer", [Qgis.ProcessingSourceType.VectorAnyGeometry])
         )
 
         self.addParameter(QgsProcessingParameterFeatureSink(self.OUTPUT, "Output layer"))
 
-    def checkParameterValues(self, parameters, context) -> typing.Tuple[bool, str]:
+    def checkParameterValues(
+        self,
+        parameters: dict[str, Any],
+        context: QgsProcessingContext,
+    ) -> Tuple[bool, str | None]:
         # v této funkci můžeme provádět kontrolu parametrů
 
         # parametry musíme načíst jako při zpracování algoritmu - skrze funkce self.parameterAs...
@@ -57,7 +61,12 @@ class ExampleMultiStepProcessingAlgorithm(QgsProcessingAlgorithm):
 
         return super().checkParameterValues(parameters, context)
 
-    def processAlgorithm(self, parameters, context, feedback) -> typing.Dict[str, typing.Any]:
+    def processAlgorithm(
+        self,
+        parameters: dict[str, Any],
+        context: QgsProcessingContext,
+        feedback: QgsProcessingFeedback | None,
+    ) -> dict[str, Any]:
 
         # vícekrokový feedback pro zobrazení průběhu zpracování
         feedback = QgsProcessingMultiStepFeedback(3, feedback)
