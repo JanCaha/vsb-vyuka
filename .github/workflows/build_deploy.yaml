@@ -11,7 +11,8 @@ on:
       - '**.md'
       - '**.yaml'
       - '**.scss'
-
+  workflow_dispatch:
+    
 jobs:
 
   build-web-and-deploy:
