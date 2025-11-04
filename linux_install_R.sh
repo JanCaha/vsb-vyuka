@@ -75,6 +75,6 @@ if [ "$GGPLOT2" = true ]; then
   sudo apt-get install -y r-cran-ggplot2
 fi
 
-mkdir -p "$R_LIBS_USER"
-Rscript -e 'pkgs <- c("rmarkdown", "knitr", "tibble"); miss <- setdiff(pkgs, rownames(installed.packages())); if (length(miss)) install.packages(miss, lib=Sys.getenv("R_LIBS_USER"), repos="https://cloud.r-project.org", quiet=TRUE)'
+# mkdir -p "$R_LIBS_USER"
+# Rscript -e 'pkgs <- c("rmarkdown", "knitr", "tibble"); miss <- setdiff(pkgs, rownames(installed.packages())); if (length(miss)) install.packages(miss, lib=Sys.getenv("R_LIBS_USER"), repos="https://cloud.r-project.org", quiet=TRUE)'
           
