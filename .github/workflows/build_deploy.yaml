@@ -10,6 +10,7 @@ on:
       - '**.qmd'
       - '**.md'
       - '**.yaml'
+      - '**.yml'
       - '**.scss'
   workflow_dispatch:
     
