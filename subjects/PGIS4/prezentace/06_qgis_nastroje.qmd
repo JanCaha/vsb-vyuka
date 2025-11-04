@@ -54,21 +54,24 @@ execute:
 - buď necháme na výchozím QGIS kódu (to je to, co už jsme viděli)
 - nebo vytvoříme funkci `postProcessAlgorithm(self, context: QgsProcessingContext, feedback: QgsProcessingFeedback)`, kde můžeme výsledek algoritmu ještě dále zpracovat
 - např. nastavit styl vrstvy atd.
-- tato funkce je volána po skončení `processAlgorithm()` a měla by vrace stejný Python objekt, který byl vrácen v `processAlgorithm()`
-- aby byl zajištěň přenos dat mezi `processAlgorithm()` a `postProcessAlgorithm()`, je třeba vytvořit proměnnou třídy, která bude uchovávat výsledek (tzn. `self.result = ...`)
+- tato funkce je volána po skončení `processAlgorithm()` a měla by vracet stejný Python objekt, který byl vrácen v `processAlgorithm()`
+- aby byl zajištěn přenos dat mezi `processAlgorithm()` a `postProcessAlgorithm()`, je třeba vytvořit proměnnou třídy, která bude uchovávat výsledek (tzn. `self.result = ...`)
 
 ## `QgsProcessingFeatureBasedAlgorithm`
 
 - verze `QgsProcessingAlgorithm` určená pro modifikaci vektorových dat
 - hlavní funkce `processFeature()` pro zpracování jednotlivých prvků
-- využivá se měně často než `QgsProcessingAlgorithm`, alespoň v pluginech
+- využívá se měně často než `QgsProcessingAlgorithm`, alespoň v pluginech
 
 ## Spouštění nástrojů z kódu
 
 ```python
 from qgis import processing
+from processing.core.Processing import Processing
 
-result = processing.run('nazev:algoritmu',{'parametry': 'hodnoty'})
+Processing.initialize()
+
+result = processing.run('nazev:algoritmu', {'parametry': 'hodnoty'})
 ```
 
 - tento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)
