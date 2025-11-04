@@ -2,7 +2,7 @@
 title: "Správa vlastního kódu pro [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2024-11-03
+date: 2025-11-04
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -46,7 +46,7 @@ execute:
 ## Python balík
 
 - v podstatě základní souborová struktura
-- velice malé minimální požadavky (budeme předpokládat trochu vyšší nároky, aby byl použitělější)
+- velice malé minimální požadavky (budeme předpokládat trochu vyšší nároky, aby byl použitelnější)
 - cílem je mít balík hostovaný na GitHubu, automaticky testovaný a nainstalovatelný příkazem
   
 ```bash
@@ -60,9 +60,9 @@ pip install . --upgrade
 ```
 - i v [conda]{.software} prostředí instalujeme přes [pip]{.software}, kvůli jednoduchosti 
 
-## Python balík - struktura nezbyné
+## Python balík - struktura nezbytný záaklad
 
-- `slozka_projektu` - pro [VS Code]{.software} a logické odělení kódu - nemusí se jmenovat přímo jako balík
+- `slozka_projektu` - pro [VS Code]{.software} a logické oddělení kódu - nemusí se jmenovat přímo jako balík
   - `src` - složka zdrojáků - zde vytvoříme složku s jménem balíku 
   - `pyproject.toml` - soubor popisující balík a jeho vlastnosti
   - `.env` - soubor s proměnnými prostředí, zejména `PYTHONPATH` 
@@ -182,8 +182,8 @@ pythonpath = ["src"]
 - v Pythonu dva hlavní frameworky - [unittest]{.software} a [pytest]{.software}
 - [pytest]{.software} je modernější a "jednodušší" na použití - na ten se zaměříme
 - techniky a postupy testování mohou působit složitě, ale základní principy jsou jednoduché
-- existuje vícero druhů testů, ale nás zajimají pouze jednotkové testy (unit tests) - testujeme jednotlivé části kódu (funkce či objekty a jejich chování)
-- extenze (balíky) rozšiřující funcionalitu [pytest]{.software}, obkvykle [pytest-nazev]{.software}, např [pytest-cov]{.software}
+- existuje vícero druhů testů, ale nás zajímají pouze jednotkové testy (unit tests) - testujeme jednotlivé části kódu (funkce či objekty a jejich chování)
+- extenze (balíky) rozšiřující funkcionalitu [pytest]{.software}, obvykle [pytest-nazev]{.software}, např [pytest-cov]{.software}
  
 ## Testy - struktura 
 
@@ -195,7 +195,7 @@ pythonpath = ["src"]
 ## Testy spouštění
 
 - obvykle spouštíme celou baterii testů příkazem `pytest` v kořenové složce balíku (nastavení je definované v `pyproject.toml`, jinak je příkaz složitější)
-- lze omezit na konrétní soubor ale i funci v rámci souboru
+- lze omezit na konkrétní soubor ale i funkci v rámci souboru
 - integrováno ve [VS Code]{.software}, takže testy lze spouštět přímo z IDE 
   - výhodou je, že se zobrazí výsledky a chyby přímo v editoru a vizuálně
   - lze spouštět i jednotlivé testy, přímo z editoru
@@ -229,6 +229,6 @@ def test_plus():
 - pokud chcete kód sdílet s ostatními, je to zásadní
 - pokud chcete mít kód pod kontrolou a mít jistotu, že funguje, jsou testy nutnost
      - v čase se mohou měnit používané funkce, knihovny atd. a jen testy tyto změny dokáží zachytit dřív než se chyba reálně projeví
-- "progmátorská disciplína" - ke každému kódu by měla existovat dokumentace (klidně kratičká) a test
+- "programátorská disciplína" - ke každému kódu by měla existovat dokumentace (klidně kratičká) a test
 
 # Dotazy?{.center} 
