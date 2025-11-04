@@ -36,16 +36,16 @@
   path: "PGIS3/skripty/08_geometrie_vztahy.py"
 - title: "Rastrová data"
   author: Jan Caha
-  date: 2024-10-21
-  path: "PGIS3/skripty/08_raster.py"
+  date: 2024-11-04
+  path: "PGIS3/skripty/09_raster.py"
 - title: "Tvorba rastru"
   author: Jan Caha
-  date: 2024-10-21
-  path: "PGIS3/skripty/09_tvorba_rastru.py"
+  date: 2024-11-04
+  path: "PGIS3/skripty/10_tvorba_rastru.py"
 - title: "Raster Cell Iterator - procházení přes buňky rastru"
   author: Jan Caha
-  date: 2024-10-21
-  path: "PGIS3/skripty/10_raster_cell_iterator.py"
+  date: 2024-11-04
+  path: "PGIS3/skripty/11_raster_cell_iterator.py"
 - title: "Zkušební balík s testy"
   author: Jan Caha
   date: 2024-11-11
