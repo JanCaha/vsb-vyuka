@@ -1,5 +1,11 @@
 project:
   type: website
+  # Render only .qmd sources; .Rmd files will be ignored in project builds
+  render:
+    - index.qmd
+    - subjects/**/*.qmd
+    - descriptions/**/*.qmd
+    - tools/**/*.qmd
 
 website:
   page-navigation: true
