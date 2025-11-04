@@ -51,7 +51,7 @@ echo "Install ggplot2 package - $GGPLOT2"
 sudo wget -q https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc -O /etc/apt/trusted.gpg.d/marutter_pubkey.asc
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/marutter_pubkey.asc] https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" | sudo tee /etc/apt/sources.list.d/r.list
 sudo apt-get update
-sudo apt-get install -y --install-suggests r-base
+sudo apt-get install -y r-base
 
 # Prepare and install R packages from binaries (otherwise it takes forever to compile them from source)    
 sudo wget -q https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc -O /etc/apt/trusted.gpg.d/cranapt_key.asc
@@ -60,7 +60,7 @@ sudo apt-get update
 
 if [ "$ALL_PACKAGES" = true ]; then
   echo "Installing all R packages"
-  sudo apt-get install -y --install-suggests \
+  sudo apt-get install -y \
       r-cran-sf r-cran-terra r-cran-raster r-cran-stars r-cran-tmap \
       r-cran-tidyverse r-cran-tidymodels \
       r-cran-here \
@@ -72,5 +72,5 @@ fi
 
 if [ "$GGPLOT2" = true ]; then
   echo "Installing ggplot2 package"
-  sudo apt-get install -y --install-suggests r-cran-ggplot2
+  sudo apt-get install -y r-cran-ggplot2
 fi
