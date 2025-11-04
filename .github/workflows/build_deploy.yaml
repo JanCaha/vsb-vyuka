@@ -78,8 +78,8 @@ jobs:
       
       - name: Install R packages (rmarkdown, knitr)
         run: |
-          Rscript -e 'pkgs <- c("rmarkdown", "knitr"); miss <- setdiff(pkgs, rownames(installed.packages())); if (length(miss)) install.packages(miss, repos="https://cloud.r-project.org", quiet=TRUE)'
-
+          mkdir -p "$R_LIBS_USER"
+          Rscript -e 'pkgs <- c("rmarkdown", "knitr"); miss <- setdiff(pkgs, rownames(installed.packages())); if (length(miss)) install.packages(miss, lib=Sys.getenv("R_LIBS_USER"), repos="https://cloud.r-project.org", quiet=TRUE)'
           
       - name: Prepare DEV stuff
         run: |
