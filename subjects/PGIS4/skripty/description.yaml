@@ -44,11 +44,11 @@
   path: "PGIS4/skripty/11_raster_calculator.py"
 - title: "Nástroj pro vektorová data"
   author: Jan Caha
-  date: 2024-11-04
+  date: 2025-11-04
   path: "PGIS4/skripty/nastroj1.py"
 - title: "Algoritmus s více kroky"
   author: Jan Caha
-  date: 2024-11-18
+  date: 2025-11-18
   path: "PGIS4/skripty/nástroj2.py"
 - title: "Ukázkový Plugin"
   author: Jan Caha
