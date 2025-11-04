@@ -75,7 +75,12 @@ jobs:
       - name: Install R and packages
         run: |
           sudo ./linux_install_R.sh  --all
+      
+      - name: Install R packages (rmarkdown, knitr)
+        run: |
+          Rscript -e 'pkgs <- c("rmarkdown", "knitr"); miss <- setdiff(pkgs, rownames(installed.packages())); if (length(miss)) install.packages(miss, repos="https://cloud.r-project.org", quiet=TRUE)'
 
+          
       - name: Prepare DEV stuff
         run: |
           ./prepare_dev.sh
