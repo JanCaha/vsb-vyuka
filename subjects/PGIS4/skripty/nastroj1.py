@@ -1,10 +1,10 @@
-from qgis import processing
+from typing import Any, Optional
+
 from qgis.core import (
     Qgis,
     QgsFeature,
     QgsFeatureRequest,
     QgsFeatureSink,
-    QgsProcessing,
     QgsProcessingAlgorithm,
     QgsProcessingContext,
     QgsProcessingException,
@@ -29,27 +29,27 @@ class FilteredCentroidsProcessingAlgorithm(QgsProcessingAlgorithm):
         return FilteredCentroidsProcessingAlgorithm()
 
     # id nástroje
-    def name(self):
+    def name(self) -> str:
         return "filteredcentroids"
 
     # název nástroje, jak se bude zobrazovat uživateli
-    def displayName(self):
+    def displayName(self) -> str:
         return "Filtered Centroids"
 
     # kategorie nástroje, jak se bude zobrazovat uživateli
-    def group(self):
+    def group(self) -> str:
         return "Example scripts"
 
     # id kategorie nástroje
-    def groupId(self):
+    def groupId(self) -> str:
         return "examplescripts"
 
     # nápověda nástroje
-    def shortHelpString(self):
+    def shortHelpString(self) -> str:
         return "Example algorithm short description"
 
     # inicializace nástroje, parametry a jejich nastavení
-    def initAlgorithm(self, config=None):
+    def initAlgorithm(self, config: Optional[dict[str, Any]] = None):
 
         self.addParameter(
             QgsProcessingParameterFeatureSource(
@@ -83,10 +83,10 @@ class FilteredCentroidsProcessingAlgorithm(QgsProcessingAlgorithm):
     # funkce spuštění nástroje
     def processAlgorithm(
         self,
-        parameters,
+        parameters: dict[str, Any],
         context: QgsProcessingContext,
         feedback: QgsProcessingFeedback,
-    ):
+    ) -> dict[str, Any]:
 
         # vstupní vrstva - načtení
         source = self.parameterAsSource(parameters, self.INPUT, context)
