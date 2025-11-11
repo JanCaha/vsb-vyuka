@@ -57,11 +57,11 @@
 - title: "Editace projektu a layoutu"
   author: Jan Caha
   date: 2024-11-25
-  path: "PGIS4/skripty/10_projekt_layout.py"
+  path: "PGIS4/skripty/12_projekt_layout.py"
 - title: "GUI nástroj na kreslení polygonu"
   author: Jan Caha
   date: 2024-11-25
-  path: "PGIS4/skripty/11_gui_nastroj.py"
+  path: "PGIS4/skripty/13_gui_nastroj.py"
 - title: "GDAL tvorba náhodného rastru"
   author: Jan Caha
   date: 2025-10-21

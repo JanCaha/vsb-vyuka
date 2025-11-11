@@ -2,7 +2,7 @@
 # skript pro spuštění z Python konzole QGIS
 
 # importy teoreticky nejsou třeba, ale pro jistotu a srozumitelnost kódu je ponechávám
-from qgis.core import Qgis, QgsMessageLog, QgsPointXY
+from qgis.core import Qgis, QgsMessageLog
 from qgis.gui import QgisInterface, QgsMapCanvas, QgsMapMouseEvent, QgsMapToolEdit, QgsRubberBand
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QColor
