@@ -7,5 +7,6 @@ _site
 .mypy_cache
 _data
 **/tmp/*
-subjects/PGIS2/skripty/python_balicek.zip
 **/*.quarto_ipynb
+**.egg-info/
+dev/*/build/*
