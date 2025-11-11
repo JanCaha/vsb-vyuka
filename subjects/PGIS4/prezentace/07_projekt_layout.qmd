@@ -2,7 +2,7 @@
 title: "Projekt a Layout [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2024-11-25
+date: 2025-11-11
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -18,7 +18,7 @@ execute:
 
 ## Projekt
 
-- `QgsProject.instance()` - aktuálně otevřený projekt
+- `QgsProject.instance()` - aktuálně otevřený projekt -vždycky nějaký existuje i pokud je nový a prázdný
 - `QgsProject.instance().read("cesta k projektu")` - načtení projektu ze souboru
 - `write()`, `write("cesta_k_souboru.qgz")`
 
@@ -46,7 +46,7 @@ layout.loadFromTemplate(document, context)
 ## Prvky layoutu
 
 - `QgsLayoutItem` - interface reprezentující jednotlivé prvky layoutu, samotné třídy layout pak jsou `QgsLayoutItem*`
-- obecné, určené rozhraním, `QgsLayoutItem`
+- obecné, určené rozhraním, `QgsLayoutItem` - velikost, pozice, otočení, viditelnost, atd.
 - specifické, dané typem prvku, např. `setPicturePath()` pro `QgsLayoutItemPicture` či `setText(), setTextFormat()` pro `QgsLayoutItemLabel`
 
 # Dotazy?{.center}

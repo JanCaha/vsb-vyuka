@@ -2,7 +2,7 @@
 title: "Python Toolbox [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2024-11-11
+date: 2025-11-11
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -42,8 +42,8 @@ class Toolbox:
 
 ## Třída nástroje
 
-- python třída, která musí obsahovat následujcí metody - `__init__`, `getParameterInfo`, `isLicensed`, `updateParameters`, `updateMessages`, `execute`, `postExecute`, s příslušnou signaturou
-- všechny metody jsou volány automaticky v rámci dilčích kroků použití nástroje
+- python třída, která musí obsahovat následující metody - `__init__()`, `getParameterInfo()`, `isLicensed()`, `updateParameters()`, `updateMessages()`, `execute()`, `postExecute()`, s příslušnou signaturou
+- všechny metody jsou volány automaticky v rámci dílčích kroků použití nástroje
 
 ## Příklad třídy nástroje dle dokumentace
 
@@ -122,12 +122,12 @@ param1.filters[1].list = ['SUM', 'MIN', 'MAX', 'STDEV', 'MEAN']
 
 ## Použití vstupních parametrů
 
-- v metodě `execute` 
+- v metodě `execute()` 
 - získávají se z proměnné `parameters`, obvykle jako test - `param0 = parameters[0].valueAsText`
 
 ## Komunikace s uživatelem
 
-- v metodě `execute` lze využít proměnnou `messages` pro výpis chyb a informací
+- v metodě `execute()` lze využít proměnnou `messages` pro výpis chyb a informací
 - `messages.addMessage("Message")`, `messages.addWarning("Warning")`, `messages.addError("Error")`
 - `messages.addGPMessages()` - přidá všechny zprávy z posledního spuštěného nástroje - užitečné tam, kde v rámci nástroje spouštíme dílčí nástroje
 
