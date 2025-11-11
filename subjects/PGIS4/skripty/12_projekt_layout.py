@@ -2,6 +2,7 @@
 from qgis.core import (
     Qgis,
     QgsApplication,
+    QgsLayoutExporter,
     QgsLayoutItemLabel,
     QgsLayoutItemScaleBar,
     QgsLayoutPoint,
@@ -9,7 +10,7 @@ from qgis.core import (
     QgsProject,
 )
 from qgis.PyQt.QtGui import QColor
-from utils import data_path
+from utils import data_path, save_data_path
 
 qgis = QgsApplication([], False)
 qgis.initQgis()
@@ -78,6 +79,12 @@ item_1.setTextFormat(text_format)
 
 # rotace textu
 item_1.setItemRotation(90)
+
+# export layoutu do PDF
+exporter = QgsLayoutExporter(layout)
+options = QgsLayoutExporter.PdfExportSettings()
+options.forceVectorOutput = True
+exporter.exportToPdf(save_data_path("layout_exported.pdf").as_posix(), options)
 
 # uložení změn
 project.write()
