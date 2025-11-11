@@ -21,16 +21,16 @@ open = project.read(data_path(r"projekt1.qgz").as_posix())
 print(open)
 
 # vlastnosti projektu
-print(project.mapLayers())
-print(project.crs())
-print(project.lastModified())
-print(project.distanceUnits())
+print(f"Vrstvy: {project.mapLayers()}")
+print(f"Crs projektu: {project.crs()}")
+print(f"Poslední editace: {project.lastModified()}")
+print(f"Jednotky měření: {project.distanceUnits()}")
 
 # změna názvu projektu
 print("---")
-print(project.title())
+print(f"Původní název: {project.title()}")
 project.setTitle("Můj projekt")
-print(project.title())
+print(f"Nový název: {project.title()}")
 
 # uložení vlastních proměnných do projektu
 project.setCustomVariables({"my_data": 123456})

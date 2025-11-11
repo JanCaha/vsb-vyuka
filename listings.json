@@ -2,13 +2,13 @@
   {
     "listing": "/subjects/pvgis4.html",
     "items": [
-      "/subjects/PGIS4/prezentace/07_projekt_layout.html",
       "/subjects/PGIS4/prezentace/01_uvod.html",
       "/subjects/PGIS4/prezentace/02_qgis_python_api.html",
       "/subjects/PGIS4/prezentace/03_vektorová_data.html",
       "/subjects/PGIS4/prezentace/04_geometrie.html",
       "/subjects/PGIS4/prezentace/05_rastrova_data.html",
-      "/subjects/PGIS4/prezentace/06_qgis_nastroje.html"
+      "/subjects/PGIS4/prezentace/06_qgis_nastroje.html",
+      "/subjects/PGIS4/prezentace/07_projekt_layout.html"
     ]
   },
   {
@@ -51,7 +51,6 @@
   {
     "listing": "/subjects/pgis3.html",
     "items": [
-      "/subjects/PGIS3/prezentace/08_python_toolbox.html",
       "/subjects/PGIS3/prezentace/09_mappping_module.html",
       "/subjects/PGIS3/prezentace/01_uvod.html",
       "/subjects/PGIS3/prezentace/02_arcpy.html",
@@ -59,7 +58,8 @@
       "/subjects/PGIS3/prezentace/04_editace_vektorových_dat.html",
       "/subjects/PGIS3/prezentace/05_geometrie.html",
       "/subjects/PGIS3/prezentace/06_rastrova_data.html",
-      "/subjects/PGIS3/prezentace/07_sprava_vlastniho_kodu.html"
+      "/subjects/PGIS3/prezentace/07_sprava_vlastniho_kodu.html",
+      "/subjects/PGIS3/prezentace/08_python_toolbox.html"
     ]
   },
   {

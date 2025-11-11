@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-11-25">
+  <meta name="dcterms.date" content="2025-11-11">
   <title>Výuka - Jan Caha – Projekt a Layout QGIS Python API</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -208,12 +208,12 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-11-25</p>
+  <p class="date">2025-11-11</p>
 </section>
 <section id="projekt" class="slide level2">
 <h2>Projekt</h2>
 <ul>
-<li><code>QgsProject.instance()</code> - aktuálně otevřený projekt</li>
+<li><code>QgsProject.instance()</code> - aktuálně otevřený projekt -vždycky nějaký existuje i pokud je nový a prázdný</li>
 <li><code>QgsProject.instance().read("cesta k projektu")</code> - načtení projektu ze souboru</li>
 <li><code>write()</code>, <code>write("cesta_k_souboru.qgz")</code></li>
 </ul>
@@ -243,7 +243,7 @@ Jan Caha
 <h2>Prvky layoutu</h2>
 <ul>
 <li><code>QgsLayoutItem</code> - interface reprezentující jednotlivé prvky layoutu, samotné třídy layout pak jsou <code>QgsLayoutItem*</code></li>
-<li>obecné, určené rozhraním, <code>QgsLayoutItem</code></li>
+<li>obecné, určené rozhraním, <code>QgsLayoutItem</code> - velikost, pozice, otočení, viditelnost, atd.</li>
 <li>specifické, dané typem prvku, např. <code>setPicturePath()</code> pro <code>QgsLayoutItemPicture</code> či <code>setText(), setTextFormat()</code> pro <code>QgsLayoutItemLabel</code></li>
 </ul>
 </section>

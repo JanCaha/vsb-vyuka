@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2024-11-11">
+  <meta name="dcterms.date" content="2025-11-11">
   <title>Výuka - Jan Caha – Python Toolbox ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -208,7 +208,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2024-11-11</p>
+  <p class="date">2025-11-11</p>
 </section>
 <section id="python-toolbox" class="slide level2">
 <h2>Python Toolbox</h2>
@@ -246,8 +246,8 @@ Jan Caha
 <section id="třída-nástroje" class="slide level2">
 <h2>Třída nástroje</h2>
 <ul>
-<li>python třída, která musí obsahovat následujcí metody - <code>__init__</code>, <code>getParameterInfo</code>, <code>isLicensed</code>, <code>updateParameters</code>, <code>updateMessages</code>, <code>execute</code>, <code>postExecute</code>, s příslušnou signaturou</li>
-<li>všechny metody jsou volány automaticky v rámci dilčích kroků použití nástroje</li>
+<li>python třída, která musí obsahovat následující metody - <code>__init__()</code>, <code>getParameterInfo()</code>, <code>isLicensed()</code>, <code>updateParameters()</code>, <code>updateMessages()</code>, <code>execute()</code>, <code>postExecute()</code>, s příslušnou signaturou</li>
+<li>všechny metody jsou volány automaticky v rámci dílčích kroků použití nástroje</li>
 </ul>
 </section>
 <section id="příklad-třídy-nástroje-dle-dokumentace" class="slide level2">
@@ -333,14 +333,14 @@ Jan Caha
 <section id="použití-vstupních-parametrů" class="slide level2">
 <h2>Použití vstupních parametrů</h2>
 <ul>
-<li>v metodě <code>execute</code></li>
+<li>v metodě <code>execute()</code></li>
 <li>získávají se z proměnné <code>parameters</code>, obvykle jako test - <code>param0 = parameters[0].valueAsText</code></li>
 </ul>
 </section>
 <section id="komunikace-s-uživatelem" class="slide level2">
 <h2>Komunikace s uživatelem</h2>
 <ul>
-<li>v metodě <code>execute</code> lze využít proměnnou <code>messages</code> pro výpis chyb a informací</li>
+<li>v metodě <code>execute()</code> lze využít proměnnou <code>messages</code> pro výpis chyb a informací</li>
 <li><code>messages.addMessage("Message")</code>, <code>messages.addWarning("Warning")</code>, <code>messages.addError("Error")</code></li>
 <li><code>messages.addGPMessages()</code> - přidá všechny zprávy z posledního spuštěného nástroje - užitečné tam, kde v rámci nástroje spouštíme dílčí nástroje</li>
 </ul>

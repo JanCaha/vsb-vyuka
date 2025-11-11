@@ -183,7 +183,7 @@
     "href": "subjects/pvgis4.html#prezentace",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-11-25\n\n\nProjekt a Layout QGIS Python API\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad QGIS Python API\n\n\n\n\n\n\n2025-09-30\n\n\nVektorová data v QGIS Python API\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v QGIS Python API\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data v QGIS Python API\n\n\n\n\n\n\n2025-11-04\n\n\nProcessingové nástroje QGIS Python API\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad QGIS Python API\n\n\n\n\n\n\n2025-09-30\n\n\nVektorová data v QGIS Python API\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v QGIS Python API\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data v QGIS Python API\n\n\n\n\n\n\n2025-11-04\n\n\nProcessingové nástroje QGIS Python API\n\n\n\n\n\n\n2025-11-11\n\n\nProjekt a Layout QGIS Python API\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1951,7 +1951,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.14002994 -0.03558773 -0.31932578 -0.03377367 -0.47019879"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.032978377 -0.001901001 -0.857755991 -0.331605779 -0.008486627"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -3120,7 +3120,7 @@
     "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#třída-nástroje",
     "title": "Python Toolbox ArcPy",
     "section": "Třída nástroje",
-    "text": "Třída nástroje\n\npython třída, která musí obsahovat následujcí metody - __init__, getParameterInfo, isLicensed, updateParameters, updateMessages, execute, postExecute, s příslušnou signaturou\nvšechny metody jsou volány automaticky v rámci dilčích kroků použití nástroje"
+    "text": "Třída nástroje\n\npython třída, která musí obsahovat následující metody - __init__(), getParameterInfo(), isLicensed(), updateParameters(), updateMessages(), execute(), postExecute(), s příslušnou signaturou\nvšechny metody jsou volány automaticky v rámci dílčích kroků použití nástroje"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#příklad-třídy-nástroje-dle-dokumentace",
@@ -3169,14 +3169,14 @@
     "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#použití-vstupních-parametrů",
     "title": "Python Toolbox ArcPy",
     "section": "Použití vstupních parametrů",
-    "text": "Použití vstupních parametrů\n\nv metodě execute\nzískávají se z proměnné parameters, obvykle jako test - param0 = parameters[0].valueAsText"
+    "text": "Použití vstupních parametrů\n\nv metodě execute()\nzískávají se z proměnné parameters, obvykle jako test - param0 = parameters[0].valueAsText"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#komunikace-s-uživatelem",
     "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#komunikace-s-uživatelem",
     "title": "Python Toolbox ArcPy",
     "section": "Komunikace s uživatelem",
-    "text": "Komunikace s uživatelem\n\nv metodě execute lze využít proměnnou messages pro výpis chyb a informací\nmessages.addMessage(\"Message\"), messages.addWarning(\"Warning\"), messages.addError(\"Error\")\nmessages.addGPMessages() - přidá všechny zprávy z posledního spuštěného nástroje - užitečné tam, kde v rámci nástroje spouštíme dílčí nástroje"
+    "text": "Komunikace s uživatelem\n\nv metodě execute() lze využít proměnnou messages pro výpis chyb a informací\nmessages.addMessage(\"Message\"), messages.addWarning(\"Warning\"), messages.addError(\"Error\")\nmessages.addGPMessages() - přidá všechny zprávy z posledního spuštěného nástroje - užitečné tam, kde v rámci nástroje spouštíme dílčí nástroje"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#toolbox",
@@ -3358,7 +3358,7 @@
     "href": "subjects/PGIS4/prezentace/07_projekt_layout.html#projekt",
     "title": "Projekt a Layout QGIS Python API",
     "section": "Projekt",
-    "text": "Projekt\n\nQgsProject.instance() - aktuálně otevřený projekt\nQgsProject.instance().read(\"cesta k projektu\") - načtení projektu ze souboru\nwrite(), write(\"cesta_k_souboru.qgz\")"
+    "text": "Projekt\n\nQgsProject.instance() - aktuálně otevřený projekt -vždycky nějaký existuje i pokud je nový a prázdný\nQgsProject.instance().read(\"cesta k projektu\") - načtení projektu ze souboru\nwrite(), write(\"cesta_k_souboru.qgz\")"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/07_projekt_layout.html#layout",
@@ -3379,7 +3379,7 @@
     "href": "subjects/PGIS4/prezentace/07_projekt_layout.html#prvky-layoutu",
     "title": "Projekt a Layout QGIS Python API",
     "section": "Prvky layoutu",
-    "text": "Prvky layoutu\n\nQgsLayoutItem - interface reprezentující jednotlivé prvky layoutu, samotné třídy layout pak jsou QgsLayoutItem*\nobecné, určené rozhraním, QgsLayoutItem\nspecifické, dané typem prvku, např. setPicturePath() pro QgsLayoutItemPicture či setText(), setTextFormat() pro QgsLayoutItemLabel"
+    "text": "Prvky layoutu\n\nQgsLayoutItem - interface reprezentující jednotlivé prvky layoutu, samotné třídy layout pak jsou QgsLayoutItem*\nobecné, určené rozhraním, QgsLayoutItem - velikost, pozice, otočení, viditelnost, atd.\nspecifické, dané typem prvku, např. setPicturePath() pro QgsLayoutItemPicture či setText(), setTextFormat() pro QgsLayoutItemLabel"
   },
   {
     "objectID": "subjects/pdbs2.html",
@@ -3496,7 +3496,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2025-11-04\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2024-11-25\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2025-11-04\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2025-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -3529,7 +3529,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-04\n\n\nRastrová data\n\n\n\n\n\n\n2024-11-04\n\n\nTvorba rastru\n\n\n\n\n\n\n2024-11-04\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2024-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nutils.py\n\n\n\n\n\n\n2025-10-21\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2025-10-21\n\n\nMěření geometrie\n\n\n\n\n\n\n2025-10-21\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-04\n\n\nRastrová data\n\n\n\n\n\n\n2024-11-04\n\n\nTvorba rastru\n\n\n\n\n\n\n2024-11-04\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nutils.py\n\n\n\n\n\n\n2025-10-21\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2025-10-21\n\n\nMěření geometrie\n\n\n\n\n\n\n2025-10-21\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2025-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
