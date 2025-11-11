@@ -1,0 +1,29 @@
+[project]
+name = "pgis3"
+version = "0.2.0"
+authors = [{ "name" = "autor", "email" = "autor@email.cz" }]
+requires-python = ">=3.11"
+dependencies = ["numpy"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[options]
+include_package_data = true
+
+[options.package_data]
+pgis3 = ["src/pgis3/py.typed"]
+
+[options.extras_require]
+test = [
+    "pytest",
+    "pytest-cov"
+]
+
+[tool.pytest.ini_options]
+addopts = "-v -s --cov=pgis3 --cov-report=term-missing:skip-covered"
+testpaths = [
+    "tests"
+]
+pythonpath = ["src"]
