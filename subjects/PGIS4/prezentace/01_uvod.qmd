@@ -71,7 +71,7 @@ execute:
 - budeme s ním zacházet opatrně
 - nenahrazuje znalost programování
 - je v pořádku ✅: napovídání, vysvětlování, revize kódu  
-- není v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (mamé obvykle i dokumentaci) 
+- není v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (lepší využívat i dokumentaci) 
 - uživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením
 - **Pravidlo: "Rozumím tomu, co píšu"**  -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat
 
