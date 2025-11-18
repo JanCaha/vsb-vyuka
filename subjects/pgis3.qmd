@@ -46,11 +46,6 @@ listing:
 - tvorba vlastních toolboxů a nástrojů
 - modifikace [ArcGIS Pro]{.software} projektů - modul `arcpy.mp`
 
-## Seminární práce{.seminar-work}
-
-Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte knihovnu [ArcPy]{.software}. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript odevzdejte emailem před posledním cvičením. Funkčnost skriptu bude prezentována na posledním cvičení.
-
-
 ## Prezentace{.presentations}
 
 ::: {#prezentace}

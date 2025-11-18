@@ -45,10 +45,6 @@ listing:
 - processingové nástroje pro zpracování dat
 - QGIS projekt a layout
 
-## Seminární práce{.seminar-work}
-
-Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte knihovnu [QGIS Python API]{.software}. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript odevzdejte emailem před posledním cvičením. Funkčnost skriptu bude prezentována na posledním cvičení.
-
 ## Prezentace{.presentations}
 
 ::: {#prezentace}

@@ -1,0 +1,117 @@
+# QGIS Python API – mini test
+
+Níže jsou krátké úlohy s ukázkami kódu (max. 10 řádků).
+Kód je v angličtině, komentáře v češtině.
+
+## Otázka 1 — Co dělá tento úryvek kódu?
+```python
+from qgis.core import QgsGeometry, QgsPointXY
+# vytvoření dvou jednoduchých polygonů a průnik
+poly1 = QgsGeometry.fromPolygonXY([[QgsPointXY(0,0), QgsPointXY(2,0), QgsPointXY(2,2), QgsPointXY(0,2) ]])
+poly2 = QgsGeometry.fromPolygonXY([[QgsPointXY(1,1), QgsPointXY(3,1), QgsPointXY(3,3), QgsPointXY(1,3) ]])
+inter = poly1.intersection(poly2)
+print(round(inter.area(), 2))
+```
+
+## Otázka 2 — Proč tohle nefunguje?
+```python
+from qgis.core import QgsApplication, QgsVectorLayer
+# zapomněli jsme inicializovat QGIS aplikaci
+app = QgsApplication([], False)
+# chybí app.initQgis(), vrstva se nenačte
+layer = QgsVectorLayer("/data/world.gpkg|layername=countries", "World", "ogr")
+print(layer.isValid())
+```
+
+## Otázka 3 — Dělá tohle výběr prvků v obdélníku a s filtrem názvu?
+```python
+from qgis.core import QgsFeatureRequest, QgsRectangle
+# AND kombinace: prostorový filtr + výraz
+rect = QgsRectangle(0, 45, 20, 55)
+req = QgsFeatureRequest().setFilterRect(rect)
+req.setFilterExpression("\"NAME\" LIKE '%u%'")
+# platí oba filtry zároveň?
+```
+
+## Otázka 4 — Proč tohle nefunguje (řazení)?
+```python
+from qgis.core import QgsFeatureRequest
+# field name je psán jinak než ve vrstvě
+clause = QgsFeatureRequest.OrderByClause("Name", ascending=False)
+order_by = QgsFeatureRequest.OrderBy([clause])
+# ve vrstvě je pole "NAME" – co se stane?
+```
+
+## Otázka 5 — Co dělá tento úryvek kódu?
+```python
+from qgis.core import QgsGeometry, QgsPointXY
+# posun vybraných vrcholů podle podmínky x>0.75
+g = QgsGeometry.fromPolygonXY([[QgsPointXY(0,0), QgsPointXY(1,0), QgsPointXY(1,1), QgsPointXY(0,1)]])
+for i, v in enumerate(g.vertices()):
+    if v.x() > 0.75:
+        g.moveVertex(v.x()-0.1, v.y(), i)
+print(g.asWkt())
+```
+
+## Otázka 6 — Proč to nic nedělá?
+```python
+from qgis.core import QgsGeometry, QgsPointXY
+# index vrcholu je mimo rozsah
+g = QgsGeometry.fromPolygonXY([[QgsPointXY(0,0), QgsPointXY(1,0), QgsPointXY(1,1), QgsPointXY(0,1)]])
+ok = g.moveVertex(-5, -5, 10)
+print(ok)  # očekáváte True nebo False?
+```
+
+## Otázka 7 — Dělá tohle výpis informací o rasteru (1. pásmo)?
+```python
+from qgis.core import QgsApplication, QgsRasterLayer
+# vytvoření vrstvy a kontrola pásma
+app = QgsApplication([], False); app.initQgis()
+rl = QgsRasterLayer("/data/nahodny_raster.tif", "rnd", "gdal")
+print(rl.bandCount(), rl.bandName(1))
+```
+
+## Otázka 8 — Proč jsou hodnoty "divné"?
+```python
+from qgis.core import QgsRectangle
+# záměna pořadí indexů při čtení bloku
+# správně: value(column, row)
+# tady: i=columns, j=rows, ale čteme value(j,i)
+# co to udělá s výstupem?
+```
+
+## Otázka 9 — Dělá tohle změnu jednotek měřítka v layoutu?
+```python
+from qgis.core import Qgis, QgsProject, QgsLayoutExporter
+# načtení projektu a úprava scale baru
+p = QgsProject.instance(); p.read("/data/projekt1.qgz")
+l = p.layoutManager().layoutByName("Layout 1")
+sb = l.itemById("ScaleBar1"); sb.setUnits(Qgis.DistanceUnit.Miles)
+QgsLayoutExporter(l).exportToPdf("/tmp/out.pdf", QgsLayoutExporter.PdfExportSettings())
+```
+
+## Otázka 10 — Proč tohle nefunguje v samostatném skriptu?
+```python
+from qgis.gui import QgsMapToolEdit
+# iface a mapCanvas existují jen v QGIS GUI
+class T(QgsMapToolEdit):
+    def __init__(self, c): super().__init__(c)
+# proč tady nelze použít iface.mapCanvas()?
+```
+
+## Otázka 11 — Dělá tohle výběr podle atributu?
+```python
+from qgis.core import QgsFeatureRequest
+# filtr: země s populací > 100 mil.
+req = QgsFeatureRequest().setFilterExpression("\"POP_EST\" > 100000000")
+# použije se správné pole a typ?
+```
+
+## Otázka 12 — Je délka v metrech?
+```python
+from qgis.core import QgsDistanceArea, QgsPointXY
+# bez nastavení elipsoidu/CRS budou jednotky v °
+da = QgsDistanceArea()
+print( round( da.measureLine(QgsPointXY(0,0), QgsPointXY(1,0)), 2 ) )
+# je to v metrech?
+```

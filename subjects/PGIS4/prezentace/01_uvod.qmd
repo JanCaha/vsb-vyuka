@@ -60,10 +60,12 @@ execute:
 
 ## Zakončení předmětu
 
-- samostatný projekt
-  - netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód (??? - v řešení)
-- písemka - klíčové položky programování v Pythonu a [ArcPy]{.software}, interpretace kódu
- 
+- test o dvou částech
+- písemka - klíčové položky programování v Pythonu a [QGIS Python API]{.software}, interpretace kódu
+- test týkající je interpretace a porozumění kódu (nahrazuje seminární práci)
+  - zaměřené na bloky kódu o délce 10 - 15 řádků
+  - otázky typu "co tento kód dělá?", "proč tento kód nefunguje?", "jak byste tento kód upravili, aby dělal X?", "splňuje tento kód zadání Y?"  
+
 ## GitHub Copilot
 
 - budeme s ním zacházet opatrně
