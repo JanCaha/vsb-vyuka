@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prostorové databázové systémy 2 (PDBS2) – Výuka - Jan Caha</title>
+<title>qgis-python-quiz – Výuka - Jan Caha</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,31 +58,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../subjects/pgis3.html" rel="next">
-<link href="../subjects/idg.html" rel="prev">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-17da3c6795e727c6d787ea4e3677d5b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-254582d8f97f8158d91276846757388a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-17da3c6795e727c6d787ea4e3677d5b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-17da3c6795e727c6d787ea4e3677d5b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-254582d8f97f8158d91276846757388a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-17da3c6795e727c6d787ea4e3677d5b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,95 +106,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-codes .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-codes'] = new List('listing-codes', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-prezentace .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-prezentace'] = new List('listing-prezentace', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Prostorové databázové systémy 2 (PDBS2) – Výuka - Jan Caha">
+<meta property="og:title" content="Výuka - Jan Caha">
+<meta property="og:description" content="Výukové materiály">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 
@@ -373,7 +284,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pdbs2.html">Prostorové databázové systémy 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Výuka - Jan Caha
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -388,7 +301,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Výuka - Jan Caha</a> 
+      <a href="../../">Výuka - Jan Caha</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/JanCaha/vsb-vyuka" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
@@ -404,34 +317,34 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Předměty letní semestr</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pgis2.html" class="sidebar-item-text sidebar-link">
+  <a href="../../subjects/pgis2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pvgis5.html" class="sidebar-item-text sidebar-link">
+  <a href="../../subjects/pvgis5.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 5</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/idg.html" class="sidebar-item-text sidebar-link">
+  <a href="../../subjects/idg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Interpretace geodat</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pdbs2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../subjects/pdbs2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prostorové databázové systémy 2</span></a>
   </div>
 </li>
@@ -448,13 +361,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pgis3.html" class="sidebar-item-text sidebar-link">
+  <a href="../../subjects/pgis3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../subjects/pvgis4.html" class="sidebar-item-text sidebar-link">
+  <a href="../../subjects/pvgis4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Programování v GIS 4</span></a>
   </div>
 </li>
@@ -471,25 +384,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tools/vscode.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tools/vscode.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Visual Studio Code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tools/linux-mint.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tools/linux-mint.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linux Mint</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tools/osgeo4w.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OSGeo4W</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tools/github-copilot.html" class="sidebar-item-text sidebar-link">
+  <a href="../../tools/github-copilot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">GitHub Copilot</span></a>
   </div>
 </li>
@@ -506,13 +419,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../descriptions/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../../descriptions/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../descriptions/python-traceback.html" class="sidebar-item-text sidebar-link">
+  <a href="../../descriptions/python-traceback.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python Error Traceback</span></a>
   </div>
 </li>
@@ -528,245 +441,161 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#řešená-témata" id="toc-řešená-témata" class="nav-link active" data-scroll-target="#řešená-témata">Řešená témata</a></li>
-  <li><a href="#prezentace" id="toc-prezentace" class="nav-link" data-scroll-target="#prezentace">Prezentace</a></li>
-  <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">Zdroje</a></li>
-  <li><a href="#data-ke-stažení" id="toc-data-ke-stažení" class="nav-link" data-scroll-target="#data-ke-stažení">Data ke stažení</a></li>
-  <li><a href="#ukázkové-kódy" id="toc-ukázkové-kódy" class="nav-link" data-scroll-target="#ukázkové-kódy">Ukázkové kódy</a></li>
-  <li><a href="#instalace-postregsql" id="toc-instalace-postregsql" class="nav-link" data-scroll-target="#instalace-postregsql">Instalace PostregSQL</a>
+  <li><a href="#qgis-python-api-mini-test" id="toc-qgis-python-api-mini-test" class="nav-link active" data-scroll-target="#qgis-python-api-mini-test">QGIS Python API – mini test</a>
   <ul class="collapse">
-  <li><a href="#docker" id="toc-docker" class="nav-link" data-scroll-target="#docker">Docker</a></li>
+  <li><a href="#otázka-1-co-dělá-tento-úryvek-kódu" id="toc-otázka-1-co-dělá-tento-úryvek-kódu" class="nav-link" data-scroll-target="#otázka-1-co-dělá-tento-úryvek-kódu">Otázka 1 — Co dělá tento úryvek kódu?</a></li>
+  <li><a href="#otázka-2-proč-tohle-nefunguje" id="toc-otázka-2-proč-tohle-nefunguje" class="nav-link" data-scroll-target="#otázka-2-proč-tohle-nefunguje">Otázka 2 — Proč tohle nefunguje?</a></li>
+  <li><a href="#otázka-3-dělá-tohle-výběr-prvků-v-obdélníku-a-s-filtrem-názvu" id="toc-otázka-3-dělá-tohle-výběr-prvků-v-obdélníku-a-s-filtrem-názvu" class="nav-link" data-scroll-target="#otázka-3-dělá-tohle-výběr-prvků-v-obdélníku-a-s-filtrem-názvu">Otázka 3 — Dělá tohle výběr prvků v obdélníku a s filtrem názvu?</a></li>
+  <li><a href="#otázka-4-proč-tohle-nefunguje-řazení" id="toc-otázka-4-proč-tohle-nefunguje-řazení" class="nav-link" data-scroll-target="#otázka-4-proč-tohle-nefunguje-řazení">Otázka 4 — Proč tohle nefunguje (řazení)?</a></li>
+  <li><a href="#otázka-5-co-dělá-tento-úryvek-kódu" id="toc-otázka-5-co-dělá-tento-úryvek-kódu" class="nav-link" data-scroll-target="#otázka-5-co-dělá-tento-úryvek-kódu">Otázka 5 — Co dělá tento úryvek kódu?</a></li>
+  <li><a href="#otázka-6-proč-to-nic-nedělá" id="toc-otázka-6-proč-to-nic-nedělá" class="nav-link" data-scroll-target="#otázka-6-proč-to-nic-nedělá">Otázka 6 — Proč to nic nedělá?</a></li>
+  <li><a href="#otázka-7-dělá-tohle-výpis-informací-o-rasteru-1.-pásmo" id="toc-otázka-7-dělá-tohle-výpis-informací-o-rasteru-1.-pásmo" class="nav-link" data-scroll-target="#otázka-7-dělá-tohle-výpis-informací-o-rasteru-1.-pásmo">Otázka 7 — Dělá tohle výpis informací o rasteru (1. pásmo)?</a></li>
+  <li><a href="#otázka-8-proč-jsou-hodnoty-divné" id="toc-otázka-8-proč-jsou-hodnoty-divné" class="nav-link" data-scroll-target="#otázka-8-proč-jsou-hodnoty-divné">Otázka 8 — Proč jsou hodnoty “divné”?</a></li>
+  <li><a href="#otázka-9-dělá-tohle-změnu-jednotek-měřítka-v-layoutu" id="toc-otázka-9-dělá-tohle-změnu-jednotek-měřítka-v-layoutu" class="nav-link" data-scroll-target="#otázka-9-dělá-tohle-změnu-jednotek-měřítka-v-layoutu">Otázka 9 — Dělá tohle změnu jednotek měřítka v layoutu?</a></li>
+  <li><a href="#otázka-10-proč-tohle-nefunguje-v-samostatném-skriptu" id="toc-otázka-10-proč-tohle-nefunguje-v-samostatném-skriptu" class="nav-link" data-scroll-target="#otázka-10-proč-tohle-nefunguje-v-samostatném-skriptu">Otázka 10 — Proč tohle nefunguje v samostatném skriptu?</a></li>
+  <li><a href="#otázka-11-dělá-tohle-výběr-podle-atributu" id="toc-otázka-11-dělá-tohle-výběr-podle-atributu" class="nav-link" data-scroll-target="#otázka-11-dělá-tohle-výběr-podle-atributu">Otázka 11 — Dělá tohle výběr podle atributu?</a></li>
+  <li><a href="#otázka-12-je-délka-v-metrech" id="toc-otázka-12-je-délka-v-metrech" class="nav-link" data-scroll-target="#otázka-12-je-délka-v-metrech">Otázka 12 — Je délka v metrech?</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../subjects/pgis2.html">Předměty letní semestr</a></li><li class="breadcrumb-item"><a href="../subjects/pdbs2.html">Prostorové databázové systémy 2</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Prostorové databázové systémy 2 (PDBS2)</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="řešená-témata" class="level2 topics">
-<h2 class="topics anchored" data-anchor-id="řešená-témata">Řešená témata</h2>
-<ul>
-<li>Oracle</li>
-<li>Instalace a připojení k PostgreSQL, načtení dat z CSV a prostorová data skrze GDAL</li>
-</ul>
-</section>
-<section id="prezentace" class="level2 presentations">
-<h2 class="presentations anchored" data-anchor-id="prezentace">Prezentace</h2>
-<div id="listing-prezentace" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-
-<th>
-Datum
-</th>
-
-<th>
-Prezentace
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1708300800000" data-listing-file-modified-sort="1763449896620" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173" data-listing-title-sort="Úvodní cvičení" data-listing-filename-sort="01_uvod.qmd">
-<td>
-<span class="listing-date">2024-02-19</span>
-</td>
-<td>
-<a href="../subjects/PDBS2/prezentace/01_uvod.html" class="title listing-title">Úvodní cvičení</a>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1709510400000" data-listing-file-modified-sort="1763449896620" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="407" data-listing-title-sort="PostgreSQL (Postgis)" data-listing-filename-sort="02_postgresql.qmd">
-<td>
-<span class="listing-date">2024-03-04</span>
-</td>
-<td>
-<a href="../subjects/PDBS2/prezentace/02_postgresql.html" class="title listing-title">PostgreSQL (Postgis)</a>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-</section>
-<section id="zdroje" class="level2 sources">
-<h2 class="sources anchored" data-anchor-id="zdroje">Zdroje</h2>
-<ul>
-<li><a href="https://www.postgresql.org/docs/14/index.html">PostgreSQL Manuál</a></li>
-<li><a href="https://postgis.net/docs/manual-3.4/">PostGIS Manuál</a></li>
-</ul>
-</section>
-<section id="data-ke-stažení" class="level2 data-sources">
-<h2 class="data-sources anchored" data-anchor-id="data-ke-stažení">Data ke stažení</h2>
-<ul>
-<li><a href="./PDBS2/soubory/uzemni_jednotky.gpkg">GPKG s vrstvami okresů a krajů</a></li>
-<li><a href="./PDBS2/soubory/obyvatele_roky.csv">CSV s údaji o počtu obyvatel</a></li>
-<li><a href="./PDBS2/soubory/ciselnik_csu_ruian.csv">CSV s převodním číselníkem z RUIAN do ČSÚ</a></li>
-</ul>
-</section>
-<section id="ukázkové-kódy" class="level2 codes">
-<h2 class="codes anchored" data-anchor-id="ukázkové-kódy">Ukázkové kódy</h2>
-<div id="listing-codes" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-
-<th>
-Datum
-</th>
-
-<th>
-Skript
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1710115200000" data-listing-title-sort="Instalace PostGIS do daného schématu DB">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/01_install_postgis_check_version.sql" class="title listing-title">Instalace PostGIS do daného schématu DB</a>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1710115200000" data-listing-title-sort="Načtení souboru jako tabulky do PostGIS">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/02_load_data_to_postgis.sh" class="title listing-title">Načtení souboru jako tabulky do PostGIS</a>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-date-sort="1710115200000" data-listing-title-sort="Načtení CSV souboru jako tabulky do PostgreSQL">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/03_load_csv.sql" class="title listing-title">Načtení CSV souboru jako tabulky do PostgreSQL</a>
-</td>
-
-</tr>
-
-<tr data-index="3" data-listing-date-sort="1710115200000" data-listing-title-sort="Tvorba tabulek pro import z CSV">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/04_tabulky_pro_import.sql" class="title listing-title">Tvorba tabulek pro import z CSV</a>
-</td>
-
-</tr>
-
-<tr data-index="4" data-listing-date-sort="1710115200000" data-listing-title-sort="Join s dočasnou tabulkou">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/05_join_with.sql" class="title listing-title">Join s dočasnou tabulkou</a>
-</td>
-
-</tr>
-
-<tr data-index="5" data-listing-date-sort="1710115200000" data-listing-title-sort="View">
-<td>
-<span class="listing-date">2024-03-11</span>
-</td>
-<td>
-<a href="PDBS2/skripty/06_view.sql" class="title listing-title">View</a>
-</td>
-
-</tr>
-
-<tr data-index="6" data-listing-date-sort="1711065600000" data-listing-title-sort="Tvorba a vyplnění tabulky">
-<td>
-<span class="listing-date">2024-03-22</span>
-</td>
-<td>
-<a href="PDBS2/skripty/07_create_fill_table.sql" class="title listing-title">Tvorba a vyplnění tabulky</a>
-</td>
-
-</tr>
-
-<tr data-index="7" data-listing-date-sort="1711065600000" data-listing-title-sort="Prostorové dotazy">
-<td>
-<span class="listing-date">2024-03-22</span>
-</td>
-<td>
-<a href="PDBS2/skripty/08_spatial_selects.sql" class="title listing-title">Prostorové dotazy</a>
-</td>
-
-</tr>
-
-<tr data-index="8" data-listing-date-sort="1711065600000" data-listing-title-sort="View s modifikací geometrie">
-<td>
-<span class="listing-date">2024-03-22</span>
-</td>
-<td>
-<a href="PDBS2/skripty/09_geometry_scale.sql" class="title listing-title">View s modifikací geometrie</a>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-</section>
-<section id="instalace-postregsql" class="level2 instals">
-<h2 class="instals anchored" data-anchor-id="instalace-postregsql">Instalace PostregSQL</h2>
-<ul>
-<li>viz odkaz <a href="../tools/linux-mint.html">Linux Mint</a> - potřebujeme jednak akktuální GIS softwary a PostgreSQL (detaily na stránce)</li>
-</ul>
-<section id="docker" class="level3">
-<h3 class="anchored" data-anchor-id="docker">Docker</h3>
-<p>Pro provozování instance PostgreSQL s PostGIS lze použít i Docker kontejner. Ideálně využít <code>docker compose</code> se souborem s nastavením:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">version</span><span class="kw">:</span><span class="at"> </span><span class="st">"3.5"</span></span>
+<section id="qgis-python-api-mini-test" class="level1">
+<h1>QGIS Python API – mini test</h1>
+<p>Níže jsou krátké úlohy s ukázkami kódu (max. 10 řádků). Kód je v angličtině, komentáře v češtině.</p>
+<section id="otázka-1-co-dělá-tento-úryvek-kódu" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-1-co-dělá-tento-úryvek-kódu">Otázka 1 — Co dělá tento úryvek kódu?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">postgres</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> postgis</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> postgis/postgis:16-master</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_USER</span><span class="kw">:</span><span class="at"> admin</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">POSTGRES_PASSWORD</span><span class="kw">:</span><span class="at"> root</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">PGDATA</span><span class="kw">:</span><span class="at"> /data/postgres</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> cesta_k_složce_na_disku:/data/postgres</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"5432:5432"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Stačí upravit <code>volumes</code> na složku na disk, kde se budou ukládat data z PostgreSQL a případně upravit nastavení uživatele a hesla.</p>
-
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># vytvoření dvou jednoduchých polygonů a průnik</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>poly1 <span class="op">=</span> QgsGeometry.fromPolygonXY(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    [[QgsPointXY(<span class="dv">0</span>, <span class="dv">0</span>), QgsPointXY(<span class="dv">2</span>, <span class="dv">0</span>), QgsPointXY(<span class="dv">2</span>, <span class="dv">2</span>), QgsPointXY(<span class="dv">0</span>, <span class="dv">2</span>)]]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>poly2 <span class="op">=</span> QgsGeometry.fromPolygonXY(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    [[QgsPointXY(<span class="dv">1</span>, <span class="dv">1</span>), QgsPointXY(<span class="dv">3</span>, <span class="dv">1</span>), QgsPointXY(<span class="dv">3</span>, <span class="dv">3</span>), QgsPointXY(<span class="dv">1</span>, <span class="dv">3</span>)]]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>inter <span class="op">=</span> poly1.intersection(poly2)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(inter.area(), <span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-2-proč-tohle-nefunguje" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-2-proč-tohle-nefunguje">Otázka 2 — Proč tohle nefunguje?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsApplication, QgsVectorLayer</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># zapomněli jsme inicializovat QGIS aplikaci</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> QgsApplication([], <span class="va">False</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># chybí app.initQgis(), vrstva se nenačte</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> QgsVectorLayer(<span class="st">"/data/world.gpkg|layername=countries"</span>, <span class="st">"World"</span>, <span class="st">"ogr"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(layer.isValid())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-3-dělá-tohle-výběr-prvků-v-obdélníku-a-s-filtrem-názvu" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-3-dělá-tohle-výběr-prvků-v-obdélníku-a-s-filtrem-názvu">Otázka 3 — Dělá tohle výběr prvků v obdélníku a s filtrem názvu?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsFeatureRequest, QgsRectangle</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># AND kombinace: prostorový filtr + výraz</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>rect <span class="op">=</span> QgsRectangle(<span class="dv">0</span>, <span class="dv">45</span>, <span class="dv">20</span>, <span class="dv">55</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>req <span class="op">=</span> QgsFeatureRequest().setFilterRect(rect)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>req.setFilterExpression(<span class="st">"</span><span class="ch">\"</span><span class="st">NAME</span><span class="ch">\"</span><span class="st"> LIKE '</span><span class="sc">%u</span><span class="st">%'"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># platí oba filtry zároveň?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-4-proč-tohle-nefunguje-řazení" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-4-proč-tohle-nefunguje-řazení">Otázka 4 — Proč tohle nefunguje (řazení)?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsFeatureRequest</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># field name je psán jinak než ve vrstvě</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>clause <span class="op">=</span> QgsFeatureRequest.OrderByClause(<span class="st">"Name"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>order_by <span class="op">=</span> QgsFeatureRequest.OrderBy([clause])</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ve vrstvě je pole "NAME" – co se stane?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-5-co-dělá-tento-úryvek-kódu" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-5-co-dělá-tento-úryvek-kódu">Otázka 5 — Co dělá tento úryvek kódu?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># posun vybraných vrcholů podle podmínky x&gt;0.75</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> QgsGeometry.fromPolygonXY(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    [[QgsPointXY(<span class="dv">0</span>, <span class="dv">0</span>), QgsPointXY(<span class="dv">1</span>, <span class="dv">0</span>), QgsPointXY(<span class="dv">1</span>, <span class="dv">1</span>), QgsPointXY(<span class="dv">0</span>, <span class="dv">1</span>)]]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, v <span class="kw">in</span> <span class="bu">enumerate</span>(g.vertices()):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> v.x() <span class="op">&gt;</span> <span class="fl">0.75</span>:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        g.moveVertex(v.x() <span class="op">-</span> <span class="fl">0.1</span>, v.y(), i)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g.asWkt())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-6-proč-to-nic-nedělá" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-6-proč-to-nic-nedělá">Otázka 6 — Proč to nic nedělá?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># index vrcholu je mimo rozsah</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> QgsGeometry.fromPolygonXY(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    [[QgsPointXY(<span class="dv">0</span>, <span class="dv">0</span>), QgsPointXY(<span class="dv">1</span>, <span class="dv">0</span>), QgsPointXY(<span class="dv">1</span>, <span class="dv">1</span>), QgsPointXY(<span class="dv">0</span>, <span class="dv">1</span>)]]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ok <span class="op">=</span> g.moveVertex(<span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="dv">5</span>, <span class="dv">10</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ok)  <span class="co"># očekáváte True nebo False?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-7-dělá-tohle-výpis-informací-o-rasteru-1.-pásmo" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-7-dělá-tohle-výpis-informací-o-rasteru-1.-pásmo">Otázka 7 — Dělá tohle výpis informací o rasteru (1. pásmo)?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsApplication, QgsRasterLayer</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># vytvoření vrstvy a kontrola pásma</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> QgsApplication([], <span class="va">False</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>app.initQgis()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>rl <span class="op">=</span> QgsRasterLayer(<span class="st">"/data/nahodny_raster.tif"</span>, <span class="st">"rnd"</span>, <span class="st">"gdal"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rl.bandCount(), rl.bandName(<span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-8-proč-jsou-hodnoty-divné" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-8-proč-jsou-hodnoty-divné">Otázka 8 — Proč jsou hodnoty “divné”?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsRectangle</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># záměna pořadí indexů při čtení bloku</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># správně: value(column, row)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># tady: i=columns, j=rows, ale čteme value(j,i)</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># co to udělá s výstupem?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-9-dělá-tohle-změnu-jednotek-měřítka-v-layoutu" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-9-dělá-tohle-změnu-jednotek-měřítka-v-layoutu">Otázka 9 — Dělá tohle změnu jednotek měřítka v layoutu?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> Qgis, QgsLayoutExporter, QgsProject</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># načtení projektu a úprava scale baru</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> QgsProject.instance()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>p.read(<span class="st">"/data/projekt1.qgz"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> p.layoutManager().layoutByName(<span class="st">"Layout 1"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>sb <span class="op">=</span> l.itemById(<span class="st">"ScaleBar1"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>sb.setUnits(Qgis.DistanceUnit.Miles)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>QgsLayoutExporter(l).exportToPdf(<span class="st">"/tmp/out.pdf"</span>, QgsLayoutExporter.PdfExportSettings())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-10-proč-tohle-nefunguje-v-samostatném-skriptu" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-10-proč-tohle-nefunguje-v-samostatném-skriptu">Otázka 10 — Proč tohle nefunguje v samostatném skriptu?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.gui <span class="im">import</span> QgsMapToolEdit</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># iface a mapCanvas existují jen v QGIS GUI</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> T(QgsMapToolEdit):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, c):</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(c)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># proč tady nelze použít iface.mapCanvas()?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-11-dělá-tohle-výběr-podle-atributu" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-11-dělá-tohle-výběr-podle-atributu">Otázka 11 — Dělá tohle výběr podle atributu?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsFeatureRequest</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># filtr: země s populací &gt; 100 mil.</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>req <span class="op">=</span> QgsFeatureRequest().setFilterExpression(<span class="st">'"POP_EST" &gt; 100000000'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># použije se správné pole a typ?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="otázka-12-je-délka-v-metrech" class="level2">
+<h2 class="anchored" data-anchor-id="otázka-12-je-délka-v-metrech">Otázka 12 — Je délka v metrech?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsDistanceArea, QgsPointXY</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># bez nastavení elipsoidu/CRS budou jednotky v °</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>da <span class="op">=</span> QgsDistanceArea()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(da.measureLine(QgsPointXY(<span class="dv">0</span>, <span class="dv">0</span>), QgsPointXY(<span class="dv">1</span>, <span class="dv">0</span>)), <span class="dv">2</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># je to v metrech?</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -1186,18 +1015,6 @@ Skript
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../subjects/idg.html" class="pagination-link" aria-label="Interpretace geodat">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interpretace geodat</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../subjects/pgis3.html" class="pagination-link" aria-label="Programování v GIS 3">
-        <span class="nav-page-text">Programování v GIS 3</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
