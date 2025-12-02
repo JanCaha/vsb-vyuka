@@ -2,7 +2,7 @@
 title: "Python Toolbox [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2025-11-11
+date: 2025-12-02
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -91,6 +91,11 @@ class Tool:
 - `param0 = arcpy.Parameter(displayName, name, datatype, parameterType, direction)`, detaily nutné vyčíst v dokumentaci
 - parametry se následně shrnou do seznamu a ten je výsledným výstupem metody `getParameterInfo` - `return [param0, param1, ...]`
 
+## Typy parametrů
+
+- [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameter-data-types-in-a-python-toolbox.htm)
+- řada položek dle typu vstupu
+
 ## Závislosti parametrů
 
 - některé typy parametrů přirozeně vyvolávají vzájemné závislosti
@@ -116,9 +121,29 @@ param1.filters[1].list = ['SUM', 'MIN', 'MAX', 'STDEV', 'MEAN']
 - liší se dle typu vstupního parametru
 - podle dokumentace
 
-## Výstupní hodnoty
+## Kopie vrstvy
 
-- lze např. automaticky stylovat výstupní vrstvu pomocí připraveného souboru s nastavením - `param1.symbology = os.path.join(os.path.dirname(__file__), 'raster_symbology.lyrx')`
+- včetně schématu lze nastavit pomocí vlastnosti `schema.clone`
+
+```python
+param1 = arcpy.Parameter(
+    displayName="Output Features",
+    name="out_features",
+    datatype="GPFeatureLayer",
+    parameterType="Derived",
+    direction="Output")
+
+param1.parameterDependencies = [param0.name]
+param1.schema.clone = True
+```
+
+## Stylizace výstupní vrstvy
+
+- lze např. automaticky stylovat výstupní vrstvu pomocí připraveného souboru s nastavením 
+
+```python
+param1.symbology = Path(__file__).parent / 'raster_symbology.lyrx'
+```
 
 ## Použití vstupních parametrů
 
