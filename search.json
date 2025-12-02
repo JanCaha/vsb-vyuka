@@ -205,7 +205,7 @@
     "href": "subjects/pvgis4.html#ukázkové-kódy",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-18\n\n\nUkázkový Plugin\n\n\n\n\n\n\n2024-11-25\n\n\nEditace projektu a layoutu\n\n\n\n\n\n\n2024-11-25\n\n\nGUI nástroj na kreslení polygonu\n\n\n\n\n\n\n2025-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n\n\n2025-09-30\n\n\nVektorová data - výběr prvků\n\n\n\n\n\n\n2025-09-30\n\n\nUtils\n\n\n\n\n\n\n2025-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n\n\n2025-10-14\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\n\n2025-10-14\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n\n\n2025-10-14\n\n\nOperace s geometriemi\n\n\n\n\n\n\n2025-10-21\n\n\nVýpočty s elipsoidy\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2025-10-21\n\n\nEditace hodnot rastru\n\n\n\n\n\n\n2025-10-21\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\n\n2025-10-21\n\n\nRastrový kalkulátor - příklad\n\n\n\n\n\n\n2025-10-21\n\n\nGDAL tvorba náhodného rastru\n\n\n\n\n\n\n2025-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\n\n2025-11-18\n\n\nAlgoritmus s více kroky\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-18\n\n\nUkázkový Plugin\n\n\n\n\n\n\n2025-09-30\n\n\nÚvod do vektorových dat\n\n\n\n\n\n\n2025-09-30\n\n\nVektorová data - výběr prvků\n\n\n\n\n\n\n2025-09-30\n\n\nUtils\n\n\n\n\n\n\n2025-10-07\n\n\nVektorová data - tvorba dat\n\n\n\n\n\n\n2025-10-14\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\n\n2025-10-14\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n\n\n2025-10-14\n\n\nOperace s geometriemi\n\n\n\n\n\n\n2025-10-21\n\n\nVýpočty s elipsoidy\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2025-10-21\n\n\nEditace hodnot rastru\n\n\n\n\n\n\n2025-10-21\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\n\n2025-10-21\n\n\nRastrový kalkulátor - příklad\n\n\n\n\n\n\n2025-10-21\n\n\nGDAL tvorba náhodného rastru\n\n\n\n\n\n\n2025-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\n\n2025-11-18\n\n\nAlgoritmus s více kroky\n\n\n\n\n\n\n2025-11-25\n\n\nEditace projektu a layoutu\n\n\n\n\n\n\n2025-11-25\n\n\nGUI nástroj na kreslení polygonu\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -1779,7 +1779,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.07700887 -0.14311484 -0.10080228 -0.10383372 -0.63556844"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.1419242 -0.9181846 -0.6492269 -0.0240906 -0.1748475"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1919,7 +1919,7 @@
     "href": "index.html",
     "title": "Výuka - Jan Caha",
     "section": "",
-    "text": "Materiály pro moje předměty vyučované v roce 2024/2025 na Katedře Geoinformatiky, HGF, VŠB-TUO."
+    "text": "Materiály pro moje předměty vyučované v roce 2025/2026 na Katedře Geoinformatiky, HGF, VŠB-TUO."
   },
   {
     "objectID": "index.html#zimní-semestr",
@@ -3612,7 +3612,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-12-02\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nutils.py\n\n\n\n\n\n\n2025-10-21\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2025-10-21\n\n\nMěření geometrie\n\n\n\n\n\n\n2025-10-21\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2025-11-04\n\n\nRastrová data\n\n\n\n\n\n\n2025-11-04\n\n\nTvorba rastru\n\n\n\n\n\n\n2025-11-04\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2025-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2025-12-02\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nutils.py\n\n\n\n\n\n\n2025-10-21\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2025-10-21\n\n\nMěření geometrie\n\n\n\n\n\n\n2025-10-21\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2025-11-04\n\n\nRastrová data\n\n\n\n\n\n\n2025-11-04\n\n\nTvorba rastru\n\n\n\n\n\n\n2025-11-04\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2025-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2025-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2025-12-02\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2025-12-02\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"

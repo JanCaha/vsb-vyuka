@@ -20,12 +20,12 @@ project_layout.exportToPDF(r"C:\Users\user\Projekty\PGIS3\PDF_output1.pdf", 300,
 
 # tvorba nového formátu pro export - ArcGIS Pro verze 3.4 a novější
 pdf = arcpy.mp.CreateExportFormat("PDF", r"C:\Users\user\Projekty\PDF_output1.pdf")
-project_layout.export(pdf)
 
 # úprava parametrů pro export
 pdf.resolution = 300
 pdf.filePath = r"C:\Users\user\Projekty\PDF_output2.pdf"
 
+# export layoutu
 project_layout.export(pdf)
 
 # je otázkou, zda-li chceme změny v projektu uložit
