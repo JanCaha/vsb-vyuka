@@ -606,88 +606,53 @@
     "text": "GitHub Copilot\n\nbudeme s ním zacházet opatrně\nnenahrazuje znalost programování\nje v pořádku ✅: napovídání, vysvětlování, revize kódu\n\nnení v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (lepší využívat i dokumentaci)\nuživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením\nPravidlo: “Rozumím tomu, co píšu” -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#python-toolbox",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#python-toolbox",
-    "title": "Python Toolbox ArcPy",
-    "section": "Python Toolbox",
-    "text": "Python Toolbox\n\ntextový soubor s příponou .pyt\nvhodné zakládat z catalogu přímo z ArcGIS Pro\nkompletní dokumentace"
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#mapping-module",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#mapping-module",
+    "title": "Mapping module ArcPy",
+    "section": "Mapping module",
+    "text": "Mapping module\n\narcpy.mp module\npráce s projektem, mapou, vrstvami, layoutem\nautomatizace práce nad těmito prvky\ndokumentace\nřada objektů, s kterými lze pracovat, ukázka jen základů a nastínění postupů a možností"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#třída-toolbox",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#třída-toolbox",
-    "title": "Python Toolbox ArcPy",
-    "section": "Třída toolbox",
-    "text": "Třída toolbox\n\nhlavní třída s nastavením toolboxu a výpisem nástrojů\n\n\n\n\n\n\n\nPozor\n\n\nV seznamu nástrojů se uvádí název třídy, nikoliv instance nástroje - tzn. Tool nikoliv Tool().\n\n\n\nclass Toolbox:\n    def __init__(self):\n        self.label = \"Toolbox\"\n        self.alias = \"toolbox\"\n\n        self.tools = [Tool]"
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#načtení-projektu",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#načtení-projektu",
+    "title": "Mapping module ArcPy",
+    "section": "Načtení projektu",
+    "text": "Načtení projektu\n\nbuď práce s aktuálním projektem nebo s konkrétním projektem uloženým na disku\n\naprx = arcpy.mp.ArcGISProject(\"CURRENT\")\n## nebo\naprx = arcpy.mp.ArcGISProject(r\"C:\\Projects\\YosemiteNP\\Yosemite.aprx\")"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#třída-nástroje",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#třída-nástroje",
-    "title": "Python Toolbox ArcPy",
-    "section": "Třída nástroje",
-    "text": "Třída nástroje\n\npython třída, která musí obsahovat následující metody - __init__(), getParameterInfo(), isLicensed(), updateParameters(), updateMessages(), execute(), postExecute(), s příslušnou signaturou\nvšechny metody jsou volány automaticky v rámci dílčích kroků použití nástroje"
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#arcgisproject",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#arcgisproject",
+    "title": "Mapping module ArcPy",
+    "section": "ArcGISProject",
+    "text": "ArcGISProject\n\nhlavní třída pro práci - rozcestník k dalším položkám\nřada funkcí pro získání a tvorbu prvků\ndokumentace\nfunkce např. listLayouts(), listMaps(), listReports(), nebo listBrokenDataSources()\nfunkce pro tvorbu nových prvků - createLayout(), createMap(), createTextElement() a další\nfunkce deleteItem() pro smazání prvku\npři modifikaci buď nutné volat save() nebo saveACopy()"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#příklad-třídy-nástroje-dle-dokumentace",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#příklad-třídy-nástroje-dle-dokumentace",
-    "title": "Python Toolbox ArcPy",
-    "section": "Příklad třídy nástroje dle dokumentace",
-    "text": "Příklad třídy nástroje dle dokumentace\nclass Tool:\n    def __init__(self):\n        \"\"\"Define the tool (tool name is the name of the class).\"\"\"\n        self.label = \"Tool\"\n        self.description = \"\"\n\n    def getParameterInfo(self):\n        \"\"\"Define the tool parameters.\"\"\"\n        params = None\n        return params\n\n    def isLicensed(self):\n        \"\"\"Set whether the tool is licensed to execute.\"\"\"\n        return True\n\n    def updateParameters(self, parameters):\n        \"\"\"Modify the values and properties of parameters before internal\n        validation is performed.  This method is called whenever a parameter\n        has been changed.\"\"\"\n        return\n\n    def updateMessages(self, parameters):\n        \"\"\"Modify the messages created by internal validation for each tool\n        parameter. This method is called after internal validation.\"\"\"\n        return\n\n    def execute(self, parameters, messages):\n        \"\"\"The source code of the tool.\"\"\"\n        return\n\n    def postExecute(self, parameters):\n        \"\"\"This method takes place after outputs are processed and\n        added to the display.\"\"\"\n        return"
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#map",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#map",
+    "title": "Mapping module ArcPy",
+    "section": "Map",
+    "text": "Map\n\nindividuální mapové okno v projektu\nlze z něj získat vrstvy listLayers()\nlze přidávat vrstvy addLayer() nebo addLayerToGroup() či addTable() ale i insertLayer()"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#parametry-nástroje",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#parametry-nástroje",
-    "title": "Python Toolbox ArcPy",
-    "section": "Parametry nástroje",
-    "text": "Parametry nástroje\n\ndokumentace\ntřída arcpy.Parameter s různými typy parametrů, které vytvoří příslušný objekt\nparam0 = arcpy.Parameter(displayName, name, datatype, parameterType, direction), detaily nutné vyčíst v dokumentaci\nparametry se následně shrnou do seznamu a ten je výsledným výstupem metody getParameterInfo - return [param0, param1, ...]"
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#layer",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#layer",
+    "title": "Mapping module ArcPy",
+    "section": "Layer",
+    "text": "Layer\n\nbuď prvek Map nebo je lze ukládat do lyr či lyrx souborů\npřistup k vlastnostem vrstvy, mimo jiné i k nastavené vizualizace (renderer či symbologie)"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#závislosti-parametrů",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#závislosti-parametrů",
-    "title": "Python Toolbox ArcPy",
-    "section": "Závislosti parametrů",
-    "text": "Závislosti parametrů\n\nněkteré typy parametrů přirozeně vyvolávají vzájemné závislosti\nnapř. máme param0, který je typu GPFeatureLayer a param1, který je typu GPValueTable\npak lze nastavit doplňkové vlastnosti parametru param1, které závisí na hodnotě parametru param0\n\nparam1.parameterDependencies = [param0.name]\nparam1.columns = [[\"Field\", \"Field\"], [\"GPString\", \"Statistic Type\"]]\nparam1.filters[1].type = \"ValueList\"\nparam1.values = [[\"NAME\", \"SUM\"]]\nparam1.filters[1].list = [\"SUM\", \"MIN\", \"MAX\", \"STDEV\", \"MEAN\"]"
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#renderery",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#renderery",
+    "title": "Mapping module ArcPy",
+    "section": "Renderery",
+    "text": "Renderery\n\nrůzné objekty dle typu\npříklad zde"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#výchozí-hodnota-parametru",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#výchozí-hodnota-parametru",
-    "title": "Python Toolbox ArcPy",
-    "section": "Výchozí hodnota parametru",
-    "text": "Výchozí hodnota parametru\n\nlze nastavit jako param0.defaultEnvironmentName = \"workspace\"\nči např. jako param0.value = os.path.join(os.path.dirname(__file__), 'Fire_Station.lyrx')"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#filtry",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#filtry",
-    "title": "Python Toolbox ArcPy",
-    "section": "Filtry",
-    "text": "Filtry\n\nsamostatná kapitola, umožňuje pro parametry omezovat vstupní hodnoty\nliší se dle typu vstupního parametru\npodle dokumentace"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#výstupní-hodnoty",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#výstupní-hodnoty",
-    "title": "Python Toolbox ArcPy",
-    "section": "Výstupní hodnoty",
-    "text": "Výstupní hodnoty\n\nlze např. automaticky stylovat výstupní vrstvu pomocí připraveného souboru s nastavením - param1.symbology = os.path.join(os.path.dirname(__file__), 'raster_symbology.lyrx')"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#použití-vstupních-parametrů",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#použití-vstupních-parametrů",
-    "title": "Python Toolbox ArcPy",
-    "section": "Použití vstupních parametrů",
-    "text": "Použití vstupních parametrů\n\nv metodě execute()\nzískávají se z proměnné parameters, obvykle jako test - param0 = parameters[0].valueAsText"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#komunikace-s-uživatelem",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#komunikace-s-uživatelem",
-    "title": "Python Toolbox ArcPy",
-    "section": "Komunikace s uživatelem",
-    "text": "Komunikace s uživatelem\n\nv metodě execute() lze využít proměnnou messages pro výpis chyb a informací\nmessages.addMessage(\"Message\"), messages.addWarning(\"Warning\"), messages.addError(\"Error\")\nmessages.addGPMessages() - přidá všechny zprávy z posledního spuštěného nástroje - užitečné tam, kde v rámci nástroje spouštíme dílčí nástroje"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/08_python_toolbox.html#toolbox",
-    "href": "subjects/PGIS3/prezentace/08_python_toolbox.html#toolbox",
-    "title": "Python Toolbox ArcPy",
-    "section": "Toolbox",
-    "text": "Toolbox\n\nvýsledný toolbox lze šifrovat heslem\nbez hesla nelze toolbox otevřít a zobrazit jeho obsah\nheslo se zadává při otevření toolboxu v ArcGIS Pro\n\n\n\n\n\n\n\nPozor\n\n\nHeslo nelze obnovit, pokud se zapomene, je toolbox ztracen."
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#export-do-souboru",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#export-do-souboru",
+    "title": "Mapping module ArcPy",
+    "section": "Export do souboru",
+    "text": "Export do souboru\n\nexporty layoutu do grafického souboru (typicky PDF)\n\np = arcpy.mp.ArcGISProject(\"current\")\nlyt = p.listLayouts()[0]\n\npdf = arcpy.mp.CreateExportFormat(\"PDF\", r\"C:\\Temp\\PDF_output1.pdf\")\nlyt.export(pdf)\n\npdf.resolution = 300\npdf.filePath = r\"C:\\Temp\\PDF_output2.pdf\"\n\nlyt.export(pdf)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#objekty",
@@ -1814,7 +1779,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.454518321 -0.004557365 -0.510192748 -1.275480228 -0.522869107"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.07700887 -0.14311484 -0.10080228 -0.10383372 -0.63556844"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -3140,53 +3105,102 @@
     "text": "Proč tvořit balík a testy?\n\npokud máte kód, který chcete dlouhodobě využívat tak se to vyplatí (čas, námaha, nervy)\nkód v čase roste a stává se nepřehledným a hůře udržovatelným, balík to zjednoduší a testy zajistí, že v kódu nedochází k nezamýšleným změnám či chybám\npokud chcete kód sdílet s ostatními, je to zásadní\npokud chcete mít kód pod kontrolou a mít jistotu, že funguje, jsou testy nutnost\n\nv čase se mohou měnit používané funkce, knihovny atd. a jen testy tyto změny dokáží zachytit dřív než se chyba reálně projeví\n\n“programátorská disciplína” - ke každému kódu by měla existovat dokumentace (klidně kratičká) a test"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/09_mappping_module.html#mapping-module",
-    "href": "subjects/PGIS3/prezentace/09_mappping_module.html#mapping-module",
-    "title": "Mapping module ArcPy",
-    "section": "Mapping module",
-    "text": "Mapping module\n\narcpy.mp module\npráce s projektem, mapou, vrstvami, layoutem\nautomatizace práce nad těmito prvky\ndokumentace\nřada objektů, s kterými lze pracovat, ukázka jen základů a nastínění postupů a možností"
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#python-toolbox",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#python-toolbox",
+    "title": "Python Toolbox ArcPy",
+    "section": "Python Toolbox",
+    "text": "Python Toolbox\n\ntextový soubor s příponou .pyt\nvhodné zakládat z catalogu přímo z ArcGIS Pro\nkompletní dokumentace"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/09_mappping_module.html#načtení-projektu",
-    "href": "subjects/PGIS3/prezentace/09_mappping_module.html#načtení-projektu",
-    "title": "Mapping module ArcPy",
-    "section": "Načtení projektu",
-    "text": "Načtení projektu\n\nbuď práce s aktuálním projektem nebo s konkrétním projektem uloženým na disku\n\naprx = arcpy.mp.ArcGISProject(\"CURRENT\")\n## nebo\naprx = arcpy.mp.ArcGISProject(r\"C:\\Projects\\YosemiteNP\\Yosemite.aprx\")"
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#třída-toolbox",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#třída-toolbox",
+    "title": "Python Toolbox ArcPy",
+    "section": "Třída toolbox",
+    "text": "Třída toolbox\n\nhlavní třída s nastavením toolboxu a výpisem nástrojů\n\n\n\n\n\n\n\nPozor\n\n\nV seznamu nástrojů se uvádí název třídy, nikoliv instance nástroje - tzn. Tool nikoliv Tool().\n\n\n\nclass Toolbox:\n    def __init__(self):\n        self.label = \"Toolbox\"\n        self.alias = \"toolbox\"\n\n        self.tools = [Tool]"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/09_mappping_module.html#arcgisproject",
-    "href": "subjects/PGIS3/prezentace/09_mappping_module.html#arcgisproject",
-    "title": "Mapping module ArcPy",
-    "section": "ArcGISProject",
-    "text": "ArcGISProject\n\nhlavní třída pro práci - rozcestník k dalším položkám\nřada funkcí pro získání a tvorbu prvků\ndokumentace\nfunkce např. listLayouts(), listMaps(), listReports(), nebo listBrokenDataSources()\nfunkce pro tvorbu nových prvků - createLayout(), createMap(), createTextElement() a další\nfunkce deleteItem() pro smazání prvku\npři modifikaci buď nutné volat save() nebo saveACopy()"
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#třída-nástroje",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#třída-nástroje",
+    "title": "Python Toolbox ArcPy",
+    "section": "Třída nástroje",
+    "text": "Třída nástroje\n\npython třída, která musí obsahovat následující metody - __init__(), getParameterInfo(), isLicensed(), updateParameters(), updateMessages(), execute(), postExecute(), s příslušnou signaturou\nvšechny metody jsou volány automaticky v rámci dílčích kroků použití nástroje"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/09_mappping_module.html#map",
-    "href": "subjects/PGIS3/prezentace/09_mappping_module.html#map",
-    "title": "Mapping module ArcPy",
-    "section": "Map",
-    "text": "Map\n\nindividuální mapové okno v projektu\nlze z něj získat vrstvy listLayers()\nlze přidávat vrstvy addLayer() nebo addLayerToGroup() či addTable() ale i insertLayer()"
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#příklad-třídy-nástroje-dle-dokumentace",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#příklad-třídy-nástroje-dle-dokumentace",
+    "title": "Python Toolbox ArcPy",
+    "section": "Příklad třídy nástroje dle dokumentace",
+    "text": "Příklad třídy nástroje dle dokumentace\nclass Tool:\n    def __init__(self):\n        \"\"\"Define the tool (tool name is the name of the class).\"\"\"\n        self.label = \"Tool\"\n        self.description = \"\"\n\n    def getParameterInfo(self):\n        \"\"\"Define the tool parameters.\"\"\"\n        params = None\n        return params\n\n    def isLicensed(self):\n        \"\"\"Set whether the tool is licensed to execute.\"\"\"\n        return True\n\n    def updateParameters(self, parameters):\n        \"\"\"Modify the values and properties of parameters before internal\n        validation is performed.  This method is called whenever a parameter\n        has been changed.\"\"\"\n        return\n\n    def updateMessages(self, parameters):\n        \"\"\"Modify the messages created by internal validation for each tool\n        parameter. This method is called after internal validation.\"\"\"\n        return\n\n    def execute(self, parameters, messages):\n        \"\"\"The source code of the tool.\"\"\"\n        return\n\n    def postExecute(self, parameters):\n        \"\"\"This method takes place after outputs are processed and\n        added to the display.\"\"\"\n        return"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/09_mappping_module.html#layer",
-    "href": "subjects/PGIS3/prezentace/09_mappping_module.html#layer",
-    "title": "Mapping module ArcPy",
-    "section": "Layer",
-    "text": "Layer\n\nbuď prvek Map nebo je lze ukládat do lyr či lyrx souborů\npřistup k vlastnostem vrstvy, mimo jiné i k nastavené vizualizace (renderer či symbologie)"
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#parametry-nástroje",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#parametry-nástroje",
+    "title": "Python Toolbox ArcPy",
+    "section": "Parametry nástroje",
+    "text": "Parametry nástroje\n\ndokumentace\ntřída arcpy.Parameter s různými typy parametrů, které vytvoří příslušný objekt\nparam0 = arcpy.Parameter(displayName, name, datatype, parameterType, direction), detaily nutné vyčíst v dokumentaci\nparametry se následně shrnou do seznamu a ten je výsledným výstupem metody getParameterInfo - return [param0, param1, ...]"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/09_mappping_module.html#renderery",
-    "href": "subjects/PGIS3/prezentace/09_mappping_module.html#renderery",
-    "title": "Mapping module ArcPy",
-    "section": "Renderery",
-    "text": "Renderery\n\nrůzné objekty dle typu\npříklad zde"
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#typy-parametrů",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#typy-parametrů",
+    "title": "Python Toolbox ArcPy",
+    "section": "Typy parametrů",
+    "text": "Typy parametrů\n\ndokumentace\nřada položek dle typu vstupu"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/09_mappping_module.html#export-do-souboru",
-    "href": "subjects/PGIS3/prezentace/09_mappping_module.html#export-do-souboru",
-    "title": "Mapping module ArcPy",
-    "section": "Export do souboru",
-    "text": "Export do souboru\n\nexporty layoutu do grafického souboru (typicky PDF)\n\np = arcpy.mp.ArcGISProject(\"current\")\nlyt = p.listLayouts()[0]\n\npdf = arcpy.mp.CreateExportFormat(\"PDF\", r\"C:\\Temp\\PDF_output1.pdf\")\nlyt.export(pdf)\n\npdf.resolution = 300\npdf.filePath = r\"C:\\Temp\\PDF_output2.pdf\"\n\nlyt.export(pdf)"
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#závislosti-parametrů",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#závislosti-parametrů",
+    "title": "Python Toolbox ArcPy",
+    "section": "Závislosti parametrů",
+    "text": "Závislosti parametrů\n\nněkteré typy parametrů přirozeně vyvolávají vzájemné závislosti\nnapř. máme param0, který je typu GPFeatureLayer a param1, který je typu GPValueTable\npak lze nastavit doplňkové vlastnosti parametru param1, které závisí na hodnotě parametru param0\n\nparam1.parameterDependencies = [param0.name]\nparam1.columns = [[\"Field\", \"Field\"], [\"GPString\", \"Statistic Type\"]]\nparam1.filters[1].type = \"ValueList\"\nparam1.values = [[\"NAME\", \"SUM\"]]\nparam1.filters[1].list = [\"SUM\", \"MIN\", \"MAX\", \"STDEV\", \"MEAN\"]"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#výchozí-hodnota-parametru",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#výchozí-hodnota-parametru",
+    "title": "Python Toolbox ArcPy",
+    "section": "Výchozí hodnota parametru",
+    "text": "Výchozí hodnota parametru\n\nlze nastavit jako param0.defaultEnvironmentName = \"workspace\"\nči např. jako param0.value = os.path.join(os.path.dirname(__file__), 'Fire_Station.lyrx')"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#filtry",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#filtry",
+    "title": "Python Toolbox ArcPy",
+    "section": "Filtry",
+    "text": "Filtry\n\nsamostatná kapitola, umožňuje pro parametry omezovat vstupní hodnoty\nliší se dle typu vstupního parametru\npodle dokumentace"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#kopie-vrstvy",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#kopie-vrstvy",
+    "title": "Python Toolbox ArcPy",
+    "section": "Kopie vrstvy",
+    "text": "Kopie vrstvy\n\nvčetně schématu lze nastavit pomocí vlastnosti schema.clone\n\nparam1 = arcpy.Parameter(\n    displayName=\"Output Features\",\n    name=\"out_features\",\n    datatype=\"GPFeatureLayer\",\n    parameterType=\"Derived\",\n    direction=\"Output\",\n)\n\nparam1.parameterDependencies = [param0.name]\nparam1.schema.clone = True"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#stylizace-výstupní-vrstvy",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#stylizace-výstupní-vrstvy",
+    "title": "Python Toolbox ArcPy",
+    "section": "Stylizace výstupní vrstvy",
+    "text": "Stylizace výstupní vrstvy\n\nlze např. automaticky stylovat výstupní vrstvu pomocí připraveného souboru s nastavením\n\nparam1.symbology = Path(__file__).parent / \"raster_symbology.lyrx\""
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#použití-vstupních-parametrů",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#použití-vstupních-parametrů",
+    "title": "Python Toolbox ArcPy",
+    "section": "Použití vstupních parametrů",
+    "text": "Použití vstupních parametrů\n\nv metodě execute()\nzískávají se z proměnné parameters, obvykle jako test - param0 = parameters[0].valueAsText"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#komunikace-s-uživatelem",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#komunikace-s-uživatelem",
+    "title": "Python Toolbox ArcPy",
+    "section": "Komunikace s uživatelem",
+    "text": "Komunikace s uživatelem\n\nv metodě execute() lze využít proměnnou messages pro výpis chyb a informací\nmessages.addMessage(\"Message\"), messages.addWarning(\"Warning\"), messages.addError(\"Error\")\nmessages.addGPMessages() - přidá všechny zprávy z posledního spuštěného nástroje - užitečné tam, kde v rámci nástroje spouštíme dílčí nástroje"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/09_python_toolbox.html#toolbox",
+    "href": "subjects/PGIS3/prezentace/09_python_toolbox.html#toolbox",
+    "title": "Python Toolbox ArcPy",
+    "section": "Toolbox",
+    "text": "Toolbox\n\nvýsledný toolbox lze šifrovat heslem\nbez hesla nelze toolbox otevřít a zobrazit jeho obsah\nheslo se zadává při otevření toolboxu v ArcGIS Pro\n\n\n\n\n\n\n\nPozor\n\n\nHeslo nelze obnovit, pokud se zapomene, je toolbox ztracen."
   },
   {
     "objectID": "subjects/PGIS4/prezentace/02_qgis_python_api.html#qgis",
@@ -3565,7 +3579,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2025-11-04\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2025-11-11\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2025-11-18\n\n\nMapping module ArcPy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-09-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2025-09-16\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2025-09-30\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2025-10-07\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2025-10-14\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2025-11-04\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2025-11-18\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-12-02\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -3598,7 +3612,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-11-25\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2024-11-25\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nutils.py\n\n\n\n\n\n\n2025-10-21\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2025-10-21\n\n\nMěření geometrie\n\n\n\n\n\n\n2025-10-21\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2025-11-04\n\n\nRastrová data\n\n\n\n\n\n\n2025-11-04\n\n\nTvorba rastru\n\n\n\n\n\n\n2025-11-04\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2025-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2024-12-02\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2025-09-30\n\n\nVýpisy dat\n\n\n\n\n\n\n2025-09-30\n\n\nFunkce Describe\n\n\n\n\n\n\n2025-10-07\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2025-10-07\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2025-10-14\n\n\nutils.py\n\n\n\n\n\n\n2025-10-21\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2025-10-21\n\n\nMěření geometrie\n\n\n\n\n\n\n2025-10-21\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2025-11-04\n\n\nRastrová data\n\n\n\n\n\n\n2025-11-04\n\n\nTvorba rastru\n\n\n\n\n\n\n2025-11-04\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2025-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2025-12-02\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"

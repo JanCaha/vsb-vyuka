@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-11-11">
+  <meta name="dcterms.date" content="2025-12-02">
   <title>Výuka - Jan Caha – Python Toolbox ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -208,7 +208,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-11-11</p>
+  <p class="date">2025-12-02</p>
 </section>
 <section id="python-toolbox" class="slide level2">
 <h2>Python Toolbox</h2>
@@ -296,6 +296,13 @@ Jan Caha
 <li>parametry se následně shrnou do seznamu a ten je výsledným výstupem metody <code>getParameterInfo</code> - <code>return [param0, param1, ...]</code></li>
 </ul>
 </section>
+<section id="typy-parametrů" class="slide level2">
+<h2>Typy parametrů</h2>
+<ul>
+<li><a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/geoprocessing_and_python/defining-parameter-data-types-in-a-python-toolbox.htm">dokumentace</a></li>
+<li>řada položek dle typu vstupu</li>
+</ul>
+</section>
 <section id="závislosti-parametrů" class="slide level2">
 <h2>Závislosti parametrů</h2>
 <ul>
@@ -324,11 +331,28 @@ Jan Caha
 <li>podle dokumentace</li>
 </ul>
 </section>
-<section id="výstupní-hodnoty" class="slide level2">
-<h2>Výstupní hodnoty</h2>
+<section id="kopie-vrstvy" class="slide level2">
+<h2>Kopie vrstvy</h2>
 <ul>
-<li>lze např. automaticky stylovat výstupní vrstvu pomocí připraveného souboru s nastavením - <code>param1.symbology = os.path.join(os.path.dirname(__file__), 'raster_symbology.lyrx')</code></li>
+<li>včetně schématu lze nastavit pomocí vlastnosti <code>schema.clone</code></li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>param1 <span class="op">=</span> arcpy.Parameter(</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>    displayName<span class="op">=</span><span class="st">"Output Features"</span>,</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"out_features"</span>,</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    datatype<span class="op">=</span><span class="st">"GPFeatureLayer"</span>,</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    parameterType<span class="op">=</span><span class="st">"Derived"</span>,</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    direction<span class="op">=</span><span class="st">"Output"</span>,</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>param1.parameterDependencies <span class="op">=</span> [param0.name]</span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>param1.schema.clone <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="stylizace-výstupní-vrstvy" class="slide level2">
+<h2>Stylizace výstupní vrstvy</h2>
+<ul>
+<li>lze např. automaticky stylovat výstupní vrstvu pomocí připraveného souboru s nastavením</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>param1.symbology <span class="op">=</span> Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">"raster_symbology.lyrx"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="použití-vstupních-parametrů" class="slide level2">
 <h2>Použití vstupních parametrů</h2>
