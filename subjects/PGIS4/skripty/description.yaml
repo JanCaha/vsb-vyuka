@@ -56,11 +56,11 @@
   path: "PGIS4/skripty/mujplugin.zip"
 - title: "Editace projektu a layoutu"
   author: Jan Caha
-  date: 2024-11-25
+  date: 2025-11-25
   path: "PGIS4/skripty/12_projekt_layout.py"
 - title: "GUI nástroj na kreslení polygonu"
   author: Jan Caha
-  date: 2024-11-25
+  date: 2025-11-25
   path: "PGIS4/skripty/13_gui_nastroj.py"
 - title: "GDAL tvorba náhodného rastru"
   author: Jan Caha

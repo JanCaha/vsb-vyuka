@@ -56,9 +56,9 @@
   path: "PGIS3/skripty/12_projekt.py"
 - title: "Změny Layoutu a jeho export"
   author: Jan Caha
-  date: 2024-12-02
+  date: 2025-12-02
   path: "PGIS3/skripty/13_layout_zmeny_export.py"
 - title: "Python toolbox s jednoduchým nástrojem"
   author: Jan Caha
-  date: 2024-11-18
+  date: 2025-11-18
   path: "PGIS3/skripty/MyToolbox.pyt"
