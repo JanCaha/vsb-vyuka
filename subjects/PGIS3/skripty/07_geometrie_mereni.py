@@ -9,7 +9,7 @@ print(f"{crs_wgs84.type}: {crs_wgs84.angularUnitName} - {crs_wgs84.linearUnitNam
 print(f"{crs_sjtsk.type}: {crs_sjtsk.angularUnitName} - {crs_sjtsk.linearUnitName}")
 
 print(f"WGS 84 je projektovaný: {utils.is_projected(crs_wgs84)}")
-print(f"S-JTSK je projektovaný: {utils.is_projected(crs_sjtsk)")
+print(f"S-JTSK je projektovaný: {utils.is_projected(crs_sjtsk)}")
 
 line = arcpy.Polyline(
     arcpy.Array(
