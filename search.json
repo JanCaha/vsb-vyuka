@@ -1215,18 +1215,11 @@
     "text": "Práce s Pythonem\n\ncílem je naučit se rozumné návyky a postupy při programování v Pythonu\npředcházet nevhodným postupům, návykům a chybám, které komplikují v dlouhodobém horizontu práci\ni když některé postupy vypadají zbytečně složité či nepotřebné, většinou se vyplatí z dlouhodobého hlediska\nvětšina postupů je založena na zkušenostech a doporučeních z praxe\n“pokud jste nějaký kód neotevřeli 3 měsíce, mohl ho klidně napsat někdo cizí” - potřebujeme tedy kód, který je srozumitelný a použitelný i po delší době a pro někoho cizího\nvěci, které jsou “navíc” děláte pro svoje budoucí já a ulehčujete mu tím práci"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#ai",
-    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#ai",
-    "title": "Opakování Pythonu",
-    "section": "AI",
-    "text": "AI\n\nGithub Copilot - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)\nvýborná integrace do VS Code\nvyužívá se pro:\n\ndoplňování kódu\nnávrhy funkcí a objektů\nkonzultace existujícího kódu\nkonzultace problémů\n\nvyužití v tomto ohledu se doporučuje\nneklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)"
-  },
-  {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#python",
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#python",
     "title": "Opakování Pythonu",
     "section": "Python",
-    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.10 a novější (aktuální verze a cca dvě verze zpátky)"
+    "text": "Python\n\ninterpretovaný programovací (skriptovací) jazyk\ndynamicky typovaný\nširoce využívaný - ať už samostatně, nebo i jako součást jiného softwaru\nsnadno propojitelný s dalšími knihovnami i softwarem\npodpora jak objektového, tak i funkcionálního programování\nverze 2.x už nepoužívat, verze 3 ideálně od 3.12 a novější (aktuální verze a cca dvě verze zpátky)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#vs-code",
@@ -1247,7 +1240,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#conda",
     "title": "Opakování Pythonu",
     "section": "Conda",
-    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI (Anaconda)\noficiální a neoficiální kanály (conda-forge)\n\nconda create -n pgis2 python=3.12\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
+    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI (Anaconda)\noficiální a neoficiální kanály (conda-forge)\n\nconda create -n pgis2 python=3.14\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\nv VS Code nutno nastavit interpretor jazyka"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#instalace-knihoven",
@@ -1325,6 +1318,20 @@
     "title": "Opakování Pythonu",
     "section": "Magické proměnné či funkce",
     "text": "Magické proměnné či funkce\n\nzapisují je jako __nazev__\nodkazují na předpřipravené konstrukce (funkce, proměnné) v Pythonu a mají obvykle speciální chování\nukázka - tvorba objektu a funkce pro tisk\ndo této skupiny lze zařadit i soubor __init__.py, jehož existence označuje složku jako Pythonový modul"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
+    "title": "Opakování Pythonu",
+    "section": "Magické metody - tisk objektu",
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f9b90d5e660&gt;"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
+    "title": "Opakování Pythonu",
+    "section": "Magické metody - tisk objektu",
+    "text": "Magické metody - tisk objektu\n\ntisk objektu s funkcí __repr__()\ntiskne řetězec z této funkce\n\n\nclass A:\n    def __init__(self):\n        pass\n\n    def __repr__(self) -&gt; str:\n        return \"Objekt třídy A.\"\n\n\na = A()\nprint(a)\n\nObjekt třídy A."
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#kontextové-managery",
@@ -1779,7 +1786,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.15176851 -0.13035725 -0.46649454 -0.00732413 -0.06829395"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.3800865 -0.8672477 -0.2078528 -1.1791827 -0.3482495"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2409,7 +2416,21 @@
     "href": "subjects/PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
     "title": "Úvodní cvičení",
     "section": "Zakončení předmětu",
-    "text": "Zakončení předmětu\n\nsamostatný projekt\n\nnetriviální zpracování samostatně vybraných dat s důrazem na použitelný kód\nvyužijte kteroukoliv z knihoven, představených během výuky\nzáhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá\nskript spolu s testovacími daty odevzdejte e-mailem (datum upřesníme ve 2 polovině semestru)\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven"
+    "text": "Zakončení předmětu\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven, testové otázky (ano/ne, výběr z možností) + několik otevřených otázek\npísemka na pochopení kódu - ukázky kódu (cca 10 - 15 řádku) s otázkami na pochopení"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/01_uvod.html#ai",
+    "href": "subjects/PGIS2/prezentace/01_uvod.html#ai",
+    "title": "Úvodní cvičení",
+    "section": "AI",
+    "text": "AI\n\nGithub Copilot - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)\nvýborná integrace do VS Code\nvyužívá se pro:\n\ndoplňování kódu\nnávrhy funkcí a objektů\nkonzultace existujícího kódu\nkonzultace problémů\n\nvyužití v tomto ohledu se doporučuje\nneklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/01_uvod.html#github-copilot",
+    "href": "subjects/PGIS2/prezentace/01_uvod.html#github-copilot",
+    "title": "Úvodní cvičení",
+    "section": "GitHub Copilot",
+    "text": "GitHub Copilot\n\nbudeme s ním zacházet opatrně\nnenahrazuje znalost programování\nje v pořádku ✅: napovídání, vysvětlování, revize kódu\n\nnení v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (lepší využívat i dokumentaci)\nuživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením\nPravidlo: “Rozumím tomu, co píšu” -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_gdal_ogr.html#popis-gdalogr",
