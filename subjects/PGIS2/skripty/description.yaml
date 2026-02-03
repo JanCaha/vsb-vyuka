@@ -1,7 +1,7 @@
 - title: "Opakování Pythonu"
   author: Jan Caha
   date: 2025-02-24
-  path: "PGIS2/skripty/0_opakovani_python.py"
+  path: "PGIS2/skripty/00_opakovani_python.py"
 - title: "GDAL/OGR načtení vektorových dat"
   author: Jan Caha
   date: 2025-03-03
@@ -49,7 +49,7 @@
 - title: "Zkušební python balíček"
   author: Jan Caha
   date: 2024-04-07
-  path: "PGIS2/skripty/python_balicek.zip"
+  path: "PGIS2/skripty/balik_pgis2.zip"
 - title: Pandas - ukázky
   author: Jan Caha
   date: 2025-04-14
