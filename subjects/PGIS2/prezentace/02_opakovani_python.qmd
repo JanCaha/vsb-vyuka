@@ -12,18 +12,6 @@ date: 2025-02-24
 - "pokud jste nějaký kód neotevřeli 3 měsíce, mohl ho klidně napsat někdo cizí" - potřebujeme tedy kód, který je srozumitelný a použitelný i po delší době a pro někoho cizího
 - věci, které jsou "navíc" děláte pro svoje budoucí já a ulehčujete mu tím práci
 
-## AI  
-
-- [Github Copilot]{.software} - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)
-- výborná integrace do [VS Code]{.software}
-- využívá se pro:
-  -  doplňování kódu
-  -  návrhy funkcí a objektů
-  -  konzultace existujícího kódu
-  -  konzultace problémů
-- využití v tomto ohledu se doporučuje 
-- neklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)
-
 ## [Python]{.software}
 
 - **interpretovaný** programovací (skriptovací) jazyk
@@ -31,7 +19,7 @@ date: 2025-02-24
 - široce využívaný - ať už samostatně, nebo i jako součást jiného softwaru
 - snadno propojitelný s dalšími knihovnami i softwarem
 - podpora jak objektového, tak i funkcionálního programování
-- verze 2.x už nepoužívat, verze 3 ideálně **od 3.10 a novější** (aktuální verze a cca dvě verze zpátky)
+- verze 2.x už nepoužívat, verze 3 ideálně **od 3.12 a novější** (aktuální verze a cca dvě verze zpátky)
   
 ## [VS Code]{.software}
 
@@ -57,7 +45,7 @@ date: 2025-02-24
 - oficiální a neoficiální kanály (`conda-forge`)
 
 ```bash
-conda create -n pgis2 python=3.12
+conda create -n pgis2 python=3.14
 conda activate pgis2
 conda config --add channels conda-forge
 conda install GDAL
@@ -201,7 +189,7 @@ finally:
 - ukázka - tvorba objektu a funkce pro tisk
 - do této skupiny lze zařadit i soubor `__init__.py`, jehož existence označuje složku jako Pythonový modul
 
----
+## Magické metody - tisk objektu
 
 - tisk objektu bez funkce `__repr__()`
 - tiskne informace o umístění objektu v paměti
@@ -215,7 +203,7 @@ a = A()
 print(a)
 ```
 
----
+## Magické metody - tisk objektu
 
 - tisk objektu s funkcí `__repr__()`
 - tiskne řetězec z této funkce

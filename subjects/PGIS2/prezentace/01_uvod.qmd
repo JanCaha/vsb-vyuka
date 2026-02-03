@@ -40,11 +40,28 @@ date: 2025-02-17
 
 ## Zakončení předmětu
 
-- samostatný projekt
-  - netriviální zpracování samostatně vybraných dat s důrazem na použitelný kód 
-  -  využijte kteroukoliv z knihoven, představených během výuky
-  -  záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá
-  -  skript spolu s testovacími daty odevzdejte e-mailem (datum upřesníme ve 2 polovině semestru)
-- písemka - klíčové položky programování v Pythonu a GIS knihoven
- 
+- písemka - klíčové položky programování v Pythonu a GIS knihoven, testové otázky (ano/ne, výběr z možností) + několik otevřených otázek
+- písemka na pochopení kódu - ukázky kódu (cca 10 - 15 řádku) s otázkami na pochopení
+
+## AI  
+
+- [Github Copilot]{.software} - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)
+- výborná integrace do [VS Code]{.software}
+- využívá se pro:
+  -  doplňování kódu
+  -  návrhy funkcí a objektů
+  -  konzultace existujícího kódu
+  -  konzultace problémů
+- využití v tomto ohledu se doporučuje 
+- neklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)
+  
+## GitHub Copilot
+
+- budeme s ním zacházet opatrně
+- nenahrazuje znalost programování
+- je v pořádku ✅: napovídání, vysvětlování, revize kódu  
+- není v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (lepší využívat i dokumentaci) 
+- uživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením
+- **Pravidlo: "Rozumím tomu, co píšu"**  -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat
+
 # Dotazy? {.center}
