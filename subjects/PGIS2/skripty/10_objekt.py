@@ -22,7 +22,7 @@ class Zamestnanec:
         """Funkce vrátí měsíční plat zaměstnance za zadaný počet odpracovaných hodin."""
         return self._hodinovy_plat * odpracovanych_hodin
 
-    ## statická metoda, jedná se o ukázku, ale zde by mohla být i normální metoda
+    # statická metoda, jedná se o ukázku, ale zde by mohla být i normální metoda
     @staticmethod
     def delka_pracovniho_dne(uvazek: float = 1.0) -> float:
         """Statická metoda vrací délku pracovního dne zaměstnance dle výše úvazku."""
