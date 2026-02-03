@@ -1,0 +1,22 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 26.1.0
+    hooks:
+      - id: black
+        language_version: python3
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 7.0.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+
+  - repo: local
+    hooks:
+      - id: pack-packages
+        name: Pack Python packages
+        entry: ./dev-scripts/pack_packages.sh
+        language: script
+        files: ^baliky/
+        pass_filenames: false
+        stages: [pre-commit]
