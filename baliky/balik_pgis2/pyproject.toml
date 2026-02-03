@@ -1,0 +1,19 @@
+[project]
+name = "pgis2"
+version = "0.1.0"
+description = ""
+authors = [{ "name" = "autor", "email" = "autor@email.cz" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gdal (>=3.8.0,<4.0.0)",
+    "requests (>=2.32.3,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "pgis2", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
