@@ -315,7 +315,7 @@
     "href": "subjects/pgis2.html#instalace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Instalace",
-    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: pgis2\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.12.*\n  - pip\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  - poetry\n  # VS Code extensions\n  - black\n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  # package dev\n  - poetry\n  # git + github\n  - git\n  - gh\n  # grafy\n  - matplotlib\n  - plotnine\n  # notebooky\n  - jupyter\n  - ipykernel\n  #- pip:\n    #- geopolars\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\n\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -890,7 +890,7 @@
     "href": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#příklad-tvorby",
     "title": "Spustitelné programy",
     "section": "Příklad tvorby",
-    "text": "Příklad tvorby\nimport argparse\nfrom pathlib import Path\n\nparser = argparse.ArgumentParser(\n    prog=\"calculate\", description=\"Skript pro výpočet hodnoty.\"\n)\n\n# Definice argumentů\nparser.add_argument(\"a\", help=\"Hodnota a\", type=float)\nparser.add_argument(\"b\", help=\"Hodnota b\", type=float)\nparser.add_argument(\n    \"-o\",\n    \"--operator\",\n    help=\"Operátor s hodnotami\",\n    default=\"*\",\n    type=str,\n    choices=[\"*\", \"/\", \"+\", \"-\"],\n)\nparser.add_argument(\n    \"-r\", \"--result\", help=\"Výsledný soubor\", type=Path, default=Path(\"vysledek.txt\")\n)"
+    "text": "Příklad tvorby\nimport argparse\nfrom pathlib import Path\n\nparser = argparse.ArgumentParser(prog=\"calculate\", description=\"Skript pro výpočet hodnoty.\")\n\n# Definice argumentů\nparser.add_argument(\"a\", help=\"Hodnota a\", type=float)\nparser.add_argument(\"b\", help=\"Hodnota b\", type=float)\nparser.add_argument(\n    \"-o\", \"--operator\", help=\"Operátor s hodnotami\", default=\"*\", type=str, choices=[\"*\", \"/\", \"+\", \"-\"]\n)\nparser.add_argument(\"-r\", \"--result\", help=\"Výsledný soubor\", type=Path, default=Path(\"vysledek.txt\"))"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/12_spustitelne_soubory.html#přístup-k-argumentům",
@@ -974,7 +974,7 @@
     "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---tvorba-sloupce",
     "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
     "section": "Ukázka - tvorba sloupce",
-    "text": "Ukázka - tvorba sloupce\n\nPandasPolars\n\n\ndf_pd[\"novy_sloupec\"] = False\ndf_pd[\"novy_sloupec\"] = df_pd[\"novy_sloupec\"].mask(df_pd[\"sloupec_hodnota\"] &lt;= 3, True)\n\n\ndf_pl.with_columns(\n    pl.when(pl.col(\"sloupec_hodnota\") &lt;= 10)\n    .then(True)\n    .otherwise(False)\n    .alias(\"novy_sloupec\")\n)"
+    "text": "Ukázka - tvorba sloupce\n\nPandasPolars\n\n\ndf_pd[\"novy_sloupec\"] = False\ndf_pd[\"novy_sloupec\"] = df_pd[\"novy_sloupec\"].mask(df_pd[\"sloupec_hodnota\"] &lt;= 3, True)\n\n\ndf_pl.with_columns(pl.when(pl.col(\"sloupec_hodnota\") &lt;= 10).then(True).otherwise(False).alias(\"novy_sloupec\"))"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/08_kontroly_formatovani_kodu.html#kontroly-kódu",
@@ -1779,7 +1779,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.1419242 -0.9181846 -0.6492269 -0.0240906 -0.1748475"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.43906310 -0.47987944 -0.01935446 -0.17751396 -0.62783133"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -1856,7 +1856,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#nenačtení-balíku-či-špatně-zapsaná-funkce",
     "title": "Základní orientace v jazyce R",
     "section": "Nenačtení balíku či špatně zapsaná funkce",
-    "text": "Nenačtení balíku či špatně zapsaná funkce\n\nneexistujici_funkce(df)\n\nError in neexistujici_funkce(df): could not find function \"neexistujici_funkce\""
+    "text": "Nenačtení balíku či špatně zapsaná funkce\n\nneexistujici_funkce(df)\n\nError in `neexistujici_funkce()`:\n! could not find function \"neexistujici_funkce\""
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#parametry-funkcí",
@@ -3375,7 +3375,7 @@
     "href": "subjects/PGIS4/prezentace/06_qgis_nastroje.html#spouštění-nástrojů-z-kódu",
     "title": "Processingové nástroje QGIS Python API",
     "section": "Spouštění nástrojů z kódu",
-    "text": "Spouštění nástrojů z kódu\nfrom processing.core.Processing import Processing\nfrom qgis import processing\n\nProcessing.initialize()\n\nresult = processing.run(\n    \"nazev:algoritmu\",\n    {\"parametry\": \"hodnoty\"},\n    context=context,\n    feedback=feedback,\n    is_child_algorithm=True,\n)\n\ntento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)\ntakto lze řetězit několik nástrojů za sebou (pokud použijeme, pak je vhodné využít QgsProcessingMultiStepFeedback pro zobrazení průběhu)"
+    "text": "Spouštění nástrojů z kódu\nfrom processing.core.Processing import Processing\nfrom qgis import processing\n\nProcessing.initialize()\n\nresult = processing.run(\n    \"nazev:algoritmu\", {\"parametry\": \"hodnoty\"}, context=context, feedback=feedback, is_child_algorithm=True\n)\n\ntento kód lze získat z dialogu nástroje v QGIS (kopírovat jako Python skript, ale existuje i JSON varianta)\ntakto lze řetězit několik nástrojů za sebou (pokud použijeme, pak je vhodné využít QgsProcessingMultiStepFeedback pro zobrazení průběhu)"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/06_qgis_nastroje.html#zdroje",
@@ -3389,14 +3389,14 @@
     "href": "subjects/PGIS4/qgis-python-quiz.html",
     "title": "QGIS Python API – mini test",
     "section": "",
-    "text": "Níže jsou krátké úlohy s ukázkami kódu (max. 10 řádků). Kód je v angličtině, komentáře v češtině.\n\n\nfrom qgis.core import QgsGeometry, QgsPointXY\n\n# vytvoření dvou jednoduchých polygonů a průnik\npoly1 = QgsGeometry.fromPolygonXY(\n    [[QgsPointXY(0, 0), QgsPointXY(2, 0), QgsPointXY(2, 2), QgsPointXY(0, 2)]]\n)\npoly2 = QgsGeometry.fromPolygonXY(\n    [[QgsPointXY(1, 1), QgsPointXY(3, 1), QgsPointXY(3, 3), QgsPointXY(1, 3)]]\n)\ninter = poly1.intersection(poly2)\nprint(round(inter.area(), 2))\n\n\n\nfrom qgis.core import QgsApplication, QgsVectorLayer\n\n# zapomněli jsme inicializovat QGIS aplikaci\napp = QgsApplication([], False)\n# chybí app.initQgis(), vrstva se nenačte\nlayer = QgsVectorLayer(\"/data/world.gpkg|layername=countries\", \"World\", \"ogr\")\nprint(layer.isValid())\n\n\n\nfrom qgis.core import QgsFeatureRequest, QgsRectangle\n\n# AND kombinace: prostorový filtr + výraz\nrect = QgsRectangle(0, 45, 20, 55)\nreq = QgsFeatureRequest().setFilterRect(rect)\nreq.setFilterExpression(\"\\\"NAME\\\" LIKE '%u%'\")\n# platí oba filtry zároveň?\n\n\n\nfrom qgis.core import QgsFeatureRequest\n\n# field name je psán jinak než ve vrstvě\nclause = QgsFeatureRequest.OrderByClause(\"Name\", ascending=False)\norder_by = QgsFeatureRequest.OrderBy([clause])\n# ve vrstvě je pole \"NAME\" – co se stane?\n\n\n\nfrom qgis.core import QgsGeometry, QgsPointXY\n\n# posun vybraných vrcholů podle podmínky x&gt;0.75\ng = QgsGeometry.fromPolygonXY(\n    [[QgsPointXY(0, 0), QgsPointXY(1, 0), QgsPointXY(1, 1), QgsPointXY(0, 1)]]\n)\nfor i, v in enumerate(g.vertices()):\n    if v.x() &gt; 0.75:\n        g.moveVertex(v.x() - 0.1, v.y(), i)\nprint(g.asWkt())\n\n\n\nfrom qgis.core import QgsGeometry, QgsPointXY\n\n# index vrcholu je mimo rozsah\ng = QgsGeometry.fromPolygonXY(\n    [[QgsPointXY(0, 0), QgsPointXY(1, 0), QgsPointXY(1, 1), QgsPointXY(0, 1)]]\n)\nok = g.moveVertex(-5, -5, 10)\nprint(ok)  # očekáváte True nebo False?\n\n\n\nfrom qgis.core import QgsApplication, QgsRasterLayer\n\n# vytvoření vrstvy a kontrola pásma\napp = QgsApplication([], False)\napp.initQgis()\nrl = QgsRasterLayer(\"/data/nahodny_raster.tif\", \"rnd\", \"gdal\")\nprint(rl.bandCount(), rl.bandName(1))\n\n\n\nfrom qgis.core import QgsRectangle\n\n# záměna pořadí indexů při čtení bloku\n# správně: value(column, row)\n# tady: i=columns, j=rows, ale čteme value(j,i)\n# co to udělá s výstupem?\n\n\n\nfrom qgis.core import Qgis, QgsLayoutExporter, QgsProject\n\n# načtení projektu a úprava scale baru\np = QgsProject.instance()\np.read(\"/data/projekt1.qgz\")\nl = p.layoutManager().layoutByName(\"Layout 1\")\nsb = l.itemById(\"ScaleBar1\")\nsb.setUnits(Qgis.DistanceUnit.Miles)\nQgsLayoutExporter(l).exportToPdf(\"/tmp/out.pdf\", QgsLayoutExporter.PdfExportSettings())\n\n\n\nfrom qgis.gui import QgsMapToolEdit\n\n\n# iface a mapCanvas existují jen v QGIS GUI\nclass T(QgsMapToolEdit):\n    def __init__(self, c):\n        super().__init__(c)\n\n\n# proč tady nelze použít iface.mapCanvas()?\n\n\n\nfrom qgis.core import QgsFeatureRequest\n\n# filtr: země s populací &gt; 100 mil.\nreq = QgsFeatureRequest().setFilterExpression('\"POP_EST\" &gt; 100000000')\n# použije se správné pole a typ?\n\n\n\nfrom qgis.core import QgsDistanceArea, QgsPointXY\n\n# bez nastavení elipsoidu/CRS budou jednotky v °\nda = QgsDistanceArea()\nprint(round(da.measureLine(QgsPointXY(0, 0), QgsPointXY(1, 0)), 2))\n# je to v metrech?"
+    "text": "Níže jsou krátké úlohy s ukázkami kódu (max. 10 řádků). Kód je v angličtině, komentáře v češtině.\n\n\nfrom qgis.core import QgsGeometry, QgsPointXY\n\n# vytvoření dvou jednoduchých polygonů a průnik\npoly1 = QgsGeometry.fromPolygonXY([[QgsPointXY(0, 0), QgsPointXY(2, 0), QgsPointXY(2, 2), QgsPointXY(0, 2)]])\npoly2 = QgsGeometry.fromPolygonXY([[QgsPointXY(1, 1), QgsPointXY(3, 1), QgsPointXY(3, 3), QgsPointXY(1, 3)]])\ninter = poly1.intersection(poly2)\nprint(round(inter.area(), 2))\n\n\n\nfrom qgis.core import QgsApplication, QgsVectorLayer\n\n# zapomněli jsme inicializovat QGIS aplikaci\napp = QgsApplication([], False)\n# chybí app.initQgis(), vrstva se nenačte\nlayer = QgsVectorLayer(\"/data/world.gpkg|layername=countries\", \"World\", \"ogr\")\nprint(layer.isValid())\n\n\n\nfrom qgis.core import QgsFeatureRequest, QgsRectangle\n\n# AND kombinace: prostorový filtr + výraz\nrect = QgsRectangle(0, 45, 20, 55)\nreq = QgsFeatureRequest().setFilterRect(rect)\nreq.setFilterExpression(\"\\\"NAME\\\" LIKE '%u%'\")\n# platí oba filtry zároveň?\n\n\n\nfrom qgis.core import QgsFeatureRequest\n\n# field name je psán jinak než ve vrstvě\nclause = QgsFeatureRequest.OrderByClause(\"Name\", ascending=False)\norder_by = QgsFeatureRequest.OrderBy([clause])\n# ve vrstvě je pole \"NAME\" – co se stane?\n\n\n\nfrom qgis.core import QgsGeometry, QgsPointXY\n\n# posun vybraných vrcholů podle podmínky x&gt;0.75\ng = QgsGeometry.fromPolygonXY([[QgsPointXY(0, 0), QgsPointXY(1, 0), QgsPointXY(1, 1), QgsPointXY(0, 1)]])\nfor i, v in enumerate(g.vertices()):\n    if v.x() &gt; 0.75:\n        g.moveVertex(v.x() - 0.1, v.y(), i)\nprint(g.asWkt())\n\n\n\nfrom qgis.core import QgsGeometry, QgsPointXY\n\n# index vrcholu je mimo rozsah\ng = QgsGeometry.fromPolygonXY([[QgsPointXY(0, 0), QgsPointXY(1, 0), QgsPointXY(1, 1), QgsPointXY(0, 1)]])\nok = g.moveVertex(-5, -5, 10)\nprint(ok)  # očekáváte True nebo False?\n\n\n\nfrom qgis.core import QgsApplication, QgsRasterLayer\n\n# vytvoření vrstvy a kontrola pásma\napp = QgsApplication([], False)\napp.initQgis()\nrl = QgsRasterLayer(\"/data/nahodny_raster.tif\", \"rnd\", \"gdal\")\nprint(rl.bandCount(), rl.bandName(1))\n\n\n\nfrom qgis.core import QgsRectangle\n\n# záměna pořadí indexů při čtení bloku\n# správně: value(column, row)\n# tady: i=columns, j=rows, ale čteme value(j,i)\n# co to udělá s výstupem?\n\n\n\nfrom qgis.core import Qgis, QgsLayoutExporter, QgsProject\n\n# načtení projektu a úprava scale baru\np = QgsProject.instance()\np.read(\"/data/projekt1.qgz\")\nl = p.layoutManager().layoutByName(\"Layout 1\")\nsb = l.itemById(\"ScaleBar1\")\nsb.setUnits(Qgis.DistanceUnit.Miles)\nQgsLayoutExporter(l).exportToPdf(\"/tmp/out.pdf\", QgsLayoutExporter.PdfExportSettings())\n\n\n\nfrom qgis.gui import QgsMapToolEdit\n\n\n# iface a mapCanvas existují jen v QGIS GUI\nclass T(QgsMapToolEdit):\n    def __init__(self, c):\n        super().__init__(c)\n\n\n# proč tady nelze použít iface.mapCanvas()?\n\n\n\nfrom qgis.core import QgsFeatureRequest\n\n# filtr: země s populací &gt; 100 mil.\nreq = QgsFeatureRequest().setFilterExpression('\"POP_EST\" &gt; 100000000')\n# použije se správné pole a typ?\n\n\n\nfrom qgis.core import QgsDistanceArea, QgsPointXY\n\n# bez nastavení elipsoidu/CRS budou jednotky v °\nda = QgsDistanceArea()\nprint(round(da.measureLine(QgsPointXY(0, 0), QgsPointXY(1, 0)), 2))\n# je to v metrech?"
   },
   {
     "objectID": "subjects/PGIS4/qgis-python-quiz.html#otázka-1-co-dělá-tento-úryvek-kódu",
     "href": "subjects/PGIS4/qgis-python-quiz.html#otázka-1-co-dělá-tento-úryvek-kódu",
     "title": "QGIS Python API – mini test",
     "section": "",
-    "text": "from qgis.core import QgsGeometry, QgsPointXY\n\n# vytvoření dvou jednoduchých polygonů a průnik\npoly1 = QgsGeometry.fromPolygonXY(\n    [[QgsPointXY(0, 0), QgsPointXY(2, 0), QgsPointXY(2, 2), QgsPointXY(0, 2)]]\n)\npoly2 = QgsGeometry.fromPolygonXY(\n    [[QgsPointXY(1, 1), QgsPointXY(3, 1), QgsPointXY(3, 3), QgsPointXY(1, 3)]]\n)\ninter = poly1.intersection(poly2)\nprint(round(inter.area(), 2))"
+    "text": "from qgis.core import QgsGeometry, QgsPointXY\n\n# vytvoření dvou jednoduchých polygonů a průnik\npoly1 = QgsGeometry.fromPolygonXY([[QgsPointXY(0, 0), QgsPointXY(2, 0), QgsPointXY(2, 2), QgsPointXY(0, 2)]])\npoly2 = QgsGeometry.fromPolygonXY([[QgsPointXY(1, 1), QgsPointXY(3, 1), QgsPointXY(3, 3), QgsPointXY(1, 3)]])\ninter = poly1.intersection(poly2)\nprint(round(inter.area(), 2))"
   },
   {
     "objectID": "subjects/PGIS4/qgis-python-quiz.html#otázka-2-proč-tohle-nefunguje",
@@ -3424,14 +3424,14 @@
     "href": "subjects/PGIS4/qgis-python-quiz.html#otázka-5-co-dělá-tento-úryvek-kódu",
     "title": "QGIS Python API – mini test",
     "section": "",
-    "text": "from qgis.core import QgsGeometry, QgsPointXY\n\n# posun vybraných vrcholů podle podmínky x&gt;0.75\ng = QgsGeometry.fromPolygonXY(\n    [[QgsPointXY(0, 0), QgsPointXY(1, 0), QgsPointXY(1, 1), QgsPointXY(0, 1)]]\n)\nfor i, v in enumerate(g.vertices()):\n    if v.x() &gt; 0.75:\n        g.moveVertex(v.x() - 0.1, v.y(), i)\nprint(g.asWkt())"
+    "text": "from qgis.core import QgsGeometry, QgsPointXY\n\n# posun vybraných vrcholů podle podmínky x&gt;0.75\ng = QgsGeometry.fromPolygonXY([[QgsPointXY(0, 0), QgsPointXY(1, 0), QgsPointXY(1, 1), QgsPointXY(0, 1)]])\nfor i, v in enumerate(g.vertices()):\n    if v.x() &gt; 0.75:\n        g.moveVertex(v.x() - 0.1, v.y(), i)\nprint(g.asWkt())"
   },
   {
     "objectID": "subjects/PGIS4/qgis-python-quiz.html#otázka-6-proč-to-nic-nedělá",
     "href": "subjects/PGIS4/qgis-python-quiz.html#otázka-6-proč-to-nic-nedělá",
     "title": "QGIS Python API – mini test",
     "section": "",
-    "text": "from qgis.core import QgsGeometry, QgsPointXY\n\n# index vrcholu je mimo rozsah\ng = QgsGeometry.fromPolygonXY(\n    [[QgsPointXY(0, 0), QgsPointXY(1, 0), QgsPointXY(1, 1), QgsPointXY(0, 1)]]\n)\nok = g.moveVertex(-5, -5, 10)\nprint(ok)  # očekáváte True nebo False?"
+    "text": "from qgis.core import QgsGeometry, QgsPointXY\n\n# index vrcholu je mimo rozsah\ng = QgsGeometry.fromPolygonXY([[QgsPointXY(0, 0), QgsPointXY(1, 0), QgsPointXY(1, 1), QgsPointXY(0, 1)]])\nok = g.moveVertex(-5, -5, 10)\nprint(ok)  # očekáváte True nebo False?"
   },
   {
     "objectID": "subjects/PGIS4/qgis-python-quiz.html#otázka-7-dělá-tohle-výpis-informací-o-rasteru-1.-pásmo",

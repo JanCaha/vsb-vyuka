@@ -17,8 +17,7 @@ class Test(QObject):
 
 
 def print_value_changed(value: int, date_time: datetime):
-    print("Test object value changed to {} at {}.".format(
-        value, date_time.isoformat()))
+    print("Test object value changed to {} at {}.".format(value, date_time.isoformat()))
 
 
 if __name__ == "__main__":

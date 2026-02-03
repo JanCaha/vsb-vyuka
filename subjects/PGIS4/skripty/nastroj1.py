@@ -103,7 +103,7 @@ class FilteredCentroidsProcessingAlgorithm(QgsProcessingAlgorithm):
         )
 
         # vytvoření sinku (výstupní vektorové vrstvy) - dvě proměnné, samotný sink a jeho název pro načtení do QGIS
-        (sink, dest_id) = self.parameterAsSink(
+        sink, dest_id = self.parameterAsSink(
             parameters,
             self.OUTPUT,
             context,

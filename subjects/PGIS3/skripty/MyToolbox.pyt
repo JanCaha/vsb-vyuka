@@ -70,7 +70,7 @@ class Tool:
         layer_desc = arcpy.Describe(inFeatures)
 
         # chybové zprávy pro dané podmínky
-         if layer_desc.shapeType == "Point":
+        if layer_desc.shapeType == "Point":
             parameters[0].setErrorMessage("Vrstva neobsahuje bodová data.")
         else:
             parameters[0].clearMessage()
@@ -78,13 +78,13 @@ class Tool:
 
     def execute(self, parameters, messages):
         """The source code of the tool."""
-        
+
         # načtení parametrů jako textu
         inFeatures = parameters[0].valueAsText
         outFeatureClass = parameters[2].valueAsText
         field = parameters[1].valueAsText
 
-        # messages 
+        # messages
         arcpy.AddMessage("Nástroj běží.")
         arcpy.AddMessage(f"Vstupní data {inFeatures}")
         arcpy.AddMessage(f"Výstupní data {outFeatureClass}")
