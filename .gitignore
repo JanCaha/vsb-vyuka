@@ -10,3 +10,4 @@ _data
 **/*.quarto_ipynb
 **.egg-info/
 dev/*/build/*
+/.luarc.json
