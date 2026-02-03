@@ -20,3 +20,11 @@ repos:
         files: ^baliky/
         pass_filenames: false
         stages: [pre-push]
+
+      - id: copy-conda-env
+        name: Copy conda-environment.yml to PGIS2/soubory
+        entry: ./dev-scripts/copy_conda_env.sh
+        language: script
+        files: ^conda-environment.yml$
+        pass_filenames: false
+        stages: [pre-commit]

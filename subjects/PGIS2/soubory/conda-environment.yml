@@ -1,0 +1,38 @@
+name: env-vyuka
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.14
+  - pip
+  # pgis2
+  - GDAL
+  - fiona
+  - rasterio
+  - shapely
+  - pandas
+  - geopandas
+  - polars
+  # dev
+  - poetry
+  # quarto
+  - jupyter
+  - nbformat
+  # VS Code extensions
+  - black 
+  - isort
+  - mypy
+  - pep8
+  - flake8
+  - pylint
+  # SQL
+  - psycopg
+  # GIS
+  - qgis
+  # install using pip
+  - pip:
+    # pgis2
+    # - geopolars
+    - PyQt5-stubs
