@@ -5,7 +5,7 @@ channels:
   - defaults
 
 dependencies:
-  - python=3.12
+  - python=3.14
   - pip
   # pgis2
   - GDAL
