@@ -62,4 +62,43 @@ date: 2025-03-17
 - komentáře výrazně napomáhají (kontext)
 - další otevřené soubory (v IDE) také poskytují kontext - např. kód pro pársování **JSON** souboru, otevřu ukázkový soubor
 
+# Debugování ve [VS Code]{.software}
+
+## Proč debugovat?
+
+- `print()` je nejjednodušší, ale pro složitější problémy nedostačující
+- debugger umožňuje zastavit program v libovolném místě a prozkoumat stav proměnných
+- umožňuje krokovat kód řádek po řádku a sledovat tok programu
+- šetří čas při hledání chyb, oproti opakovanému spouštění celého skriptu
+
+## Breakpointy
+
+- kliknutím vedle čísla řádku nastavíme **breakpoint** (červená tečka)
+- program se zastaví na tomto řádku a čeká na naši akci
+- lze nastavit i **podmíněné breakpointy** - zastaví se pouze pokud je splněna podmínka (pravý klik na breakpoint)
+
+## Ovládání debuggeru
+
+- **Continue** (`F5`) - pokračovat do dalšího breakpointu
+- **Step Over** (`F10`) - provést aktuální řádek a přejít na další
+- **Step Into** (`F11`) - vstoupit do volané funkce
+- **Step Out** (`Shift+F11`) - dokončit aktuální funkci a vrátit se
+- **Restart** (`Ctrl+Shift+F5`) - restartovat debugování
+- **Stop** (`Shift+F5`) - ukončit debugování
+
+## Panely debuggeru
+
+- **Variables** - přehled všech proměnných a jejich hodnot v aktuálním kontextu
+- **Watch** - sledování konkrétních výrazů (lze přidat vlastní)
+- **Call Stack** - zásobník volání funkcí - kde se aktuálně nacházíme
+- **Breakpoints** - seznam všech nastavených breakpointů
+- hodnoty proměnných lze zobrazit i přímo v editoru najetím myší
+
+## Debugování v Jupyter Notebooku
+
+- ve [VS Code]{.software} lze debugovat i jednotlivé buňky notebooku
+- tlačítko **Debug Cell** nad buňkou
+- fungují breakpointy i krokování stejně jako u skriptů
+- užitečné pro interaktivní analýzu dat
+
 # Dotazy? {.center}
