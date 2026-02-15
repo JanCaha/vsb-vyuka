@@ -63,11 +63,42 @@ date: 2025-04-07
 - `git branch -d nazev-vetve` - smazání větve, pokud byla sloučena
 - `git branch -D nazev-vetve` - vynucené smazání větve
 
+## Soubor `.gitignore`
+
+- definuje, které soubory a složky se **nemají** sledovat v [Git]{.software}
+- jeden soubor na řádek, podporuje zástupné znaky (`*`, `**`)
+- obsah se neverzuje (neukládá do repozitáře)
+- typicky: data, kompilované soubory, dočasné soubory, prostředí
+
+# Příklad `.gitignore` 
+
+```gitignore
+# Python
+__pycache__/
+*.pyc
+.mypy_cache/
+
+# prostředí
+.venv/
+
+# data a výstupy
+*.tif
+*.shp
+data/
+output/
+
+# IDE
+.vscode/
+.idea/
+```
+
+
 ## Doporučené postupy
 
 - pravidelně commitujte a pište srozumitelné zprávy commitů
 - používejte větve pro nové funkce nebo opravy chyb
 - před sloučením větví vždy aktualizujte hlavní větev (`git pull`)
+- nastavte `.gitignore` hned na začátku projektu - vyhnete se tak problémům s velkými soubory v historii
 
 ## GitHub
 
