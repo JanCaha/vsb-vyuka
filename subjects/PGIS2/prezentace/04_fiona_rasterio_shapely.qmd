@@ -48,6 +48,54 @@ date: 2025-03-17
 - [dokumentace](https://rasterio.readthedocs.io/en/stable/index.html)
 - problém s typováním - nutné hodně se opírat o dokumentaci
 
+## Souřadnicové systémy a transformace
+
+- klíčová operace v geoinformatice - převod dat mezi souřadnicovými systémy
+- v [osgeo]{.software} {{< fa arrow-right >}} modul `osr` a třída `osr.SpatialReference`
+- v knihovnách [fiona]{.software}/[rasterio]{.software} {{< fa arrow-right >}} knihovna [pyproj]{.software}
+- [pyproj]{.software} je pythonový binding nad knihovnou [PROJ]{.software}
+
+## [osr]{.software} - práce se souřadnicovými systémy
+
+```{python}
+# | eval: false
+from osgeo import osr
+
+srs = osr.SpatialReference()
+srs.ImportFromEPSG(4326)
+
+srs_dst = osr.SpatialReference()
+srs_dst.ImportFromEPSG(5514)
+
+# transformační objekt
+transform = osr.CoordinateTransformation(srs, srs_dst)
+
+# transformace bodu
+x, y, _ = transform.TransformPoint(50.0, 14.0)
+```
+
+- pozor na pořadí souřadnic - [GDAL/OGR]{.software} standardně používá pořadí dle definice CRS (lat/lon pro EPSG:4326)
+
+## [pyproj]{.software} - moderní přístup
+
+```{python}
+# | eval: false
+import pyproj
+
+crs_src = pyproj.CRS("EPSG:4326")
+crs_dst = pyproj.CRS("EPSG:5514")
+
+# transformační objekt
+transformer = pyproj.Transformer.from_crs(crs_src, crs_dst, always_xy=True)
+
+# transformace souřadnic
+x, y = transformer.transform(14.0, 50.0)
+```
+
+- parametr `always_xy=True` zajistí pořadí souřadnic vždy jako **(x, y)** tj. **(lon, lat)** 
+- bez tohoto parametru se pořadí řídí definicí CRS
+- [pyproj]{.software} je přehlednější a doporučený přístup pro knihovny [fiona]{.software}, [shapely]{.software}, [geopandas]{.software}
+
 ## [GDAL/OGR]{.software} {{< fa times >}} [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}
 
 - [GDAL/OGR]{.software} má širší možnosti, ale práce je komplikovanější
