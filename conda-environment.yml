@@ -16,6 +16,7 @@ dependencies:
   - geopandas
   - polars
   - matplotlib
+  - plotnine
   # dev
   - poetry
   # quarto
