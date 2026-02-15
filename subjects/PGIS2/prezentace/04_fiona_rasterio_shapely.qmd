@@ -45,7 +45,7 @@ date: 2025-03-17
 - platí pro ni v podstatě to samé co pro [fiona]{.software}
 - výrazné propojení s [numpy]{.software} (knihovna pro dvou a vícerozměrné matic)
 - oproti [osgeo]{.software} jednodušší přístupy
-- [dokumentace](https://fiona.readthedocs.io/en/stable/index.html)
+- [dokumentace](https://rasterio.readthedocs.io/en/stable/index.html)
 - problém s typováním - nutné hodně se opírat o dokumentaci
 
 ## [GDAL/OGR]{.software} {{< fa times >}} [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}
