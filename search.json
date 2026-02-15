@@ -315,7 +315,7 @@
     "href": "subjects/pgis2.html#instalace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Instalace",
-    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: env-vyuka\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.14\n  - pip\n  # pgis2\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pandas\n  - geopandas\n  - polars\n  - matplotlib\n  - plotnine\n  # dev\n  - poetry\n  # quarto\n  - jupyter\n  - nbformat\n  # VS Code extensions\n  - black \n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  # SQL\n  - psycopg\n  # GIS\n  - qgis\n  # install using pip\n  - pip:\n    # pgis2\n    # - geopolars\n    - PyQt5-stubs\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
+    "text": "Instalace\n\nmanagement Pythonu - Miniconda a nebo zde na webu info k instalaci Conda\nIDE - Visual Studio Code\nextenze pro VS Code - Python, Python Debugger, Black Formatter, isort, autopep8, Flake8, Mypy Type Checker, Pylance, Pylint, autoDocstring - Python Docstring Generator\ninstalace Conda environmentu\n\nDefinice environment souboru, např. s názvem env-pgis2.yaml\nname: env-vyuka\n\nchannels:\n  - conda-forge\n  - defaults\n\ndependencies:\n  - python=3.14\n  - pip\n  # pgis2\n  - GDAL\n  - fiona\n  - rasterio\n  - shapely\n  - pyproj\n  # data frames + geo data frames\n  - pandas\n  - geopandas\n  - polars\n  # visualization\n  - matplotlib\n  - plotnine\n  # dev\n  - poetry\n  # quarto\n  - jupyter\n  - nbformat\n  # VS Code extensions\n  - black \n  - isort\n  - mypy\n  - pep8\n  - flake8\n  - pylint\n  # SQL\n  - psycopg\n  # GIS\n  - qgis\n  # install using pip\n  - pip:\n    # pgis2\n    # - geopolars\n    - PyQt5-stubs\nZ conda prompt následně spustit:\nconda create -f env-pgis2.yaml\nconda activate pgis2",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1352,7 +1352,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f8728aae900&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f02385067b0&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -1814,7 +1814,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.04372537 -0.56654228 -1.37970061 -1.84151039 -0.81816529"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.35569130 -0.13405838 -0.68165083 -0.21078853 -0.07111299"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
