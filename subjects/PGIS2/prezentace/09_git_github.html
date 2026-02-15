@@ -220,12 +220,43 @@ Jan Caha
 <li><code>git branch -D nazev-vetve</code> - vynucené smazání větve</li>
 </ul>
 </section>
+<section id="soubor-.gitignore" class="slide level2">
+<h2>Soubor <code>.gitignore</code></h2>
+<ul>
+<li>definuje, které soubory a složky se <strong>nemají</strong> sledovat v <span class="software">Git</span></li>
+<li>jeden soubor na řádek, podporuje zástupné znaky (<code>*</code>, <code>**</code>)</li>
+<li>obsah se neverzuje (neukládá do repozitáře)</li>
+<li>typicky: data, kompilované soubory, dočasné soubory, prostředí</li>
+</ul>
+</section>
+<section>
+<section id="příklad-.gitignore" class="title-slide slide level1 center">
+<h1>Příklad <code>.gitignore</code></h1>
+<pre class="gitignore"><code># Python
+__pycache__/
+*.pyc
+.mypy_cache/
+
+# prostředí
+.venv/
+
+# data a výstupy
+*.tif
+*.shp
+data/
+output/
+
+# IDE
+.vscode/
+.idea/</code></pre>
+</section>
 <section id="doporučené-postupy" class="slide level2">
 <h2>Doporučené postupy</h2>
 <ul>
 <li>pravidelně commitujte a pište srozumitelné zprávy commitů</li>
 <li>používejte větve pro nové funkce nebo opravy chyb</li>
 <li>před sloučením větví vždy aktualizujte hlavní větev (<code>git pull</code>)</li>
+<li>nastavte <code>.gitignore</code> hned na začátku projektu - vyhnete se tak problémům s velkými soubory v historii</li>
 </ul>
 </section>
 <section id="github" class="slide level2">
@@ -279,7 +310,7 @@ Jan Caha
 <li><a href="https://gogs.io">Gogs</a></li>
 <li>ale reálně jde o naprosté minority</li>
 </ul>
-</section>
+</section></section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
 

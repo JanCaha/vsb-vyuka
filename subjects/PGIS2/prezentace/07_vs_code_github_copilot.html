@@ -282,6 +282,58 @@ Jan Caha
 <li>další otevřené soubory (v IDE) také poskytují kontext - např. kód pro pársování <strong>JSON</strong> souboru, otevřu ukázkový soubor</li>
 </ul>
 </section>
+<section>
+<section id="debugování-ve-vs-code" class="title-slide slide level1 center">
+<h1>Debugování ve <span class="software">VS Code</span></h1>
+
+</section>
+<section id="proč-debugovat" class="slide level2">
+<h2>Proč debugovat?</h2>
+<ul>
+<li><code>print()</code> je nejjednodušší, ale pro složitější problémy nedostačující</li>
+<li>debugger umožňuje zastavit program v libovolném místě a prozkoumat stav proměnných</li>
+<li>umožňuje krokovat kód řádek po řádku a sledovat tok programu</li>
+<li>šetří čas při hledání chyb, oproti opakovanému spouštění celého skriptu</li>
+</ul>
+</section>
+<section id="breakpointy" class="slide level2">
+<h2>Breakpointy</h2>
+<ul>
+<li>kliknutím vedle čísla řádku nastavíme <strong>breakpoint</strong> (červená tečka)</li>
+<li>program se zastaví na tomto řádku a čeká na naši akci</li>
+<li>lze nastavit i <strong>podmíněné breakpointy</strong> - zastaví se pouze pokud je splněna podmínka (pravý klik na breakpoint)</li>
+</ul>
+</section>
+<section id="ovládání-debuggeru" class="slide level2">
+<h2>Ovládání debuggeru</h2>
+<ul>
+<li><strong>Continue</strong> (<code>F5</code>) - pokračovat do dalšího breakpointu</li>
+<li><strong>Step Over</strong> (<code>F10</code>) - provést aktuální řádek a přejít na další</li>
+<li><strong>Step Into</strong> (<code>F11</code>) - vstoupit do volané funkce</li>
+<li><strong>Step Out</strong> (<code>Shift+F11</code>) - dokončit aktuální funkci a vrátit se</li>
+<li><strong>Restart</strong> (<code>Ctrl+Shift+F5</code>) - restartovat debugování</li>
+<li><strong>Stop</strong> (<code>Shift+F5</code>) - ukončit debugování</li>
+</ul>
+</section>
+<section id="panely-debuggeru" class="slide level2">
+<h2>Panely debuggeru</h2>
+<ul>
+<li><strong>Variables</strong> - přehled všech proměnných a jejich hodnot v aktuálním kontextu</li>
+<li><strong>Watch</strong> - sledování konkrétních výrazů (lze přidat vlastní)</li>
+<li><strong>Call Stack</strong> - zásobník volání funkcí - kde se aktuálně nacházíme</li>
+<li><strong>Breakpoints</strong> - seznam všech nastavených breakpointů</li>
+<li>hodnoty proměnných lze zobrazit i přímo v editoru najetím myší</li>
+</ul>
+</section>
+<section id="debugování-v-jupyter-notebooku" class="slide level2">
+<h2>Debugování v Jupyter Notebooku</h2>
+<ul>
+<li>ve <span class="software">VS Code</span> lze debugovat i jednotlivé buňky notebooku</li>
+<li>tlačítko <strong>Debug Cell</strong> nad buňkou</li>
+<li>fungují breakpointy i krokování stejně jako u skriptů</li>
+<li>užitečné pro interaktivní analýzu dat</li>
+</ul>
+</section></section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
 
