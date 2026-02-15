@@ -143,4 +143,52 @@ zam.zvys_plat(50)
 print(f"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}")
 ```
 
+## Dědičnost
+
+- třída může dědit od jiné třídy - přebírá její atributy a metody
+- lze přidat nové atributy a metody nebo přepsat existující
+- v praxi se s tím setkáváme běžně, např. `GeoDataFrame` dědí z `DataFrame` (přidává sloupec geometrie a prostorové metody)
+- syntaxe: `class Potomek(Rodic):`
+- funkce `super()` umožňuje volat metody rodičovské třídy
+
+## Dědičnost - příklad
+
+```{python}
+class Manazer(Zamestnanec):
+    def __init__(self, jmeno: str, hodinovy_plat: float, pocet_podrizenych: int):
+        # volání konstruktoru rodičovské třídy
+        super().__init__(jmeno, hodinovy_plat)
+        self.pocet_podrizenych = pocet_podrizenych
+
+    def bonus(self) -> float:
+        """Bonus za vedení týmu."""
+        return self.pocet_podrizenych * 500
+
+    def mesicni_plat(self, odpracovanych_hodin: float) -> float:
+        """Přepsaná metoda - měsíční plat včetně bonusu."""
+        return super().mesicni_plat(odpracovanych_hodin) + self.bonus()
+
+    def __repr__(self) -> str:
+        return f"Manažer {self.jmeno}, tým: {self.pocet_podrizenych}"
+```
+
+## Dědičnost - použití
+
+```{python}
+mng = Manazer("Vedoucí Projektu", 350, 5)
+print(mng)
+print(f"Měsíční plat: {mng.mesicni_plat(160)}")
+# Manazer je zároveň i Zamestnanec
+print(f"Je zaměstnanec: {isinstance(mng, Zamestnanec)}")
+```
+
+## Docstringy
+
+- dokumentační řetězce uvnitř funkcí, tříd a modulů
+- umístěny hned za definicí funkce/třídy jako první řádek
+- slouží jako dokumentace, kterou lze programově číst (např. `help(funkce)`)
+- IDE je zobrazuje jako nápovědu při najetí myší
+- extenze [autoDocstring]{.software} ve [VS Code]{.software} generuje šablonu
+
+
 # Dotazy? {.center}
