@@ -12,9 +12,12 @@ dependencies:
   - fiona
   - rasterio
   - shapely
+  - pyproj
+  # data frames + geo data frames
   - pandas
   - geopandas
   - polars
+  # visualization
   - matplotlib
   - plotnine
   # dev
