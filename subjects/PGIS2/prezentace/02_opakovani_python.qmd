@@ -55,6 +55,15 @@ conda deactivate
 - v environmentu lze instalovat i skrze [pip]{.software}, ale nelze to doporučit - chybí návaznosti závislostí
 - v [VS Code]{.software} nutno nastavit interpretor jazyka
 
+## Proč [Conda]{.software} a ne `venv`?
+
+- [Python]{.software} má i nativní nástroj pro virtuální prostředí - `venv` 
+- `venv` manageruje pouze Python balíčky instalované přes [pip]{.software}
+- [Conda]{.software} spravuje i **kompilované systémové závislosti** (C/C++ knihovny)
+- pro GIS knihovny ([GDAL]{.software}, [rasterio]{.software}, [fiona]{.software}) je to klíčové - závisí na kompilovaných knihovnách, které [pip]{.software} neumí správně nainstalovat
+- [Conda]{.software} = správa Pythonu **i** jeho okolí {{< fa arrow-right >}} `venv` = pouze Python balíčky
+- v praxi: pro GIS vždy preferovat [Conda]{.software}, pro čistě Python projekty (web, API) může stačit `venv`
+
 ## Instalace knihoven
 
 ```bash
