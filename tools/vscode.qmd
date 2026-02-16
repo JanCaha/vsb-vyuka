@@ -50,6 +50,7 @@ Většina nastavení má dvě úrovně. Globální -- uložené v uživatelském
 
 VS Code nastavení
 ```json
+    "workbench.colorTheme": "Default Dark Modern",
     "editor.suggestSelection": "first",
     "editor.bracketPairColorization.enabled": true,
     "workbench.editor.enablePreview": false,
@@ -59,6 +60,7 @@ VS Code nastavení
     "workbench.startupEditor": "none",
     "git.confirmSync": false,
     "editor.stickyScroll.enabled": true,
+    "editor.formatOnSave": true,
 ```
 
 Python úprava kódu
@@ -68,7 +70,10 @@ Python úprava kódu
             "source.organizeImports": "explicit"
         },
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
     }
 ```
 
@@ -76,7 +81,7 @@ Python extenze
 ```json
     "flake8.args": [
         "--max-line-length",
-        "160"
+        "120"
     ],
     "isort.args": [
         "--profile",
@@ -90,7 +95,7 @@ Python extenze
     ],
     "pylint.args": [
         "--disable=E0611",
-        "--max-line-length=160"
+        "--max-line-length=120"
     ],
 ```
 
@@ -127,14 +132,13 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 {
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"GitHub.copilot",
+		"GitHub.copilot-chat",
 		"streetsidesoftware.code-spell-checker-czech",
 		"jock.svg",
 		"wayou.vscode-todo-highlight",
 		"redhat.vscode-yaml",
 		"yzhang.markdown-all-in-one",
 		"DavidAnson.vscode-markdownlint",
-		
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
@@ -151,15 +155,15 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 {
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
+		"ms-python.python",
 		"ms-python.debugpy",
+		"ms-python.black-formatter",
+		"ms-python.isort",
 		"ms-python.vscode-pylance",
 		"ms-python.autopep8",
-		"ms-python.black-formatter",
 		"ms-python.flake8",
-		"ms-python.isort",
 		"ms-python.mypy-type-checker",
-		"ms-python.pylint",
-		"ms-python.python"
+		"ms-python.pylint"
 		
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
