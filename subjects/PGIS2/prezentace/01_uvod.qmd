@@ -1,22 +1,23 @@
 ---
 title: "Úvodní cvičení"
-date: 2025-02-17
+date: 2026-02-16
 ---
 
 ## Náplň
 
 - programování v [Pythonu]{.software} s důrazem na **GIS knihovny**
-  - GDAL
-  - Fiona, Rasterio, Shapely
-  - Pandas, Polars  
+  - GDAL - nízkoúrovňová knihovna pro práci s geodaty (přenos z C/C++ do Pythonu)
+  - Fiona, Rasterio, Shapely - vysoko úrovňové knihovny pro práci s vektorovými, rasterovými daty a geometriemi (specializované pro Python) 
+  - Pandas, Polars - knihovny pro práci s datovými rámci (tabulková data) 
+  - Matplotlib, Plotnine - knihovny pro vizualizaci dat (grafy atd.)
 - management Pythonu pomocí [Conda]{.software}
 - standardní techniky programování v Pythonu
 
 ## O čem to bude
 
 - programování skriptů v Pythonu (funkce, objekty, atd.)
-- operace s geodaty v Pythonu
 - funkcionální i objektově orientované programování
+- operace s geodaty v Pythonu
 - odchytávání výjimek
 - práce s GitHub
   
@@ -36,12 +37,12 @@ date: 2025-02-17
 
 - prezentace
 - kód z cvičení
-- budou dostupné (viz link dole)
+- dostupné na [webu](https://jancaha.github.io/vsb-vyuka/subjects/pgis2.html)]
 
 ## Zakončení předmětu
 
 - písemka - klíčové položky programování v Pythonu a GIS knihoven, testové otázky (ano/ne, výběr z možností) + několik otevřených otázek
-- písemka na pochopení kódu - ukázky kódu (cca 10 - 15 řádku) s otázkami na pochopení
+- písemka na pochopení kódu - ukázky kódu (cca 10 - 15 řádku) s otázkami na pochopení kódu a jeho vysvětlení
 
 ## AI  
 
