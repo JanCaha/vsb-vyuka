@@ -44,7 +44,7 @@ listing:
 - Github Copilot - otestování a využití
 - funkce, objekty, moduly a balíčky  v Pythonu 
 - [pandas]{.software}, [geopandas]{.software}, [polars]{.software}
-- [matplotlib]{.software}, [jupyter notebook]{.software}
+- [matplotlib]{.software}, [plotnine]{.software}, [jupyter notebook]{.software}
 - [Git]{.software}, [GitHub](https://www.github.com)
 - [GitHub Copilot](https://github.com/features/copilot)
 - programy s argumenty
@@ -53,10 +53,6 @@ listing:
 
 ::: {#prezentace}
 :::
-
-## Seminární práce{.seminar-work}
-
-Sestavte Python skript, které provede libovolné netriviální zpracování prostorových dat, dle vlastního výběru. Ve skriptu využijte kteroukoliv z knihoven, představených během výuky. Záhlaví skriptu bude obsahovat popis funkčnosti - co skript dělá. Skript spolu s testovacími daty odevzdejte e-mailem. Skript bude mít rozsah cca 30 - 150 řádků kódu, komplexnějši skripty mohou být kratší, skripty zaměřené např. na vizualizaci dat budou logicky delší. 
 
 ## Zdroje{.sources}
 
