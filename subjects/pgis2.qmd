@@ -85,7 +85,7 @@ Definice environment souboru, např. s názvem `env-pgis2.yaml`
 
 Z conda prompt následně spustit:
 ```bash
-conda create -f env-pgis2.yaml
+conda env create -f env-pgis2.yaml
 conda activate pgis2
 ```
 
