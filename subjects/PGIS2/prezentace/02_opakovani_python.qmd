@@ -26,7 +26,7 @@ date: 2026-02-16
 - IDE pro řadu jazyků a technologií
 - klíčové jsou extenze, které posunují funkcionalitu od textového editoru více k "težšímu" IDE
 - profily - pro různé technologie či využití
-- synchronizace po přihlášení
+- synchronizace po přihlášení (účet GitHub)
 - instalace - lze bez administrátorských práv
   
 ## VS Code extenze pro Python
@@ -42,7 +42,7 @@ date: 2026-02-16
 
 ## [Conda]{.software}
 
-- systém pro správu Pythonu a jeho balíčků
+- systém pro správu Pythonu a jeho balíčků ([informace](../../../tools/conda.qmd))
 - použití z příkazové řádky - ale existuje i GUI ([Anaconda]{.software})
 - oficiální a neoficiální kanály (`conda-forge`)
 
@@ -55,7 +55,7 @@ conda deactivate
 ```
 
 - v environmentu lze instalovat i skrze [pip]{.software}, ale nelze to doporučit - chybí návaznosti závislostí
-  - má smysl tam, kde chybí conda balíčky 
+  - má smysl pouze tehdy, pokud knihovně chybí conda balíček 
 - v [VS Code]{.software} nutno nastavit interpretor jazyka
 
 ## Proč [Conda]{.software} a ne `venv`?
@@ -64,7 +64,7 @@ conda deactivate
 - `venv` spravuje pouze Python balíčky instalované přes [pip]{.software}
 - [Conda]{.software} spravuje i **kompilované systémové závislosti** (C/C++ knihovny)
 - pro GIS knihovny ([GDAL]{.software}, [rasterio]{.software}, [fiona]{.software}) je to klíčové - závisí na kompilovaných knihovnách, které [pip]{.software} neumí správně nainstalovat
-- [Conda]{.software} = správa Pythonu **i** jeho okolí {{< fa arrow-right >}} `venv` = pouze Python balíčky
+- [Conda]{.software} = **správa Pythonu i jeho okolí** {{< fa arrow-right >}} `venv` = pouze Python balíčky
 - v praxi: pro GIS vždy preferovat [Conda]{.software}, pro čistě Python projekty (web, API) může stačit `venv`
 
 ## Instalace knihoven
@@ -280,6 +280,8 @@ with open("soubor.txt", "w") as file:
 - obvykle hlavně u funkcí
 - za `->` uvádíme návratový typ funkce
   
+## Typování proměnných - ukázka
+
 ```{python}
 import typing
 
@@ -294,7 +296,7 @@ a: float = 5
 b = 5.0
 ```
 
-## Typování - komplexnější
+## Typování - komplexnější 1
 
 - `typing.Optional[]` - pro proměnné, které mají buď specifickou hodnotu nebo `None`
   - lze zapsat i jako `float | None`, shodné jako `typing.Optional[float]`
@@ -302,6 +304,9 @@ b = 5.0
 - `typing.Any` - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout) 
 - `typing.Literal[]` - pro proměnné, které mohou mít pouze určité hodnoty
   -  používá se jako `typing.Literal["a", "b"]`
+
+## Typování - komplexnější 2
+
 - `typing.Callable` - pro proměnné, které jsou funkce 
   - `typing.Callable[[int, int], int]` - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)
 

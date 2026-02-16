@@ -1,5 +1,5 @@
 ---
-title: "Úvodní cvičení"
+title: "Úvodní hodina"
 date: 2026-02-16
 ---
 
@@ -32,12 +32,13 @@ date: 2026-02-16
 
 - [VS Code]{.software}
 - extenze pro [VS Code]{.software}
+- nastavení etc. [na stránce](../../../tools/vscode.qmd)
 
 ## Materiály
 
 - prezentace
 - kód z cvičení
-- dostupné na [webu](https://jancaha.github.io/vsb-vyuka/subjects/pgis2.html)]
+- dostupné na [webu](https://jancaha.github.io/vsb-vyuka/subjects/pgis2.html)
 
 ## Zakončení předmětu
 
@@ -53,7 +54,7 @@ date: 2026-02-16
   -  návrhy funkcí a objektů
   -  konzultace existujícího kódu
   -  konzultace problémů
-- využití v tomto ohledu se doporučuje 
+- využití v tomto ohledu se doporučuje ([postup pro získání](../../../tools/github-copilot.qmd))
 - neklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)
   
 ## GitHub Copilot
