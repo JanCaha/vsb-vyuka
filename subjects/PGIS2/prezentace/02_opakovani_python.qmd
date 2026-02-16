@@ -197,6 +197,7 @@ finally:
 - další kód musí buď chybu zachytit a zpracovat, nebo se program zastaví
 
 ```{python}
+# | error: true
 a = 5
 if a > 3:
     raise ValueError("`a` nesmí být větší než 3")
