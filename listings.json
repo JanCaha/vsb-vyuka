@@ -14,8 +14,6 @@
   {
     "listing": "/subjects/pgis2.html",
     "items": [
-      "/subjects/PGIS2/prezentace/01_uvod.html",
-      "/subjects/PGIS2/prezentace/02_opakovani_python.html",
       "/subjects/PGIS2/prezentace/03_gdal_ogr.html",
       "/subjects/PGIS2/prezentace/04_fiona_rasterio_shapely.html",
       "/subjects/PGIS2/prezentace/07_vs_code_github_copilot.html",
@@ -25,7 +23,9 @@
       "/subjects/PGIS2/prezentace/09_git_github.html",
       "/subjects/PGIS2/prezentace/10_pandas_polars.html",
       "/subjects/PGIS2/prezentace/11_matplotlib_notebook.html",
-      "/subjects/PGIS2/prezentace/12_spustitelne_soubory.html"
+      "/subjects/PGIS2/prezentace/12_spustitelne_soubory.html",
+      "/subjects/PGIS2/prezentace/01_uvod.html",
+      "/subjects/PGIS2/prezentace/02_opakovani_python.html"
     ]
   },
   {
