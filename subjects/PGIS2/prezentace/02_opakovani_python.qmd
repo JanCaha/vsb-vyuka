@@ -1,6 +1,6 @@
 ---
 title: "Opakování Pythonu"
-date: 2025-02-24
+date: 2026-02-16
 ---
 
 ## Práce s Pythonem
@@ -38,6 +38,8 @@ date: 2025-02-24
 - [Github Copilot]{.software} - přihlášení, pouze pokud máte přístup (studenti mají) - nově existuje i limitovaná verze zdarma
   
 
+# Správa Pythonu{.center}
+
 ## [Conda]{.software}
 
 - systém pro správu Pythonu a jeho balíčků
@@ -53,12 +55,13 @@ conda deactivate
 ```
 
 - v environmentu lze instalovat i skrze [pip]{.software}, ale nelze to doporučit - chybí návaznosti závislostí
+  - má smysl tam, kde chybí conda balíčky 
 - v [VS Code]{.software} nutno nastavit interpretor jazyka
 
 ## Proč [Conda]{.software} a ne `venv`?
 
 - [Python]{.software} má i nativní nástroj pro virtuální prostředí - `venv` 
-- `venv` manageruje pouze Python balíčky instalované přes [pip]{.software}
+- `venv` spravuje pouze Python balíčky instalované přes [pip]{.software}
 - [Conda]{.software} spravuje i **kompilované systémové závislosti** (C/C++ knihovny)
 - pro GIS knihovny ([GDAL]{.software}, [rasterio]{.software}, [fiona]{.software}) je to klíčové - závisí na kompilovaných knihovnách, které [pip]{.software} neumí správně nainstalovat
 - [Conda]{.software} = správa Pythonu **i** jeho okolí {{< fa arrow-right >}} `venv` = pouze Python balíčky
@@ -80,7 +83,7 @@ conda install shapely fiona rasterio polars pandas geopandas
 - `yaml` soubor s popisem prostředí (název, použité kanály, verze Pythonu, balíčky - klidně i s verzemi)
 - tvorba prostředí - `conda env create -f env-pgis2.yaml` - viz stránka předmětu
 - odstranění prostředí - `conda env remove -n pgis2`
-- je lepší prostředí odstranit, upravit definiční soubor a znovu vytvořit, než jej modifikovat manuálně (hrozí nekonzistence a nezaznamenání změn)
+- je lepší prostředí odstranit, upravit definiční soubor a znovu vytvořit, než prostředí modifikovat manuálně (hrozí nekonzistence a nezaznamenání změn)
 
 # Python - použití jazyka<br/>opakování{.center}
 
@@ -124,22 +127,21 @@ for i, x in enumerate(v):
 ## Seznamy - comprehensions
 
 - jednoduchá konstrukce na zpracování seznamu
+- nahrazuje cyklus, ale pouze pro jednoduché operace, jinak může být nečitelné
+- struktura - [příkaz **for** prvek **in** struktura] 
 ```{python}
-vals = [1, 2, 3]
-text = [f"cislo {x}" for x in vals]
-print(text)
+values = [1, 2, 3]
+modified_values = [f"cislo {x}" for x in values]
+print(modified_values)
 ```
 
 - lze i filtrovat pomocí `if`
 
 ```{python}
-vals = [1, 2, 3, 5, 6, 7]
-text = [str(x) for x in vals if x > 4]
-print(text)
+values = [1, 2, 3, 5, 6, 7]
+modified_values = [str(x) for x in values if x > 4]
+print(modified_values)
 ```
-
-- nahrazuje cyklus
-- vhodné pouze pro jednoduché operace a filtry, jinak může být nečitelné
 
 ## Řetězce
 
@@ -176,7 +178,6 @@ print(text)
 
 ## Zpracování chyb
 
-- konstrukce `raise`
 - druhy chyb - [dokumentace](https://docs.python.org/3.12/tutorial/errors.html#exception-chaining)
 - konstrukce `try, except, finally`
 
@@ -189,6 +190,17 @@ except TypeError as e:
 finally:
     print("Konec")
 ```  
+
+## Vyvolání chyby
+
+- konstrukce `raise`
+- další kód musí buď chybu zachytit a zpracovat, nebo se program zastaví
+
+```{python}
+a = 5
+if a > 3:
+    raise ValueError("`a` nesmí být větší než 3")
+```
 
 
 ## Magické proměnné či funkce
@@ -262,7 +274,7 @@ with open("soubor.txt", "w") as file:
 
 - teoreticky není vůbec nutné
 - zejména u větších knihoven však výrazně pomáhá s managementem kódu
-- zastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace
+- zastoupí částečně i dokumentaci, protože **signatura** funkce nese veškeré nezbytné informace
 - při vytvoření proměnné v kódu můžeme za `:` uvést typ proměnné
 - obvykle hlavně u funkcí
 - za `->` uvádíme návratový typ funkce
@@ -271,12 +283,20 @@ with open("soubor.txt", "w") as file:
 import typing
 
 
-def fun(vals: typing.List[float], round_up: bool = True) -> typing.List[int]: ...
+def fun(vals: typing.List[float],
+        round_up: bool = True) -> typing.List[int]: ...
+
+
+# manuální typování proměnných, většina knihoven by a identifikovala jako int, ale chceme dát najevo, že může jít o desetinná čísla
+a: float = 5
+# tento zápis se už detekuje jako float, ale málokdy se to zapíše správně
+b = 5.0
 ```
 
 ## Typování - komplexnější
 
 - `typing.Optional[]` - pro proměnné, které mají buď specifickou hodnotu nebo `None`
+  - lze zapsat i jako `float | None`, shodné jako `typing.Optional[float]`
 - `typing.Union[float, int]` - pro proměnné, které mohou mít více typů
 - `typing.Any` - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout) 
 - `typing.Literal[]` - pro proměnné, které mohou mít pouze určité hodnoty
