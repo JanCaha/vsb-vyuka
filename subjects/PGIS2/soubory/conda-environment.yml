@@ -1,8 +1,10 @@
-name: env-vyuka
+name: env-pgis2
 
 channels:
   - conda-forge
   - defaults
+
+solver: libmamba
 
 dependencies:
   - python=3.14
@@ -22,7 +24,7 @@ dependencies:
   - plotnine
   # dev
   - poetry
-  # quarto
+  # notebooks
   - jupyter
   - nbformat
   # VS Code extensions
@@ -34,10 +36,7 @@ dependencies:
   - pylint
   # SQL
   - psycopg
-  # GIS
-  - qgis
   # install using pip
   - pip:
     # pgis2
     # - geopolars
-    - PyQt5-stubs
