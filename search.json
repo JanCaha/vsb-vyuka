@@ -125,14 +125,22 @@
     "href": "tools/conda.html",
     "title": "Miniconda - management Python prostředí",
     "section": "",
-    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3"
+    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\nConda by pak měla být dostupná v příkazové řádce (cmd) i v PowerShellu.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3",
+    "crumbs": [
+      "Nástroje",
+      "Conda"
+    ]
   },
   {
     "objectID": "tools/conda.html#instalace",
     "href": "tools/conda.html#instalace",
     "title": "Miniconda - management Python prostředí",
     "section": "",
-    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3"
+    "text": "Stáhnout instalační soubor a spustit jej. Nainstalovat dle výchozího nastavení.\nConda by pak měla být dostupná v příkazové řádce (cmd) i v PowerShellu.\n\n\n\nSpustit následující příkazy v terminálu:\nwget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh\nbash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3",
+    "crumbs": [
+      "Nástroje",
+      "Conda"
+    ]
   },
   {
     "objectID": "descriptions/python-traceback.html",
@@ -1348,7 +1356,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fe76c3f6900&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f3128d7e900&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -1824,7 +1832,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.254773436 -0.059048751 -0.132858731 -0.182145926 -0.008133561"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.02075846 -0.35479834 -0.21304090 -0.37308987 -0.77885840"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
