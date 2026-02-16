@@ -260,7 +260,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-03-03\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-03-24\n\n\nFunkce a třídy\n\n\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n\n\n2025-04-07\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib, Jupyter Notebook\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní cvičení\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-03-03\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-03-24\n\n\nFunkce a třídy\n\n\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n\n\n2025-04-07\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib, Jupyter Notebook\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1236,7 +1236,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#vs-code",
     "title": "Opakování Pythonu",
     "section": "VS Code",
-    "text": "VS Code\n\nIDE pro řadu jazyků a technologií\nklíčové jsou extenze, které posunují funkcionalitu od textového editoru více k “težšímu” IDE\nprofily - pro různé technologie či využití\nsynchronizace po přihlášení\ninstalace - lze bez administrátorských práv"
+    "text": "VS Code\n\nIDE pro řadu jazyků a technologií\nklíčové jsou extenze, které posunují funkcionalitu od textového editoru více k “težšímu” IDE\nprofily - pro různé technologie či využití\nsynchronizace po přihlášení (účet GitHub)\ninstalace - lze bez administrátorských práv"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#vs-code-extenze-pro-python",
@@ -1250,7 +1250,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#conda",
     "title": "Opakování Pythonu",
     "section": "Conda",
-    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků\npoužití z příkazové řádky - ale existuje i GUI (Anaconda)\noficiální a neoficiální kanály (conda-forge)\n\nconda create -n pgis2 python=3.14\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\n\nmá smysl tam, kde chybí conda balíčky\n\nv VS Code nutno nastavit interpretor jazyka"
+    "text": "Conda\n\nsystém pro správu Pythonu a jeho balíčků (informace)\npoužití z příkazové řádky - ale existuje i GUI (Anaconda)\noficiální a neoficiální kanály (conda-forge)\n\nconda create -n pgis2 python=3.14\nconda activate pgis2\nconda config --add channels conda-forge\nconda install GDAL\nconda deactivate\n\nv environmentu lze instalovat i skrze pip, ale nelze to doporučit - chybí návaznosti závislostí\n\nmá smysl pouze tehdy, pokud knihovně chybí conda balíček\n\nv VS Code nutno nastavit interpretor jazyka"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#proč-conda-a-ne-venv",
@@ -1348,7 +1348,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fbbf8d627b0&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fe76c3f6900&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -1376,14 +1376,28 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování-proměnných",
     "title": "Opakování Pythonu",
     "section": "Typování proměnných",
-    "text": "Typování proměnných\n\nteoreticky není vůbec nutné\nzejména u větších knihoven však výrazně pomáhá s managementem kódu\nzastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace\npři vytvoření proměnné v kódu můžeme za : uvést typ proměnné\nobvykle hlavně u funkcí\nza -&gt; uvádíme návratový typ funkce\n\n\nimport typing\n\n\ndef fun(vals: typing.List[float], round_up: bool = True) -&gt; typing.List[int]: ...\n\n\n# manuální typování proměnných, většina knihoven by a identifikovala jako int, ale chceme dát najevo, že může jít o desetinná čísla\na: float = 5\n# tento zápis se už detekuje jako float, ale málokdy se to zapíše správně\nb = 5.0"
+    "text": "Typování proměnných\n\nteoreticky není vůbec nutné\nzejména u větších knihoven však výrazně pomáhá s managementem kódu\nzastoupí částečně i dokumentaci, protože signatura funkce nese veškeré nezbytné informace\npři vytvoření proměnné v kódu můžeme za : uvést typ proměnné\nobvykle hlavně u funkcí\nza -&gt; uvádíme návratový typ funkce"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější",
-    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější",
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování-proměnných---ukázka",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování-proměnných---ukázka",
     "title": "Opakování Pythonu",
-    "section": "Typování - komplexnější",
-    "text": "Typování - komplexnější\n\ntyping.Optional[] - pro proměnné, které mají buď specifickou hodnotu nebo None\n\nlze zapsat i jako float | None, shodné jako typing.Optional[float]\n\ntyping.Union[float, int] - pro proměnné, které mohou mít více typů\ntyping.Any - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout)\ntyping.Literal[] - pro proměnné, které mohou mít pouze určité hodnoty\n\npoužívá se jako typing.Literal[\"a\", \"b\"]\n\ntyping.Callable - pro proměnné, které jsou funkce\n\ntyping.Callable[[int, int], int] - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)"
+    "section": "Typování proměnných - ukázka",
+    "text": "Typování proměnných - ukázka\n\nimport typing\n\n\ndef fun(vals: typing.List[float], round_up: bool = True) -&gt; typing.List[int]: ...\n\n\n# manuální typování proměnných, většina knihoven by a identifikovala jako int, ale chceme dát najevo, že může jít o desetinná čísla\na: float = 5\n# tento zápis se už detekuje jako float, ale málokdy se to zapíše správně\nb = 5.0"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější-1",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější-1",
+    "title": "Opakování Pythonu",
+    "section": "Typování - komplexnější 1",
+    "text": "Typování - komplexnější 1\n\ntyping.Optional[] - pro proměnné, které mají buď specifickou hodnotu nebo None\n\nlze zapsat i jako float | None, shodné jako typing.Optional[float]\n\ntyping.Union[float, int] - pro proměnné, které mohou mít více typů\ntyping.Any - pro proměnné, které mohou mít libovolný typ (většinou se snažíme vyhnout)\ntyping.Literal[] - pro proměnné, které mohou mít pouze určité hodnoty\n\npoužívá se jako typing.Literal[\"a\", \"b\"]"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější-2",
+    "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#typování---komplexnější-2",
+    "title": "Opakování Pythonu",
+    "section": "Typování - komplexnější 2",
+    "text": "Typování - komplexnější 2\n\ntyping.Callable - pro proměnné, které jsou funkce\n\ntyping.Callable[[int, int], int] - funkce s dvěma vstupy (celá čísla) a jedním výstupem (celé číslo)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#objekt-path-z-knihovny-pathlib",
@@ -1810,7 +1824,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.33704104 -0.15499457 -0.53389922 -0.37499019 -0.06768627"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.254773436 -0.059048751 -0.132858731 -0.182145926 -0.008133561"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2403,56 +2417,56 @@
   {
     "objectID": "subjects/PGIS2/prezentace/01_uvod.html#náplň",
     "href": "subjects/PGIS2/prezentace/01_uvod.html#náplň",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "Náplň",
     "text": "Náplň\n\nprogramování v Pythonu s důrazem na GIS knihovny\n\nGDAL - nízkoúrovňová knihovna pro práci s geodaty (přenos z C/C++ do Pythonu)\nFiona, Rasterio, Shapely - vysoko úrovňové knihovny pro práci s vektorovými, rasterovými daty a geometriemi (specializované pro Python)\nPandas, Polars - knihovny pro práci s datovými rámci (tabulková data)\nMatplotlib, Plotnine - knihovny pro vizualizaci dat (grafy atd.)\n\nmanagement Pythonu pomocí Conda\nstandardní techniky programování v Pythonu"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
     "href": "subjects/PGIS2/prezentace/01_uvod.html#o-čem-to-bude",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "O čem to bude",
     "text": "O čem to bude\n\nprogramování skriptů v Pythonu (funkce, objekty, atd.)\nfunkcionální i objektově orientované programování\noperace s geodaty v Pythonu\nodchytávání výjimek\npráce s GitHub"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
     "href": "subjects/PGIS2/prezentace/01_uvod.html#dílčí-úlohy",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "Dílčí úlohy",
     "text": "Dílčí úlohy\n\npoužitelný a čitelný kód\nreplikovatelné postupy\nprogramovací techniky a postupy\ndebugování programů"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
     "href": "subjects/PGIS2/prezentace/01_uvod.html#v-čem-budeme-pracovat",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "V čem budeme pracovat",
-    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code"
+    "text": "V čem budeme pracovat\n\nVS Code\nextenze pro VS Code\nnastavení etc. na stránce"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/01_uvod.html#materiály",
     "href": "subjects/PGIS2/prezentace/01_uvod.html#materiály",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "Materiály",
-    "text": "Materiály\n\nprezentace\nkód z cvičení\ndostupné na webu]"
+    "text": "Materiály\n\nprezentace\nkód z cvičení\ndostupné na webu"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
     "href": "subjects/PGIS2/prezentace/01_uvod.html#zakončení-předmětu",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "Zakončení předmětu",
     "text": "Zakončení předmětu\n\npísemka - klíčové položky programování v Pythonu a GIS knihoven, testové otázky (ano/ne, výběr z možností) + několik otevřených otázek\npísemka na pochopení kódu - ukázky kódu (cca 10 - 15 řádku) s otázkami na pochopení kódu a jeho vysvětlení"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/01_uvod.html#ai",
     "href": "subjects/PGIS2/prezentace/01_uvod.html#ai",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "AI",
-    "text": "AI\n\nGithub Copilot - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)\nvýborná integrace do VS Code\nvyužívá se pro:\n\ndoplňování kódu\nnávrhy funkcí a objektů\nkonzultace existujícího kódu\nkonzultace problémů\n\nvyužití v tomto ohledu se doporučuje\nneklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)"
+    "text": "AI\n\nGithub Copilot - umělá inteligence, která vám pomáhá psát kód (postup k získání na stránce předmětu)\nvýborná integrace do VS Code\nvyužívá se pro:\n\ndoplňování kódu\nnávrhy funkcí a objektů\nkonzultace existujícího kódu\nkonzultace problémů\n\nvyužití v tomto ohledu se doporučuje (postup pro získání)\nneklade to menší nároky na programátora, možná dokonce naopak (vnímat omezení, potřeba kontrolovat výstupy)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/01_uvod.html#github-copilot",
     "href": "subjects/PGIS2/prezentace/01_uvod.html#github-copilot",
-    "title": "Úvodní cvičení",
+    "title": "Úvodní hodina",
     "section": "GitHub Copilot",
     "text": "GitHub Copilot\n\nbudeme s ním zacházet opatrně\nnenahrazuje znalost programování\nje v pořádku ✅: napovídání, vysvětlování, revize kódu\n\nnení v pořádku ❌: generování celých úloh (problém juniorních programátorů), používání AI jako jediného zdroje informací (lepší využívat i dokumentaci)\nuživatel by měl stále být ten kdo má kreativní kontrolu a představu, co a jak daný program řeší a případně to upravovat směrem k lepším řešením\nPravidlo: “Rozumím tomu, co píšu” -pokud nedokážete vysvětlit, co váš kód dělá, pravděpodobně byste ho neměli používat"
   },
