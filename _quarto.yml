@@ -57,6 +57,8 @@ website:
           text: OSGeo4W
         - href: tools/github-copilot.qmd
           text: GitHub Copilot
+        - href: tools/conda.qmd
+          text: Conda
       - section: Popisy
         contents:
         - href: descriptions/python.qmd
