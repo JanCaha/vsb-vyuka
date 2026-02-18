@@ -1,7 +1,7 @@
 - title: "Opakování Pythonu"
   author: Jan Caha
   date: 2025-02-24
-  path: "PGIS2/skripty/00_opakovani_python.py"
+  path: "PGIS2/skripty/00_opakovani_python.ipynb"
 - title: "GDAL/OGR načtení vektorových dat"
   author: Jan Caha
   date: 2025-03-03
