@@ -1,5 +1,5 @@
 ---
-title: "Matplotlib, Jupyter Notebook"
+title: "Matplotlib"
 date: 2025-04-28
 ---
 
@@ -81,41 +81,3 @@ fig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))
     - [seaborn]{.software} - [ukázky](https://seaborn.pydata.org/examples/index.html) 
     - [plotnine]{.software} - [ukázky](https://plotnine.org/gallery/)
 - obvykle úprava API do nějakého *"vhodnějšího"* formátu
-
-# Jupyter Notebook
-
-## Technický základ 
-
-- interaktivní prostředí pro psaní a spouštění kódu
-- umožňuje kombinovat text, kód a výstupy (např. obrázky) v jednom souboru
-- vhodné pro analýzu dat, explorativní programování, prototypování
-- koncept buňky (angl. **Cell**) - blok, může být text či kód
-  - každou buňku lze spustit samostatně
-  - notebook si pamatuje svůj stav (např. provedené předchozí operace) do restartu tzv. kernelu
-- soubory s příponou `.ipyb` (JSON struktura) - reálně použitelné jen z IDE
-
-## Instalace a nastavení
-
-- instalace balíčků `ipykernel` a `jupyter` v [Conda]{.software}
-- pro [VS Code]{.software} extenze `Jupyter`
-  - nastavení v `settings.json`
-
-    ```json
-    "notebook.formatOnSave.enabled": true,
-    "notebook.defaultFormatter": "ms-python.black-formatter",
-    "notebook.codeActionsOnSave": {
-        "source.organizeImports": true,
-    },
-    ```
-
-## Výhody
-
-- nemusíme kód spouštět kompletně {{<fa arrow-right>}} šetří čas (a trpělivost)
-- vytváříme logické bloky kódu
-- můžeme kód prokládat textem
-- lze debugovat i pouze dílčí buňky (ve [VS Code]{.software})
-- lze kombinovat s existujícím kódem (balíčky, modulym funkce)
-- *"hraní si"* s kódem, testování postupů, přístupů a možností
-- notebook může být cílový stav (např. analýza dat), ale často je to spíš mezistav pro tvorbu komplexnějšího výstupu (skript, program)
-
-# Dotazy? {.center}
