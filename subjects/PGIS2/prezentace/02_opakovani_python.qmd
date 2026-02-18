@@ -36,7 +36,6 @@ date: 2026-02-16
 - kontroly kódu - [autopep8, Flake8, Mypy Type Checker, Pylance, Pylint]{.software}
 - generování docstringů - autoDocstring - [Python Docstring Generator]{.software}
 - [Github Copilot]{.software} - přihlášení, pouze pokud máte přístup (studenti mají) - nově existuje i limitovaná verze zdarma
-  
 
 # Správa Pythonu{.center}
 
