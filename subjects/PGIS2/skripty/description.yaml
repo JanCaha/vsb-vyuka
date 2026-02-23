@@ -1,72 +1,90 @@
 - title: "Opakování Pythonu"
   author: Jan Caha
-  date: 2025-02-24
+  date: 2026-02-24
+  year: 2026
   path: "PGIS2/skripty/00_opakovani_python.ipynb"
 - title: "GDAL/OGR načtení vektorových dat"
   author: Jan Caha
   date: 2025-03-03
+  year: 2025
   path: "PGIS2/skripty/01_ogr.py"
 - title: "OGR práce s vrstvou pomocí vlastního kontextového manageru"
   author: Jan Caha
   date: 2025-03-03
+  year: 2025
   path: "PGIS2/skripty/02_ogr_layer_context_manager.py"
 - title: "OGR extrakce dat do nového souboru, funkce `gdal.VectorTranslate()`"
   author: Jan Caha
   date: 2025-03-10
+  year: 2025
   path: "PGIS2/skripty/03_ogr_extract_data_memory.py"
 - title: "GDAL/OGR editace vektorových dat"
   author: Jan Caha
   date: 2025-03-10
+  year: 2025
   path: "PGIS2/skripty/04_ogr_edit.py"
 - title: "GDAL/OGR načtení rastrových dat"
   author: Jan Caha
   date: 2025-03-17
+  year: 2025
   path: "PGIS2/skripty/05_gdal_raster.py"
 - title: "GDAL manipulace s rastrem"
   author: Jan Caha
   date: 2025-03-24
+  year: 2025
   path: "PGIS2/skripty/06_gdal_raster_operations.py"
 - title: "GDAL editace hodnot rastru"
   author: Jan Caha
   date: 2025-03-24
+  year: 2025
   path: "PGIS2/skripty/07_edit_band.py"
 - title: "Funkce v souboru utils"
   author: Jan Caha
   date: 2025-06-03
+  year: 2025
   path: "PGIS2/skripty/utils.py"
 - title: "Fiona editace vektorových dat, Shapely geometrie"
   author: Jan Caha
   date: 2025-03-31
+  year: 2025
   path: "PGIS2/skripty/08_fiona_shapely.py"
 - title: "Rasterio informace o souboru, kopírování pásma do nového souboru"
   author: Jan Caha
   date: 2025-03-25
+  year: 2025
   path: "PGIS2/skripty/09_rasterio.py"
 - title: "Ukázka tvorby objektu"
   author: Jan Caha
   date: 2025-04-07
+  year: 2025
   path: "PGIS2/skripty/10_objekt.py"
 - title: "Zkušební python balíček"
   author: Jan Caha
   date: 2024-04-07
+  year: 2024
   path: "PGIS2/skripty/balik_pgis2.zip"
 - title: Pandas - ukázky
   author: Jan Caha
   date: 2025-04-14
+  year: 2025
   path: "PGIS2/skripty/11_pandas.py"
 - title: Polars - ukázky
   author: Jan Caha
   date: 2025-04-14
+  year: 2025
   path: "PGIS2/skripty/12_polars.py"
 - title: GeoPandas - prostorové operace a vizualizace
   author: Jan Caha
   date: 2025-04-14
+  year: 2025
   path: "PGIS2/skripty/13_geopandas.py"
 - title: Notebook + grafy
   author: Jan Caha
   date: 2025-04-28
+  year: 2025
   path: "PGIS2/skripty/ukazka_notebook.ipynb"
 - title: Spustitelný program s argumenty
   author: Jan Caha
   date: 2025-05-05
+  year: 2025
   path: "PGIS2/skripty/14_arguments.py"
