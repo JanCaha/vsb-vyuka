@@ -14,7 +14,8 @@ listing:
       type: table
       date-format: iso
       sort:
-          - "date"
+          - "year desc"
+          - "date asc"
       fields: [date, title] 
       field-display-names:
           title: "Prezentace"
@@ -27,8 +28,8 @@ listing:
       type: table
       date-format: iso
       sort:
-          - "date"
-          - "path"
+          - "year desc"
+          - "date asc"
       fields: [date, title] 
       field-display-names:
           title: "Skript"
