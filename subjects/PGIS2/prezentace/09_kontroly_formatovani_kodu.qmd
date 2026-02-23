@@ -1,6 +1,7 @@
 ---
 title: "Kontroly a formátování kódu"
 date: 2025-04-07 
+year: 2025
 ---
 
 ## Kontroly kódu

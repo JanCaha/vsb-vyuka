@@ -1,6 +1,7 @@
 ---
 title: "Datové rámce v Pythonu - pandas, geopandas a polars"
 date: 2025-04-14
+year: 2025
 ---
 
 ## Datové rámce

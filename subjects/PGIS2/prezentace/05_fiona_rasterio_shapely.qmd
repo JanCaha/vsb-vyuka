@@ -1,6 +1,7 @@
 ---
 title: "Knihovny [fiona]{.software}, [rasterio]{.software}, [shapely]{.software}"
 date: 2025-03-17
+year: 2025
 ---
 
 ## Typy knihoven pro Python

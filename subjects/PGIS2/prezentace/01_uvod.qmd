@@ -1,6 +1,7 @@
 ---
 title: "Úvodní hodina"
 date: 2026-02-16
+year: 2026
 ---
 
 ## Náplň

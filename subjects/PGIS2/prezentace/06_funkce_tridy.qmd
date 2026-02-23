@@ -1,6 +1,7 @@
 ---
 title: "Funkce a třídy"
 date: 2025-03-24
+year: 2025
 ---
 
 ## Programovací paradigmata

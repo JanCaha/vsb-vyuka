@@ -1,6 +1,7 @@
 ---
 title: "Git, Github"
 date: 2025-04-07 
+year: 2025
 ---
 
 ## Co je [Git]{.software}?
