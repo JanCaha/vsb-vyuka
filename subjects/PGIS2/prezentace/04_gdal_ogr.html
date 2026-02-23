@@ -12,8 +12,8 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-03-24">
-  <title>Výuka - Jan Caha – Funkce a třídy</title>
+  <meta name="dcterms.date" content="2025-03-03">
+  <title>Výuka - Jan Caha – Knihovna GDAL/OGR</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -192,7 +192,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Funkce a třídy – Výuka - Jan Caha">
+<meta property="og:title" content="Knihovna GDAL/OGR – Výuka - Jan Caha">
 <meta property="og:description" content="Programování v GIS 2">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -201,7 +201,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Funkce a třídy</h1>
+  <h1 class="title">Knihovna <span class="software">GDAL/OGR</span></h1>
   <p class="subtitle">Programování v GIS 2</p>
 
 <div class="quarto-title-authors">
@@ -212,237 +212,216 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-03-24</p>
+  <p class="date">2025-03-03</p>
 </section>
-<section id="programovací-paradigmata" class="slide level2">
-<h2>Programovací paradigmata</h2>
+<section id="popis-gdalogr" class="slide level2">
+<h2>Popis <span class="software">GDAL/OGR</span></h2>
 <ul>
-<li><p>většina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero</p></li>
-<li><p><strong>imperativní</strong> (kód popisuje, co se bude dít)</p>
+<li>nízkoúrovňová open source knihovna</li>
+<li>v Pythonu zpřístupňujeme její <strong>binding</strong> - <a href="https://gdal.org/api/python/osgeo.html">dokumentace</a></li>
+<li>kód knihovny v <span class="software">C/C++</span> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)</li>
+<li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní paměťové prostředky</li>
+<li>knihovna má hlavní modul <code>osgeo</code> a několik dílčích modulů
 <ul>
-<li><strong>procedurální programování</strong> (procedury, které ze vzájemně volají)</li>
-<li><strong>objektové programování</strong> (objekty - data a operace s nimi asociované)</li>
-<li>většina jazyků - např. Python, R, C++</li>
+<li><code>gdal</code> - rastry</li>
+<li><code>ogr</code> - vektory</li>
+<li><code>osr</code> - souřadnicové systémy</li>
 </ul></li>
-<li><p><strong>deklarativní</strong> (kód popisuje požadovaný výsledek)</p>
+<li>kód není typovaný jak je Pythonu doporučované a je dobré místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a <span class="software">mypy</span> dobře kontrolovat kód</li>
+</ul>
+</section>
+<section id="příklady-typování" class="slide level2">
+<h2>Příklady typování</h2>
+<div id="6d2cac58" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">"soubor.txt"</span></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="zdroje-informací" class="slide level2">
+<h2>Zdroje informací</h2>
 <ul>
-<li><strong>funkcionální</strong>, logické a reaktivní</li>
-<li>např. jazyk SQL, ale i funkcionální přístupy v Pythonu a R</li>
+<li><a href="https://pcjericks.github.io/py-gdalogr-cookbook/">GDAL/OGR Cookbook</a></li>
+<li>řada ukázek a příkladům, které jsou vhodným startovacím bodem</li>
+</ul>
+</section>
+<section id="otevírání-souborů" class="slide level2">
+<h2>Otevírání souborů</h2>
+<ul>
+<li>funkce <code>gdal.OpenEx()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory)</li>
+<li>jako první první parametr cesta k souboru
+<ul>
+<li>buď lokální - klasický zápis</li>
+<li>nebo virtuální začínající <code>/vsi*</code> kde <code>*</code> je typ virtuální složky</li>
 </ul></li>
 </ul>
 </section>
-<section id="python" class="slide level2">
-<h2>Python</h2>
+<section id="virtuální-složky" class="slide level2">
+<h2>Virtuální složky</h2>
 <ul>
-<li>pro běžné použití kombinujeme obvykle procedurální a objektový přístup</li>
-<li>procedurální přístup - <strong>funkce</strong>, které mají parametry</li>
-<li>objektový přístup - <strong>objekty</strong>, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)</li>
-<li>není problém s kombinací, viz cvičení (<span class="software">GDAL/OGR</span> má objekty, my si k nim píšeme funkce)</li>
+<li>např. <code>/vsicurl/cesta_k_online.souboru</code> - automaticky stahuje data</li>
+<li><code>/vsizip/cesta_k_lokálnímu.souboru</code> - extrahuje ze zip souboru</li>
+<li><code>/vsis3</code>, <code>/vsigs</code>, <code>/vsiaz</code>, <code>/vsioss</code> pro přístup k online službám</li>
+<li><code>/vsimem</code> - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát</li>
+<li>tyto adresy pak fungují všude, kde je <span class="software">GDAL/OGR</span> využíván (třeba python knihovny ale i <span class="software">QGIS</span>)</li>
 </ul>
 </section>
-<section id="funkce" class="slide level2">
-<h2>Funkce</h2>
+<section id="drivery" class="slide level2">
+<h2>Drivery</h2>
 <ul>
-<li>dělí kód na dílčí logické bloky, které mohou být znovu použitelné</li>
-<li>měly by dělat jednu věc a pouze jednu věc</li>
-<li>délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)</li>
-<li>snaha navrhovat funkce spíše obecně než specificky</li>
-</ul>
-</section>
-<section id="funkce-příklad" class="slide level2">
-<h2>Funkce příklad</h2>
-<div id="5c5c04a1" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<li>každý podporovaný formát má svůj vlastní</li>
+<li>mohou být pouze pro čtení (<strong>DWG</strong>), značná část ale podporuje i zápis (<strong>GPKG</strong>, <strong>GeoTiff</strong>)</li>
+<li>některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (<strong>GeoJSON</strong>)</li>
+<li>často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je</li>
+<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM
 <ul>
-<li>funkce se třemi proměnnými
-<ul>
-<li>první dvě povinné</li>
-<li>třetí nepovinná s výchozí hodnotou</li>
+<li>velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu</li>
+<li>nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)</li>
+<li>neplést s daty s adresou <code>/vsimem</code> - také v RAM, ale mají formát</li>
 </ul></li>
 </ul>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Pozor</strong></p>
-</div>
-<div class="callout-content">
-<p>Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.</p>
-</div>
-</div>
-</div>
+</section>
+<section id="obecné-struktury" class="slide level2">
+<h2>Obecné struktury</h2>
 <ul>
-<li>funkce vrací float</li>
-<li>mohou existovat funkce bez návratové hodnoty <code>None</code></li>
-<li>nezapomínat na typování parametrů a návratové hodnoty</li>
+<li>drivery <code>gdal.Driver</code> a <code>ogr.Driver</code> - reprezentace jednotlivých driverů</li>
+<li>souřadnicový systém <code>osr.SpatialReference</code> - reprezentace souřadnicového systému a operací s nimi</li>
 </ul>
 </section>
-<section id="funkce-obecná-specifická" class="slide level2">
-<h2>Funkce obecná <i class="fa-solid fa-times" aria-label="times"></i> specifická</h2>
-<div id="39238786" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> <span class="dv">2</span></span>
+<section id="gdal-struktury" class="slide level2">
+<h2>GDAL Struktury</h2>
+<ul>
+<li>datový zdroj <code>gdal.Dataset</code> - základní objekt pro práci s daty, zdroj dat</li>
+<li>pásmo <code>gdal.Band</code> - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna</li>
+<li>array <code>gdal.MDArray</code> - sice existuje, ale v Pythonu spíše používáme <code>numpy.array</code> (funkce <code>ReadAsArray()</code>)</li>
+<li>a další, ale tyto jsou nejdůležitější</li>
+</ul>
+</section>
+<section id="ogr-struktury" class="slide level2">
+<h2>OGR Struktury</h2>
+<ul>
+<li>datový zdroj <code>ogr.DataSource</code> (ale může být i <code>gdal.Dataset</code>) - základní objekt pro práci s daty, zdroj dat</li>
+<li>vrstva <code>ogr.Layer</code> - reprezentace jedné vrstvy v datovém zdroji</li>
+<li>definice vrstvy <code>ogr.FeatureDefn</code> - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)</li>
+<li>prvek <code>ogr.Feature</code> - reprezentace jednoho prvku ve vrstvě</li>
+<li>geometrie <code>ogr.Geometry</code> - reprezentace geometrie prvku</li>
+<li>atributy <code>ogr.Field</code> - reprezentace atributu prvku</li>
+<li>a další, ale tyto jsou nejdůležitější</li>
+</ul>
+</section>
+<section id="ogr-geometrie" class="slide level2">
+<h2>OGR geometrie</h2>
+<ul>
+<li>funkce <code>ogr.GT_*()</code> pro modifikace a konverze (<code>ForceTo*()</code>)</li>
+<li><code>ogr.CreateGeometryFrom*</code> pro tvorbu geometrie z různých formátů</li>
+<li>formáty <strong>WKB</strong> a <strong>WKT</strong></li>
+<li>třída <code>ogr.Geometry</code> reprezentace geometrie - s i bez informací o souřadnicovém systému</li>
+<li>řada funkcí a operací, přímo na objektu</li>
+<li>funkce <code>SetPrecision()</code> - přesnost geometrie</li>
+<li>prostorové operace např. <strong>union</strong>, <strong>intersection</strong> atd.</li>
+<li>prostorové interakce např. <strong>touches</strong>, <strong>crosses</strong>, <strong>contains</strong> atd. (řešeno přes knihovnu <span class="software">GEOS</span>)</li>
+</ul>
+</section>
+<section id="příklad" class="slide level2">
+<h2>Příklad</h2>
+<ul>
+<li>data z <a href="https://www.naturalearthdata.com/">Natural Earth</a>
+<ul>
+<li><a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip">vektorová data</a></li>
+<li><a href="https://naciscdn.org/naturalearth/10m/raster/HYP_HR_SR_W.zip">rastrová data</a></li>
+</ul></li>
+<li>otevření souboru (bez i za použití driveru)</li>
+<li>výběr vrstvy</li>
+<li>iterace přes prvky - geometrie i atributy</li>
+<li>definice vrstvy</li>
+</ul>
+</section>
+<section id="načtení-souboru-a-základní-info" class="slide level2">
+<h2>Načtení souboru a základní info</h2>
+<ul>
+<li>další ukázka v příkladech</li>
+</ul>
+<div id="8ce305a3" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obecné</span></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span> <span class="op">=</span> Path.cwd().parent.parent <span class="op">/</span> <span class="st">"_data"</span> <span class="op">/</span> <span class="st">"ne_10m_admin_0_countries.shp"</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.exists())</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>    layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetName())</span>
+<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetFeatureCount())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="tvorba-upravené-funkce-předefinování-parametrů" class="slide level2">
-<h2>Tvorba upravené funkce (předefinování parametrů)</h2>
+<section id="vlastní-kontextové-managery" class="slide level2">
+<h2>Vlastní kontextové managery</h2>
 <ul>
-<li>funkce <code>partial</code> z modulu <code>functools</code></li>
-<li>vytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné</li>
-</ul>
-<div id="cafe3734" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># zadáme funkci a potom parametr(y) které chceme předdefinovat</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>multiply_hodnotu_dvema <span class="op">=</span> partial(vynasob, b<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>hodnota <span class="op">=</span> multiply_hodnotu_dvema(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="objekty" class="slide level2">
-<h2>Objekty</h2>
-<ul>
-<li>třída je šablona objektu, jednotlivý objekt je pak instancí třídy</li>
-<li>objekt je prvek, které má vlastní informace a s kterými můžeme vykonávat operace</li>
-<li>metody, vlastnosti (property) a atributy</li>
-<li>složitost se může různit</li>
+<li>pro práci s vrstvami, pásmy, ale i datovými zdroji GDAL/OGR může být užitečné vytvořit si vlastní třídy kontextových managerů</li>
+<li>předejdeme tak problémům s uvolněním paměti a zjednodušíme si práci</li>
+<li>příklad na cvičení</li>
 </ul>
 </section>
-<section id="objekty-detaily" class="slide level2">
-<h2>Objekty detaily</h2>
+<section id="spouštění-operací-z-gdal" class="slide level2">
+<h2>Spouštění operací z GDAL</h2>
 <ul>
-<li>první parametr metody je vždy <code>self</code> (označení instance objektu)</li>
-<li>atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvencí, soukromé atributy a metody začínají podtržítkem (např. <code>_atribut</code>), tyto metody a atributy nebudou nápovědy v IDE navrhovat a programátor by se měl ideálně jejich použití vyhnout</li>
-<li>magické metody objektů (např. <code>__init__</code>, <code>__str__</code>, <code>__add__</code>, <code>__eq__</code> a další) a jejich použití</li>
-<li>vlastnost (property), mohou být buď statické (přímo hodnota objektu) nebo dynamické (metoda s dekorátorem <code>@property</code>)</li>
+<li>hlavní funkce</li>
+<li><code>gdal.VectorTranslate()</code> (<code>gdal.VectorTranslateOptions()</code>) pro vektorová data</li>
+<li>pro rastrová data je funkcí vícero <code>gdal.Translate()</code> (<code>gdal.TranslateOptions()</code>), <code>gdal.Warp()</code> (<code>gdal.WarpOptions()</code>)</li>
+<li>mnoho dalších popsaných v dokumentaci</li>
+<li>množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí</li>
+<li>všude, kde se používají cesty k souborům lze použít cesty <code>/vsi*</code> nebo přímo objekty <code>gdal.Dataset</code></li>
 </ul>
 </section>
-<section id="metody-objektu" class="slide level2">
-<h2>Metody objektu</h2>
+<section id="práce-s-daty-v-paměti" class="slide level2">
+<h2>Práce s daty v paměti</h2>
 <ul>
-<li>metody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy <code>self</code></li>
-<li>metody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy , označují se dekorátorem <code>@staticmethod</code></li>
+<li>viz ukázkový kód na cvičení</li>
+<li>bez formátu <i class="fa-solid fa-times" aria-label="times"></i> s určitým formátem</li>
 </ul>
 </section>
-<section id="objekt---příklad" class="slide level2">
-<h2>Objekt - příklad</h2>
-<div id="8bf93aff" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Zamestnanec:</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jmeno: <span class="bu">str</span>, hodinovy_plat: <span class="bu">float</span>):</span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.jmeno <span class="op">=</span> jmeno</span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.uvazek <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat</span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> nastav_plat(<span class="va">self</span>, hodinovy_plat: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">=</span> hodinovy_plat</span>
-<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> zvys_plat(<span class="va">self</span>, navyseni_o: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._hodinovy_plat <span class="op">+=</span> navyseni_o</span>
-<span id="cb4-15"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mesicni_plat(<span class="va">self</span>, odpracovanych_hodin: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb4-17"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">*</span> odpracovanych_hodin</span>
-<span id="cb4-18"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a aria-hidden="true" tabindex="-1"></a>    <span class="co">## statická metoda, jedná se o ukázku, ale zde by mohla být i normální metoda</span></span>
-<span id="cb4-20"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
-<span id="cb4-21"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> delka_pracovniho_dne(uvazek: <span class="bu">float</span> <span class="op">=</span> <span class="fl">1.0</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb4-22"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">8</span> <span class="op">*</span> uvazek</span>
-<span id="cb4-23"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb4-25"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> hodin_denne(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb4-26"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.delka_pracovniho_dne(<span class="va">self</span>.uvazek)</span>
-<span id="cb4-27"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb4-29"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> denni_plat(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb4-30"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._hodinovy_plat <span class="op">*</span> <span class="va">self</span>.hodin_denne</span>
-<span id="cb4-31"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb4-33"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Zamestnanec </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>jmeno<span class="sc">}</span><span class="ss"> s platem </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>_hodinovy_plat<span class="sc">}</span><span class="ss"> za hodinu"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="použití-objektu" class="slide level2">
-<h2>Použití objektu</h2>
-<div id="5c6673fe" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>odpracovane_hodiny <span class="op">=</span> <span class="dv">160</span></span>
-<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>zam <span class="op">=</span> Zamestnanec(<span class="st">"Testovaci Zamestnanec"</span>, <span class="dv">250</span>)</span>
-<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Denní plat: </span><span class="sc">{</span>zam<span class="sc">.</span>denni_plat<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>zam.uvazek <span class="op">=</span> <span class="fl">0.5</span></span>
-<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Denní plat: </span><span class="sc">{</span>zam<span class="sc">.</span>denni_plat<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>zam.zvys_plat(<span class="dv">50</span>)</span>
-<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Plat po zvýšení: </span><span class="sc">{</span>zam<span class="sc">.</span>mesicni_plat(odpracovane_hodiny)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Denní plat: 2000.0
-Denní plat: 1000.0
-Plat: 40000
-Plat po zvýšení: 48000</code></pre>
-</div>
-</div>
-</section>
-<section id="dědičnost" class="slide level2">
-<h2>Dědičnost</h2>
+<section id="výhody-gdalogr" class="slide level2">
+<h2>Výhody GDAL/OGR</h2>
 <ul>
-<li>třída může dědit od jiné třídy - přebírá její atributy a metody</li>
-<li>lze přidat nové atributy a metody nebo přepsat existující</li>
-<li>v praxi se s tím setkáváme běžně, např. <code>GeoDataFrame</code> dědí z <code>DataFrame</code> (přidává sloupec geometrie a prostorové metody)</li>
-<li>syntaxe: <code>class Potomek(Rodic):</code></li>
-<li>funkce <code>super()</code> umožňuje volat metody rodičovské třídy</li>
+<li>dostupnost</li>
+<li>přístup k širokému spektru geodat</li>
+<li>přístup na všech úrovních</li>
+<li>široké spektrum možností a nastavení</li>
+<li>přípravené nástroje</li>
 </ul>
 </section>
-<section id="dědičnost---příklad" class="slide level2">
-<h2>Dědičnost - příklad</h2>
-<div id="7fffa993" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Manazer(Zamestnanec):</span>
-<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, jmeno: <span class="bu">str</span>, hodinovy_plat: <span class="bu">float</span>, pocet_podrizenych: <span class="bu">int</span>):</span>
-<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># volání konstruktoru rodičovské třídy</span></span>
-<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(jmeno, hodinovy_plat)</span>
-<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.pocet_podrizenych <span class="op">=</span> pocet_podrizenych</span>
-<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> bonus(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Bonus za vedení týmu."""</span></span>
-<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.pocet_podrizenych <span class="op">*</span> <span class="dv">500</span></span>
-<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> mesicni_plat(<span class="va">self</span>, odpracovanych_hodin: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb7-12"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Přepsaná metoda - měsíční plat včetně bonusu."""</span></span>
-<span id="cb7-13"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">super</span>().mesicni_plat(odpracovanych_hodin) <span class="op">+</span> <span class="va">self</span>.bonus()</span>
-<span id="cb7-14"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb7-16"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Manažer </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>jmeno<span class="sc">}</span><span class="ss">, tým: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>pocet_podrizenych<span class="sc">}</span><span class="ss">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="dědičnost---použití" class="slide level2">
-<h2>Dědičnost - použití</h2>
-<div id="14dfd9a6" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>mng <span class="op">=</span> Manazer(<span class="st">"Vedoucí Projektu"</span>, <span class="dv">350</span>, <span class="dv">5</span>)</span>
-<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mng)</span>
-<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Měsíční plat: </span><span class="sc">{</span>mng<span class="sc">.</span>mesicni_plat(<span class="dv">160</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Manazer je zároveň i Zamestnanec</span></span>
-<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je zaměstnanec: </span><span class="sc">{</span><span class="bu">isinstance</span>(mng, Zamestnanec)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Manažer Vedoucí Projektu, tým: 5
-Měsíční plat: 58500
-Je zaměstnanec: True</code></pre>
-</div>
-</div>
-</section>
-<section id="docstringy" class="slide level2">
-<h2>Docstringy</h2>
+<section id="nevýhody-gdalogr" class="slide level2">
+<h2>Nevýhody GDAL/OGR</h2>
 <ul>
-<li>dokumentační řetězce uvnitř funkcí, tříd a modulů</li>
-<li>umístěny hned za definicí funkce/třídy jako první řádek</li>
-<li>slouží jako dokumentace, kterou lze programově číst (např. <code>help(funkce)</code>)</li>
-<li>IDE je zobrazuje jako nápovědu při najetí myší</li>
-<li>extenze <span class="software">autoDocstring</span> ve <span class="software">VS Code</span> generuje šablonu</li>
+<li>někdy ne úplně “pythonový” přístup k operacím</li>
+<li>komplikovanější postupy</li>
+<li>někdy až příliš široké možnosti</li>
+<li>vede ke složitějším skriptům</li>
+</ul>
+</section>
+<section id="zhodnocení" class="slide level2">
+<h2>Zhodnocení</h2>
+<ul>
+<li>nástroj s nejširší nabídkou možností a potenciálem</li>
+<li>klade vyšší nároky na programátora</li>
+<li>mohou vznikat “zajímavé” chyby, těžší na odhalení a vyřešení<br>
+</li>
+<li>zcela jistě nástroj o němž má geoinformatik mít přehled a znát ho</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">

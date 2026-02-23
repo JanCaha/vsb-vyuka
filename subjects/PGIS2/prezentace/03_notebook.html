@@ -6,12 +6,14 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-09-30">
-  <title>Výuka - Jan Caha – Obecné funkce ArcPy</title>
+  <meta name="dcterms.date" content="2026-03-02">
+  <title>Výuka - Jan Caha – Jupyter Notebooky</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -100,6 +102,8 @@
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
@@ -188,8 +192,8 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Obecné funkce ArcPy – Výuka - Jan Caha">
-<meta property="og:description" content="Programování v GIS 3">
+<meta property="og:title" content="Jupyter Notebooky – Výuka - Jan Caha">
+<meta property="og:description" content="Programování v GIS 2">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
 <body class="quarto-light">
@@ -197,8 +201,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Obecné funkce <span class="software">ArcPy</span></h1>
-  <p class="subtitle">Programování v GIS 3</p>
+  <h1 class="title">Jupyter Notebooky</h1>
+  <p class="subtitle">Programování v GIS 2</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -208,87 +212,101 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-09-30</p>
+  <p class="date">2026-03-02</p>
 </section>
-<section id="popis-objektu" class="slide level2">
-<h2>Popis objektu</h2>
+<section id="technický-základ" class="slide level2">
+<h2>Technický základ</h2>
 <ul>
-<li><p><code>arcpy.Describe()</code> - popis objektu (např. souboru, vrstvy, atd.), jako parameter slouží cesta k objektu</p></li>
-<li><p>výstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)</p></li>
-<li><p><code>arcpy.da.Describe()</code> - modernější verze, která vrací python slovník (dictionary) s informacemi o objektu (mnohem lépe zpracovatelné a čitelnější)</p></li>
-<li><p>k informacím se přistupuje jako k hodnotám ve slovníku, např. <code>desc["dataType"]</code></p></li>
+<li>interaktivní prostředí pro psaní a spouštění kódu</li>
+<li>umožňuje kombinovat text, kód a výstupy (např. obrázky, tabulky, textové výstupy) v jednom souboru</li>
+<li>vhodné pro analýzu dat, explorativní programování, prototypování</li>
+<li>koncept buňky (angl. <strong>Cell</strong>) - blok, může být text či kód
+<ul>
+<li>každou buňku lze spustit samostatně</li>
+<li>notebook si pamatuje svůj stav (např. provedené předchozí operace) do restartu tzv. kernelu</li>
+</ul></li>
+<li>soubory s příponou <code>.ipynb</code> (JSON struktura) - reálně ale použitelné jen z IDE</li>
 </ul>
 </section>
-<section id="popisy-objektů" class="slide level2">
-<h2>Popisy objektů</h2>
+<section id="jak-to-funguje-pod-kapotou" class="slide level2">
+<h2>Jak to funguje pod kapotou</h2>
 <ul>
-<li><code>arcpy.da.Describe()</code> - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)</li>
-<li>výsledný objekty se liší dle požadovaného typu objektu - viz <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm">dokumentace</a></li>
-<li>základní minimum informací pro <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe-object-properties.htm">všechny objekty</a></li>
+<li>otevřením notebooku se spustí frontend (editor) a připojí se ke kernelu</li>
+<li>kernel je samostatný proces (např. Python), který drží proměnné a importy v paměti</li>
+<li>při spuštění buňky editor pošle kód kernelu a čeká na odpověď</li>
+<li>kernel vrátí:
+<ul>
+<li>textový výstup (<code>print</code>, chyby)</li>
+<li>komplexnější výstup (grafy, HTML tabulky, obrázky)</li>
+<li>stav vykonání (úspěch/chyba)</li>
+</ul></li>
 </ul>
 </section>
-<section id="práce-s-describe-objekty" class="slide level2">
-<h2>Práce s <code>Describe()</code> objekty</h2>
+<section id="komunikace-editoru-s-kernelem" class="slide level2">
+<h2>Komunikace editoru s kernelem</h2>
 <ul>
-<li>je vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce</li>
-</ul>
-<div id="7398ea9b" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>desc <span class="op">=</span> arcpy.Describe(<span class="st">"C:/data/soubor.shp"</span>)</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">hasattr</span>(desc, <span class="st">"dataType"</span>):</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    data_type <span class="op">=</span> desc.dataType</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(desc.dataType)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<li>komunikace probíhá přes standardizovaný protokol Jupyter zpráv</li>
+<li>každá spuštěná buňka má svůj požadavek a odpověď</li>
+<li>odpověď může přijít po částech (např. průběžný výstup)</li>
+<li>to umožňuje:
 <ul>
-<li>předcházíme haváriím skriptu, pokud by objekt neměl danou vlastnost (proměnnou)</li>
+<li>zobrazit výstup přesně u konkrétní buňky</li>
+<li>ladit jen část notebooku bez spuštění všeho</li>
+</ul></li>
 </ul>
 </section>
-<section id="příklady" class="slide level2">
-<h2>Příklady</h2>
+<section id="stav-notebooku-a-pořadí-buněk" class="slide level2">
+<h2>Stav notebooku a pořadí buněk</h2>
 <ul>
-<li>vektorová data</li>
-<li>rastrová data</li>
-<li>další</li>
+<li>pořadí v souboru nemusí odpovídat pořadí spuštění</li>
+<li>proto jsou důležité počitadla spuštění (např. <code>In [7]</code>)</li>
+<li>buňka může fungovat jen proto, že používá proměnnou vytvořenou dříve</li>
+<li>bezpečný postup při finalizaci:
+<ul>
+<li>restart kernelu</li>
+<li><code>Run All</code> od začátku</li>
+<li>ověřit, že notebook běží bez skrytých závislostí</li>
+</ul></li>
 </ul>
 </section>
-<section id="funkce-pro-zjištění-proměnných" class="slide level2">
-<h2>Funkce pro zjištění proměnných</h2>
+<section id="co-je-uvnitř-.ipynb" class="slide level2">
+<h2>Co je uvnitř <code>.ipynb</code></h2>
 <ul>
-<li>funkce vracející seznamy (i prázdné)</li>
-<li>typicky <code>arcpy.List*()</code></li>
-<li>slouží pro zjišťování. tam kde programátor nemá předem představu o obsahu</li>
+<li>čistý JSON soubor</li>
+<li>obsahuje seznam buněk, metadata a uložené výstupy</li>
+<li>výstupy mohou výrazně zvětšit velikost souboru (hlavně obrázky)</li>
+<li>v praxi se hodí:
+<ul>
+<li>před commitem čistit zbytečné výstupy</li>
+<li>držet důležitou logiku i v <code>.py</code> modulech (z notebooku nelze funkce importovat)</li>
+</ul></li>
 </ul>
 </section>
-<section id="příklad-arcpy.listenvironments" class="slide level2">
-<h2>Příklad <code>arcpy.ListEnvironments()</code></h2>
+<section id="instalace-a-nastavení" class="slide level2">
+<h2>Instalace a nastavení</h2>
 <ul>
-<li>vrací seznam proměnných geoprocessingu</li>
-<li>vše co je dostupné pod <code>arcpy.env.*</code></li>
-<li>k proměnným se dostaneme pomocí <code>arcpy.env.proměnná</code> nebo <code>arcpy.env["proměnná"]</code></li>
-<li>reset proměnných lze provést pomocí <code>arcpy.ResetEnvironments()</code></li>
+<li>instalace balíčků <code>ipykernel</code> a <code>jupyter</code> v <span class="software">Conda</span></li>
+<li>pro <span class="software">VS Code</span> extenze <code>Jupyter</code>
+<ul>
+<li><p>nastavení v <code>settings.json</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="er">"notebook.formatOnSave.enabled":</span> <span class="er">true,</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="er">"notebook.defaultFormatter":</span> <span class="er">"ms-python.black-formatter",</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="er">"notebook.codeActionsOnSave":</span> <span class="fu">{</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">"source.organizeImports"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="fu">}</span><span class="er">,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul></li>
 </ul>
 </section>
-<section id="příklady---výpisy-dat" class="slide level2">
-<h2>Příklady - výpisy dat</h2>
+<section id="výhody" class="slide level2">
+<h2>Výhody</h2>
 <ul>
-<li><code>arcpy.ListDatasets()</code></li>
-<li><code>arcpy.ListFeatureClasses()</code></li>
-<li><code>arcpy.ListFields()</code></li>
-<li><code>arcpy.ListFiles()</code></li>
-<li><code>arcpy.ListIndexes()</code></li>
-<li><code>arcpy.ListRasters()</code></li>
-<li><code>arcpy.ListTables()</code></li>
-<li><code>arcpy.ListWorkspaces()</code></li>
-</ul>
-</section>
-<section id="licence-a-instalace" class="slide level2">
-<h2>Licence a instalace</h2>
-<ul>
-<li>kontroly dostupnosti licencí a stavu instalace</li>
-<li><code>arcpy.CheckExtension()</code> - je exteze dostupná?</li>
-<li><code>arcpy.CheckInExtension()</code>, <code>arcpy.CheckOutExtension()</code> - pro sdílené licence</li>
-<li><code>arcpy.CheckProduct()</code> - dostupná úroveň licence + info</li>
-<li><code>acpy.GetInstallInfo()</code> - info o instalaci</li>
-<li><code>arcpy.ListInstallations()</code> - typy instalací</li>
+<li>nemusíme kód spouštět kompletně <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> šetří čas (a trpělivost)</li>
+<li>vytváříme logické bloky kódu</li>
+<li>můžeme kód prokládat textem</li>
+<li>lze debugovat i pouze dílčí buňky (ve <span class="software">VS Code</span>)</li>
+<li>lze kombinovat s existujícím kódem (balíčky, moduly, funkce)</li>
+<li><em>“hraní si”</em> s kódem, testování postupů, přístupů a možností</li>
+<li>notebook může být cílový stav (např. analýza dat), ale často je to spíš mezistav pro tvorbu komplexnějšího výstupu (skript, program)</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
@@ -310,6 +328,7 @@ Jan Caha
   <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -331,7 +350,8 @@ Jan Caha
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -502,7 +522,7 @@ Jan Caha
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,

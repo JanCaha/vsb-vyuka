@@ -12,8 +12,8 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-03-03">
-  <title>Výuka - Jan Caha – Knihovna GDAL/OGR</title>
+  <meta name="dcterms.date" content="2025-03-17">
+  <title>Výuka - Jan Caha – Knihovny fiona, rasterio, shapely</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -192,7 +192,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Knihovna GDAL/OGR – Výuka - Jan Caha">
+<meta property="og:title" content="Knihovny fiona, rasterio, shapely – Výuka - Jan Caha">
 <meta property="og:description" content="Programování v GIS 2">
 <meta property="og:site_name" content="Výuka - Jan Caha">
 </head>
@@ -201,7 +201,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Knihovna <span class="software">GDAL/OGR</span></h1>
+  <h1 class="title">Knihovny <span class="software">fiona</span>, <span class="software">rasterio</span>, <span class="software">shapely</span></h1>
   <p class="subtitle">Programování v GIS 2</p>
 
 <div class="quarto-title-authors">
@@ -212,216 +212,124 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-03-03</p>
+  <p class="date">2025-03-17</p>
 </section>
-<section id="popis-gdalogr" class="slide level2">
-<h2>Popis <span class="software">GDAL/OGR</span></h2>
+<section id="typy-knihoven-pro-python" class="slide level2">
+<h2>Typy knihoven pro Python</h2>
 <ul>
-<li>nízkoúrovňová open source knihovna</li>
-<li>v Pythonu zpřístupňujeme její <strong>binding</strong> - <a href="https://gdal.org/api/python/osgeo.html">dokumentace</a></li>
-<li>kód knihovny v <span class="software">C/C++</span> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> odlišnosti v chování od Pythonu (místy ne zcela logické chování, řídí se historickými přístupy)</li>
-<li>většinu objektů uložených v proměnných je vhodné po použití nastavit na <code>None</code>, čímž se explicitně uvolní paměťové prostředky</li>
-<li>knihovna má hlavní modul <code>osgeo</code> a několik dílčích modulů
-<ul>
-<li><code>gdal</code> - rastry</li>
-<li><code>ogr</code> - vektory</li>
-<li><code>osr</code> - souřadnicové systémy</li>
-</ul></li>
-<li>kód není typovaný jak je Pythonu doporučované a je dobré místy typování doplňovat, aby IDE mohlo poskytovat nápovědu a <span class="software">mypy</span> dobře kontrolovat kód</li>
+<li>nativní knihovny - pouze Python kód</li>
+<li>kompilované knihovny - C, C++, Rust nebo i jiné jazyky</li>
+<li>nativní knihovny fungují automaticky všude, kompilované je nutné sestavit pro danou platformu a verzi Pythonu</li>
 </ul>
 </section>
-<section id="příklady-typování" class="slide level2">
-<h2>Příklady typování</h2>
-<div id="9fcdf0ef" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<section id="fiona-rasterio-shapely" class="slide level2">
+<h2><span class="software">fiona</span>, <span class="software">rasterio</span>, <span class="software">shapely</span></h2>
+<ul>
+<li>kompilované knihovny</li>
+<li>postavené nad <span class="software">GDAL/OGR</span> (ne nad balíkem <span class="software">osgeo</span>)</li>
+<li>snaha aby pracovaly více jako Python knihovny a méně jako C++ kód</li>
+<li>o něco měně komplikované než přímé použití <span class="software">GDAL/OGR</span> skrze <span class="software">osgeo</span>, o něco horší spolupráce knihoven (zejména <span class="software">fiona</span> a <span class="software">shapely</span>)</li>
+</ul>
+</section>
+<section id="fiona" class="slide level2">
+<h2><span class="software">fiona</span></h2>
+<ul>
+<li>knihovna pro práci s vektorovými daty</li>
+<li>odstraňuje mnoho dílčích kroků, které jsou v <span class="software">osgeo</span></li>
+<li>souřadnicové systémy a transformace s knihovnou <span class="software">pyproj</span></li>
+<li>api není bohaté na práci s geometrií</li>
+<li>přístup např. ke struktuře vrstvy je velice jednoduchý</li>
+<li>nepodporuje vše co <span class="software">osgeo</span></li>
+<li><a href="https://fiona.readthedocs.io/en/stable/index.html">dokumentace</a></li>
+</ul>
+</section>
+<section id="shapely" class="slide level2">
+<h2><span class="software">shapely</span></h2>
+<ul>
+<li>knihovna založená na <span class="software">GEOS</span></li>
+<li>zpracování geometrií</li>
+<li>při využití s <span class="software">fiona</span> nutné konverze mezi jejich typy</li>
+<li><a href="https://shapely.readthedocs.io/en/stable/index.html">dokumentace</a></li>
+</ul>
+</section>
+<section id="konverze-geometrií" class="slide level2">
+<h2>Konverze geometrií</h2>
+<ul>
+<li>modul <code>shapely.geometry</code></li>
+<li>z <span class="software">fiona</span> do <span class="software">shapely</span> funkce <code>shape(feature.geometry)</code></li>
+<li>z <span class="software">shapely</span> do <span class="software">fiona</span> funkce <code>mapping()</code></li>
+</ul>
+</section>
+<section id="rasterio" class="slide level2">
+<h2><span class="software">rasterio</span></h2>
+<ul>
+<li>knihovna pro práci s rastrovými daty</li>
+<li>platí pro ni v podstatě to samé co pro <span class="software">fiona</span></li>
+<li>výrazné propojení s <span class="software">numpy</span> (knihovna pro dvou a vícerozměrné matic)</li>
+<li>oproti <span class="software">osgeo</span> jednodušší přístupy</li>
+<li><a href="https://rasterio.readthedocs.io/en/stable/index.html">dokumentace</a></li>
+<li>problém s typováním - nutné hodně se opírat o dokumentaci</li>
+</ul>
+</section>
+<section id="souřadnicové-systémy-a-transformace" class="slide level2">
+<h2>Souřadnicové systémy a transformace</h2>
+<ul>
+<li>klíčová operace v geoinformatice - převod dat mezi souřadnicovými systémy</li>
+<li>v <span class="software">osgeo</span> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> modul <code>osr</code> a třída <code>osr.SpatialReference</code></li>
+<li>v knihovnách <span class="software">fiona</span>/<span class="software">rasterio</span> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> knihovna <span class="software">pyproj</span></li>
+<li><span class="software">pyproj</span> je pythonový binding nad knihovnou <span class="software">PROJ</span></li>
+</ul>
+</section>
+<section id="osr---práce-se-souřadnicovými-systémy" class="slide level2">
+<h2><span class="software">osr</span> - práce se souřadnicovými systémy</h2>
+<div id="245b7c3a" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> osr</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">"soubor.txt"</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>srs <span class="op">=</span> osr.SpatialReference()</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>srs.ImportFromEPSG(<span class="dv">4326</span>)</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>srs_dst <span class="op">=</span> osr.SpatialReference()</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>srs_dst.ImportFromEPSG(<span class="dv">5514</span>)</span>
 <span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a><span class="co"># transformační objekt</span></span>
+<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>transform <span class="op">=</span> osr.CoordinateTransformation(srs, srs_dst)</span>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a><span class="co"># transformace bodu</span></span>
+<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>x, y, _ <span class="op">=</span> transform.TransformPoint(<span class="fl">50.0</span>, <span class="fl">14.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="zdroje-informací" class="slide level2">
-<h2>Zdroje informací</h2>
 <ul>
-<li><a href="https://pcjericks.github.io/py-gdalogr-cookbook/">GDAL/OGR Cookbook</a></li>
-<li>řada ukázek a příkladům, které jsou vhodným startovacím bodem</li>
+<li>pozor na pořadí souřadnic - <span class="software">GDAL/OGR</span> standardně používá pořadí dle definice CRS (lat/lon pro EPSG:4326)</li>
 </ul>
 </section>
-<section id="otevírání-souborů" class="slide level2">
-<h2>Otevírání souborů</h2>
-<ul>
-<li>funkce <code>gdal.OpenEx()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory)</li>
-<li>jako první první parametr cesta k souboru
-<ul>
-<li>buď lokální - klasický zápis</li>
-<li>nebo virtuální začínající <code>/vsi*</code> kde <code>*</code> je typ virtuální složky</li>
-</ul></li>
-</ul>
-</section>
-<section id="virtuální-složky" class="slide level2">
-<h2>Virtuální složky</h2>
-<ul>
-<li>např. <code>/vsicurl/cesta_k_online.souboru</code> - automaticky stahuje data</li>
-<li><code>/vsizip/cesta_k_lokálnímu.souboru</code> - extrahuje ze zip souboru</li>
-<li><code>/vsis3</code>, <code>/vsigs</code>, <code>/vsiaz</code>, <code>/vsioss</code> pro přístup k online službám</li>
-<li><code>/vsimem</code> - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát</li>
-<li>tyto adresy pak fungují všude, kde je <span class="software">GDAL/OGR</span> využíván (třeba python knihovny ale i <span class="software">QGIS</span>)</li>
-</ul>
-</section>
-<section id="drivery" class="slide level2">
-<h2>Drivery</h2>
-<ul>
-<li>každý podporovaný formát má svůj vlastní</li>
-<li>mohou být pouze pro čtení (<strong>DWG</strong>), značná část ale podporuje i zápis (<strong>GPKG</strong>, <strong>GeoTiff</strong>)</li>
-<li>některé drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (<strong>GeoJSON</strong>)</li>
-<li>často není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je</li>
-<li>drivery <code>MEM</code> - raster a <code>Memory</code> - vektor <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> pro data neuložené fyzicky, ale pouze v RAM
-<ul>
-<li>velice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu</li>
-<li>nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)</li>
-<li>neplést s daty s adresou <code>/vsimem</code> - také v RAM, ale mají formát</li>
-</ul></li>
-</ul>
-</section>
-<section id="obecné-struktury" class="slide level2">
-<h2>Obecné struktury</h2>
-<ul>
-<li>drivery <code>gdal.Driver</code> a <code>ogr.Driver</code> - reprezentace jednotlivých driverů</li>
-<li>souřadnicový systém <code>osr.SpatialReference</code> - reprezentace souřadnicového systému a operací s nimi</li>
-</ul>
-</section>
-<section id="gdal-struktury" class="slide level2">
-<h2>GDAL Struktury</h2>
-<ul>
-<li>datový zdroj <code>gdal.Dataset</code> - základní objekt pro práci s daty, zdroj dat</li>
-<li>pásmo <code>gdal.Band</code> - jednotlivá vrstva v rastrovém souboru, může být i pouze jedna</li>
-<li>array <code>gdal.MDArray</code> - sice existuje, ale v Pythonu spíše používáme <code>numpy.array</code> (funkce <code>ReadAsArray()</code>)</li>
-<li>a další, ale tyto jsou nejdůležitější</li>
-</ul>
-</section>
-<section id="ogr-struktury" class="slide level2">
-<h2>OGR Struktury</h2>
-<ul>
-<li>datový zdroj <code>ogr.DataSource</code> (ale může být i <code>gdal.Dataset</code>) - základní objekt pro práci s daty, zdroj dat</li>
-<li>vrstva <code>ogr.Layer</code> - reprezentace jedné vrstvy v datovém zdroji</li>
-<li>definice vrstvy <code>ogr.FeatureDefn</code> - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)</li>
-<li>prvek <code>ogr.Feature</code> - reprezentace jednoho prvku ve vrstvě</li>
-<li>geometrie <code>ogr.Geometry</code> - reprezentace geometrie prvku</li>
-<li>atributy <code>ogr.Field</code> - reprezentace atributu prvku</li>
-<li>a další, ale tyto jsou nejdůležitější</li>
-</ul>
-</section>
-<section id="ogr-geometrie" class="slide level2">
-<h2>OGR geometrie</h2>
-<ul>
-<li>funkce <code>ogr.GT_*()</code> pro modifikace a konverze (<code>ForceTo*()</code>)</li>
-<li><code>ogr.CreateGeometryFrom*</code> pro tvorbu geometrie z různých formátů</li>
-<li>formáty <strong>WKB</strong> a <strong>WKT</strong></li>
-<li>třída <code>ogr.Geometry</code> reprezentace geometrie - s i bez informací o souřadnicovém systému</li>
-<li>řada funkcí a operací, přímo na objektu</li>
-<li>funkce <code>SetPrecision()</code> - přesnost geometrie</li>
-<li>prostorové operace např. <strong>union</strong>, <strong>intersection</strong> atd.</li>
-<li>prostorové interakce např. <strong>touches</strong>, <strong>crosses</strong>, <strong>contains</strong> atd. (řešeno přes knihovnu <span class="software">GEOS</span>)</li>
-</ul>
-</section>
-<section id="příklad" class="slide level2">
-<h2>Příklad</h2>
-<ul>
-<li>data z <a href="https://www.naturalearthdata.com/">Natural Earth</a>
-<ul>
-<li><a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip">vektorová data</a></li>
-<li><a href="https://naciscdn.org/naturalearth/10m/raster/HYP_HR_SR_W.zip">rastrová data</a></li>
-</ul></li>
-<li>otevření souboru (bez i za použití driveru)</li>
-<li>výběr vrstvy</li>
-<li>iterace přes prvky - geometrie i atributy</li>
-<li>definice vrstvy</li>
-</ul>
-</section>
-<section id="načtení-souboru-a-základní-info" class="slide level2">
-<h2>Načtení souboru a základní info</h2>
-<ul>
-<li>další ukázka v příkladech</li>
-</ul>
-<div id="c775620a" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<section id="pyproj---moderní-přístup" class="slide level2">
+<h2><span class="software">pyproj</span> - moderní přístup</h2>
+<div id="4c11d602" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyproj</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span> <span class="op">=</span> Path.cwd().parent.parent <span class="op">/</span> <span class="st">"_data"</span> <span class="op">/</span> <span class="st">"ne_10m_admin_0_countries.shp"</span></span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.exists())</span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
-<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>    layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span>
-<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetName())</span>
-<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetFeatureCount())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>crs_src <span class="op">=</span> pyproj.CRS(<span class="st">"EPSG:4326"</span>)</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>crs_dst <span class="op">=</span> pyproj.CRS(<span class="st">"EPSG:5514"</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># transformační objekt</span></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>transformer <span class="op">=</span> pyproj.Transformer.from_crs(crs_src, crs_dst, always_xy<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="co"># transformace souřadnic</span></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> transformer.transform(<span class="fl">14.0</span>, <span class="fl">50.0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="vlastní-kontextové-managery" class="slide level2">
-<h2>Vlastní kontextové managery</h2>
 <ul>
-<li>pro práci s vrstvami, pásmy, ale i datovými zdroji GDAL/OGR může být užitečné vytvořit si vlastní třídy kontextových managerů</li>
-<li>předejdeme tak problémům s uvolněním paměti a zjednodušíme si práci</li>
-<li>příklad na cvičení</li>
+<li>parametr <code>always_xy=True</code> zajistí pořadí souřadnic vždy jako <strong>(x, y)</strong> tj. <strong>(lon, lat)</strong></li>
+<li>bez tohoto parametru se pořadí řídí definicí CRS</li>
+<li><span class="software">pyproj</span> je přehlednější a doporučený přístup pro knihovny <span class="software">fiona</span>, <span class="software">shapely</span>, <span class="software">geopandas</span></li>
 </ul>
 </section>
-<section id="spouštění-operací-z-gdal" class="slide level2">
-<h2>Spouštění operací z GDAL</h2>
+<section id="gdalogr-fiona-rasterio-shapely" class="slide level2">
+<h2><span class="software">GDAL/OGR</span> <i class="fa-solid fa-times" aria-label="times"></i> <span class="software">fiona</span>, <span class="software">rasterio</span>, <span class="software">shapely</span></h2>
 <ul>
-<li>hlavní funkce</li>
-<li><code>gdal.VectorTranslate()</code> (<code>gdal.VectorTranslateOptions()</code>) pro vektorová data</li>
-<li>pro rastrová data je funkcí vícero <code>gdal.Translate()</code> (<code>gdal.TranslateOptions()</code>), <code>gdal.Warp()</code> (<code>gdal.WarpOptions()</code>)</li>
-<li>mnoho dalších popsaných v dokumentaci</li>
-<li>množství parametrů, vhodné prostudovat - mnoho operací lze řešit pomocí těchto funkcí</li>
-<li>všude, kde se používají cesty k souborům lze použít cesty <code>/vsi*</code> nebo přímo objekty <code>gdal.Dataset</code></li>
-</ul>
-</section>
-<section id="práce-s-daty-v-paměti" class="slide level2">
-<h2>Práce s daty v paměti</h2>
-<ul>
-<li>viz ukázkový kód na cvičení</li>
-<li>bez formátu <i class="fa-solid fa-times" aria-label="times"></i> s určitým formátem</li>
-</ul>
-</section>
-<section id="výhody-gdalogr" class="slide level2">
-<h2>Výhody GDAL/OGR</h2>
-<ul>
-<li>dostupnost</li>
-<li>přístup k širokému spektru geodat</li>
-<li>přístup na všech úrovních</li>
-<li>široké spektrum možností a nastavení</li>
-<li>přípravené nástroje</li>
-</ul>
-</section>
-<section id="nevýhody-gdalogr" class="slide level2">
-<h2>Nevýhody GDAL/OGR</h2>
-<ul>
-<li>někdy ne úplně “pythonový” přístup k operacím</li>
-<li>komplikovanější postupy</li>
-<li>někdy až příliš široké možnosti</li>
-<li>vede ke složitějším skriptům</li>
-</ul>
-</section>
-<section id="zhodnocení" class="slide level2">
-<h2>Zhodnocení</h2>
-<ul>
-<li>nástroj s nejširší nabídkou možností a potenciálem</li>
-<li>klade vyšší nároky na programátora</li>
-<li>mohou vznikat “zajímavé” chyby, těžší na odhalení a vyřešení<br>
-</li>
-<li>zcela jistě nástroj o němž má geoinformatik mít přehled a znát ho</li>
+<li><span class="software">GDAL/OGR</span> má širší možnosti, ale práce je komplikovanější</li>
+<li>knihovny jsou zjednodušené a přístupnější</li>
+<li>nástroje <code>gdal.VectorTranslate()</code>, <code>gdal.Warp()</code>, <code>gdal.Translate()</code> atd. určitě využívat z <code>osgeo</code></li>
+<li>základní modifikace či zpracování dat je v 90% případů snadnější z knihoven</li>
+<li>komplexní situace lze řešit přímo použítím <span class="software">osgeo</span></li>
+<li>používat princip <strong>KISS</strong> (Keep it simple, stupid!) – začít s jednoduchou verzí, dokud funguje a upgradovat, posouvat dál, pouze pokud je to nutné</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
