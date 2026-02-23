@@ -67,7 +67,10 @@ if [ "$ALL_PACKAGES" = true ]; then
       r-cran-dt \
       r-cran-rmarkdown \
       r-cran-plotly \
-      r-cran-easystats
+      r-cran-easystats \
+      r-cran-knitr \
+      r-cran-rmarkdown
+
 fi
 
 if [ "$GGPLOT2" = true ]; then
