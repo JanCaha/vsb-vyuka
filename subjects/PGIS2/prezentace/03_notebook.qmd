@@ -58,13 +58,13 @@ year: 2026
 - pro [VS Code]{.software} extenze `Jupyter`
   - nastavení v `settings.json`
 
-    ```json
-    "notebook.formatOnSave.enabled": true,
-    "notebook.defaultFormatter": "ms-python.black-formatter",
-    "notebook.codeActionsOnSave": {
-        "source.organizeImports": true,
-    },
-    ```
+```json
+"notebook.formatOnSave.enabled": true,
+"notebook.defaultFormatter": "ms-python.black-formatter",
+"notebook.codeActionsOnSave": {
+    "source.organizeImports": true,
+},
+```
 
 ## Výhody
 

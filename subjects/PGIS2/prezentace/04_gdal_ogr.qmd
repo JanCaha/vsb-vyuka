@@ -27,9 +27,9 @@ from osgeo import gdal, ogr
 
 gdal.UseExceptions()
 
-file = Path(__file__).parent / "soubor.txt"
+file = Path(__file__).parent / "data.gpkg"
 
-ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+ds: gdal.Dataset = gdal.OpenEx(file)
 
 layer: ogr.Layer = ds.GetLayer()
 ```
@@ -126,7 +126,7 @@ if __name__ == "__main__":
 
     print(file.exists())
 
-    ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+    ds: gdal.Dataset = gdal.OpenEx(file)
 
     layer: ogr.Layer = ds.GetLayer()
 
