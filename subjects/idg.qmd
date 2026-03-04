@@ -4,6 +4,8 @@ aliases:
   - ./IDG/index.html
   - ./IDG/skripty/index.html
   - ./IDG/prezentace/index.html
+filters:
+   - include-code-files
 listing:
     - id: prezentace
       contents: IDG/prezentace
@@ -32,8 +34,6 @@ listing:
           title: "Skript"
           date: "Datum"
           author: "Autor"
-filters:
-   - include-code-files
 ---
 
 ## Řešená témata{.topics}
