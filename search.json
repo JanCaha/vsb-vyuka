@@ -1265,7 +1265,7 @@
     "href": "subjects/PGIS2/prezentace/03_notebook.html#instalace-a-nastavení",
     "title": "Jupyter Notebooky",
     "section": "Instalace a nastavení",
-    "text": "Instalace a nastavení\n\ninstalace balíčků ipykernel a jupyter v Conda\npro VS Code extenze Jupyter\n\nnastavení v settings.json\n\"notebook.formatOnSave.enabled\": true,\n\"notebook.defaultFormatter\": \"ms-python.black-formatter\",\n\"notebook.codeActionsOnSave\": {\n    \"source.organizeImports\": true,\n},"
+    "text": "Instalace a nastavení\n\ninstalace balíčků ipykernel a jupyter v Conda\npro VS Code extenze Jupyter\n\nnastavení v settings.json\n\n\n\"notebook.formatOnSave.enabled\": true,\n\"notebook.defaultFormatter\": \"ms-python.black-formatter\",\n\"notebook.codeActionsOnSave\": {\n    \"source.organizeImports\": true,\n},"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/03_notebook.html#výhody",
@@ -1895,7 +1895,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.5672623 -0.2432106 -0.0764100 -0.4871765 -0.5155625"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.14625454 -1.31353383 -0.07888134 -0.32397711 -0.92198928"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2434,7 +2434,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fe070466900&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f0f84c767b0&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -2539,7 +2539,7 @@
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#příklady-typování",
     "title": "Knihovna GDAL/OGR",
     "section": "Příklady typování",
-    "text": "Příklady typování\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nfile = Path(__file__).parent / \"soubor.txt\"\n\nds: gdal.Dataset = gdal.OpenEx(file.as_posix())\n\nlayer: ogr.Layer = ds.GetLayer()"
+    "text": "Příklady typování\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nfile = Path(__file__).parent / \"data.gpkg\"\n\nds: gdal.Dataset = gdal.OpenEx(file)\n\nlayer: ogr.Layer = ds.GetLayer()"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#zdroje-informací",
@@ -2609,7 +2609,7 @@
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#načtení-souboru-a-základní-info",
     "title": "Knihovna GDAL/OGR",
     "section": "Načtení souboru a základní info",
-    "text": "Načtení souboru a základní info\n\ndalší ukázka v příkladech\n\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nif __name__ == \"__main__\":\n    file = Path.cwd().parent.parent / \"_data\" / \"ne_10m_admin_0_countries.shp\"\n\n    print(file.exists())\n\n    ds: gdal.Dataset = gdal.OpenEx(file.as_posix())\n\n    layer: ogr.Layer = ds.GetLayer()\n\n    print(layer.GetName())\n    print(layer.GetFeatureCount())"
+    "text": "Načtení souboru a základní info\n\ndalší ukázka v příkladech\n\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nif __name__ == \"__main__\":\n    file = Path.cwd().parent.parent / \"_data\" / \"ne_10m_admin_0_countries.shp\"\n\n    print(file.exists())\n\n    ds: gdal.Dataset = gdal.OpenEx(file)\n\n    layer: ogr.Layer = ds.GetLayer()\n\n    print(layer.GetName())\n    print(layer.GetFeatureCount())"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#vlastní-kontextové-managery",

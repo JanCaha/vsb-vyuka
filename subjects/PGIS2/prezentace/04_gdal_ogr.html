@@ -232,16 +232,16 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="6d2cac58" class="cell" data-execution_count="1">
+<div id="a4fc9dc1" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>gdal.UseExceptions()</span>
 <span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">"soubor.txt"</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> Path(<span class="va">__file__</span>).parent <span class="op">/</span> <span class="st">"data.gpkg"</span></span>
 <span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>)</span>
 <span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -349,7 +349,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="8ce305a3" class="cell" data-execution_count="2">
+<div id="ae42c51f" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -361,7 +361,7 @@ Jan Caha
 <span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.exists())</span>
 <span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>.as_posix())</span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>)</span>
 <span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>    layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span>
 <span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a></span>
