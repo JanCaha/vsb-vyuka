@@ -40,8 +40,8 @@
   path: "PGIS2/skripty/07_edit_band.py"
 - title: "Funkce v souboru utils"
   author: Jan Caha
-  date: 2025-06-03
-  year: 2025
+  date: 2026-03-09
+  year: 2026
   path: "PGIS2/skripty/utils.py"
 - title: "Fiona editace vektorových dat, Shapely geometrie"
   author: Jan Caha
