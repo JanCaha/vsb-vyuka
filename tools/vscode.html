@@ -458,6 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#doporučené-extenze-pro-vs-code" id="toc-doporučené-extenze-pro-vs-code" class="nav-link" data-scroll-target="#doporučené-extenze-pro-vs-code">Doporučené extenze pro VS Code</a></li>
   <li><a href="#doporučené-extenze-pro-python" id="toc-doporučené-extenze-pro-python" class="nav-link" data-scroll-target="#doporučené-extenze-pro-python">Doporučené extenze pro Python</a></li>
   <li><a href="#nastavení-projektů-využívajících-qgis-python-api-na-windows" id="toc-nastavení-projektů-využívajících-qgis-python-api-na-windows" class="nav-link" data-scroll-target="#nastavení-projektů-využívajících-qgis-python-api-na-windows">Nastavení projektů využívajících QGIS Python API na Windows</a></li>
+  <li><a href="#doporučená-struktura-projektu" id="toc-doporučená-struktura-projektu" class="nav-link" data-scroll-target="#doporučená-struktura-projektu">Doporučená struktura projektu</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -532,17 +533,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>uvádíme pouze části JSONu</li>
 </ul>
 <p>VS Code nastavení</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">"workbench.colorTheme":</span> <span class="er">"Default</span> <span class="er">Dark</span> <span class="er">Modern",</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.suggestSelection":</span> <span class="er">"first",</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.bracketPairColorization.enabled":</span> <span class="er">true,</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">nastavení</span> <span class="er">pro</span> <span class="er">vzhled</span> <span class="er">a</span> <span class="er">chování</span> <span class="er">editoru</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">"workbench.colorTheme":</span> <span class="er">"Default</span> <span class="er">Dark</span> <span class="er">Modern",</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="er">"workbench.startupEditor":</span> <span class="er">"none",</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="er">"workbench.editor.enablePreview":</span> <span class="er">false,</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.guides.bracketPairs":</span> <span class="er">"active",</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="er">"explorer.confirmDelete":</span> <span class="er">false,</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="er">"explorer.confirmDragAndDrop":</span> <span class="er">false,</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="er">"workbench.startupEditor":</span> <span class="er">"none",</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="er">"git.confirmSync":</span> <span class="er">false,</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.stickyScroll.enabled":</span> <span class="er">true,</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.formatOnSave":</span> <span class="er">true,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">nastavení</span> <span class="er">výchozí</span> <span class="er">terminálu</span> <span class="er">ve</span> <span class="er">Windows</span> <span class="er">na</span> <span class="er">command</span> <span class="er">prompt</span> <span class="er">-</span> <span class="er">často</span> <span class="er">nesprávně</span> <span class="er">vybírá</span> <span class="er">powershell</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="er">"terminal.integrated.defaultProfile.windows":</span> <span class="er">"Command</span> <span class="er">Prompt",</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">nastavení</span> <span class="er">pro</span> <span class="er">průzkumníka</span> <span class="er">-</span> <span class="er">potvrzení</span> <span class="er">před</span> <span class="er">smazáním</span> <span class="er">souborů</span> <span class="er">a</span> <span class="er">přesouváním</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="er">"explorer.confirmDelete":</span> <span class="er">false,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="er">"explorer.confirmDragAndDrop":</span> <span class="er">false,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">nastavení</span> <span class="er">pro</span> <span class="er">editor</span> <span class="er">-</span> <span class="er">-</span> <span class="er">upravy</span> <span class="er">souborů</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.suggestSelection":</span> <span class="er">"first",</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.bracketPairColorization.enabled":</span> <span class="er">true,</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.guides.bracketPairs":</span> <span class="er">"active",</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.stickyScroll.enabled":</span> <span class="er">true,</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="er">"editor.formatOnSave":</span> <span class="er">true,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Python úprava kódu</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">"</span><span class="ot">[</span><span class="er">python</span><span class="ot">]</span><span class="er">":</span> <span class="fu">{</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.codeActionsOnSave"</span><span class="fu">:</span> <span class="fu">{</span></span>
@@ -553,7 +558,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"editor.codeActionsOnSave"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="dt">"source.organizeImports"</span><span class="fu">:</span> <span class="st">"explicit"</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">},</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>     <span class="er">//</span> <span class="er">nastavení</span> <span class="er">pro</span> <span class="er">notebooky</span> <span class="er">-</span> <span class="er">formátování,</span> <span class="er">organizace</span> <span class="er">importů</span> <span class="er">a</span> <span class="er">další</span> <span class="er">úpravy</span> <span class="er">při</span> <span class="er">ukládání</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="er">"notebook.formatOnSave.enabled":</span> <span class="er">true,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="er">"notebook.defaultFormatter":</span> <span class="er">"ms-python.black-formatter",</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="er">"notebook.codeActionsOnSave":</span> <span class="fu">{</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">"source.organizeImports"</span><span class="fu">:</span> <span class="st">"explicit"</span><span class="fu">,</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span><span class="er">,</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Python extenze</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="er">"flake8.args":</span> <span class="ot">[</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">"--max-line-length"</span><span class="ot">,</span></span>
@@ -605,18 +616,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">which</span> <span class="er">should</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"recommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"GitHub.copilot-chat"</span><span class="ot">,</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"streetsidesoftware.code-spell-checker-czech"</span><span class="ot">,</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"jock.svg"</span><span class="ot">,</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"wayou.vscode-todo-highlight"</span><span class="ot">,</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"redhat.vscode-yaml"</span><span class="ot">,</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"yzhang.markdown-all-in-one"</span><span class="ot">,</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"DavidAnson.vscode-markdownlint"</span><span class="ot">,</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">recommended</span> <span class="er">by</span> <span class="er">VS</span> <span class="er">Code</span> <span class="er">that</span> <span class="er">should</span> <span class="er">not</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"unwantedRecommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">github</span> <span class="er">copilot</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"GitHub.copilot-chat"</span><span class="ot">,</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">kontrola</span> <span class="er">pravopisu</span> <span class="er">pro</span> <span class="er">češtinu</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"streetsidesoftware.code-spell-checker-czech"</span><span class="ot">,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">práce</span> <span class="er">s</span> <span class="er">SVG</span> <span class="er">grafikou</span> </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"jock.svg"</span><span class="ot">,</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">zvýraznění</span> <span class="er">TODO</span><span class="ot">,</span> <span class="er">FIXME</span> <span class="er">a</span> <span class="er">dalších</span> <span class="er">poznámek</span> <span class="er">v</span> <span class="er">kódu</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"wayou.vscode-todo-highlight"</span><span class="ot">,</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">podpora</span> <span class="er">pro</span> <span class="er">práci</span> <span class="er">s</span> <span class="er">YAML</span> <span class="er">soubory</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"redhat.vscode-yaml"</span><span class="ot">,</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">podpora</span> <span class="er">pro</span> <span class="er">práci</span> <span class="er">s</span> <span class="er">Markdown</span> <span class="er">soubory</span> <span class="er">(*.md)</span> <span class="er">jako</span> <span class="er">jsou</span> <span class="er">README.md</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"yzhang.markdown-all-in-one"</span><span class="ot">,</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"DavidAnson.vscode-markdownlint"</span><span class="ot">,</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">recommended</span> <span class="er">by</span> <span class="er">VS</span> <span class="er">Code</span> <span class="er">that</span> <span class="er">should</span> <span class="er">not</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"unwantedRecommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="doporučené-extenze-pro-python" class="level3">
 <h3 class="anchored" data-anchor-id="doporučené-extenze-pro-python">Doporučené extenze pro Python</h3>
@@ -627,25 +644,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">which</span> <span class="er">should</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"recommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.python"</span><span class="ot">,</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.debugpy"</span><span class="ot">,</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.black-formatter"</span><span class="ot">,</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.isort"</span><span class="ot">,</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.vscode-pylance"</span><span class="ot">,</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.autopep8"</span><span class="ot">,</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.flake8"</span><span class="ot">,</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.mypy-type-checker"</span><span class="ot">,</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.pylint"</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">recommended</span> <span class="er">by</span> <span class="er">VS</span> <span class="er">Code</span> <span class="er">that</span> <span class="er">should</span> <span class="er">not</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"unwantedRecommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">nezbytné</span> <span class="er">extenze</span> <span class="er">pro</span> <span class="er">Python</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.python"</span><span class="ot">,</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.debugpy"</span><span class="ot">,</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">formátování</span> <span class="er">Python</span> <span class="er">kódu</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.black-formatter"</span><span class="ot">,</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.isort"</span><span class="ot">,</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="er">//</span> <span class="er">kontroly</span> <span class="er">kvality</span> <span class="er">kódu</span> <span class="er">a</span> <span class="er">typů</span> <span class="er">pro</span> <span class="er">Python</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.vscode-pylance"</span><span class="ot">,</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.autopep8"</span><span class="ot">,</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.flake8"</span><span class="ot">,</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.mypy-type-checker"</span><span class="ot">,</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"ms-python.pylint"</span><span class="ot">,</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">List</span> <span class="er">of</span> <span class="er">extensions</span> <span class="er">recommended</span> <span class="er">by</span> <span class="er">VS</span> <span class="er">Code</span> <span class="er">that</span> <span class="er">should</span> <span class="er">not</span> <span class="er">be</span> <span class="er">recommended</span> <span class="er">for</span> <span class="er">users</span> <span class="er">of</span> <span class="er">this</span> <span class="er">workspace.</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"unwantedRecommendations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="nastavení-projektů-využívajících-qgis-python-api-na-windows" class="level3">
 <h3 class="anchored" data-anchor-id="nastavení-projektů-využívajících-qgis-python-api-na-windows">Nastavení projektů využívajících QGIS Python API na Windows</h3>
 <p>Viz informace u <a href="../tools/osgeo4w.html##nastavení-python-prostředí-ve-visual-studiu-code-pro-python-i-qgis-python-api">OSGEO4W</a>.</p>
+</section>
+<section id="doporučená-struktura-projektu" class="level3">
+<h3 class="anchored" data-anchor-id="doporučená-struktura-projektu">Doporučená struktura projektu</h3>
+<pre class="plaintext"><code>Projekt
+├── .vscode
+│   ├── extensions.json
+│   ├── settings.json
+├── data
+│   ├── saved
+|   |   ├── vytvoreny_soubor.pripona      
+│   ├── datove_soubory.pripona
+| 01_priklad.py
+| 02_priklad.py
+| utils.py</code></pre>
 
 
 </section>
