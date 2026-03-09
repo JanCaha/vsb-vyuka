@@ -5,23 +5,23 @@
   path: "PGIS2/skripty/00_opakovani_python.ipynb"
 - title: "GDAL/OGR načtení vektorových dat"
   author: Jan Caha
-  date: 2025-03-03
-  year: 2025
+  date: 2026-03-09
+  year: 2026
   path: "PGIS2/skripty/01_ogr.py"
 - title: "OGR práce s vrstvou pomocí vlastního kontextového manageru"
   author: Jan Caha
-  date: 2025-03-03
-  year: 2025
+  date: 2026-03-09
+  year: 2026
   path: "PGIS2/skripty/02_ogr_layer_context_manager.py"
 - title: "OGR extrakce dat do nového souboru, funkce `gdal.VectorTranslate()`"
   author: Jan Caha
-  date: 2025-03-10
-  year: 2025
+  date: 2026-03-09
+  year: 2026
   path: "PGIS2/skripty/03_ogr_extract_data_memory.py"
 - title: "GDAL/OGR editace vektorových dat"
   author: Jan Caha
-  date: 2025-03-10
-  year: 2025
+  date: 2026-03-09
+  year: 2026
   path: "PGIS2/skripty/04_ogr_edit.py"
 - title: "GDAL/OGR načtení rastrových dat"
   author: Jan Caha
