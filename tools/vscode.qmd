@@ -50,15 +50,19 @@ Většina nastavení má dvě úrovně. Globální -- uložené v uživatelském
 
 VS Code nastavení
 ```json
+    // nastavení pro vzhled a chování editoru
     "workbench.colorTheme": "Default Dark Modern",
-    "editor.suggestSelection": "first",
-    "editor.bracketPairColorization.enabled": true,
+    "workbench.startupEditor": "none",
     "workbench.editor.enablePreview": false,
-    "editor.guides.bracketPairs": "active",
+    // nastavení výchozí terminálu ve Windows na command prompt - často nesprávně vybírá powershell
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    // nastavení pro průzkumníka - potvrzení před smazáním souborů a přesouváním
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.startupEditor": "none",
-    "git.confirmSync": false,
+    // nastavení pro editor - - upravy souborů
+    "editor.suggestSelection": "first",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
     "editor.stickyScroll.enabled": true,
     "editor.formatOnSave": true,
 ```
@@ -75,6 +79,12 @@ Python úprava kódu
             "source.organizeImports": "explicit"
         },
     }
+     // nastavení pro notebooky - formátování, organizace importů a další úpravy při ukládání
+    "notebook.formatOnSave.enabled": true,
+    "notebook.defaultFormatter": "ms-python.black-formatter",
+    "notebook.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+    },
 ```
 
 Python extenze
@@ -132,13 +142,19 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 {
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"GitHub.copilot-chat",
-		"streetsidesoftware.code-spell-checker-czech",
-		"jock.svg",
-		"wayou.vscode-todo-highlight",
-		"redhat.vscode-yaml",
-		"yzhang.markdown-all-in-one",
-		"DavidAnson.vscode-markdownlint",
+		// github copilot
+        "GitHub.copilot-chat",
+        // kontrola pravopisu pro češtinu
+        "streetsidesoftware.code-spell-checker-czech",
+        // práce s SVG grafikou 
+        "jock.svg",
+        // zvýraznění TODO, FIXME a dalších poznámek v kódu
+        "wayou.vscode-todo-highlight",
+        // podpora pro práci s YAML soubory
+        "redhat.vscode-yaml",
+        // podpora pro práci s Markdown soubory (*.md) jako jsou README.md
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
@@ -155,16 +171,18 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 {
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		"ms-python.python",
-		"ms-python.debugpy",
-		"ms-python.black-formatter",
-		"ms-python.isort",
-		"ms-python.vscode-pylance",
-		"ms-python.autopep8",
-		"ms-python.flake8",
-		"ms-python.mypy-type-checker",
-		"ms-python.pylint"
-		
+		// nezbytné extenze pro Python 
+        "ms-python.python",
+        "ms-python.debugpy",
+        // formátování Python kódu 
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        // kontroly kvality kódu a typů pro Python
+        "ms-python.vscode-pylance",
+        "ms-python.autopep8",
+        "ms-python.flake8",
+        "ms-python.mypy-type-checker",
+        "ms-python.pylint",
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
