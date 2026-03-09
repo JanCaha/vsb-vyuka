@@ -63,7 +63,7 @@ class LayerContextManager:
         self.layer: ogr.Layer = None
 
     def __enter__(self) -> ogr.Layer:
-        self.ds = gdal.OpenEx(self.path.as_posix())
+        self.ds = gdal.OpenEx(self.path)
         if self.ds is None:
             raise ValueError(f"File `{self.path.as_posix()}` not found or cannot be opened.")
         if isinstance(self.selected_layer, int):

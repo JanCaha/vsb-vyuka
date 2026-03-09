@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-03-03">
+  <meta name="dcterms.date" content="2026-03-09">
   <title>Výuka - Jan Caha – Knihovna GDAL/OGR</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -212,7 +212,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-03-03</p>
+  <p class="date">2026-03-09</p>
 </section>
 <section id="popis-gdalogr" class="slide level2">
 <h2>Popis <span class="software">GDAL/OGR</span></h2>
@@ -232,7 +232,7 @@ Jan Caha
 </section>
 <section id="příklady-typování" class="slide level2">
 <h2>Příklady typování</h2>
-<div id="a4fc9dc1" class="cell" data-execution_count="1">
+<div id="28150d55" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -243,7 +243,7 @@ Jan Caha
 <span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>)</span>
 <span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>layer: ogr.Layer <span class="op">=</span> ds.GetLayer()  <span class="co"># získání první vrstvy v datovém zdroji</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="zdroje-informací" class="slide level2">
@@ -256,7 +256,7 @@ Jan Caha
 <section id="otevírání-souborů" class="slide level2">
 <h2>Otevírání souborů</h2>
 <ul>
-<li>funkce <code>gdal.OpenEx()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory)</li>
+<li>funkce <code>gdal.OpenEx()</code> (rastry i vektory) a <code>ogr.Open()</code> (pouze vektory) - spíše doporučuji první variantu</li>
 <li>jako první první parametr cesta k souboru
 <ul>
 <li>buď lokální - klasický zápis</li>
@@ -274,6 +274,13 @@ Jan Caha
 <li>tyto adresy pak fungují všude, kde je <span class="software">GDAL/OGR</span> využíván (třeba python knihovny ale i <span class="software">QGIS</span>)</li>
 </ul>
 </section>
+<section id="obecné-struktury" class="slide level2">
+<h2>Obecné struktury</h2>
+<ul>
+<li>drivery <code>gdal.Driver</code> a <code>ogr.Driver</code> - reprezentace jednotlivých driverů</li>
+<li>souřadnicový systém <code>osr.SpatialReference</code> - reprezentace souřadnicového systému a operací s nimi</li>
+</ul>
+</section>
 <section id="drivery" class="slide level2">
 <h2>Drivery</h2>
 <ul>
@@ -289,13 +296,6 @@ Jan Caha
 </ul></li>
 </ul>
 </section>
-<section id="obecné-struktury" class="slide level2">
-<h2>Obecné struktury</h2>
-<ul>
-<li>drivery <code>gdal.Driver</code> a <code>ogr.Driver</code> - reprezentace jednotlivých driverů</li>
-<li>souřadnicový systém <code>osr.SpatialReference</code> - reprezentace souřadnicového systému a operací s nimi</li>
-</ul>
-</section>
 <section id="gdal-struktury" class="slide level2">
 <h2>GDAL Struktury</h2>
 <ul>
@@ -308,7 +308,7 @@ Jan Caha
 <section id="ogr-struktury" class="slide level2">
 <h2>OGR Struktury</h2>
 <ul>
-<li>datový zdroj <code>ogr.DataSource</code> (ale může být i <code>gdal.Dataset</code>) - základní objekt pro práci s daty, zdroj dat</li>
+<li>datový zdroj <code>ogr.DataSource</code> (ale spíše vycházíme z<code>gdal.Dataset</code>) - základní objekt pro práci s daty, zdroj dat</li>
 <li>vrstva <code>ogr.Layer</code> - reprezentace jedné vrstvy v datovém zdroji</li>
 <li>definice vrstvy <code>ogr.FeatureDefn</code> - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)</li>
 <li>prvek <code>ogr.Feature</code> - reprezentace jednoho prvku ve vrstvě</li>
@@ -349,7 +349,7 @@ Jan Caha
 <ul>
 <li>další ukázka v příkladech</li>
 </ul>
-<div id="ae42c51f" class="cell" data-execution_count="2">
+<div id="f772333c" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> gdal, ogr</span>
@@ -359,14 +359,14 @@ Jan Caha
 <span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
 <span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span> <span class="op">=</span> Path.cwd().parent.parent <span class="op">/</span> <span class="st">"_data"</span> <span class="op">/</span> <span class="st">"ne_10m_admin_0_countries.shp"</span></span>
 <span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">file</span>.exists())</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Soubor existuje: </span><span class="sc">{</span><span class="bu">file</span><span class="sc">.</span>exists()<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    ds: gdal.Dataset <span class="op">=</span> gdal.OpenEx(<span class="bu">file</span>)</span>
 <span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>    layer: ogr.Layer <span class="op">=</span> ds.GetLayer()</span>
 <span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetName())</span>
-<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(layer.GetFeatureCount())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Jméno vrstvy: </span><span class="sc">{</span>layer<span class="sc">.</span>GetName()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Počet prvků: </span><span class="sc">{</span>layer<span class="sc">.</span>GetFeatureCount()<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="vlastní-kontextové-managery" class="slide level2">
@@ -402,7 +402,7 @@ Jan Caha
 <li>přístup k širokému spektru geodat</li>
 <li>přístup na všech úrovních</li>
 <li>široké spektrum možností a nastavení</li>
-<li>přípravené nástroje</li>
+<li>připravené nástroje</li>
 </ul>
 </section>
 <section id="nevýhody-gdalogr" class="slide level2">
@@ -410,7 +410,7 @@ Jan Caha
 <ul>
 <li>někdy ne úplně “pythonový” přístup k operacím</li>
 <li>komplikovanější postupy</li>
-<li>někdy až příliš široké možnosti</li>
+<li>někdy až příliš široké možnosti - komplikované na zjištění, co vlastně použít a co potřeba</li>
 <li>vede ke složitějším skriptům</li>
 </ul>
 </section>

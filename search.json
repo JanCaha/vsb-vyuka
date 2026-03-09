@@ -268,7 +268,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2025-03-03\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-03-24\n\n\nFunkce a třídy\n\n\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n\n\n2025-04-07\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-03-24\n\n\nFunkce a třídy\n\n\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n\n\n2025-04-07\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -301,7 +301,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2025-03-03\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n\n\n2025-03-03\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n\n\n2025-03-10\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n\n\n2025-03-10\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n\n\n2025-04-07\n\n\nUkázka tvorby objektu\n\n\n\n\n\n\n2025-04-14\n\n\nPandas - ukázky\n\n\n\n\n\n\n2025-04-14\n\n\nPolars - ukázky\n\n\n\n\n\n\n2025-04-14\n\n\nGeoPandas - prostorové operace a vizualizace\n\n\n\n\n\n\n2025-04-28\n\n\nNotebook + grafy\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelný program s argumenty\n\n\n\n\n\n\n2025-06-03\n\n\nFunkce v souboru utils\n\n\n\n\n\n\n2024-04-07\n\n\nZkušební python balíček\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n\n\n2026-03-09\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nNastavení VS Code projektu\n\n\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n\n\n2025-04-07\n\n\nUkázka tvorby objektu\n\n\n\n\n\n\n2025-04-14\n\n\nPandas - ukázky\n\n\n\n\n\n\n2025-04-14\n\n\nPolars - ukázky\n\n\n\n\n\n\n2025-04-14\n\n\nGeoPandas - prostorové operace a vizualizace\n\n\n\n\n\n\n2025-04-28\n\n\nNotebook + grafy\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelný program s argumenty\n\n\n\n\n\n\n2025-06-03\n\n\nFunkce v souboru utils\n\n\n\n\n\n\n2024-04-07\n\n\nZkušební python balíček\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1895,7 +1895,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.14625454 -1.31353383 -0.07888134 -0.32397711 -0.92198928"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.94147680 -0.07314009 -0.29322407 -0.07207149 -0.80986193"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2434,7 +2434,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f0f84c767b0&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f490089ee40&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -2539,7 +2539,7 @@
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#příklady-typování",
     "title": "Knihovna GDAL/OGR",
     "section": "Příklady typování",
-    "text": "Příklady typování\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nfile = Path(__file__).parent / \"data.gpkg\"\n\nds: gdal.Dataset = gdal.OpenEx(file)\n\nlayer: ogr.Layer = ds.GetLayer()"
+    "text": "Příklady typování\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nfile = Path(__file__).parent / \"data.gpkg\"\n\nds: gdal.Dataset = gdal.OpenEx(file)\n\nlayer: ogr.Layer = ds.GetLayer()  # získání první vrstvy v datovém zdroji"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#zdroje-informací",
@@ -2553,7 +2553,7 @@
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#otevírání-souborů",
     "title": "Knihovna GDAL/OGR",
     "section": "Otevírání souborů",
-    "text": "Otevírání souborů\n\nfunkce gdal.OpenEx() (rastry i vektory) a ogr.Open() (pouze vektory)\njako první první parametr cesta k souboru\n\nbuď lokální - klasický zápis\nnebo virtuální začínající /vsi* kde * je typ virtuální složky"
+    "text": "Otevírání souborů\n\nfunkce gdal.OpenEx() (rastry i vektory) a ogr.Open() (pouze vektory) - spíše doporučuji první variantu\njako první první parametr cesta k souboru\n\nbuď lokální - klasický zápis\nnebo virtuální začínající /vsi* kde * je typ virtuální složky"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#virtuální-složky",
@@ -2563,18 +2563,18 @@
     "text": "Virtuální složky\n\nnapř. /vsicurl/cesta_k_online.souboru - automaticky stahuje data\n/vsizip/cesta_k_lokálnímu.souboru - extrahuje ze zip souboru\n/vsis3, /vsigs, /vsiaz, /vsioss pro přístup k online službám\n/vsimem - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát\ntyto adresy pak fungují všude, kde je GDAL/OGR využíván (třeba python knihovny ale i QGIS)"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#drivery",
-    "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#drivery",
-    "title": "Knihovna GDAL/OGR",
-    "section": "Drivery",
-    "text": "Drivery\n\nkaždý podporovaný formát má svůj vlastní\nmohou být pouze pro čtení (DWG), značná část ale podporuje i zápis (GPKG, GeoTiff)\nněkteré drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (GeoJSON)\nčasto není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je\ndrivery MEM - raster a Memory - vektor  pro data neuložené fyzicky, ale pouze v RAM\n\nvelice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu\nnemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)\nneplést s daty s adresou /vsimem - také v RAM, ale mají formát"
-  },
-  {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#obecné-struktury",
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#obecné-struktury",
     "title": "Knihovna GDAL/OGR",
     "section": "Obecné struktury",
     "text": "Obecné struktury\n\ndrivery gdal.Driver a ogr.Driver - reprezentace jednotlivých driverů\nsouřadnicový systém osr.SpatialReference - reprezentace souřadnicového systému a operací s nimi"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#drivery",
+    "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#drivery",
+    "title": "Knihovna GDAL/OGR",
+    "section": "Drivery",
+    "text": "Drivery\n\nkaždý podporovaný formát má svůj vlastní\nmohou být pouze pro čtení (DWG), značná část ale podporuje i zápis (GPKG, GeoTiff)\nněkteré drivery nepodporují změnu dat, lze je pouze načíst a vytvořit (GeoJSON)\nčasto není nutné k nim přistupovat přímo, ale např. pro vytvoření nových dat (souboru) to nutné je\ndrivery MEM - raster a Memory - vektor  pro data neuložené fyzicky, ale pouze v RAM\n\nvelice jednoduché a rychlé formáty, ale pouze pro dobu běhu programu\nnemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)\nneplést s daty s adresou /vsimem - také v RAM, ale mají formát"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#gdal-struktury",
@@ -2588,7 +2588,7 @@
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#ogr-struktury",
     "title": "Knihovna GDAL/OGR",
     "section": "OGR Struktury",
-    "text": "OGR Struktury\n\ndatový zdroj ogr.DataSource (ale může být i gdal.Dataset) - základní objekt pro práci s daty, zdroj dat\nvrstva ogr.Layer - reprezentace jedné vrstvy v datovém zdroji\ndefinice vrstvy ogr.FeatureDefn - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)\nprvek ogr.Feature - reprezentace jednoho prvku ve vrstvě\ngeometrie ogr.Geometry - reprezentace geometrie prvku\natributy ogr.Field - reprezentace atributu prvku\na další, ale tyto jsou nejdůležitější"
+    "text": "OGR Struktury\n\ndatový zdroj ogr.DataSource (ale spíše vycházíme zgdal.Dataset) - základní objekt pro práci s daty, zdroj dat\nvrstva ogr.Layer - reprezentace jedné vrstvy v datovém zdroji\ndefinice vrstvy ogr.FeatureDefn - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)\nprvek ogr.Feature - reprezentace jednoho prvku ve vrstvě\ngeometrie ogr.Geometry - reprezentace geometrie prvku\natributy ogr.Field - reprezentace atributu prvku\na další, ale tyto jsou nejdůležitější"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#ogr-geometrie",
@@ -2609,7 +2609,7 @@
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#načtení-souboru-a-základní-info",
     "title": "Knihovna GDAL/OGR",
     "section": "Načtení souboru a základní info",
-    "text": "Načtení souboru a základní info\n\ndalší ukázka v příkladech\n\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nif __name__ == \"__main__\":\n    file = Path.cwd().parent.parent / \"_data\" / \"ne_10m_admin_0_countries.shp\"\n\n    print(file.exists())\n\n    ds: gdal.Dataset = gdal.OpenEx(file)\n\n    layer: ogr.Layer = ds.GetLayer()\n\n    print(layer.GetName())\n    print(layer.GetFeatureCount())"
+    "text": "Načtení souboru a základní info\n\ndalší ukázka v příkladech\n\n\nfrom pathlib import Path\n\nfrom osgeo import gdal, ogr\n\ngdal.UseExceptions()\n\nif __name__ == \"__main__\":\n    file = Path.cwd().parent.parent / \"_data\" / \"ne_10m_admin_0_countries.shp\"\n\n    print(f\"Soubor existuje: {file.exists()}\")\n\n    ds: gdal.Dataset = gdal.OpenEx(file)\n\n    layer: ogr.Layer = ds.GetLayer()\n\n    print(f\"Jméno vrstvy: {layer.GetName()}\")\n    print(f\"Počet prvků: {layer.GetFeatureCount()}\")"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#vlastní-kontextové-managery",
@@ -2637,14 +2637,14 @@
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#výhody-gdalogr",
     "title": "Knihovna GDAL/OGR",
     "section": "Výhody GDAL/OGR",
-    "text": "Výhody GDAL/OGR\n\ndostupnost\npřístup k širokému spektru geodat\npřístup na všech úrovních\nširoké spektrum možností a nastavení\npřípravené nástroje"
+    "text": "Výhody GDAL/OGR\n\ndostupnost\npřístup k širokému spektru geodat\npřístup na všech úrovních\nširoké spektrum možností a nastavení\npřipravené nástroje"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#nevýhody-gdalogr",
     "href": "subjects/PGIS2/prezentace/04_gdal_ogr.html#nevýhody-gdalogr",
     "title": "Knihovna GDAL/OGR",
     "section": "Nevýhody GDAL/OGR",
-    "text": "Nevýhody GDAL/OGR\n\nněkdy ne úplně “pythonový” přístup k operacím\nkomplikovanější postupy\nněkdy až příliš široké možnosti\nvede ke složitějším skriptům"
+    "text": "Nevýhody GDAL/OGR\n\nněkdy ne úplně “pythonový” přístup k operacím\nkomplikovanější postupy\nněkdy až příliš široké možnosti - komplikované na zjištění, co vlastně použít a co potřeba\nvede ke složitějším skriptům"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/04_gdal_ogr.html#zhodnocení",

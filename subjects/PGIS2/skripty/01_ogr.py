@@ -8,6 +8,7 @@ gdal.UseExceptions()
 
 
 def create_box(min_x: float, max_x: float, min_y: float, max_y: float) -> ogr.Geometry:
+    """Vytvoří polygon ve tvaru obdélníku zadaného souřadnicemi dvou protilehlých rohů"""
     ring = ogr.Geometry(ogr.wkbLinearRing)
     ring.AddPoint(min_x, min_y)
     ring.AddPoint(max_x, min_y)
@@ -24,25 +25,22 @@ def create_box(min_x: float, max_x: float, min_y: float, max_y: float) -> ogr.Ge
 if __name__ == "__main__":
     file = data_path("ne_10m_admin_0_countries.shp")
 
-    print(file.exists())
+    print(f"Soubor existuje: {file.exists()}")
 
-    ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+    ds: gdal.Dataset = gdal.OpenEx(file)
 
     layer: ogr.Layer = ds.GetLayer()
 
     srs: osr.SpatialReference = layer.GetSpatialRef()
 
-    print(layer.GetName())
-    print(layer.GetFeatureCount())
-    print(f"{srs.GetAuthorityName(None)}:{srs.GetAuthorityCode(None)}")
+    print(f"Jméno vrstvy: {layer.GetName()}")
+    print(f"Počet prvků vrstvy: {layer.GetFeatureCount()}")
+    print(f"Souřadnicový systém: {srs.GetAuthorityName(None)}:{srs.GetAuthorityCode(None)}")
     print("-" * 10)
 
-    # NOTE: All features in layer
-    # feature: ogr.Feature
-    # for feature in layer:
-    #     print(feature.GetField("SOVEREIGNT"))
-
+    # pokud nastavíme prostorový nebo atributový filtr, budou operace na vrstvě vracet pouze prvky, které filtrům vyhovují
     layer.SetSpatialFilter(create_box(0, 20, 35, 50))
+    # layer.SetAttributeFilter("Name LIKE 'F%'")
 
     print(layer.GetFeatureCount())
 

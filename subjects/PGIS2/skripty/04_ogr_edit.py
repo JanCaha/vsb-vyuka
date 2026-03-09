@@ -5,6 +5,8 @@ gdal.UseExceptions()
 
 
 def use_memory_driver() -> None:
+    """Použití bezformátového memory driveru pro načtení dat do paměti, modifikaci a uložení do souboru"""
+
     path_data = utils.data_path("ne_10m_admin_0_countries.shp")
     path_result_file = utils.save_data_path("data.gpkg")
 
@@ -32,6 +34,7 @@ def use_memory_driver() -> None:
 
 
 def use_in_memory_data() -> None:
+    """Použití dat v paměti ve formátu GPKG, modifikace a synchronizace s cílovou složkou"""
 
     path_data = utils.data_path("ne_10m_admin_0_countries.shp")
     path_result = utils.base_save_data_path()

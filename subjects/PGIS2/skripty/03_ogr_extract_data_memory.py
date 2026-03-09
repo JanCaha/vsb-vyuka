@@ -6,7 +6,7 @@ gdal.UseExceptions()
 if __name__ == "__main__":
     file = utils.data_path("ne_10m_admin_0_countries.shp")
 
-    print(file.exists())
+    print(f"Soubor existuje: {file.exists()}")
 
     ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
         geometryType=["PROMOTE_TO_MULTI"],  # převedení geometrie na multi geometrii - zabrání výpisu varování
     )
 
-    ds_extracted = gdal.VectorTranslate("", ds, options=options)
+    ds_extracted: gdal.Dataset = gdal.VectorTranslate("", ds, options=options)
 
     layer_extracted: ogr.Layer = ds_extracted.GetLayer()
 
