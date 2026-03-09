@@ -174,3 +174,19 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 ### Nastavení projektů využívajících QGIS Python API na Windows
 
 Viz informace u [OSGEO4W](osgeo4w.qmd##nastavení-python-prostředí-ve-visual-studiu-code-pro-python-i-qgis-python-api).
+
+### Doporučená struktura projektu
+
+```plaintext
+Projekt
+├── .vscode
+│   ├── extensions.json
+│   ├── settings.json
+├── data
+│   ├── saved
+|   |   ├── vytvoreny_soubor.pripona      
+│   ├── datove_soubory.pripona
+| 01_priklad.py
+| 02_priklad.py
+| utils.py
+```
