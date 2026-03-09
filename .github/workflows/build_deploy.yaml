@@ -48,10 +48,10 @@ jobs:
           echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/10keep-cache
       
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Cache Conda
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           CACHE_NUMBER: 0
         with:
@@ -65,7 +65,7 @@ jobs:
           pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
       
       - name: Cache APT packages
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           CACHE_NUMBER: 0
         with:

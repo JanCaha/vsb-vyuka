@@ -41,7 +41,7 @@ jobs:
         run: sudo service postgresql stop
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Pip install psycopg
         run: |
