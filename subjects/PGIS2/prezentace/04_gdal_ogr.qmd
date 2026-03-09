@@ -1,7 +1,7 @@
 ---
 title: "Knihovna [GDAL/OGR]{.software}"
-date: 2025-03-03
-year: 2025
+date: 2026-03-09
+year: 2026
 ---
 
 ## Popis [GDAL/OGR]{.software}
@@ -31,7 +31,7 @@ file = Path(__file__).parent / "data.gpkg"
 
 ds: gdal.Dataset = gdal.OpenEx(file)
 
-layer: ogr.Layer = ds.GetLayer()
+layer: ogr.Layer = ds.GetLayer()  # získání první vrstvy v datovém zdroji
 ```
 
 ## Zdroje informací
@@ -41,7 +41,7 @@ layer: ogr.Layer = ds.GetLayer()
 
 ## Otevírání souborů
 
-- funkce `gdal.OpenEx()` (rastry i vektory) a `ogr.Open()` (pouze vektory)
+- funkce `gdal.OpenEx()` (rastry i vektory) a `ogr.Open()` (pouze vektory) - spíše doporučuji první variantu
 - jako první první parametr cesta k souboru
   - buď lokální - klasický zápis
   - nebo virtuální začínající `/vsi*` kde `*` je typ virtuální složky
@@ -54,6 +54,11 @@ layer: ogr.Layer = ds.GetLayer()
 - `/vsimem` - soubory v RAM paměti, existují pouze po dobu běhu programu, mají ale excelentní rychlost přístup - neomezuje je fyzický disk ale mají specifický určený formát
 - tyto adresy pak fungují všude, kde je [GDAL/OGR]{.software} využíván (třeba python knihovny ale i [QGIS]{.software}) 
 
+## Obecné struktury
+
+- drivery `gdal.Driver` a `ogr.Driver` - reprezentace jednotlivých driverů
+- souřadnicový systém `osr.SpatialReference` - reprezentace souřadnicového systému a operací s nimi
+
 ## Drivery
 
 - každý podporovaný formát má svůj vlastní
@@ -65,11 +70,6 @@ layer: ogr.Layer = ds.GetLayer()
   - nemají formát v pravém slova smyslu (existují jako objekty v nějaké podobě v paměti)
   - neplést s daty s adresou `/vsimem` - také v RAM, ale mají formát
 
-## Obecné struktury
-
-- drivery `gdal.Driver` a `ogr.Driver` - reprezentace jednotlivých driverů
-- souřadnicový systém `osr.SpatialReference` - reprezentace souřadnicového systému a operací s nimi
-
 ## GDAL Struktury
 
 - datový zdroj `gdal.Dataset` - základní objekt pro práci s daty, zdroj dat
@@ -79,7 +79,7 @@ layer: ogr.Layer = ds.GetLayer()
  
 ## OGR Struktury
 
-- datový zdroj `ogr.DataSource` (ale může být i `gdal.Dataset`) - základní objekt pro práci s daty, zdroj dat
+- datový zdroj `ogr.DataSource` (ale spíše vycházíme z`gdal.Dataset`) - základní objekt pro práci s daty, zdroj dat
 - vrstva `ogr.Layer` - reprezentace jedné vrstvy v datovém zdroji
 - definice vrstvy `ogr.FeatureDefn` - definice vrstvy, obsahuje informace o atributech (typy, geometrie etc.)
 - prvek `ogr.Feature` - reprezentace jednoho prvku ve vrstvě
@@ -124,14 +124,14 @@ if __name__ == "__main__":
     file = Path.cwd().parent.parent / \
         "_data" / "ne_10m_admin_0_countries.shp"
 
-    print(file.exists())
+    print(f"Soubor existuje: {file.exists()}")
 
     ds: gdal.Dataset = gdal.OpenEx(file)
 
     layer: ogr.Layer = ds.GetLayer()
 
-    print(layer.GetName())
-    print(layer.GetFeatureCount())
+    print(f"Jméno vrstvy: {layer.GetName()}")
+    print(f"Počet prvků: {layer.GetFeatureCount()}")
 ```
 
 ## Vlastní kontextové managery
@@ -160,13 +160,13 @@ if __name__ == "__main__":
 - přístup k širokému spektru geodat
 - přístup na všech úrovních 
 - široké spektrum možností a nastavení
-- přípravené nástroje
+- připravené nástroje
 
 ## Nevýhody GDAL/OGR
 
 - někdy ne úplně "pythonový" přístup k operacím
 - komplikovanější postupy
-- někdy až příliš široké možnosti
+- někdy až příliš široké možnosti - komplikované na zjištění, co vlastně použít a co potřeba
 - vede ke složitějším skriptům
 
 ## Zhodnocení
