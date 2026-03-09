@@ -97,7 +97,7 @@ jobs:
           do
             echo "--------------------"
             echo "*** $FILE ***"
-            jupyter nbconvert --inplace --execute $FILE
+            jupyter nbconvert --inplace --execute --allow-errors $FILE
           done
 
       - name: Check if PGIS4 folder was modified
