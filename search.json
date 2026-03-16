@@ -268,7 +268,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-03-24\n\n\nFunkce a třídy\n\n\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n\n\n2025-04-07\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -974,186 +974,186 @@
     "text": "Ukázka - tvorba sloupce\n\nPandasPolars\n\n\ndf_pd[\"novy_sloupec\"] = False\ndf_pd[\"novy_sloupec\"] = df_pd[\"novy_sloupec\"].mask(df_pd[\"sloupec_hodnota\"] &lt;= 3, True)\n\n\ndf_pl.with_columns(pl.when(pl.col(\"sloupec_hodnota\") &lt;= 10).then(True).otherwise(False).alias(\"novy_sloupec\"))"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#kontroly-kódu",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#kontroly-kódu",
-    "title": "Kontroly a formátování kódu",
-    "section": "Kontroly kódu",
-    "text": "Kontroly kódu\n\nkontrola syntaxe, dobré praxe, formátování\nkontrola kvality kódu\nkontrola typů\na další\nbalíčky a extenze pro VSCode ale i pro PyCharm"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#vs-code",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#vs-code",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "VS Code",
+    "text": "VS Code\n\nlehké IDE pro vývoj\nvzdáleně odvozené od Visual Studio, což je výrazně “těžší” prostředí\ninspirace “lehkými” prostředími jako Atom, Neovim, Sublime Text atd.\nsnaha o univerzálnost  specifičnost (nástroje od JetBrains)\nrozšiřitelnost pomocí pluginů  ty posouvají k určité funkcionalitě"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#chyby-kontrol-kódu",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#chyby-kontrol-kódu",
-    "title": "Kontroly a formátování kódu",
-    "section": "Chyby kontrol kódu",
-    "text": "Chyby kontrol kódu\n\nnejedná se o chyby, které by vyvolaly chybu při běhu programu/skriptu\nale o chyby, které by mohly vést k chybám\nnapř. špatné pojmenování proměnné, nevyužité proměnné, špatné formátování kódu\nšpatné typy proměnných\nšpatné použití funkcí\nje vhodné se těmto chybám vyhnout a předcházet jim\nve VS Code se tyto chyby zobrazují jako podtžení kódu (v různých barvách, dle vážnosti a typu chyby)"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#github-copilot",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#github-copilot",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Github Copilot",
+    "text": "Github Copilot\n\nGitHub Copilot je AI nástroj pro asistované programování\nvyužívá modely strojového učení trénované na velkém množství veřejně dostupného kódu\nnabízí návrhy kódu v reálném čase přímo při psaní\npodporuje různé programovací jazyky a frameworky\npomáhá zrychlit vývoj tím, že navrhuje celé funkce, metody, komentáře a další části kódu\numožňuje vývojářům soustředit se na logiku a strukturu kódu, zatímco Copilot se stará o syntaxi a detaily\nintegruje se do vývojových prostředí jako Visual Studio Code, Neovim a JetBrains IDEs\nnabízí personalizované návrhy na základě kontextu a stylu kódu, který vývojář píše"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#mypy",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#mypy",
-    "title": "Kontroly a formátování kódu",
-    "section": "MyPy",
-    "text": "MyPy\n\nkontrola typů proměnných u veškerého typovaného kódu\nněkdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce typing.cast()\n\nimport typing\n\n# přetypování proměnné\npromenna = typing.cast(NovaTrida, promenna)\n\n# za tímto kódem už je promměnná typu NovaTrida\nif isinstance(promenna, NovaTrida):\n    ...\n\n# za tímto kódem už je promměnná typu NovaTrida\nassert isinstance(promenna, NovaTrida)"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#jazykové-modely",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#jazykové-modely",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Jazykové modely",
+    "text": "Jazykové modely\n\nnestrojí striktně na jednom modelu\npodporuje jak modely od OpenAI, tak Anthropic a nově i od Google\nmodely jsou trénovány na velkém množství kódu z veřejných repozitářů na GitHubu\nkontexty z aktuálního kódu a projektu\ni hlasový chat"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#pep8",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#pep8",
-    "title": "Kontroly a formátování kódu",
-    "section": "pep8",
-    "text": "pep8\n\nkontroly stylu kódu proti PEP 8\nneprovádí logickou kontrolu kódu\nmezery v kódu, délka řádků, pojmenování proměnných, atd."
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#použití",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#použití",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Použití",
+    "text": "Použití\n\ndokončování kódu\ngenerování dokumentace a komentářů\nchat s kontextem (soubory)\nCopilot Edits - možnost editovat vybraný kód pomocí dotazů, napříč vícero vybranými soubory"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#flake8",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#flake8",
-    "title": "Kontroly a formátování kódu",
-    "section": "flake8",
-    "text": "flake8\n\nkontrola stylu kódu i možných chyb\nkontrola přehnané komplexity kódu"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#nastavení",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#nastavení",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Nastavení",
+    "text": "Nastavení\n\ninstrukce buď textové v souboru nastavení (úroveň projektu nebo profilu) settings.json, nebo tamtéž specifikujeme soubor, který se má použít\n\n\"github.copilot.chat.codeGeneration.useInstructionFiles\": true,\n\"github.copilot.chat.codeGeneration.instructions\": [\n        {\n            \"text\": \"Always add a comment: 'Generated by Copilot'.\"\n        },\n        {\n            // nebo umístit do .github/copilot-instructions.md tam jsou načteny automaticky\n            \"file\": \".copilot-instructions.md\",\n        }\n    ]\n\"github.copilot.chat.testGeneration.instructions\": [],\n\"github.copilot.chat.reviewSelection.instructions\": [],"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#pylint",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#pylint",
-    "title": "Kontroly a formátování kódu",
-    "section": "pylint",
-    "text": "pylint\n\nkontrola stylu kódu i možných chyb\nvynucuje kódovací standardy, hledá i příklady špatné praxe\nnejkomplexnější kontrola kódu, s detailním hodnocením a reporty"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#tipy",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#tipy",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Tipy",
+    "text": "Tipy\n\nsignatura funkce výrazně napomáhá tvorbě kódu (kontext)\nkomentáře výrazně napomáhají (kontext)\ndalší otevřené soubory (v IDE) také poskytují kontext - např. kód pro pársování JSON souboru, otevřu ukázkový soubor"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#formátování-kódu",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#formátování-kódu",
-    "title": "Kontroly a formátování kódu",
-    "section": "Formátování kódu",
-    "text": "Formátování kódu\n\núprava kódu do standardizovaného formátu\núprava importů"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#proč-debugovat",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#proč-debugovat",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Proč debugovat?",
+    "text": "Proč debugovat?\n\nprint() je nejjednodušší, ale pro složitější problémy nedostačující\ndebugger umožňuje zastavit program v libovolném místě a prozkoumat stav proměnných\numožňuje krokovat kód řádek po řádku a sledovat tok programu\nšetří čas při hledání chyb, oproti opakovanému spouštění celého skriptu"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#black-a-isort",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#black-a-isort",
-    "title": "Kontroly a formátování kódu",
-    "section": "black a isort",
-    "text": "black a isort\n\nextenze pro VS Code\nexistují situace, kdy je formátování kódu v konfliktu s kontrolami kódu\nfungují automaticky, jen vhodná kontrola nastavení ve VS Code\nparametry pro black a isort lze nastavit v pyproject.toml"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#breakpointy",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#breakpointy",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Breakpointy",
+    "text": "Breakpointy\n\nkliknutím vedle čísla řádku nastavíme breakpoint (červená tečka)\nprogram se zastaví na tomto řádku a čeká na naši akci\nlze nastavit i podmíněné breakpointy - zastaví se pouze pokud je splněna podmínka (pravý klik na breakpoint)"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#konfigurace",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#konfigurace",
-    "title": "Kontroly a formátování kódu",
-    "section": "Konfigurace",
-    "text": "Konfigurace\n\nlze buď v nastavení VS Code\nnebo v souboru pyproject.toml, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#ovládání-debuggeru",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#ovládání-debuggeru",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Ovládání debuggeru",
+    "text": "Ovládání debuggeru\n\nContinue (F5) - pokračovat do dalšího breakpointu\nStep Over (F10) - provést aktuální řádek a přejít na další\nStep Into (F11) - vstoupit do volané funkce\nStep Out (Shift+F11) - dokončit aktuální funkci a vrátit se\nRestart (Ctrl+Shift+F5) - restartovat debugování\nStop (Shift+F5) - ukončit debugování"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#konfigurace-v-vs-code-v-settings.json",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#konfigurace-v-vs-code-v-settings.json",
-    "title": "Kontroly a formátování kódu",
-    "section": "Konfigurace v VS Code v settings.json",
-    "text": "Konfigurace v VS Code v settings.json\n\"flake8.args\": [\n    \"--max-line-length\",\n    \"160\"\n],\n\"pylint.args\": [\n    \"--disable=E0611\",\n    \"--max-line-length=160\"\n],\n\"isort.args\": [\n    \"--profile\",\n    \"black\",\n    \"--line-width\",\n    \"120\"\n],\n\"black-formatter.args\": [\n    \"--line-length\",\n    \"120\"\n]"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#panely-debuggeru",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#panely-debuggeru",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Panely debuggeru",
+    "text": "Panely debuggeru\n\nVariables - přehled všech proměnných a jejich hodnot v aktuálním kontextu\nWatch - sledování konkrétních výrazů (lze přidat vlastní)\nCall Stack - zásobník volání funkcí - kde se aktuálně nacházíme\nBreakpoints - seznam všech nastavených breakpointů\nhodnoty proměnných lze zobrazit i přímo v editoru najetím myší"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#konfigurace-v-pyproject.toml",
-    "href": "subjects/PGIS2/prezentace/09_kontroly_formatovani_kodu.html#konfigurace-v-pyproject.toml",
-    "title": "Kontroly a formátování kódu",
-    "section": "Konfigurace v pyproject.toml",
-    "text": "Konfigurace v pyproject.toml\n[tool.flake8]\nexclude = [\".git\", \"__pycache__\", \"tests/*\"]\nmax-line-length = 120\nignore = \"W293,W504\"\n\n[tool.pylint.format]\nmax-line-length = 120\n\n[tool.pylint.messages_control]\ndisable = [\n    \"redefined-outer-name\",\n    \"no-name-in-module\",\n    \"missing-function-docstring\",\n    \"missing-module-docstring\",\n    \"missing-class-docstring\",\n    \"invalid-name\",\n    \"too-many-arguments\",\n    \"attribute-defined-outside-init\",\n]\n\n[tool.mypy]\nfollow_imports = \"silent\"\nignore_missing_imports = true\nshow_column_numbers = true\nno_pretty = true\nno_strict_optional = true\n\n[tool.black]\nline-length = 120\n\n[tool.isort]\nprofile = \"black\"\nline_length = 120\nskip_gitignore = true"
+    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#debugování-v-jupyter-notebooku",
+    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#debugování-v-jupyter-notebooku",
+    "title": "Visual Studio Code a Github Copilot",
+    "section": "Debugování v Jupyter Notebooku",
+    "text": "Debugování v Jupyter Notebooku\n\nve VS Code lze debugovat i jednotlivé buňky notebooku\ntlačítko Debug Cell nad buňkou\nfungují breakpointy i krokování stejně jako u skriptů\nužitečné pro interaktivní analýzu dat"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#modul",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#modul",
-    "title": "Python Balíčky",
-    "section": "Modul",
-    "text": "Modul\n\n.py soubor s funkcemi, proměnnými či objekty\nproměnné modulu obvykle zapisujeme velkými písmeny např. PI či DEFAULT_COLOR\nnapř. soubor utils.py ze cvičení (a ukázek na webu)\nlze používat lokálně\nstačí na jednoduché použití, pro větší projekty nedostačuje"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#programovací-paradigmata",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#programovací-paradigmata",
+    "title": "Funkce a třídy",
+    "section": "Programovací paradigmata",
+    "text": "Programovací paradigmata\n\nvětšina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero\nimperativní (kód popisuje, co se bude dít)\n\nprocedurální programování (procedury, které se vzájemně volají)\nobjektové programování (objekty - data a operace s nimi asociované)\nvětšina jazyků - např. Python, R, C++\n\ndeklarativní (kód popisuje požadovaný výsledek)\n\nfunkcionální, logické a reaktivní\nnapř. jazyk SQL, ale i funkcionální přístupy v Pythonu a R"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček",
-    "title": "Python Balíčky",
-    "section": "Balíček",
-    "text": "Balíček\n\nsložka s python soubory, která obsahuje soubor __init__.py\ntaková složka je Pythonem identifikována jako balíček (jméno složky odpovídá jménu balíčku)\nmůže mít i zanořené dílčí balíčky\nkromě kódu může obsahovat i další soubory (např. data)\naby Python balíček našel, musí být v některé z cest v sys.path, ty lze editovat např. skrze systémovou proměnnou PYTHONPATH\n\nconda env config vars set PYTHONPATH=$PYTHONPATH:/path/to/your/package\npython3 -c \"import sys;print(sys.path);import your_package\""
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#python",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#python",
+    "title": "Funkce a třídy",
+    "section": "Python",
+    "text": "Python\n\npro běžné použití kombinujeme obvykle procedurální a objektový přístup\nprocedurální přístup - funkce, které mají parametry\nobjektový přístup - objekty, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)\nnení problém s kombinací, viz cvičení (GDAL/OGR má objekty, my si k nim píšeme funkce)\n\nPříklad kombinace přístupů\n\nclass Point:\n    def __init__(self, x: float, y: float):\n        self.x = x\n        self.y = y\n\n\ndef distance_from_origin(point: Point) -&gt; float:\n    return (point.x**2 + point.y**2) ** 0.5\n\n\npoint = Point(3, 4)\nprint(distance_from_origin(point))\n\n5.0"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#příklad-struktury",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#příklad-struktury",
-    "title": "Python Balíčky",
-    "section": "Příklad struktury",
-    "text": "Příklad struktury\nmy_package/\n├── __init__.py\n├── module1.py\n├── module2.py\n└── subpackage/\n    ├── __init__.py\n    └── submodule.py\n└── data/\n    └── data_file.csv\n    └── data.gpkg"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce",
+    "title": "Funkce a třídy",
+    "section": "Funkce",
+    "text": "Funkce\n\ndělí kód na dílčí logické bloky, které mohou být znovu použitelné\nměly by dělat jednu věc a pouze jednu věc\ndélka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)\nsnaha navrhovat funkce spíše obecně než specificky\n\nPříklad\n\ndef celsius_to_fahrenheit(celsius: float) -&gt; float:\n    return celsius * 9 / 5 + 32\n\n\nprint(celsius_to_fahrenheit(20))\n\n68.0"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček---komplexnější",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček---komplexnější",
-    "title": "Python Balíčky",
-    "section": "Balíček - komplexnější",
-    "text": "Balíček - komplexnější\n\npokud chceme balíček i s nastavením závislostí, metadatay a testy, chceme obvykle komplexnější strukturu\ndoinstalujeme balík poetry do prostředí conda\npoetry\n\numožní postavit strukturu balíčku\nmanagement závislostí\ninstalace"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-příklad",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-příklad",
+    "title": "Funkce a třídy",
+    "section": "Funkce příklad",
+    "text": "Funkce příklad\n\ndef fn(a: str, b: int, c: float = 0.5) -&gt; float: ...\n\n\nfunkce se třemi proměnnými\n\nprvní dvě povinné\ntřetí nepovinná s výchozí hodnotou\n\n\n\n\n\n\n\n\nPozor\n\n\nProměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou  funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.\n\n\n\n\nfunkce vrací float\nmohou existovat funkce bez návratové hodnoty None\nnezapomínat na typování parametrů a návratové hodnoty"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček-sestavený-pomocí-poetry",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček-sestavený-pomocí-poetry",
-    "title": "Python Balíčky",
-    "section": "Balíček sestavený pomocí poetry",
-    "text": "Balíček sestavený pomocí poetry\npoetry new nazev_balicku\nnazev_balicku/\n└── src/\n    └── nazev_balicku/\n        └── __init__.py\n├── tests\n    └── __init__.py\n├── pyproject.toml\n└── README.md"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-specifická",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-specifická",
+    "title": "Funkce a třídy",
+    "section": "Funkce obecná  specifická",
+    "text": "Funkce obecná  specifická\n\n# specifické\ndef vynasob_dvema(a: float) -&gt; float:\n    return a * 2\n\n\n# obecné\ndef vynasob(a: float, b: float) -&gt; float:\n    return a * b"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml",
-    "title": "Python Balíčky",
-    "section": "pyproject.toml",
-    "text": "pyproject.toml\n\nmoderní způsob specifikace nastavení balíčku a nástrojů\nspecifikace metadata balíčku - např. název, verze, autor, závislosti\n\n[project]\nname = \"balicekpgis2\"\nversion = \"0.1.0\"\ndescription = \"\"\nauthors = [\n    {name = \"autor\",email = \"email@email.com\"}\n]\nreadme = \"README.md\"\nrequires-python = \"&gt;=3.12\"\ndependencies = [\n    \"numpy (&gt;=2.2.4,&lt;3.0.0)\"\n]\n\n[tool.poetry]\npackages = [{include = \"balicekpgis2\", from = \"src\"}]\n\n\n[build-system]\nrequires = [\"poetry-core&gt;=2.0.0,&lt;3.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\""
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#tvorba-upravené-funkce-předefinování-parametrů",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#tvorba-upravené-funkce-předefinování-parametrů",
+    "title": "Funkce a třídy",
+    "section": "Tvorba upravené funkce (předefinování parametrů)",
+    "text": "Tvorba upravené funkce (předefinování parametrů)\n\nfunkce partial z modulu functools\nvytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné\n\n\nfrom functools import partial\n\n# zadáme funkci a potom parametr(y) které chceme předdefinovat\nmultiply_hodnotu_dvema = partial(vynasob, b=2)\nhodnota = multiply_hodnotu_dvema(3)"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#přidání-závislostí",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#přidání-závislostí",
-    "title": "Python Balíčky",
-    "section": "Přidání závislostí",
-    "text": "Přidání závislostí\n\nzávislosti - více typů (např. pro spuštění a vývoj)\nparametr --lock, zabrání instalaci závislostí do virtualního prostředí (venv)\n\npoetry add GDAL --lock\npoetry add --group dev pytest black --lock"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty",
+    "title": "Funkce a třídy",
+    "section": "Objekty",
+    "text": "Objekty\n\ntřída je šablona objektu, jednotlivý objekt je pak instancí třídy\nobjekt je prvek, který má vlastní informace a se kterým můžeme vykonávat operace\nmetody, vlastnosti (property) a atributy\nsložitost se může různit\n\nPříklad\n\nclass Point:\n    def __init__(self, x: float, y: float):\n        self.x = x\n        self.y = y\n\n    def move_x(self, move_by: float) -&gt; None:\n        self.x = self.x + move_by\n\n    def move_y(self, move_by: float) -&gt; None:\n        self.y = self.y + move_by\n\n    def __repr__(self) -&gt; str:\n        return f\"Bod na souřadnicích ({self.x, self.y})\""
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml-úprava-přidáním-dat-k-balíčku",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml-úprava-přidáním-dat-k-balíčku",
-    "title": "Python Balíčky",
-    "section": "pyproject.toml úprava přidáním dat k balíčku",
-    "text": "pyproject.toml úprava přidáním dat k balíčku\n\ndvě varianty\n\n[tool.poetry]\ninclude = [\n    \"src/nazev_balicku/data/*.tif\",\n    \"src/nazev_balicku/data/*.gpkg\",\n]\n\n[tool.poetry.package-data]\n\"nazev_balicku.data\" = [\"*.tif\", \"*.gpkg\"]"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty-detaily",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty-detaily",
+    "title": "Funkce a třídy",
+    "section": "Objekty detaily",
+    "text": "Objekty detaily\n\nprvní parametr metody je vždy self (označení instance objektu)\natributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvencí, soukromé atributy a metody začínají podtržítkem (např. _atribut), tyto metody a atributy nebudou nápovědy v IDE navrhovat a programátor by se měl ideálně jejich použití vyhnout\nmagické metody objektů (např. __init__, __str__, __add__, __eq__ a další) a jejich použití\natribut může být statický (přímo uložená hodnota objektu) nebo dynamický přes vlastnost s dekorátorem @property\n\nPříklad\n\nclass Circle:\n    def __init__(self, radius: float):\n        self.radius = radius\n\n    @property\n    def area(self) -&gt; float:\n        return 3.14159 * self.radius**2\n\n\ncircle = Circle(2)\nprint(f\"Průměr kruhu: {circle.radius}\")\nprint(f\"Plocha kruhu: {circle.area}\")\n\nPrůměr kruhu: 2\nPlocha kruhu: 12.56636"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#instalace",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#instalace",
-    "title": "Python Balíčky",
-    "section": "Instalace",
-    "text": "Instalace\npoetry install \n\ninstalace balíku\ntzv. interaktivní instalace - změny v kódu se projeví se při příštím spuštění Pythonu\nstejný výsledek dá i příkaz pip install -e ."
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#metody-objektu",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#metody-objektu",
+    "title": "Funkce a třídy",
+    "section": "Metody objektu",
+    "text": "Metody objektu\n\nmetody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy self\nmetody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy, označují se dekorátorem @staticmethod\n\nPříklad\n\nclass TextUtils:\n    @staticmethod\n    def words_count(text: str) -&gt; int:\n        return len(text.split())\n\n\nprint(TextUtils.words_count(\"Python classes and functions\"))\n\n4"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#sestavení-pro-instalaci-jinde",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#sestavení-pro-instalaci-jinde",
-    "title": "Python Balíčky",
-    "section": "Sestavení pro instalaci jinde",
-    "text": "Sestavení pro instalaci jinde\npoetry build\n\nvznikne složka dist/ s balíčkem\nbalíček je ve formátu .tar.gz a .whl\nbalíček je možné nahrát na PyPI (Python Package Index) - veřejný repozitář balíčků\nbalíček je možné instalovat z whl souboru pomocí pip install nazev_balicku*.whl"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad",
+    "title": "Funkce a třídy",
+    "section": "Objekt - příklad",
+    "text": "Objekt - příklad\n\nfrom typing import List, Tuple\n\n\nclass Polygon:\n    def __init__(self, vertices: List[Tuple[float, float]]):\n        self.vertices = vertices  # seznam vrcholů [(x1, y1), (x2, y2), ...]\n\n    def add_vertex(self, vertex: Tuple[float, float]) -&gt; None:\n        \"\"\"Přidá vrchol do polygonu.\"\"\"\n        self.vertices.append(vertex)\n\n    def perimeter(self) -&gt; float:\n        \"\"\"Spočítá obvod polygonu.\"\"\"\n        peri = 0.0\n        for i in range(len(self.vertices)):\n            next_index = i + 1 if i + 1 &lt; len(self.vertices) else 0\n            x1, y1 = self.vertices[i]\n            x2, y2 = self.vertices[next_index]\n            peri += ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5\n        return peri\n\n    @staticmethod\n    def is_closed(vertices: List[Tuple[float, float]]) -&gt; bool:\n        \"\"\"Vrací True, pokud je polygon uzavřený (první a poslední bod jsou stejné).\"\"\"\n        return vertices[0] == vertices[-1]\n\n    def close(self) -&gt; None:\n        \"\"\"Pokud není polygon uzavřený, uzavře se.\"\"\"\n        if self.is_closed(self.vertices):\n            return\n        self.vertices.append(self.vertices[0])\n\n    @property\n    def vertex_count(self) -&gt; int:\n        return len(self.vertices)\n\n    @property\n    def bounds(self) -&gt; Tuple[float, float, float, float]:\n        \"\"\"Vrací obálku polygonu ve formátu(min_x, min_y, max_x, max_y).\"\"\"\n        x_values = [x for x, _ in self.vertices]\n        y_values = [y for _, y in self.vertices]\n        return min(x_values), min(y_values), max(x_values), max(y_values)\n\n    def __repr__(self) -&gt; str:\n        return f\"Polygon s {self.vertex_count} vrcholy\""
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---struktura",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---struktura",
-    "title": "Python Balíčky",
-    "section": "Použití - struktura",
-    "text": "Použití - struktura\n─── src/\n    └── nazev_balicku/\n        └── __init__.py\n        └── modul_path.py\n        └── modul_gdal.py"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#použití-objektu",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#použití-objektu",
+    "title": "Funkce a třídy",
+    "section": "Použití objektu",
+    "text": "Použití objektu\n\npoly = Polygon([(0, 0), (1, 0), (1, 1), (0.5, 0.5), (0, 1), (0, 0)])\nprint(poly)\nprint(f\"Obvod: {poly.perimeter()}\")\nprint(f\"Počet vrcholů: {poly.vertex_count}\")\nprint(f\"Je polygon uzavřený? {Polygon.is_closed(poly.vertices)}\")\n\nPolygon s 6 vrcholy\nObvod: 4.414213562373095\nPočet vrcholů: 6\nJe polygon uzavřený? True"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---import",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---import",
-    "title": "Python Balíčky",
-    "section": "Použití - import",
-    "text": "Použití - import\nimport nazev_balicku  # import celého balíčku\nfrom nazev_balicku.modul_path import *  # všechny funkce\nfrom nazev_balicku.modul_path import fn_1  # funkce\n\nnazev_balicku.modul_path.fn_1()  # použití funkce"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost",
+    "title": "Funkce a třídy",
+    "section": "Dědičnost",
+    "text": "Dědičnost\n\ntřída může dědit od jiné třídy - přebírá její atributy a metody\nlze přidat nové atributy a metody nebo přepsat existující\nv praxi se s tím setkáváme běžně, např. GeoDataFrame dědí z DataFrame (přidává sloupec geometrie a prostorové metody)\nsyntaxe: class Potomek(Rodic):\nfunkce super() umožňuje volat metody rodičovské třídy"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---úprava-__init__.py",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---úprava-__init__.py",
-    "title": "Python Balíčky",
-    "section": "Použití - úprava __init__.py",
-    "text": "Použití - úprava __init__.py\n\nz dílčích modulů importujeme funkce do __init__.py\ntím je zpřístupníme i na úrovni balíčku\npříklad __init__.py\n\nfrom nazev_balicku.modul_gdal import *\nfrom nazev_balicku.modul_path import *"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---příklad",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---příklad",
+    "title": "Funkce a třídy",
+    "section": "Dědičnost - příklad",
+    "text": "Dědičnost - příklad\n\nclass Rectangle(Polygon):\n    def __init__(self, x: float, y: float, width: float, height: float):\n        # Vytvoří obdélník z levého dolního rohu (x, y)\n        vertices = [(x, y), (x + width, y), (x + width, y + height), (x, y + height), (x, y)]\n        super().__init__(vertices)\n        self.width = width\n        self.height = height\n\n    def area(self) -&gt; float:\n        \"\"\"Vrací obsah obdélníku.\"\"\"\n        return self.width * self.height\n\n    def perimeter(self) -&gt; float:\n        \"\"\"Přepsaná metoda - obvod obdélníku.\"\"\"\n        return 2 * (self.width + self.height)\n\n    def __repr__(self) -&gt; str:\n        return f\"Obdélník {self.width}x{self.height}, obálka: {self.bounds}\""
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---po-změně-import",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---po-změně-import",
-    "title": "Python Balíčky",
-    "section": "Použití - po změně import",
-    "text": "Použití - po změně import\n\nimport nazev_balicku - import celého balíčku a věcí z __init__.py\n\nfrom nazev_balicku import *  # všechny funkce\nfrom nazev_balicku import fn_1  # funkce"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---použití",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---použití",
+    "title": "Funkce a třídy",
+    "section": "Dědičnost - použití",
+    "text": "Dědičnost - použití\n\nrect = Rectangle(0, 0, 5, 3)\nprint(rect)\nprint(f\"Obsah: {rect.area()}\")\nprint(f\"Obvod: {rect.perimeter()}\")\n# Rectangle je zároveň i Polygon\nprint(f\"Je polygon: {isinstance(rect, Polygon)}\")\n\nObdélník 5x3, obálka: (0, 0, 5, 3)\nObsah: 15\nObvod: 16\nJe polygon: True"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#závěr",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#závěr",
-    "title": "Python Balíčky",
-    "section": "Závěr",
-    "text": "Závěr\n\nbalíčky a moduly jsou důležitou součástí Pythonu\numožňují strukturovat kód a znovu ho použít\numožňují i sdílet kód s ostatními\npoetry je vhodný nástroj pro správu balíčků a závislostí"
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstringy",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstringy",
+    "title": "Funkce a třídy",
+    "section": "Docstringy",
+    "text": "Docstringy\n\ndokumentační řetězce uvnitř funkcí, tříd a modulů\numístěny hned za definicí funkce/třídy jako první řádek\nslouží jako dokumentace, kterou lze programově číst (např. help(funkce))\nIDE je zobrazuje jako nápovědu při najetí myší\nextenze autoDocstring ve VS Code generuje šablonu\n\nPříklad\n\ndef rectangle_area(width: float, height: float) -&gt; float:\n    \"\"\"Return area of rectangle in square units.\"\"\"\n    return width * height\n\n\nprint(rectangle_area(5, 3))\nhelp(rectangle_area)\n\n15\nHelp on function rectangle_area in module __main__:\n\nrectangle_area(width: float, height: float) -&gt; float\n    Return area of rectangle in square units."
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_fiona_rasterio_shapely.html#typy-knihoven-pro-python",
@@ -1895,7 +1895,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1299778 -0.3111604 -0.3691804 -0.2146248 -0.5352192"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.6977191 -0.2847841 -0.2893647 -1.0159632 -0.2864370"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2434,7 +2434,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f6398286e40&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f3c64b5ae40&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -2654,186 +2654,200 @@
     "text": "Zhodnocení\n\nnástroj s nejširší nabídkou možností a potenciálem\nklade vyšší nároky na programátora\nmohou vznikat “zajímavé” chyby, těžší na odhalení a vyřešení\n\nzcela jistě nástroj o němž má geoinformatik mít přehled a znát ho"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#programovací-paradigmata",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#programovací-paradigmata",
-    "title": "Funkce a třídy",
-    "section": "Programovací paradigmata",
-    "text": "Programovací paradigmata\n\nvětšina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero\nimperativní (kód popisuje, co se bude dít)\n\nprocedurální programování (procedury, které ze vzájemně volají)\nobjektové programování (objekty - data a operace s nimi asociované)\nvětšina jazyků - např. Python, R, C++\n\ndeklarativní (kód popisuje požadovaný výsledek)\n\nfunkcionální, logické a reaktivní\nnapř. jazyk SQL, ale i funkcionální přístupy v Pythonu a R"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#kontroly-kódu",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#kontroly-kódu",
+    "title": "Kontroly a formátování kódu",
+    "section": "Kontroly kódu",
+    "text": "Kontroly kódu\n\nkontrola syntaxe, dobré praxe, formátování\nkontrola kvality kódu\nkontrola typů\na další\nbalíčky a extenze pro VSCode ale i pro PyCharm a další IDE"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#python",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#python",
-    "title": "Funkce a třídy",
-    "section": "Python",
-    "text": "Python\n\npro běžné použití kombinujeme obvykle procedurální a objektový přístup\nprocedurální přístup - funkce, které mají parametry\nobjektový přístup - objekty, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)\nnení problém s kombinací, viz cvičení (GDAL/OGR má objekty, my si k nim píšeme funkce)"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#chyby-kontrol-kódu",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#chyby-kontrol-kódu",
+    "title": "Kontroly a formátování kódu",
+    "section": "Chyby kontrol kódu",
+    "text": "Chyby kontrol kódu\n\nnemusí se jednat o chyby, které by vyvolaly chybu při běhu programu/skriptu\nale o chyby, které by mohly vést k chybám\nnapř. špatné pojmenování proměnné, nevyužité proměnné, špatné formátování kódu\nšpatné typy proměnných\nšpatné použití funkcí\nje vhodné se těmto chybám vyhnout a předcházet jim\nve VS Code se tyto chyby zobrazují jako podtržení kódu (v různých barvách, dle vážnosti a typu chyby)\n\nPříklad:\n# | eval: false\ndef area(width: float, height: float) -&gt; float:\n    return width * heigth\nEditor zvýrazní překlep heigth, i když se soubor zatím nespouští."
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce",
-    "title": "Funkce a třídy",
-    "section": "Funkce",
-    "text": "Funkce\n\ndělí kód na dílčí logické bloky, které mohou být znovu použitelné\nměly by dělat jednu věc a pouze jednu věc\ndélka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)\nsnaha navrhovat funkce spíše obecně než specificky"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#pep8",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#pep8",
+    "title": "Kontroly a formátování kódu",
+    "section": "pep8",
+    "text": "pep8\n\nkontroly stylu kódu proti PEP 8\nneprovádí logickou kontrolu kódu\nmezery v kódu, délka řádků, pojmenování proměnných, atd.\n\nPříklad: myFunctionName je v Pythonu méně vhodné, doporučené je my_function_name. pep8 upozorní na nesprávný styl pojmenování."
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-příklad",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-příklad",
-    "title": "Funkce a třídy",
-    "section": "Funkce příklad",
-    "text": "Funkce příklad\n\ndef fn(a: str, b: int, c: float = 0.5) -&gt; float: ...\n\n\nfunkce se třemi proměnnými\n\nprvní dvě povinné\ntřetí nepovinná s výchozí hodnotou\n\n\n\n\n\n\n\n\nPozor\n\n\nProměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou  funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.\n\n\n\n\nfunkce vrací float\nmohou existovat funkce bez návratové hodnoty None\nnezapomínat na typování parametrů a návratové hodnoty"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#flake8",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#flake8",
+    "title": "Kontroly a formátování kódu",
+    "section": "flake8",
+    "text": "flake8\n\nkontrola stylu kódu i možných chyb\nkontrola přehnané komplexity kódu\n\nPříklad: importujete numpy as np, ale v souboru ho nikde nepoužijete. flake8 nahlásí nevyužitý import."
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-specifická",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-specifická",
-    "title": "Funkce a třídy",
-    "section": "Funkce obecná  specifická",
-    "text": "Funkce obecná  specifická\n\n# specifické\ndef vynasob_dvema(a: float) -&gt; float:\n    return a * 2\n\n\n# obecné\ndef vynasob(a: float, b: float) -&gt; float:\n    return a * b"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#pylint",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#pylint",
+    "title": "Kontroly a formátování kódu",
+    "section": "pylint",
+    "text": "pylint\n\nkontrola stylu kódu i možných chyb\nvynucuje kódovací standardy, hledá i příklady špatné praxe\nnejkomplexnější kontrola kódu, s detailním hodnocením a reporty\n\nPříklad: Funkce má 12 argumentů a více vnořených podmínek. pylint upozorní na horší čitelnost a navrhne refaktoring."
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#tvorba-upravené-funkce-předefinování-parametrů",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#tvorba-upravené-funkce-předefinování-parametrů",
-    "title": "Funkce a třídy",
-    "section": "Tvorba upravené funkce (předefinování parametrů)",
-    "text": "Tvorba upravené funkce (předefinování parametrů)\n\nfunkce partial z modulu functools\nvytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné\n\n\nfrom functools import partial\n\n# zadáme funkci a potom parametr(y) které chceme předdefinovat\nmultiply_hodnotu_dvema = partial(vynasob, b=2)\nhodnota = multiply_hodnotu_dvema(3)"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy",
+    "title": "Kontroly a formátování kódu",
+    "section": "MyPy",
+    "text": "MyPy\n\nstatická kontrola typů proměnných u typovaného kódu\nněkdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce typing.cast()\n\n# | eval: false\nfrom typing import Dict\n\n\ndef fn() -&gt; Dict[str, int]:\n    return {\"klíč\": \"hodnota\"}  # chyba: hodnota není int\nMyPy odhalí chybu při kontrole typů."
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty",
-    "title": "Funkce a třídy",
-    "section": "Objekty",
-    "text": "Objekty\n\ntřída je šablona objektu, jednotlivý objekt je pak instancí třídy\nobjekt je prvek, které má vlastní informace a s kterými můžeme vykonávat operace\nmetody, vlastnosti (property) a atributy\nsložitost se může různit"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy---přetypování",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy---přetypování",
+    "title": "Kontroly a formátování kódu",
+    "section": "MyPy - přetypování",
+    "text": "MyPy - přetypování\n\nněkdy vzniká neshoda mezi typy, které MyPy očekává, a typy, které jsou v kódu\nobvykle se jedná o situace, kdy MyPy nedokáže správně určit typ proměnné, nebo když se typ proměnné mění v průběhu kódu\nčasto v situacích, kdy se používají binding knihovny, které s typy pracují jinak než MyPy očekává\nnutné tzv. přetypování proměnné, kdy explicitně definujeme, jaký typ proměnná má"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty-detaily",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty-detaily",
-    "title": "Funkce a třídy",
-    "section": "Objekty detaily",
-    "text": "Objekty detaily\n\nprvní parametr metody je vždy self (označení instance objektu)\natributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvencí, soukromé atributy a metody začínají podtržítkem (např. _atribut), tyto metody a atributy nebudou nápovědy v IDE navrhovat a programátor by se měl ideálně jejich použití vyhnout\nmagické metody objektů (např. __init__, __str__, __add__, __eq__ a další) a jejich použití\nvlastnost (property), mohou být buď statické (přímo hodnota objektu) nebo dynamické (metoda s dekorátorem @property)"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy---přetypování---ukázka",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy---přetypování---ukázka",
+    "title": "Kontroly a formátování kódu",
+    "section": "MyPy - přetypování - ukázka",
+    "text": "MyPy - přetypování - ukázka\nimport typing\n\n# přetypování proměnné\npromenna = typing.cast(NovaTrida, promenna)\n\n# za tímto kódem už je proměnná typu NovaTrida\nif isinstance(promenna, NovaTrida):\n    ...\n\n# za tímto kódem už je proměnná typu NovaTrida\nassert isinstance(promenna, NovaTrida)"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#metody-objektu",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#metody-objektu",
-    "title": "Funkce a třídy",
-    "section": "Metody objektu",
-    "text": "Metody objektu\n\nmetody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy self\nmetody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy , označují se dekorátorem @staticmethod"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#formátování-kódu",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#formátování-kódu",
+    "title": "Kontroly a formátování kódu",
+    "section": "Formátování kódu",
+    "text": "Formátování kódu\n\núprava kódu do standardizovaného formátu\núprava importů\n\nPříklad:\n# před formátováním\nimport os\nimport sys\n\n\ndef add(a, b):\n    return a + b\n\n\n# po formátování\nimport os\nimport sys\n\n\ndef add(a, b):\n    return a + b"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad",
-    "title": "Funkce a třídy",
-    "section": "Objekt - příklad",
-    "text": "Objekt - příklad\n\nclass Zamestnanec:\n    def __init__(self, jmeno: str, hodinovy_plat: float):\n        self.jmeno = jmeno\n        self._hodinovy_plat = hodinovy_plat\n        self.uvazek = 1.0\n\n    def plat(self) -&gt; float:\n        return self._hodinovy_plat\n\n    def nastav_plat(self, hodinovy_plat: float) -&gt; None:\n        self._hodinovy_plat = hodinovy_plat\n\n    def zvys_plat(self, navyseni_o: float) -&gt; None:\n        self._hodinovy_plat += navyseni_o\n\n    def mesicni_plat(self, odpracovanych_hodin: float) -&gt; float:\n        return self._hodinovy_plat * odpracovanych_hodin\n\n    ## statická metoda, jedná se o ukázku, ale zde by mohla být i normální metoda\n    @staticmethod\n    def delka_pracovniho_dne(uvazek: float = 1.0) -&gt; float:\n        return 8 * uvazek\n\n    @property\n    def hodin_denne(self) -&gt; float:\n        return self.delka_pracovniho_dne(self.uvazek)\n\n    @property\n    def denni_plat(self) -&gt; float:\n        return self._hodinovy_plat * self.hodin_denne\n\n    def __repr__(self) -&gt; str:\n        return f\"Zamestnanec {self.jmeno} s platem {self._hodinovy_plat} za hodinu\""
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#black-a-isort",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#black-a-isort",
+    "title": "Kontroly a formátování kódu",
+    "section": "black a isort",
+    "text": "black a isort\n\nextenze pro VS Code\nexistují situace, kdy je formátování kódu v konfliktu s kontrolami kódu\nfungují automaticky, jen vhodná kontrola nastavení ve VS Code\nparametry pro black a isort lze nastavit v pyproject.toml"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#použití-objektu",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#použití-objektu",
-    "title": "Funkce a třídy",
-    "section": "Použití objektu",
-    "text": "Použití objektu\n\nodpracovane_hodiny = 160\nzam = Zamestnanec(\"Testovaci Zamestnanec\", 250)\nprint(f\"Denní plat: {zam.denni_plat}\")\nzam.uvazek = 0.5\nprint(f\"Denní plat: {zam.denni_plat}\")\nprint(f\"Plat: {zam.mesicni_plat(odpracovane_hodiny)}\")\nzam.zvys_plat(50)\nprint(f\"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}\")\n\nDenní plat: 2000.0\nDenní plat: 1000.0\nPlat: 40000\nPlat po zvýšení: 48000"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#konfigurace",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#konfigurace",
+    "title": "Kontroly a formátování kódu",
+    "section": "Konfigurace",
+    "text": "Konfigurace\n\nlze buď v nastavení VS Code\nnebo v souboru pyproject.toml, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost",
-    "title": "Funkce a třídy",
-    "section": "Dědičnost",
-    "text": "Dědičnost\n\ntřída může dědit od jiné třídy - přebírá její atributy a metody\nlze přidat nové atributy a metody nebo přepsat existující\nv praxi se s tím setkáváme běžně, např. GeoDataFrame dědí z DataFrame (přidává sloupec geometrie a prostorové metody)\nsyntaxe: class Potomek(Rodic):\nfunkce super() umožňuje volat metody rodičovské třídy"
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#konfigurace-v-vs-code-v-settings.json",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#konfigurace-v-vs-code-v-settings.json",
+    "title": "Kontroly a formátování kódu",
+    "section": "Konfigurace v VS Code v settings.json",
+    "text": "Konfigurace v VS Code v settings.json\n\"flake8.args\": [\n    \"--max-line-length\",\n    \"160\"\n],\n\"pylint.args\": [\n    \"--disable=E0611\",\n    \"--max-line-length=160\"\n],\n\"isort.args\": [\n    \"--profile\",\n    \"black\",\n    \"--line-width\",\n    \"120\"\n],\n\"black-formatter.args\": [\n    \"--line-length\",\n    \"120\"\n]"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---příklad",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---příklad",
-    "title": "Funkce a třídy",
-    "section": "Dědičnost - příklad",
-    "text": "Dědičnost - příklad\n\nclass Manazer(Zamestnanec):\n    def __init__(self, jmeno: str, hodinovy_plat: float, pocet_podrizenych: int):\n        # volání konstruktoru rodičovské třídy\n        super().__init__(jmeno, hodinovy_plat)\n        self.pocet_podrizenych = pocet_podrizenych\n\n    def bonus(self) -&gt; float:\n        \"\"\"Bonus za vedení týmu.\"\"\"\n        return self.pocet_podrizenych * 500\n\n    def mesicni_plat(self, odpracovanych_hodin: float) -&gt; float:\n        \"\"\"Přepsaná metoda - měsíční plat včetně bonusu.\"\"\"\n        return super().mesicni_plat(odpracovanych_hodin) + self.bonus()\n\n    def __repr__(self) -&gt; str:\n        return f\"Manažer {self.jmeno}, tým: {self.pocet_podrizenych}\""
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#konfigurace-v-pyproject.toml",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#konfigurace-v-pyproject.toml",
+    "title": "Kontroly a formátování kódu",
+    "section": "Konfigurace v pyproject.toml",
+    "text": "Konfigurace v pyproject.toml\n[tool.flake8]\nexclude = [\".git\", \"__pycache__\", \"tests/*\"]\nmax-line-length = 120\nignore = \"W293,W504\"\n\n[tool.pylint.format]\nmax-line-length = 120\n\n[tool.pylint.messages_control]\ndisable = [\n    \"redefined-outer-name\",\n    \"no-name-in-module\",\n    \"missing-function-docstring\",\n    \"missing-module-docstring\",\n    \"missing-class-docstring\",\n    \"invalid-name\",\n    \"too-many-arguments\",\n    \"attribute-defined-outside-init\",\n]\n\n[tool.mypy]\nfollow_imports = \"silent\"\nignore_missing_imports = true\nshow_column_numbers = true\nno_pretty = true\nno_strict_optional = true\n\n[tool.black]\nline-length = 120\n\n[tool.isort]\nprofile = \"black\"\nline_length = 120\nskip_gitignore = true"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---použití",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---použití",
-    "title": "Funkce a třídy",
-    "section": "Dědičnost - použití",
-    "text": "Dědičnost - použití\n\nmng = Manazer(\"Vedoucí Projektu\", 350, 5)\nprint(mng)\nprint(f\"Měsíční plat: {mng.mesicni_plat(160)}\")\n# Manazer je zároveň i Zamestnanec\nprint(f\"Je zaměstnanec: {isinstance(mng, Zamestnanec)}\")\n\nManažer Vedoucí Projektu, tým: 5\nMěsíční plat: 58500\nJe zaměstnanec: True"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#modul",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#modul",
+    "title": "Python Balíčky",
+    "section": "Modul",
+    "text": "Modul\n\n.py soubor s funkcemi, proměnnými či objekty\nproměnné modulu obvykle zapisujeme velkými písmeny např. PI či DEFAULT_COLOR\nnapř. soubor utils.py ze cvičení (a ukázek na webu)\nlze používat lokálně\nstačí na jednoduché použití, pro větší projekty nedostačuje"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstringy",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstringy",
-    "title": "Funkce a třídy",
-    "section": "Docstringy",
-    "text": "Docstringy\n\ndokumentační řetězce uvnitř funkcí, tříd a modulů\numístěny hned za definicí funkce/třídy jako první řádek\nslouží jako dokumentace, kterou lze programově číst (např. help(funkce))\nIDE je zobrazuje jako nápovědu při najetí myší\nextenze autoDocstring ve VS Code generuje šablonu"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček",
+    "title": "Python Balíčky",
+    "section": "Balíček",
+    "text": "Balíček\n\nsložka s python soubory, která obsahuje soubor __init__.py\ntaková složka je Pythonem identifikována jako balíček (jméno složky odpovídá jménu balíčku)\nmůže mít i zanořené dílčí balíčky\nkromě kódu může obsahovat i další soubory (např. data)\naby Python balíček našel, musí být v některé z cest v sys.path, ty lze editovat např. skrze systémovou proměnnou PYTHONPATH\n\nconda env config vars set PYTHONPATH=$PYTHONPATH:/path/to/your/package\npython3 -c \"import sys;print(sys.path);import your_package\""
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#vs-code",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#vs-code",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "VS Code",
-    "text": "VS Code\n\nlehké IDE pro vývoj\nvzdáleně odvozené od Visual Studio, což je výrazně “těžší” prostředí\ninspirace “lehkými” prostředími jako Atom, Neovim, Sublime Text atd.\nsnaha o univerzálnost  specifičnost (nástroje od JetBrains)\nrozšiřitelnost pomocí pluginů  ty posouvají k určité funkcionalitě"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#příklad-struktury",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#příklad-struktury",
+    "title": "Python Balíčky",
+    "section": "Příklad struktury",
+    "text": "Příklad struktury\nmy_package/\n├── __init__.py\n├── module1.py\n├── module2.py\n└── subpackage/\n    ├── __init__.py\n    └── submodule.py\n└── data/\n    └── data_file.csv\n    └── data.gpkg"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#github-copilot",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#github-copilot",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Github Copilot",
-    "text": "Github Copilot\n\nGitHub Copilot je AI nástroj pro asistované programování\nvyužívá modely strojového učení trénované na velkém množství veřejně dostupného kódu\nnabízí návrhy kódu v reálném čase přímo při psaní\npodporuje různé programovací jazyky a frameworky\npomáhá zrychlit vývoj tím, že navrhuje celé funkce, metody, komentáře a další části kódu\numožňuje vývojářům soustředit se na logiku a strukturu kódu, zatímco Copilot se stará o syntaxi a detaily\nintegruje se do vývojových prostředí jako Visual Studio Code, Neovim a JetBrains IDEs\nnabízí personalizované návrhy na základě kontextu a stylu kódu, který vývojář píše"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček---komplexnější",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček---komplexnější",
+    "title": "Python Balíčky",
+    "section": "Balíček - komplexnější",
+    "text": "Balíček - komplexnější\n\npokud chceme balíček i s nastavením závislostí, metadatay a testy, chceme obvykle komplexnější strukturu\ndoinstalujeme balík poetry do prostředí conda\npoetry\n\numožní postavit strukturu balíčku\nmanagement závislostí\ninstalace"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#jazykové-modely",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#jazykové-modely",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Jazykové modely",
-    "text": "Jazykové modely\n\nnestrojí striktně na jednom modelu\npodporuje jak modely od OpenAI, tak Anthropic a nově i od Google\nmodely jsou trénovány na velkém množství kódu z veřejných repozitářů na GitHubu\nkontexty z aktuálního kódu a projektu\ni hlasový chat"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček-sestavený-pomocí-poetry",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček-sestavený-pomocí-poetry",
+    "title": "Python Balíčky",
+    "section": "Balíček sestavený pomocí poetry",
+    "text": "Balíček sestavený pomocí poetry\npoetry new nazev_balicku\nnazev_balicku/\n└── src/\n    └── nazev_balicku/\n        └── __init__.py\n├── tests\n    └── __init__.py\n├── pyproject.toml\n└── README.md"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#použití",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#použití",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Použití",
-    "text": "Použití\n\ndokončování kódu\ngenerování dokumentace a komentářů\nchat s kontextem (soubory)\nCopilot Edits - možnost editovat vybraný kód pomocí dotazů, napříč vícero vybranými soubory"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml",
+    "title": "Python Balíčky",
+    "section": "pyproject.toml",
+    "text": "pyproject.toml\n\nmoderní způsob specifikace nastavení balíčku a nástrojů\nspecifikace metadata balíčku - např. název, verze, autor, závislosti\n\n[project]\nname = \"balicekpgis2\"\nversion = \"0.1.0\"\ndescription = \"\"\nauthors = [\n    {name = \"autor\",email = \"email@email.com\"}\n]\nreadme = \"README.md\"\nrequires-python = \"&gt;=3.12\"\ndependencies = [\n    \"numpy (&gt;=2.2.4,&lt;3.0.0)\"\n]\n\n[tool.poetry]\npackages = [{include = \"balicekpgis2\", from = \"src\"}]\n\n\n[build-system]\nrequires = [\"poetry-core&gt;=2.0.0,&lt;3.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\""
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#nastavení",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#nastavení",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Nastavení",
-    "text": "Nastavení\n\ninstrukce buď textové v souboru nastavení (úroveň projektu nebo profilu) settings.json, nebo tamtéž specifikujeme soubor, který se má použít\n\n\"github.copilot.chat.codeGeneration.useInstructionFiles\": true,\n\"github.copilot.chat.codeGeneration.instructions\": [\n        {\n            \"text\": \"Always add a comment: 'Generated by Copilot'.\"\n        },\n        {\n            // nebo umístit do .github/copilot-instructions.md tam jsou načteny automaticky\n            \"file\": \".copilot-instructions.md\",\n        }\n    ]\n\"github.copilot.chat.testGeneration.instructions\": [],\n\"github.copilot.chat.reviewSelection.instructions\": [],"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#přidání-závislostí",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#přidání-závislostí",
+    "title": "Python Balíčky",
+    "section": "Přidání závislostí",
+    "text": "Přidání závislostí\n\nzávislosti - více typů (např. pro spuštění a vývoj)\nparametr --lock, zabrání instalaci závislostí do virtualního prostředí (venv)\n\npoetry add GDAL --lock\npoetry add --group dev pytest black --lock"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#tipy",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#tipy",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Tipy",
-    "text": "Tipy\n\nsignatura funkce výrazně napomáhá tvorbě kódu (kontext)\nkomentáře výrazně napomáhají (kontext)\ndalší otevřené soubory (v IDE) také poskytují kontext - např. kód pro pársování JSON souboru, otevřu ukázkový soubor"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml-úprava-přidáním-dat-k-balíčku",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml-úprava-přidáním-dat-k-balíčku",
+    "title": "Python Balíčky",
+    "section": "pyproject.toml úprava přidáním dat k balíčku",
+    "text": "pyproject.toml úprava přidáním dat k balíčku\n\ndvě varianty\n\n[tool.poetry]\ninclude = [\n    \"src/nazev_balicku/data/*.tif\",\n    \"src/nazev_balicku/data/*.gpkg\",\n]\n\n[tool.poetry.package-data]\n\"nazev_balicku.data\" = [\"*.tif\", \"*.gpkg\"]"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#proč-debugovat",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#proč-debugovat",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Proč debugovat?",
-    "text": "Proč debugovat?\n\nprint() je nejjednodušší, ale pro složitější problémy nedostačující\ndebugger umožňuje zastavit program v libovolném místě a prozkoumat stav proměnných\numožňuje krokovat kód řádek po řádku a sledovat tok programu\nšetří čas při hledání chyb, oproti opakovanému spouštění celého skriptu"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#instalace",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#instalace",
+    "title": "Python Balíčky",
+    "section": "Instalace",
+    "text": "Instalace\npoetry install \n\ninstalace balíku\ntzv. interaktivní instalace - změny v kódu se projeví se při příštím spuštění Pythonu\nstejný výsledek dá i příkaz pip install -e ."
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#breakpointy",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#breakpointy",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Breakpointy",
-    "text": "Breakpointy\n\nkliknutím vedle čísla řádku nastavíme breakpoint (červená tečka)\nprogram se zastaví na tomto řádku a čeká na naši akci\nlze nastavit i podmíněné breakpointy - zastaví se pouze pokud je splněna podmínka (pravý klik na breakpoint)"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#sestavení-pro-instalaci-jinde",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#sestavení-pro-instalaci-jinde",
+    "title": "Python Balíčky",
+    "section": "Sestavení pro instalaci jinde",
+    "text": "Sestavení pro instalaci jinde\npoetry build\n\nvznikne složka dist/ s balíčkem\nbalíček je ve formátu .tar.gz a .whl\nbalíček je možné nahrát na PyPI (Python Package Index) - veřejný repozitář balíčků\nbalíček je možné instalovat z whl souboru pomocí pip install nazev_balicku*.whl"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#ovládání-debuggeru",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#ovládání-debuggeru",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Ovládání debuggeru",
-    "text": "Ovládání debuggeru\n\nContinue (F5) - pokračovat do dalšího breakpointu\nStep Over (F10) - provést aktuální řádek a přejít na další\nStep Into (F11) - vstoupit do volané funkce\nStep Out (Shift+F11) - dokončit aktuální funkci a vrátit se\nRestart (Ctrl+Shift+F5) - restartovat debugování\nStop (Shift+F5) - ukončit debugování"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---struktura",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---struktura",
+    "title": "Python Balíčky",
+    "section": "Použití - struktura",
+    "text": "Použití - struktura\n─── src/\n    └── nazev_balicku/\n        └── __init__.py\n        └── modul_path.py\n        └── modul_gdal.py"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#panely-debuggeru",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#panely-debuggeru",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Panely debuggeru",
-    "text": "Panely debuggeru\n\nVariables - přehled všech proměnných a jejich hodnot v aktuálním kontextu\nWatch - sledování konkrétních výrazů (lze přidat vlastní)\nCall Stack - zásobník volání funkcí - kde se aktuálně nacházíme\nBreakpoints - seznam všech nastavených breakpointů\nhodnoty proměnných lze zobrazit i přímo v editoru najetím myší"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---import",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---import",
+    "title": "Python Balíčky",
+    "section": "Použití - import",
+    "text": "Použití - import\nimport nazev_balicku  # import celého balíčku\nfrom nazev_balicku.modul_path import *  # všechny funkce\nfrom nazev_balicku.modul_path import fn_1  # funkce\n\nnazev_balicku.modul_path.fn_1()  # použití funkce"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#debugování-v-jupyter-notebooku",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#debugování-v-jupyter-notebooku",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Debugování v Jupyter Notebooku",
-    "text": "Debugování v Jupyter Notebooku\n\nve VS Code lze debugovat i jednotlivé buňky notebooku\ntlačítko Debug Cell nad buňkou\nfungují breakpointy i krokování stejně jako u skriptů\nužitečné pro interaktivní analýzu dat"
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---úprava-__init__.py",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---úprava-__init__.py",
+    "title": "Python Balíčky",
+    "section": "Použití - úprava __init__.py",
+    "text": "Použití - úprava __init__.py\n\nz dílčích modulů importujeme funkce do __init__.py\ntím je zpřístupníme i na úrovni balíčku\npříklad __init__.py\n\nfrom nazev_balicku.modul_gdal import *\nfrom nazev_balicku.modul_path import *"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---po-změně-import",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---po-změně-import",
+    "title": "Python Balíčky",
+    "section": "Použití - po změně import",
+    "text": "Použití - po změně import\n\nimport nazev_balicku - import celého balíčku a věcí z __init__.py\n\nfrom nazev_balicku import *  # všechny funkce\nfrom nazev_balicku import fn_1  # funkce"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#závěr",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#závěr",
+    "title": "Python Balíčky",
+    "section": "Závěr",
+    "text": "Závěr\n\nbalíčky a moduly jsou důležitou součástí Pythonu\numožňují strukturovat kód a znovu ho použít\numožňují i sdílet kód s ostatními\npoetry je vhodný nástroj pro správu balíčků a závislostí"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/10_git_github.html#co-je-git",

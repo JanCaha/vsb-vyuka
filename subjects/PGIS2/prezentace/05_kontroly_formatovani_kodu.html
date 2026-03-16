@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-04-07">
+  <meta name="dcterms.date" content="2026-03-16">
   <title>Výuka - Jan Caha – Kontroly a formátování kódu</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -210,7 +210,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-04-07</p>
+  <p class="date">2026-03-16</p>
 </section>
 <section id="kontroly-kódu" class="slide level2">
 <h2>Kontroly kódu</h2>
@@ -219,38 +219,25 @@ Jan Caha
 <li>kontrola kvality kódu</li>
 <li>kontrola typů</li>
 <li>a další</li>
-<li>balíčky a extenze pro <span class="software">VSCode</span> ale i pro <span class="software">PyCharm</span></li>
+<li>balíčky a extenze pro <span class="software">VSCode</span> ale i pro <span class="software">PyCharm</span> a další IDE</li>
 </ul>
 </section>
 <section id="chyby-kontrol-kódu" class="slide level2">
 <h2>Chyby kontrol kódu</h2>
 <ul>
-<li>nejedná se o chyby, které by vyvolaly chybu při běhu programu/skriptu</li>
+<li>nemusí se jednat o chyby, které by vyvolaly chybu při běhu programu/skriptu</li>
 <li>ale o chyby, které by mohly vést k chybám</li>
 <li>např. špatné pojmenování proměnné, nevyužité proměnné, špatné formátování kódu</li>
 <li>špatné typy proměnných</li>
 <li>špatné použití funkcí</li>
 <li>je vhodné se těmto chybám vyhnout a předcházet jim</li>
-<li>ve <span class="software">VS Code</span> se tyto chyby zobrazují jako podtžení kódu (v různých barvách, dle vážnosti a typu chyby)</li>
+<li>ve <span class="software">VS Code</span> se tyto chyby zobrazují jako podtržení kódu (v různých barvách, dle vážnosti a typu chyby)</li>
 </ul>
-</section>
-<section id="mypy" class="slide level2">
-<h2>MyPy</h2>
-<ul>
-<li>kontrola typů proměnných u veškerého typovaného kódu</li>
-<li>někdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce <code>typing.cast()</code></li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># přetypování proměnné</span></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>promenna <span class="op">=</span> typing.cast(NovaTrida, promenna)</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># za tímto kódem už je promměnná typu NovaTrida</span></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">isinstance</span>(promenna, NovaTrida):</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    ...</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># za tímto kódem už je promměnná typu NovaTrida</span></span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(promenna, NovaTrida)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Příklad:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: false</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> area(width: <span class="bu">float</span>, height: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> width <span class="op">*</span> heigth</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Editor zvýrazní překlep <code>heigth</code>, i když se soubor zatím nespouští.</p>
 </section>
 <section id="pep8" class="slide level2">
 <h2><span class="software">pep8</span></h2>
@@ -259,6 +246,7 @@ Jan Caha
 <li>neprovádí logickou kontrolu kódu</li>
 <li>mezery v kódu, délka řádků, pojmenování proměnných, atd.</li>
 </ul>
+<p>Příklad: <code>myFunctionName</code> je v Pythonu méně vhodné, doporučené je <code>my_function_name</code>. <span class="software">pep8</span> upozorní na nesprávný styl pojmenování.</p>
 </section>
 <section id="flake8" class="slide level2">
 <h2><span class="software">flake8</span></h2>
@@ -266,6 +254,7 @@ Jan Caha
 <li>kontrola stylu kódu i možných chyb</li>
 <li>kontrola přehnané komplexity kódu</li>
 </ul>
+<p>Příklad: importujete <code>numpy as np</code>, ale v souboru ho nikde nepoužijete. <span class="software">flake8</span> nahlásí nevyužitý import.</p>
 </section>
 <section id="pylint" class="slide level2">
 <h2><span class="software">pylint</span></h2>
@@ -274,6 +263,44 @@ Jan Caha
 <li>vynucuje kódovací standardy, hledá i příklady špatné praxe</li>
 <li>nejkomplexnější kontrola kódu, s detailním hodnocením a reporty</li>
 </ul>
+<p>Příklad: Funkce má 12 argumentů a více vnořených podmínek. <span class="software">pylint</span> upozorní na horší čitelnost a navrhne refaktoring.</p>
+</section>
+<section id="mypy" class="slide level2">
+<h2>MyPy</h2>
+<ul>
+<li>statická kontrola typů proměnných u typovaného kódu</li>
+<li>někdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce <code>typing.cast()</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># | eval: false</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> Dict</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn() <span class="op">-&gt;</span> Dict[<span class="bu">str</span>, <span class="bu">int</span>]:</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"klíč"</span>: <span class="st">"hodnota"</span>}  <span class="co"># chyba: hodnota není int</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="software">MyPy</span> odhalí chybu při kontrole typů.</p>
+</section>
+<section id="mypy---přetypování" class="slide level2">
+<h2>MyPy - přetypování</h2>
+<ul>
+<li>někdy vzniká neshoda mezi typy, které MyPy očekává, a typy, které jsou v kódu</li>
+<li>obvykle se jedná o situace, kdy MyPy nedokáže správně určit typ proměnné, nebo když se typ proměnné mění v průběhu kódu</li>
+<li>často v situacích, kdy se používají binding knihovny, které s typy pracují jinak než MyPy očekává</li>
+<li>nutné tzv. přetypování proměnné, kdy explicitně definujeme, jaký typ proměnná má</li>
+</ul>
+</section>
+<section id="mypy---přetypování---ukázka" class="slide level2">
+<h2>MyPy - přetypování - ukázka</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> typing</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># přetypování proměnné</span></span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>promenna <span class="op">=</span> typing.cast(NovaTrida, promenna)</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># za tímto kódem už je proměnná typu NovaTrida</span></span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">isinstance</span>(promenna, NovaTrida):</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># za tímto kódem už je proměnná typu NovaTrida</span></span>
+<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(promenna, NovaTrida)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="formátování-kódu" class="slide level2">
 <h2>Formátování kódu</h2>
@@ -281,6 +308,23 @@ Jan Caha
 <li>úprava kódu do standardizovaného formátu</li>
 <li>úprava importů</li>
 </ul>
+<p>Příklad:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># před formátováním</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># po formátování</span></span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb4-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="black-a-isort" class="slide level2">
 <h2><span class="software">black</span> a <span class="software">isort</span></h2>
@@ -300,61 +344,61 @@ Jan Caha
 </section>
 <section id="konfigurace-v-vs-code-v-settings.json" class="slide level2">
 <h2>Konfigurace v <span class="software">VS Code</span> v <code>settings.json</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="er">"flake8.args":</span> <span class="ot">[</span></span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--max-line-length"</span><span class="ot">,</span></span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"160"</span></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span><span class="er">,</span></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="er">"pylint.args":</span> <span class="ot">[</span></span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--disable=E0611"</span><span class="ot">,</span></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--max-line-length=160"</span></span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span><span class="er">,</span></span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a><span class="er">"isort.args":</span> <span class="ot">[</span></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--profile"</span><span class="ot">,</span></span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"black"</span><span class="ot">,</span></span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--line-width"</span><span class="ot">,</span></span>
-<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"120"</span></span>
-<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span><span class="er">,</span></span>
-<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a><span class="er">"black-formatter.args":</span> <span class="ot">[</span></span>
-<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--line-length"</span><span class="ot">,</span></span>
-<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"120"</span></span>
-<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="er">"flake8.args":</span> <span class="ot">[</span></span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--max-line-length"</span><span class="ot">,</span></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"160"</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span><span class="er">,</span></span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a><span class="er">"pylint.args":</span> <span class="ot">[</span></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--disable=E0611"</span><span class="ot">,</span></span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--max-line-length=160"</span></span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span><span class="er">,</span></span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a><span class="er">"isort.args":</span> <span class="ot">[</span></span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--profile"</span><span class="ot">,</span></span>
+<span id="cb5-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"black"</span><span class="ot">,</span></span>
+<span id="cb5-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--line-width"</span><span class="ot">,</span></span>
+<span id="cb5-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"120"</span></span>
+<span id="cb5-14"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span><span class="er">,</span></span>
+<span id="cb5-15"><a aria-hidden="true" tabindex="-1"></a><span class="er">"black-formatter.args":</span> <span class="ot">[</span></span>
+<span id="cb5-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"--line-length"</span><span class="ot">,</span></span>
+<span id="cb5-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"120"</span></span>
+<span id="cb5-18"><a aria-hidden="true" tabindex="-1"></a><span class="ot">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="konfigurace-v-pyproject.toml" class="slide level2">
 <h2>Konfigurace v <code>pyproject.toml</code></h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.flake8]</span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">exclude</span> <span class="op">=</span> <span class="op">[</span><span class="st">".git"</span><span class="op">,</span> <span class="st">"__pycache__"</span><span class="op">,</span> <span class="st">"tests/*"</span><span class="op">]</span></span>
-<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
-<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">ignore</span> <span class="op">=</span> <span class="st">"W293,W504"</span></span>
-<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.pylint.format]</span></span>
-<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
-<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.pylint.messages_control]</span></span>
-<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a><span class="dt">disable</span> <span class="op">=</span> <span class="op">[</span></span>
-<span id="cb3-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"redefined-outer-name"</span><span class="op">,</span></span>
-<span id="cb3-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"no-name-in-module"</span><span class="op">,</span></span>
-<span id="cb3-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"missing-function-docstring"</span><span class="op">,</span></span>
-<span id="cb3-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"missing-module-docstring"</span><span class="op">,</span></span>
-<span id="cb3-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"missing-class-docstring"</span><span class="op">,</span></span>
-<span id="cb3-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"invalid-name"</span><span class="op">,</span></span>
-<span id="cb3-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"too-many-arguments"</span><span class="op">,</span></span>
-<span id="cb3-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"attribute-defined-outside-init"</span><span class="op">,</span></span>
-<span id="cb3-19"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
-<span id="cb3-20"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.mypy]</span></span>
-<span id="cb3-22"><a aria-hidden="true" tabindex="-1"></a><span class="dt">follow_imports</span> <span class="op">=</span> <span class="st">"silent"</span></span>
-<span id="cb3-23"><a aria-hidden="true" tabindex="-1"></a><span class="dt">ignore_missing_imports</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb3-24"><a aria-hidden="true" tabindex="-1"></a><span class="dt">show_column_numbers</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb3-25"><a aria-hidden="true" tabindex="-1"></a><span class="dt">no_pretty</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb3-26"><a aria-hidden="true" tabindex="-1"></a><span class="dt">no_strict_optional</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb3-27"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-28"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.black]</span></span>
-<span id="cb3-29"><a aria-hidden="true" tabindex="-1"></a><span class="dt">line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
-<span id="cb3-30"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-31"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.isort]</span></span>
-<span id="cb3-32"><a aria-hidden="true" tabindex="-1"></a><span class="dt">profile</span> <span class="op">=</span> <span class="st">"black"</span></span>
-<span id="cb3-33"><a aria-hidden="true" tabindex="-1"></a><span class="dt">line_length</span> <span class="op">=</span> <span class="dv">120</span></span>
-<span id="cb3-34"><a aria-hidden="true" tabindex="-1"></a><span class="dt">skip_gitignore</span> <span class="op">=</span> <span class="cn">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.flake8]</span></span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">exclude</span> <span class="op">=</span> <span class="op">[</span><span class="st">".git"</span><span class="op">,</span> <span class="st">"__pycache__"</span><span class="op">,</span> <span class="st">"tests/*"</span><span class="op">]</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">ignore</span> <span class="op">=</span> <span class="st">"W293,W504"</span></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.pylint.format]</span></span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="dt">max-line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.pylint.messages_control]</span></span>
+<span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a><span class="dt">disable</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"redefined-outer-name"</span><span class="op">,</span></span>
+<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"no-name-in-module"</span><span class="op">,</span></span>
+<span id="cb6-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"missing-function-docstring"</span><span class="op">,</span></span>
+<span id="cb6-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"missing-module-docstring"</span><span class="op">,</span></span>
+<span id="cb6-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"missing-class-docstring"</span><span class="op">,</span></span>
+<span id="cb6-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"invalid-name"</span><span class="op">,</span></span>
+<span id="cb6-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"too-many-arguments"</span><span class="op">,</span></span>
+<span id="cb6-18"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"attribute-defined-outside-init"</span><span class="op">,</span></span>
+<span id="cb6-19"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb6-20"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.mypy]</span></span>
+<span id="cb6-22"><a aria-hidden="true" tabindex="-1"></a><span class="dt">follow_imports</span> <span class="op">=</span> <span class="st">"silent"</span></span>
+<span id="cb6-23"><a aria-hidden="true" tabindex="-1"></a><span class="dt">ignore_missing_imports</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb6-24"><a aria-hidden="true" tabindex="-1"></a><span class="dt">show_column_numbers</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb6-25"><a aria-hidden="true" tabindex="-1"></a><span class="dt">no_pretty</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb6-26"><a aria-hidden="true" tabindex="-1"></a><span class="dt">no_strict_optional</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb6-27"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.black]</span></span>
+<span id="cb6-29"><a aria-hidden="true" tabindex="-1"></a><span class="dt">line-length</span> <span class="op">=</span> <span class="dv">120</span></span>
+<span id="cb6-30"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[tool.isort]</span></span>
+<span id="cb6-32"><a aria-hidden="true" tabindex="-1"></a><span class="dt">profile</span> <span class="op">=</span> <span class="st">"black"</span></span>
+<span id="cb6-33"><a aria-hidden="true" tabindex="-1"></a><span class="dt">line_length</span> <span class="op">=</span> <span class="dv">120</span></span>
+<span id="cb6-34"><a aria-hidden="true" tabindex="-1"></a><span class="dt">skip_gitignore</span> <span class="op">=</span> <span class="cn">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
