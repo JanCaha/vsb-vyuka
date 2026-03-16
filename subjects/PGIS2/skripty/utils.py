@@ -1,8 +1,8 @@
 import os
 import types
-import typing
 import warnings
 from pathlib import Path
+from typing import Optional, Type, Union
 
 from osgeo import gdal, ogr
 
@@ -55,12 +55,12 @@ class LayerContextManager:
     def __init__(
         self,
         path: Path,
-        layer: typing.Optional[typing.Union[int, str]] = None,
+        layer: Optional[Union[int, str]] = None,
     ):
         self.path = path
         self.selected_layer = layer
-        self.ds: gdal.Dataset = None
-        self.layer: ogr.Layer = None
+        self.ds: Optional[gdal.Dataset] = None
+        self.layer: Optional[ogr.Layer] = None
 
     def __enter__(self) -> ogr.Layer:
         self.ds = gdal.OpenEx(self.path)
@@ -79,9 +79,9 @@ class LayerContextManager:
 
     def __exit__(
         self,
-        exc_type: typing.Optional[typing.Type[BaseException]],
-        exc_val: typing.Optional[BaseException],
-        exc_tb: typing.Optional[types.TracebackType],
+        exc_type: Optional[Type[BaseException]],
+        exc_val: Optional[BaseException],
+        exc_tb: Optional[types.TracebackType],
     ):
         self.layer = None
         self.ds = None
@@ -93,11 +93,11 @@ class LayerFromDatasetContextManager:
     def __init__(
         self,
         ds: gdal.Dataset,
-        layer: typing.Optional[typing.Union[int, str]] = None,
+        layer: Optional[Union[int, str]] = None,
     ):
         self.selected_layer = layer
         self.ds: gdal.Dataset = ds
-        self.layer: ogr.Layer = None
+        self.layer: Optional[ogr.Layer] = None
 
     def __enter__(self) -> ogr.Layer:
         if isinstance(self.selected_layer, int):
@@ -113,9 +113,9 @@ class LayerFromDatasetContextManager:
 
     def __exit__(
         self,
-        exc_type: typing.Optional[typing.Type[BaseException]],
-        exc_val: typing.Optional[BaseException],
-        exc_tb: typing.Optional[types.TracebackType],
+        exc_type: Optional[Type[BaseException]],
+        exc_val: Optional[BaseException],
+        exc_tb: Optional[types.TracebackType],
     ):
         self.layer = None
 
@@ -126,7 +126,7 @@ class BandAsArrayContextManager:
     def __init__(self, ds: gdal.Dataset, band_number: int = 1):
         self.band_number = band_number
         self.ds: gdal.Dataset = ds
-        self.band: gdal.Band = None
+        self.band: Optional[gdal.Band] = None
 
     def __enter__(self) -> gdal.Band:
 
@@ -139,8 +139,8 @@ class BandAsArrayContextManager:
 
     def __exit__(
         self,
-        exc_type: typing.Optional[typing.Type[BaseException]],
-        exc_val: typing.Optional[BaseException],
-        exc_tb: typing.Optional[types.TracebackType],
+        exc_type: Optional[Type[BaseException]],
+        exc_val: Optional[BaseException],
+        exc_tb: Optional[types.TracebackType],
     ):
         self.band = None
