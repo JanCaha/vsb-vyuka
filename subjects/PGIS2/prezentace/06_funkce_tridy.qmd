@@ -23,7 +23,7 @@ year: 2026
 - objektový přístup - **objekty**, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)
 - není problém s kombinací, viz cvičení ([GDAL/OGR]{.software} má objekty, my si k nim píšeme funkce)
 
-### Příklad kombinace přístupů
+## Příklad kombinace přístupů
 
 ```{python}
 class Point:
@@ -47,7 +47,7 @@ print(distance_from_origin(point))
 - délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)
 - snaha navrhovat funkce spíše obecně než specificky
 
-### Příklad
+## Příklad
 
 ```{python}
 def celsius_to_fahrenheit(celsius: float) -> float:
@@ -59,7 +59,7 @@ print(celsius_to_fahrenheit(20))
 
 ## Funkce příklad
 
-```{python}
+```python
 def fn(a: str, b: int, c: float = 0.5) -> float: ...
 ```
 
@@ -78,7 +78,7 @@ Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hod
 
 ## Funkce obecná {{< fa times >}} specifická
   
-```{python}
+```python
 # specifické
 def vynasob_dvema(a: float) -> float:
     return a * 2
@@ -94,7 +94,7 @@ def vynasob(a: float, b: float) -> float:
 - funkce `partial` z modulu `functools`
 - vytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné
 
-```{python}
+```python
 from functools import partial
 
 # zadáme funkci a potom parametr(y) které chceme předdefinovat
@@ -109,7 +109,7 @@ hodnota = multiply_hodnotu_dvema(3)
 - metody, vlastnosti (property) a atributy
 - složitost se může různit
 
-### Příklad
+## Objekty - příklad
 
 ```{python}
 class Point:
@@ -134,7 +134,7 @@ class Point:
 - magické metody objektů (např. `__init__`, `__str__`, `__add__`, `__eq__` a další) a jejich použití
 - atribut může být statický (přímo uložená hodnota objektu) nebo dynamický přes vlastnost s dekorátorem `@property`
 
-### Příklad
+## Objekt - příklad `property`
 
 ```{python}
 class Circle:
@@ -156,7 +156,7 @@ print(f"Plocha kruhu: {circle.area}")
 - metody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy `self`
 - metody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy, označují se dekorátorem `@staticmethod`
 
-### Příklad
+## Objekt - příklad statické metody
 
 ```{python}
 class TextUtils:
@@ -273,6 +273,7 @@ print(f"Obsah: {rect.area()}")
 print(f"Obvod: {rect.perimeter()}")
 # Rectangle je zároveň i Polygon
 print(f"Je polygon: {isinstance(rect, Polygon)}")
+print(f"Je obdélník: {isinstance(rect, Rectangle)}")
 ```
 
 ## Docstringy
@@ -283,7 +284,7 @@ print(f"Je polygon: {isinstance(rect, Polygon)}")
 - IDE je zobrazuje jako nápovědu při najetí myší
 - extenze [autoDocstring]{.software} ve [VS Code]{.software} generuje šablonu
 
-### Příklad
+## Docstring - příklad
 
 ```{python}
 def rectangle_area(width: float, height: float) -> float:

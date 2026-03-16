@@ -12,7 +12,7 @@ year: 2026
 - a další
 - balíčky a extenze pro [VSCode]{.software} ale i pro [PyCharm]{.software} a další IDE
 
-## Chyby kontrol kódu
+## Chyby při kontrole kódu
 
 - nemusí se jednat o chyby, které by vyvolaly chybu při běhu programu/skriptu
 - ale o chyby, které by mohly vést k chybám
@@ -22,37 +22,36 @@ year: 2026
 - je vhodné se těmto chybám vyhnout a předcházet jim 
 - ve [VS Code]{.software} se tyto chyby zobrazují jako podtržení kódu (v různých barvách, dle vážnosti a typu chyby)
 
-Příklad:
+## Chyby v kódu
+
+- překlep v proměněné, který způsobí chybu při běhu programu, ale editor ho může odhalit už při psaní kódu
+- zvýrazní neznámou proměnnou
 
 ```python
-# | eval: false
 def area(width: float, height: float) -> float:
     return width * heigth
 ```
 
-Editor zvýrazní překlep `heigth`, i když se soubor zatím nespouští.
+- editor zvýrazní překlep `heigth`, i když se soubor zatím nespouští.
 
 ## [pep8]{.software}
 
 - kontroly stylu kódu proti **PEP 8**
 - neprovádí logickou kontrolu kódu
 - mezery v kódu, délka řádků, pojmenování proměnných, atd.
-
-Příklad: `myFunctionName` je v Pythonu méně vhodné, doporučené je `my_function_name`. [pep8]{.software} upozorní na nesprávný styl pojmenování.
+- příklad: `myFunctionName` je v Pythonu méně vhodné, doporučené je `my_function_name`. [pep8]{.software} upozorní na nesprávný styl pojmenování
 
 ## [flake8]{.software}
 
 - kontrola stylu kódu i možných chyb
 - kontrola přehnané komplexity kódu
-
-Příklad: importujete `numpy as np`, ale v souboru ho nikde nepoužijete. [flake8]{.software} nahlásí nevyužitý import.
+- příklad: `import numpy as np`, ale v souboru ho nikde nepoužijete. [flake8]{.software} nahlásí nevyužitý import
 
 ## [pylint]{.software}
 - kontrola stylu kódu i možných chyb
 - vynucuje kódovací standardy, hledá i příklady špatné praxe
 - nejkomplexnější kontrola kódu, s detailním hodnocením a reporty
-
-Příklad: Funkce má 12 argumentů a více vnořených podmínek. [pylint]{.software} upozorní na horší čitelnost a navrhne refaktoring.
+- příklad: funkce má 12 argumentů a více vnořených podmínek. [pylint]{.software} upozorní na horší čitelnost a navrhne refaktoring
 
 ## MyPy
 
@@ -60,12 +59,11 @@ Příklad: Funkce má 12 argumentů a více vnořených podmínek. [pylint]{.sof
 - někdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce `typing.cast()`
 
 ```python
-# | eval: false
 from typing import Dict
 def fn() -> Dict[str, int]:
     return {"klíč": "hodnota"}  # chyba: hodnota není int
 ```
-[MyPy]{.software} odhalí chybu při kontrole typů.
+- [MyPy]{.software} odhalí chybu při kontrole typů
 
 ## MyPy - přetypování
 
@@ -95,15 +93,15 @@ assert isinstance(promenna, NovaTrida)
 - úprava kódu do standardizovaného formátu
 - úprava importů
 
-Příklad:
-
-```python
+```text
 # před formátováním
 import sys,os
 
-def add( a,b ):
+def add( a,b  ):
  return a+b
+```
 
+```python
 # po formátování
 import os
 import sys
