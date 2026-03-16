@@ -1,6 +1,9 @@
-# NOTE: v utils.py třída LayerContextManager !!!
+# NOTE: Ukázka použití kontextového manageru pro práci s vrstvou
+# v utils.py třída LayerContextManager !!!
 import utils
-from osgeo import osr
+from osgeo import gdal, osr
+
+gdal.UseExceptions()
 
 if __name__ == "__main__":
     data_path = utils.data_path("ne_10m_admin_0_countries.shp")
