@@ -1,3 +1,4 @@
+# NOTE: Ukázka nástroje VectorTranslate pro konverzi a úpravy dat, použití paměti pro uložení dat
 import utils
 from osgeo import gdal, ogr
 
@@ -8,10 +9,10 @@ if __name__ == "__main__":
 
     print(f"Soubor existuje: {file.exists()}")
 
-    ds: gdal.Dataset = gdal.OpenEx(file.as_posix())
+    ds: gdal.Dataset = gdal.OpenEx(file)
 
     options = gdal.VectorTranslateOptions(
-        format="Memory",  # memory formát bez specifického typu uložení, existuje pouze v RAM
+        format="MEM",  # memory formát bez specifického typu uložení, existuje pouze v RAM
         dstSRS="EPSG:3857",  # výstupní souřadnicový systém - konverze
         layerName="ne_10m_admin_0_countries",  # název vrstvy - není povinný, pokud existuje pouze jedna vrstva nebo chceme-li všechny
         spatFilter=(0, 35, 20, 50),  # min_x, min_y, max_x, max_y - velice přibližně střední Evropa

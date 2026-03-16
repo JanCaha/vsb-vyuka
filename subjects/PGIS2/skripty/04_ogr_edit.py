@@ -1,3 +1,4 @@
+# NOTE: Ukázka uložení dat do paměti (s formátem i bez formátu) a modifikace dat v paměti
 import utils
 from osgeo import gdal, ogr
 
@@ -10,7 +11,7 @@ def use_memory_driver() -> None:
     path_data = utils.data_path("ne_10m_admin_0_countries.shp")
     path_result_file = utils.save_data_path("data.gpkg")
 
-    params = gdal.VectorTranslateOptions(format="Memory", dstSRS="EPSG:3857")
+    params = gdal.VectorTranslateOptions(format="MEM", dstSRS="EPSG:3857")
 
     # NOTE: pokud se hodnota této proměnné změní, pak už se nebude možné dostat k datům !!!
     ds: gdal.Dataset = gdal.VectorTranslate("", path_data, options=params)

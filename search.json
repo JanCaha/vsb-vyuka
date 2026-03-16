@@ -301,7 +301,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n\n\n2026-03-09\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nFunkce v souboru utils\n\n\n\n\n\n\n2026-03-09\n\n\nNastavení VS Code projektu\n\n\n\n\n\n\n2025-03-17\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n\n\n2025-04-07\n\n\nUkázka tvorby objektu\n\n\n\n\n\n\n2025-04-14\n\n\nPandas - ukázky\n\n\n\n\n\n\n2025-04-14\n\n\nPolars - ukázky\n\n\n\n\n\n\n2025-04-14\n\n\nGeoPandas - prostorové operace a vizualizace\n\n\n\n\n\n\n2025-04-28\n\n\nNotebook + grafy\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelný program s argumenty\n\n\n\n\n\n\n2024-04-07\n\n\nZkušební python balíček\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n\n\n2026-03-09\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nFunkce v souboru utils\n\n\n\n\n\n\n2026-03-09\n\n\nNastavení VS Code projektu\n\n\n\n\n\n\n2026-03-16\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n\n\n2025-03-25\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n\n\n2025-03-31\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n\n\n2025-04-07\n\n\nUkázka tvorby objektu\n\n\n\n\n\n\n2025-04-14\n\n\nPandas - ukázky\n\n\n\n\n\n\n2025-04-14\n\n\nPolars - ukázky\n\n\n\n\n\n\n2025-04-14\n\n\nGeoPandas - prostorové operace a vizualizace\n\n\n\n\n\n\n2025-04-28\n\n\nNotebook + grafy\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelný program s argumenty\n\n\n\n\n\n\n2024-04-07\n\n\nZkušební python balíček\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1062,56 +1062,91 @@
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#python",
     "title": "Funkce a třídy",
     "section": "Python",
-    "text": "Python\n\npro běžné použití kombinujeme obvykle procedurální a objektový přístup\nprocedurální přístup - funkce, které mají parametry\nobjektový přístup - objekty, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)\nnení problém s kombinací, viz cvičení (GDAL/OGR má objekty, my si k nim píšeme funkce)\n\nPříklad kombinace přístupů\n\nclass Point:\n    def __init__(self, x: float, y: float):\n        self.x = x\n        self.y = y\n\n\ndef distance_from_origin(point: Point) -&gt; float:\n    return (point.x**2 + point.y**2) ** 0.5\n\n\npoint = Point(3, 4)\nprint(distance_from_origin(point))\n\n5.0"
+    "text": "Python\n\npro běžné použití kombinujeme obvykle procedurální a objektový přístup\nprocedurální přístup - funkce, které mají parametry\nobjektový přístup - objekty, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)\nnení problém s kombinací, viz cvičení (GDAL/OGR má objekty, my si k nim píšeme funkce)"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#příklad-kombinace-přístupů",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#příklad-kombinace-přístupů",
+    "title": "Funkce a třídy",
+    "section": "Příklad kombinace přístupů",
+    "text": "Příklad kombinace přístupů\n\nclass Point:\n    def __init__(self, x: float, y: float):\n        self.x = x\n        self.y = y\n\n\ndef distance_from_origin(point: Point) -&gt; float:\n    return (point.x**2 + point.y**2) ** 0.5\n\n\npoint = Point(3, 4)\nprint(distance_from_origin(point))\n\n5.0"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce",
     "title": "Funkce a třídy",
     "section": "Funkce",
-    "text": "Funkce\n\ndělí kód na dílčí logické bloky, které mohou být znovu použitelné\nměly by dělat jednu věc a pouze jednu věc\ndélka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)\nsnaha navrhovat funkce spíše obecně než specificky\n\nPříklad\n\ndef celsius_to_fahrenheit(celsius: float) -&gt; float:\n    return celsius * 9 / 5 + 32\n\n\nprint(celsius_to_fahrenheit(20))\n\n68.0"
+    "text": "Funkce\n\ndělí kód na dílčí logické bloky, které mohou být znovu použitelné\nměly by dělat jednu věc a pouze jednu věc\ndélka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)\nsnaha navrhovat funkce spíše obecně než specificky"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#příklad",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#příklad",
+    "title": "Funkce a třídy",
+    "section": "Příklad",
+    "text": "Příklad\n\ndef celsius_to_fahrenheit(celsius: float) -&gt; float:\n    return celsius * 9 / 5 + 32\n\n\nprint(celsius_to_fahrenheit(20))\n\n68.0"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-příklad",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-příklad",
     "title": "Funkce a třídy",
     "section": "Funkce příklad",
-    "text": "Funkce příklad\n\ndef fn(a: str, b: int, c: float = 0.5) -&gt; float: ...\n\n\nfunkce se třemi proměnnými\n\nprvní dvě povinné\ntřetí nepovinná s výchozí hodnotou\n\n\n\n\n\n\n\n\nPozor\n\n\nProměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou  funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.\n\n\n\n\nfunkce vrací float\nmohou existovat funkce bez návratové hodnoty None\nnezapomínat na typování parametrů a návratové hodnoty"
+    "text": "Funkce příklad\ndef fn(a: str, b: int, c: float = 0.5) -&gt; float: ...\n\nfunkce se třemi proměnnými\n\nprvní dvě povinné\ntřetí nepovinná s výchozí hodnotou\n\n\n\n\n\n\n\n\nPozor\n\n\nProměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou  funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.\n\n\n\n\nfunkce vrací float\nmohou existovat funkce bez návratové hodnoty None\nnezapomínat na typování parametrů a návratové hodnoty"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-specifická",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-specifická",
     "title": "Funkce a třídy",
     "section": "Funkce obecná  specifická",
-    "text": "Funkce obecná  specifická\n\n# specifické\ndef vynasob_dvema(a: float) -&gt; float:\n    return a * 2\n\n\n# obecné\ndef vynasob(a: float, b: float) -&gt; float:\n    return a * b"
+    "text": "Funkce obecná  specifická\n# specifické\ndef vynasob_dvema(a: float) -&gt; float:\n    return a * 2\n\n\n# obecné\ndef vynasob(a: float, b: float) -&gt; float:\n    return a * b"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#tvorba-upravené-funkce-předefinování-parametrů",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#tvorba-upravené-funkce-předefinování-parametrů",
     "title": "Funkce a třídy",
     "section": "Tvorba upravené funkce (předefinování parametrů)",
-    "text": "Tvorba upravené funkce (předefinování parametrů)\n\nfunkce partial z modulu functools\nvytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné\n\n\nfrom functools import partial\n\n# zadáme funkci a potom parametr(y) které chceme předdefinovat\nmultiply_hodnotu_dvema = partial(vynasob, b=2)\nhodnota = multiply_hodnotu_dvema(3)"
+    "text": "Tvorba upravené funkce (předefinování parametrů)\n\nfunkce partial z modulu functools\nvytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné\n\nfrom functools import partial\n\n# zadáme funkci a potom parametr(y) které chceme předdefinovat\nmultiply_hodnotu_dvema = partial(vynasob, b=2)\nhodnota = multiply_hodnotu_dvema(3)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty",
     "title": "Funkce a třídy",
     "section": "Objekty",
-    "text": "Objekty\n\ntřída je šablona objektu, jednotlivý objekt je pak instancí třídy\nobjekt je prvek, který má vlastní informace a se kterým můžeme vykonávat operace\nmetody, vlastnosti (property) a atributy\nsložitost se může různit\n\nPříklad\n\nclass Point:\n    def __init__(self, x: float, y: float):\n        self.x = x\n        self.y = y\n\n    def move_x(self, move_by: float) -&gt; None:\n        self.x = self.x + move_by\n\n    def move_y(self, move_by: float) -&gt; None:\n        self.y = self.y + move_by\n\n    def __repr__(self) -&gt; str:\n        return f\"Bod na souřadnicích ({self.x, self.y})\""
+    "text": "Objekty\n\ntřída je šablona objektu, jednotlivý objekt je pak instancí třídy\nobjekt je prvek, který má vlastní informace a se kterým můžeme vykonávat operace\nmetody, vlastnosti (property) a atributy\nsložitost se může různit"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty---příklad",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty---příklad",
+    "title": "Funkce a třídy",
+    "section": "Objekty - příklad",
+    "text": "Objekty - příklad\n\nclass Point:\n    def __init__(self, x: float, y: float):\n        self.x = x\n        self.y = y\n\n    def move_x(self, move_by: float) -&gt; None:\n        self.x = self.x + move_by\n\n    def move_y(self, move_by: float) -&gt; None:\n        self.y = self.y + move_by\n\n    def __repr__(self) -&gt; str:\n        return f\"Bod na souřadnicích ({self.x, self.y})\""
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty-detaily",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekty-detaily",
     "title": "Funkce a třídy",
     "section": "Objekty detaily",
-    "text": "Objekty detaily\n\nprvní parametr metody je vždy self (označení instance objektu)\natributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvencí, soukromé atributy a metody začínají podtržítkem (např. _atribut), tyto metody a atributy nebudou nápovědy v IDE navrhovat a programátor by se měl ideálně jejich použití vyhnout\nmagické metody objektů (např. __init__, __str__, __add__, __eq__ a další) a jejich použití\natribut může být statický (přímo uložená hodnota objektu) nebo dynamický přes vlastnost s dekorátorem @property\n\nPříklad\n\nclass Circle:\n    def __init__(self, radius: float):\n        self.radius = radius\n\n    @property\n    def area(self) -&gt; float:\n        return 3.14159 * self.radius**2\n\n\ncircle = Circle(2)\nprint(f\"Průměr kruhu: {circle.radius}\")\nprint(f\"Plocha kruhu: {circle.area}\")\n\nPrůměr kruhu: 2\nPlocha kruhu: 12.56636"
+    "text": "Objekty detaily\n\nprvní parametr metody je vždy self (označení instance objektu)\natributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) – v Pythonu se to řeší konvencí, soukromé atributy a metody začínají podtržítkem (např. _atribut), tyto metody a atributy nebudou nápovědy v IDE navrhovat a programátor by se měl ideálně jejich použití vyhnout\nmagické metody objektů (např. __init__, __str__, __add__, __eq__ a další) a jejich použití\natribut může být statický (přímo uložená hodnota objektu) nebo dynamický přes vlastnost s dekorátorem @property"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad-property",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad-property",
+    "title": "Funkce a třídy",
+    "section": "Objekt - příklad property",
+    "text": "Objekt - příklad property\n\nclass Circle:\n    def __init__(self, radius: float):\n        self.radius = radius\n\n    @property\n    def area(self) -&gt; float:\n        return 3.14159 * self.radius**2\n\n\ncircle = Circle(2)\nprint(f\"Průměr kruhu: {circle.radius}\")\nprint(f\"Plocha kruhu: {circle.area}\")\n\nPrůměr kruhu: 2\nPlocha kruhu: 12.56636"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#metody-objektu",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#metody-objektu",
     "title": "Funkce a třídy",
     "section": "Metody objektu",
-    "text": "Metody objektu\n\nmetody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy self\nmetody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy, označují se dekorátorem @staticmethod\n\nPříklad\n\nclass TextUtils:\n    @staticmethod\n    def words_count(text: str) -&gt; int:\n        return len(text.split())\n\n\nprint(TextUtils.words_count(\"Python classes and functions\"))\n\n4"
+    "text": "Metody objektu\n\nmetody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy self\nmetody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy, označují se dekorátorem @staticmethod"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad-statické-metody",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad-statické-metody",
+    "title": "Funkce a třídy",
+    "section": "Objekt - příklad statické metody",
+    "text": "Objekt - příklad statické metody\n\nclass TextUtils:\n    @staticmethod\n    def words_count(text: str) -&gt; int:\n        return len(text.split())\n\n\nprint(TextUtils.words_count(\"Python classes and functions\"))\n\n4"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad",
@@ -1146,14 +1181,21 @@
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---použití",
     "title": "Funkce a třídy",
     "section": "Dědičnost - použití",
-    "text": "Dědičnost - použití\n\nrect = Rectangle(0, 0, 5, 3)\nprint(rect)\nprint(f\"Obsah: {rect.area()}\")\nprint(f\"Obvod: {rect.perimeter()}\")\n# Rectangle je zároveň i Polygon\nprint(f\"Je polygon: {isinstance(rect, Polygon)}\")\n\nObdélník 5x3, obálka: (0, 0, 5, 3)\nObsah: 15\nObvod: 16\nJe polygon: True"
+    "text": "Dědičnost - použití\n\nrect = Rectangle(0, 0, 5, 3)\nprint(rect)\nprint(f\"Obsah: {rect.area()}\")\nprint(f\"Obvod: {rect.perimeter()}\")\n# Rectangle je zároveň i Polygon\nprint(f\"Je polygon: {isinstance(rect, Polygon)}\")\nprint(f\"Je obdélník: {isinstance(rect, Rectangle)}\")\n\nObdélník 5x3, obálka: (0, 0, 5, 3)\nObsah: 15\nObvod: 16\nJe polygon: True\nJe obdélník: True"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstringy",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstringy",
     "title": "Funkce a třídy",
     "section": "Docstringy",
-    "text": "Docstringy\n\ndokumentační řetězce uvnitř funkcí, tříd a modulů\numístěny hned za definicí funkce/třídy jako první řádek\nslouží jako dokumentace, kterou lze programově číst (např. help(funkce))\nIDE je zobrazuje jako nápovědu při najetí myší\nextenze autoDocstring ve VS Code generuje šablonu\n\nPříklad\n\ndef rectangle_area(width: float, height: float) -&gt; float:\n    \"\"\"Return area of rectangle in square units.\"\"\"\n    return width * height\n\n\nprint(rectangle_area(5, 3))\nhelp(rectangle_area)\n\n15\nHelp on function rectangle_area in module __main__:\n\nrectangle_area(width: float, height: float) -&gt; float\n    Return area of rectangle in square units."
+    "text": "Docstringy\n\ndokumentační řetězce uvnitř funkcí, tříd a modulů\numístěny hned za definicí funkce/třídy jako první řádek\nslouží jako dokumentace, kterou lze programově číst (např. help(funkce))\nIDE je zobrazuje jako nápovědu při najetí myší\nextenze autoDocstring ve VS Code generuje šablonu"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstring---příklad",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstring---příklad",
+    "title": "Funkce a třídy",
+    "section": "Docstring - příklad",
+    "text": "Docstring - příklad\n\ndef rectangle_area(width: float, height: float) -&gt; float:\n    \"\"\"Return area of rectangle in square units.\"\"\"\n    return width * height\n\n\nprint(rectangle_area(5, 3))\nhelp(rectangle_area)\n\n15\nHelp on function rectangle_area in module __main__:\n\nrectangle_area(width: float, height: float) -&gt; float\n    Return area of rectangle in square units."
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_fiona_rasterio_shapely.html#typy-knihoven-pro-python",
@@ -1895,7 +1937,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.6977191 -0.2847841 -0.2893647 -1.0159632 -0.2864370"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.15239004 -0.59100818 -0.04458088 -0.50550204 -0.18654708"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2434,7 +2476,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f3c64b5ae40&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f5e741aae40&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -2661,39 +2703,46 @@
     "text": "Kontroly kódu\n\nkontrola syntaxe, dobré praxe, formátování\nkontrola kvality kódu\nkontrola typů\na další\nbalíčky a extenze pro VSCode ale i pro PyCharm a další IDE"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#chyby-kontrol-kódu",
-    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#chyby-kontrol-kódu",
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#chyby-při-kontrole-kódu",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#chyby-při-kontrole-kódu",
     "title": "Kontroly a formátování kódu",
-    "section": "Chyby kontrol kódu",
-    "text": "Chyby kontrol kódu\n\nnemusí se jednat o chyby, které by vyvolaly chybu při běhu programu/skriptu\nale o chyby, které by mohly vést k chybám\nnapř. špatné pojmenování proměnné, nevyužité proměnné, špatné formátování kódu\nšpatné typy proměnných\nšpatné použití funkcí\nje vhodné se těmto chybám vyhnout a předcházet jim\nve VS Code se tyto chyby zobrazují jako podtržení kódu (v různých barvách, dle vážnosti a typu chyby)\n\nPříklad:\n# | eval: false\ndef area(width: float, height: float) -&gt; float:\n    return width * heigth\nEditor zvýrazní překlep heigth, i když se soubor zatím nespouští."
+    "section": "Chyby při kontrole kódu",
+    "text": "Chyby při kontrole kódu\n\nnemusí se jednat o chyby, které by vyvolaly chybu při běhu programu/skriptu\nale o chyby, které by mohly vést k chybám\nnapř. špatné pojmenování proměnné, nevyužité proměnné, špatné formátování kódu\nšpatné typy proměnných\nšpatné použití funkcí\nje vhodné se těmto chybám vyhnout a předcházet jim\nve VS Code se tyto chyby zobrazují jako podtržení kódu (v různých barvách, dle vážnosti a typu chyby)"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#chyby-v-kódu",
+    "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#chyby-v-kódu",
+    "title": "Kontroly a formátování kódu",
+    "section": "Chyby v kódu",
+    "text": "Chyby v kódu\n\npřeklep v proměněné, který způsobí chybu při běhu programu, ale editor ho může odhalit už při psaní kódu\nzvýrazní neznámou proměnnou\n\ndef area(width: float, height: float) -&gt; float:\n    return width * heigth\n\neditor zvýrazní překlep heigth, i když se soubor zatím nespouští."
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#pep8",
     "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#pep8",
     "title": "Kontroly a formátování kódu",
     "section": "pep8",
-    "text": "pep8\n\nkontroly stylu kódu proti PEP 8\nneprovádí logickou kontrolu kódu\nmezery v kódu, délka řádků, pojmenování proměnných, atd.\n\nPříklad: myFunctionName je v Pythonu méně vhodné, doporučené je my_function_name. pep8 upozorní na nesprávný styl pojmenování."
+    "text": "pep8\n\nkontroly stylu kódu proti PEP 8\nneprovádí logickou kontrolu kódu\nmezery v kódu, délka řádků, pojmenování proměnných, atd.\npříklad: myFunctionName je v Pythonu méně vhodné, doporučené je my_function_name. pep8 upozorní na nesprávný styl pojmenování"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#flake8",
     "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#flake8",
     "title": "Kontroly a formátování kódu",
     "section": "flake8",
-    "text": "flake8\n\nkontrola stylu kódu i možných chyb\nkontrola přehnané komplexity kódu\n\nPříklad: importujete numpy as np, ale v souboru ho nikde nepoužijete. flake8 nahlásí nevyužitý import."
+    "text": "flake8\n\nkontrola stylu kódu i možných chyb\nkontrola přehnané komplexity kódu\npříklad: import numpy as np, ale v souboru ho nikde nepoužijete. flake8 nahlásí nevyužitý import"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#pylint",
     "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#pylint",
     "title": "Kontroly a formátování kódu",
     "section": "pylint",
-    "text": "pylint\n\nkontrola stylu kódu i možných chyb\nvynucuje kódovací standardy, hledá i příklady špatné praxe\nnejkomplexnější kontrola kódu, s detailním hodnocením a reporty\n\nPříklad: Funkce má 12 argumentů a více vnořených podmínek. pylint upozorní na horší čitelnost a navrhne refaktoring."
+    "text": "pylint\n\nkontrola stylu kódu i možných chyb\nvynucuje kódovací standardy, hledá i příklady špatné praxe\nnejkomplexnější kontrola kódu, s detailním hodnocením a reporty\npříklad: funkce má 12 argumentů a více vnořených podmínek. pylint upozorní na horší čitelnost a navrhne refaktoring"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy",
     "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy",
     "title": "Kontroly a formátování kódu",
     "section": "MyPy",
-    "text": "MyPy\n\nstatická kontrola typů proměnných u typovaného kódu\nněkdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce typing.cast()\n\n# | eval: false\nfrom typing import Dict\n\n\ndef fn() -&gt; Dict[str, int]:\n    return {\"klíč\": \"hodnota\"}  # chyba: hodnota není int\nMyPy odhalí chybu při kontrole typů."
+    "text": "MyPy\n\nstatická kontrola typů proměnných u typovaného kódu\nněkdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce typing.cast()\n\nfrom typing import Dict\n\n\ndef fn() -&gt; Dict[str, int]:\n    return {\"klíč\": \"hodnota\"}  # chyba: hodnota není int\n\nMyPy odhalí chybu při kontrole typů"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#mypy---přetypování",
@@ -2714,7 +2763,7 @@
     "href": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#formátování-kódu",
     "title": "Kontroly a formátování kódu",
     "section": "Formátování kódu",
-    "text": "Formátování kódu\n\núprava kódu do standardizovaného formátu\núprava importů\n\nPříklad:\n# před formátováním\nimport os\nimport sys\n\n\ndef add(a, b):\n    return a + b\n\n\n# po formátování\nimport os\nimport sys\n\n\ndef add(a, b):\n    return a + b"
+    "text": "Formátování kódu\n\núprava kódu do standardizovaného formátu\núprava importů\n\n# před formátováním\nimport sys,os\n\ndef add( a,b  ):\n return a+b\n# po formátování\nimport os\nimport sys\n\n\ndef add(a, b):\n    return a + b"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/05_kontroly_formatovani_kodu.html#black-a-isort",

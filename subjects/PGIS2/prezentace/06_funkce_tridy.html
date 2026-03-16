@@ -239,8 +239,10 @@ Jan Caha
 <li>objektový přístup - <strong>objekty</strong>, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)</li>
 <li>není problém s kombinací, viz cvičení (<span class="software">GDAL/OGR</span> má objekty, my si k nim píšeme funkce)</li>
 </ul>
-<h3 id="příklad-kombinace-přístupů">Příklad kombinace přístupů</h3>
-<div id="11e227a4" class="cell" data-execution_count="1">
+</section>
+<section id="příklad-kombinace-přístupů" class="slide level2">
+<h2>Příklad kombinace přístupů</h2>
+<div id="f09d6c9b" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x: <span class="bu">float</span>, y: <span class="bu">float</span>):</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
@@ -266,8 +268,10 @@ Jan Caha
 <li>délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)</li>
 <li>snaha navrhovat funkce spíše obecně než specificky</li>
 </ul>
-<h3 id="příklad">Příklad</h3>
-<div id="c4be1388" class="cell" data-execution_count="2">
+</section>
+<section id="příklad" class="slide level2">
+<h2>Příklad</h2>
+<div id="cebdb781" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius_to_fahrenheit(celsius: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> celsius <span class="op">*</span> <span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">32</span></span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -280,9 +284,7 @@ Jan Caha
 </section>
 <section id="funkce-příklad" class="slide level2">
 <h2>Funkce příklad</h2>
-<div id="70db5ec0" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fn(a: <span class="bu">str</span>, b: <span class="bu">int</span>, c: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.5</span>) <span class="op">-&gt;</span> <span class="bu">float</span>: ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>funkce se třemi proměnnými
 <ul>
@@ -311,8 +313,7 @@ Jan Caha
 </section>
 <section id="funkce-obecná-specifická" class="slide level2">
 <h2>Funkce obecná <i class="fa-solid fa-times" aria-label="times"></i> specifická</h2>
-<div id="6f88d896" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -320,7 +321,6 @@ Jan Caha
 <span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># obecné</span></span>
 <span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
 <section id="tvorba-upravené-funkce-předefinování-parametrů" class="slide level2">
 <h2>Tvorba upravené funkce (předefinování parametrů)</h2>
@@ -328,13 +328,11 @@ Jan Caha
 <li>funkce <code>partial</code> z modulu <code>functools</code></li>
 <li>vytvoří novou funkci, která má některé parametry přednastavené a uloží ji do proměnné</li>
 </ul>
-<div id="b7059086" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
 <span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># zadáme funkci a potom parametr(y) které chceme předdefinovat</span></span>
 <span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>multiply_hodnotu_dvema <span class="op">=</span> partial(vynasob, b<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>hodnota <span class="op">=</span> multiply_hodnotu_dvema(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
 </section>
 <section id="objekty" class="slide level2">
 <h2>Objekty</h2>
@@ -344,8 +342,10 @@ Jan Caha
 <li>metody, vlastnosti (property) a atributy</li>
 <li>složitost se může různit</li>
 </ul>
-<h3 id="příklad-1">Příklad</h3>
-<div id="95a6dbfb" class="cell" data-execution_count="6">
+</section>
+<section id="objekty---příklad" class="slide level2">
+<h2>Objekty - příklad</h2>
+<div id="39a9d345" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x: <span class="bu">float</span>, y: <span class="bu">float</span>):</span>
 <span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
@@ -369,8 +369,10 @@ Jan Caha
 <li>magické metody objektů (např. <code>__init__</code>, <code>__str__</code>, <code>__add__</code>, <code>__eq__</code> a další) a jejich použití</li>
 <li>atribut může být statický (přímo uložená hodnota objektu) nebo dynamický přes vlastnost s dekorátorem <code>@property</code></li>
 </ul>
-<h3 id="příklad-2">Příklad</h3>
-<div id="a728ad68" class="cell" data-execution_count="7">
+</section>
+<section id="objekt---příklad-property" class="slide level2">
+<h2>Objekt - příklad <code>property</code></h2>
+<div id="976aa30e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circle:</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, radius: <span class="bu">float</span>):</span>
 <span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.radius <span class="op">=</span> radius</span>
@@ -395,8 +397,10 @@ Plocha kruhu: 12.56636</code></pre>
 <li>metody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy <code>self</code></li>
 <li>metody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy, označují se dekorátorem <code>@staticmethod</code></li>
 </ul>
-<h3 id="příklad-3">Příklad</h3>
-<div id="f0c93757" class="cell" data-execution_count="8">
+</section>
+<section id="objekt---příklad-statické-metody" class="slide level2">
+<h2>Objekt - příklad statické metody</h2>
+<div id="ee59d730" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TextUtils:</span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
 <span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> words_count(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
@@ -411,7 +415,7 @@ Plocha kruhu: 12.56636</code></pre>
 </section>
 <section id="objekt---příklad" class="slide level2">
 <h2>Objekt - příklad</h2>
-<div id="6b9f3406" class="cell" data-execution_count="9">
+<div id="b0accb29" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> List, Tuple</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -461,7 +465,7 @@ Plocha kruhu: 12.56636</code></pre>
 </section>
 <section id="použití-objektu" class="slide level2">
 <h2>Použití objektu</h2>
-<div id="9b496162" class="cell" data-execution_count="10">
+<div id="bb438599" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>poly <span class="op">=</span> Polygon([(<span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="dv">1</span>), (<span class="fl">0.5</span>, <span class="fl">0.5</span>), (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">0</span>)])</span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(poly)</span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obvod: </span><span class="sc">{</span>poly<span class="sc">.</span>perimeter()<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -487,7 +491,7 @@ Je polygon uzavřený? True</code></pre>
 </section>
 <section id="dědičnost---příklad" class="slide level2">
 <h2>Dědičnost - příklad</h2>
-<div id="87103d30" class="cell" data-execution_count="11">
+<div id="0229231e" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle(Polygon):</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x: <span class="bu">float</span>, y: <span class="bu">float</span>, width: <span class="bu">float</span>, height: <span class="bu">float</span>):</span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># Vytvoří obdélník z levého dolního rohu (x, y)</span></span>
@@ -510,18 +514,20 @@ Je polygon uzavřený? True</code></pre>
 </section>
 <section id="dědičnost---použití" class="slide level2">
 <h2>Dědičnost - použití</h2>
-<div id="cd149f36" class="cell" data-execution_count="12">
+<div id="530fc723" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>rect <span class="op">=</span> Rectangle(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">3</span>)</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rect)</span>
 <span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obsah: </span><span class="sc">{</span>rect<span class="sc">.</span>area()<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obvod: </span><span class="sc">{</span>rect<span class="sc">.</span>perimeter()<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Rectangle je zároveň i Polygon</span></span>
-<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je polygon: </span><span class="sc">{</span><span class="bu">isinstance</span>(rect, Polygon)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je polygon: </span><span class="sc">{</span><span class="bu">isinstance</span>(rect, Polygon)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je obdélník: </span><span class="sc">{</span><span class="bu">isinstance</span>(rect, Rectangle)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Obdélník 5x3, obálka: (0, 0, 5, 3)
 Obsah: 15
 Obvod: 16
-Je polygon: True</code></pre>
+Je polygon: True
+Je obdélník: True</code></pre>
 </div>
 </div>
 </section>
@@ -534,8 +540,10 @@ Je polygon: True</code></pre>
 <li>IDE je zobrazuje jako nápovědu při najetí myší</li>
 <li>extenze <span class="software">autoDocstring</span> ve <span class="software">VS Code</span> generuje šablonu</li>
 </ul>
-<h3 id="příklad-4">Příklad</h3>
-<div id="50f9bc36" class="cell" data-execution_count="13">
+</section>
+<section id="docstring---příklad" class="slide level2">
+<h2>Docstring - příklad</h2>
+<div id="eab383d0" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rectangle_area(width: <span class="bu">float</span>, height: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return area of rectangle in square units."""</span></span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> width <span class="op">*</span> height</span>
