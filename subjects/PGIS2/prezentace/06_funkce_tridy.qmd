@@ -1,7 +1,7 @@
 ---
 title: "Funkce a třídy"
-date: 2025-03-24
-year: 2025
+date: 2026-03-16
+year: 2026
 ---
 
 ## Programovací paradigmata
@@ -9,7 +9,7 @@ year: 2025
 - většina jazyků nestojí striktně na jednom paradigmatu, ale využívá jich vícero
   
 - **imperativní** (kód popisuje, co se bude dít)
-  - **procedurální programování** (procedury, které ze vzájemně volají)
+  - **procedurální programování** (procedury, které se vzájemně volají)
   - **objektové programování** (objekty - data a operace s nimi asociované)
   - většina jazyků - např. Python, R, C++ 
 - **deklarativní** (kód popisuje požadovaný výsledek)
@@ -23,12 +23,39 @@ year: 2025
 - objektový přístup - **objekty**, které mají metody (funkce asociované s objektem) a atributy (proměnné objektu)
 - není problém s kombinací, viz cvičení ([GDAL/OGR]{.software} má objekty, my si k nim píšeme funkce)
 
+### Příklad kombinace přístupů
+
+```{python}
+class Point:
+    def __init__(self, x: float, y: float):
+        self.x = x
+        self.y = y
+
+
+def distance_from_origin(point: Point) -> float:
+    return (point.x**2 + point.y**2) ** 0.5
+
+
+point = Point(3, 4)
+print(distance_from_origin(point))
+```
+
 ## Funkce
 
 - dělí kód na dílčí logické bloky, které mohou být znovu použitelné
 - měly by dělat jednu věc a pouze jednu věc
 - délka by neměla být velká (aby bylo možné tělo funkce logicky přečíst a pochopit)
 - snaha navrhovat funkce spíše obecně než specificky
+
+### Příklad
+
+```{python}
+def celsius_to_fahrenheit(celsius: float) -> float:
+    return celsius * 9 / 5 + 32
+
+
+print(celsius_to_fahrenheit(20))
+```
 
 ## Funkce příklad
 
@@ -45,7 +72,7 @@ def fn(a: str, b: int, c: float = 0.5) -> float: ...
 Proměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou {{< fa arrow-right >}} funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.
 :::
 
-- funkce vrací float
+- funkce vrací `float`
 - mohou existovat funkce bez návratové hodnoty `None`
 - nezapomínat na typování parametrů a návratové hodnoty
 
@@ -78,70 +105,126 @@ hodnota = multiply_hodnotu_dvema(3)
 ## Objekty
 
 - třída je šablona objektu, jednotlivý objekt je pak instancí třídy
-- objekt je prvek, které má vlastní informace a s kterými můžeme vykonávat operace
+- objekt je prvek, který má vlastní informace a se kterým můžeme vykonávat operace
 - metody, vlastnosti (property) a atributy
 - složitost se může různit
+
+### Příklad
+
+```{python}
+class Point:
+    def __init__(self, x: float, y: float):
+        self.x = x
+        self.y = y
+
+    def move_x(self, move_by: float) -> None:
+        self.x = self.x + move_by
+
+    def move_y(self, move_by: float) -> None:
+        self.y = self.y + move_by
+
+    def __repr__(self) -> str:
+        return f"Bod na souřadnicích ({self.x, self.y})"
+```
 
 ## Objekty detaily
 
 - první parametr metody je vždy `self` (označení instance objektu)
 - atributy i metody mohou být veřejné nebo soukromé (neměly by být přímo dostupné zvenčí třídy) -- v Pythonu se to řeší konvencí, soukromé atributy a metody začínají podtržítkem (např. `_atribut`), tyto metody a atributy nebudou nápovědy v IDE navrhovat a programátor by se měl ideálně jejich použití vyhnout
 - magické metody objektů (např. `__init__`, `__str__`, `__add__`, `__eq__` a další) a jejich použití
-- vlastnost (property), mohou být buď statické (přímo hodnota objektu) nebo dynamické (metoda s dekorátorem `@property`) 
+- atribut může být statický (přímo uložená hodnota objektu) nebo dynamický přes vlastnost s dekorátorem `@property`
+
+### Příklad
+
+```{python}
+class Circle:
+    def __init__(self, radius: float):
+        self.radius = radius
+
+    @property
+    def area(self) -> float:
+        return 3.14159 * self.radius**2
+
+
+circle = Circle(2)
+print(f"Průměr kruhu: {circle.radius}")
+print(f"Plocha kruhu: {circle.area}")
+```
 
 ## Metody objektu
 
 - metody objektu jsou funkce, které jsou součástí objektu, první parametr je vždy `self`
-- metody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy , označují se dekorátorem `@staticmethod`
+- metody mohou být i tzv. statické metody, které nemají přístup k atributům objektu, ale jsou součástí třídy, označují se dekorátorem `@staticmethod`
+
+### Příklad
+
+```{python}
+class TextUtils:
+    @staticmethod
+    def words_count(text: str) -> int:
+        return len(text.split())
+
+
+print(TextUtils.words_count("Python classes and functions"))
+```
 
 ## Objekt - příklad
 ```{python}
-class Zamestnanec:
-    def __init__(self, jmeno: str, hodinovy_plat: float):
-        self.jmeno = jmeno
-        self._hodinovy_plat = hodinovy_plat
-        self.uvazek = 1.0
+from typing import List, Tuple
 
-    def plat(self) -> float:
-        return self._hodinovy_plat
 
-    def nastav_plat(self, hodinovy_plat: float) -> None:
-        self._hodinovy_plat = hodinovy_plat
+class Polygon:
+    def __init__(self, vertices: List[Tuple[float, float]]):
+        self.vertices = vertices  # seznam vrcholů [(x1, y1), (x2, y2), ...]
 
-    def zvys_plat(self, navyseni_o: float) -> None:
-        self._hodinovy_plat += navyseni_o
+    def add_vertex(self, vertex: Tuple[float, float]) -> None:
+        """Přidá vrchol do polygonu."""
+        self.vertices.append(vertex)
 
-    def mesicni_plat(self, odpracovanych_hodin: float) -> float:
-        return self._hodinovy_plat * odpracovanych_hodin
+    def perimeter(self) -> float:
+        """Spočítá obvod polygonu."""
+        peri = 0.0
+        for i in range(len(self.vertices)):
+            next_index = i + 1 if i + 1 < len(self.vertices) else 0
+            x1, y1 = self.vertices[i]
+            x2, y2 = self.vertices[next_index]
+            peri += ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+        return peri
 
-    ## statická metoda, jedná se o ukázku, ale zde by mohla být i normální metoda
     @staticmethod
-    def delka_pracovniho_dne(uvazek: float = 1.0) -> float:
-        return 8 * uvazek
+    def is_closed(vertices: List[Tuple[float, float]]) -> bool:
+        """Vrací True, pokud je polygon uzavřený (první a poslední bod jsou stejné)."""
+        return vertices[0] == vertices[-1]
+
+    def close(self) -> None:
+        """Pokud není polygon uzavřený, uzavře se."""
+        if self.is_closed(self.vertices):
+            return
+        self.vertices.append(self.vertices[0])
 
     @property
-    def hodin_denne(self) -> float:
-        return self.delka_pracovniho_dne(self.uvazek)
+    def vertex_count(self) -> int:
+        return len(self.vertices)
 
     @property
-    def denni_plat(self) -> float:
-        return self._hodinovy_plat * self.hodin_denne
+    def bounds(self) -> Tuple[float, float, float, float]:
+        """Vrací obálku polygonu ve formátu(min_x, min_y, max_x, max_y)."""
+        x_values = [x for x, _ in self.vertices]
+        y_values = [y for _, y in self.vertices]
+        return min(x_values), min(y_values), max(x_values), max(y_values)
 
     def __repr__(self) -> str:
-        return f"Zamestnanec {self.jmeno} s platem {self._hodinovy_plat} za hodinu"
+        return f"Polygon s {self.vertex_count} vrcholy"
 ```
 
 ## Použití objektu
 
 ```{python}
-odpracovane_hodiny = 160
-zam = Zamestnanec("Testovaci Zamestnanec", 250)
-print(f"Denní plat: {zam.denni_plat}")
-zam.uvazek = 0.5
-print(f"Denní plat: {zam.denni_plat}")
-print(f"Plat: {zam.mesicni_plat(odpracovane_hodiny)}")
-zam.zvys_plat(50)
-print(f"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}")
+poly = Polygon([(0, 0), (1, 0), (1, 1), (0.5, 0.5), (0, 1), (0, 0)])
+print(poly)
+print(f"Obvod: {poly.perimeter()}")
+print(f"Počet vrcholů: {poly.vertex_count}")
+print(f"Je polygon uzavřený? {Polygon.is_closed(poly.vertices)}")
 ```
 
 ## Dědičnost
@@ -155,32 +238,41 @@ print(f"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}")
 ## Dědičnost - příklad
 
 ```{python}
-class Manazer(Zamestnanec):
-    def __init__(self, jmeno: str, hodinovy_plat: float, pocet_podrizenych: int):
-        # volání konstruktoru rodičovské třídy
-        super().__init__(jmeno, hodinovy_plat)
-        self.pocet_podrizenych = pocet_podrizenych
+class Rectangle(Polygon):
+    def __init__(self, x: float, y: float, width: float, height: float):
+        # Vytvoří obdélník z levého dolního rohu (x, y)
+        vertices = [
+            (x, y),
+            (x + width, y),
+            (x + width, y + height),
+            (x, y + height),
+            (x, y)
+        ]
+        super().__init__(vertices)
+        self.width = width
+        self.height = height
 
-    def bonus(self) -> float:
-        """Bonus za vedení týmu."""
-        return self.pocet_podrizenych * 500
+    def area(self) -> float:
+        """Vrací obsah obdélníku."""
+        return self.width * self.height
 
-    def mesicni_plat(self, odpracovanych_hodin: float) -> float:
-        """Přepsaná metoda - měsíční plat včetně bonusu."""
-        return super().mesicni_plat(odpracovanych_hodin) + self.bonus()
+    def perimeter(self) -> float:
+        """Přepsaná metoda - obvod obdélníku."""
+        return 2 * (self.width + self.height)
 
     def __repr__(self) -> str:
-        return f"Manažer {self.jmeno}, tým: {self.pocet_podrizenych}"
+        return f"Obdélník {self.width}x{self.height}, obálka: {self.bounds}"
 ```
 
 ## Dědičnost - použití
 
 ```{python}
-mng = Manazer("Vedoucí Projektu", 350, 5)
-print(mng)
-print(f"Měsíční plat: {mng.mesicni_plat(160)}")
-# Manazer je zároveň i Zamestnanec
-print(f"Je zaměstnanec: {isinstance(mng, Zamestnanec)}")
+rect = Rectangle(0, 0, 5, 3)
+print(rect)
+print(f"Obsah: {rect.area()}")
+print(f"Obvod: {rect.perimeter()}")
+# Rectangle je zároveň i Polygon
+print(f"Je polygon: {isinstance(rect, Polygon)}")
 ```
 
 ## Docstringy
@@ -190,6 +282,18 @@ print(f"Je zaměstnanec: {isinstance(mng, Zamestnanec)}")
 - slouží jako dokumentace, kterou lze programově číst (např. `help(funkce)`)
 - IDE je zobrazuje jako nápovědu při najetí myší
 - extenze [autoDocstring]{.software} ve [VS Code]{.software} generuje šablonu
+
+### Příklad
+
+```{python}
+def rectangle_area(width: float, height: float) -> float:
+    """Return area of rectangle in square units."""
+    return width * height
+
+
+print(rectangle_area(5, 3))
+help(rectangle_area)
+```
 
 
 # Dotazy? {.center}

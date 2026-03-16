@@ -1,7 +1,7 @@
 ---
 title: "Kontroly a formátování kódu"
-date: 2025-04-07 
-year: 2025
+date: 2026-03-16
+year: 2026
 ---
 
 ## Kontroly kódu
@@ -10,36 +10,27 @@ year: 2025
 - kontrola kvality kódu
 - kontrola typů
 - a další
-- balíčky a extenze pro [VSCode]{.software} ale i pro [PyCharm]{.software}
+- balíčky a extenze pro [VSCode]{.software} ale i pro [PyCharm]{.software} a další IDE
 
 ## Chyby kontrol kódu
 
-- nejedná se o chyby, které by vyvolaly chybu při běhu programu/skriptu
+- nemusí se jednat o chyby, které by vyvolaly chybu při běhu programu/skriptu
 - ale o chyby, které by mohly vést k chybám
 - např. špatné pojmenování proměnné, nevyužité proměnné, špatné formátování kódu
 - špatné typy proměnných
 - špatné použití funkcí
 - je vhodné se těmto chybám vyhnout a předcházet jim 
-- ve [VS Code]{.software} se tyto chyby zobrazují jako podtžení kódu (v různých barvách, dle vážnosti a typu chyby)
+- ve [VS Code]{.software} se tyto chyby zobrazují jako podtržení kódu (v různých barvách, dle vážnosti a typu chyby)
 
-## MyPy
-
-- kontrola typů proměnných u veškerého typovaného kódu 
-- někdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce `typing.cast()`
+Příklad:
 
 ```python
-import typing
-
-# přetypování proměnné
-promenna = typing.cast(NovaTrida, promenna)
-
-# za tímto kódem už je promměnná typu NovaTrida
-if isinstance(promenna, NovaTrida):
-    ...
-
-# za tímto kódem už je promměnná typu NovaTrida
-assert isinstance(promenna, NovaTrida)
+# | eval: false
+def area(width: float, height: float) -> float:
+    return width * heigth
 ```
+
+Editor zvýrazní překlep `heigth`, i když se soubor zatím nespouští.
 
 ## [pep8]{.software}
 
@@ -47,20 +38,80 @@ assert isinstance(promenna, NovaTrida)
 - neprovádí logickou kontrolu kódu
 - mezery v kódu, délka řádků, pojmenování proměnných, atd.
 
+Příklad: `myFunctionName` je v Pythonu méně vhodné, doporučené je `my_function_name`. [pep8]{.software} upozorní na nesprávný styl pojmenování.
+
 ## [flake8]{.software}
 
 - kontrola stylu kódu i možných chyb
 - kontrola přehnané komplexity kódu
+
+Příklad: importujete `numpy as np`, ale v souboru ho nikde nepoužijete. [flake8]{.software} nahlásí nevyužitý import.
 
 ## [pylint]{.software}
 - kontrola stylu kódu i možných chyb
 - vynucuje kódovací standardy, hledá i příklady špatné praxe
 - nejkomplexnější kontrola kódu, s detailním hodnocením a reporty
 
+Příklad: Funkce má 12 argumentů a více vnořených podmínek. [pylint]{.software} upozorní na horší čitelnost a navrhne refaktoring.
+
+## MyPy
+
+- statická kontrola typů proměnných u typovaného kódu
+- někdy je nutné explicitně přetypovat proměnné, což lze udělat pomocí funkce `typing.cast()`
+
+```python
+# | eval: false
+from typing import Dict
+def fn() -> Dict[str, int]:
+    return {"klíč": "hodnota"}  # chyba: hodnota není int
+```
+[MyPy]{.software} odhalí chybu při kontrole typů.
+
+## MyPy - přetypování
+
+- někdy vzniká neshoda mezi typy, které MyPy očekává, a typy, které jsou v kódu
+- obvykle se jedná o situace, kdy MyPy nedokáže správně určit typ proměnné, nebo když se typ proměnné mění v průběhu kódu
+- často v situacích, kdy se používají binding knihovny, které s typy pracují jinak než MyPy očekává 
+- nutné tzv. přetypování proměnné, kdy explicitně definujeme, jaký typ proměnná má
+
+## MyPy - přetypování - ukázka
+
+```python
+import typing
+
+# přetypování proměnné
+promenna = typing.cast(NovaTrida, promenna)
+
+# za tímto kódem už je proměnná typu NovaTrida
+if isinstance(promenna, NovaTrida):
+    ...
+
+# za tímto kódem už je proměnná typu NovaTrida
+assert isinstance(promenna, NovaTrida)
+```
+
 ## Formátování kódu
 
 - úprava kódu do standardizovaného formátu
 - úprava importů
+
+Příklad:
+
+```python
+# před formátováním
+import sys,os
+
+def add( a,b ):
+ return a+b
+
+# po formátování
+import os
+import sys
+
+
+def add(a, b):
+    return a + b
+```
 
 ## [black]{.software} a [isort]{.software}
 
@@ -73,6 +124,7 @@ assert isinstance(promenna, NovaTrida)
 
 - lze buď v nastavení [VS Code]{.software}
 - nebo v souboru `pyproject.toml`, který je v kořenovém adresáři projektu, kde nástroje nastavení načtou
+
 
 ## Konfigurace v [VS Code]{.software} v `settings.json`
 
