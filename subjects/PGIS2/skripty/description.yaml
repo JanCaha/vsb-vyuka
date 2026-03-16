@@ -25,8 +25,8 @@
   path: "PGIS2/skripty/04_ogr_edit.py"
 - title: "GDAL/OGR načtení rastrových dat"
   author: Jan Caha
-  date: 2025-03-17
-  year: 2025
+  date: 2026-03-16
+  year: 2026
   path: "PGIS2/skripty/05_gdal_raster.py"
 - title: "GDAL manipulace s rastrem"
   author: Jan Caha
