@@ -78,14 +78,15 @@ nazev_balicku/
 [project]
 name = "balicekpgis2"
 version = "0.1.0"
-description = ""
+description = "Testovací balíček pro předmět PGIS2"
 authors = [
-    {name = "autor", email = "email@email.com"}
+    {name = "autor", email = "autor@email.cz"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
-    "numpy>=2.2.4"
+    "gdal>=3.10.0",
+    "requests>=2.32.3"
 ]
 
 [build-system]
@@ -126,12 +127,24 @@ packages = ["src/nazev_balicku"]
 - využíváme `Path(__file__).parent` pro zjištění umístění aktuálního modulu
 
 ```python
-from pathlib import Path
+import pathlib
+
+# adresář s datovými soubory balíčku
+_DATA_DIR = pathlib.Path(__file__).parent / "data"
 
 
-def data_path(filename: str) -> Path:
+def data_file_path(filename: str) -> pathlib.Path:
     """Vrátí cestu k datovému souboru v balíčku."""
-    return Path(__file__).parent / "data" / filename
+    path = _DATA_DIR / filename
+    if not path.exists():
+        raise FileNotFoundError(f"Data file not found: {path}")
+    return path
+
+
+def read_text_file(filename: str) -> str:
+    """Načte obsah textového souboru z datového adresáře balíčku."""
+    path = data_file_path(filename)
+    return path.read_text(encoding="utf-8")
 ```
 
 ::: {.callout-warning}
@@ -190,46 +203,51 @@ uv build
 - balíček je možné nahrát na [PyPI]{.software} (Python Package Index) - veřejný repozitář balíčků
 - balíček je možné instalovat z `.whl` souboru pomocí `uv pip install nazev_balicku*.whl`
 
-## Použití - struktura
+## Použití - struktura balíčku
 
 ```default
 ─── src/
     └── nazev_balicku/
         └── __init__.py
-        └── modul_path.py
-        └── modul_gdal.py
+        └── py.typed
+        └── modul_a.py
+        └── modul_b.py
+        └── data/
+            └── soubor.txt
 ```
 
 ## Použití - import
 
 ```python
-from nazev_balicku.modul_path import fn_1  # konkrétní funkce
-from nazev_balicku.modul_path import *  # všechny funkce (nedoporučeno)
+from nazev_balicku.modul_a import fn_1  # konkrétní funkce
+from nazev_balicku.modul_b import MyClass  # konkrétní třída
 
-import nazev_balicku  # import celého balíčku
-nazev_balicku.modul_path.fn_1()  # použití funkce
+import nazev_balicku  # import celého balíčku (využívá __init__.py)
+nazev_balicku.fn_1()  # použití funkce
 ```
 
-## Použití - úprava `__init__.py`
+## Použití - `__init__.py`
 
-- z dílčích modulů importujeme funkce do `__init__.py`
-- tím je zpřístupníme i na úrovni balíčku
-- proměnná `__all__` v modulu definuje, co se exportuje při `import *`
-- uvnitř balíčku lze používat relativní importy (`from .modul import fn`)
-- příklad `__init__.py`
-  
+- z dílčích modulů importujeme třídy a funkce do `__init__.py`
+- tím je zpřístupníme přímo na úrovni balíčku
+- uvnitř balíčku používáme relativní importy (`from .modul import fn`)
+
 ```python
-from nazev_balicku.modul_path import *
-from nazev_balicku.modul_gdal import *
+# __init__.py
+from .modul_a import fn_1, fn_2
+from .modul_b import MyClass
 ```
 
-## Použití - po změně import
+## Použití - po úpravě `__init__.py`
 
-- `import nazev_balicku` - import celého balíčku a věcí z `__init__.py`
+- `import nazev_balicku` – zpřístupní vše z `__init__.py`
 
 ```python
-from nazev_balicku import fn_1 # funkce
-from nazev_balicku import * # všechny funkce
+from nazev_balicku import fn_1, MyClass
+
+# přímé použití bez specifikace modulu
+result = fn_1("vstup")
+obj = MyClass()
 ```
 
 ## [uv]{.software} {{< fa times >}} [poetry]{.software}
