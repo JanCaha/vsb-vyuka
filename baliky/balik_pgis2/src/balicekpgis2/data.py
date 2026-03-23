@@ -4,6 +4,9 @@ import zipfile
 import requests
 from balicekpgis2.paths import cache_file, extracted_folder
 
+# adresář s datovými soubory balíčku
+_DATA_DIR = pathlib.Path(__file__).parent / "data"
+
 # funkce, které nemají být veřejně dostupné a měly by být použity pouze v rámci tohoto modulu
 
 
@@ -67,3 +70,20 @@ def data_shaded_relief() -> pathlib.Path:
     """Stáhne a rozbalí soubor s reliéfním stínováním z Natural Earth."""
 
     return _get_data("https://naciscdn.org/naturalearth/50m/raster/", "NE1_50M_SR_W.zip", "NE1_50M_SR_W.tif")
+
+
+# funkce pro přístup k lokálním datovým souborům baleným s balíčkem
+
+
+def data_file_path(filename: str) -> pathlib.Path:
+    """Vrátí cestu k datovému souboru v balíčku."""
+    path = _DATA_DIR / filename
+    if not path.exists():
+        raise FileNotFoundError(f"Data file not found: {path}")
+    return path
+
+
+def read_text_file(filename: str) -> str:
+    """Načte obsah textového souboru z datového adresáře balíčku."""
+    path = data_file_path(filename)
+    return path.read_text(encoding="utf-8")
