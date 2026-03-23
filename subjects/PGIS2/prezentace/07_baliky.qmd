@@ -1,13 +1,13 @@
 ---
 title: "Python Balíčky"
-date: 2025-03-30
-year: 2025
+date: 2026-03-23
+year: 2026
 ---
 
 ## Modul
 
 - `.py` soubor s funkcemi, proměnnými či objekty 
-- proměnné modulu obvykle zapisujeme velkými písmeny např. `PI` či `DEFAULT_COLOR`
+- konstanty modulu obvykle zapisujeme velkými písmeny např. `PI` či `DEFAULT_COLOR`
 - např. soubor `utils.py` ze cvičení (a ukázek na webu) 
 - lze používat lokálně
 - stačí na jednoduché použití, pro větší projekty nedostačuje
@@ -42,17 +42,18 @@ my_package/
 
 ## Balíček - komplexnější
 
-- pokud chceme balíček i s nastavením závislostí, metadatay a testy, chceme obvykle komplexnější strukturu
-- doinstalujeme balík [poetry]{.software} do prostředí [conda]{.software}
-- [poetry]{.software}
-  - umožní postavit strukturu balíčku 
-  - management závislostí
-  - instalace
+- pokud chceme balíček i s nastavením závislostí, metadaty a testy, chceme obvykle komplexnější strukturu
+- použijeme nástroj [uv]{.software} – moderní a extrémně rychlý správce balíčků (napsaný v [Rustu]{.software}, od tvůrců [Ruff]{.software})
+- instalace: `conda install uv` nebo `pip install uv`
+- [uv]{.software}:
+  - vytvoření struktury balíčku
+  - správa závislostí
+  - sestavení a instalace
 
-## Balíček sestavený pomocí [poetry]{.software}
+## Balíček sestavený pomocí [uv]{.software}
 
 ```bash
-poetry new nazev_balicku
+uv init --lib nazev_balicku
 ```
 
 ```default
@@ -60,6 +61,7 @@ nazev_balicku/
 └── src/
     └── nazev_balicku/
         └── __init__.py
+        └── py.typed
 ├── tests
     └── __init__.py
 ├── pyproject.toml
@@ -70,6 +72,7 @@ nazev_balicku/
 
 - moderní způsob specifikace nastavení balíčku a nástrojů 
 - specifikace metadata balíčku - např. název, verze, autor, závislosti
+- standard **PEP 621** – nezávislý na konkrétním nástroji
 
 ```toml
 [project]
@@ -77,68 +80,115 @@ name = "balicekpgis2"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "autor",email = "email@email.com"}
+    {name = "autor", email = "email@email.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "numpy (>=2.2.4,<3.0.0)"
+    "numpy>=2.2.4"
 ]
 
-[tool.poetry]
-packages = [{include = "balicekpgis2", from = "src"}]
-
-
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 ```
 
 ## Přidání závislostí
 
-- závislosti - více typů (např. pro spuštění a vývoj)
-- parametr `--lock`, zabrání instalaci závislostí do virtualního prostředí (`venv`)
+- závislosti přidáváme přímo do `pyproject.toml` v sekci `dependencies`
+- nebo pomocí příkazu [uv]{.software}:
 
 ```bash
-poetry add GDAL --lock
-poetry add --group dev pytest black --lock
+uv add numpy
+uv add --dev pytest black
 ```
+
+::: {.callout-note}
+Protože používáme [Conda]{.software} pro správu prostředí (kvůli GDAL a dalším C závislostem), **nepoužíváme** `uv sync` – ten vytváří vlastní virtuální prostředí. Místo toho instalujeme do conda prostředí přímo.
+:::
 
 ## `pyproject.toml` úprava přidáním dat k balíčku
 
-- dvě varianty
+- pokud balíček obsahuje datové soubory (GeoPackage, TIF atd.), je nutné je explicitně zahrnout
 
 ```toml
-[tool.poetry]
-include = [
-    "src/nazev_balicku/data/*.tif",
-    "src/nazev_balicku/data/*.gpkg",
-]
+[tool.hatch.build.targets.wheel]
+packages = ["src/nazev_balicku"]
 
-[tool.poetry.package-data]
-"nazev_balicku.data" = ["*.tif", "*.gpkg"]
+[tool.hatch.build.targets.wheel.force-include]
+"src/nazev_balicku/data" = "nazev_balicku/data"
 ```
 
-## Instalace
+## Přístup k datům v balíčku
+
+- data přibalená k balíčku je nutné načítat relativně vůči umístění balíčku
+- **nikdy** nepoužívat absolutní cesty ani `Path.cwd()` – balíček může být nainstalovaný kdekoliv
+- využíváme `Path(__file__).parent` pro zjištění umístění aktuálního modulu
+
+```python
+from pathlib import Path
+
+
+def data_path(filename: str) -> Path:
+    """Vrátí cestu k datovému souboru v balíčku."""
+    return Path(__file__).parent / "data" / filename
+```
+
+::: {.callout-warning}
+### Pozor
+Cesty konstruované pomocí `Path.cwd()` nebo pevně zapsané cesty fungují pouze na vašem počítači. Balíček musí fungovat na jakémkoliv systému {{< fa arrow-right >}} proto vždy relativně vůči `__file__`.
+:::
+
+## Verzování balíčku
+
+- verze se řídí konvencí **Semantic Versioning** (`MAJOR.MINOR.PATCH`)
+  - `MAJOR` – nekompatibilní změny API (např. `1.0.0` {{< fa arrow-right >}} `2.0.0`)
+  - `MINOR` – nová funkcionalita, zpětně kompatibilní (např. `1.0.0` {{< fa arrow-right >}} `1.1.0`)
+  - `PATCH` – opravy chyb (např. `1.0.0` {{< fa arrow-right >}} `1.0.1`)
+- verze `0.x.y` signalizuje počáteční vývoj – API se může měnit
+- verze se uvádí v `pyproject.toml` v sekci `[project]`
+
+## Testování balíčku
+
+- složka `tests/` je součástí struktury balíčku
+- knihovna [pytest]{.software} – jednoduchý a rozšířený nástroj pro testování
+
+```python
+# tests/test_modul_path.py
+from nazev_balicku.modul_path import fn_1
+
+
+def test_fn_1_basic():
+    """Test základní funkcionality."""
+    result = fn_1("vstup")
+    assert result is not None
+    assert isinstance(result, str)
+```
+
+- spuštění: `pytest` (v aktivním conda prostředí)
+- testy ověřují, že kód funguje správně i po změnách
+
+## Instalace do conda prostředí
 
 ```bash
-poetry install 
+conda activate pgis2
+uv pip install -e .
 ```
 
-- instalace balíku
-- tzv. **interaktivní** instalace - změny v kódu se projeví se při příštím spuštění [Pythonu]{.software}
-- stejný výsledek dá i příkaz `pip install -e .`
+- tzv. **editovatelná** (interaktivní) instalace – změny v kódu se projeví při příštím spuštění [Pythonu]{.software}
+- parametr `-e` = editable, balíček se "odkazuje" na zdrojový kód místo kopírování
+- [uv pip]{.software} je výrazně rychlejší než běžný `pip`
 
 ## Sestavení pro instalaci jinde
 
 ```bash
-poetry build
+uv build
 ```
 
 - vznikne složka `dist/` s balíčkem
 - balíček je ve formátu `.tar.gz` a `.whl`
 - balíček je možné nahrát na [PyPI]{.software} (Python Package Index) - veřejný repozitář balíčků
-- balíček je možné instalovat z `whl` souboru pomocí `pip install nazev_balicku*.whl`
+- balíček je možné instalovat z `.whl` souboru pomocí `uv pip install nazev_balicku*.whl`
 
 ## Použití - struktura
 
@@ -153,17 +203,19 @@ poetry build
 ## Použití - import
 
 ```python
-from nazev_balicku.modul_path import fn_1 # funkce
-from nazev_balicku.modul_path import * # všechny funkce
+from nazev_balicku.modul_path import fn_1  # konkrétní funkce
+from nazev_balicku.modul_path import *  # všechny funkce (nedoporučeno)
 
-import nazev_balicku # import celého balíčku
-nazev_balicku.modul_path.fn_1() # použití funkce
+import nazev_balicku  # import celého balíčku
+nazev_balicku.modul_path.fn_1()  # použití funkce
 ```
 
 ## Použití - úprava `__init__.py`
 
 - z dílčích modulů importujeme funkce do `__init__.py`
 - tím je zpřístupníme i na úrovni balíčku
+- proměnná `__all__` v modulu definuje, co se exportuje při `import *`
+- uvnitř balíčku lze používat relativní importy (`from .modul import fn`)
 - příklad `__init__.py`
   
 ```python
@@ -180,11 +232,24 @@ from nazev_balicku import fn_1 # funkce
 from nazev_balicku import * # všechny funkce
 ```
 
+## [uv]{.software} {{< fa times >}} [poetry]{.software}
+
+| | [uv]{.software} | [poetry]{.software} |
+|---|---|---|
+| Rychlost | Extrémně rychlý (Rust) | Pomalý (Python) |
+| `pyproject.toml` | Standardní PEP 621 | Proprietární sekce `[tool.poetry]` |
+| Build backend | Libovolný (hatchling, setuptools) | Vlastní (poetry-core) |
+| Správa prostředí | `uv pip` do existujícího env | Vlastní virtualenv |
+
+- [uv]{.software} je novější a rychlejší nástroj od tvůrců [Ruff]{.software}
+- [poetry]{.software} je starší a stále rozšířený – setkáte se s ním v existujících projektech
+
 ## Závěr
 
 - balíčky a moduly jsou důležitou součástí [Pythonu]{.software}
 - umožňují strukturovat kód a znovu ho použít
 - umožňují i sdílet kód s ostatními
-- [poetry]{.software} je vhodný nástroj pro správu balíčků a závislostí
+- [uv]{.software} je moderní nástroj pro správu balíčků a závislostí
+- `pyproject.toml` jako standardní konfigurační soubor (PEP 621)
 
 # Dotazy? {.center}
