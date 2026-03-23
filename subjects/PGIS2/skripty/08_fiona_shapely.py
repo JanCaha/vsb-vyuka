@@ -57,5 +57,6 @@ if __name__ == "__main__":
 
                 # nový prvek
                 new_feat = fiona.Feature(geometry=new_geom, properties=props)
+
                 # zápis prvku
                 dst.write(new_feat)
