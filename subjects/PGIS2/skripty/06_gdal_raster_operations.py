@@ -26,3 +26,5 @@ if __name__ == "__main__":
 
     # transformace rastru
     gdal.Warp(result_file_warped, result_file_clipped, options=options)
+
+    print("Dokončeno!")
