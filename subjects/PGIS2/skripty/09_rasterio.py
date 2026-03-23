@@ -1,3 +1,4 @@
+# NOTE: Ukázka čtení rastru pomocí Rasterio, výpis metadat a zápis jednoho upraveného pásma do nového souboru
 import rasterio
 from utils import data_path, save_data_path
 
@@ -7,7 +8,7 @@ if __name__ == "__main__":
 
     no_data_value = 0
 
-    # context manager rasteru pr čtení
+    # context manager rasteru pro čtení
     with rasterio.open(data_path("HYP_HR_SR_W.tif")) as input_ds:
 
         print(f"Number of bands: {input_ds.count}.")

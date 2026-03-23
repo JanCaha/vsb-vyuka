@@ -1,3 +1,4 @@
+# NOTE: Ukázka práce s Fiona a Shapely: čtení vektorových dat, transformace CRS, buffer a zápis do GPKG
 import fiona
 import pyproj
 import utils
@@ -34,8 +35,6 @@ if __name__ == "__main__":
         ) as dst:
 
             feature: fiona.Feature
-
-            i = 0
             for feature in src:
 
                 # Shapely geometry

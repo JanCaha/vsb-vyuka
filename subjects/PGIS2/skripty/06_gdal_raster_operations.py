@@ -1,3 +1,4 @@
+# NOTE: Ukázka ořezu rastru, změny souřadnicového systému a změny rozlišení pomocí GDAL Translate a Warp
 from osgeo import gdal
 from utils import data_path, save_data_path
 

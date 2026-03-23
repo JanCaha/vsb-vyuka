@@ -6,9 +6,9 @@ from osgeo import gdal, osr
 gdal.UseExceptions()
 
 if __name__ == "__main__":
-    data_path = utils.data_path("ne_10m_admin_0_countries.shp")
+    file_path = utils.data_path("ne_10m_admin_0_countries.shp")
 
-    with utils.LayerContextManager(data_path) as layer:
+    with utils.LayerContextManager(file_path) as layer:
         print(f"Název vrstvy: {layer.GetName()}")
         print(f"Počet prvků: {layer.GetFeatureCount()}")
 
