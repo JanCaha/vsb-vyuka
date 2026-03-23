@@ -1,70 +1,121 @@
-class Zamestnanec:
-    """Třída reprezentující zaměstnance. Zaměstnanec má jméno a hodinový plat."""
+# NOTE: Ukázka objektů, vlastností, statických metod a dědičnosti podle navazující prezentace
+from typing import List, Tuple
 
-    def __init__(self, jmeno: str, hodinovy_plat: float):
-        self.jmeno = jmeno
-        self._hodinovy_plat = hodinovy_plat
-        self.uvazek = 1.0
 
-    def plat(self) -> float:
-        """Funkce vrátí hodinový plat zaměstnance."""
-        return self._hodinovy_plat
+class Polygon:
+    """Třída reprezentující polygon definovaný seznamem vrcholů."""
 
-    def nastav_plat(self, hodinovy_plat: float) -> None:
-        """Funkce nastaví hodinový plat zaměstnance."""
-        self._hodinovy_plat = hodinovy_plat
+    def __init__(self, vertices: List[Tuple[float, float]]):
+        self.vertices = vertices
 
-    def zvys_plat(self, navyseni_o: float) -> None:
-        """Funkce zvýší hodinový plat zaměstnance o zadanou hodnotu."""
-        self._hodinovy_plat += navyseni_o
+    def add_vertex(self, vertex: Tuple[float, float]) -> None:
+        """Přidá vrchol do polygonu."""
+        self.vertices.append(vertex)
 
-    def mesicni_plat(self, odpracovanych_hodin: float) -> float:
-        """Funkce vrátí měsíční plat zaměstnance za zadaný počet odpracovaných hodin."""
-        return self._hodinovy_plat * odpracovanych_hodin
-
-    # statická metoda, jedná se o ukázku, ale zde by mohla být i normální metoda
     @staticmethod
-    def delka_pracovniho_dne(uvazek: float = 1.0) -> float:
-        """Statická metoda vrací délku pracovního dne zaměstnance dle výše úvazku."""
-        return 8 * uvazek
+    def is_closed(vertices: List[Tuple[float, float]]) -> bool:
+        """Vrací True, pokud je polygon uzavřený (první a poslední vrchol jsou stejné)."""
+        return vertices[0] == vertices[-1]
+
+    def close(self) -> None:
+        """Pokud polygon není uzavřený, uzavře jej přidáním prvního vrcholu na konec."""
+        if self.is_closed(self.vertices):
+            return
+        self.vertices.append(self.vertices[0])
+
+    def perimeter(self) -> float:
+        """Spočítá obvod polygonu."""
+        if len(self.vertices) < 2:
+            return 0.0
+
+        perimeter_value = 0.0
+        for index in range(len(self.vertices) - 1):
+            x1, y1 = self.vertices[index]
+            x2, y2 = self.vertices[index + 1]
+            perimeter_value += ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+        return perimeter_value
 
     @property
-    def pracovnich_hodin_denne(self) -> float:
-        """Vrací délku pracovního dne zaměstnance dle výše úvazku."""
-        return self.delka_pracovniho_dne(self.uvazek)
+    def vertex_count(self) -> int:
+        """Vrací počet vrcholů polygonu."""
+        return len(self.vertices)
 
     @property
-    def denni_plat(self) -> float:
-        """Property vrací denní plat zaměstnance za 8 hodin práce."""
-        return self._hodinovy_plat * self.pracovnich_hodin_denne
+    def bounds(self) -> Tuple[float, float, float, float]:
+        """Vrací obálku polygonu ve formátu (min_x, min_y, max_x, max_y)."""
+        x_values = [x for x, _ in self.vertices]
+        y_values = [y for _, y in self.vertices]
+        return min(x_values), min(y_values), max(x_values), max(y_values)
 
     def __repr__(self) -> str:
-        return f"{self.jmeno} s denním platem {self.denni_plat}."
+        return f"Polygon s {self.vertex_count} vrcholy. Hranice: {self.bounds}"
 
-    def __eq__(self, value: object) -> bool:
-        if isinstance(value, Zamestnanec):
-            return self.jmeno == value.jmeno
-        else:
-            raise NotImplementedError
+
+class Rectangle(Polygon):
+    """Potomek třídy Polygon reprezentující obdélník."""
+
+    def __init__(self, x: float, y: float, width: float, height: float):
+        vertices: List[Tuple[float, float]] = [
+            (x, y),
+            (x + width, y),
+            (x + width, y + height),
+            (x, y + height),
+            (x, y),
+        ]
+        super().__init__(vertices)
+        self.width = width
+        self.height = height
+
+    @classmethod
+    def from_opposite_corners(
+        cls,
+        point_a: Tuple[float, float],
+        point_b: Tuple[float, float],
+    ) -> "Rectangle":
+        """Vytvoří obdélník ze dvou protilehlých bodů zadaných jako dvojice (x, y)."""
+        x1, y1 = point_a
+        x2, y2 = point_b
+
+        min_x = min(x1, x2)
+        min_y = min(y1, y2)
+        width = abs(x2 - x1)
+        height = abs(y2 - y1)
+
+        return cls(min_x, min_y, width, height)
+
+    def area(self) -> float:
+        """Vrací obsah obdélníku."""
+        return self.width * self.height
+
+    # přepsaná metoda pro výpočet obvodu obdélníku
+    def perimeter(self) -> float:
+        return 2 * (self.width + self.height)
+
+    # přepsaná metoda pro reprezentaci obdélníku
+    def __repr__(self) -> str:
+        return f"Obdélník {self.width}x{self.height}, hranice: {self.bounds}"
 
 
 if __name__ == "__main__":
-    # tvorba instance třídy zamestnanec
-    zam = Zamestnanec("Testovaci Zamestnanec", 250)
-    # nastavení odpracovaných hodin
-    odpracovane_hodiny = 160
-    print(f"Denní plat: {zam.denni_plat}")
-    print(f"Plat: {zam.mesicni_plat(odpracovane_hodiny)}")
-    # navýšení platu
-    zam.zvys_plat(50)
-    print(f"Plat po zvýšení: {zam.mesicni_plat(odpracovane_hodiny)}")
+    # ukázka objektu Polygon
+    polygon = Polygon([(0, 0), (1, 0), (1, 1), (0, 1)])
+    print(f"Polygon je uzavřený: {Polygon.is_closed(polygon.vertices)}")
+    polygon.close()
+    print(f"Počet vrcholů polygonu: {polygon.vertex_count}")
+    print(f"Obvod polygonu: {polygon.perimeter():.2f}")
+    print(f"Obálka polygonu: {polygon.bounds}")
+    print(polygon)
+    print("-" * 20)
 
-    # změna úvazku
-    zam.uvazek = 0.5
-    print(f"Denní plat: {zam.denni_plat} při úvazku {zam.uvazek}")
+    # ukázka dědičnosti přes třídu Rectangle
+    rectangle = Rectangle(0, 0, 5, 3)
+    print(rectangle)
+    print(f"Obsah obdélníku: {rectangle.area()}")
+    print(f"Obvod obdélníku: {rectangle.perimeter()}")
+    print(f"Je polygon: {isinstance(rectangle, Polygon)}")
+    print(f"Je obdélník: {isinstance(rectangle, Rectangle)}")
 
-    # tisk zaměstnance
-    print(zam)
-
-    # porovnání dvou zaměstnanců
-    print(zam == Zamestnanec("Zamestnanec AB", 0))
+    # ukázka tvorby obdélníku z protilehlých bodů
+    rectangle_from_points = Rectangle.from_opposite_corners((2, 5), (-1, 1))
+    print(rectangle_from_points)
+    print(f"Obsah obdélníku z bodů: {rectangle_from_points.area()}")

@@ -268,7 +268,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-03-30\n\n\nPython Balíčky\n\n\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2026-03-23\n\n\nPython Balíčky\n\n\n\n\n\n\n2025-03-17\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-04-07\n\n\nGit, Github\n\n\n\n\n\n\n2025-04-14\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -1093,8 +1093,8 @@
     "text": "Funkce příklad\ndef fn(a: str, b: int, c: float = 0.5) -&gt; float: ...\n\nfunkce se třemi proměnnými\n\nprvní dvě povinné\ntřetí nepovinná s výchozí hodnotou\n\n\n\n\n\n\n\n\nPozor\n\n\nProměnné s výchozí hodnotou musí být až za proměnnými bez výchozí hodnoty. Nelze mít proměnnou bez výchozí hodnoty za proměnnou s výchozí hodnotou  funkce by nebyla validní a Python by vykazoval chybu při snaze takovou funkce načíst.\n\n\n\n\nfunkce vrací float\nmohou existovat funkce bez návratové hodnoty None\nnezapomínat na typování parametrů a návratové hodnoty"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-specifická",
-    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-specifická",
+    "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-specifická",
+    "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#funkce-obecná-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-specifická",
     "title": "Funkce a třídy",
     "section": "Funkce obecná  specifická",
     "text": "Funkce obecná  specifická\n# specifické\ndef vynasob_dvema(a: float) -&gt; float:\n    return a * 2\n\n\n# obecné\ndef vynasob(a: float, b: float) -&gt; float:\n    return a * b"
@@ -1153,35 +1153,35 @@
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#objekt---příklad",
     "title": "Funkce a třídy",
     "section": "Objekt - příklad",
-    "text": "Objekt - příklad\n\nfrom typing import List, Tuple\n\n\nclass Polygon:\n    def __init__(self, vertices: List[Tuple[float, float]]):\n        self.vertices = vertices  # seznam vrcholů [(x1, y1), (x2, y2), ...]\n\n    def add_vertex(self, vertex: Tuple[float, float]) -&gt; None:\n        \"\"\"Přidá vrchol do polygonu.\"\"\"\n        self.vertices.append(vertex)\n\n    def perimeter(self) -&gt; float:\n        \"\"\"Spočítá obvod polygonu.\"\"\"\n        peri = 0.0\n        for i in range(len(self.vertices)):\n            next_index = i + 1 if i + 1 &lt; len(self.vertices) else 0\n            x1, y1 = self.vertices[i]\n            x2, y2 = self.vertices[next_index]\n            peri += ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5\n        return peri\n\n    @staticmethod\n    def is_closed(vertices: List[Tuple[float, float]]) -&gt; bool:\n        \"\"\"Vrací True, pokud je polygon uzavřený (první a poslední bod jsou stejné).\"\"\"\n        return vertices[0] == vertices[-1]\n\n    def close(self) -&gt; None:\n        \"\"\"Pokud není polygon uzavřený, uzavře se.\"\"\"\n        if self.is_closed(self.vertices):\n            return\n        self.vertices.append(self.vertices[0])\n\n    @property\n    def vertex_count(self) -&gt; int:\n        return len(self.vertices)\n\n    @property\n    def bounds(self) -&gt; Tuple[float, float, float, float]:\n        \"\"\"Vrací obálku polygonu ve formátu(min_x, min_y, max_x, max_y).\"\"\"\n        x_values = [x for x, _ in self.vertices]\n        y_values = [y for _, y in self.vertices]\n        return min(x_values), min(y_values), max(x_values), max(y_values)\n\n    def __repr__(self) -&gt; str:\n        return f\"Polygon s {self.vertex_count} vrcholy\""
+    "text": "Objekt - příklad\n\nfrom typing import List, Tuple\n\n\nclass Polygon:\n    def __init__(self, vertices: List[Tuple[float, float]]):\n        self.vertices = vertices\n\n    def add_vertex(self, vertex: Tuple[float, float]) -&gt; None:\n        \"\"\"Přidá vrchol do polygonu.\"\"\"\n        self.vertices.append(vertex)\n\n    @staticmethod\n    def is_closed(vertices: List[Tuple[float, float]]) -&gt; bool:\n        \"\"\"Vrací True, pokud je polygon uzavřený (první a poslední vrchol jsou stejné).\"\"\"\n        return vertices[0] == vertices[-1]\n\n    def close(self) -&gt; None:\n        \"\"\"Pokud polygon není uzavřený, uzavře jej přidáním prvního vrcholu na konec.\"\"\"\n        if self.is_closed(self.vertices):\n            return\n        self.vertices.append(self.vertices[0])\n\n    def perimeter(self) -&gt; float:\n        \"\"\"Spočítá obvod polygonu.\"\"\"\n        if len(self.vertices) &lt; 2:\n            return 0.0\n\n        perimeter_value = 0.0\n        for index in range(len(self.vertices) - 1):\n            x1, y1 = self.vertices[index]\n            x2, y2 = self.vertices[index + 1]\n            perimeter_value += ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5\n        return perimeter_value\n\n    @property\n    def vertex_count(self) -&gt; int:\n        return len(self.vertices)\n\n    @property\n    def bounds(self) -&gt; Tuple[float, float, float, float]:\n        \"\"\"Vrací obálku polygonu ve formátu (min_x, min_y, max_x, max_y).\"\"\"\n        x_values = [x for x, _ in self.vertices]\n        y_values = [y for _, y in self.vertices]\n        return min(x_values), min(y_values), max(x_values), max(y_values)\n\n    def __repr__(self) -&gt; str:\n        return f\"Polygon s {self.vertex_count} vrcholy. Hranice: {self.bounds}\""
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#použití-objektu",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#použití-objektu",
     "title": "Funkce a třídy",
     "section": "Použití objektu",
-    "text": "Použití objektu\n\npoly = Polygon([(0, 0), (1, 0), (1, 1), (0.5, 0.5), (0, 1), (0, 0)])\nprint(poly)\nprint(f\"Obvod: {poly.perimeter()}\")\nprint(f\"Počet vrcholů: {poly.vertex_count}\")\nprint(f\"Je polygon uzavřený? {Polygon.is_closed(poly.vertices)}\")\n\nPolygon s 6 vrcholy\nObvod: 4.414213562373095\nPočet vrcholů: 6\nJe polygon uzavřený? True"
+    "text": "Použití objektu\n\npoly = Polygon([(0, 0), (1, 0), (1, 1), (0, 1)])\nprint(f\"Polygon je uzavřený: {Polygon.is_closed(poly.vertices)}\")\npoly.close()\nprint(poly)\nprint(f\"Počet vrcholů polygonu: {poly.vertex_count}\")\nprint(f\"Obvod polygonu: {poly.perimeter():.2f}\")\nprint(f\"Obálka polygonu: {poly.bounds}\")\n\nPolygon je uzavřený: False\nPolygon s 5 vrcholy. Hranice: (0, 0, 1, 1)\nPočet vrcholů polygonu: 5\nObvod polygonu: 4.00\nObálka polygonu: (0, 0, 1, 1)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost",
     "title": "Funkce a třídy",
     "section": "Dědičnost",
-    "text": "Dědičnost\n\ntřída může dědit od jiné třídy - přebírá její atributy a metody\nlze přidat nové atributy a metody nebo přepsat existující\nv praxi se s tím setkáváme běžně, např. GeoDataFrame dědí z DataFrame (přidává sloupec geometrie a prostorové metody)\nsyntaxe: class Potomek(Rodic):\nfunkce super() umožňuje volat metody rodičovské třídy"
+    "text": "Dědičnost\n\ntřída může dědit od jiné třídy - přebírá její atributy a metody\nlze přidat nové atributy a metody nebo přepsat existující\nv praxi se s tím setkáváme běžně, např. GeoDataFrame dědí z DataFrame (přidává sloupec geometrie a prostorové metody)\nsyntaxe: class Potomek(Rodic):\nfunkce super() umožňuje volat metody rodičovské třídy\nalternativní konstruktory lze tvořit pomocí @classmethod"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---příklad",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---příklad",
     "title": "Funkce a třídy",
     "section": "Dědičnost - příklad",
-    "text": "Dědičnost - příklad\n\nclass Rectangle(Polygon):\n    def __init__(self, x: float, y: float, width: float, height: float):\n        # Vytvoří obdélník z levého dolního rohu (x, y)\n        vertices = [(x, y), (x + width, y), (x + width, y + height), (x, y + height), (x, y)]\n        super().__init__(vertices)\n        self.width = width\n        self.height = height\n\n    def area(self) -&gt; float:\n        \"\"\"Vrací obsah obdélníku.\"\"\"\n        return self.width * self.height\n\n    def perimeter(self) -&gt; float:\n        \"\"\"Přepsaná metoda - obvod obdélníku.\"\"\"\n        return 2 * (self.width + self.height)\n\n    def __repr__(self) -&gt; str:\n        return f\"Obdélník {self.width}x{self.height}, obálka: {self.bounds}\""
+    "text": "Dědičnost - příklad\n\nclass Rectangle(Polygon):\n    def __init__(self, x: float, y: float, width: float, height: float):\n        vertices = [\n            (x, y),\n            (x + width, y),\n            (x + width, y + height),\n            (x, y + height),\n            (x, y),\n        ]\n        super().__init__(vertices)\n        self.width = width\n        self.height = height\n\n    @classmethod\n    def from_opposite_corners(\n        cls,\n        point_a: Tuple[float, float],\n        point_b: Tuple[float, float],\n    ) -&gt; \"Rectangle\":\n        x1, y1 = point_a\n        x2, y2 = point_b\n\n        min_x = min(x1, x2)\n        min_y = min(y1, y2)\n        width = abs(x2 - x1)\n        height = abs(y2 - y1)\n\n        return cls(min_x, min_y, width, height)\n\n    def area(self) -&gt; float:\n        \"\"\"Vrací obsah obdélníku.\"\"\"\n        return self.width * self.height\n\n    def perimeter(self) -&gt; float:\n        return 2 * (self.width + self.height)\n\n    def __repr__(self) -&gt; str:\n        return f\"Obdélník {self.width}x{self.height}, hranice: {self.bounds}\""
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---použití",
     "href": "subjects/PGIS2/prezentace/06_funkce_tridy.html#dědičnost---použití",
     "title": "Funkce a třídy",
     "section": "Dědičnost - použití",
-    "text": "Dědičnost - použití\n\nrect = Rectangle(0, 0, 5, 3)\nprint(rect)\nprint(f\"Obsah: {rect.area()}\")\nprint(f\"Obvod: {rect.perimeter()}\")\n# Rectangle je zároveň i Polygon\nprint(f\"Je polygon: {isinstance(rect, Polygon)}\")\nprint(f\"Je obdélník: {isinstance(rect, Rectangle)}\")\n\nObdélník 5x3, obálka: (0, 0, 5, 3)\nObsah: 15\nObvod: 16\nJe polygon: True\nJe obdélník: True"
+    "text": "Dědičnost - použití\n\nrect = Rectangle(0, 0, 5, 3)\nprint(rect)\nprint(f\"Obsah obdélníku: {rect.area()}\")\nprint(f\"Obvod obdélníku: {rect.perimeter()}\")\n# Rectangle je zároveň i Polygon\nprint(f\"Je polygon: {isinstance(rect, Polygon)}\")\nprint(f\"Je obdélník: {isinstance(rect, Rectangle)}\")\n\nrect_from_points = Rectangle.from_opposite_corners((2, 5), (-1, 1))\nprint(rect_from_points)\nprint(f\"Obsah obdélníku z bodů: {rect_from_points.area()}\")\n\nObdélník 5x3, hranice: (0, 0, 5, 3)\nObsah obdélníku: 15\nObvod obdélníku: 16\nJe polygon: True\nJe obdélník: True\nObdélník 3x4, hranice: (-1, 1, 2, 5)\nObsah obdélníku z bodů: 12"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/06_funkce_tridy.html#docstringy",
@@ -1261,8 +1261,8 @@
     "text": "pyproj - moderní přístup\n\nimport pyproj\n\ncrs_src = pyproj.CRS(\"EPSG:4326\")\ncrs_dst = pyproj.CRS(\"EPSG:5514\")\n\n# transformační objekt\ntransformer = pyproj.Transformer.from_crs(crs_src, crs_dst, always_xy=True)\n\n# transformace souřadnic\nx, y = transformer.transform(14.0, 50.0)\n\n\nparametr always_xy=True zajistí pořadí souřadnic vždy jako (x, y) tj. (lon, lat)\nbez tohoto parametru se pořadí řídí definicí CRS\npyproj je přehlednější a doporučený přístup pro knihovny fiona, shapely, geopandas"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/05_fiona_rasterio_shapely.html#gdalogr-fiona-rasterio-shapely",
-    "href": "subjects/PGIS2/prezentace/05_fiona_rasterio_shapely.html#gdalogr-fiona-rasterio-shapely",
+    "objectID": "subjects/PGIS2/prezentace/05_fiona_rasterio_shapely.html#gdalogr-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-fiona-rasterio-shapely",
+    "href": "subjects/PGIS2/prezentace/05_fiona_rasterio_shapely.html#gdalogr-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-fiona-rasterio-shapely",
     "title": "Knihovny fiona, rasterio, shapely",
     "section": "GDAL/OGR  fiona, rasterio, shapely",
     "text": "GDAL/OGR  fiona, rasterio, shapely\n\nGDAL/OGR má širší možnosti, ale práce je komplikovanější\nknihovny jsou zjednodušené a přístupnější\nnástroje gdal.VectorTranslate(), gdal.Warp(), gdal.Translate() atd. určitě využívat z osgeo\nzákladní modifikace či zpracování dat je v 90% případů snadnější z knihoven\nkomplexní situace lze řešit přímo použítím osgeo\npoužívat princip KISS (Keep it simple, stupid!) – začít s jednoduchou verzí, dokud funguje a upgradovat, posouvat dál, pouze pokud je to nutné"
@@ -1422,8 +1422,8 @@
     "text": "Zápočet\n\ncelkem 33 bodů\ncvičení Oracle + Postgis 11 bodů (detaily za 14 dnů)\nprojekt PostGIS 11 bodů\npísemka SQL 11 bodů"
   },
   {
-    "objectID": "subjects/IDG/prezentace/07_statisticke_testovani_a_modelovani.html#statistické-testování-modelování",
-    "href": "subjects/IDG/prezentace/07_statisticke_testovani_a_modelovani.html#statistické-testování-modelování",
+    "objectID": "subjects/IDG/prezentace/07_statisticke_testovani_a_modelovani.html#statistické-testování-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-modelování",
+    "href": "subjects/IDG/prezentace/07_statisticke_testovani_a_modelovani.html#statistické-testování-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-modelování",
     "title": "Statistické testování a modelování",
     "section": "Statistické testování  modelování",
     "text": "Statistické testování  modelování\n\nstatistické testování - zjišťování, zda je nějaký jev statisticky významný\nmodelování - vytváření modelů, které popisují vztahy mezi proměnnými či odvozují nové informace"
@@ -1937,7 +1937,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.15239004 -0.59100818 -0.04458088 -0.50550204 -0.18654708"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.3325282 -0.4518117 -0.3130833 -0.1036083 -0.1641308"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2476,7 +2476,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f5e741aae40&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f5bd4f7ae40&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -2798,7 +2798,7 @@
     "href": "subjects/PGIS2/prezentace/07_baliky.html#modul",
     "title": "Python Balíčky",
     "section": "Modul",
-    "text": "Modul\n\n.py soubor s funkcemi, proměnnými či objekty\nproměnné modulu obvykle zapisujeme velkými písmeny např. PI či DEFAULT_COLOR\nnapř. soubor utils.py ze cvičení (a ukázek na webu)\nlze používat lokálně\nstačí na jednoduché použití, pro větší projekty nedostačuje"
+    "text": "Modul\n\n.py soubor s funkcemi, proměnnými či objekty\nkonstanty modulu obvykle zapisujeme velkými písmeny např. PI či DEFAULT_COLOR\nnapř. soubor utils.py ze cvičení (a ukázek na webu)\nlze používat lokálně\nstačí na jednoduché použití, pro větší projekty nedostačuje"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček",
@@ -2819,84 +2819,112 @@
     "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček---komplexnější",
     "title": "Python Balíčky",
     "section": "Balíček - komplexnější",
-    "text": "Balíček - komplexnější\n\npokud chceme balíček i s nastavením závislostí, metadatay a testy, chceme obvykle komplexnější strukturu\ndoinstalujeme balík poetry do prostředí conda\npoetry\n\numožní postavit strukturu balíčku\nmanagement závislostí\ninstalace"
+    "text": "Balíček - komplexnější\n\npokud chceme balíček i s nastavením závislostí, metadaty a testy, chceme obvykle komplexnější strukturu\npoužijeme nástroj uv – moderní a extrémně rychlý správce balíčků (napsaný v Rustu, od tvůrců Ruff)\ninstalace: conda install uv nebo pip install uv\nuv:\n\nvytvoření struktury balíčku\nspráva závislostí\nsestavení a instalace"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček-sestavený-pomocí-poetry",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček-sestavený-pomocí-poetry",
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#balíček-sestavený-pomocí-uv",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#balíček-sestavený-pomocí-uv",
     "title": "Python Balíčky",
-    "section": "Balíček sestavený pomocí poetry",
-    "text": "Balíček sestavený pomocí poetry\npoetry new nazev_balicku\nnazev_balicku/\n└── src/\n    └── nazev_balicku/\n        └── __init__.py\n├── tests\n    └── __init__.py\n├── pyproject.toml\n└── README.md"
+    "section": "Balíček sestavený pomocí uv",
+    "text": "Balíček sestavený pomocí uv\nuv init --lib nazev_balicku\nnazev_balicku/\n└── src/\n    └── nazev_balicku/\n        └── __init__.py\n        └── py.typed\n├── tests\n    └── __init__.py\n├── pyproject.toml\n└── README.md"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml",
     "href": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml",
     "title": "Python Balíčky",
     "section": "pyproject.toml",
-    "text": "pyproject.toml\n\nmoderní způsob specifikace nastavení balíčku a nástrojů\nspecifikace metadata balíčku - např. název, verze, autor, závislosti\n\n[project]\nname = \"balicekpgis2\"\nversion = \"0.1.0\"\ndescription = \"\"\nauthors = [\n    {name = \"autor\",email = \"email@email.com\"}\n]\nreadme = \"README.md\"\nrequires-python = \"&gt;=3.12\"\ndependencies = [\n    \"numpy (&gt;=2.2.4,&lt;3.0.0)\"\n]\n\n[tool.poetry]\npackages = [{include = \"balicekpgis2\", from = \"src\"}]\n\n\n[build-system]\nrequires = [\"poetry-core&gt;=2.0.0,&lt;3.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\""
+    "text": "pyproject.toml\n\nmoderní způsob specifikace nastavení balíčku a nástrojů\nspecifikace metadata balíčku - např. název, verze, autor, závislosti\nstandard PEP 621 – nezávislý na konkrétním nástroji\n\n[project]\nname = \"balicekpgis2\"\nversion = \"0.1.0\"\ndescription = \"Testovací balíček pro předmět PGIS2\"\nauthors = [\n    {name = \"autor\", email = \"autor@email.cz\"}\n]\nreadme = \"README.md\"\nrequires-python = \"&gt;=3.10\"\ndependencies = [\n    \"gdal&gt;=3.10.0\",\n    \"requests&gt;=2.32.3\"\n]\n\n[build-system]\nrequires = [\"hatchling\"]\nbuild-backend = \"hatchling.build\""
   },
   {
     "objectID": "subjects/PGIS2/prezentace/07_baliky.html#přidání-závislostí",
     "href": "subjects/PGIS2/prezentace/07_baliky.html#přidání-závislostí",
     "title": "Python Balíčky",
     "section": "Přidání závislostí",
-    "text": "Přidání závislostí\n\nzávislosti - více typů (např. pro spuštění a vývoj)\nparametr --lock, zabrání instalaci závislostí do virtualního prostředí (venv)\n\npoetry add GDAL --lock\npoetry add --group dev pytest black --lock"
+    "text": "Přidání závislostí\n\nzávislosti přidáváme přímo do pyproject.toml v sekci dependencies\nnebo pomocí příkazu uv:\n\nuv add numpy\nuv add --dev pytest black\n\n\n\n\n\n\nNote\n\n\nProtože používáme Conda pro správu prostředí (kvůli GDAL a dalším C závislostem), nepoužíváme uv sync – ten vytváří vlastní virtuální prostředí. Místo toho instalujeme do conda prostředí přímo."
   },
   {
     "objectID": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml-úprava-přidáním-dat-k-balíčku",
     "href": "subjects/PGIS2/prezentace/07_baliky.html#pyproject.toml-úprava-přidáním-dat-k-balíčku",
     "title": "Python Balíčky",
     "section": "pyproject.toml úprava přidáním dat k balíčku",
-    "text": "pyproject.toml úprava přidáním dat k balíčku\n\ndvě varianty\n\n[tool.poetry]\ninclude = [\n    \"src/nazev_balicku/data/*.tif\",\n    \"src/nazev_balicku/data/*.gpkg\",\n]\n\n[tool.poetry.package-data]\n\"nazev_balicku.data\" = [\"*.tif\", \"*.gpkg\"]"
+    "text": "pyproject.toml úprava přidáním dat k balíčku\n\npokud balíček obsahuje datové soubory (GeoPackage, TIF atd.), je nutné je explicitně zahrnout\n\n[tool.hatch.build.targets.wheel]\npackages = [\"src/nazev_balicku\"]\n\n[tool.hatch.build.targets.wheel.force-include]\n\"src/nazev_balicku/data\" = \"nazev_balicku/data\""
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#instalace",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#instalace",
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#přístup-k-datům-v-balíčku",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#přístup-k-datům-v-balíčku",
     "title": "Python Balíčky",
-    "section": "Instalace",
-    "text": "Instalace\npoetry install \n\ninstalace balíku\ntzv. interaktivní instalace - změny v kódu se projeví se při příštím spuštění Pythonu\nstejný výsledek dá i příkaz pip install -e ."
+    "section": "Přístup k datům v balíčku",
+    "text": "Přístup k datům v balíčku\n\ndata přibalená k balíčku je nutné načítat relativně vůči umístění balíčku\nnikdy nepoužívat absolutní cesty ani Path.cwd() – balíček může být nainstalovaný kdekoliv\nvyužíváme Path(__file__).parent pro zjištění umístění aktuálního modulu\n\nimport pathlib\n\n# adresář s datovými soubory balíčku\n_DATA_DIR = pathlib.Path(__file__).parent / \"data\"\n\n\ndef data_file_path(filename: str) -&gt; pathlib.Path:\n    \"\"\"Vrátí cestu k datovému souboru v balíčku.\"\"\"\n    path = _DATA_DIR / filename\n    if not path.exists():\n        raise FileNotFoundError(f\"Data file not found: {path}\")\n    return path\n\n\ndef read_text_file(filename: str) -&gt; str:\n    \"\"\"Načte obsah textového souboru z datového adresáře balíčku.\"\"\"\n    path = data_file_path(filename)\n    return path.read_text(encoding=\"utf-8\")\n\n\n\n\n\n\nPozor\n\n\nCesty konstruované pomocí Path.cwd() nebo pevně zapsané cesty fungují pouze na vašem počítači. Balíček musí fungovat na jakémkoliv systému  proto vždy relativně vůči __file__."
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#verzování-balíčku",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#verzování-balíčku",
+    "title": "Python Balíčky",
+    "section": "Verzování balíčku",
+    "text": "Verzování balíčku\n\nverze se řídí konvencí Semantic Versioning (MAJOR.MINOR.PATCH)\n\nMAJOR – nekompatibilní změny API (např. 1.0.0  2.0.0)\nMINOR – nová funkcionalita, zpětně kompatibilní (např. 1.0.0  1.1.0)\nPATCH – opravy chyb (např. 1.0.0  1.0.1)\n\nverze 0.x.y signalizuje počáteční vývoj – API se může měnit\nverze se uvádí v pyproject.toml v sekci [project]"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#testování-balíčku",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#testování-balíčku",
+    "title": "Python Balíčky",
+    "section": "Testování balíčku",
+    "text": "Testování balíčku\n\nsložka tests/ je součástí struktury balíčku\nknihovna pytest – jednoduchý a rozšířený nástroj pro testování\n\n# tests/test_modul_path.py\nfrom nazev_balicku.modul_path import fn_1\n\n\ndef test_fn_1_basic():\n    \"\"\"Test základní funkcionality.\"\"\"\n    result = fn_1(\"vstup\")\n    assert result is not None\n    assert isinstance(result, str)\n\nspuštění: pytest (v aktivním conda prostředí)\ntesty ověřují, že kód funguje správně i po změnách"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#instalace-do-conda-prostředí",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#instalace-do-conda-prostředí",
+    "title": "Python Balíčky",
+    "section": "Instalace do conda prostředí",
+    "text": "Instalace do conda prostředí\nconda activate pgis2\nuv pip install -e .\n\ntzv. editovatelná (interaktivní) instalace – změny v kódu se projeví při příštím spuštění Pythonu\nparametr -e = editable, balíček se “odkazuje” na zdrojový kód místo kopírování\nuv pip je výrazně rychlejší než běžný pip"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/07_baliky.html#sestavení-pro-instalaci-jinde",
     "href": "subjects/PGIS2/prezentace/07_baliky.html#sestavení-pro-instalaci-jinde",
     "title": "Python Balíčky",
     "section": "Sestavení pro instalaci jinde",
-    "text": "Sestavení pro instalaci jinde\npoetry build\n\nvznikne složka dist/ s balíčkem\nbalíček je ve formátu .tar.gz a .whl\nbalíček je možné nahrát na PyPI (Python Package Index) - veřejný repozitář balíčků\nbalíček je možné instalovat z whl souboru pomocí pip install nazev_balicku*.whl"
+    "text": "Sestavení pro instalaci jinde\nuv build\n\nvznikne složka dist/ s balíčkem\nbalíček je ve formátu .tar.gz a .whl\nbalíček je možné nahrát na PyPI (Python Package Index) - veřejný repozitář balíčků\nbalíček je možné instalovat z .whl souboru pomocí uv pip install nazev_balicku*.whl"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---struktura",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---struktura",
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---struktura-balíčku",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---struktura-balíčku",
     "title": "Python Balíčky",
-    "section": "Použití - struktura",
-    "text": "Použití - struktura\n─── src/\n    └── nazev_balicku/\n        └── __init__.py\n        └── modul_path.py\n        └── modul_gdal.py"
+    "section": "Použití - struktura balíčku",
+    "text": "Použití - struktura balíčku\n─── src/\n    └── nazev_balicku/\n        └── __init__.py\n        └── py.typed\n        └── modul_a.py\n        └── modul_b.py\n        └── data/\n            └── soubor.txt"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---import",
     "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---import",
     "title": "Python Balíčky",
     "section": "Použití - import",
-    "text": "Použití - import\nimport nazev_balicku  # import celého balíčku\nfrom nazev_balicku.modul_path import *  # všechny funkce\nfrom nazev_balicku.modul_path import fn_1  # funkce\n\nnazev_balicku.modul_path.fn_1()  # použití funkce"
+    "text": "Použití - import\nimport nazev_balicku  # import celého balíčku (využívá __init__.py)\nfrom nazev_balicku.modul_a import fn_1  # konkrétní funkce\nfrom nazev_balicku.modul_b import MyClass  # konkrétní třída\n\nnazev_balicku.fn_1()  # použití funkce"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---úprava-__init__.py",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---úprava-__init__.py",
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---__init__.py",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---__init__.py",
     "title": "Python Balíčky",
-    "section": "Použití - úprava __init__.py",
-    "text": "Použití - úprava __init__.py\n\nz dílčích modulů importujeme funkce do __init__.py\ntím je zpřístupníme i na úrovni balíčku\npříklad __init__.py\n\nfrom nazev_balicku.modul_gdal import *\nfrom nazev_balicku.modul_path import *"
+    "section": "Použití - __init__.py",
+    "text": "Použití - __init__.py\n\nz dílčích modulů importujeme třídy a funkce do __init__.py\ntím je zpřístupníme přímo na úrovni balíčku\nuvnitř balíčku používáme relativní importy (from .modul import fn)\n\n# __init__.py\nfrom .modul_a import fn_1, fn_2\nfrom .modul_b import MyClass"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---po-změně-import",
-    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---po-změně-import",
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#použití---po-úpravě-__init__.py",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#použití---po-úpravě-__init__.py",
     "title": "Python Balíčky",
-    "section": "Použití - po změně import",
-    "text": "Použití - po změně import\n\nimport nazev_balicku - import celého balíčku a věcí z __init__.py\n\nfrom nazev_balicku import *  # všechny funkce\nfrom nazev_balicku import fn_1  # funkce"
+    "section": "Použití - po úpravě __init__.py",
+    "text": "Použití - po úpravě __init__.py\n\nimport nazev_balicku – zpřístupní vše z __init__.py\n\nfrom nazev_balicku import MyClass, fn_1\n\n# přímé použití bez specifikace modulu\nresult = fn_1(\"vstup\")\nobj = MyClass()"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/07_baliky.html#uv-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-poetry",
+    "href": "subjects/PGIS2/prezentace/07_baliky.html#uv-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-poetry",
+    "title": "Python Balíčky",
+    "section": "uv  poetry",
+    "text": "uv  poetry\n\n\n\n\n\n\n\n\n\nuv\npoetry\n\n\n\n\nRychlost\nExtrémně rychlý (Rust)\nPomalý (Python)\n\n\npyproject.toml\nStandardní PEP 621\nProprietární sekce [tool.poetry]\n\n\nBuild backend\nLibovolný (hatchling, setuptools)\nVlastní (poetry-core)\n\n\nSpráva prostředí\nuv pip do existujícího env\nVlastní virtualenv\n\n\n\n\nuv je novější a rychlejší nástroj od tvůrců Ruff\npoetry je starší a stále rozšířený – setkáte se s ním v existujících projektech"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/07_baliky.html#závěr",
     "href": "subjects/PGIS2/prezentace/07_baliky.html#závěr",
     "title": "Python Balíčky",
     "section": "Závěr",
-    "text": "Závěr\n\nbalíčky a moduly jsou důležitou součástí Pythonu\numožňují strukturovat kód a znovu ho použít\numožňují i sdílet kód s ostatními\npoetry je vhodný nástroj pro správu balíčků a závislostí"
+    "text": "Závěr\n\nbalíčky a moduly jsou důležitou součástí Pythonu\numožňují strukturovat kód a znovu ho použít\numožňují i sdílet kód s ostatními\nuv je moderní nástroj pro správu balíčků a závislostí\npyproject.toml jako standardní konfigurační soubor (PEP 621)"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/10_git_github.html#co-je-git",

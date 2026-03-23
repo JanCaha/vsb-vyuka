@@ -6,10 +6,10 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+  <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2026-03-16">
@@ -20,6 +20,9 @@
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -98,7 +101,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-462701f8a87cf731e773fe3d2870ce8c.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-7bb4581d6e59a84ca51feb7799cb40d4.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -242,7 +245,7 @@ Jan Caha
 </section>
 <section id="příklad-kombinace-přístupů" class="slide level2">
 <h2>Příklad kombinace přístupů</h2>
-<div id="f09d6c9b" class="cell" data-execution_count="1">
+<div id="94c4197e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x: <span class="bu">float</span>, y: <span class="bu">float</span>):</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
@@ -271,7 +274,7 @@ Jan Caha
 </section>
 <section id="příklad" class="slide level2">
 <h2>Příklad</h2>
-<div id="cebdb781" class="cell" data-execution_count="2">
+<div id="61e551ec" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celsius_to_fahrenheit(celsius: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> celsius <span class="op">*</span> <span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">32</span></span>
 <span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -311,7 +314,7 @@ Jan Caha
 <li>nezapomínat na typování parametrů a návratové hodnoty</li>
 </ul>
 </section>
-<section id="funkce-obecná-specifická" class="slide level2">
+<section id="funkce-obecná-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-specifická" class="slide level2">
 <h2>Funkce obecná <i class="fa-solid fa-times" aria-label="times"></i> specifická</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># specifické</span></span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vynasob_dvema(a: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
@@ -345,7 +348,7 @@ Jan Caha
 </section>
 <section id="objekty---příklad" class="slide level2">
 <h2>Objekty - příklad</h2>
-<div id="39a9d345" class="cell" data-execution_count="3">
+<div id="bd936a5a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x: <span class="bu">float</span>, y: <span class="bu">float</span>):</span>
 <span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
@@ -372,7 +375,7 @@ Jan Caha
 </section>
 <section id="objekt---příklad-property" class="slide level2">
 <h2>Objekt - příklad <code>property</code></h2>
-<div id="976aa30e" class="cell" data-execution_count="4">
+<div id="f374bd0a" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circle:</span>
 <span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, radius: <span class="bu">float</span>):</span>
 <span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.radius <span class="op">=</span> radius</span>
@@ -400,7 +403,7 @@ Plocha kruhu: 12.56636</code></pre>
 </section>
 <section id="objekt---příklad-statické-metody" class="slide level2">
 <h2>Objekt - příklad statické metody</h2>
-<div id="ee59d730" class="cell" data-execution_count="5">
+<div id="b10c602d" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TextUtils:</span>
 <span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
 <span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> words_count(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
@@ -415,67 +418,72 @@ Plocha kruhu: 12.56636</code></pre>
 </section>
 <section id="objekt---příklad" class="slide level2">
 <h2>Objekt - příklad</h2>
-<div id="b0accb29" class="cell" data-execution_count="6">
+<div id="a79823ff" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> List, Tuple</span>
 <span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Polygon:</span>
 <span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, vertices: List[Tuple[<span class="bu">float</span>, <span class="bu">float</span>]]):</span>
-<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vertices <span class="op">=</span> vertices  <span class="co"># seznam vrcholů [(x1, y1), (x2, y2), ...]</span></span>
+<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vertices <span class="op">=</span> vertices</span>
 <span id="cb13-7"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_vertex(<span class="va">self</span>, vertex: Tuple[<span class="bu">float</span>, <span class="bu">float</span>]) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
 <span id="cb13-9"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Přidá vrchol do polygonu."""</span></span>
 <span id="cb13-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vertices.append(vertex)</span>
 <span id="cb13-11"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> perimeter(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb13-13"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Spočítá obvod polygonu."""</span></span>
-<span id="cb13-14"><a aria-hidden="true" tabindex="-1"></a>        peri <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb13-15"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(<span class="va">self</span>.vertices)):</span>
-<span id="cb13-16"><a aria-hidden="true" tabindex="-1"></a>            next_index <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span> <span class="cf">if</span> i <span class="op">+</span> <span class="dv">1</span> <span class="op">&lt;</span> <span class="bu">len</span>(<span class="va">self</span>.vertices) <span class="cf">else</span> <span class="dv">0</span></span>
-<span id="cb13-17"><a aria-hidden="true" tabindex="-1"></a>            x1, y1 <span class="op">=</span> <span class="va">self</span>.vertices[i]</span>
-<span id="cb13-18"><a aria-hidden="true" tabindex="-1"></a>            x2, y2 <span class="op">=</span> <span class="va">self</span>.vertices[next_index]</span>
-<span id="cb13-19"><a aria-hidden="true" tabindex="-1"></a>            peri <span class="op">+=</span> ((x2 <span class="op">-</span> x1) <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> (y2 <span class="op">-</span> y1) <span class="op">**</span> <span class="dv">2</span>) <span class="op">**</span> <span class="fl">0.5</span></span>
-<span id="cb13-20"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> peri</span>
-<span id="cb13-21"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-22"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
-<span id="cb13-23"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> is_closed(vertices: List[Tuple[<span class="bu">float</span>, <span class="bu">float</span>]]) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
-<span id="cb13-24"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Vrací True, pokud je polygon uzavřený (první a poslední bod jsou stejné)."""</span></span>
-<span id="cb13-25"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> vertices[<span class="dv">0</span>] <span class="op">==</span> vertices[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb13-26"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-27"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> close(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
-<span id="cb13-28"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Pokud není polygon uzavřený, uzavře se."""</span></span>
-<span id="cb13-29"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.is_closed(<span class="va">self</span>.vertices):</span>
-<span id="cb13-30"><a aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span></span>
-<span id="cb13-31"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vertices.append(<span class="va">self</span>.vertices[<span class="dv">0</span>])</span>
-<span id="cb13-32"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-33"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb13-34"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vertex_count(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb13-35"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.vertices)</span>
-<span id="cb13-36"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-37"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
-<span id="cb13-38"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> bounds(<span class="va">self</span>) <span class="op">-&gt;</span> Tuple[<span class="bu">float</span>, <span class="bu">float</span>, <span class="bu">float</span>, <span class="bu">float</span>]:</span>
-<span id="cb13-39"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Vrací obálku polygonu ve formátu(min_x, min_y, max_x, max_y)."""</span></span>
-<span id="cb13-40"><a aria-hidden="true" tabindex="-1"></a>        x_values <span class="op">=</span> [x <span class="cf">for</span> x, _ <span class="kw">in</span> <span class="va">self</span>.vertices]</span>
-<span id="cb13-41"><a aria-hidden="true" tabindex="-1"></a>        y_values <span class="op">=</span> [y <span class="cf">for</span> _, y <span class="kw">in</span> <span class="va">self</span>.vertices]</span>
-<span id="cb13-42"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">min</span>(x_values), <span class="bu">min</span>(y_values), <span class="bu">max</span>(x_values), <span class="bu">max</span>(y_values)</span>
-<span id="cb13-43"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-44"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb13-45"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Polygon s </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>vertex_count<span class="sc">}</span><span class="ss"> vrcholy"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb13-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> is_closed(vertices: List[Tuple[<span class="bu">float</span>, <span class="bu">float</span>]]) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb13-14"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Vrací True, pokud je polygon uzavřený (první a poslední vrchol jsou stejné)."""</span></span>
+<span id="cb13-15"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> vertices[<span class="dv">0</span>] <span class="op">==</span> vertices[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb13-16"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> close(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb13-18"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Pokud polygon není uzavřený, uzavře jej přidáním prvního vrcholu na konec."""</span></span>
+<span id="cb13-19"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.is_closed(<span class="va">self</span>.vertices):</span>
+<span id="cb13-20"><a aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span></span>
+<span id="cb13-21"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vertices.append(<span class="va">self</span>.vertices[<span class="dv">0</span>])</span>
+<span id="cb13-22"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-23"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> perimeter(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb13-24"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Spočítá obvod polygonu."""</span></span>
+<span id="cb13-25"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(<span class="va">self</span>.vertices) <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb13-26"><a aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="fl">0.0</span></span>
+<span id="cb13-27"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a aria-hidden="true" tabindex="-1"></a>        perimeter_value <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb13-29"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(<span class="va">self</span>.vertices) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb13-30"><a aria-hidden="true" tabindex="-1"></a>            x1, y1 <span class="op">=</span> <span class="va">self</span>.vertices[index]</span>
+<span id="cb13-31"><a aria-hidden="true" tabindex="-1"></a>            x2, y2 <span class="op">=</span> <span class="va">self</span>.vertices[index <span class="op">+</span> <span class="dv">1</span>]</span>
+<span id="cb13-32"><a aria-hidden="true" tabindex="-1"></a>            perimeter_value <span class="op">+=</span> ((x2 <span class="op">-</span> x1) <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> (y2 <span class="op">-</span> y1) <span class="op">**</span> <span class="dv">2</span>) <span class="op">**</span> <span class="fl">0.5</span></span>
+<span id="cb13-33"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> perimeter_value</span>
+<span id="cb13-34"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-35"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
+<span id="cb13-36"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vertex_count(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb13-37"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.vertices)</span>
+<span id="cb13-38"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-39"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>
+<span id="cb13-40"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> bounds(<span class="va">self</span>) <span class="op">-&gt;</span> Tuple[<span class="bu">float</span>, <span class="bu">float</span>, <span class="bu">float</span>, <span class="bu">float</span>]:</span>
+<span id="cb13-41"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Vrací obálku polygonu ve formátu (min_x, min_y, max_x, max_y)."""</span></span>
+<span id="cb13-42"><a aria-hidden="true" tabindex="-1"></a>        x_values <span class="op">=</span> [x <span class="cf">for</span> x, _ <span class="kw">in</span> <span class="va">self</span>.vertices]</span>
+<span id="cb13-43"><a aria-hidden="true" tabindex="-1"></a>        y_values <span class="op">=</span> [y <span class="cf">for</span> _, y <span class="kw">in</span> <span class="va">self</span>.vertices]</span>
+<span id="cb13-44"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">min</span>(x_values), <span class="bu">min</span>(y_values), <span class="bu">max</span>(x_values), <span class="bu">max</span>(y_values)</span>
+<span id="cb13-45"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-46"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb13-47"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Polygon s </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>vertex_count<span class="sc">}</span><span class="ss"> vrcholy. Hranice: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>bounds<span class="sc">}</span><span class="ss">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="použití-objektu" class="slide level2">
 <h2>Použití objektu</h2>
-<div id="bb438599" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>poly <span class="op">=</span> Polygon([(<span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="dv">1</span>), (<span class="fl">0.5</span>, <span class="fl">0.5</span>), (<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">0</span>)])</span>
-<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(poly)</span>
-<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obvod: </span><span class="sc">{</span>poly<span class="sc">.</span>perimeter()<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Počet vrcholů: </span><span class="sc">{</span>poly<span class="sc">.</span>vertex_count<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je polygon uzavřený? </span><span class="sc">{</span>Polygon<span class="sc">.</span>is_closed(poly.vertices)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5b9ebc95" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>poly <span class="op">=</span> Polygon([(<span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="dv">0</span>), (<span class="dv">1</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="dv">1</span>)])</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Polygon je uzavřený: </span><span class="sc">{</span>Polygon<span class="sc">.</span>is_closed(poly.vertices)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>poly.close()</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(poly)</span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Počet vrcholů polygonu: </span><span class="sc">{</span>poly<span class="sc">.</span>vertex_count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obvod polygonu: </span><span class="sc">{</span>poly<span class="sc">.</span>perimeter()<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obálka polygonu: </span><span class="sc">{</span>poly<span class="sc">.</span>bounds<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Polygon s 6 vrcholy
-Obvod: 4.414213562373095
-Počet vrcholů: 6
-Je polygon uzavřený? True</code></pre>
+<pre><code>Polygon je uzavřený: False
+Polygon s 5 vrcholy. Hranice: (0, 0, 1, 1)
+Počet vrcholů polygonu: 5
+Obvod polygonu: 4.00
+Obálka polygonu: (0, 0, 1, 1)</code></pre>
 </div>
 </div>
 </section>
@@ -487,47 +495,74 @@ Je polygon uzavřený? True</code></pre>
 <li>v praxi se s tím setkáváme běžně, např. <code>GeoDataFrame</code> dědí z <code>DataFrame</code> (přidává sloupec geometrie a prostorové metody)</li>
 <li>syntaxe: <code>class Potomek(Rodic):</code></li>
 <li>funkce <code>super()</code> umožňuje volat metody rodičovské třídy</li>
+<li>alternativní konstruktory lze tvořit pomocí <code>@classmethod</code></li>
 </ul>
 </section>
 <section id="dědičnost---příklad" class="slide level2">
 <h2>Dědičnost - příklad</h2>
-<div id="0229231e" class="cell" data-execution_count="8">
+<div id="7021dcde" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle(Polygon):</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x: <span class="bu">float</span>, y: <span class="bu">float</span>, width: <span class="bu">float</span>, height: <span class="bu">float</span>):</span>
-<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="co"># Vytvoří obdélník z levého dolního rohu (x, y)</span></span>
-<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>        vertices <span class="op">=</span> [(x, y), (x <span class="op">+</span> width, y), (x <span class="op">+</span> width, y <span class="op">+</span> height), (x, y <span class="op">+</span> height), (x, y)]</span>
-<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(vertices)</span>
-<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
-<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
-<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Vrací obsah obdélníku."""</span></span>
-<span id="cb16-11"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width <span class="op">*</span> <span class="va">self</span>.height</span>
-<span id="cb16-12"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> perimeter(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb16-14"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Přepsaná metoda - obvod obdélníku."""</span></span>
-<span id="cb16-15"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> (<span class="va">self</span>.width <span class="op">+</span> <span class="va">self</span>.height)</span>
-<span id="cb16-16"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-17"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb16-18"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Obdélník </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>width<span class="sc">}</span><span class="ss">x</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>height<span class="sc">}</span><span class="ss">, obálka: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>bounds<span class="sc">}</span><span class="ss">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>        vertices <span class="op">=</span> [</span>
+<span id="cb16-4"><a aria-hidden="true" tabindex="-1"></a>            (x, y),</span>
+<span id="cb16-5"><a aria-hidden="true" tabindex="-1"></a>            (x <span class="op">+</span> width, y),</span>
+<span id="cb16-6"><a aria-hidden="true" tabindex="-1"></a>            (x <span class="op">+</span> width, y <span class="op">+</span> height),</span>
+<span id="cb16-7"><a aria-hidden="true" tabindex="-1"></a>            (x, y <span class="op">+</span> height),</span>
+<span id="cb16-8"><a aria-hidden="true" tabindex="-1"></a>            (x, y),</span>
+<span id="cb16-9"><a aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb16-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(vertices)</span>
+<span id="cb16-11"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
+<span id="cb16-12"><a aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
+<span id="cb16-13"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
+<span id="cb16-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> from_opposite_corners(</span>
+<span id="cb16-16"><a aria-hidden="true" tabindex="-1"></a>        cls,</span>
+<span id="cb16-17"><a aria-hidden="true" tabindex="-1"></a>        point_a: Tuple[<span class="bu">float</span>, <span class="bu">float</span>],</span>
+<span id="cb16-18"><a aria-hidden="true" tabindex="-1"></a>        point_b: Tuple[<span class="bu">float</span>, <span class="bu">float</span>],</span>
+<span id="cb16-19"><a aria-hidden="true" tabindex="-1"></a>    ) <span class="op">-&gt;</span> <span class="st">"Rectangle"</span>:</span>
+<span id="cb16-20"><a aria-hidden="true" tabindex="-1"></a>        x1, y1 <span class="op">=</span> point_a</span>
+<span id="cb16-21"><a aria-hidden="true" tabindex="-1"></a>        x2, y2 <span class="op">=</span> point_b</span>
+<span id="cb16-22"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a aria-hidden="true" tabindex="-1"></a>        min_x <span class="op">=</span> <span class="bu">min</span>(x1, x2)</span>
+<span id="cb16-24"><a aria-hidden="true" tabindex="-1"></a>        min_y <span class="op">=</span> <span class="bu">min</span>(y1, y2)</span>
+<span id="cb16-25"><a aria-hidden="true" tabindex="-1"></a>        width <span class="op">=</span> <span class="bu">abs</span>(x2 <span class="op">-</span> x1)</span>
+<span id="cb16-26"><a aria-hidden="true" tabindex="-1"></a>        height <span class="op">=</span> <span class="bu">abs</span>(y2 <span class="op">-</span> y1)</span>
+<span id="cb16-27"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> cls(min_x, min_y, width, height)</span>
+<span id="cb16-29"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-30"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb16-31"><a aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Vrací obsah obdélníku."""</span></span>
+<span id="cb16-32"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width <span class="op">*</span> <span class="va">self</span>.height</span>
+<span id="cb16-33"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-34"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> perimeter(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb16-35"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> (<span class="va">self</span>.width <span class="op">+</span> <span class="va">self</span>.height)</span>
+<span id="cb16-36"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-37"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb16-38"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"Obdélník </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>width<span class="sc">}</span><span class="ss">x</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>height<span class="sc">}</span><span class="ss">, hranice: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>bounds<span class="sc">}</span><span class="ss">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="dědičnost---použití" class="slide level2">
 <h2>Dědičnost - použití</h2>
-<div id="530fc723" class="cell" data-execution_count="9">
+<div id="a50e5d78" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a>rect <span class="op">=</span> Rectangle(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">3</span>)</span>
 <span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rect)</span>
-<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obsah: </span><span class="sc">{</span>rect<span class="sc">.</span>area()<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obvod: </span><span class="sc">{</span>rect<span class="sc">.</span>perimeter()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obsah obdélníku: </span><span class="sc">{</span>rect<span class="sc">.</span>area()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obvod obdélníku: </span><span class="sc">{</span>rect<span class="sc">.</span>perimeter()<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb17-5"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Rectangle je zároveň i Polygon</span></span>
 <span id="cb17-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je polygon: </span><span class="sc">{</span><span class="bu">isinstance</span>(rect, Polygon)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je obdélník: </span><span class="sc">{</span><span class="bu">isinstance</span>(rect, Rectangle)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-7"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je obdélník: </span><span class="sc">{</span><span class="bu">isinstance</span>(rect, Rectangle)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a aria-hidden="true" tabindex="-1"></a>rect_from_points <span class="op">=</span> Rectangle.from_opposite_corners((<span class="dv">2</span>, <span class="dv">5</span>), (<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb17-10"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rect_from_points)</span>
+<span id="cb17-11"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Obsah obdélníku z bodů: </span><span class="sc">{</span>rect_from_points<span class="sc">.</span>area()<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Obdélník 5x3, obálka: (0, 0, 5, 3)
-Obsah: 15
-Obvod: 16
+<pre><code>Obdélník 5x3, hranice: (0, 0, 5, 3)
+Obsah obdélníku: 15
+Obvod obdélníku: 16
 Je polygon: True
-Je obdélník: True</code></pre>
+Je obdélník: True
+Obdélník 3x4, hranice: (-1, 1, 2, 5)
+Obsah obdélníku z bodů: 12</code></pre>
 </div>
 </div>
 </section>
@@ -543,7 +578,7 @@ Je obdélník: True</code></pre>
 </section>
 <section id="docstring---příklad" class="slide level2">
 <h2>Docstring - příklad</h2>
-<div id="eab383d0" class="cell" data-execution_count="10">
+<div id="76785fd3" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rectangle_area(width: <span class="bu">float</span>, height: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return area of rectangle in square units."""</span></span>
 <span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> width <span class="op">*</span> height</span>
