@@ -1,6 +1,6 @@
 # NOTE: Ukázka uložení dat do paměti (s formátem i bez formátu) a modifikace dat v paměti
 from osgeo import gdal, ogr
-from utils import LayerFromDatasetContextManager, data_path, save_data_path
+from utils import LayerFromDatasetContextManager, base_save_data_path, data_path, save_data_path
 
 gdal.UseExceptions()
 
@@ -37,15 +37,15 @@ def use_memory_driver() -> None:
 def use_in_memory_data() -> None:
     """Použití dat v paměti ve formátu GPKG, modifikace a synchronizace s cílovou složkou"""
 
-    path_data = utils.data_path("ne_10m_admin_0_countries.shp")
-    path_result = utils.base_save_data_path()
+    path_data = data_path("ne_10m_admin_0_countries.shp")
+    path_result = base_save_data_path()
 
     params = gdal.VectorTranslateOptions(dstSRS="EPSG:3857")
 
     # NOTE: k datům se lze po dobu běhu skriptu dostat pod uvedenou adresou
     ds: gdal.Dataset = gdal.VectorTranslate("/vsimem/data.gpkg", path_data, options=params)
 
-    with utils.LayerFromDatasetContextManager(ds) as layer:
+    with LayerFromDatasetContextManager(ds) as layer:
 
         feature: ogr.Feature
 
