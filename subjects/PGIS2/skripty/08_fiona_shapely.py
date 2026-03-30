@@ -36,27 +36,26 @@ if __name__ == "__main__":
 
             feature: fiona.Feature
             for feature in src:
-
-                # Shapely geometrie
+                # převedení na Shapely geometrii
                 geom = shape(feature.geometry)
 
                 # konverze do jiného CRS
                 geom_transformed = transform(transformer.transform, geom)
 
-                # buffer geometrie
+                # buffer geometrie (zajištění správného typu MultiPolygon)
                 geom_transformed = geom_transformed.buffer(10_000)
 
                 if geom_transformed.geom_type != "MultiPolygon":
                     geom_transformed = MultiPolygon([geom_transformed])
 
-                # konverze geometrie nazpět do geometrie Fiona
-                new_geom = fiona.Geometry.from_dict(mapping(geom_transformed))
+                # příprava atributů (využití moderního Python operátoru | pro sloučení slovníků)
+                new_props = dict(feature.properties) | {"area": geom_transformed.area}
 
-                # příprava atributů
-                props = fiona.Properties.from_dict(**feature.properties, area=geom_transformed.area)
+                # knihovna Fiona v základu využívá a plně podporuje přístup pomocí slovníků (GeoJSON-like obj)
+                new_feat = {
+                    "geometry": mapping(geom_transformed),
+                    "properties": new_props,
+                }
 
-                # nový prvek
-                new_feat = fiona.Feature(geometry=new_geom, properties=props)
-
-                # zápis prvku
+                # zápis nového prvku
                 dst.write(new_feat)

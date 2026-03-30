@@ -26,34 +26,24 @@ if __name__ == "__main__":
 
         print("-" * 10)
 
-        # informace o rasteru a výpis
+        # informace o rastru a načtení do paměti jako pole (ndarray)
         band_number = 1
         band_values = input_ds.read(band_number)
-        data_type = input_ds.dtypes[band_number]
 
-        # context manager rasteru pro zápis
-        with rasterio.open(
-            save_data_path("single_band_raster.tif"),
-            "w",
-            driver="GTiff",
-            height=input_ds.height,
-            width=input_ds.width,
-            count=1,
-            dtype=data_type,
-            crs=input_ds.crs,
-            transform=input_ds.transform,
-            nodata=no_data_value,
-        ) as output_ds:
+        # vytvoření rastrového profilu (metadat) pro nový soubor zkopírováním z původního
+        profile = input_ds.profile
+        profile.update(count=1, driver="GTiff", nodata=no_data_value)  # omezíme se jen na jedno pásmo
 
-            # řádek s maximální hodnotou
-            max_value_row = int(input_ds.height / 2)
-            # řádek s hodnotami nastavenými na no data
-            no_data_row = int(input_ds.height / 4)
+        # context manager rastru pro zápis s využitím rozbalení profilu kwargs operátorem **
+        with rasterio.open(save_data_path("single_band_raster.tif", delete_if_exist=True), "w", **profile) as output_ds:
 
-            # modifikace hodnot
-            for i in range(input_ds.width):
-                band_values[max_value_row, i] = 255
-                band_values[no_data_row, i] = no_data_value
+            # určení indexů řádků
+            max_value_row = input_ds.height // 2
+            no_data_row = input_ds.height // 4
 
-            # zápis pásma do rastru
+            # modifikace hodnot celoplošně pomocí vektorizace NumPy (bez pomalých for cyklů)
+            band_values[max_value_row, :] = 255
+            band_values[no_data_row, :] = no_data_value
+
+            # zápis upraveného pole jako prvního pásma
             output_ds.write(band_values, 1)
