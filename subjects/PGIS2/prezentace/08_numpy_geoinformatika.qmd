@@ -1,0 +1,237 @@
+---
+title: "NumPy pro geoinformatiku"
+date: 2026-03-30
+year: 2026
+---
+
+## Co je to [NumPy]{.software}?
+
+- základní knihovna pro vědecké výpočty v [Python]{.software}
+- poskytuje výkonný vícerozměrný objekt pole (`ndarray`)
+- funkce pro matematické, logické a statistické operace
+- implemetace v C a Fortranu {{< fa arrow-right >}} rychlost, vektorizace (eliminace pomalých cyklů `for`)
+- **geoinformatika:** základní kámen pro práci s rastrovými daty (2D pole) a subsystém pro [Pandas]{.software}, [GeoPandas]{.software}, [Rasterio]{.software} a [GDAL]{.software}
+
+## Objekt `ndarray` v [NumPy]{.software}
+
+- multidimenzionální pole (vektory, matice, tenzory)
+- všechny prvky musí mít shodný datový typ (např. `int32`, `float64`)
+- umožňuje rychlé plošné operace nad celým polem
+- pro prostorová data typicky pracujeme s 2D (jeden pás rastru) či 3D poli (vícepásmové rastry)
+
+## Vazba na [SciPy]{.software}
+
+- úzce spjatá knihovna rozšiřující [NumPy]{.software} o pokročilé algoritmy
+- obsahuje nástroje pro optimalizaci, interpolaci, statistiku či zpracování signálu
+- výpočetní funkce plně sdílí datové struktury (přímo přijímá a vrací `ndarray`), čímž zcela odpadá nutnost konverze dat
+- v geoinformatice používaný modul `scipy.ndimage` poskytující filtry a morfologické operace nad rastry
+
+## Načtení pole pomocí [GDAL]{.software}
+
+- přečteme rastrový soubor do `ndarray` a následně po zpracování případně zapisujeme zpět
+
+```python
+#| eval: false
+from osgeo import gdal
+
+gdal.UseExceptions()
+
+# Otevření rastrového datového souboru
+dataset: gdal.Dataset = gdal.OpenEx("cesta_k_rastru.tif")
+band: gdal.Band = dataset.GetRasterBand(1)
+
+# Načtení rastrového pásma jako pole NumPy
+array_2d = band.ReadAsArray()
+
+print(type(array_2d)) 
+# <class 'numpy.ndarray'>
+```
+
+## Vytváření a vlastnosti pole
+
+- k seznámení se strukturou a vlastnostmi 2D pole se užívají speciální atributy
+
+```{python}
+import numpy as np
+
+# Ruční vytvoření 2D pole z vnořených seznamů
+elevation_data = np.array([
+    [100, 105, 110, 112],
+    [102, 106, 108, 115],
+    [95,  98,  100, 105]
+])
+
+print(f"Typ dat: {elevation_data.dtype}")
+
+# tvar pole (počet řádků, počet sloupců) - velmi důležité pro GDAL/Rasterio
+print(f"Tvar pole: {elevation_data.shape}")
+
+# počet dimenzí (2 pro 2D rastr)
+print(f"Počet dimenzí: {elevation_data.ndim}")
+```
+
+## Indexování 2D polí (řezání)
+
+- k prvkům ve 2D poli se přistupuje pomocí zástupců hranatých závorek a notace `[řádek, sloupec]`
+
+```{python}
+# přístup ke specifické buňce (2. řádek, 3. sloupec)
+print(elevation_data[1, 2]) 
+
+# výběr výřezu rastru (celý první sloupec)
+print(elevation_data[:, 0])
+
+# výběr menšího rastru (prostřední blok 2x2)
+print(elevation_data[0:2, 1:3])
+```
+
+## Filtrování a logické operace
+
+- konstrukce boolean masky definovanou podmínkou (buňky nad danou hodnotu, relace dat atd.)
+- vynikající způsob filtrace hodnot v analyzovaných rastrech (elevace, srážkové úhrny, teploty)
+
+```{python}
+# které buňky splňují podmínku
+# boolean pole
+mask_high_elevation = elevation_data > 105
+
+print(mask_high_elevation)
+
+# výběr samotných hodnot na základě masky (vrací 1D pole)
+high_values = elevation_data[mask_high_elevation]
+print(high_values)
+```
+
+## Nahrazování hodnot (podmínky maskou)
+
+- při úpravách rastrů modifikujeme hodnoty dle maskovaných podmínek (např. chyby senzoru letadla, korekce vodních ploch)
+
+```{python}
+# kopie původních dat
+modified_elevation = elevation_data.copy()
+
+# pokud je hodnota < 100, nahradíme ji hodnotou -9999 (NoData typicky)
+modified_elevation[modified_elevation < 100] = -9999
+
+print(modified_elevation)
+```
+
+## Nahrazování hodnot s `np.where`
+
+- funkce `np.where(podmínka, hodnota_pokud_pravda, hodnota_pokud_nepravda)` bývá jedním z nejčastěji používaných analytických nástrojů
+
+```{python}
+# převedeme rastr výšek na binární mapu: 1 = výše než limit, 0 = pod limitem
+mask = np.where(elevation_data >= 105, 1, 0)
+
+print(mask)
+```
+
+## Matematické operace nad rastry
+
+- knihovna celoplošně aplikuje prováděné matematické operátory rovnou na mřížku (element-wise princip)
+
+```{python}
+# přepočet nadmořské výšky na stopy (* 3.28084)
+elevation_feet = elevation_data * 3.28084
+
+print(np.round(elevation_feet, 1))
+
+# odečtení dvou rastrů od sebe
+diff_raster = elevation_data - np.full(elevation_data.shape, 100)
+print(diff_raster)
+```
+
+## Agregace a osy
+
+- lze počítat agregace jak za celek, tak dle jednotlivých os (řádkový či slopcový - např. průměr)
+
+```{python}
+# minimální a maximální hodnota v celém rastru
+print(np.min(elevation_data))
+print(np.max(elevation_data))
+
+# průměr pro každý řádek (axis=1) - např. "šířkový průměr"
+print(np.mean(elevation_data, axis=1))
+
+# průměr pro každý sloupec (axis=0)
+print(np.mean(elevation_data, axis=0))
+```
+
+## Práce s prázdnými hodnotami (NoData)
+
+- geoinformační struktury uchovávají prázdné buňky obvykle jako významnou hodnout (typicky negativní `int` formáty -9999), programovací jazyky preferují typizovaný objekt `np.nan`
+- základní statistické sumarizace defaultně nedokáží s hodnotou `NaN` pracovat a šíří výsledek dál
+- problém řeší v rámci funkcí předpony `nan` ve stylu `nanmean`, anebo plně chráněné vrstvy `Masked Arrays`
+
+```{python}
+data_with_nodata = np.array([[10, 20.5], [np.nan, 30]])
+print(np.mean(data_with_nodata))
+
+# ignorování hodnoty NaN
+print(np.nanmean(data_with_nodata))
+```
+
+## [NumPy]{.software} Masked Arrays pro NoData 
+
+- modul s nástavbou masek `numpy.ma` k danému poli rastru přiloží maskovací soubor ignorovaných hodnot
+- získáme tak bezpečnější analytiku bez šíření chyby
+
+```{python}
+import numpy.ma as ma
+
+# Vytvoření maskovaného pole, kde maskujeme -9999
+masked_raster = ma.masked_equal(modified_elevation, -9999)
+
+print(masked_raster)
+
+# Vypočte průměr ze všech platných buněk
+print(masked_raster.mean())
+```
+
+## Operace na sousedství (konvoluce)
+
+- operace na sousedství rastru v okně s určeným počtem (např 3x3 nebo 5x5 buněk)
+- klasicky konvoluční prvek známý z GIS – výpočet směrů, hran, stínů či sklonu
+- v rámci skriptů [Python]{.software} lze tyto prvky používat pomocí `scipy.ndimage`
+
+```python
+#| eval: false
+from scipy import ndimage
+
+# Vytvoření odvozeného vyhlazeného rastru (kernel velikosti 2)
+smoothed_raster = ndimage.gaussian_filter(elevation_data, sigma=2)
+```
+
+## Vlastní konvoluční matice
+
+- definice uživatelského filtru (kernelu) v podobě 2D pole [NumPy]{.software}
+- využití funkce `ndimage.convolve` pro aplikaci matice vah na zdrojová data
+- typické využití pro detekci hran, specializované zaostření nebo jiné prostorové modifikace
+
+```{python}
+from scipy import ndimage
+
+# definice filtru pro detekci hran (Laplaceův operátor)
+kernel = np.array([
+    [ 0,  1,  0],
+    [ 1, -4,  1],
+    [ 0,  1,  0]
+])
+
+# prostorová aplikace konvoluce na výškopisná data
+edges = ndimage.convolve(elevation_data, kernel)
+print(edges)
+```
+
+## Vliv na [Pandas]{.software} a datové rámce
+
+- u obou knihoven na databázové tabulky [Pandas]{.software} i [GeoPandas]{.software} stojí mechanismy nad podkladovou technologií C
+- každá vytvořená instance sloupcového tělesa (`Series`) implementuje balení dat okolo základu 1D polí `ndarray`
+- rychlost fitrovacích principů nad sloupci přesně koresponduje s Boolean operacemi [NumPy]{.software} masky
+
+::: {.callout-note}
+při procházení a iteraci velkých dat přímo po jednotlivých řádcích ([`iterrows`]{.software}) se vyhýbáte obrovskému optimalizačnímu benefitu vektorizací ze strany [NumPy]{.software} – zásadní a častá chyba v GIS analytice
+:::
+
+# Dotazy?{.center}
