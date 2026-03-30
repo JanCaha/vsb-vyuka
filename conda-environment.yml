@@ -7,6 +7,9 @@ channels:
 dependencies:
   - python=3.14
   - pip
+  # zpracování dat
+  - numpy
+  - scipy
   # pgis2
   - GDAL
   - fiona
@@ -39,5 +42,5 @@ dependencies:
   # install using pip
   - pip:
     # pgis2
-    # - geopolars
+    - geopolars
     - PyQt5-stubs
