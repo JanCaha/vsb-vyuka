@@ -1,5 +1,6 @@
 # NOTE: Ukázka čtení rastru pomocí Rasterio, výpis metadat a zápis jednoho upraveného pásma do nového souboru
 import rasterio
+import rasterio.io
 from utils import data_path, save_data_path
 
 if __name__ == "__main__":
@@ -9,6 +10,7 @@ if __name__ == "__main__":
 
     no_data_value = 0
 
+    input_ds: rasterio.DatasetReader
     # context manager rasteru pro čtení
     with rasterio.open(data_path("HYP_HR_SR_W.tif")) as input_ds:
 
@@ -34,6 +36,7 @@ if __name__ == "__main__":
         profile = input_ds.profile
         profile.update(count=1, driver="GTiff", nodata=no_data_value)  # omezíme se jen na jedno pásmo
 
+        output_ds: rasterio.io.DatasetWriter
         # context manager rastru pro zápis s využitím rozbalení profilu kwargs operátorem **
         with rasterio.open(save_data_path("single_band_raster.tif", delete_if_exist=True), "w", **profile) as output_ds:
 
