@@ -12,7 +12,7 @@
   <meta name="generator" content="quarto-1.9.36">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-03-17">
+  <meta name="dcterms.date" content="2026-03-30">
   <title>Výuka - Jan Caha – Knihovny fiona, rasterio, shapely</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -215,7 +215,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-03-17</p>
+  <p class="date">2026-03-30</p>
 </section>
 <section id="typy-knihoven-pro-python" class="slide level2">
 <h2>Typy knihoven pro Python</h2>
@@ -268,7 +268,7 @@ Jan Caha
 <ul>
 <li>knihovna pro práci s rastrovými daty</li>
 <li>platí pro ni v podstatě to samé co pro <span class="software">fiona</span></li>
-<li>výrazné propojení s <span class="software">numpy</span> (knihovna pro dvou a vícerozměrné matic)</li>
+<li>výrazné propojení s <span class="software">numpy</span></li>
 <li>oproti <span class="software">osgeo</span> jednodušší přístupy</li>
 <li><a href="https://rasterio.readthedocs.io/en/stable/index.html">dokumentace</a></li>
 <li>problém s typováním - nutné hodně se opírat o dokumentaci</li>
@@ -285,7 +285,7 @@ Jan Caha
 </section>
 <section id="osr---práce-se-souřadnicovými-systémy" class="slide level2">
 <h2><span class="software">osr</span> - práce se souřadnicovými systémy</h2>
-<div id="12290682" class="cell" data-execution_count="1">
+<div id="8b013f9f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> osr</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>srs <span class="op">=</span> osr.SpatialReference()</span>
@@ -306,7 +306,7 @@ Jan Caha
 </section>
 <section id="pyproj---moderní-přístup" class="slide level2">
 <h2><span class="software">pyproj</span> - moderní přístup</h2>
-<div id="09834f64" class="cell" data-execution_count="2">
+<div id="48a413b7" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyproj</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>crs_src <span class="op">=</span> pyproj.CRS(<span class="st">"EPSG:4326"</span>)</span>
