@@ -6,13 +6,13 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-04-14">
+  <meta name="dcterms.date" content="2026-04-13">
   <title>Výuka - Jan Caha – Datové rámce v Pythonu - pandas, geopandas a polars</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -215,7 +215,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-04-14</p>
+  <p class="date">2026-04-13</p>
 </section>
 <section id="datové-rámce" class="slide level2">
 <h2>Datové rámce</h2>
@@ -235,7 +235,7 @@ Jan Caha
 <li><span class="software">Python</span> tento koncept přímo v sobě neobsahuje (na rozdíl třeba od <span class="software">R</span>)</li>
 <li>nejstarší podobná implementace je <span class="software">numpy</span> - což jsou obecně multidimenzionální struktury, ale spíše ve smyslu matic a dalších numerických dat</li>
 <li>pro práci s tabulkovými daty se používá knihovna <span class="software">pandas</span> a chceme-li pracovat s geografickými daty, tak <span class="software">geopandas</span></li>
-<li>v poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. <span class="software">polars</span></li>
+<li>v poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. <span class="software">polars</span> a <span class="software">geopolars</span></li>
 </ul>
 </section>
 <section id="pandas" class="slide level2">
@@ -247,6 +247,7 @@ Jan Caha
 <li>nesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geodata)</li>
 <li>práci občas stěžuje koncept indexů a jejich správa a absence jednotného přístupu k práci s daty</li>
 <li>hlavní třída <code>DataFrame</code> - na ní řada funkcí</li>
+<li>verze 3.0 (leden 2026) část problémů řeší</li>
 <li><a href="https://github.com/jvns/pandas-cookbook?tab=readme-ov-file">Pandas cookbook</a>, <a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/">Getting started tutorials</a>, <a href="https://www.datacamp.com/tutorial/pandas-tutorial-dataframe-python">Pandas Tutorial: DataFrames in Python</a></li>
 </ul>
 </section>
@@ -259,7 +260,7 @@ Jan Caha
 </ul>
 </section>
 <section id="polars" class="slide level2">
-<h2>Polars</h2>
+<h2><span class="software">Polars</span></h2>
 <ul>
 <li>modernější iterace na téma datových rámců, značně inspirovaná <span class="software">dplyr</span> (balík pro <span class="software">R</span>)</li>
 <li>napsáno primárně pro <span class="software">Rust</span> a následně portováno do mnoha dalších jazyků (včetně Pythonu)</li>
@@ -267,7 +268,7 @@ Jan Caha
 <li>podporuje méně formátů než <span class="software">pandas</span>, zejména s ohledem na udržení lehkosti (co se týká závislostí)</li>
 <li>kód je mnohem čitelnější a obvykle jednodušší na pochopení v porovnání s <span class="software">pandas</span></li>
 <li><a href="https://docs.pola.rs/">user guide</a> , <a href="https://kevinheavey.github.io/modern-polars/">Modern Polars</a> - porovnání s <span class="software">pandas</span> a <span class="software">polars</span></li>
-<li>absence podpory prostrorových dat</li>
+<li>pro práci s prostorovými daty existuje balík <span class="software">geopolars</span></li>
 </ul>
 </section>
 <section id="ukázka---selekce" class="slide level2">
@@ -282,20 +283,22 @@ Jan Caha
 <span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>df_pd.loc[<span class="dv">12</span>:<span class="dv">15</span>, [<span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>]]</span>
 <span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>df_pd</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    .set_index(<span class="st">"IATA_CODE_Reporting_Airline"</span>)</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    .loc[[<span class="st">'AA'</span>, <span class="st">'DL'</span>], [<span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>selected_pd <span class="op">=</span> df_pd.set_index(<span class="st">"IATA_CODE_Reporting_Airline"</span>).loc[[<span class="st">"AA"</span>, <span class="st">"DL"</span>], [<span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>]]</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>selected_pd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>df_pl <span class="op">=</span> pl.read_csv(extracted, truncate_ragged_lines<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>df_pl.select([<span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>]).head(<span class="dv">16</span>).tail(<span class="dv">4</span>)</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>df_pl.select([<span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>]).head(<span class="dv">12</span>).tail(<span class="dv">3</span>)</span>
 <span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>df_pl</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    .<span class="bu">filter</span>(pl.col(<span class="st">"IATA_CODE_Reporting_Airline"</span>).is_in([<span class="st">'AA'</span>, <span class="st">'DL'</span>]))</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    .select([<span class="st">"IATA_CODE_Reporting_Airline"</span>, <span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>selected_pl <span class="op">=</span> df_pl.<span class="bu">filter</span>(pl.col(<span class="st">"IATA_CODE_Reporting_Airline"</span>).is_in([<span class="st">"AA"</span>, <span class="st">"DL"</span>])).select(</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    [<span class="st">"IATA_CODE_Reporting_Airline"</span>, <span class="st">"Dest"</span>, <span class="st">"Tail_Number"</span>]</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>selected_pl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -306,11 +309,68 @@ Jan Caha
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Pandas</a></li><li><a href="#tabset-2-2">Polars</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>df_pd[<span class="st">"novy_sloupec"</span>] <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a>df_pd[<span class="st">"novy_sloupec"</span>] <span class="op">=</span> df_pd[<span class="st">"novy_sloupec"</span>].mask(df_pd[<span class="st">"sloupec_hodnota"</span>] <span class="op">&lt;=</span> <span class="dv">3</span>, <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>df_pd[<span class="st">"novy_sloupec"</span>] <span class="op">=</span> df_pd[<span class="st">"sloupec_hodnota"</span>] <span class="op">&lt;=</span> <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>df_pl.with_columns(pl.when(pl.col(<span class="st">"sloupec_hodnota"</span>) <span class="op">&lt;=</span> <span class="dv">10</span>).then(<span class="va">True</span>).otherwise(<span class="va">False</span>).alias(<span class="st">"novy_sloupec"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>df_pl <span class="op">=</span> df_pl.with_columns(pl.when(pl.col(<span class="st">"sloupec_hodnota"</span>) <span class="op">&lt;=</span> <span class="dv">10</span>).then(<span class="va">True</span>).otherwise(<span class="va">False</span>).alias(<span class="st">"novy_sloupec"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ukázka---filtrace-dat" class="slide level2">
+<h2>Ukázka - filtrace dat</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Pandas</a></li><li><a href="#tabset-3-2">Polars</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df_pd[(df_pd[<span class="st">"zpozdeni"</span>] <span class="op">&gt;</span> <span class="dv">15</span>) <span class="op">&amp;</span> (df_pd[<span class="st">"mesto"</span>] <span class="op">==</span> <span class="st">"Praha"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-3-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df_pl.<span class="bu">filter</span>((pl.col(<span class="st">"zpozdeni"</span>) <span class="op">&gt;</span> <span class="dv">15</span>) <span class="op">&amp;</span> (pl.col(<span class="st">"mesto"</span>) <span class="op">==</span> <span class="st">"Praha"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ukázka---seskupování-a-agregace-group-by" class="slide level2">
+<h2>Ukázka - seskupování a agregace (Group by)</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Pandas</a></li><li><a href="#tabset-4-2">Polars</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>df_grouped_pd <span class="op">=</span> df_pd.groupby(<span class="st">"letecka_spolecnost"</span>).agg(</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>    prumerne_zpozdeni<span class="op">=</span>(<span class="st">"zpozdeni"</span>, <span class="st">"mean"</span>), pocet_letu<span class="op">=</span>(<span class="st">"id_letu"</span>, <span class="st">"count"</span>)</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>df_grouped_pd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-4-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>df_grouped_pl <span class="op">=</span> df_pl.group_by(<span class="st">"letecka_spolecnost"</span>).agg(</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"zpozdeni"</span>).mean().alias(<span class="st">"prumerne_zpozdeni"</span>), pl.col(<span class="st">"id_letu"</span>).count().alias(<span class="st">"pocet_letu"</span>)</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>df_grouped_pl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="konverze-mezi-knihovnami" class="slide level2">
+<h2>Konverze mezi knihovnami</h2>
+<ul>
+<li>často je nutné data mezi těmito knihovnami převádět data (např. některá jiná knihovna podporuje zatím jen <span class="software">pandas</span>)</li>
+<li><span class="software">polars</span> má funkce pro převod z a do <span class="software">pandas</span></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Z Pandas do Polars</a></li><li><a href="#tabset-5-2">Z Polars do Pandas</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># vytvoření polars DataFrame z pandas DataFrame</span></span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a>df_pl <span class="op">=</span> pl.from_pandas(df_pd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-5-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># převod polars DataFrame na pandas DataFrame</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>df_pd <span class="op">=</span> df_pl.to_pandas()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

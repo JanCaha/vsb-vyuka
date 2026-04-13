@@ -6,10 +6,10 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2026-03-30">
@@ -285,7 +285,7 @@ Jan Caha
 </section>
 <section id="osr---práce-se-souřadnicovými-systémy" class="slide level2">
 <h2><span class="software">osr</span> - práce se souřadnicovými systémy</h2>
-<div id="8b013f9f" class="cell" data-execution_count="1">
+<div id="06112076" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> osgeo <span class="im">import</span> osr</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>srs <span class="op">=</span> osr.SpatialReference()</span>
@@ -306,7 +306,7 @@ Jan Caha
 </section>
 <section id="pyproj---moderní-přístup" class="slide level2">
 <h2><span class="software">pyproj</span> - moderní přístup</h2>
-<div id="48a413b7" class="cell" data-execution_count="2">
+<div id="d4b83433" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyproj</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>crs_src <span class="op">=</span> pyproj.CRS(<span class="st">"EPSG:4326"</span>)</span>

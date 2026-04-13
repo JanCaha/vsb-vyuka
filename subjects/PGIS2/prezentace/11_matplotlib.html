@@ -6,10 +6,10 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+  <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Jan Caha">
   <meta name="dcterms.date" content="2025-04-28">
@@ -317,9 +317,85 @@ Jan Caha
 </ul></li>
 <li>obvykle úprava API do nějakého <em>“vhodnějšího”</em> formátu</li>
 </ul>
-
-
 </section></section>
+<section>
+<section id="plotnine" class="title-slide slide level1 center">
+<h1>Plotnine</h1>
+
+</section>
+<section id="plotnine---co-to-je" class="slide level2">
+<h2><span class="software">plotnine</span> - co to je</h2>
+<ul>
+<li>knihovna pro <span class="software">Python</span> inspirovaná <span class="software">ggplot2</span> z <span class="software">R</span></li>
+<li>používá koncept <strong>Grammar of Graphics</strong></li>
+<li>graf se skládá z vrstev pomocí operátoru <code>+</code></li>
+<li>vhodné zejména pro rychlou analytickou vizualizaci z <span class="software">pandas</span> DataFrame</li>
+<li>renderuje přes <span class="software">Matplotlib</span> backend</li>
+</ul>
+</section>
+<section id="jak-funguje-systém-grammar-of-graphics" class="slide level2">
+<h2>Jak funguje systém (Grammar of Graphics)</h2>
+<ul>
+<li>systém je založen na skládání několika částí grafu</li>
+<li><code>data</code> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> tabulka, ze které čteme hodnoty</li>
+<li><code>aes(...)</code> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> mapování sloupců na vizuální vlastnosti (<code>x</code>, <code>y</code>, <code>color</code>, …)</li>
+<li><code>geom_*</code> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> jaký typ značek se vykreslí (<code>geom_point</code>, <code>geom_line</code>, <code>geom_col</code>)</li>
+<li><code>stat_*</code> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> volitelné statistické transformace</li>
+<li><code>facet_*</code>, <code>theme_*</code>, <code>labs(...)</code> <i class="fa-solid fa-arrow-right" aria-label="arrow-right"></i> rozdělení do panelů, vzhled, popisky</li>
+</ul>
+</section>
+<section id="mentální-model-tvorby-grafu" class="slide level2">
+<h2>Mentální model tvorby grafu</h2>
+<ul>
+<li><ol type="1">
+<li>vyberu datový rámec</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>namapuji proměnné přes <code>aes(...)</code></li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>přidám geometrii (<code>geom_*</code>)</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>doplním měřítka, popisky a téma</li>
+</ol></li>
+<li><ol start="5" type="1">
+<li>volitelně rozdělím graf na panely (<code>facet_wrap</code>, <code>facet_grid</code>)</li>
+</ol></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> aes, geom_point, ggplot, labs, theme_minimal</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> (</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    ggplot(df, aes(x<span class="op">=</span><span class="st">"delay"</span>, y<span class="op">=</span><span class="st">"distance"</span>, color<span class="op">=</span><span class="st">"carrier"</span>))</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> geom_point(alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> labs(</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">"Delay vs distance"</span>,</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span><span class="st">"Delay (min)"</span>,</span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span><span class="st">"Distance (km)"</span>,</span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"Carrier"</span>,</span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> theme_minimal()</span>
+<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="plotnine-vs-matplotlib-kdy-použít-co" class="slide level2">
+<h2><span class="software">plotnine</span> vs <span class="software">Matplotlib</span> (kdy použít co)</h2>
+<ul>
+<li><span class="software">plotnine</span>: deklarativní zápis, rychlé skládání běžných analytických grafů</li>
+<li><span class="software">Matplotlib</span>: detailní kontrola každého prvku a komplexní customizace</li>
+<li>častý postup v praxi:
+<ul>
+<li>explorace dat a standardní grafy v <span class="software">plotnine</span></li>
+<li>speciální finální vizualizace v <span class="software">Matplotlib</span></li>
+</ul></li>
+</ul>
+</section></section>
+<section id="dotazy" class="title-slide slide level1 center">
+<h1>Dotazy?</h1>
+
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -1,4 +1,6 @@
 # NOTE: Ukázka práce s Fiona a Shapely: čtení vektorových dat, transformace CRS, buffer a zápis do GPKG
+from pprint import pprint
+
 import fiona
 import pyproj
 from shapely.geometry import MultiPolygon, mapping, shape
@@ -14,7 +16,12 @@ if __name__ == "__main__":
     with fiona.open(path_data) as src:
 
         # schéma dat
-        result_schema = src.schema.copy()
+        result_schema = src.schema
+
+        print("Result schema:")
+        pprint(result_schema, sort_dicts=False)
+        print("-" * 50)
+
         # přidání a modifikace atributů
         result_schema["properties"]["area"] = "float"
         result_schema["geometry"] = "MultiPolygon"
