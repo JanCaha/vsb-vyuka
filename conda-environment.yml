@@ -25,9 +25,12 @@ dependencies:
   - plotnine
   # dev
   - poetry
+  - uv
   # quarto
   - jupyter
   - nbformat
+  - itables
+  - pyarrow
   # VS Code extensions
   - black 
   - isort
