@@ -45,5 +45,5 @@ dependencies:
   # install using pip
   - pip:
     # pgis2
-    - geopolars
+    # - geopolars
     - PyQt5-stubs

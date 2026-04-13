@@ -88,6 +88,11 @@
   date: 2025-05-05
   year: 2025
   path: "PGIS2/skripty/14_arguments.py"
+- title: Pandas, Polars, GeoPandas a GeoPolars - společný notebook
+  author: Jan Caha
+  date: 2026-04-13
+  year: 2026
+  path: "PGIS2/skripty/15_pandas_polars_geopandas_geopolars.ipynb"
 - title: "Nastavení VS Code projektu"
   path: "PGIS2/skripty/Projekt.zip"
   author: Jan Caha
