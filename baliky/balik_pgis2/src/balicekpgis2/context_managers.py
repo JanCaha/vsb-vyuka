@@ -38,7 +38,7 @@ class LayerContextManager:
         exc_type: typing.Optional[typing.Type[BaseException]],
         exc_val: typing.Optional[BaseException],
         exc_tb: typing.Optional[types.TracebackType],
-    ):
+    ) -> None:
         self.layer = None
         self.ds = None
 
@@ -72,7 +72,7 @@ class LayerFromDatasetContextManager:
         exc_type: typing.Optional[typing.Type[BaseException]],
         exc_val: typing.Optional[BaseException],
         exc_tb: typing.Optional[types.TracebackType],
-    ):
+    ) -> None:
         self.layer = None
 
 
@@ -98,5 +98,5 @@ class BandAsArrayContextManager:
         exc_type: typing.Optional[typing.Type[BaseException]],
         exc_val: typing.Optional[BaseException],
         exc_tb: typing.Optional[types.TracebackType],
-    ):
+    ) -> None:
         self.band = None
