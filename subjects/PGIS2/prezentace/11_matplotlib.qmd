@@ -82,3 +82,58 @@ fig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))
     - [seaborn]{.software} - [ukázky](https://seaborn.pydata.org/examples/index.html) 
     - [plotnine]{.software} - [ukázky](https://plotnine.org/gallery/)
 - obvykle úprava API do nějakého *"vhodnějšího"* formátu
+
+# Plotnine
+
+## [plotnine]{.software} - co to je
+
+- knihovna pro [Python]{.software} inspirovaná [ggplot2]{.software} z [R]{.software}
+- používá koncept **Grammar of Graphics**
+- graf se skládá z vrstev pomocí operátoru `+`
+- vhodné zejména pro rychlou analytickou vizualizaci z [pandas]{.software} DataFrame
+- renderuje přes [Matplotlib]{.software} backend
+
+## Jak funguje systém (Grammar of Graphics)
+
+- systém je založen na skládání několika částí grafu
+- `data` {{< fa arrow-right >}} tabulka, ze které čteme hodnoty
+- `aes(...)` {{< fa arrow-right >}} mapování sloupců na vizuální vlastnosti (`x`, `y`, `color`, ...)
+- `geom_*` {{< fa arrow-right >}} jaký typ značek se vykreslí (`geom_point`, `geom_line`, `geom_col`)
+- `stat_*` {{< fa arrow-right >}} volitelné statistické transformace
+- `facet_*`, `theme_*`, `labs(...)` {{< fa arrow-right >}} rozdělení do panelů, vzhled, popisky
+
+## Mentální model tvorby grafu
+
+- 1) vyberu datový rámec
+- 2) namapuji proměnné přes `aes(...)`
+- 3) přidám geometrii (`geom_*`)
+- 4) doplním měřítka, popisky a téma
+- 5) volitelně rozdělím graf na panely (`facet_wrap`, `facet_grid`)
+
+```python
+from plotnine import aes, geom_point, ggplot, labs, theme_minimal
+
+p = (
+    ggplot(df, aes(x="delay", y="distance", color="carrier"))
+    + geom_point(alpha=0.6)
+    + labs(
+        title="Delay vs distance",
+        x="Delay (min)",
+        y="Distance (km)",
+        color="Carrier",
+    )
+    + theme_minimal()
+)
+
+p
+```
+
+## [plotnine]{.software} vs [Matplotlib]{.software} (kdy použít co)
+
+- [plotnine]{.software}: deklarativní zápis, rychlé skládání běžných analytických grafů
+- [Matplotlib]{.software}: detailní kontrola každého prvku a komplexní customizace
+- častý postup v praxi:
+  - explorace dat a standardní grafy v [plotnine]{.software}
+  - speciální finální vizualizace v [Matplotlib]{.software}
+
+# Dotazy? {.center}

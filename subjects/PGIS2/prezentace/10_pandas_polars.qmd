@@ -1,7 +1,7 @@
 ---
 title: "Datové rámce v Pythonu - pandas, geopandas a polars"
-date: 2025-04-14
-year: 2025
+date: 2026-04-13
+year: 2026
 ---
 
 ## Datové rámce
@@ -19,7 +19,7 @@ year: 2025
 - [Python]{.software} tento koncept přímo v sobě neobsahuje (na rozdíl třeba od [R]{.software})
 - nejstarší podobná implementace je [numpy]{.software} - což jsou obecně multidimenzionální struktury, ale spíše ve smyslu matic a dalších numerických dat
 - pro práci s tabulkovými daty se používá knihovna [pandas]{.software} a chceme-li pracovat s geografickými daty, tak [geopandas]{.software}
-- v poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. [polars]{.software} 
+- v poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. [polars]{.software} a [geopolars]{.software} 
 
 ## [Pandas]{.software}
 
@@ -29,6 +29,7 @@ year: 2025
 - nesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geodata)
 - práci občas stěžuje koncept indexů a jejich správa a absence jednotného přístupu k práci s daty
 - hlavní třída `DataFrame` - na ní řada funkcí
+- verze 3.0 (leden 2026) část problémů řeší
 - [Pandas cookbook](https://github.com/jvns/pandas-cookbook?tab=readme-ov-file), [Getting started tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/), [Pandas Tutorial: DataFrames in Python](https://www.datacamp.com/tutorial/pandas-tutorial-dataframe-python)
 
 ## [Geopandas]{.software}
@@ -37,7 +38,7 @@ year: 2025
 - třída `GeoDataFrame`, rozšíření `DataFrame` (nové funkce)
 - postaveno nad [GDAL/OGR]{.software}, respektive [shapely]{.software} a [pygrio]{.software}
 
-## Polars
+## [Polars]{.software}
 
 - modernější iterace na téma datových rámců, značně inspirovaná [dplyr]{.software} (balík pro [R]{.software})
 - napsáno primárně pro [Rust]{.software} a následně portováno do mnoha dalších jazyků (včetně Pythonu)
@@ -45,7 +46,7 @@ year: 2025
 - podporuje méně formátů než [pandas]{.software}, zejména s ohledem na udržení lehkosti (co se týká závislostí)
 - kód je mnohem čitelnější a obvykle jednodušší na pochopení v porovnání s [pandas]{.software}
 - [user guide](https://docs.pola.rs/) , [Modern Polars](https://kevinheavey.github.io/modern-polars/) - porovnání s [pandas]{.software} a [polars]{.software}
-- absence podpory prostrorových dat
+- pro práci s prostorovými daty existuje balík [geopolars]{.software}
 
 ## Ukázka - selekce
 
@@ -60,9 +61,12 @@ df_pd = pd.read_csv(extracted)
 
 df_pd.loc[12:15, ["Dest", "Tail_Number"]]
 
-df_pd
-    .set_index("IATA_CODE_Reporting_Airline")
-    .loc[['AA', 'DL'], ["Dest", "Tail_Number"]]
+selected_pd = (
+    df_pd.set_index("IATA_CODE_Reporting_Airline")
+    .loc[["AA", "DL"], ["Dest", "Tail_Number"]]
+)
+
+selected_pd
 ```
 
 ### Polars
@@ -72,11 +76,14 @@ import polars as pl
 
 df_pl = pl.read_csv(extracted, truncate_ragged_lines=True)
 
-df_pl.select(["Dest", "Tail_Number"]).head(16).tail(4)
+df_pl.select(["Dest", "Tail_Number"]).head(12).tail(3)
 
-df_pl
-    .filter(pl.col("IATA_CODE_Reporting_Airline").is_in(['AA', 'DL']))
+selected_pl = (
+    df_pl.filter(pl.col("IATA_CODE_Reporting_Airline").is_in(["AA", "DL"]))
     .select(["IATA_CODE_Reporting_Airline", "Dest", "Tail_Number"])
+)
+
+selected_pl
 ```
 
 :::
@@ -88,19 +95,91 @@ df_pl
 ### Pandas
 
 ```python
-df_pd["novy_sloupec"] = False
-df_pd["novy_sloupec"] = df_pd["novy_sloupec"].mask(df_pd["sloupec_hodnota"] <= 3, True)
+df_pd["novy_sloupec"] = df_pd["sloupec_hodnota"] <= 3
 ```
 
 ### Polars
 
 ```python
-df_pl.with_columns(
+df_pl = df_pl.with_columns(
     pl.when(pl.col("sloupec_hodnota") <= 10)
     .then(True)
     .otherwise(False)
     .alias("novy_sloupec")
 )
+```
+
+:::
+
+## Ukázka - filtrace dat
+
+::: {.panel-tabset}
+
+### Pandas
+
+```python
+df_filtered = df_pd[(df_pd["zpozdeni"] > 15) & (df_pd["mesto"] == "Praha")]
+```
+
+### Polars
+
+```python
+df_filtered = df_pl.filter(
+    (pl.col("zpozdeni") > 15) & (pl.col("mesto") == "Praha")
+)
+```
+
+:::
+
+## Ukázka - seskupování a agregace (Group by)
+
+::: {.panel-tabset}
+
+### Pandas
+
+```python
+df_grouped_pd = df_pd.groupby("letecka_spolecnost").agg(
+    prumerne_zpozdeni=("zpozdeni", "mean"),
+    pocet_letu=("id_letu", "count")
+)
+
+df_grouped_pd
+```
+
+### Polars
+
+```python
+df_grouped_pl = df_pl.group_by("letecka_spolecnost").agg(
+    pl.col("zpozdeni").mean().alias("prumerne_zpozdeni"),
+    pl.col("id_letu").count().alias("pocet_letu")
+)
+
+df_grouped_pl
+```
+
+:::
+
+## Konverze mezi knihovnami
+
+- často je nutné data mezi těmito knihovnami převádět data (např. některá jiná knihovna podporuje zatím jen [pandas]{.software})
+- [polars]{.software} má funkce pro převod z a do [pandas]{.software}
+
+::: {.panel-tabset}
+
+### Z Pandas do Polars
+
+```python
+import polars as pl
+
+# vytvoření polars DataFrame z pandas DataFrame
+df_pl = pl.from_pandas(df_pd)
+```
+
+### Z Polars do Pandas
+
+```python
+# převod polars DataFrame na pandas DataFrame
+df_pd = df_pl.to_pandas()
 ```
 
 :::
