@@ -55,13 +55,13 @@
   path: "PGIS2/skripty/09_rasterio.py"
 - title: "Ukázka tvorby objektu"
   author: Jan Caha
-  date: 2025-04-07
-  year: 2025
+  date: 2026-03-30
+  year: 2026
   path: "PGIS2/skripty/10_objekt.py"
-- title: "Zkušební python balíček"
+- title: "Python balíček"
   author: Jan Caha
-  date: 2024-04-07
-  year: 2024
+  date: 2026-04-13
+  year: 2026
   path: "PGIS2/skripty/balik_pgis2.zip"
 - title: Pandas - ukázky
   author: Jan Caha
