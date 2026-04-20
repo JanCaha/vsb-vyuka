@@ -1,7 +1,7 @@
 ---
 title: "Git, Github"
-date: 2025-04-07 
-year: 2025
+date: 2026-04-20 
+year: 2026
 ---
 
 ## Co je [Git]{.software}?
@@ -18,6 +18,12 @@ year: 2025
 - SSH klíč je pár klíčů (veřejný a soukromý), které slouží k šifrování a dešifrování dat
 - veřejný klíč se nahrává na server, soukromý klíč zůstává na počítači uživatele
 
+```bash
+# nastavení jména a e-mailu
+git config --global user.name "Jméno Příjmení"
+git config --global user.email "email@example.com"
+```
+
 ## Git pojmy
 
 - **repository (repozitář)** - místo, kde je uložen kód a historie změn
@@ -26,22 +32,30 @@ year: 2025
 - **merge** - sloučení změn z jedné větve do druhé
 - **conflict** - situace, kdy dvě větve obsahují změny v té samé části kódu, a není jasné kterou změnu použít
 - **stage area** - dočasné místo, kde jsou změny připravené k potvrzení (commit)
+- **pull request (PR)** - návrh sloučení větve do jiné větve, umožňuje revizi kódu před samotným sloučením
 
 ## Vytvoření repositáře
 
 - `git init` - inicializace nového repozitáře, ale pak je potřeba přidat vzdálený repozitář
 - `git clone URL` - klonování existujícího repozitáře, vytvoří se složka s názvem repozitáře a stáhne se jeho obsah
 
-## Sychronizace se serverem
+## Synchronizace se serverem
 
 - `git push` - odeslání změn na vzdálený repozitář
-- `git pull` - stažení změn z vzdáleného repozitáře
-- `git sync` - kombinace `git pull` a `git push`, synchronizuje místní a vzdálený repozitář
-- pokud stažené změny obsahují konflikty, je nutné je vyřešit před synchronizací (`git pull` může způsobit konflikt)
+- `git pull` - stažení změn ze vzdáleného repozitáře a jejich sloučení s lokální větví
+- `git fetch` - stažení změn ze vzdáleného repozitáře **bez** sloučení (bezpečnější, změny lze nejdříve prohlédnout)
+- pokud stažené změny obsahují konflikty, je nutné je ručně vyřešit a potvrdit pomocí `git add` a `git commit`
+
+## Přehled stavu a historie
+
+- `git status` - zobrazí aktuální stav repozitáře (co je změněno, co je ve staging area)
+- `git log` - zobrazí historii commitů (autor, datum, zpráva)
+- `git log --oneline --graph` - zkrácená historie s grafem větví
 
 ## Přidání změn
 
 - `git add .` - přidání všech změn do tzv. "staging area"
+- `git add soubor.py` - přidání konkrétního souboru
 - `git commit -m "Popis změny"` - vytvoření nového commitu
 
 ## Práce s větvemi (branches)
@@ -53,6 +67,29 @@ year: 2025
 - `git branch nazev-vetve` - vytvoření nové větve
 - `git checkout nazev-vetve` - přepnutí na existující větev
 - `git checkout -b nazev-vetve` - vytvoření a přepnutí na novou větev
+
+### Průběh práce s větví
+
+```{mermaid}
+gitGraph
+    commit id: "počáteční stav"
+    commit id: "příprava projektu"
+    branch feature-1
+    checkout feature-1
+    commit id: "nová funkce (1)"
+    commit id: "nová funkce (2)"
+    checkout main
+    commit id: "základní struktura"
+    branch hotfix-1
+    commit id: "oprava chyby"
+    checkout main
+    merge hotfix-1
+    checkout feature-1
+    commit id: "nová funkce (3)"
+    checkout main
+    merge feature-1 id: "sloučení"
+    commit id: "vydání verze"
+```
 
 ### Sloučení větví
 
@@ -105,11 +142,19 @@ output/
 
 - webová služba pro hostování Git repozitářů
 - funkcionality postavené okolo Git + doplňky pro vývojáře
-  - řešení problému se softwarem, chyby
-  - tvorba vydání softwaru
+  - řešení problémů se softwarem (Issues)
+  - tvorba vydání softwaru (Releases)
   - wiki, či hostování dokumentace (GitHub Pages)
-  - CI/CD - automatizace postupů při vývoje softwaru
+  - CI/CD - automatizace postupů při vývoji softwaru (GitHub Actions)
 - sociální rozměr
+
+## Pull Request
+
+- návrh na sloučení větve do jiné větve
+- umožňuje revizi kódu kolegou před samotným sloučením
+- postup: vytvoření větve {{< fa arrow-right >}} commit změn {{< fa arrow-right >}} push větve {{< fa arrow-right >}} otevření PR na GitHubu {{< fa arrow-right >}} review {{< fa arrow-right >}} merge
+- lze diskutovat změny přímo v kódu (komentáře k řádkům)
+- základ spolupráce na open-source i firemních projektech
 
 ## GitHub - příkazová řádka
 

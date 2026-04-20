@@ -1,0 +1,85 @@
+---
+title: "Debugování ve VS Code"
+date: 2026-04-20
+year: 2026
+---
+
+# Debugování ve [VS Code]{.software} {.center}
+
+## Co je debugování?
+
+- proces hledání a odstraňování chyb (**bugů**) v kódu
+- bug = neočekávané chování programu, chybný výsledek nebo pád skriptu
+- debugger je nástroj, který umožňuje program **sledovat za běhu** – zastavit ho, prozkoumat stav a krokovat
+- součást každého moderního vývojového prostředí
+- pojem pochází z roku 1947 – Grace Hopper doslova našla můru (*bug*) v počítači
+
+## Proč debugovat?
+
+- `print()` je nejjednodušší, ale pro složitější problémy nedostačující
+- debugger umožňuje zastavit program v libovolném místě a prozkoumat stav proměnných
+- umožňuje krokovat kód řádek po řádku a sledovat tok programu
+- šetří čas při hledání chyb, oproti opakovanému spouštění celého skriptu
+
+## Jak začít debugovat?
+
+1. otevřený Python skript ve [VS Code]{.software}
+2. kliknout vedle čísla řádku a nastav **breakpoint** {{< fa arrow-right >}} červená tečka
+3. spustit debugger klávesou `F5` (nebo tlačítkem ▶ v panelu Run & Debug)
+4. program se zastaví na breakpointu – prohlédni si proměnné v panelu **Variables**
+5. krokovat pomocí kláves `F10` (další řádek) / `F11` (vstoupit do funkce), pokračuj pomocí `F5`
+
+## Konfigurace debuggeru (`launch.json`)
+
+- při prvním spuštění `F5` se [VS Code]{.software} zeptá na typ prostředí {{< fa arrow-right >}} lze vybrat **Python File**
+- [VS Code]{.software} vytvoří soubor `.vscode/launch.json` s konfigurací
+- pro většinu skriptů stačí výchozí konfigurace, lze upravit cestu ke skriptu nebo předat argumenty
+
+```jsonc
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
+```
+
+## Breakpointy
+
+- kliknutím vedle čísla řádku nastavíme **breakpoint** (červená tečka)
+- program se zastaví na tomto řádku a čeká na naši akci
+- lze nastavit i **podmíněné breakpointy** – zastaví se pouze pokud je splněna podmínka (pravý klik na breakpoint)
+- **logpointy** – nevyžadují zastavení programu, jen vypíší hodnotu do konzole (pravý klik {{< fa arrow-right >}} *Add Logpoint*)
+
+## Ovládání debuggeru
+
+- **Continue** (`F5`) - pokračovat do dalšího breakpointu
+- **Step Over** (`F10`) - provést aktuální řádek a přejít na další
+- **Step Into** (`F11`) - vstoupit do volané funkce
+- **Step Out** (`Shift+F11`) - dokončit aktuální funkci a vrátit se
+- **Restart** (`Ctrl+Shift+F5`) - restartovat debugování
+- **Stop** (`Shift+F5`) - ukončit debugování
+
+## Panely debuggeru
+
+- **Variables** – přehled všech proměnných a jejich hodnot v aktuálním kontextu
+- **Watch** – sledování konkrétních výrazů (lze přidat vlastní)
+- **Call Stack** – zásobník volání funkcí – kde se aktuálně nacházíme
+- **Breakpoints** – seznam všech nastavených breakpointů
+- **Debug Console** – interaktivní konzole pro spouštění Pythonu za běhu programu
+- hodnoty proměnných lze zobrazit i přímo v editoru najetím myší
+
+## Debugování v Jupyter Notebooku
+
+- ve [VS Code]{.software} lze debugovat i jednotlivé buňky notebooku
+- tlačítko **Debug Cell** nad buňkou
+- fungují breakpointy i krokování stejně jako u skriptů
+- užitečné pro interaktivní analýzu dat
+
+# Dotazy? {.center}
