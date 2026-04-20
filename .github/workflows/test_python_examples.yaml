@@ -10,7 +10,8 @@ on:
       - '.github/workflows/test_python_examples.yaml'
       - 'subjects/**conda**.yaml'
       - '**.py'
-
+  workflow_dispatch:
+   
 jobs:
 
   test-python-examples:
