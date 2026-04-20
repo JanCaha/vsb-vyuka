@@ -301,7 +301,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n\n\n2026-03-09\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nFunkce v souboru utils\n\n\n\n\n\n\n2026-03-09\n\n\nNastavení VS Code projektu\n\n\n\n\n\n\n2026-03-16\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\n\n2026-03-30\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n\n\n2026-03-30\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n\n\n2026-03-30\n\n\nUkázka tvorby objektu\n\n\n\n\n\n\n2026-04-13\n\n\nPython balíček\n\n\n\n\n\n\n2026-04-20\n\n\nPandas, Polars, GeoPandas a GeoPolars - notebook\n\n\n\n\n\n\n2026-04-20\n\n\nGrafy notebook\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\n\n2025-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelný program s argumenty\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n\n\n2026-03-09\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nFunkce v souboru utils\n\n\n\n\n\n\n2026-03-09\n\n\nNastavení VS Code projektu\n\n\n\n\n\n\n2026-03-16\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\n\n2026-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\n\n2026-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n\n\n2026-03-30\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n\n\n2026-03-30\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n\n\n2026-03-30\n\n\nUkázka tvorby objektu\n\n\n\n\n\n\n2026-04-13\n\n\nPython balíček\n\n\n\n\n\n\n2026-04-20\n\n\nPandas, Polars, GeoPandas a GeoPolars - notebook\n\n\n\n\n\n\n2026-04-20\n\n\nGrafy notebook\n\n\n\n\n\n\n2026-04-20\n\n\nSpustitelný program s argumenty\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2028,7 +2028,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.5557246 -0.2552530 -1.1414220 -0.1361791 -0.1912993"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.3477420 -0.6603852 -0.1629596 -0.1638292 -1.5707111"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2567,7 +2567,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fe47c2a2f90&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f5bd4c82e40&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",

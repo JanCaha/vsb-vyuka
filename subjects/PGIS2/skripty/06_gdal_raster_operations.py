@@ -9,7 +9,7 @@ if __name__ == "__main__":
     result_file_clipped = save_data_path("clipped.jpg")
     result_file_warped = save_data_path("warped.tif")
 
-    # nastavení ořezu rastru, výstupní formát JPEG, okno ořezu - x min, y max, y max, y min (pozor na pořadí!!!)
+    # nastavení ořezu rastru, výstupní formát JPEG, okno ořezu - x min, y max, x max, y min (pozor na pořadí!!!)
     options = gdal.TranslateOptions(format="JPEG", projWin=[11, 52, 18.5, 47])
 
     # převod rastru
