@@ -1,18 +1,18 @@
 # NOTE: Ukázka úpravy části rastrového pásma přes NumPy pole a uložení výsledku do nového souboru
 import numpy as np
-import utils
 from osgeo import gdal
+from utils import BandAsArrayContextManager, data_path, save_data_path
 
 gdal.UseExceptions()
 
 if __name__ == "__main__":
-    file = utils.data_path("HYP_HR_SR_W.tif")
-    file_export = utils.save_data_path("edited.tif")
+    file = data_path("HYP_HR_SR_W.tif")
+    file_export = save_data_path("edited.tif")
 
     # načtení rastru do virtuálního souboru v paměti
     ds: gdal.Dataset = gdal.Translate("/vsimem/edited.tif", file)
 
-    with utils.BandAsArrayContextManager(ds, 2) as band:
+    with BandAsArrayContextManager(ds, 2) as band:
         offset = 1000
         # čtení výřezu dat z pásma
         data: np.ndarray = band.ReadAsArray(offset, offset, 5000, 2000)

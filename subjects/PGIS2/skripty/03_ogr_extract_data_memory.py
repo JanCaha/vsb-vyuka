@@ -1,11 +1,11 @@
 # NOTE: Ukázka nástroje VectorTranslate pro konverzi a úpravy dat, použití paměti pro uložení dat
-import utils
 from osgeo import gdal, ogr
+from utils import data_path, save_data_path
 
 gdal.UseExceptions()
 
 if __name__ == "__main__":
-    file = utils.data_path("ne_10m_admin_0_countries.shp")
+    file = data_path("ne_10m_admin_0_countries.shp")
 
     print(f"Soubor existuje: {file.exists()}")
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     layer_extracted = None  # explicitní uvolnění vrstvy
 
-    soubor_vysledny = utils.save_data_path("extracted.gpkg", delete_if_exist=True)
+    soubor_vysledny = save_data_path("extracted.gpkg", delete_if_exist=True)
 
     # v posledních verzích GDAL podporuje i cesty typu pathlib.Path, ve starších verzích by bylo nutné cestu zadat jako `soubor_vysledny.as_posix()`
     gdal.VectorTranslate(soubor_vysledny, ds_extracted)

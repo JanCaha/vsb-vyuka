@@ -1,14 +1,14 @@
 # NOTE: Ukázka použití kontextového manageru pro práci s vrstvou
 # v utils.py třída LayerContextManager !!!
-import utils
 from osgeo import gdal, osr
+from utils import LayerContextManager, data_path
 
 gdal.UseExceptions()
 
 if __name__ == "__main__":
-    file_path = utils.data_path("ne_10m_admin_0_countries.shp")
+    file_path = data_path("ne_10m_admin_0_countries.shp")
 
-    with utils.LayerContextManager(file_path) as layer:
+    with LayerContextManager(file_path) as layer:
         print(f"Název vrstvy: {layer.GetName()}")
         print(f"Počet prvků: {layer.GetFeatureCount()}")
 
