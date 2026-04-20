@@ -1,85 +1,85 @@
-- title: "Opakování Pythonu"
+- path: "PGIS2/skripty/00_opakovani_python.ipynb"
+  title: "Opakování Pythonu"
   author: Jan Caha
   date: 2026-02-24
   year: 2026
-  path: "PGIS2/skripty/00_opakovani_python.ipynb"
-- title: "GDAL/OGR načtení vektorových dat"
+- path: "PGIS2/skripty/01_ogr.py"
+  title: "GDAL/OGR načtení vektorových dat"
   author: Jan Caha
   date: 2026-03-09
   year: 2026
-  path: "PGIS2/skripty/01_ogr.py"
-- title: "OGR práce s vrstvou pomocí vlastního kontextového manageru"
+- path: "PGIS2/skripty/02_ogr_layer_context_manager.py"
+  title: "OGR práce s vrstvou pomocí vlastního kontextového manageru"
   author: Jan Caha
   date: 2026-03-09
   year: 2026
-  path: "PGIS2/skripty/02_ogr_layer_context_manager.py"
-- title: "OGR extrakce dat do nového souboru, funkce `gdal.VectorTranslate()`"
+- path: "PGIS2/skripty/03_ogr_extract_data_memory.py"
+  title: "OGR extrakce dat do nového souboru, funkce `gdal.VectorTranslate()`"
   author: Jan Caha
   date: 2026-03-09
   year: 2026
-  path: "PGIS2/skripty/03_ogr_extract_data_memory.py"
-- title: "GDAL/OGR editace vektorových dat"
+- path: "PGIS2/skripty/04_ogr_edit.py"
+  title: "GDAL/OGR editace vektorových dat"
   author: Jan Caha
   date: 2026-03-09
   year: 2026
-  path: "PGIS2/skripty/04_ogr_edit.py"
-- title: "GDAL/OGR načtení rastrových dat"
+- path: "PGIS2/skripty/05_gdal_raster.py"
+  title: "GDAL/OGR načtení rastrových dat"
   author: Jan Caha
   date: 2026-03-16
   year: 2026
-  path: "PGIS2/skripty/05_gdal_raster.py"
-- title: "GDAL manipulace s rastrem"
+- path: "PGIS2/skripty/06_gdal_raster_operations.py"
+  title: "GDAL manipulace s rastrem"
   author: Jan Caha
-  date: 2025-03-24
-  year: 2025
-  path: "PGIS2/skripty/06_gdal_raster_operations.py"
-- title: "GDAL editace hodnot rastru"
+  date: 2026-03-24
+  year: 2026
+- path: "PGIS2/skripty/07_edit_band.py"
+  title: "GDAL editace hodnot rastru"
   author: Jan Caha
-  date: 2025-03-24
-  year: 2025
-  path: "PGIS2/skripty/07_edit_band.py"
-- title: "Funkce v souboru utils"
+  date: 2026-03-24
+  year: 2026
+- path: "PGIS2/skripty/utils.py"
+  title: "Funkce v souboru utils"
   author: Jan Caha
   date: 2026-03-09
   year: 2026
-  path: "PGIS2/skripty/utils.py"
-- title: "Fiona editace vektorových dat, Shapely geometrie"
+- path: "PGIS2/skripty/08_fiona_shapely.py"
+  title: "Fiona editace vektorových dat, Shapely geometrie"
   author: Jan Caha
   date: 2026-03-30
   year: 2026
-  path: "PGIS2/skripty/08_fiona_shapely.py"
-- title: "Rasterio informace o souboru, kopírování pásma do nového souboru"
+- path: "PGIS2/skripty/09_rasterio.py"
+  title: "Rasterio informace o souboru, kopírování pásma do nového souboru"
   author: Jan Caha
   date: 2026-03-30
   year: 2026
-  path: "PGIS2/skripty/09_rasterio.py"
-- title: "Ukázka tvorby objektu"
+- path: "PGIS2/skripty/10_objekt.py"
+  title: "Ukázka tvorby objektu"
   author: Jan Caha
   date: 2026-03-30
   year: 2026
-  path: "PGIS2/skripty/10_objekt.py"
-- title: "Python balíček"
+- path: "PGIS2/skripty/11_pandas_polars_geopandas_geopolars.ipynb"
+  title: "Pandas, Polars, GeoPandas a GeoPolars - notebook"
+  author: Jan Caha
+  date: 2026-04-20
+  year: 2026
+- path: "PGIS2/skripty/12_grafy_notebook.ipynb"
+  title: "Grafy notebook"
+  author: Jan Caha
+  date: 2026-04-20
+  year: 2026
+- path: "PGIS2/skripty/14_arguments.py"
+  title: "Spustitelný program s argumenty"
+  author: Jan Caha
+  date: 2026-04-20
+  year: 2026
+- path: "PGIS2/skripty/balik_pgis2.zip"
+  title: "Python balíček"
   author: Jan Caha
   date: 2026-04-13
   year: 2026
-  path: "PGIS2/skripty/balik_pgis2.zip"
-- title: Pandas, Polars, GeoPandas a GeoPolars - notebook
-  author: Jan Caha
-  date: 2026-04-20
-  year: 2026
-  path: "PGIS2/skripty/11_pandas_polars_geopandas_geopolars.ipynb"
-- title: Grafy notebook
-  author: Jan Caha
-  date: 2026-04-20
-  year: 2026
-  path: "PGIS2/skripty/12_grafy_notebook.ipynb"
-- title: Spustitelný program s argumenty
-  author: Jan Caha
-  date: 2025-05-05
-  year: 2025
-  path: "PGIS2/skripty/14_arguments.py"
-- title: "Nastavení VS Code projektu"
-  path: "PGIS2/skripty/Projekt.zip"
+- path: "PGIS2/skripty/Projekt.zip"
+  title: "Nastavení VS Code projektu"
   author: Jan Caha
   date: 2026-03-09
   year: 2026
