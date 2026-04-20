@@ -2028,7 +2028,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -1.3477420 -0.6603852 -0.1629596 -0.1638292 -1.5707111"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.33560947 -1.38777030 -0.02610873 -0.28689535 -0.02572975"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2567,7 +2567,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f5bd4c82e40&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f228489ef90&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -3253,7 +3253,21 @@
     "href": "subjects/PGIS2/prezentace/13_git_github.html#práce-s-větvemi-branches",
     "title": "Git, Github",
     "section": "Práce s větvemi (branches)",
-    "text": "Práce s větvemi (branches)\n\nvětve umožňují pracovat na různých částech projektu nezávisle na sobě\nhlavní větev se obvykle nazývá main nebo master\ndalší větve mohou být vytvořeny pro nové funkce, opravy chyb nebo experimenty\nbranch se vytváří vždy z nějaké prvotní větve, obvykle z main nebo master\ngit branch nazev-vetve - vytvoření nové větve\ngit checkout nazev-vetve - přepnutí na existující větev\ngit checkout -b nazev-vetve - vytvoření a přepnutí na novou větev\n\nPrůběh práce s větví\n\ngitGraph\n    commit id: \"počáteční stav\"\n    commit id: \"příprava projektu\"\n    branch feature-1\n    checkout feature-1\n    commit id: \"nová funkce (1)\"\n    commit id: \"nová funkce (2)\"\n    checkout main\n    commit id: \"základní struktura\"\n    branch hotfix-1\n    commit id: \"oprava chyby\"\n    checkout main\n    merge hotfix-1\n    checkout feature-1\n    commit id: \"nová funkce (3)\"\n    checkout main\n    merge feature-1 id: \"sloučení\"\n    commit id: \"vydání verze\"\n\n\n\n\ngitGraph\n    commit id: \"počáteční stav\"\n    commit id: \"příprava projektu\"\n    branch feature-1\n    checkout feature-1\n    commit id: \"nová funkce (1)\"\n    commit id: \"nová funkce (2)\"\n    checkout main\n    commit id: \"základní struktura\"\n    branch hotfix-1\n    commit id: \"oprava chyby\"\n    checkout main\n    merge hotfix-1\n    checkout feature-1\n    commit id: \"nová funkce (3)\"\n    checkout main\n    merge feature-1 id: \"sloučení\"\n    commit id: \"vydání verze\"\n\n\n\n\n\n\nSloučení větví\n\ngit merge nazev-vetve - sloučení změn z jiné větve do aktuální větve\npři konfliktech je nutné je ručně vyřešit a následně potvrdit změny pomocí git add a git commit.\n\nSmazání větve\n\ngit branch -d nazev-vetve - smazání větve, pokud byla sloučena\ngit branch -D nazev-vetve - vynucené smazání větve"
+    "text": "Práce s větvemi (branches)\n\nvětve umožňují pracovat na různých částech projektu nezávisle na sobě\nhlavní větev se obvykle nazývá main nebo master\ndalší větve mohou být vytvořeny pro nové funkce, opravy chyb nebo experimenty\nbranch se vytváří vždy z nějaké prvotní větve, obvykle z main nebo master\ngit branch nazev-vetve - vytvoření nové větve\ngit checkout nazev-vetve - přepnutí na existující větev\ngit checkout -b nazev-vetve - vytvoření a přepnutí na novou větev"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#průběh-práce-s-větví",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#průběh-práce-s-větví",
+    "title": "Git, Github",
+    "section": "Průběh práce s větví",
+    "text": "Průběh práce s větví\n\n\n\n\n\ngitGraph\n    commit id: \"počáteční stav\"\n    commit id: \"příprava projektu\"\n    branch feature-1\n    checkout feature-1\n    commit id: \"nová funkce (1)\"\n    commit id: \"nová funkce (2)\"\n    checkout main\n    commit id: \"základní struktura\"\n    branch hotfix-1\n    commit id: \"oprava chyby\"\n    checkout main\n    merge hotfix-1\n    checkout feature-1\n    commit id: \"nová funkce (3)\"\n    checkout main\n    merge feature-1 id: \"sloučení\"\n    commit id: \"vydání verze\""
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#sloučení-větví",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#sloučení-větví",
+    "title": "Git, Github",
+    "section": "Sloučení větví",
+    "text": "Sloučení větví\n\ngit merge nazev-vetve - sloučení změn z jiné větve do aktuální větve\npři konfliktech je nutné je ručně vyřešit a následně potvrdit změny pomocí git add a git commit.\n\nSmazání větve\n\ngit branch -d nazev-vetve - smazání větve, pokud byla sloučena\ngit branch -D nazev-vetve - vynucené smazání větve"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/13_git_github.html#soubor-.gitignore",

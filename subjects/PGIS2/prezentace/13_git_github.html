@@ -296,26 +296,10 @@ Jan Caha
 <li><code>git checkout nazev-vetve</code> - přepnutí na existující větev</li>
 <li><code>git checkout -b nazev-vetve</code> - vytvoření a přepnutí na novou větev</li>
 </ul>
-<h3 id="průběh-práce-s-větví">Průběh práce s větví</h3>
+</section>
+<section id="průběh-práce-s-větví" class="slide level2">
+<h2>Průběh práce s větví</h2>
 <div class="cell" data-reveal="true" data-layout-align="default">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>gitGraph</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    commit id: "počáteční stav"</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>    commit id: "příprava projektu"</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    branch feature-1</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>    checkout feature-1</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    commit id: "nová funkce (1)"</span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    commit id: "nová funkce (2)"</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    checkout main</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>    commit id: "základní struktura"</span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    branch hotfix-1</span>
-<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    commit id: "oprava chyby"</span>
-<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    checkout main</span>
-<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>    merge hotfix-1</span>
-<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>    checkout feature-1</span>
-<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a>    commit id: "nová funkce (3)"</span>
-<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>    checkout main</span>
-<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a>    merge feature-1 id: "sloučení"</span>
-<span id="cb2-18"><a aria-hidden="true" tabindex="-1"></a>    commit id: "vydání verze"</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <p></p><figure class=""><p></p>
@@ -344,7 +328,9 @@ Jan Caha
 </div>
 </div>
 </div>
-<h3 id="sloučení-větví">Sloučení větví</h3>
+</section>
+<section id="sloučení-větví" class="slide level2">
+<h2>Sloučení větví</h2>
 <ul>
 <li><code>git merge nazev-vetve</code> - sloučení změn z jiné větve do aktuální větve</li>
 <li>při konfliktech je nutné je ručně vyřešit a následně potvrdit změny pomocí <code>git add</code> a <code>git commit</code>.</li>
