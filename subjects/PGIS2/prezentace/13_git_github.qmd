@@ -68,9 +68,10 @@ git config --global user.email "email@example.com"
 - `git checkout nazev-vetve` - přepnutí na existující větev
 - `git checkout -b nazev-vetve` - vytvoření a přepnutí na novou větev
 
-### Průběh práce s větví
+## Průběh práce s větví
 
 ```{mermaid}
+%%|echo: false
 gitGraph
     commit id: "počáteční stav"
     commit id: "příprava projektu"
@@ -91,7 +92,7 @@ gitGraph
     commit id: "vydání verze"
 ```
 
-### Sloučení větví
+## Sloučení větví
 
 - `git merge nazev-vetve` - sloučení změn z jiné větve do aktuální větve
 - při konfliktech je nutné je ručně vyřešit a následně potvrdit změny pomocí `git add` a `git commit`.
