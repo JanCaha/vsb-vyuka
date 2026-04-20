@@ -63,36 +63,21 @@
   date: 2026-04-13
   year: 2026
   path: "PGIS2/skripty/balik_pgis2.zip"
-- title: Pandas - ukázky
+- title: Pandas, Polars, GeoPandas a GeoPolars - notebook
   author: Jan Caha
-  date: 2025-04-14
-  year: 2025
-  path: "PGIS2/skripty/11_pandas.py"
-- title: Polars - ukázky
+  date: 2026-04-20
+  year: 2026
+  path: "PGIS2/skripty/11_pandas_polars_geopandas_geopolars.ipynb"
+- title: Grafy notebook
   author: Jan Caha
-  date: 2025-04-14
-  year: 2025
-  path: "PGIS2/skripty/12_polars.py"
-- title: GeoPandas - prostorové operace a vizualizace
-  author: Jan Caha
-  date: 2025-04-14
-  year: 2025
-  path: "PGIS2/skripty/13_geopandas.py"
-- title: Notebook + grafy
-  author: Jan Caha
-  date: 2025-04-28
-  year: 2025
-  path: "PGIS2/skripty/ukazka_notebook.ipynb"
+  date: 2026-04-20
+  year: 2026
+  path: "PGIS2/skripty/12_grafy_notebook.ipynb"
 - title: Spustitelný program s argumenty
   author: Jan Caha
   date: 2025-05-05
   year: 2025
   path: "PGIS2/skripty/14_arguments.py"
-- title: Pandas, Polars, GeoPandas a GeoPolars - společný notebook
-  author: Jan Caha
-  date: 2026-04-13
-  year: 2026
-  path: "PGIS2/skripty/15_pandas_polars_geopandas_geopolars.ipynb"
 - title: "Nastavení VS Code projektu"
   path: "PGIS2/skripty/Projekt.zip"
   author: Jan Caha
