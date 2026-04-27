@@ -1,0 +1,84 @@
+---
+title: "Visual Studio Code a GitHub Copilot"
+date: 2026-04-20
+year: 2026
+---
+
+## [VS Code]{.software}
+
+- lehké IDE pro vývoj
+- vzdáleně odvozené od [Visual Studio]{.software}, což je výrazně "těžší" prostředí
+- inspirace "lehkými" prostředími jako [Atom]{.software}, [Neovim]{.software}, [Sublime Text]{.software} atd.
+- snaha o univerzálnost {{< fa times >}} specifičnost (nástroje od **JetBrains**)
+- rozšiřitelnost pomocí pluginů {{< fa arrow-right >}} ty posouvají k určité funkcionalitě
+
+## GitHub Copilot
+
+- AI nástroj pro asistované programování integrovaný přímo do editoru
+- nabízí návrhy kódu v reálném čase přímo při psaní
+- podporuje různé programovací jazyky a frameworky
+- pomáhá zrychlit vývoj tím, že navrhuje celé funkce, metody i komentáře
+- integruje se do [Visual Studio Code]{.software}, [Neovim]{.software} a [JetBrains IDEs]{.software}
+- pro studenty dostupný zdarma přes [GitHub Education](https://education.github.com/)
+
+## Jazykové modely
+
+- nestaví striktně na jednom modelu – lze vybrat dle potřeby
+- podporuje modely od **OpenAI** (ChatGPT), **Anthropic** (Claude) a **Google** (Gemini)
+- modely jsou trénovány na velkém množství kódu z veřejných repozitářů na **GitHubu**
+- kontext tvoří aktuální soubor, otevřené soubory, ale i celý projekt (`#codebase`)
+
+## Použití 
+
+- **dokončování kódu** – návrhy při psaní, přijmutí klávesou `Tab`
+- **generování dokumentace a komentářů** – stačí napsat záhlaví funkce
+- **chat** – dotazy na kód s kontextem (`#file`, `#selection`, `#codebase`)
+- **Agent mode** – Copilot sám navrhuje a provádí změny v celém projektu
+- **příkazy v chatu**: `/explain`, `/fix`, `/tests`, `/doc`
+
+## Nastavení
+
+- instrukce lze zadat přímo v `settings.json` (úroveň projektu nebo profilu)
+- nebo v souboru `.github/copilot-instructions.md` – načítán automaticky
+- instrukce ovlivňují generování kódu, testů, review atd.
+
+```jsonc
+"github.copilot.chat.codeGeneration.useInstructionFiles": true,
+"github.copilot.chat.codeGeneration.instructions": [
+    {
+        "text": "Komentáře v kódu piš vždy česky."
+    },
+    {
+        // odkaz na soubor s instrukcemi
+        "file": ".github/copilot-instructions.md"
+    }
+],
+"github.copilot.chat.testGeneration.instructions": [],
+"github.copilot.chat.reviewSelection.instructions": []
+```
+
+## GitHub Copilot a debugování
+
+- Copilot dokáže s debugováním aktivně pomoci přímo v chatu
+- **`/explain`** – vysvětlí označený kód nebo chybovou zprávu (traceback)
+- **`/fix`** – navrhne opravu chybného kódu
+- označení chybového výstupu v terminálu a dotaz v chatu je rychlá alternativa k ručnímu hledání
+
+## Omezení a rizika
+
+- Copilot může generovat kód, který je syntakticky správný, ale logicky chybný
+- může navrhovat zastaralé nebo deprecated API (trénovací data mají časový limit)
+- kód nemusí odpovídat specifickým požadavkům projektu nebo konvencím
+- u bezpečnostně citlivého kódu je kontrola obzvláště důležitá
+- není náhradou za pochopení problému a algoritmu – spíše nástroj pro zrychlení psaní a vývoje
+
+## Tipy 
+
+- **signatura funkce** s typovými anotacemi výrazně napomáhá tvorbě kódu
+- **komentáře před blokem kódu** popisující záměr zlepšují návrhy
+- **otevřené soubory** v IDE tvoří součást kontextu – otevři ukázkový soubor (JSON, CSV, …)
+- **`#codebase`** v chatu umožní Copilotu prohledat celý projekt
+- při generování testů nebo dokumentace stačí označit funkci a zadat `/tests` nebo `/doc`
+- v instrukcích lze specifikovat konvence projektu (např. jazyk komentářů, styl kódu)
+
+# Dotazy? {.center}

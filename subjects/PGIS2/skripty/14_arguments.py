@@ -1,9 +1,12 @@
+# NOTE: Ukázka práce s argparse: poziční a volitelné argumenty, výpočet a zápis výsledku do souboru
 import argparse
 import sys
 from pathlib import Path
 
+from utils import save_data_path
 
-def main():
+
+def main() -> None:
     parser = argparse.ArgumentParser(prog="calculate", description="Skript pro výpočet hodnoty.")
 
     # Definice argumentů
@@ -13,7 +16,7 @@ def main():
         "-o", "--operator", help="Operátor s hodnotami", default="*", type=str, choices=["*", "/", "+", "-"]
     )  # volitelný argument s výchozí hodnotou "*"
     parser.add_argument(
-        "-r", "--result", help="Výsledný soubor", type=Path, default=Path("vysledek.txt")
+        "-r", "--result", help="Výsledný soubor", type=Path, default=save_data_path("vysledek.txt")
     )  # volitelný argument s výchozí hodnotou "vysledek.txt"
     parser.add_argument(
         "-v", "--verbose", help="Zobrazit podrobnosti", action="store_true"
@@ -22,7 +25,7 @@ def main():
     # Zpracování argumentů
     args = parser.parse_args()
 
-    result = 0
+    result: float = 0.0
     if args.operator == "*":
         result = float(args.a) * float(args.b)
     elif args.operator == "/":
