@@ -268,7 +268,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2026-03-23\n\n\nPython Balíčky\n\n\n\n\n\n\n2026-03-30\n\n\nNumPy pro geoinformatiku\n\n\n\n\n\n\n2026-03-30\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2026-04-13\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2026-04-20\n\n\nDebugování ve VS Code\n\n\n\n\n\n\n2026-04-20\n\n\nGit, Github\n\n\n\n\n\n\n2025-03-17\n\n\nVisual Studio Code a Github Copilot\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2026-03-23\n\n\nPython Balíčky\n\n\n\n\n\n\n2026-03-30\n\n\nNumPy pro geoinformatiku\n\n\n\n\n\n\n2026-03-30\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2026-04-13\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2026-04-20\n\n\nDebugování ve VS Code\n\n\n\n\n\n\n2026-04-20\n\n\nGit, Github\n\n\n\n\n\n\n2026-04-20\n\n\nVisual Studio Code a GitHub Copilot\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -862,270 +862,347 @@
     "text": "Cesty používané v ArcPy\n\nbud absolutní cesty na disku (např. C:/data/soubor.shp), nebo C:/data/soubor.gdb/nazev_vrstvy\nnebo relativní cesty, jako je název vrstvy uvažovaný v arcpy.env.workspace (např. soubor.shp, nazev_vrstvy)\nu rastrů lze přistupovat i k jednotlivým pásmům jako C:/data/soubor.tif/Band_1\nvždy je třeba myslet na to, kde se nacházíme a jaké cesty používáme"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#skripty",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#skripty",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#skripty",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#skripty",
     "title": "Spustitelné programy",
     "section": "Skripty",
     "text": "Skripty\n\ndobře se tvoří, používají z prostředí VS Code, kde je možnost přímo upravovat a spouštět Python kód\npro běžné uživatele už dost komplikované\nněkteré parametry jsou dost očividné a mění se poměrně často (třeba i každým během skriptu)\nnejjednodušší forma je program z příkazové řádky s parametry příkazové řádky"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#jak-řešit-v-pythonu",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#jak-řešit-v-pythonu",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#jak-řešit-v-pythonu",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#jak-řešit-v-pythonu",
     "title": "Spustitelné programy",
     "section": "Jak řešit v Pythonu",
     "text": "Jak řešit v Pythonu\n\nv rámci Pythonu v balíčku sys máme sys.argv, kde máme přístup k parametrům skriptů\n\nvelice složité a neflexibilní\n\nargparse nativní knihovna Pythonu, která umožňuje nastavit parametry skriptu\nclick externí knihovna, která plní podobnou funkci jako argparse, ale má komplexnější možnosti"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#parametry",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#parametry",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#parametry",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#parametry",
     "title": "Spustitelné programy",
     "section": "Parametry",
     "text": "Parametry\n\ndva druhy\n\npoziční - nepojmenované a obvykle povinné\npojmenované - obvykle nepovinné, buď předáváme hodnotu nebo pouze parametr (přepínače)\n\n\nprogram vstupni_soubor [-o vystupni_soubor] [-d] [--calculate_using=scipy]\n\nv příkladu se vstupni_soubor musí zadat, jinak program nebude fungovat\nv příkladu má výstupní soubor výchozí název (např. output.pdf) a dva parametry, které nemusíme zadávat"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#příklad-tvorby",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#příklad-tvorby",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#příklad-tvorby",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#příklad-tvorby",
     "title": "Spustitelné programy",
     "section": "Příklad tvorby",
     "text": "Příklad tvorby\nimport argparse\nfrom pathlib import Path\n\nparser = argparse.ArgumentParser(prog=\"calculate\", description=\"Skript pro výpočet hodnoty.\")\n\n# Definice argumentů\nparser.add_argument(\"a\", help=\"Hodnota a\", type=float)\nparser.add_argument(\"b\", help=\"Hodnota b\", type=float)\nparser.add_argument(\n    \"-o\", \"--operator\", help=\"Operátor s hodnotami\", default=\"*\", type=str, choices=[\"*\", \"/\", \"+\", \"-\"]\n)\nparser.add_argument(\"-r\", \"--result\", help=\"Výsledný soubor\", type=Path, default=Path(\"vysledek.txt\"))"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#přístup-k-argumentům",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#přístup-k-argumentům",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#přístup-k-argumentům",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#přístup-k-argumentům",
     "title": "Spustitelné programy",
     "section": "Přístup k argumentům",
     "text": "Přístup k argumentům\n\nv proměnné args budou všechny proměnné uložené a dostupné\n\n# Zpracování argumentů\nargs = parser.parse_args()\n\n# Příklady\nif args.operator == \"*\":\n    result = float(args.a) * float(args.b)\n\nwith open(args.result, \"w\", encoding=\"utf-8\") as file:\n    file.write(f\"Výsledek: {result}\\n\")"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#další-nastavení",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#další-nastavení",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#další-nastavení",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#další-nastavení",
     "title": "Spustitelné programy",
     "section": "Další nastavení",
     "text": "Další nastavení\n\nlze vytvářet i komplexnější nastavení, např. subprogramy\n\nprogram sub_program_a [argumenty_pro_a]\nprogram sub_program_b [argumenty_pro_b]\n\nkomplexnější nastavení parametrů"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#pyinstaller",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#pyinstaller",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#pyinstaller",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#pyinstaller",
     "title": "Spustitelné programy",
     "section": "pyinstaller",
     "text": "pyinstaller\n\nprogram, který umí zabalit Pythonový skript do samospustitelného souboru\nfunguje dobře, pokud se nevyužívají složité konstrukce pro import externích knihoven (např. GDAL/OGR je na hraně)\nvznikne exe soubor, pro samostatné spuštění\nzabalí Python interpretor a použité knihovny do jednoho souboru\nobčas je třeba vytvořit konfigurační soubor s definicí co vše se má importovat (externí soubory a knihovny)\n\npip install pyinstaller # (conda install pyinstaller)\npyinstaller --onefile muj_skript.py"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#závěr",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#závěr",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#závěr",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#závěr",
     "title": "Spustitelné programy",
     "section": "Závěr",
     "text": "Závěr\n\nPython jako lingua franca pro vývoj skriptů a programů\nnástroje a knihovny pro geoinformatickou práci a práci s prostorovými daty\nřada možností nástrojů k prozkoumání a otestování\npoužití nástrojů pro psaní čitelnějšího kódu (formátování + hodnocení chyb)\npsaní “rozumného” kódu - dělení na funkce o rozumné délce, dělení na moduly, tvorba balíčků\n\nvycházet z jednoduchých řešení a postupně nad nimi budovat komplexnější postupy\nrozumné využití AI při programování, nejen nápověda a tvorba kódu, ale i vysvětlení, explorace a hodnocení kódu  snaha o tvorbu lepších programů"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#dotazy",
-    "href": "subjects/PGIS2/prezentace/13_spustitelne_soubory.html#dotazy",
+    "objectID": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#dotazy",
+    "href": "subjects/PGIS2/prezentace/14_spustitelne_soubory.html#dotazy",
     "title": "Spustitelné programy",
     "section": "Dotazy?",
     "text": "Dotazy?"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#co-je-debugování",
-    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#co-je-debugování",
-    "title": "Debugování ve VS Code",
-    "section": "Co je debugování?",
-    "text": "Co je debugování?\n\nproces hledání a odstraňování chyb (bugů) v kódu\nbug = neočekávané chování programu, chybný výsledek nebo pád skriptu\ndebugger je nástroj, který umožňuje program sledovat za běhu – zastavit ho, prozkoumat stav a krokovat\nsoučást každého moderního vývojového prostředí\npojem pochází z roku 1947 – Grace Hopper doslova našla můru (bug) v počítači"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#co-je-git",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#co-je-git",
+    "title": "Git, Github",
+    "section": "Co je Git?",
+    "text": "Co je Git?\n\nsystém pro správu kódu, jeho vývoje a verzí, který umožňuje sledovat změny v kódu a spolupracovat na projektech\numožňuje návrat k předchozím verzím, práci na více větvích a snadnou spolupráci mezi více vývojáři\nje distribuovaný, což znamená, že každý vývojář má kopii celého repozitáře na svém počítači\nexistuje centrální repozitář (server), který slouží jako hlavní místo pro sdílení kódu"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#proč-debugovat",
-    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#proč-debugovat",
-    "title": "Debugování ve VS Code",
-    "section": "Proč debugovat?",
-    "text": "Proč debugovat?\n\nprint() je nejjednodušší, ale pro složitější problémy nedostačující\ndebugger umožňuje zastavit program v libovolném místě a prozkoumat stav proměnných\numožňuje krokovat kód řádek po řádku a sledovat tok programu\nšetří čas při hledání chyb, oproti opakovanému spouštění celého skriptu"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#autorizace-uživatele",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#autorizace-uživatele",
+    "title": "Git, Github",
+    "section": "Autorizace uživatele",
+    "text": "Autorizace uživatele\n\nje třeba nastavit uživatelské jméno a e-mail, které budou použity pro identifikaci práce s Git\npro autorizaci na serveru je potřeba SSH klíč\nSSH klíč je pár klíčů (veřejný a soukromý), které slouží k šifrování a dešifrování dat\nveřejný klíč se nahrává na server, soukromý klíč zůstává na počítači uživatele\n\n# nastavení jména a e-mailu\ngit config --global user.name \"Jméno Příjmení\"\ngit config --global user.email \"email@example.com\""
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#jak-začít-debugovat",
-    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#jak-začít-debugovat",
-    "title": "Debugování ve VS Code",
-    "section": "Jak začít debugovat?",
-    "text": "Jak začít debugovat?\n\notevřený Python skript ve VS Code\nkliknout vedle čísla řádku a nastav breakpoint  červená tečka\nspustit debugger klávesou F5 (nebo tlačítkem ▶ v panelu Run & Debug)\nprogram se zastaví na breakpointu – prohlédni si proměnné v panelu Variables\nkrokovat pomocí kláves F10 (další řádek) / F11 (vstoupit do funkce), pokračuj pomocí F5"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#git-pojmy",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#git-pojmy",
+    "title": "Git, Github",
+    "section": "Git pojmy",
+    "text": "Git pojmy\n\nrepository (repozitář) - místo, kde je uložen kód a historie změn\nbranch (větev) - samostatná linie vývoje, která umožňuje pracovat na různých funkcích nebo opravách chyb nezávisle na sobě\ncommit - snímek stavu kódu v určitém okamžiku, který obsahuje popis změn od posledního commitu\nmerge - sloučení změn z jedné větve do druhé\nconflict - situace, kdy dvě větve obsahují změny v té samé části kódu, a není jasné kterou změnu použít\nstage area - dočasné místo, kde jsou změny připravené k potvrzení (commit)\npull request (PR) - návrh sloučení větve do jiné větve, umožňuje revizi kódu před samotným sloučením"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#konfigurace-debuggeru-launch.json",
-    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#konfigurace-debuggeru-launch.json",
-    "title": "Debugování ve VS Code",
-    "section": "Konfigurace debuggeru (launch.json)",
-    "text": "Konfigurace debuggeru (launch.json)\n\npři prvním spuštění F5 se VS Code zeptá na typ prostředí  lze vybrat Python File\nVS Code vytvoří soubor .vscode/launch.json s konfigurací\npro většinu skriptů stačí výchozí konfigurace, lze upravit cestu ke skriptu nebo předat argumenty\n\n{\n    \"version\": \"0.2.0\",\n    \"configurations\": [\n        {\n            \"name\": \"Python: Current File\",\n            \"type\": \"debugpy\",\n            \"request\": \"launch\",\n            \"program\": \"${file}\",\n            \"console\": \"integratedTerminal\"\n        }\n    ]\n}"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#vytvoření-repositáře",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#vytvoření-repositáře",
+    "title": "Git, Github",
+    "section": "Vytvoření repositáře",
+    "text": "Vytvoření repositáře\n\ngit init - inicializace nového repozitáře, ale pak je potřeba přidat vzdálený repozitář\ngit clone URL - klonování existujícího repozitáře, vytvoří se složka s názvem repozitáře a stáhne se jeho obsah"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#breakpointy",
-    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#breakpointy",
-    "title": "Debugování ve VS Code",
-    "section": "Breakpointy",
-    "text": "Breakpointy\n\nkliknutím vedle čísla řádku nastavíme breakpoint (červená tečka)\nprogram se zastaví na tomto řádku a čeká na naši akci\nlze nastavit i podmíněné breakpointy – zastaví se pouze pokud je splněna podmínka (pravý klik na breakpoint)\nlogpointy – nevyžadují zastavení programu, jen vypíší hodnotu do konzole (pravý klik  Add Logpoint)"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#synchronizace-se-serverem",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#synchronizace-se-serverem",
+    "title": "Git, Github",
+    "section": "Synchronizace se serverem",
+    "text": "Synchronizace se serverem\n\ngit push - odeslání změn na vzdálený repozitář\ngit pull - stažení změn ze vzdáleného repozitáře a jejich sloučení s lokální větví\ngit fetch - stažení změn ze vzdáleného repozitáře bez sloučení (bezpečnější, změny lze nejdříve prohlédnout)\npokud stažené změny obsahují konflikty, je nutné je ručně vyřešit a potvrdit pomocí git add a git commit"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#ovládání-debuggeru",
-    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#ovládání-debuggeru",
-    "title": "Debugování ve VS Code",
-    "section": "Ovládání debuggeru",
-    "text": "Ovládání debuggeru\n\nContinue (F5) - pokračovat do dalšího breakpointu\nStep Over (F10) - provést aktuální řádek a přejít na další\nStep Into (F11) - vstoupit do volané funkce\nStep Out (Shift+F11) - dokončit aktuální funkci a vrátit se\nRestart (Ctrl+Shift+F5) - restartovat debugování\nStop (Shift+F5) - ukončit debugování"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#přehled-stavu-a-historie",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#přehled-stavu-a-historie",
+    "title": "Git, Github",
+    "section": "Přehled stavu a historie",
+    "text": "Přehled stavu a historie\n\ngit status - zobrazí aktuální stav repozitáře (co je změněno, co je ve staging area)\ngit log - zobrazí historii commitů (autor, datum, zpráva)\ngit log --oneline --graph - zkrácená historie s grafem větví"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#panely-debuggeru",
-    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#panely-debuggeru",
-    "title": "Debugování ve VS Code",
-    "section": "Panely debuggeru",
-    "text": "Panely debuggeru\n\nVariables – přehled všech proměnných a jejich hodnot v aktuálním kontextu\nWatch – sledování konkrétních výrazů (lze přidat vlastní)\nCall Stack – zásobník volání funkcí – kde se aktuálně nacházíme\nBreakpoints – seznam všech nastavených breakpointů\nDebug Console – interaktivní konzole pro spouštění Pythonu za běhu programu\nhodnoty proměnných lze zobrazit i přímo v editoru najetím myší"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#přidání-změn",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#přidání-změn",
+    "title": "Git, Github",
+    "section": "Přidání změn",
+    "text": "Přidání změn\n\ngit add . - přidání všech změn do tzv. “staging area”\ngit add soubor.py - přidání konkrétního souboru\ngit commit -m \"Popis změny\" - vytvoření nového commitu"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#debugování-v-jupyter-notebooku",
-    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#debugování-v-jupyter-notebooku",
-    "title": "Debugování ve VS Code",
-    "section": "Debugování v Jupyter Notebooku",
-    "text": "Debugování v Jupyter Notebooku\n\nve VS Code lze debugovat i jednotlivé buňky notebooku\ntlačítko Debug Cell nad buňkou\nfungují breakpointy i krokování stejně jako u skriptů\nužitečné pro interaktivní analýzu dat"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#práce-s-větvemi-branches",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#práce-s-větvemi-branches",
+    "title": "Git, Github",
+    "section": "Práce s větvemi (branches)",
+    "text": "Práce s větvemi (branches)\n\nvětve umožňují pracovat na různých částech projektu nezávisle na sobě\nhlavní větev se obvykle nazývá main nebo master\ndalší větve mohou být vytvořeny pro nové funkce, opravy chyb nebo experimenty\nbranch se vytváří vždy z nějaké prvotní větve, obvykle z main nebo master\ngit branch nazev-vetve - vytvoření nové větve\ngit checkout nazev-vetve - přepnutí na existující větev\ngit checkout -b nazev-vetve - vytvoření a přepnutí na novou větev"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#datové-rámce",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#datové-rámce",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Datové rámce",
-    "text": "Datové rámce\n\nefektivně tabulka - řádky, sloupce\nsloupce mají jednotný datový typ (číslo, text, datum, …)\nřádky mají stejnou strukturu\nkaždý řádek představuje jeden objekt (např. jeden záznam o měření)\nsloupce mají jména (např. název měření, datum, …)\ngeodata - sloupce se specifickým datovým typem (geometrie)\nefektivně se jedná o komplikovanou strukturu s mnoha funkcemi a metodami, které umožňují práci s daty"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#průběh-práce-s-větví",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#průběh-práce-s-větví",
+    "title": "Git, Github",
+    "section": "Průběh práce s větví",
+    "text": "Průběh práce s větví\n\n\n\n\n\ngitGraph\n    commit id: \"počáteční stav\"\n    commit id: \"příprava projektu\"\n    branch feature-1\n    checkout feature-1\n    commit id: \"nová funkce (1)\"\n    commit id: \"nová funkce (2)\"\n    checkout main\n    commit id: \"základní struktura\"\n    branch hotfix-1\n    commit id: \"oprava chyby\"\n    checkout main\n    merge hotfix-1\n    checkout feature-1\n    commit id: \"nová funkce (3)\"\n    checkout main\n    merge feature-1 id: \"sloučení\"\n    commit id: \"vydání verze\""
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#datové-rámce-v-pythonu",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#datové-rámce-v-pythonu",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Datové rámce v Pythonu",
-    "text": "Datové rámce v Pythonu\n\nPython tento koncept přímo v sobě neobsahuje (na rozdíl třeba od R)\nnejstarší podobná implementace je numpy - což jsou obecně multidimenzionální struktury, ale spíše ve smyslu matic a dalších numerických dat\npro práci s tabulkovými daty se používá knihovna pandas a chceme-li pracovat s geografickými daty, tak geopandas\nv poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. polars a geopolars"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#sloučení-větví",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#sloučení-větví",
+    "title": "Git, Github",
+    "section": "Sloučení větví",
+    "text": "Sloučení větví\n\ngit merge nazev-vetve - sloučení změn z jiné větve do aktuální větve\npři konfliktech je nutné je ručně vyřešit a následně potvrdit změny pomocí git add a git commit.\n\nSmazání větve\n\ngit branch -d nazev-vetve - smazání větve, pokud byla sloučena\ngit branch -D nazev-vetve - vynucené smazání větve"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#pandas",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#pandas",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Pandas",
-    "text": "Pandas\n\nzávisí na řadě knihoven, poměrně “těžké”\nz historických důvodů zde existuje na řadu problémů několik různých přístupů k řešení stejného problému  může být zmatečné a komplikované na pochopení\nchybí zcela ujednocující koncepce\nnesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geodata)\npráci občas stěžuje koncept indexů a jejich správa a absence jednotného přístupu k práci s daty\nhlavní třída DataFrame - na ní řada funkcí\nverze 3.0 (leden 2026) část problémů řeší\nPandas cookbook, Getting started tutorials, Pandas Tutorial: DataFrames in Python"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#soubor-.gitignore",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#soubor-.gitignore",
+    "title": "Git, Github",
+    "section": "Soubor .gitignore",
+    "text": "Soubor .gitignore\n\ndefinuje, které soubory a složky se nemají sledovat v Git\njeden soubor na řádek, podporuje zástupné znaky (*, **)\nobsah se neverzuje (neukládá do repozitáře)\ntypicky: data, kompilované soubory, dočasné soubory, prostředí"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#geopandas",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#geopandas",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Geopandas",
-    "text": "Geopandas\n\nrozšíření pandas pro prostorová data\ntřída GeoDataFrame, rozšíření DataFrame (nové funkce)\npostaveno nad GDAL/OGR, respektive shapely a pygrio"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#doporučené-postupy",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#doporučené-postupy",
+    "title": "Git, Github",
+    "section": "Doporučené postupy",
+    "text": "Doporučené postupy\n\npravidelně commitujte a pište srozumitelné zprávy commitů\npoužívejte větve pro nové funkce nebo opravy chyb\npřed sloučením větví vždy aktualizujte hlavní větev (git pull)\nnastavte .gitignore hned na začátku projektu - vyhnete se tak problémům s velkými soubory v historii"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#polars",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#polars",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Polars",
-    "text": "Polars\n\nmodernější iterace na téma datových rámců, značně inspirovaná dplyr (balík pro R)\nnapsáno primárně pro Rust a následně portováno do mnoha dalších jazyků (včetně Pythonu)\nmnohem rychlejší, bezpečnější a efektivnější než pandas\npodporuje méně formátů než pandas, zejména s ohledem na udržení lehkosti (co se týká závislostí)\nkód je mnohem čitelnější a obvykle jednodušší na pochopení v porovnání s pandas\nuser guide , Modern Polars - porovnání s pandas a polars\npro práci s prostorovými daty existuje balík geopolars"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#github",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#github",
+    "title": "Git, Github",
+    "section": "GitHub",
+    "text": "GitHub\n\nwebová služba pro hostování Git repozitářů\nfunkcionality postavené okolo Git + doplňky pro vývojáře\n\nřešení problémů se softwarem (Issues)\ntvorba vydání softwaru (Releases)\nwiki, či hostování dokumentace (GitHub Pages)\nCI/CD - automatizace postupů při vývoji softwaru (GitHub Actions)\n\nsociální rozměr"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---selekce",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---selekce",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Ukázka - selekce",
-    "text": "Ukázka - selekce\n\nPandasPolars\n\n\nimport pandas as pd\n\ndf_pd = pd.read_csv(extracted)\n\ndf_pd.loc[12:15, [\"Dest\", \"Tail_Number\"]]\n\nselected_pd = df_pd.set_index(\"IATA_CODE_Reporting_Airline\").loc[[\"AA\", \"DL\"], [\"Dest\", \"Tail_Number\"]]\n\nselected_pd\n\n\nimport polars as pl\n\ndf_pl = pl.read_csv(extracted, truncate_ragged_lines=True)\n\ndf_pl.select([\"Dest\", \"Tail_Number\"]).head(12).tail(3)\n\nselected_pl = df_pl.filter(pl.col(\"IATA_CODE_Reporting_Airline\").is_in([\"AA\", \"DL\"])).select(\n    [\"IATA_CODE_Reporting_Airline\", \"Dest\", \"Tail_Number\"]\n)\n\nselected_pl"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#pull-request",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#pull-request",
+    "title": "Git, Github",
+    "section": "Pull Request",
+    "text": "Pull Request\n\nnávrh na sloučení větve do jiné větve\numožňuje revizi kódu kolegou před samotným sloučením\npostup: vytvoření větve  commit změn  push větve  otevření PR na GitHubu  review  merge\nlze diskutovat změny přímo v kódu (komentáře k řádkům)\nzáklad spolupráce na open-source i firemních projektech"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---tvorba-sloupce",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---tvorba-sloupce",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Ukázka - tvorba sloupce",
-    "text": "Ukázka - tvorba sloupce\n\nPandasPolars\n\n\ndf_pd[\"novy_sloupec\"] = df_pd[\"sloupec_hodnota\"] &lt;= 3\n\n\ndf_pl = df_pl.with_columns(pl.when(pl.col(\"sloupec_hodnota\") &lt;= 10).then(True).otherwise(False).alias(\"novy_sloupec\"))"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#github---příkazová-řádka",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#github---příkazová-řádka",
+    "title": "Git, Github",
+    "section": "GitHub - příkazová řádka",
+    "text": "GitHub - příkazová řádka\n\ngh - příkazová řádka pro GitHub\njak management repositářů (alternativa k git), tak i další funkcionality na webu"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---filtrace-dat",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---filtrace-dat",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Ukázka - filtrace dat",
-    "text": "Ukázka - filtrace dat\n\nPandasPolars\n\n\ndf_filtered = df_pd[(df_pd[\"zpozdeni\"] &gt; 15) & (df_pd[\"mesto\"] == \"Praha\")]\n\n\ndf_filtered = df_pl.filter((pl.col(\"zpozdeni\") &gt; 15) & (pl.col(\"mesto\") == \"Praha\"))"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#provázání-s-vs-code",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#provázání-s-vs-code",
+    "title": "Git, Github",
+    "section": "Provázání s VS Code",
+    "text": "Provázání s VS Code\n\nskrze extenze\npřímo v editoru, funkce práce s Git\nmůže jít jak o jednoduchou práci s repositáři, tak i komplexní funkce GitHubu"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---seskupování-a-agregace-group-by",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---seskupování-a-agregace-group-by",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Ukázka - seskupování a agregace (Group by)",
-    "text": "Ukázka - seskupování a agregace (Group by)\n\nPandasPolars\n\n\ndf_grouped_pd = df_pd.groupby(\"letecka_spolecnost\").agg(\n    prumerne_zpozdeni=(\"zpozdeni\", \"mean\"), pocet_letu=(\"id_letu\", \"count\")\n)\n\ndf_grouped_pd\n\n\ndf_grouped_pl = df_pl.group_by(\"letecka_spolecnost\").agg(\n    pl.col(\"zpozdeni\").mean().alias(\"prumerne_zpozdeni\"), pl.col(\"id_letu\").count().alias(\"pocet_letu\")\n)\n\ndf_grouped_pl"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#github-actions",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#github-actions",
+    "title": "Git, Github",
+    "section": "GitHub Actions",
+    "text": "GitHub Actions\n\nautomatizace pracovních postupů\nCI/CD - Continuous Integration/Continuous Deployment\numožňuje spouštět skripty a akce na základě událostí v repozitáři\nnapř. při pushnutí kódu, vytvoření pull requestu nebo vydání nové verze\numožňuje testování, nasazení a další úkoly\nakce jsou definovány v YAML souborech a mohou být spouštěny na různých platformách\numožňuje vytvářet vlastní akce nebo používat akce od komunity\nakce mohou být kombinovány do pracovních postupů (workflows), které definují sekvenci kroků, které mají být provedeny"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#konverze-mezi-knihovnami",
-    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#konverze-mezi-knihovnami",
-    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
-    "section": "Konverze mezi knihovnami",
-    "text": "Konverze mezi knihovnami\n\nčasto je nutné data mezi těmito knihovnami převádět data (např. některá jiná knihovna podporuje zatím jen pandas)\npolars má funkce pro převod z a do pandas\n\n\nZ Pandas do PolarsZ Polars do Pandas\n\n\nimport polars as pl\n\n# vytvoření polars DataFrame z pandas DataFrame\ndf_pl = pl.from_pandas(df_pd)\n\n\n# převod polars DataFrame na pandas DataFrame\ndf_pd = df_pl.to_pandas()"
+    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#alternativy",
+    "href": "subjects/PGIS2/prezentace/13_git_github.html#alternativy",
+    "title": "Git, Github",
+    "section": "Alternativy",
+    "text": "Alternativy\n\nGitLab\nBitbucket\nGitea\nGogs\nale reálně jde o naprosté minority"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#vs-code",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#vs-code",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "VS Code",
-    "text": "VS Code\n\nlehké IDE pro vývoj\nvzdáleně odvozené od Visual Studio, což je výrazně “těžší” prostředí\ninspirace “lehkými” prostředími jako Atom, Neovim, Sublime Text atd.\nsnaha o univerzálnost  specifičnost (nástroje od JetBrains)\nrozšiřitelnost pomocí pluginů  ty posouvají k určité funkcionalitě"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#matplotlib-1",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#matplotlib-1",
+    "title": "Matplotlib",
+    "section": "Matplotlib",
+    "text": "Matplotlib\n\nv Pythonu v podstatě standard na tvorbu vizualizací a grafů\nnapsáno v Pythonu + optimalizace náročných části v C/C++\nodděluje 3 hlavní složky\n\ninterní model grafu\nAPI pro programátory\nvykreslovací backend\n\nrozdělení umožňuje snadnou rozšiřitelnost\npracuje dobře s numpy i pandas"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#github-copilot",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#github-copilot",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Github Copilot",
-    "text": "Github Copilot\n\nGitHub Copilot je AI nástroj pro asistované programování\nvyužívá modely strojového učení trénované na velkém množství veřejně dostupného kódu\nnabízí návrhy kódu v reálném čase přímo při psaní\npodporuje různé programovací jazyky a frameworky\npomáhá zrychlit vývoj tím, že navrhuje celé funkce, metody, komentáře a další části kódu\numožňuje vývojářům soustředit se na logiku a strukturu kódu, zatímco Copilot se stará o syntaxi a detaily\nintegruje se do vývojových prostředí jako Visual Studio Code, Neovim a JetBrains IDEs\nnabízí personalizované návrhy na základě kontextu a stylu kódu, který vývojář píše"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#komponenty",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#komponenty",
+    "title": "Matplotlib",
+    "section": "Komponenty",
+    "text": "Komponenty\n\nArtist - základní třída, všechno co je vidět se od ní odvozuje\nFigure - celý obrázek grafu\nAxes - samotný graf (něco co má osy)\njeden Figure může obsahovat vícero Axes - např. dva grafy vedle sebe"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#jazykové-modely",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#jazykové-modely",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Jazykové modely",
-    "text": "Jazykové modely\n\nnestrojí striktně na jednom modelu\npodporuje jak modely od OpenAI, tak Anthropic a nově i od Google\nmodely jsou trénovány na velkém množství kódu z veřejných repozitářů na GitHubu\nkontexty z aktuálního kódu a projektu\ni hlasový chat"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#backend",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#backend",
+    "title": "Matplotlib",
+    "section": "Backend",
+    "text": "Backend\n\ninteraktivní - třeba pro programy s GUI, nebo i z python skriptů (trochu nešťastné, protože skript se neukončí dokud se obrázek nezavře)\nstatický - tvorba obrázků v různých formátech\nQt5Agg, TkAgg, WebAgg  Agg, PDF, SVG, PS\n\nimport matplotlib\n\nmatplotlib.use(\"Agg\")"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#použití",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#použití",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Použití",
-    "text": "Použití\n\ndokončování kódu\ngenerování dokumentace a komentářů\nchat s kontextem (soubory)\nCopilot Edits - možnost editovat vybraný kód pomocí dotazů, napříč vícero vybranými soubory"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#stylování-a-konfigurace",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#stylování-a-konfigurace",
+    "title": "Matplotlib",
+    "section": "Stylování a konfigurace",
+    "text": "Stylování a konfigurace\n\nbuď přímo součást kódu (může být zdlouhavé a opakující se)\npoužití globálního stylu v souboru matplotlibrc - soubor se hledá buď v aktuální projektu nebo v uživatelském adresáři\npředpřipravené styly\n\nimport matplotlib\n\nmatplotlib.style.use(\"ggplot\")"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#nastavení",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#nastavení",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Nastavení",
-    "text": "Nastavení\n\ninstrukce buď textové v souboru nastavení (úroveň projektu nebo profilu) settings.json, nebo tamtéž specifikujeme soubor, který se má použít\n\n\"github.copilot.chat.codeGeneration.useInstructionFiles\": true,\n\"github.copilot.chat.codeGeneration.instructions\": [\n        {\n            \"text\": \"Always add a comment: 'Generated by Copilot'.\"\n        },\n        {\n            // nebo umístit do .github/copilot-instructions.md tam jsou načteny automaticky\n            \"file\": \".copilot-instructions.md\",\n        }\n    ]\n\"github.copilot.chat.testGeneration.instructions\": [],\n\"github.copilot.chat.reviewSelection.instructions\": [],"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#dva-způsoby-použití",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#dva-způsoby-použití",
+    "title": "Matplotlib",
+    "section": "Dva způsoby použití",
+    "text": "Dva způsoby použití\n\nsubmodul matplotlib.pyplot kde pracujeme s jedním grafem\n\nvšechny volané funkce pak modifikují jeden graf\nvhodné pro menší skripty a základní ukázky\n\nobjektový přístup - tvorba Figure a Axes a jejich modifikace\n\nvhodné pro komplexnější grafy, či situace kdy tvoříme vícero grafů v rámci skriptu\n\n\nimport matplotlib as mpl\n\n# obrázek s 2 grafy - 1 řádek, 2 sloupce\n# velikost obrázku je v palcích\nfig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))\n\nprvek axs je ve skutečnosti pole, jednotlivých prvků s osami, takže přistupujeme jako axs[0] atd."
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#tipy",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#tipy",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Tipy",
-    "text": "Tipy\n\nsignatura funkce výrazně napomáhá tvorbě kódu (kontext)\nkomentáře výrazně napomáhají (kontext)\ndalší otevřené soubory (v IDE) také poskytují kontext - např. kód pro pársování JSON souboru, otevřu ukázkový soubor"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#objektový-přístup",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#objektový-přístup",
+    "title": "Matplotlib",
+    "section": "Objektový přístup",
+    "text": "Objektový přístup\n\njednotlivé modifikace voláme přímo jako metody prvků Figure a Axes\npřehlednější a lépe přenositelné\nmetody Axes např. set_xlabel(), set_ylabel(), grid(), legend() či bar(), scatter(), plot()\nmetody Figure např. show(), savefig(), suptitle()"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#proč-debugovat",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#proč-debugovat",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Proč debugovat?",
-    "text": "Proč debugovat?\n\nprint() je nejjednodušší, ale pro složitější problémy nedostačující\ndebugger umožňuje zastavit program v libovolném místě a prozkoumat stav proměnných\numožňuje krokovat kód řádek po řádku a sledovat tok programu\nšetří čas při hledání chyb, oproti opakovanému spouštění celého skriptu"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#ukázky",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#ukázky",
+    "title": "Matplotlib",
+    "section": "Ukázky",
+    "text": "Ukázky\n\ngalerie na webu projektu obsahuje i kód\nvyhledávání na githubu pomocí importu knihovny\nhodně pomůže i Copilot s dobrou specifikací dotazu"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#breakpointy",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#breakpointy",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Breakpointy",
-    "text": "Breakpointy\n\nkliknutím vedle čísla řádku nastavíme breakpoint (červená tečka)\nprogram se zastaví na tomto řádku a čeká na naši akci\nlze nastavit i podmíněné breakpointy - zastaví se pouze pokud je splněna podmínka (pravý klik na breakpoint)"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#rozšíření",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#rozšíření",
+    "title": "Matplotlib",
+    "section": "Rozšíření",
+    "text": "Rozšíření\n\nexistují další knihovny postavené nad Matplotlib\n\nseaborn - ukázky\nplotnine - ukázky\n\nobvykle úprava API do nějakého “vhodnějšího” formátu"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#ovládání-debuggeru",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#ovládání-debuggeru",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Ovládání debuggeru",
-    "text": "Ovládání debuggeru\n\nContinue (F5) - pokračovat do dalšího breakpointu\nStep Over (F10) - provést aktuální řádek a přejít na další\nStep Into (F11) - vstoupit do volané funkce\nStep Out (Shift+F11) - dokončit aktuální funkci a vrátit se\nRestart (Ctrl+Shift+F5) - restartovat debugování\nStop (Shift+F5) - ukončit debugování"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#plotnine---co-to-je",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#plotnine---co-to-je",
+    "title": "Matplotlib",
+    "section": "plotnine - co to je",
+    "text": "plotnine - co to je\n\nknihovna pro Python inspirovaná ggplot2 z R\npoužívá koncept Grammar of Graphics\ngraf se skládá z vrstev pomocí operátoru +\nvhodné zejména pro rychlou analytickou vizualizaci z pandas DataFrame\nrenderuje přes Matplotlib backend"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#panely-debuggeru",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#panely-debuggeru",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Panely debuggeru",
-    "text": "Panely debuggeru\n\nVariables - přehled všech proměnných a jejich hodnot v aktuálním kontextu\nWatch - sledování konkrétních výrazů (lze přidat vlastní)\nCall Stack - zásobník volání funkcí - kde se aktuálně nacházíme\nBreakpoints - seznam všech nastavených breakpointů\nhodnoty proměnných lze zobrazit i přímo v editoru najetím myší"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#jak-funguje-systém-grammar-of-graphics",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#jak-funguje-systém-grammar-of-graphics",
+    "title": "Matplotlib",
+    "section": "Jak funguje systém (Grammar of Graphics)",
+    "text": "Jak funguje systém (Grammar of Graphics)\n\nsystém je založen na skládání několika částí grafu\ndata  tabulka, ze které čteme hodnoty\naes(...)  mapování sloupců na vizuální vlastnosti (x, y, color, …)\ngeom_*  jaký typ značek se vykreslí (geom_point, geom_line, geom_col)\nstat_*  volitelné statistické transformace\nfacet_*, theme_*, labs(...)  rozdělení do panelů, vzhled, popisky"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#debugování-v-jupyter-notebooku",
-    "href": "subjects/PGIS2/prezentace/08_vs_code_github_copilot.html#debugování-v-jupyter-notebooku",
-    "title": "Visual Studio Code a Github Copilot",
-    "section": "Debugování v Jupyter Notebooku",
-    "text": "Debugování v Jupyter Notebooku\n\nve VS Code lze debugovat i jednotlivé buňky notebooku\ntlačítko Debug Cell nad buňkou\nfungují breakpointy i krokování stejně jako u skriptů\nužitečné pro interaktivní analýzu dat"
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#mentální-model-tvorby-grafu",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#mentální-model-tvorby-grafu",
+    "title": "Matplotlib",
+    "section": "Mentální model tvorby grafu",
+    "text": "Mentální model tvorby grafu\n\n\nvyberu datový rámec\n\n\nnamapuji proměnné přes aes(...)\n\n\npřidám geometrii (geom_*)\n\n\ndoplním měřítka, popisky a téma\n\n\nvolitelně rozdělím graf na panely (facet_wrap, facet_grid)\n\n\nfrom plotnine import aes, geom_point, ggplot, labs, theme_minimal\n\np = (\n    ggplot(df, aes(x=\"delay\", y=\"distance\", color=\"carrier\"))\n    + geom_point(alpha=0.6)\n    + labs(\n        title=\"Delay vs distance\",\n        x=\"Delay (min)\",\n        y=\"Distance (km)\",\n        color=\"Carrier\",\n    )\n    + theme_minimal()\n)\n\np"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#plotnine-vs-matplotlib-kdy-použít-co",
+    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#plotnine-vs-matplotlib-kdy-použít-co",
+    "title": "Matplotlib",
+    "section": "plotnine vs Matplotlib (kdy použít co)",
+    "text": "plotnine vs Matplotlib (kdy použít co)\n\nplotnine: deklarativní zápis, rychlé skládání běžných analytických grafů\nMatplotlib: detailní kontrola každého prvku a komplexní customizace\nčastý postup v praxi:\n\nexplorace dat a standardní grafy v plotnine\nspeciální finální vizualizace v Matplotlib"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#typy-knihoven-pro-python",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#typy-knihoven-pro-python",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "Typy knihoven pro Python",
+    "text": "Typy knihoven pro Python\n\nnativní knihovny - pouze Python kód\nkompilované knihovny - C, C++, Rust nebo i jiné jazyky\nnativní knihovny fungují automaticky všude, kompilované je nutné sestavit pro danou platformu a verzi Pythonu"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#fiona-rasterio-shapely",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#fiona-rasterio-shapely",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "fiona, rasterio, shapely",
+    "text": "fiona, rasterio, shapely\n\nkompilované knihovny\npostavené nad GDAL/OGR (ne nad balíkem osgeo)\nsnaha aby pracovaly více jako Python knihovny a méně jako C++ kód\no něco měně komplikované než přímé použití GDAL/OGR skrze osgeo, o něco horší spolupráce knihoven (zejména fiona a shapely)"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#fiona",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#fiona",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "fiona",
+    "text": "fiona\n\nknihovna pro práci s vektorovými daty\nodstraňuje mnoho dílčích kroků, které jsou v osgeo\nsouřadnicové systémy a transformace s knihovnou pyproj\napi není bohaté na práci s geometrií\npřístup např. ke struktuře vrstvy je velice jednoduchý\nnepodporuje vše co osgeo\ndokumentace"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#shapely",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#shapely",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "shapely",
+    "text": "shapely\n\nknihovna založená na GEOS\nzpracování geometrií\npři využití s fiona nutné konverze mezi jejich typy\ndokumentace"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#konverze-geometrií",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#konverze-geometrií",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "Konverze geometrií",
+    "text": "Konverze geometrií\n\nmodul shapely.geometry\nz fiona do shapely funkce shape(feature.geometry)\nz shapely do fiona funkce mapping()"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#rasterio",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#rasterio",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "rasterio",
+    "text": "rasterio\n\nknihovna pro práci s rastrovými daty\nplatí pro ni v podstatě to samé co pro fiona\nvýrazné propojení s numpy\noproti osgeo jednodušší přístupy\ndokumentace\nproblém s typováním - nutné hodně se opírat o dokumentaci"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#souřadnicové-systémy-a-transformace",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#souřadnicové-systémy-a-transformace",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "Souřadnicové systémy a transformace",
+    "text": "Souřadnicové systémy a transformace\n\nklíčová operace v geoinformatice - převod dat mezi souřadnicovými systémy\nv osgeo  modul osr a třída osr.SpatialReference\nv knihovnách fiona/rasterio  knihovna pyproj\npyproj je pythonový binding nad knihovnou PROJ"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#osr---práce-se-souřadnicovými-systémy",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#osr---práce-se-souřadnicovými-systémy",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "osr - práce se souřadnicovými systémy",
+    "text": "osr - práce se souřadnicovými systémy\n\nfrom osgeo import osr\n\nsrs = osr.SpatialReference()\nsrs.ImportFromEPSG(4326)\n\nsrs_dst = osr.SpatialReference()\nsrs_dst.ImportFromEPSG(5514)\n\n# transformační objekt\ntransform = osr.CoordinateTransformation(srs, srs_dst)\n\n# transformace bodu\nx, y, _ = transform.TransformPoint(50.0, 14.0)\n\n\npozor na pořadí souřadnic - GDAL/OGR standardně používá pořadí dle definice CRS (lat/lon pro EPSG:4326)"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#pyproj---moderní-přístup",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#pyproj---moderní-přístup",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "pyproj - moderní přístup",
+    "text": "pyproj - moderní přístup\n\nimport pyproj\n\ncrs_src = pyproj.CRS(\"EPSG:4326\")\ncrs_dst = pyproj.CRS(\"EPSG:5514\")\n\n# transformační objekt\ntransformer = pyproj.Transformer.from_crs(crs_src, crs_dst, always_xy=True)\n\n# transformace souřadnic\nx, y = transformer.transform(14.0, 50.0)\n\n\nparametr always_xy=True zajistí pořadí souřadnic vždy jako (x, y) tj. (lon, lat)\nbez tohoto parametru se pořadí řídí definicí CRS\npyproj je přehlednější a doporučený přístup pro knihovny fiona, shapely, geopandas"
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#gdalogr-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-fiona-rasterio-shapely",
+    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#gdalogr-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-fiona-rasterio-shapely",
+    "title": "Knihovny fiona, rasterio, shapely",
+    "section": "GDAL/OGR  fiona, rasterio, shapely",
+    "text": "GDAL/OGR  fiona, rasterio, shapely\n\nGDAL/OGR má širší možnosti, ale práce je komplikovanější\nknihovny jsou zjednodušené a přístupnější\nnástroje gdal.VectorTranslate(), gdal.Warp(), gdal.Translate() atd. určitě využívat z osgeo\nzákladní modifikace či zpracování dat je v 90% případů snadnější z knihoven\nkomplexní situace lze řešit přímo použítím osgeo\npoužívat princip KISS (Keep it simple, stupid!) – začít s jednoduchou verzí, dokud funguje a upgradovat, posouvat dál, pouze pokud je to nutné"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/07_baliky.html#modul",
@@ -2028,7 +2105,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.33560947 -1.38777030 -0.02610873 -0.28689535 -0.02572975"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1117383 -0.1290137 -0.7810163 -1.8741921 -0.2434493"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2567,7 +2644,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f228489ef90&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f1c68c7ef90&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -3046,284 +3123,186 @@
     "text": "Vliv na Pandas a datové rámce\n\nu obou knihoven na databázové tabulky Pandas i GeoPandas stojí mechanismy nad podkladovou technologií C\nkaždá vytvořená instance sloupcového tělesa (Series) implementuje balení dat okolo základu 1D polí ndarray\nrychlost fitrovacích principů nad sloupci přesně koresponduje s Boolean operacemi NumPy masky\n\n\n\n\n\n\n\nNote\n\n\npři procházení a iteraci velkých dat přímo po jednotlivých řádcích (iterrows) se vyhýbáte obrovskému optimalizačnímu benefitu vektorizací ze strany NumPy – zásadní a častá chyba v GIS analytice"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#typy-knihoven-pro-python",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#typy-knihoven-pro-python",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "Typy knihoven pro Python",
-    "text": "Typy knihoven pro Python\n\nnativní knihovny - pouze Python kód\nkompilované knihovny - C, C++, Rust nebo i jiné jazyky\nnativní knihovny fungují automaticky všude, kompilované je nutné sestavit pro danou platformu a verzi Pythonu"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#datové-rámce",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#datové-rámce",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Datové rámce",
+    "text": "Datové rámce\n\nefektivně tabulka - řádky, sloupce\nsloupce mají jednotný datový typ (číslo, text, datum, …)\nřádky mají stejnou strukturu\nkaždý řádek představuje jeden objekt (např. jeden záznam o měření)\nsloupce mají jména (např. název měření, datum, …)\ngeodata - sloupce se specifickým datovým typem (geometrie)\nefektivně se jedná o komplikovanou strukturu s mnoha funkcemi a metodami, které umožňují práci s daty"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#fiona-rasterio-shapely",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#fiona-rasterio-shapely",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "fiona, rasterio, shapely",
-    "text": "fiona, rasterio, shapely\n\nkompilované knihovny\npostavené nad GDAL/OGR (ne nad balíkem osgeo)\nsnaha aby pracovaly více jako Python knihovny a méně jako C++ kód\no něco měně komplikované než přímé použití GDAL/OGR skrze osgeo, o něco horší spolupráce knihoven (zejména fiona a shapely)"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#datové-rámce-v-pythonu",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#datové-rámce-v-pythonu",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Datové rámce v Pythonu",
+    "text": "Datové rámce v Pythonu\n\nPython tento koncept přímo v sobě neobsahuje (na rozdíl třeba od R)\nnejstarší podobná implementace je numpy - což jsou obecně multidimenzionální struktury, ale spíše ve smyslu matic a dalších numerických dat\npro práci s tabulkovými daty se používá knihovna pandas a chceme-li pracovat s geografickými daty, tak geopandas\nv poslední době se objevují i nové knihovny, které se snaží být efektivnější a rychlejší, např. polars a geopolars"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#fiona",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#fiona",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "fiona",
-    "text": "fiona\n\nknihovna pro práci s vektorovými daty\nodstraňuje mnoho dílčích kroků, které jsou v osgeo\nsouřadnicové systémy a transformace s knihovnou pyproj\napi není bohaté na práci s geometrií\npřístup např. ke struktuře vrstvy je velice jednoduchý\nnepodporuje vše co osgeo\ndokumentace"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#pandas",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#pandas",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Pandas",
+    "text": "Pandas\n\nzávisí na řadě knihoven, poměrně “těžké”\nz historických důvodů zde existuje na řadu problémů několik různých přístupů k řešení stejného problému  může být zmatečné a komplikované na pochopení\nchybí zcela ujednocující koncepce\nnesmírně široké možnosti práce s daty a podpora pro mnoho formátů (platí i pro geodata)\npráci občas stěžuje koncept indexů a jejich správa a absence jednotného přístupu k práci s daty\nhlavní třída DataFrame - na ní řada funkcí\nverze 3.0 (leden 2026) část problémů řeší\nPandas cookbook, Getting started tutorials, Pandas Tutorial: DataFrames in Python"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#shapely",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#shapely",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "shapely",
-    "text": "shapely\n\nknihovna založená na GEOS\nzpracování geometrií\npři využití s fiona nutné konverze mezi jejich typy\ndokumentace"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#geopandas",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#geopandas",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Geopandas",
+    "text": "Geopandas\n\nrozšíření pandas pro prostorová data\ntřída GeoDataFrame, rozšíření DataFrame (nové funkce)\npostaveno nad GDAL/OGR, respektive shapely a pygrio"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#konverze-geometrií",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#konverze-geometrií",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "Konverze geometrií",
-    "text": "Konverze geometrií\n\nmodul shapely.geometry\nz fiona do shapely funkce shape(feature.geometry)\nz shapely do fiona funkce mapping()"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#polars",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#polars",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Polars",
+    "text": "Polars\n\nmodernější iterace na téma datových rámců, značně inspirovaná dplyr (balík pro R)\nnapsáno primárně pro Rust a následně portováno do mnoha dalších jazyků (včetně Pythonu)\nmnohem rychlejší, bezpečnější a efektivnější než pandas\npodporuje méně formátů než pandas, zejména s ohledem na udržení lehkosti (co se týká závislostí)\nkód je mnohem čitelnější a obvykle jednodušší na pochopení v porovnání s pandas\nuser guide , Modern Polars - porovnání s pandas a polars\npro práci s prostorovými daty existuje balík geopolars"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#rasterio",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#rasterio",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "rasterio",
-    "text": "rasterio\n\nknihovna pro práci s rastrovými daty\nplatí pro ni v podstatě to samé co pro fiona\nvýrazné propojení s numpy\noproti osgeo jednodušší přístupy\ndokumentace\nproblém s typováním - nutné hodně se opírat o dokumentaci"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---selekce",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---selekce",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Ukázka - selekce",
+    "text": "Ukázka - selekce\n\nPandasPolars\n\n\nimport pandas as pd\n\ndf_pd = pd.read_csv(extracted)\n\ndf_pd.loc[12:15, [\"Dest\", \"Tail_Number\"]]\n\nselected_pd = df_pd.set_index(\"IATA_CODE_Reporting_Airline\").loc[[\"AA\", \"DL\"], [\"Dest\", \"Tail_Number\"]]\n\nselected_pd\n\n\nimport polars as pl\n\ndf_pl = pl.read_csv(extracted, truncate_ragged_lines=True)\n\ndf_pl.select([\"Dest\", \"Tail_Number\"]).head(12).tail(3)\n\nselected_pl = df_pl.filter(pl.col(\"IATA_CODE_Reporting_Airline\").is_in([\"AA\", \"DL\"])).select(\n    [\"IATA_CODE_Reporting_Airline\", \"Dest\", \"Tail_Number\"]\n)\n\nselected_pl"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#souřadnicové-systémy-a-transformace",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#souřadnicové-systémy-a-transformace",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "Souřadnicové systémy a transformace",
-    "text": "Souřadnicové systémy a transformace\n\nklíčová operace v geoinformatice - převod dat mezi souřadnicovými systémy\nv osgeo  modul osr a třída osr.SpatialReference\nv knihovnách fiona/rasterio  knihovna pyproj\npyproj je pythonový binding nad knihovnou PROJ"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---tvorba-sloupce",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---tvorba-sloupce",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Ukázka - tvorba sloupce",
+    "text": "Ukázka - tvorba sloupce\n\nPandasPolars\n\n\ndf_pd[\"novy_sloupec\"] = df_pd[\"sloupec_hodnota\"] &lt;= 3\n\n\ndf_pl = df_pl.with_columns(pl.when(pl.col(\"sloupec_hodnota\") &lt;= 10).then(True).otherwise(False).alias(\"novy_sloupec\"))"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#osr---práce-se-souřadnicovými-systémy",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#osr---práce-se-souřadnicovými-systémy",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "osr - práce se souřadnicovými systémy",
-    "text": "osr - práce se souřadnicovými systémy\n\nfrom osgeo import osr\n\nsrs = osr.SpatialReference()\nsrs.ImportFromEPSG(4326)\n\nsrs_dst = osr.SpatialReference()\nsrs_dst.ImportFromEPSG(5514)\n\n# transformační objekt\ntransform = osr.CoordinateTransformation(srs, srs_dst)\n\n# transformace bodu\nx, y, _ = transform.TransformPoint(50.0, 14.0)\n\n\npozor na pořadí souřadnic - GDAL/OGR standardně používá pořadí dle definice CRS (lat/lon pro EPSG:4326)"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---filtrace-dat",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---filtrace-dat",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Ukázka - filtrace dat",
+    "text": "Ukázka - filtrace dat\n\nPandasPolars\n\n\ndf_filtered = df_pd[(df_pd[\"zpozdeni\"] &gt; 15) & (df_pd[\"mesto\"] == \"Praha\")]\n\n\ndf_filtered = df_pl.filter((pl.col(\"zpozdeni\") &gt; 15) & (pl.col(\"mesto\") == \"Praha\"))"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#pyproj---moderní-přístup",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#pyproj---moderní-přístup",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "pyproj - moderní přístup",
-    "text": "pyproj - moderní přístup\n\nimport pyproj\n\ncrs_src = pyproj.CRS(\"EPSG:4326\")\ncrs_dst = pyproj.CRS(\"EPSG:5514\")\n\n# transformační objekt\ntransformer = pyproj.Transformer.from_crs(crs_src, crs_dst, always_xy=True)\n\n# transformace souřadnic\nx, y = transformer.transform(14.0, 50.0)\n\n\nparametr always_xy=True zajistí pořadí souřadnic vždy jako (x, y) tj. (lon, lat)\nbez tohoto parametru se pořadí řídí definicí CRS\npyproj je přehlednější a doporučený přístup pro knihovny fiona, shapely, geopandas"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---seskupování-a-agregace-group-by",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#ukázka---seskupování-a-agregace-group-by",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Ukázka - seskupování a agregace (Group by)",
+    "text": "Ukázka - seskupování a agregace (Group by)\n\nPandasPolars\n\n\ndf_grouped_pd = df_pd.groupby(\"letecka_spolecnost\").agg(\n    prumerne_zpozdeni=(\"zpozdeni\", \"mean\"), pocet_letu=(\"id_letu\", \"count\")\n)\n\ndf_grouped_pd\n\n\ndf_grouped_pl = df_pl.group_by(\"letecka_spolecnost\").agg(\n    pl.col(\"zpozdeni\").mean().alias(\"prumerne_zpozdeni\"), pl.col(\"id_letu\").count().alias(\"pocet_letu\")\n)\n\ndf_grouped_pl"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#gdalogr-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-fiona-rasterio-shapely",
-    "href": "subjects/PGIS2/prezentace/09_fiona_rasterio_shapely.html#gdalogr-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2066612074696d6573203e7d7d-fiona-rasterio-shapely",
-    "title": "Knihovny fiona, rasterio, shapely",
-    "section": "GDAL/OGR  fiona, rasterio, shapely",
-    "text": "GDAL/OGR  fiona, rasterio, shapely\n\nGDAL/OGR má širší možnosti, ale práce je komplikovanější\nknihovny jsou zjednodušené a přístupnější\nnástroje gdal.VectorTranslate(), gdal.Warp(), gdal.Translate() atd. určitě využívat z osgeo\nzákladní modifikace či zpracování dat je v 90% případů snadnější z knihoven\nkomplexní situace lze řešit přímo použítím osgeo\npoužívat princip KISS (Keep it simple, stupid!) – začít s jednoduchou verzí, dokud funguje a upgradovat, posouvat dál, pouze pokud je to nutné"
+    "objectID": "subjects/PGIS2/prezentace/10_pandas_polars.html#konverze-mezi-knihovnami",
+    "href": "subjects/PGIS2/prezentace/10_pandas_polars.html#konverze-mezi-knihovnami",
+    "title": "Datové rámce v Pythonu - pandas, geopandas a polars",
+    "section": "Konverze mezi knihovnami",
+    "text": "Konverze mezi knihovnami\n\nčasto je nutné data mezi těmito knihovnami převádět data (např. některá jiná knihovna podporuje zatím jen pandas)\npolars má funkce pro převod z a do pandas\n\n\nZ Pandas do PolarsZ Polars do Pandas\n\n\nimport polars as pl\n\n# vytvoření polars DataFrame z pandas DataFrame\ndf_pl = pl.from_pandas(df_pd)\n\n\n# převod polars DataFrame na pandas DataFrame\ndf_pd = df_pl.to_pandas()"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#matplotlib-1",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#matplotlib-1",
-    "title": "Matplotlib",
-    "section": "Matplotlib",
-    "text": "Matplotlib\n\nv Pythonu v podstatě standard na tvorbu vizualizací a grafů\nnapsáno v Pythonu + optimalizace náročných části v C/C++\nodděluje 3 hlavní složky\n\ninterní model grafu\nAPI pro programátory\nvykreslovací backend\n\nrozdělení umožňuje snadnou rozšiřitelnost\npracuje dobře s numpy i pandas"
+    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#co-je-debugování",
+    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#co-je-debugování",
+    "title": "Debugování ve VS Code",
+    "section": "Co je debugování?",
+    "text": "Co je debugování?\n\nproces hledání a odstraňování chyb (bugů) v kódu\nbug = neočekávané chování programu, chybný výsledek nebo pád skriptu\ndebugger je nástroj, který umožňuje program sledovat za běhu – zastavit ho, prozkoumat stav a krokovat\nsoučást každého moderního vývojového prostředí\npojem pochází z roku 1947 – Grace Hopper doslova našla můru (bug) v počítači"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#komponenty",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#komponenty",
-    "title": "Matplotlib",
-    "section": "Komponenty",
-    "text": "Komponenty\n\nArtist - základní třída, všechno co je vidět se od ní odvozuje\nFigure - celý obrázek grafu\nAxes - samotný graf (něco co má osy)\njeden Figure může obsahovat vícero Axes - např. dva grafy vedle sebe"
+    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#proč-debugovat",
+    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#proč-debugovat",
+    "title": "Debugování ve VS Code",
+    "section": "Proč debugovat?",
+    "text": "Proč debugovat?\n\nprint() je nejjednodušší, ale pro složitější problémy nedostačující\ndebugger umožňuje zastavit program v libovolném místě a prozkoumat stav proměnných\numožňuje krokovat kód řádek po řádku a sledovat tok programu\nšetří čas při hledání chyb, oproti opakovanému spouštění celého skriptu"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#backend",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#backend",
-    "title": "Matplotlib",
-    "section": "Backend",
-    "text": "Backend\n\ninteraktivní - třeba pro programy s GUI, nebo i z python skriptů (trochu nešťastné, protože skript se neukončí dokud se obrázek nezavře)\nstatický - tvorba obrázků v různých formátech\nQt5Agg, TkAgg, WebAgg  Agg, PDF, SVG, PS\n\nimport matplotlib\n\nmatplotlib.use(\"Agg\")"
+    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#jak-začít-debugovat",
+    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#jak-začít-debugovat",
+    "title": "Debugování ve VS Code",
+    "section": "Jak začít debugovat?",
+    "text": "Jak začít debugovat?\n\notevřený Python skript ve VS Code\nkliknout vedle čísla řádku a nastav breakpoint  červená tečka\nspustit debugger klávesou F5 (nebo tlačítkem ▶ v panelu Run & Debug)\nprogram se zastaví na breakpointu – prohlédni si proměnné v panelu Variables\nkrokovat pomocí kláves F10 (další řádek) / F11 (vstoupit do funkce), pokračuj pomocí F5"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#stylování-a-konfigurace",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#stylování-a-konfigurace",
-    "title": "Matplotlib",
-    "section": "Stylování a konfigurace",
-    "text": "Stylování a konfigurace\n\nbuď přímo součást kódu (může být zdlouhavé a opakující se)\npoužití globálního stylu v souboru matplotlibrc - soubor se hledá buď v aktuální projektu nebo v uživatelském adresáři\npředpřipravené styly\n\nimport matplotlib\n\nmatplotlib.style.use(\"ggplot\")"
+    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#konfigurace-debuggeru-launch.json",
+    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#konfigurace-debuggeru-launch.json",
+    "title": "Debugování ve VS Code",
+    "section": "Konfigurace debuggeru (launch.json)",
+    "text": "Konfigurace debuggeru (launch.json)\n\npři prvním spuštění F5 se VS Code zeptá na typ prostředí  lze vybrat Python File\nVS Code vytvoří soubor .vscode/launch.json s konfigurací\npro většinu skriptů stačí výchozí konfigurace, lze upravit cestu ke skriptu nebo předat argumenty\n\n{\n    \"version\": \"0.2.0\",\n    \"configurations\": [\n        {\n            \"name\": \"Python: Current File\",\n            \"type\": \"debugpy\",\n            \"request\": \"launch\",\n            \"program\": \"${file}\",\n            \"console\": \"integratedTerminal\"\n        }\n    ]\n}"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#dva-způsoby-použití",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#dva-způsoby-použití",
-    "title": "Matplotlib",
-    "section": "Dva způsoby použití",
-    "text": "Dva způsoby použití\n\nsubmodul matplotlib.pyplot kde pracujeme s jedním grafem\n\nvšechny volané funkce pak modifikují jeden graf\nvhodné pro menší skripty a základní ukázky\n\nobjektový přístup - tvorba Figure a Axes a jejich modifikace\n\nvhodné pro komplexnější grafy, či situace kdy tvoříme vícero grafů v rámci skriptu\n\n\nimport matplotlib as mpl\n\n# obrázek s 2 grafy - 1 řádek, 2 sloupce\n# velikost obrázku je v palcích\nfig, axs = mpl.pyplot.subplots(1, 2, figsize=(16, 8))\n\nprvek axs je ve skutečnosti pole, jednotlivých prvků s osami, takže přistupujeme jako axs[0] atd."
+    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#breakpointy",
+    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#breakpointy",
+    "title": "Debugování ve VS Code",
+    "section": "Breakpointy",
+    "text": "Breakpointy\n\nkliknutím vedle čísla řádku nastavíme breakpoint (červená tečka)\nprogram se zastaví na tomto řádku a čeká na naši akci\nlze nastavit i podmíněné breakpointy – zastaví se pouze pokud je splněna podmínka (pravý klik na breakpoint)\nlogpointy – nevyžadují zastavení programu, jen vypíší hodnotu do konzole (pravý klik  Add Logpoint)"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#objektový-přístup",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#objektový-přístup",
-    "title": "Matplotlib",
-    "section": "Objektový přístup",
-    "text": "Objektový přístup\n\njednotlivé modifikace voláme přímo jako metody prvků Figure a Axes\npřehlednější a lépe přenositelné\nmetody Axes např. set_xlabel(), set_ylabel(), grid(), legend() či bar(), scatter(), plot()\nmetody Figure např. show(), savefig(), suptitle()"
+    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#ovládání-debuggeru",
+    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#ovládání-debuggeru",
+    "title": "Debugování ve VS Code",
+    "section": "Ovládání debuggeru",
+    "text": "Ovládání debuggeru\n\nContinue (F5) - pokračovat do dalšího breakpointu\nStep Over (F10) - provést aktuální řádek a přejít na další\nStep Into (F11) - vstoupit do volané funkce\nStep Out (Shift+F11) - dokončit aktuální funkci a vrátit se\nRestart (Ctrl+Shift+F5) - restartovat debugování\nStop (Shift+F5) - ukončit debugování"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#ukázky",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#ukázky",
-    "title": "Matplotlib",
-    "section": "Ukázky",
-    "text": "Ukázky\n\ngalerie na webu projektu obsahuje i kód\nvyhledávání na githubu pomocí importu knihovny\nhodně pomůže i Copilot s dobrou specifikací dotazu"
+    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#panely-debuggeru",
+    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#panely-debuggeru",
+    "title": "Debugování ve VS Code",
+    "section": "Panely debuggeru",
+    "text": "Panely debuggeru\n\nVariables – přehled všech proměnných a jejich hodnot v aktuálním kontextu\nWatch – sledování konkrétních výrazů (lze přidat vlastní)\nCall Stack – zásobník volání funkcí – kde se aktuálně nacházíme\nBreakpoints – seznam všech nastavených breakpointů\nDebug Console – interaktivní konzole pro spouštění Pythonu za běhu programu\nhodnoty proměnných lze zobrazit i přímo v editoru najetím myší"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#rozšíření",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#rozšíření",
-    "title": "Matplotlib",
-    "section": "Rozšíření",
-    "text": "Rozšíření\n\nexistují další knihovny postavené nad Matplotlib\n\nseaborn - ukázky\nplotnine - ukázky\n\nobvykle úprava API do nějakého “vhodnějšího” formátu"
+    "objectID": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#debugování-v-jupyter-notebooku",
+    "href": "subjects/PGIS2/prezentace/12_debugovani_vs_code.html#debugování-v-jupyter-notebooku",
+    "title": "Debugování ve VS Code",
+    "section": "Debugování v Jupyter Notebooku",
+    "text": "Debugování v Jupyter Notebooku\n\nve VS Code lze debugovat i jednotlivé buňky notebooku\ntlačítko Debug Cell nad buňkou\nfungují breakpointy i krokování stejně jako u skriptů\nužitečné pro interaktivní analýzu dat"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#plotnine---co-to-je",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#plotnine---co-to-je",
-    "title": "Matplotlib",
-    "section": "plotnine - co to je",
-    "text": "plotnine - co to je\n\nknihovna pro Python inspirovaná ggplot2 z R\npoužívá koncept Grammar of Graphics\ngraf se skládá z vrstev pomocí operátoru +\nvhodné zejména pro rychlou analytickou vizualizaci z pandas DataFrame\nrenderuje přes Matplotlib backend"
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#vs-code",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#vs-code",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "VS Code",
+    "text": "VS Code\n\nlehké IDE pro vývoj\nvzdáleně odvozené od Visual Studio, což je výrazně “těžší” prostředí\ninspirace “lehkými” prostředími jako Atom, Neovim, Sublime Text atd.\nsnaha o univerzálnost  specifičnost (nástroje od JetBrains)\nrozšiřitelnost pomocí pluginů  ty posouvají k určité funkcionalitě"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#jak-funguje-systém-grammar-of-graphics",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#jak-funguje-systém-grammar-of-graphics",
-    "title": "Matplotlib",
-    "section": "Jak funguje systém (Grammar of Graphics)",
-    "text": "Jak funguje systém (Grammar of Graphics)\n\nsystém je založen na skládání několika částí grafu\ndata  tabulka, ze které čteme hodnoty\naes(...)  mapování sloupců na vizuální vlastnosti (x, y, color, …)\ngeom_*  jaký typ značek se vykreslí (geom_point, geom_line, geom_col)\nstat_*  volitelné statistické transformace\nfacet_*, theme_*, labs(...)  rozdělení do panelů, vzhled, popisky"
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#github-copilot",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#github-copilot",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "GitHub Copilot",
+    "text": "GitHub Copilot\n\nAI nástroj pro asistované programování integrovaný přímo do editoru\nnabízí návrhy kódu v reálném čase přímo při psaní\npodporuje různé programovací jazyky a frameworky\npomáhá zrychlit vývoj tím, že navrhuje celé funkce, metody i komentáře\nintegruje se do Visual Studio Code, Neovim a JetBrains IDEs\npro studenty dostupný zdarma přes GitHub Education"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#mentální-model-tvorby-grafu",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#mentální-model-tvorby-grafu",
-    "title": "Matplotlib",
-    "section": "Mentální model tvorby grafu",
-    "text": "Mentální model tvorby grafu\n\n\nvyberu datový rámec\n\n\nnamapuji proměnné přes aes(...)\n\n\npřidám geometrii (geom_*)\n\n\ndoplním měřítka, popisky a téma\n\n\nvolitelně rozdělím graf na panely (facet_wrap, facet_grid)\n\n\nfrom plotnine import aes, geom_point, ggplot, labs, theme_minimal\n\np = (\n    ggplot(df, aes(x=\"delay\", y=\"distance\", color=\"carrier\"))\n    + geom_point(alpha=0.6)\n    + labs(\n        title=\"Delay vs distance\",\n        x=\"Delay (min)\",\n        y=\"Distance (km)\",\n        color=\"Carrier\",\n    )\n    + theme_minimal()\n)\n\np"
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#jazykové-modely",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#jazykové-modely",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "Jazykové modely",
+    "text": "Jazykové modely\n\nnestaví striktně na jednom modelu – lze vybrat dle potřeby\npodporuje modely od OpenAI (ChatGPT), Anthropic (Claude) a Google (Gemini)\nmodely jsou trénovány na velkém množství kódu z veřejných repozitářů na GitHubu\nkontext tvoří aktuální soubor, otevřené soubory, ale i celý projekt (#codebase)"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/11_matplotlib.html#plotnine-vs-matplotlib-kdy-použít-co",
-    "href": "subjects/PGIS2/prezentace/11_matplotlib.html#plotnine-vs-matplotlib-kdy-použít-co",
-    "title": "Matplotlib",
-    "section": "plotnine vs Matplotlib (kdy použít co)",
-    "text": "plotnine vs Matplotlib (kdy použít co)\n\nplotnine: deklarativní zápis, rychlé skládání běžných analytických grafů\nMatplotlib: detailní kontrola každého prvku a komplexní customizace\nčastý postup v praxi:\n\nexplorace dat a standardní grafy v plotnine\nspeciální finální vizualizace v Matplotlib"
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#použití",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#použití",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "Použití",
+    "text": "Použití\n\ndokončování kódu – návrhy při psaní, přijmutí klávesou Tab\ngenerování dokumentace a komentářů – stačí napsat záhlaví funkce\nchat – dotazy na kód s kontextem (#file, #selection, #codebase)\nAgent mode – Copilot sám navrhuje a provádí změny v celém projektu\npříkazy v chatu: /explain, /fix, /tests, /doc"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#co-je-git",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#co-je-git",
-    "title": "Git, Github",
-    "section": "Co je Git?",
-    "text": "Co je Git?\n\nsystém pro správu kódu, jeho vývoje a verzí, který umožňuje sledovat změny v kódu a spolupracovat na projektech\numožňuje návrat k předchozím verzím, práci na více větvích a snadnou spolupráci mezi více vývojáři\nje distribuovaný, což znamená, že každý vývojář má kopii celého repozitáře na svém počítači\nexistuje centrální repozitář (server), který slouží jako hlavní místo pro sdílení kódu"
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#nastavení",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#nastavení",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "Nastavení",
+    "text": "Nastavení\n\ninstrukce lze zadat přímo v settings.json (úroveň projektu nebo profilu)\nnebo v souboru .github/copilot-instructions.md – načítán automaticky\ninstrukce ovlivňují generování kódu, testů, review atd.\n\n\"github.copilot.chat.codeGeneration.useInstructionFiles\": true,\n\"github.copilot.chat.codeGeneration.instructions\": [\n    {\n        \"text\": \"Komentáře v kódu piš vždy česky.\"\n    },\n    {\n        // odkaz na soubor s instrukcemi\n        \"file\": \".github/copilot-instructions.md\"\n    }\n],\n\"github.copilot.chat.testGeneration.instructions\": [],\n\"github.copilot.chat.reviewSelection.instructions\": []"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#autorizace-uživatele",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#autorizace-uživatele",
-    "title": "Git, Github",
-    "section": "Autorizace uživatele",
-    "text": "Autorizace uživatele\n\nje třeba nastavit uživatelské jméno a e-mail, které budou použity pro identifikaci práce s Git\npro autorizaci na serveru je potřeba SSH klíč\nSSH klíč je pár klíčů (veřejný a soukromý), které slouží k šifrování a dešifrování dat\nveřejný klíč se nahrává na server, soukromý klíč zůstává na počítači uživatele\n\n# nastavení jména a e-mailu\ngit config --global user.name \"Jméno Příjmení\"\ngit config --global user.email \"email@example.com\""
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#github-copilot-a-debugování",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#github-copilot-a-debugování",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "GitHub Copilot a debugování",
+    "text": "GitHub Copilot a debugování\n\nCopilot dokáže s debugováním aktivně pomoci přímo v chatu\n/explain – vysvětlí označený kód nebo chybovou zprávu (traceback)\n/fix – navrhne opravu chybného kódu\noznačení chybového výstupu v terminálu a dotaz v chatu je rychlá alternativa k ručnímu hledání"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#git-pojmy",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#git-pojmy",
-    "title": "Git, Github",
-    "section": "Git pojmy",
-    "text": "Git pojmy\n\nrepository (repozitář) - místo, kde je uložen kód a historie změn\nbranch (větev) - samostatná linie vývoje, která umožňuje pracovat na různých funkcích nebo opravách chyb nezávisle na sobě\ncommit - snímek stavu kódu v určitém okamžiku, který obsahuje popis změn od posledního commitu\nmerge - sloučení změn z jedné větve do druhé\nconflict - situace, kdy dvě větve obsahují změny v té samé části kódu, a není jasné kterou změnu použít\nstage area - dočasné místo, kde jsou změny připravené k potvrzení (commit)\npull request (PR) - návrh sloučení větve do jiné větve, umožňuje revizi kódu před samotným sloučením"
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#omezení-a-rizika",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#omezení-a-rizika",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "Omezení a rizika",
+    "text": "Omezení a rizika\n\nCopilot může generovat kód, který je syntakticky správný, ale logicky chybný\nmůže navrhovat zastaralé nebo deprecated API (trénovací data mají časový limit)\nkód nemusí odpovídat specifickým požadavkům projektu nebo konvencím\nu bezpečnostně citlivého kódu je kontrola obzvláště důležitá\nnení náhradou za pochopení problému a algoritmu – spíše nástroj pro zrychlení psaní a vývoje"
   },
   {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#vytvoření-repositáře",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#vytvoření-repositáře",
-    "title": "Git, Github",
-    "section": "Vytvoření repositáře",
-    "text": "Vytvoření repositáře\n\ngit init - inicializace nového repozitáře, ale pak je potřeba přidat vzdálený repozitář\ngit clone URL - klonování existujícího repozitáře, vytvoří se složka s názvem repozitáře a stáhne se jeho obsah"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#synchronizace-se-serverem",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#synchronizace-se-serverem",
-    "title": "Git, Github",
-    "section": "Synchronizace se serverem",
-    "text": "Synchronizace se serverem\n\ngit push - odeslání změn na vzdálený repozitář\ngit pull - stažení změn ze vzdáleného repozitáře a jejich sloučení s lokální větví\ngit fetch - stažení změn ze vzdáleného repozitáře bez sloučení (bezpečnější, změny lze nejdříve prohlédnout)\npokud stažené změny obsahují konflikty, je nutné je ručně vyřešit a potvrdit pomocí git add a git commit"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#přehled-stavu-a-historie",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#přehled-stavu-a-historie",
-    "title": "Git, Github",
-    "section": "Přehled stavu a historie",
-    "text": "Přehled stavu a historie\n\ngit status - zobrazí aktuální stav repozitáře (co je změněno, co je ve staging area)\ngit log - zobrazí historii commitů (autor, datum, zpráva)\ngit log --oneline --graph - zkrácená historie s grafem větví"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#přidání-změn",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#přidání-změn",
-    "title": "Git, Github",
-    "section": "Přidání změn",
-    "text": "Přidání změn\n\ngit add . - přidání všech změn do tzv. “staging area”\ngit add soubor.py - přidání konkrétního souboru\ngit commit -m \"Popis změny\" - vytvoření nového commitu"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#práce-s-větvemi-branches",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#práce-s-větvemi-branches",
-    "title": "Git, Github",
-    "section": "Práce s větvemi (branches)",
-    "text": "Práce s větvemi (branches)\n\nvětve umožňují pracovat na různých částech projektu nezávisle na sobě\nhlavní větev se obvykle nazývá main nebo master\ndalší větve mohou být vytvořeny pro nové funkce, opravy chyb nebo experimenty\nbranch se vytváří vždy z nějaké prvotní větve, obvykle z main nebo master\ngit branch nazev-vetve - vytvoření nové větve\ngit checkout nazev-vetve - přepnutí na existující větev\ngit checkout -b nazev-vetve - vytvoření a přepnutí na novou větev"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#průběh-práce-s-větví",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#průběh-práce-s-větví",
-    "title": "Git, Github",
-    "section": "Průběh práce s větví",
-    "text": "Průběh práce s větví\n\n\n\n\n\ngitGraph\n    commit id: \"počáteční stav\"\n    commit id: \"příprava projektu\"\n    branch feature-1\n    checkout feature-1\n    commit id: \"nová funkce (1)\"\n    commit id: \"nová funkce (2)\"\n    checkout main\n    commit id: \"základní struktura\"\n    branch hotfix-1\n    commit id: \"oprava chyby\"\n    checkout main\n    merge hotfix-1\n    checkout feature-1\n    commit id: \"nová funkce (3)\"\n    checkout main\n    merge feature-1 id: \"sloučení\"\n    commit id: \"vydání verze\""
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#sloučení-větví",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#sloučení-větví",
-    "title": "Git, Github",
-    "section": "Sloučení větví",
-    "text": "Sloučení větví\n\ngit merge nazev-vetve - sloučení změn z jiné větve do aktuální větve\npři konfliktech je nutné je ručně vyřešit a následně potvrdit změny pomocí git add a git commit.\n\nSmazání větve\n\ngit branch -d nazev-vetve - smazání větve, pokud byla sloučena\ngit branch -D nazev-vetve - vynucené smazání větve"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#soubor-.gitignore",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#soubor-.gitignore",
-    "title": "Git, Github",
-    "section": "Soubor .gitignore",
-    "text": "Soubor .gitignore\n\ndefinuje, které soubory a složky se nemají sledovat v Git\njeden soubor na řádek, podporuje zástupné znaky (*, **)\nobsah se neverzuje (neukládá do repozitáře)\ntypicky: data, kompilované soubory, dočasné soubory, prostředí"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#doporučené-postupy",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#doporučené-postupy",
-    "title": "Git, Github",
-    "section": "Doporučené postupy",
-    "text": "Doporučené postupy\n\npravidelně commitujte a pište srozumitelné zprávy commitů\npoužívejte větve pro nové funkce nebo opravy chyb\npřed sloučením větví vždy aktualizujte hlavní větev (git pull)\nnastavte .gitignore hned na začátku projektu - vyhnete se tak problémům s velkými soubory v historii"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#github",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#github",
-    "title": "Git, Github",
-    "section": "GitHub",
-    "text": "GitHub\n\nwebová služba pro hostování Git repozitářů\nfunkcionality postavené okolo Git + doplňky pro vývojáře\n\nřešení problémů se softwarem (Issues)\ntvorba vydání softwaru (Releases)\nwiki, či hostování dokumentace (GitHub Pages)\nCI/CD - automatizace postupů při vývoji softwaru (GitHub Actions)\n\nsociální rozměr"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#pull-request",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#pull-request",
-    "title": "Git, Github",
-    "section": "Pull Request",
-    "text": "Pull Request\n\nnávrh na sloučení větve do jiné větve\numožňuje revizi kódu kolegou před samotným sloučením\npostup: vytvoření větve  commit změn  push větve  otevření PR na GitHubu  review  merge\nlze diskutovat změny přímo v kódu (komentáře k řádkům)\nzáklad spolupráce na open-source i firemních projektech"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#github---příkazová-řádka",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#github---příkazová-řádka",
-    "title": "Git, Github",
-    "section": "GitHub - příkazová řádka",
-    "text": "GitHub - příkazová řádka\n\ngh - příkazová řádka pro GitHub\njak management repositářů (alternativa k git), tak i další funkcionality na webu"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#provázání-s-vs-code",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#provázání-s-vs-code",
-    "title": "Git, Github",
-    "section": "Provázání s VS Code",
-    "text": "Provázání s VS Code\n\nskrze extenze\npřímo v editoru, funkce práce s Git\nmůže jít jak o jednoduchou práci s repositáři, tak i komplexní funkce GitHubu"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#github-actions",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#github-actions",
-    "title": "Git, Github",
-    "section": "GitHub Actions",
-    "text": "GitHub Actions\n\nautomatizace pracovních postupů\nCI/CD - Continuous Integration/Continuous Deployment\numožňuje spouštět skripty a akce na základě událostí v repozitáři\nnapř. při pushnutí kódu, vytvoření pull requestu nebo vydání nové verze\numožňuje testování, nasazení a další úkoly\nakce jsou definovány v YAML souborech a mohou být spouštěny na různých platformách\numožňuje vytvářet vlastní akce nebo používat akce od komunity\nakce mohou být kombinovány do pracovních postupů (workflows), které definují sekvenci kroků, které mají být provedeny"
-  },
-  {
-    "objectID": "subjects/PGIS2/prezentace/13_git_github.html#alternativy",
-    "href": "subjects/PGIS2/prezentace/13_git_github.html#alternativy",
-    "title": "Git, Github",
-    "section": "Alternativy",
-    "text": "Alternativy\n\nGitLab\nBitbucket\nGitea\nGogs\nale reálně jde o naprosté minority"
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#tipy",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#tipy",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "Tipy",
+    "text": "Tipy\n\nsignatura funkce s typovými anotacemi výrazně napomáhá tvorbě kódu\nkomentáře před blokem kódu popisující záměr zlepšují návrhy\notevřené soubory v IDE tvoří součást kontextu – otevři ukázkový soubor (JSON, CSV, …)\n#codebase v chatu umožní Copilotu prohledat celý projekt\npři generování testů nebo dokumentace stačí označit funkci a zadat /tests nebo /doc\nv instrukcích lze specifikovat konvence projektu (např. jazyk komentářů, styl kódu)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/01_uvod.html#náplň",
