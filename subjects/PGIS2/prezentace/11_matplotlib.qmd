@@ -1,7 +1,7 @@
 ---
 title: "Matplotlib"
-date: 2025-04-28
-year: 2025
+date: 2026-04-13
+year: 2026
 ---
 
 # Matplotlib
