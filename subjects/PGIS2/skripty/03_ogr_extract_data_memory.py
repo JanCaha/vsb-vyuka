@@ -29,9 +29,9 @@ if __name__ == "__main__":
 
     layer_extracted = None  # explicitní uvolnění vrstvy
 
-    soubor_vysledny = save_data_path("extracted.gpkg", delete_if_exist=True)
+    output_file_path = save_data_path("extracted.gpkg", delete_if_exist=True)
 
     # v posledních verzích GDAL podporuje i cesty typu pathlib.Path, ve starších verzích by bylo nutné cestu zadat jako `soubor_vysledny.as_posix()`
-    gdal.VectorTranslate(soubor_vysledny, ds_extracted)
+    gdal.VectorTranslate(output_file_path, ds_extracted)
 
-    print(f"Dokončeno, soubor existuje: {soubor_vysledny.exists()}")
+    print(f"Dokončeno, soubor existuje: {output_file_path.exists()}")

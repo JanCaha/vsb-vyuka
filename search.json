@@ -268,7 +268,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2026-03-23\n\n\nPython Balíčky\n\n\n\n\n\n\n2026-03-30\n\n\nNumPy pro geoinformatiku\n\n\n\n\n\n\n2026-03-30\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2026-04-13\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2026-04-20\n\n\nDebugování ve VS Code\n\n\n\n\n\n\n2026-04-20\n\n\nGit, Github\n\n\n\n\n\n\n2026-05-04\n\n\nVisual Studio Code a GitHub Copilot\n\n\n\n\n\n\n2026-05-04\n\n\nSpustitelné programy\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2026-03-23\n\n\nPython Balíčky\n\n\n\n\n\n\n2026-03-30\n\n\nNumPy pro geoinformatiku\n\n\n\n\n\n\n2026-03-30\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2026-04-13\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2026-04-13\n\n\nMatplotlib\n\n\n\n\n\n\n2026-04-20\n\n\nDebugování ve VS Code\n\n\n\n\n\n\n2026-04-20\n\n\nGit, Github\n\n\n\n\n\n\n2026-05-04\n\n\nVisual Studio Code a GitHub Copilot\n\n\n\n\n\n\n2026-05-04\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -279,7 +279,7 @@
     "href": "subjects/pgis2.html#zdroje",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Zdroje",
-    "text": "Zdroje\n\nGDAL/OGR Cookbook\nGeocomputation with Python",
+    "text": "Zdroje\n\nGDAL/OGR Cookbook\nGeocomputation with Python\nGeographic Data Science with Python\nIntroduction to Python for Geographic Data Analysis\nPython Foundation for Spatial Analysis",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2105,7 +2105,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.9284022 -0.1005459 -0.1751119 -0.7919193 -0.7712313"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.048240811 -0.020958028 -0.008044644 -0.220873111 -0.601146666"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2644,7 +2644,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7feaf04af230&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f906c9b3230&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",

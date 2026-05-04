@@ -270,7 +270,7 @@ Jan Caha
 <ul>
 <li>k seznámení se strukturou a vlastnostmi 2D pole se užívají speciální atributy</li>
 </ul>
-<div id="77420b41" class="cell" data-execution_count="1">
+<div id="13cc3aef" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Ruční vytvoření 2D pole z vnořených seznamů</span></span>
@@ -295,7 +295,7 @@ Počet dimenzí: 2</code></pre>
 <ul>
 <li>k prvkům ve 2D poli se přistupuje pomocí zástupců hranatých závorek a notace <code>[řádek, sloupec]</code></li>
 </ul>
-<div id="d30219e3" class="cell" data-execution_count="2">
+<div id="db8c27c3" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># přístup ke specifické buňce (2. řádek, 3. sloupec)</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(elevation_data[<span class="dv">1</span>, <span class="dv">2</span>])</span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -318,7 +318,7 @@ Počet dimenzí: 2</code></pre>
 <li>konstrukce boolean masky definovanou podmínkou (buňky nad danou hodnotu, relace dat atd.)</li>
 <li>vynikající způsob filtrace hodnot v analyzovaných rastrech (elevace, srážkové úhrny, teploty)</li>
 </ul>
-<div id="c4ceb656" class="cell" data-execution_count="3">
+<div id="24237280" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># které buňky splňují podmínku</span></span>
 <span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a><span class="co"># boolean pole</span></span>
 <span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>mask_high_elevation <span class="op">=</span> elevation_data <span class="op">&gt;</span> <span class="dv">105</span></span>
@@ -341,7 +341,7 @@ Počet dimenzí: 2</code></pre>
 <ul>
 <li>při úpravách rastrů modifikujeme hodnoty dle maskovaných podmínek (např. chyby senzoru letadla, korekce vodních ploch)</li>
 </ul>
-<div id="d41d89bb" class="cell" data-execution_count="4">
+<div id="ada23dc9" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># kopie původních dat</span></span>
 <span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a>modified_elevation <span class="op">=</span> elevation_data.copy()</span>
 <span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -361,7 +361,7 @@ Počet dimenzí: 2</code></pre>
 <ul>
 <li>funkce <code>np.where(podmínka, hodnota_pokud_pravda, hodnota_pokud_nepravda)</code> bývá jedním z nejčastěji používaných analytických nástrojů</li>
 </ul>
-<div id="93a30094" class="cell" data-execution_count="5">
+<div id="d0e317a4" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># převedeme rastr výšek na binární mapu: 1 = výše než limit, 0 = pod limitem</span></span>
 <span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> np.where(elevation_data <span class="op">&gt;=</span> <span class="dv">105</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -378,7 +378,7 @@ Počet dimenzí: 2</code></pre>
 <ul>
 <li>knihovna celoplošně aplikuje prováděné matematické operátory rovnou na mřížku (element-wise princip)</li>
 </ul>
-<div id="e84409e6" class="cell" data-execution_count="6">
+<div id="9d293d6c" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># přepočet nadmořské výšky na stopy (* 3.28084)</span></span>
 <span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a>elevation_feet <span class="op">=</span> elevation_data <span class="op">*</span> <span class="fl">3.28084</span></span>
 <span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -402,7 +402,7 @@ Počet dimenzí: 2</code></pre>
 <ul>
 <li>lze počítat agregace jak za celek, tak dle jednotlivých os (řádkový či slopcový - např. průměr)</li>
 </ul>
-<div id="4771516f" class="cell" data-execution_count="7">
+<div id="9c9087e3" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># minimální a maximální hodnota v celém rastru</span></span>
 <span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">min</span>(elevation_data))</span>
 <span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.<span class="bu">max</span>(elevation_data))</span>
@@ -427,7 +427,7 @@ Počet dimenzí: 2</code></pre>
 <li>základní statistické sumarizace defaultně nedokáží s hodnotou <code>NaN</code> pracovat a šíří výsledek dál</li>
 <li>problém řeší v rámci funkcí předpony <code>nan</code> ve stylu <code>nanmean</code>, anebo plně chráněné vrstvy <code>Masked Arrays</code></li>
 </ul>
-<div id="cf8e4a41" class="cell" data-execution_count="8">
+<div id="e76c69a0" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>data_with_nodata <span class="op">=</span> np.array([[<span class="dv">10</span>, <span class="fl">20.5</span>], [np.nan, <span class="dv">30</span>]])</span>
 <span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(data_with_nodata))</span>
 <span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a></span>
@@ -445,7 +445,7 @@ Počet dimenzí: 2</code></pre>
 <li>modul s nástavbou masek <code>numpy.ma</code> k danému poli rastru přiloží maskovací soubor ignorovaných hodnot</li>
 <li>získáme tak bezpečnější analytiku bez šíření chyby</li>
 </ul>
-<div id="2a00d88f" class="cell" data-execution_count="9">
+<div id="5f704769" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy.ma <span class="im">as</span> ma</span>
 <span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Vytvoření maskovaného pole, kde maskujeme -9999</span></span>
@@ -483,7 +483,7 @@ Počet dimenzí: 2</code></pre>
 <li>využití funkce <code>ndimage.convolve</code> pro aplikaci matice vah na zdrojová data</li>
 <li>typické využití pro detekci hran, specializované zaostření nebo jiné prostorové modifikace</li>
 </ul>
-<div id="bee64779" class="cell" data-execution_count="10">
+<div id="24ae8486" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> ndimage</span>
 <span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># definice filtru pro detekci hran (Laplaceův operátor)</span></span>
