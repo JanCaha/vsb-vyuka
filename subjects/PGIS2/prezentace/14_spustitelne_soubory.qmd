@@ -1,7 +1,7 @@
 ---
 title: "Spustitelné programy"
-date: 2025-05-05
-year: 2025
+date: 2026-05-04
+year: 2026
 ---
 
 ## Skripty

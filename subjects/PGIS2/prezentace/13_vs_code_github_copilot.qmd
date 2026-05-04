@@ -1,6 +1,6 @@
 ---
 title: "Visual Studio Code a GitHub Copilot"
-date: 2026-04-20
+date: 2026-05-04
 year: 2026
 ---
 
@@ -23,17 +23,20 @@ year: 2026
 
 ## Jazykové modely
 
-- nestaví striktně na jednom modelu – lze vybrat dle potřeby
-- podporuje modely od **OpenAI** (ChatGPT), **Anthropic** (Claude) a **Google** (Gemini)
+- model lze vybrat přímo v rozhraní chatu dle potřeby
+- podporuje modely od **OpenAI**, **Anthropic** a **Google**
 - modely jsou trénovány na velkém množství kódu z veřejných repozitářů na **GitHubu**
 - kontext tvoří aktuální soubor, otevřené soubory, ale i celý projekt (`#codebase`)
+- modely se liší rychlostí, délkou kontextového okna a zaměřením
 
 ## Použití 
 
 - **dokončování kódu** – návrhy při psaní, přijmutí klávesou `Tab`
 - **generování dokumentace a komentářů** – stačí napsat záhlaví funkce
-- **chat** – dotazy na kód s kontextem (`#file`, `#selection`, `#codebase`)
-- **Agent mode** – Copilot sám navrhuje a provádí změny v celém projektu
+- **chat – tři módy**:
+  - **Ask** – dotazy na kód s kontextem (`#file`, `#selection`, `#codebase`)
+  - **Edit** – inline úpravy kódu (`Ctrl+I`) nebo úpravy více souborů najednou
+  - **Agent** – Copilot sám navrhuje a provádí změny v celém projektu, volá nástroje
 - **příkazy v chatu**: `/explain`, `/fix`, `/tests`, `/doc`
 
 ## Nastavení
@@ -42,19 +45,22 @@ year: 2026
 - nebo v souboru `.github/copilot-instructions.md` – načítán automaticky
 - instrukce ovlivňují generování kódu, testů, review atd.
 
-```jsonc
-"github.copilot.chat.codeGeneration.useInstructionFiles": true,
-"github.copilot.chat.codeGeneration.instructions": [
-    {
-        "text": "Komentáře v kódu piš vždy česky."
-    },
-    {
-        // odkaz na soubor s instrukcemi
-        "file": ".github/copilot-instructions.md"
-    }
-],
-"github.copilot.chat.testGeneration.instructions": [],
-"github.copilot.chat.reviewSelection.instructions": []
+## Instrukční soubory
+
+- `.github/copilot-instructions.md` – globální instrukce pro celý projekt (vždy načteny)
+- `.github/instructions/*.instructions.md` – instrukce pro specifický kontext
+  - pomocí `applyTo:` v YAML frontmatter lze omezit na konkrétní typy souborů
+  - příklad: `python.instructions.md` s `applyTo: "**/*.py"` platí jen pro Python soubory
+- `.github/prompts/*.prompt.md` – znovupoužitelné prompty pro opakované úlohy
+  - volají se z chatu přes `/` nebo pomocí tlačítka **Attach Context**
+
+```markdown
+---
+applyTo: "**/*.py"
+---
+# Python konvence
+- používej type hints u všech funkcí
+- komentáře v kódu piš česky
 ```
 
 ## GitHub Copilot a debugování

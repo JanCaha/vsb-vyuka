@@ -71,7 +71,7 @@
 - path: "PGIS2/skripty/14_arguments.py"
   title: "Spustitelný program s argumenty"
   author: Jan Caha
-  date: 2026-04-20
+  date: 2026-05-04
   year: 2026
 - path: "PGIS2/skripty/balik_pgis2.zip"
   title: "Python balíček"
