@@ -268,7 +268,7 @@
     "href": "subjects/pgis2.html#prezentace",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2026-03-23\n\n\nPython Balíčky\n\n\n\n\n\n\n2026-03-30\n\n\nNumPy pro geoinformatiku\n\n\n\n\n\n\n2026-03-30\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2026-04-13\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2026-04-20\n\n\nDebugování ve VS Code\n\n\n\n\n\n\n2026-04-20\n\n\nGit, Github\n\n\n\n\n\n\n2026-04-20\n\n\nVisual Studio Code a GitHub Copilot\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\n2025-05-05\n\n\nSpustitelné programy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2026-02-16\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-02-16\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-02\n\n\nJupyter Notebooky\n\n\n\n\n\n\n2026-03-09\n\n\nKnihovna GDAL/OGR\n\n\n\n\n\n\n2026-03-16\n\n\nKontroly a formátování kódu\n\n\n\n\n\n\n2026-03-16\n\n\nFunkce a třídy\n\n\n\n\n\n\n2026-03-23\n\n\nPython Balíčky\n\n\n\n\n\n\n2026-03-30\n\n\nNumPy pro geoinformatiku\n\n\n\n\n\n\n2026-03-30\n\n\nKnihovny fiona, rasterio, shapely\n\n\n\n\n\n\n2026-04-13\n\n\nDatové rámce v Pythonu - pandas, geopandas a polars\n\n\n\n\n\n\n2026-04-20\n\n\nDebugování ve VS Code\n\n\n\n\n\n\n2026-04-20\n\n\nGit, Github\n\n\n\n\n\n\n2026-05-04\n\n\nVisual Studio Code a GitHub Copilot\n\n\n\n\n\n\n2026-05-04\n\n\nSpustitelné programy\n\n\n\n\n\n\n2025-04-28\n\n\nMatplotlib\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -301,7 +301,7 @@
     "href": "subjects/pgis2.html#ukázkové-kódy",
     "title": "Programování v GIS 2 (PGIS2)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n\n\n2026-03-09\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nFunkce v souboru utils\n\n\n\n\n\n\n2026-03-09\n\n\nNastavení VS Code projektu\n\n\n\n\n\n\n2026-03-16\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\n\n2026-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\n\n2026-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n\n\n2026-03-30\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n\n\n2026-03-30\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n\n\n2026-03-30\n\n\nUkázka tvorby objektu\n\n\n\n\n\n\n2026-04-13\n\n\nPython balíček\n\n\n\n\n\n\n2026-04-20\n\n\nPandas, Polars, GeoPandas a GeoPolars - notebook\n\n\n\n\n\n\n2026-04-20\n\n\nGrafy notebook\n\n\n\n\n\n\n2026-04-20\n\n\nSpustitelný program s argumenty\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-02-24\n\n\nOpakování Pythonu\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR načtení vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nOGR práce s vrstvou pomocí vlastního kontextového manageru\n\n\n\n\n\n\n2026-03-09\n\n\nOGR extrakce dat do nového souboru, funkce gdal.VectorTranslate()\n\n\n\n\n\n\n2026-03-09\n\n\nGDAL/OGR editace vektorových dat\n\n\n\n\n\n\n2026-03-09\n\n\nFunkce v souboru utils\n\n\n\n\n\n\n2026-03-09\n\n\nNastavení VS Code projektu\n\n\n\n\n\n\n2026-03-16\n\n\nGDAL/OGR načtení rastrových dat\n\n\n\n\n\n\n2026-03-24\n\n\nGDAL manipulace s rastrem\n\n\n\n\n\n\n2026-03-24\n\n\nGDAL editace hodnot rastru\n\n\n\n\n\n\n2026-03-30\n\n\nFiona editace vektorových dat, Shapely geometrie\n\n\n\n\n\n\n2026-03-30\n\n\nRasterio informace o souboru, kopírování pásma do nového souboru\n\n\n\n\n\n\n2026-03-30\n\n\nUkázka tvorby objektu\n\n\n\n\n\n\n2026-04-13\n\n\nPython balíček\n\n\n\n\n\n\n2026-04-20\n\n\nPandas, Polars, GeoPandas a GeoPolars - notebook\n\n\n\n\n\n\n2026-04-20\n\n\nGrafy notebook\n\n\n\n\n\n\n2026-05-04\n\n\nSpustitelný program s argumenty\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty letní semestr",
       "Programování v GIS 2"
@@ -2105,7 +2105,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1117383 -0.1290137 -0.7810163 -1.8741921 -0.2434493"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.9284022 -0.1005459 -0.1751119 -0.7919193 -0.7712313"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2644,7 +2644,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f1c68c7ef90&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7feaf04af230&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -3267,21 +3267,28 @@
     "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#jazykové-modely",
     "title": "Visual Studio Code a GitHub Copilot",
     "section": "Jazykové modely",
-    "text": "Jazykové modely\n\nnestaví striktně na jednom modelu – lze vybrat dle potřeby\npodporuje modely od OpenAI (ChatGPT), Anthropic (Claude) a Google (Gemini)\nmodely jsou trénovány na velkém množství kódu z veřejných repozitářů na GitHubu\nkontext tvoří aktuální soubor, otevřené soubory, ale i celý projekt (#codebase)"
+    "text": "Jazykové modely\n\nmodel lze vybrat přímo v rozhraní chatu dle potřeby\npodporuje modely od OpenAI, Anthropic a Google\nmodely jsou trénovány na velkém množství kódu z veřejných repozitářů na GitHubu\nkontext tvoří aktuální soubor, otevřené soubory, ale i celý projekt (#codebase)\nmodely se liší rychlostí, délkou kontextového okna a zaměřením"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#použití",
     "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#použití",
     "title": "Visual Studio Code a GitHub Copilot",
     "section": "Použití",
-    "text": "Použití\n\ndokončování kódu – návrhy při psaní, přijmutí klávesou Tab\ngenerování dokumentace a komentářů – stačí napsat záhlaví funkce\nchat – dotazy na kód s kontextem (#file, #selection, #codebase)\nAgent mode – Copilot sám navrhuje a provádí změny v celém projektu\npříkazy v chatu: /explain, /fix, /tests, /doc"
+    "text": "Použití\n\ndokončování kódu – návrhy při psaní, přijmutí klávesou Tab\ngenerování dokumentace a komentářů – stačí napsat záhlaví funkce\nchat – tři módy:\n\nAsk – dotazy na kód s kontextem (#file, #selection, #codebase)\nEdit – inline úpravy kódu (Ctrl+I) nebo úpravy více souborů najednou\nAgent – Copilot sám navrhuje a provádí změny v celém projektu, volá nástroje\n\npříkazy v chatu: /explain, /fix, /tests, /doc"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#nastavení",
     "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#nastavení",
     "title": "Visual Studio Code a GitHub Copilot",
     "section": "Nastavení",
-    "text": "Nastavení\n\ninstrukce lze zadat přímo v settings.json (úroveň projektu nebo profilu)\nnebo v souboru .github/copilot-instructions.md – načítán automaticky\ninstrukce ovlivňují generování kódu, testů, review atd.\n\n\"github.copilot.chat.codeGeneration.useInstructionFiles\": true,\n\"github.copilot.chat.codeGeneration.instructions\": [\n    {\n        \"text\": \"Komentáře v kódu piš vždy česky.\"\n    },\n    {\n        // odkaz na soubor s instrukcemi\n        \"file\": \".github/copilot-instructions.md\"\n    }\n],\n\"github.copilot.chat.testGeneration.instructions\": [],\n\"github.copilot.chat.reviewSelection.instructions\": []"
+    "text": "Nastavení\n\ninstrukce lze zadat přímo v settings.json (úroveň projektu nebo profilu)\nnebo v souboru .github/copilot-instructions.md – načítán automaticky\ninstrukce ovlivňují generování kódu, testů, review atd."
+  },
+  {
+    "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#instrukční-soubory",
+    "href": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#instrukční-soubory",
+    "title": "Visual Studio Code a GitHub Copilot",
+    "section": "Instrukční soubory",
+    "text": "Instrukční soubory\n\n.github/copilot-instructions.md – globální instrukce pro celý projekt (vždy načteny)\n.github/instructions/*.instructions.md – instrukce pro specifický kontext\n\npomocí applyTo: v YAML frontmatter lze omezit na konkrétní typy souborů\npříklad: python.instructions.md s applyTo: \"**/*.py\" platí jen pro Python soubory\n\n.github/prompts/*.prompt.md – znovupoužitelné prompty pro opakované úlohy\n\nvolají se z chatu přes / nebo pomocí tlačítka Attach Context\n\n\n---\napplyTo: \"**/*.py\"\n---\n# Python konvence\n- používej type hints u všech funkcí\n- komentáře v kódu piš česky"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/13_vs_code_github_copilot.html#github-copilot-a-debugování",
