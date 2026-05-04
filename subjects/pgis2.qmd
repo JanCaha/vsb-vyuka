@@ -59,6 +59,9 @@ listing:
 
 - [GDAL/OGR Cookbook](https://pcjericks.github.io/py-gdalogr-cookbook/)
 - [Geocomputation with Python](https://py.geocompx.org/)
+- [Geographic Data Science with Python](https://geographicdata.science/book/intro.html)
+- [Introduction to Python for Geographic Data Analysis](https://pythongis.org/)
+- [Python Foundation for Spatial Analysis](https://courses.spatialthoughts.com/python-foundation.html)
 
 ## Data ke stažení{.data-sources}
 
