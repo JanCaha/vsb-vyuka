@@ -2,8 +2,8 @@
 title: "Úvodní hodina"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2025-09-16
-year: 2025
+date: 2026-09-14
+year: 2026
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -43,7 +43,7 @@ execute:
 
 - [VS Code]{.software}
 - extenze pro [VS Code]{.software}
-- management Pythonu - buď systémový (Linux) nebo skrze OSGEO4W (Windows)
+- management Pythonu - skrze [Conda]{.tool} (lze použít i instalátor OSGEO4W (Windows), ale tam je složitější konfigurace)
 - použití [GitHub Copilot AI]{.tool} viz [zde](../../../tools/github-copilot.qmd)
 
 ## Materiály
@@ -61,7 +61,7 @@ execute:
 ## Zakončení předmětu
 
 - test o dvou částech
-- písemka - klíčové položky programování v Pythonu a [QGIS Python API]{.software}, interpretace kódu
+- písemka - klíčové položky programování v Pythonu a [QGIS Python API]{.software}
 - test týkající je interpretace a porozumění kódu (nahrazuje seminární práci)
   - zaměřené na bloky kódu o délce 10 - 15 řádků
   - otázky typu "co tento kód dělá?", "proč tento kód nefunguje?", "jak byste tento kód upravili, aby dělal X?", "splňuje tento kód zadání Y?"  

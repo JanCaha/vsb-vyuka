@@ -2,8 +2,8 @@
 title: "Úvodní hodina"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2025-09-16
-year: 2025
+date: 2026-09-14
+year: 2026
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -62,7 +62,7 @@ execute:
 ## Zakončení předmětu
 
 - test o dvou částech
-- písemka - klíčové položky programování v Pythonu a [ArcPy]{.software}, interpretace kódu
+- písemka - klíčové položky programování v Pythonu a [ArcPy]{.software}
 - test týkající je interpretace a porozumění kódu (nahrazuje seminární práci)
   - zaměřené na bloky kódu o délce 10 - 15 řádků
   - otázky typu "co tento kód dělá?", "proč tento kód nefunguje?", "jak byste tento kód upravili, aby dělal X?", "splňuje tento kód zadání Y?"  
