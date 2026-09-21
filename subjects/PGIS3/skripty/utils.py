@@ -11,10 +11,10 @@ def setup_env(path: typing.Optional[str] = None) -> None:
     file_path = Path(__file__)
     base_path = file_path.parent / "data"
     if path is None:
-        arcpy.env.workspace = base_path
+        arcpy.env.workspace = base_path.as_posix()
     else:
-        workspace_path = f"{base_path}/{path}"
-        arcpy.env.workspace = workspace_path
+        workspace_path = base_path / path
+        arcpy.env.workspace = workspace_path.as_posix()
         exist = arcpy.Exists(arcpy.env.workspace)
         if not exist:
             raise ValueError(f"Workspace path {workspace_path} does not exist!")
