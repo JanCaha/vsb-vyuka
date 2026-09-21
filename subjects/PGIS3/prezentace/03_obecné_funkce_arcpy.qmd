@@ -2,7 +2,7 @@
 title: "Obecné funkce [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2025-09-30
+date: 2026-09-21
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -23,17 +23,18 @@ execute:
 
 - `arcpy.da.Describe()` - modernější verze, která vrací python slovník (dictionary) s informacemi o objektu (mnohem lépe zpracovatelné a čitelnější)
 - k informacím se přistupuje jako k hodnotám ve slovníku, např. `desc["dataType"]` 
+- pro naše použití preferovaná varianta
 
 
 ## Popisy objektů
 
-- `arcpy.da.Describe()` - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)
-- výsledný objekty se liší dle požadovaného typu objektu - viz [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm)
+- `arcpy.da.Describe()` - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)
+- výsledný obsah se liší dle požadovaného typu objektu - viz [dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm)
 - základní minimum informací pro [všechny objekty](https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe-object-properties.htm)
 
 ## Práce s `Describe()` objekty
 
-- je vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce
+- je vhodné naučit se přistupovat k proměnným objektu pomocí konstrukce
 
 ```{python}
 # | eval: false
@@ -55,7 +56,7 @@ if hasattr(desc, "dataType"):
 
 - funkce vracející seznamy (i prázdné)
 - typicky `arcpy.List*()`
-- slouží pro zjišťování. tam kde programátor nemá předem představu o obsahu
+- slouží pro zjišťování, tam kde nemáme předem představu o obsahu
 
 ## Příklad `arcpy.ListEnvironments()`
 
@@ -78,10 +79,10 @@ if hasattr(desc, "dataType"):
 ## Licence a instalace
 
 - kontroly dostupnosti licencí a stavu instalace
-- `arcpy.CheckExtension()` - je exteze dostupná?
+- `arcpy.CheckExtension()` - je extenze dostupná?
 - `arcpy.CheckInExtension()`, `arcpy.CheckOutExtension()` - pro sdílené licence
 - `arcpy.CheckProduct()` - dostupná úroveň licence + info
-- `acpy.GetInstallInfo()` - info o instalaci
+- `arcpy.GetInstallInfo()` - info o instalaci
 - `arcpy.ListInstallations()` - typy instalací
 
 # Dotazy?{.center}
