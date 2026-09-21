@@ -36,6 +36,14 @@ repos:
         files: \.qmd$
         stages: [pre-commit]
 
+      - id: check-skripty-description-date-year
+        name: Check skripty description date year
+        entry: bash ./dev-scripts/check_skripty_description_date_year.sh
+        language: system
+        files: ^subjects/[^/]+/skripty/
+        exclude: (^|/)description\.yaml$
+        stages: [pre-commit]
+
       # - id: copy-conda-env
       #   name: Copy conda-environment.yml to PGIS2/soubory
       #   entry: ./dev-scripts/copy_conda_env.sh
