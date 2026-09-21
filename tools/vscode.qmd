@@ -75,9 +75,6 @@ Python úprava kódu
         },
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
-        },
     }
      // nastavení pro notebooky - formátování, organizace importů a další úpravy při ukládání
     "notebook.formatOnSave.enabled": true,
@@ -120,6 +117,68 @@ Vynechání složek např. při prohledávání souborů
         "**/.mypy_cache": true,
         "**/.pytest_cache": true,
     },
+```
+
+### Kompletní nastavení VS Code
+
+```json
+{
+    // nastavení pro vzhled a chování editoru
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.startupEditor": "none",
+    "workbench.editor.enablePreview": false,
+    // nastavení výchozí terminálu ve Windows na command prompt - často nesprávně vybírá powershell
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    // nastavení pro průzkumníka - potvrzení před smazáním souborů a přesouváním
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    // nastavení pro editor - - upravy souborů
+    "editor.suggestSelection": "first",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.stickyScroll.enabled": true,
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    }
+     // nastavení pro notebooky - formátování, organizace importů a další úpravy při ukládání
+    "notebook.formatOnSave.enabled": true,
+    "notebook.defaultFormatter": "ms-python.black-formatter",
+    "notebook.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+    },
+    "flake8.args": [
+        "--max-line-length",
+        "120"
+    ],
+    "isort.args": [
+        "--profile",
+        "black",
+        "--line-width",
+        "120"
+    ],
+    "black-formatter.args": [
+        "--line-length",
+        "120"
+    ],
+    "pylint.args": [
+        "--disable=E0611",
+        "--max-line-length=120"
+    ],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+    },
+}
 ```
 
 ## Extenze
@@ -189,6 +248,45 @@ V závorce uvádíme id extenze, pomocí kterého je též možné vyhledávat.
 	]
 }
 ```
+
+### Kompletní soubor
+
+```json
+{
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+        // github copilot
+        "GitHub.copilot-chat",
+        // kontrola pravopisu pro češtinu
+        "streetsidesoftware.code-spell-checker-czech",
+        // práce s SVG grafikou 
+        "jock.svg",
+        // zvýraznění TODO, FIXME a dalších poznámek v kódu
+        "wayou.vscode-todo-highlight",
+        // podpora pro práci s YAML soubory
+        "redhat.vscode-yaml",
+        // podpora pro práci s Markdown soubory (*.md) jako jsou README.md
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+		// nezbytné extenze pro Python 
+        "ms-python.python",
+        "ms-python.debugpy",
+        // formátování Python kódu 
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        // kontroly kvality kódu a typů pro Python
+        "ms-python.vscode-pylance",
+        "ms-python.autopep8",
+        "ms-python.flake8",
+        "ms-python.mypy-type-checker",
+        "ms-python.pylint",
+	],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+	]
+}
+```
+
 ### Nastavení projektů využívajících QGIS Python API na Windows
 
 Viz informace u [OSGEO4W](osgeo4w.qmd##nastavení-python-prostředí-ve-visual-studiu-code-pro-python-i-qgis-python-api).
