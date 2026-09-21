@@ -4,7 +4,7 @@
   path: "PGIS3/skripty/utils.py"
 - title: "Výpisy dat"
   author: Jan Caha
-  date: 2025-09-30
+  date: 2026-09-21
   path: "PGIS3/skripty/01_vypisy.py"
 - title: "Funkce Describe"
   author: Jan Caha
