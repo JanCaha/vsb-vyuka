@@ -38,7 +38,7 @@ for file in "$@"; do
         exit 1
     fi
 
-    file_date="$(TARGET_PATH="$relative_path" yq -r '.[] | select(.path == env(TARGET_PATH) or .path == ("subjects/" + env(TARGET_PATH))) | .date' "$description_yaml" | head -n 1)"
+    file_date="$(yq -r --arg target_path "$relative_path" '.[] | select(.path == $target_path or .path == ("subjects/" + $target_path)) | .date' "$description_yaml" | head -n 1)"
 
     if [[ -z "$file_date" ]]; then
         echo "ERROR: $description_yaml has no matching entry for $file" >&2
