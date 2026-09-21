@@ -2,7 +2,7 @@
 title: "Vektorová data v [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2025-09-30
+date: 2026-09-21
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -59,13 +59,13 @@ field = QgsField("field", QMetaType.Type.Double)
 
 - hlavní třída pro práci s geometrií
 - obsahuje řadu funkcí (i statické)
-- existují ale dilčí třídy odvozené od `QgsAbstractGeometry` pro konkrétní typy geometrie
+- existují ale dílčí třídy odvozené od `QgsAbstractGeometry` pro konkrétní typy geometrie
     - `QgsPoint`, `QgsLineString`, `QgsPolygon`
     - `QgsMultiPoint`, `QgsMultiLineString`, `QgsMultiPolygon`
     - `QgsGeometryCollection`
     - `QgsSurface`, `QgsCurve`, `QgsCompoundCurve`, `QgsTriangle`
 
-## Tvorba `QgGeometry`
+## Tvorba `QgsGeometry`
 
 ```python
 from qgis.core import QgsGeometry, QgsPointXY, QgsTriangle

@@ -2,7 +2,7 @@
 title: "Základ [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2025-09-16
+date: 2026-09-21
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -24,7 +24,7 @@ execute:
 
 ## Zdrojový kód QGIS
 
-- většinou [C++]{.software}
+- většinou [C++]{.software}, části v [Pythonu]{.software} (ale to se postupně odstraňuje)
 - výrazně se opírá o knihovnu [Qt]{.software}, zejména GUI ale i další části
 - vývojáři QGIS se snaží o co největší modularitu a přehlednost kódu
 - kód je připravován tak, aby byla snadná jeho propojitelnosti s [Pythonem]{.software}, který slouží pro tvorbu pluginů, skriptů a nástrojů
@@ -39,13 +39,13 @@ execute:
 ## Struktura QGIS Python API
 
 - v pythonu importujeme modul `qgis` a jeho submoduly
-- několiv hlavních částí
+- několik hlavních částí
   - `qgis.core` - hlavní a nejdůležitější část, třídy pro reprezentaci klíčových prvků GIS
   - `qgis.gui` - grafické uživatelské rozhraní a jeho třídy
   - `qgis.analysis` - třídy pro analýzy a zpracování dat
   - `qgis.server` - třídy pro práci s QGIS serverem (publikace online map)
   - `qgis.processing` - třídy pro tvorbu nástrojů v QGIS
-  - `qgis._3d` - 3D funcionalita QGIS
+  - `qgis._3d` - 3D funcionalita QGIS (nemá úplně stabilní API)
 
 ## Vývoj QGIS
 
