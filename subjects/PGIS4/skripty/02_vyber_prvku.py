@@ -14,7 +14,7 @@ layer = QgsVectorLayer(f"{layer_path}|layername=countries", "World", "ogr")
 rectangle = QgsRectangle(0, 45, 20, 55)
 
 # filtr hodnot
-expression = " \"NAME\" LIKE '%u%' "
+expression = " \"NAME\" LIKE '%repu%' "
 
 # vytvoření objektu pro výběr prvků
 feature_req = QgsFeatureRequest()

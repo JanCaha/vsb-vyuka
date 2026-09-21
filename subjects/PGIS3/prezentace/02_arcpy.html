@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-09-16">
+  <meta name="dcterms.date" content="2026-09-21">
   <title>Výuka - Jan Caha – Základ ArcPy pro ArcGIS Pro</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -148,7 +148,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-09-16</p>
+  <p class="date">2026-09-21</p>
 </section>
 <section id="arcpy" class="slide level2 software">
 <h2>ArcPy</h2>
@@ -156,15 +156,15 @@ Jan Caha
 <li><span class="software">ArcPy</span> je knihovna pro Python, která umožňuje přístup k funkcím <span class="software">ArcGIS Pro</span></li>
 <li>umožňuje automatizaci procesů v <span class="software">ArcGIS Pro</span></li>
 <li>umožňuje vytváření vlastních nástrojů (v ArcGIS Pro) a skriptů (samostatně spustitelných)</li>
-<li>jedná je python binding (nejspíše z C++), takže zdrojové kódy nejsou dostupné a knihovna ani není pro python typovaná (podobně jako <span class="software">GDAL/OGR</span>), což komplikuje práci s ní - chybí v IDE napovídání a podobně</li>
+<li>jedná je python binding (nejspíše z C++), takže zdrojové kódy nejsou dostupné a knihovna ani není pro python plně typovaná (podobně jako <span class="software">GDAL/OGR</span>), což komplikuje práci s ní - chybí v IDE napovídání a podobně</li>
 </ul>
 </section>
 <section id="struktura-arcpy" class="slide level2 software">
 <h2>Struktura ArcPy</h2>
 <ul>
 <li>část funkcí dostupná pod <code>arcpy.*</code></li>
-<li>další část v dílčích modulech např. <strong>Data Access</strong> <code>arcpy.da.*</code>, <strong>Mapping</strong> <code>arcpy.mp.*</code> a další</li>
-<li>podstatné jé číst dokumentaci a vidět příklady použití</li>
+<li>další část v dílčích modulech např. <strong>Data Access</strong> <code>arcpy.da.*</code>, <strong>Mapping</strong> <code>arcpy.mp.*</code> a dalších</li>
+<li>podstatné je číst dokumentaci a vidět příklady použití</li>
 <li>pozor na verze API, které již jsou nedoporučované či zastaralé (označované jako <strong>deprecated</strong>)</li>
 </ul>
 </section>
@@ -183,6 +183,7 @@ Jan Caha
 <ul>
 <li>bud absolutní cesty na disku (např. <code>C:/data/soubor.shp</code>), nebo <code>C:/data/soubor.gdb/nazev_vrstvy</code></li>
 <li>nebo relativní cesty, jako je název vrstvy uvažovaný v <code>arcpy.env.workspace</code> (např. <code>soubor.shp</code>, <code>nazev_vrstvy</code>)</li>
+<li>od verze 3.7 je možné používat i objekty <code>pathlib.Path</code> pro práci s cestami</li>
 <li>u rastrů lze přistupovat i k jednotlivým pásmům jako <code>C:/data/soubor.tif/Band_1</code></li>
 <li>vždy je třeba myslet na to, kde se nacházíme a jaké cesty používáme</li>
 </ul>

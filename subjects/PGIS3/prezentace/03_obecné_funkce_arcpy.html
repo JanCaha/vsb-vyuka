@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-09-30">
+  <meta name="dcterms.date" content="2026-09-21">
   <title>Výuka - Jan Caha – Obecné funkce ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-09-30</p>
+  <p class="date">2026-09-21</p>
 </section>
 <section id="popis-objektu" class="slide level2">
 <h2>Popis objektu</h2>
@@ -223,22 +223,23 @@ Jan Caha
 <li><p>výstupem je objekt, který obsahuje informace o daném objektu podle jeho typu (lehce komplikované, protože předem nevíme, co dostaneme - struktura odpovědi se liší podle typu objektu)</p></li>
 <li><p><code>arcpy.da.Describe()</code> - modernější verze, která vrací python slovník (dictionary) s informacemi o objektu (mnohem lépe zpracovatelné a čitelnější)</p></li>
 <li><p>k informacím se přistupuje jako k hodnotám ve slovníku, např. <code>desc["dataType"]</code></p></li>
+<li><p>pro naše použití preferovaná varianta</p></li>
 </ul>
 </section>
 <section id="popisy-objektů" class="slide level2">
 <h2>Popisy objektů</h2>
 <ul>
-<li><code>arcpy.da.Describe()</code> - - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)</li>
-<li>výsledný objekty se liší dle požadovaného typu objektu - viz <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm">dokumentace</a></li>
+<li><code>arcpy.da.Describe()</code> - popis objektu dle zadaného názvu, lze i specifikovat typ objektu (pro případ shody názvů)</li>
+<li>výsledný obsah se liší dle požadovaného typu objektu - viz <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe.htm">dokumentace</a></li>
 <li>základní minimum informací pro <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/functions/describe-object-properties.htm">všechny objekty</a></li>
 </ul>
 </section>
 <section id="práce-s-describe-objekty" class="slide level2">
 <h2>Práce s <code>Describe()</code> objekty</h2>
 <ul>
-<li>je vhodné naučit se přístupovat k proměnným objektu pomocí konstrukce</li>
+<li>je vhodné naučit se přistupovat k proměnným objektu pomocí konstrukce</li>
 </ul>
-<div id="1a259278" class="cell" data-execution_count="1">
+<div id="e384a540" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>desc <span class="op">=</span> arcpy.Describe(<span class="st">"C:/data/soubor.shp"</span>)</span>
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">hasattr</span>(desc, <span class="st">"dataType"</span>):</span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    data_type <span class="op">=</span> desc.dataType</span>
@@ -261,7 +262,7 @@ Jan Caha
 <ul>
 <li>funkce vracející seznamy (i prázdné)</li>
 <li>typicky <code>arcpy.List*()</code></li>
-<li>slouží pro zjišťování. tam kde programátor nemá předem představu o obsahu</li>
+<li>slouží pro zjišťování, tam kde nemáme předem představu o obsahu</li>
 </ul>
 </section>
 <section id="příklad-arcpy.listenvironments" class="slide level2">
@@ -290,10 +291,10 @@ Jan Caha
 <h2>Licence a instalace</h2>
 <ul>
 <li>kontroly dostupnosti licencí a stavu instalace</li>
-<li><code>arcpy.CheckExtension()</code> - je exteze dostupná?</li>
+<li><code>arcpy.CheckExtension()</code> - je extenze dostupná?</li>
 <li><code>arcpy.CheckInExtension()</code>, <code>arcpy.CheckOutExtension()</code> - pro sdílené licence</li>
 <li><code>arcpy.CheckProduct()</code> - dostupná úroveň licence + info</li>
-<li><code>acpy.GetInstallInfo()</code> - info o instalaci</li>
+<li><code>arcpy.GetInstallInfo()</code> - info o instalaci</li>
 <li><code>arcpy.ListInstallations()</code> - typy instalací</li>
 </ul>
 </section>

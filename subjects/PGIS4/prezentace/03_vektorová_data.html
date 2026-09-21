@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-09-30">
+  <meta name="dcterms.date" content="2026-09-21">
   <title>Výuka - Jan Caha – Vektorová data v QGIS Python API</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-09-30</p>
+  <p class="date">2026-09-21</p>
 </section>
 <section id="objekty-pro-práci-s-vektorovými-daty" class="slide level2">
 <h2>Objekty pro práci s vektorovými daty</h2>
@@ -268,7 +268,7 @@ Jan Caha
 <ul>
 <li>hlavní třída pro práci s geometrií</li>
 <li>obsahuje řadu funkcí (i statické)</li>
-<li>existují ale dilčí třídy odvozené od <code>QgsAbstractGeometry</code> pro konkrétní typy geometrie
+<li>existují ale dílčí třídy odvozené od <code>QgsAbstractGeometry</code> pro konkrétní typy geometrie
 <ul>
 <li><code>QgsPoint</code>, <code>QgsLineString</code>, <code>QgsPolygon</code></li>
 <li><code>QgsMultiPoint</code>, <code>QgsMultiLineString</code>, <code>QgsMultiPolygon</code></li>
@@ -277,8 +277,8 @@ Jan Caha
 </ul></li>
 </ul>
 </section>
-<section id="tvorba-qggeometry" class="slide level2">
-<h2>Tvorba <code>QgGeometry</code></h2>
+<section id="tvorba-qgsgeometry" class="slide level2">
+<h2>Tvorba <code>QgsGeometry</code></h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.core <span class="im">import</span> QgsGeometry, QgsPointXY, QgsTriangle</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> QgsTriangle(</span>
