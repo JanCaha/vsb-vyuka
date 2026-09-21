@@ -29,6 +29,13 @@ repos:
         pass_filenames: false
         stages: [pre-push]
 
+      - id: check-qmd-date-year
+        name: Check QMD front matter date year
+        entry: bash ./dev-scripts/check_qmd_date_year.sh
+        language: system
+        files: \.qmd$
+        stages: [pre-commit]
+
       # - id: copy-conda-env
       #   name: Copy conda-environment.yml to PGIS2/soubory
       #   entry: ./dev-scripts/copy_conda_env.sh
