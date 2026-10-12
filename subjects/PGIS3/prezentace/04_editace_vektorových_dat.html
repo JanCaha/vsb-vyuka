@@ -6,11 +6,11 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.18">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-10-07">
+  <meta name="dcterms.date" content="2026-10-12">
   <title>Výuka - Jan Caha – Editace vektorových dat v ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-10-07</p>
+  <p class="date">2026-10-12</p>
 </section>
 <section id="objekty-pro-práci-s-vektorovými-daty" class="slide level2">
 <h2>Objekty pro práci s vektorovými daty</h2>
@@ -361,10 +361,10 @@ Jan Caha
 </ul></li>
 </ul>
 </section>
-<section id="objekt-row" class="slide level2">
-<h2>Objekt <code>Row</code></h2>
+<section id="iterace-přes-řádky-cursoru" class="slide level2">
+<h2>Iterace přes řádky cursoru</h2>
 <ul>
-<li>objekt reprezentující řádek v tabulce (<a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm">dokumentace</a>)</li>
+<li>dříve se používal <code>Row</code> objekt reprezentující řádek v tabulce (<a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm">dokumentace</a>)</li>
 <li>4 funkce pro přístup k datům
 <ul>
 <li><code>getValue(field_name)</code></li>
@@ -372,10 +372,11 @@ Jan Caha
 <li><code>isNull(field_name)</code></li>
 <li><code>setNull(field_name)</code></li>
 </ul></li>
+<li>ale api <code>arcpy.da</code> preferuje přístup přes indexy a tuple-like chování řádku, to tedy budeme preferovat</li>
 </ul>
 </section>
-<section id="přístup-k-hodnotám-row" class="slide level2">
-<h2>Přístup k hodnotám <code>Row</code></h2>
+<section id="přístup-k-hodnotám" class="slide level2">
+<h2>Přístup k hodnotám</h2>
 <ul>
 <li>dle specifikace v <code>field_names</code></li>
 <li>pomocí indexů</li>

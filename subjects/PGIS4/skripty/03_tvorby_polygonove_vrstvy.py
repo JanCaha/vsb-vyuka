@@ -64,7 +64,7 @@ feature: QgsFeature
 for feature in layer.getFeatures(feature_req):
     new_feature = QgsFeature(fields)
 
-    # kopirování atributů z původního prvku do nového
+    # kopírování atributů z původního prvku do nového
     old_field: QgsField
     for old_field in feature.fields():
         old_field_name = old_field.name()

@@ -42,7 +42,7 @@ with arcpy.da.UpdateCursor(
     for row in cursor:
         cursor.deleteRow()
 
-# vlození nového prvku
+# vložení nového prvku
 with arcpy.da.InsertCursor(
     layer_to_edit,
     ["SHAPE@", "CLASS1"],
@@ -51,4 +51,4 @@ with arcpy.da.InsertCursor(
     buffer = geom.buffer(1000)
     cursor.insertRow([buffer, "ZZ"])
 
-print("Skript úspěšně končil.")
+print("Skript úspěšně skončil.")
