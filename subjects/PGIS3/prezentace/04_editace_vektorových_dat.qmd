@@ -144,16 +144,17 @@ SearchCursor (
   - `SHAPE@AREA` - plocha geometrie
   - `SHAPE@LENGTH` - délka geometrie
 
-## Objekt `Row`
+## Iterace přes řádky cursoru
 
-- objekt reprezentující řádek v tabulce ([dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm))
+- dříve se používal `Row` objekt reprezentující řádek v tabulce ([dokumentace](https://pro.arcgis.com/en/pro-app/latest/arcpy/classes/row.htm))
 - 4 funkce pro přístup k datům
   - `getValue(field_name)`
   - `setValue(field_name, value)`
   - `isNull(field_name)`
   - `setNull(field_name)`
+- ale api `arcpy.da` preferuje přístup přes indexy a tuple-like chování řádku, to tedy budeme preferovat
 
-## Přístup k hodnotám `Row`
+## Přístup k hodnotám
 
 - dle specifikace v `field_names`
 - pomocí indexů
