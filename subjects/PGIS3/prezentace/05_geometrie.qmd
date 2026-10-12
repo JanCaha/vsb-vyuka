@@ -29,6 +29,25 @@ execute:
 Přímo součástí třídy `Geometry` může být a často i je definice souřadnicového systému!
 :::
 
+## Objekt `Array`
+
+- `arcpy.Array()` - speciální objekty [ArcPy]{.software} pro tvorbu polí určených pro geometrii
+- pole lze i vzájemně zanořovat - tzn. pole polí může existovat
+- obsahuje prvky typu `Point` nebo dalších `Array` objektů
+- zvláštnost API - není to shodné jako běžné Python seznamy (`list`)
+- použití např. pro tvorbu linií:
+
+```python
+arcpy.Polyline( 
+    arcpy.Array(
+        [
+          arcpy.Point(-77.4349451, 37.5408265), 
+          arcpy.Point(-78.6384349, 35.7780943),
+        ]
+    ),
+    arcpy.SpatialReference(4326)
+)
+```
 
 ## Výpočty na třídě `Geometry`
 
@@ -65,32 +84,6 @@ line = arcpy.Polyline(
 length_km = line.getLength("GEODESIC", "Kilometers")
 print(f"Geodetická délka: {length_km:.2f} km")
 ```
-  
-## Objekt `Array`
-
-- `arcpy.Array()` - speciální objekty [ArcPy]{.software} pro tvorbu polí
-- pole lze i vzájemně zanořovat - tzn. pole polí může existovat
-- zvláštnost API
-- použití např. pro tvorbu linií:
-
-```python
-arcpy.Polyline( 
-    arcpy.Array(
-        [
-          arcpy.Point(-77.4349451, 37.5408265), 
-          arcpy.Point(-78.6384349, 35.7780943),
-        ]
-    ),
-    arcpy.SpatialReference(4326)
-)
-```
-
-## Geometrické operace
-
-- `Geometry.intersect(other, dimension)`
-- `Geometry.union(other)`
-- `Geometry.difference(other)`
-- `Geometry.symmetricDifference(other)`
 
 ## Ukázka práce s geometrií a výpočtem plochy
 
@@ -121,6 +114,13 @@ poly_wgs84 = poly.projectAs(arcpy.SpatialReference(4326))
 area_km2 = poly_wgs84.getArea("GEODESIC", "SquareKilometers")
 print(f"Geodetická plocha: {area_km2:.3f} km^2")
 ```
+
+## Geometrické operace
+
+- `Geometry.intersect(other, dimension)`
+- `Geometry.union(other)`
+- `Geometry.difference(other)`
+- `Geometry.symmetricDifference(other)`
 
 ## Ukázky použití různých funkcí třídy
 
