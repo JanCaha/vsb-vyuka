@@ -2105,7 +2105,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.1603777 -0.2497563 -0.6150997 -0.2345332 -0.1484494"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.6374401 -0.1175668 -0.9498461 -1.3234472 -0.1236238"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2644,7 +2644,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f5d8d3b70e0&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f0bc8aaf0e0&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -3431,6 +3431,13 @@
     "text": "Geometry\n\nzákladní třída geometrie v ArcPy\ndokumentace\nlze tvořit přímo Geometry (geometry, inputs, {spatial_reference}, {has_z}, {has_m}, {has_id})\nale spíše je vhodnější specifické třídy pro druhy geometrií - Multipoint, PointGeometry, Polygon, Polyline\n\n\n\n\n\n\n\nSouřadnicový systém\n\n\nPřímo součástí třídy Geometry může být a často i je definice souřadnicového systému!"
   },
   {
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
+    "title": "Geometrie v ArcPy",
+    "section": "Objekt Array",
+    "text": "Objekt Array\n\narcpy.Array() - speciální objekty ArcPy pro tvorbu polí určených pro geometrii\npole lze i vzájemně zanořovat - tzn. pole polí může existovat\nobsahuje prvky typu Point nebo dalších Array objektů\nzvláštnost API - není to shodné jako běžné Python seznamy (list)\npoužití např. pro tvorbu linií:\n\narcpy.Polyline(\n    arcpy.Array(\n        [\n            arcpy.Point(-77.4349451, 37.5408265),\n            arcpy.Point(-78.6384349, 35.7780943),\n        ]\n    ),\n    arcpy.SpatialReference(4326),\n)"
+  },
+  {
     "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#výpočty-na-třídě-geometry",
     "href": "subjects/PGIS3/prezentace/05_geometrie.html#výpočty-na-třídě-geometry",
     "title": "Geometrie v ArcPy",
@@ -3445,11 +3452,11 @@
     "text": "Výpočet délky polyline ve WGS84\n# Výpočet geodetické délky polyline v kilometrech bez projekce do PCS\nimport arcpy\n\n# Vytvoření jednoduché linie ve WGS84\nline = arcpy.Polyline(\n    arcpy.Array(\n        [\n            arcpy.Point(-77.4349451, 37.5408265),\n            arcpy.Point(-78.6384349, 35.7780943),\n        ]\n    ),\n    arcpy.SpatialReference(4326),\n)\n\n# Geodetická délka (GEODESIC) v km\nlength_km = line.getLength(\"GEODESIC\", \"Kilometers\")\nprint(f\"Geodetická délka: {length_km:.2f} km\")"
   },
   {
-    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
-    "href": "subjects/PGIS3/prezentace/05_geometrie.html#objekt-array",
+    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#ukázka-práce-s-geometrií-a-výpočtem-plochy",
+    "href": "subjects/PGIS3/prezentace/05_geometrie.html#ukázka-práce-s-geometrií-a-výpočtem-plochy",
     "title": "Geometrie v ArcPy",
-    "section": "Objekt Array",
-    "text": "Objekt Array\n\narcpy.Array() - speciální objekty ArcPy pro tvorbu polí\npole lze i vzájemně zanořovat - tzn. pole polí může existovat\nzvláštnost API\npoužití např. pro tvorbu linií:\n\narcpy.Polyline(\n    arcpy.Array(\n        [\n            arcpy.Point(-77.4349451, 37.5408265),\n            arcpy.Point(-78.6384349, 35.7780943),\n        ]\n    ),\n    arcpy.SpatialReference(4326),\n)"
+    "section": "Ukázka práce s geometrií a výpočtem plochy",
+    "text": "Ukázka práce s geometrií a výpočtem plochy\nimport arcpy\n\n# Jednoduchý polygon (čtverec) v projektovaném SRS (Web Mercator)\npoly = arcpy.Polygon(\n    arcpy.Array(\n        [\n            arcpy.Point(1350000, 6250000),\n            arcpy.Point(2100000, 6250000),\n            arcpy.Point(2100000, 6620000),\n            arcpy.Point(1350000, 6620000),\n            arcpy.Point(1350000, 6250000),\n        ]\n    ),\n    arcpy.SpatialReference(3857),\n)\n\n# PLANAR plocha v m^2 (PCS jednotky)\narea_m2 = poly.getArea(\"PLANAR\", \"SquareMeters\")\nprint(f\"Planární plocha: {area_m2:.0f} m^2\")\n\n# Projekce na WGS84 s transformačním názvem (pokud je potřeba)\npoly_wgs84 = poly.projectAs(arcpy.SpatialReference(4326))\n\n# GEODESIC plocha v km^2\narea_km2 = poly_wgs84.getArea(\"GEODESIC\", \"SquareKilometers\")\nprint(f\"Geodetická plocha: {area_km2:.3f} km^2\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#geometrické-operace",
@@ -3457,13 +3464,6 @@
     "title": "Geometrie v ArcPy",
     "section": "Geometrické operace",
     "text": "Geometrické operace\n\nGeometry.intersect(other, dimension)\nGeometry.union(other)\nGeometry.difference(other)\nGeometry.symmetricDifference(other)"
-  },
-  {
-    "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#ukázka-práce-s-geometrií-a-výpočtem-plochy",
-    "href": "subjects/PGIS3/prezentace/05_geometrie.html#ukázka-práce-s-geometrií-a-výpočtem-plochy",
-    "title": "Geometrie v ArcPy",
-    "section": "Ukázka práce s geometrií a výpočtem plochy",
-    "text": "Ukázka práce s geometrií a výpočtem plochy\nimport arcpy\n\n# Jednoduchý polygon (čtverec) v projektovaném SRS (Web Mercator)\npoly = arcpy.Polygon(\n    arcpy.Array(\n        [\n            arcpy.Point(1350000, 6250000),\n            arcpy.Point(2100000, 6250000),\n            arcpy.Point(2100000, 6620000),\n            arcpy.Point(1350000, 6620000),\n            arcpy.Point(1350000, 6250000),\n        ]\n    ),\n    arcpy.SpatialReference(3857),\n)\n\n# PLANAR plocha v m^2 (PCS jednotky)\narea_m2 = poly.getArea(\"PLANAR\", \"SquareMeters\")\nprint(f\"Planární plocha: {area_m2:.0f} m^2\")\n\n# Projekce na WGS84 s transformačním názvem (pokud je potřeba)\npoly_wgs84 = poly.projectAs(arcpy.SpatialReference(4326))\n\n# GEODESIC plocha v km^2\narea_km2 = poly_wgs84.getArea(\"GEODESIC\", \"SquareKilometers\")\nprint(f\"Geodetická plocha: {area_km2:.3f} km^2\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/05_geometrie.html#ukázky-použití-různých-funkcí-třídy",

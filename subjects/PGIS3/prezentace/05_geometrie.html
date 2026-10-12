@@ -238,6 +238,25 @@ Jan Caha
 </div>
 </div>
 </section>
+<section id="objekt-array" class="slide level2">
+<h2>Objekt <code>Array</code></h2>
+<ul>
+<li><code>arcpy.Array()</code> - speciální objekty <span class="software">ArcPy</span> pro tvorbu polí určených pro geometrii</li>
+<li>pole lze i vzájemně zanořovat - tzn. pole polí může existovat</li>
+<li>obsahuje prvky typu <code>Point</code> nebo dalších <code>Array</code> objektů</li>
+<li>zvláštnost API - není to shodné jako běžné Python seznamy (<code>list</code>)</li>
+<li>použití např. pro tvorbu linií:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>arcpy.Polyline(</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>    arcpy.Array(</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>        [</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>            arcpy.Point(<span class="op">-</span><span class="fl">77.4349451</span>, <span class="fl">37.5408265</span>),</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>            arcpy.Point(<span class="op">-</span><span class="fl">78.6384349</span>, <span class="fl">35.7780943</span>),</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    arcpy.SpatialReference(<span class="dv">4326</span>),</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section id="výpočty-na-třídě-geometry" class="slide level2">
 <h2>Výpočty na třídě <code>Geometry</code></h2>
 <ul>
@@ -263,50 +282,23 @@ Jan Caha
 </section>
 <section id="výpočet-délky-polyline-ve-wgs84" class="slide level2">
 <h2>Výpočet délky polyline ve WGS84</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Výpočet geodetické délky polyline v kilometrech bez projekce do PCS</span></span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Vytvoření jednoduché linie ve WGS84</span></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a>line <span class="op">=</span> arcpy.Polyline(</span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>    arcpy.Array(</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>        [</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>            arcpy.Point(<span class="op">-</span><span class="fl">77.4349451</span>, <span class="fl">37.5408265</span>),</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>            arcpy.Point(<span class="op">-</span><span class="fl">78.6384349</span>, <span class="fl">35.7780943</span>),</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>        ]</span>
-<span id="cb1-11"><a aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-12"><a aria-hidden="true" tabindex="-1"></a>    arcpy.SpatialReference(<span class="dv">4326</span>),</span>
-<span id="cb1-13"><a aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-14"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Geodetická délka (GEODESIC) v km</span></span>
-<span id="cb1-16"><a aria-hidden="true" tabindex="-1"></a>length_km <span class="op">=</span> line.getLength(<span class="st">"GEODESIC"</span>, <span class="st">"Kilometers"</span>)</span>
-<span id="cb1-17"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Geodetická délka: </span><span class="sc">{</span>length_km<span class="sc">:.2f}</span><span class="ss"> km"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="objekt-array" class="slide level2">
-<h2>Objekt <code>Array</code></h2>
-<ul>
-<li><code>arcpy.Array()</code> - speciální objekty <span class="software">ArcPy</span> pro tvorbu polí</li>
-<li>pole lze i vzájemně zanořovat - tzn. pole polí může existovat</li>
-<li>zvláštnost API</li>
-<li>použití např. pro tvorbu linií:</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>arcpy.Polyline(</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    arcpy.Array(</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>        [</span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>            arcpy.Point(<span class="op">-</span><span class="fl">77.4349451</span>, <span class="fl">37.5408265</span>),</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>            arcpy.Point(<span class="op">-</span><span class="fl">78.6384349</span>, <span class="fl">35.7780943</span>),</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>        ]</span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    arcpy.SpatialReference(<span class="dv">4326</span>),</span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="geometrické-operace" class="slide level2">
-<h2>Geometrické operace</h2>
-<ul>
-<li><code>Geometry.intersect(other, dimension)</code></li>
-<li><code>Geometry.union(other)</code></li>
-<li><code>Geometry.difference(other)</code></li>
-<li><code>Geometry.symmetricDifference(other)</code></li>
-</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Výpočet geodetické délky polyline v kilometrech bez projekce do PCS</span></span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Vytvoření jednoduché linie ve WGS84</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>line <span class="op">=</span> arcpy.Polyline(</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>    arcpy.Array(</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>        [</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>            arcpy.Point(<span class="op">-</span><span class="fl">77.4349451</span>, <span class="fl">37.5408265</span>),</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>            arcpy.Point(<span class="op">-</span><span class="fl">78.6384349</span>, <span class="fl">35.7780943</span>),</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>    arcpy.SpatialReference(<span class="dv">4326</span>),</span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Geodetická délka (GEODESIC) v km</span></span>
+<span id="cb2-16"><a aria-hidden="true" tabindex="-1"></a>length_km <span class="op">=</span> line.getLength(<span class="st">"GEODESIC"</span>, <span class="st">"Kilometers"</span>)</span>
+<span id="cb2-17"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Geodetická délka: </span><span class="sc">{</span>length_km<span class="sc">:.2f}</span><span class="ss"> km"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="ukázka-práce-s-geometrií-a-výpočtem-plochy" class="slide level2">
 <h2>Ukázka práce s geometrií a výpočtem plochy</h2>
@@ -336,6 +328,15 @@ Jan Caha
 <span id="cb3-24"><a aria-hidden="true" tabindex="-1"></a><span class="co"># GEODESIC plocha v km^2</span></span>
 <span id="cb3-25"><a aria-hidden="true" tabindex="-1"></a>area_km2 <span class="op">=</span> poly_wgs84.getArea(<span class="st">"GEODESIC"</span>, <span class="st">"SquareKilometers"</span>)</span>
 <span id="cb3-26"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Geodetická plocha: </span><span class="sc">{</span>area_km2<span class="sc">:.3f}</span><span class="ss"> km^2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="geometrické-operace" class="slide level2">
+<h2>Geometrické operace</h2>
+<ul>
+<li><code>Geometry.intersect(other, dimension)</code></li>
+<li><code>Geometry.union(other)</code></li>
+<li><code>Geometry.difference(other)</code></li>
+<li><code>Geometry.symmetricDifference(other)</code></li>
+</ul>
 </section>
 <section id="ukázky-použití-různých-funkcí-třídy" class="slide level2">
 <h2>Ukázky použití různých funkcí třídy</h2>
