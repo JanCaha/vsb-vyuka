@@ -8,19 +8,19 @@
   path: "PGIS3/skripty/01_vypisy.py"
 - title: "Funkce Describe"
   author: Jan Caha
-  date: 2025-09-30
+  date: 2026-10-12
   path: "PGIS3/skripty/02_describe.py"
 - title: "Úvod do kurzorů - vektorová data"
   author: Jan Caha
-  date: 2025-10-07
+  date: 2026-10-12
   path: "PGIS3/skripty/03_uvod_cursor.py"
 - title: "Kurzory - editace vektorových dat"
   author: Jan Caha
-  date: 2025-10-07
+  date: 2026-10-12
   path: "PGIS3/skripty/04_kurzory.py"
 - title: "Kurzory - kopírování vektorových dat"
   author: Jan Caha
-  date: 2025-10-14
+  date: 2026-10-12
   path: "PGIS3/skripty/05_kopirovani_dat_kurzory.py"
 - title: "Konverze geometrie mezi souřadnicovými systémy"
   author: Jan Caha

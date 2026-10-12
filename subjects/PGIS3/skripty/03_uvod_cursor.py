@@ -14,11 +14,6 @@ selected_attributes = [
     "NWI_CODE",
 ]
 
-point = arcpy.Point(
-    2_151_972.71,
-    1_395_407.90,
-)
-
 i = 0
 with arcpy.da.SearchCursor(
     feature_class,

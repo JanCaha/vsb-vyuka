@@ -2,7 +2,7 @@
 title: "Geometrie v [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2025-10-14
+date: 2026-10-12
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -63,7 +63,7 @@ line = arcpy.Polyline(
 
 # Geodetická délka (GEODESIC) v km
 length_km = line.getLength("GEODESIC", "Kilometers")
-print(f"Geodesic length: {length_km:.2f} km")
+print(f"Geodetická délka: {length_km:.2f} km")
 ```
   
 ## Objekt `Array`
@@ -112,14 +112,14 @@ poly = arcpy.Polygon(
 
 # PLANAR plocha v m^2 (PCS jednotky)
 area_m2 = poly.getArea("PLANAR", "SquareMeters")
-print(f"Planar area: {area_m2:.0f} m^2")
+print(f"Planární plocha: {area_m2:.0f} m^2")
 
 # Projekce na WGS84 s transformačním názvem (pokud je potřeba)
 poly_wgs84 = poly.projectAs(arcpy.SpatialReference(4326))
 
 # GEODESIC plocha v km^2
 area_km2 = poly_wgs84.getArea("GEODESIC", "SquareKilometers")
-print(f"Geodesic area: {area_km2:.3f} km^2")
+print(f"Geodetická plocha: {area_km2:.3f} km^2")
 ```
 
 ## Ukázky použití různých funkcí třídy

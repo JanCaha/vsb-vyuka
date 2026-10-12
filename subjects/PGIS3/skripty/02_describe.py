@@ -8,6 +8,7 @@ utils.setup_env("ProgrammingPro/Databases/Trippville_GIS.gdb")
 # popis workspace
 desc = arcpy.Describe(arcpy.env.workspace)
 
+print("Popis workspace:")
 print(desc)
 
 print(desc.baseName)
@@ -20,11 +21,12 @@ print(desc.path)
 print(desc.workspaceType)
 print(desc.release)
 
-print("*" * 50)
+print("-" * 50)
 
 # popis FeatureClass
 desc_fc = arcpy.Describe("Wetlands")
 
+print("Popis FeatureClass Wetlands:")
 print(desc_fc.dataType)
 print(desc_fc.name)
 print(desc_fc.path)
@@ -38,11 +40,12 @@ if hasattr(desc_fc, "size"):
 else:
     print("No size for object.")
 
-print("*" * 50)
+print("-" * 50)
 
 # popis Raster
 desc_raster = arcpy.Describe("DEM")
 
+print("Popis Raster DEM:")
 print(desc_raster.name)
 print(desc_raster.path)
 
@@ -50,11 +53,12 @@ print(desc_raster.bandCount)
 print(desc_raster.compressionType)
 print(desc_raster.format)
 
-print("*" * 50)
+print("-" * 50)
 
 # popis RasterBand
 desc_raster_band = arcpy.Describe("DEM/Band_1")
 
+print("Popis RasterBand DEM/Band_1:")
 print(desc_raster_band.name)
 print(desc_raster_band.path)
 
@@ -62,3 +66,5 @@ print(desc_raster_band.height)
 print(desc_raster_band.width)
 print(desc_raster_band.noDataValue)
 print(desc_raster_band.pixelType)
+
+print("-" * 50)
