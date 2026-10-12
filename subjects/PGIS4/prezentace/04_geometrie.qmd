@@ -2,7 +2,7 @@
 title: "Geometrie v [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2025-10-14
+date: 2026-10-12
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -85,8 +85,8 @@ triangle = QgsTriangle(
 )
 
 # metriky přímo nad abstraktní geometrií
-print(f"Area: {triangle.area()}")      # plocha trojúhelníku
-print(f"Length: {triangle.length()}")  # obvod trojúhelníku
+print(f"Rozloha: {triangle.area()}")      # plocha trojúhelníku
+print(f"Obvod: {triangle.length()}")  # obvod trojúhelníku
 
 # převod na hlavní třídu QgsGeometry (wrapper kolem abstraktní geometrie)
 geom = QgsGeometry(triangle)

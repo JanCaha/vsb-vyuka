@@ -4,18 +4,21 @@ from abc import ABC, abstractmethod
 
 class RandomValueGenerator(ABC):
 
+    object_name: str = "Random Generator"
+
     @abstractmethod
     def random_value(self) -> float:
         """Vygeneruj náhodnou hodnotu"""
 
     def name(self) -> str:
-        return "Random Generator"
+        return self.object_name
 
 
 class RandomIntGenerator(RandomValueGenerator):
 
     def __init__(self, min: int, max: int) -> None:
         super().__init__()
+        self.object_name = "Random Int Generator"
         self.min = min
         self.max = max
 
@@ -27,6 +30,7 @@ class RandomFloatGenerator(RandomValueGenerator):
 
     def __init__(self, min: float, max: float, decimal_places: int = 6) -> None:
         super().__init__()
+        self.object_name = "Random Float Generator"
         self.min = min
         self.max = max
         self.decimal_places = decimal_places
@@ -49,6 +53,10 @@ class RandomFloatGenerator(RandomValueGenerator):
 
 
 class RandomSimpleGenerator(RandomValueGenerator):
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.object_name = "Random Simple Generator"
 
     def random_value(self) -> float:
         return 42
