@@ -30,10 +30,12 @@ print("-" * 10)
 
 # geometrické vztahy polygonů
 intersect = rectangle.intersection(triangle)
+print("=== Průnik ===")
 print(intersect.asWkt())
 print("-" * 10)
 
 difference = rectangle.difference(triangle)
+print("=== Rozdíl ===")
 print(difference.asWkt())
 print("-" * 10)
 
@@ -43,6 +45,7 @@ sym_difference.moveVertex(-5, -5, 0)
 sym_difference.moveVertex(-3, -3, 1)
 sym_difference.deleteVertex(8)
 
+print("=== Symetrický rozdíl ===")
 print(sym_difference.asWkt())
 print("-" * 10)
 
@@ -53,4 +56,5 @@ for i, vertex in enumerate(sym_difference.vertices()):
     if vertex.x() > 0.75:
         sym_difference.moveVertex(vertex.x() - 0.15, vertex.y(), i)
 
+print("=== Po úpravě vrcholů ===")
 print(sym_difference.asWkt())

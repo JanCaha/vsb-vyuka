@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-10-21">
+  <meta name="dcterms.date" content="2026-10-19">
   <title>Výuka - Jan Caha – Rastrová data v ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,110 +214,161 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-10-21</p>
+  <p class="date">2026-10-19</p>
 </section>
 <section id="objekty" class="slide level2">
 <h2>Objekty</h2>
 <ul>
-<li><code>arcpy.Raster</code> - třída pro práci s rastrovými daty</li>
-<li><code>arcpy.RasterInfo</code> - třída vlastností rastru (např. rozměry, souřadnicový systém, atd.)</li>
-<li><code>arcpy.RasterCellIterator</code> - třída pro iteraci přes buňky rastru</li>
+<li><code>arcpy.Raster</code> - základní objekt pro práci s rastrovými daty</li>
+<li><code>arcpy.RasterInfo</code> - metadata rastru (rozměr, extent, velikost buňky, souřadnicový systém, typ pixelu, atd.)</li>
+<li><code>arcpy.sa.RasterCellIterator</code> - iterátor přes buňky rastru v <code>arcpy.sa</code></li>
 </ul>
 </section>
 <section id="raster" class="slide level2">
 <h2><code>Raster</code></h2>
 <ul>
-<li>základní třída pro rastrová data</li>
-<li>může být multidimenzionální (více pásem)</li>
-<li>lze načíst i pouze vybraná pásma (<code>cesta_k_souboru/Band_1</code>)</li>
-<li>atributy třídy - informace o rastru, ale i formátu uložení</li>
-<li>funkce pro práci s rastrem</li>
-<li>funkce <code>read()</code> a <code>write()</code> pro čtení a zápis hodnot ve formátu <span class="software">NumPy</span> pole</li>
+<li>základní třída pro rasterová data</li>
+<li>může být jednopásmová i vícepásmová</li>
+<li>lze načíst i pouze vybrané pásmo: <code>raster = arcpy.Raster("path/to/raster.tif/Band_1")</code></li>
+<li>obsahuje vlastnosti typu <code>width</code>, <code>height</code>, <code>bandCount</code>, <code>pixelType</code>, <code>extent</code>, <code>spatialReference</code></li>
+<li><code>read()</code> a <code>write()</code> pracují s daty ve formátu <span class="software">NumPy</span></li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>raster <span class="op">=</span> arcpy.Raster(<span class="st">"C:/data/dem.tif"</span>)</span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(raster.width, raster.height)</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(raster.bandCount, raster.pixelType)</span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(raster.extent)</span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> raster.read(upper_left_corner<span class="op">=</span>(<span class="dv">500</span>, <span class="dv">500</span>), nrows<span class="op">=</span><span class="dv">100</span>, ncols<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(data), data.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="raster---úprava-hodnot" class="slide level2">
+<h2><code>Raster</code> - úprava hodnot</h2>
+<ul>
+<li>pokud je raster otevřen pro čtení, je <code>readOnly = True</code></li>
+<li>pro úpravu buněk je nutné nastavit <code>readOnly = False</code></li>
+<li>po změnách je vhodné uložit výsledek pomocí <code>save()</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>raster <span class="op">=</span> arcpy.Raster(<span class="st">"C:/data/input.tif"</span>)</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>raster.readOnly <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> raster:</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> raster[i, j] <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>        raster[i, j] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>raster.save(<span class="st">"C:/data/output.tif"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="rasterinfo" class="slide level2">
 <h2><code>RasterInfo</code></h2>
 <ul>
-<li>“otisk” či definice rastru</li>
-<li>lze jednak získat z objektu <code>Raster</code> funkcí <code>getRasterInfo()</code>, pak má hodnoty z daného rastru</li>
-<li>nebo vytvořit jako prázdný objekt a pak je nutné nastavit potřebné atributy</li>
-<li>na základě objektu <code>RasterInfo</code> lze vytvořit nový rastr (<code>Raster(RasterInfo())</code>), ale bez dat</li>
+<li><code>RasterInfo</code> je “šablona” nebo metadata rastru</li>
+<li>získá se z existujícího rastru: <code>raster.getRasterInfo()</code></li>
+<li>funkce <code>arcpy.Raster(raster_info)</code> vytvoří nový raster se stejnými vlastnostmi</li>
+<li>velmi užitečné pro vytvoření výstupu s identickým rozlišením, rozměry a souřadnicovým systémem</li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>in_raster <span class="op">=</span> arcpy.Raster(<span class="st">"C:/data/dem.tif"</span>)</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>info <span class="op">=</span> in_raster.getRasterInfo()</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>out_raster <span class="op">=</span> arcpy.Raster(info)</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>out_raster.save(<span class="st">"C:/data/output_dem.tif"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="rastercelliterator" class="slide level2">
 <h2><code>RasterCellIterator</code></h2>
 <ul>
-<li>objekt pro iteraci přes buňky rastru</li>
-<li>v nejjednodušší podobě jako</li>
+<li>iterátor pro přístup ke všem buňkám rastru</li>
+<li>v ArcPy je v modulu <code>arcpy.sa</code></li>
+<li>pro více rastrů je důležité zadat vstupní seznam v klíči <code>rasters</code></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>raster <span class="op">=</span> arcpy.Raster(<span class="st">"path/to/raster.tif"</span>)</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>raster.readOnly <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> raster:</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">,</span>j<span class="sc">}</span><span class="ss"> - </span><span class="sc">{</span>raster[i,j]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> raster[i, j] <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>        raster[i, j] <span class="op">=</span> <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>raster_1 <span class="op">=</span> arcpy.Raster(<span class="st">"C:/data/dem.tif"</span>)</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>raster_2 <span class="op">=</span> arcpy.Raster(<span class="st">"C:/data/vegetation.tif"</span>)</span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> arcpy.sa.RasterCellIterator({<span class="st">"rasters"</span>: [raster_1, raster_2]}) <span class="im">as</span> rci:</span>
+<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, j <span class="kw">in</span> rci:</span>
+<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> rci[i, j]</span>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="rastercelliterator---indexy" class="slide level2">
 <h2><code>RasterCellIterator</code> - indexy</h2>
 <ul>
-<li>jednopásmové rastry - <code>i, j</code> v pořadí řádek, sloupec</li>
-<li>číslování začíná v levém horním rohu (buňka 0,0) a pokračuje dolů a doprava</li>
-<li>vícepásmové rastry
+<li>jednopásmový raster: <code>i, j</code> = řádek, sloupec</li>
+<li>číslování začíná v levém horním rohu (0,0) a pokračuje dolů a doprava</li>
+<li>vícepásmový raster:
 <ul>
-<li>buď <code>k, i, j</code> v pořadí pásmo, řádek, sloupec a vrací jednu hodnotu</li>
-<li>nebo <code>i, j</code> - řádek, sloupec a vrací <code>tuple</code> hodnot pro pásma</li>
+<li><code>k, i, j</code> = pásmo, řádek, sloupec, vrací jednu hodnotu</li>
+<li><code>i, j</code> = řádek, sloupec, vrací <code>tuple</code> pro jednotlivá pásma</li>
 </ul></li>
 </ul>
 </section>
 <section id="rastercelliterator---vícero-rastrů" class="slide level2">
 <h2><code>RasterCellIterator</code> - vícero rastrů</h2>
 <ul>
-<li>pozor na inicializaci - jedná se o python <strong>dictionary</strong> s klíči - zde <strong>rasters</strong> (ale jsou další)</li>
+<li>parametr <code>rasters</code> je Python <code>list</code>/<code>dictionary</code></li>
+<li>první raster určuje prostředí iterace: extent, velikost buňky a souřadnicový systém</li>
+<li>to je důležité při porovnávání více rastrů, které musí mít kompatibilní geometrii</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> RasterCellIterator({<span class="st">"rasters"</span>: [myRas1, myRas2, outRas1, outRas2]}) <span class="im">as</span> rci:</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, j <span class="kw">in</span> rci:</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>první rastr určuje nastavení enviromentu - souřadnicový sytém, velikost buňky a extent</li>
-<li>díky tomu lze iterovat přes vícero rastrů současně</li>
-<li>raster lze předefinovat na dané nastavení pomocí</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>r_1_env <span class="op">=</span> arcpy.sa.ApplyEnvironment(r_1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> arcpy.sa.RasterCellIterator(</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"rasters"</span>: [raster_1, raster_2, out_raster],</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"padding"</span>: <span class="dv">1</span>,</span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a>        <span class="st">"skipNoData"</span>: [raster_1, raster_2],</span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>) <span class="im">as</span> rci:</span>
+<span id="cb5-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, j <span class="kw">in</span> rci:</span>
+<span id="cb5-9"><a aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> rci[i, j]</span>
+<span id="cb5-10"><a aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="rastercelliterator---doplnění" class="slide level2">
 <h2><code>RasterCellIterator</code> - doplnění</h2>
 <ul>
-<li>python hodnota <code>math.nan</code> se implicitně konvertuje na <strong>NoData</strong></li>
-<li>při tvorbě <code>RasterCellIterator</code> lze uvést v dictionary tyto klíče
+<li><code>math.nan</code> se automaticky převádí na <strong>NoData</strong></li>
+<li>klíče v konfiguračním slovníku:
 <ul>
-<li><code>'padding': 2</code> - vhodné pro jádrové funkce (např. průměry okolí), přednačte iterátor s okolím buňky o velikosti (vlastně matice 5x5) pro rychlejší výpočty</li>
-<li><code>'skipNoData':[r_1, r_2]</code> - budou se řešit pouze buňky, které u uvedených rastrů nemají hodnotu <strong>NoData</strong>, jinak se přeskočí (může to výrazně zrychlit výpočty)</li>
+<li><code>'padding': 2</code> - přednačtení okolí buňky pro lokální operace (např. okna / filtry)</li>
+<li><code>'skipNoData': [r_1, r_2]</code> - přeskočí buňky s NoData ve zvolených rastru</li>
 </ul></li>
+<li>tato konfigurace výrazně zlepšuje výkon při práci s okolím a lokálními operacemi</li>
 </ul>
 </section>
 <section id="numerické-operace-s-rastry" class="slide level2">
 <h2>Numerické operace s rastry</h2>
 <ul>
-<li>mapová algebra</li>
-<li>lze provádět na úrovni celého rastru</li>
+<li>mapová algebra funguje na úrovni celého rastru</li>
+<li>výsledek je nový <code>Raster</code> objekt</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
-<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>r_1 <span class="op">=</span> arcpy.Raster(<span class="st">"path/to/raster.tif"</span>)</span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>r_2 <span class="op">=</span> r_1 <span class="op">+</span> <span class="dv">10</span></span>
-<span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a>r_3 <span class="op">=</span> r_1 <span class="op">*</span> r_2</span>
-<span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>r_3.save(<span class="st">"path/to/output.tif"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>r_1 <span class="op">=</span> arcpy.Raster(<span class="st">"C:/data/raster_1.tif"</span>)</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>r_2 <span class="op">=</span> r_1 <span class="op">+</span> <span class="dv">10</span></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a>r_3 <span class="op">=</span> r_1 <span class="op">*</span> r_2</span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a>r_3.save(<span class="st">"C:/data/output_raster.tif"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="funkce-pro-rastry" class="slide level2">
 <h2>Funkce pro rastry</h2>
 <ul>
-<li>funkce aplikované na zdrojové rastry</li>
-<li><code>arcpy.sa</code> - modul pro prostorovou analýzu</li>
+<li>pro rastrovou analýzu se používá <code>arcpy.sa</code></li>
+<li>modul obsahuje funkce pro filtrování, výpočty, statistik, maskování a zonální analýzu</li>
+<li>pro práci se vstupním rastrem je často vhodné použít <code>arcpy.sa.ApplyEnvironment()</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arcpy</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>input_raster <span class="op">=</span> arcpy.Raster(<span class="st">"C:/data/dem.tif"</span>)</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>output_raster <span class="op">=</span> arcpy.sa.ApplyEnvironment(input_raster)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="poznámka-k-api" class="slide level2">
+<h2>Poznámka k API</h2>
+<ul>
+<li><code>RasterCellIterator</code> je ve <code>arcpy.sa</code>, ne v kořenovém <code>arcpy</code></li>
+<li>pro více rastrů je nezbytné udržovat kompatibilní rozlišení a extent</li>
+<li>pro úpravu existujícího rastru je nutné nastavit <code>readOnly = False</code></li>
+<li>pro vytvoření nového rastru se často používá <code>arcpy.Raster(raster.getRasterInfo())</code></li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">

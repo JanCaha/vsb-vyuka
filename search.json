@@ -213,7 +213,7 @@
     "href": "subjects/pvgis4.html#ukázkové-kódy",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-18\n\n\nUkázkový Plugin\n\n\n\n\n\n\n2025-09-30\n\n\nUtils\n\n\n\n\n\n\n2025-10-14\n\n\nOperace s geometriemi\n\n\n\n\n\n\n2025-10-21\n\n\nVýpočty s elipsoidy\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2025-10-21\n\n\nEditace hodnot rastru\n\n\n\n\n\n\n2025-10-21\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\n\n2025-10-21\n\n\nRastrový kalkulátor - příklad\n\n\n\n\n\n\n2025-10-21\n\n\nGDAL tvorba náhodného rastru\n\n\n\n\n\n\n2025-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\n\n2025-11-18\n\n\nAlgoritmus s více kroky\n\n\n\n\n\n\n2025-11-25\n\n\nEditace projektu a layoutu\n\n\n\n\n\n\n2025-11-25\n\n\nGUI nástroj na kreslení polygonu\n\n\n\n\n\n\n2026-09-21\n\n\nÚvod do vektorových dat\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data - výběr prvků\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data - tvorba dat\n\n\n\n\n\n\n2026-10-12\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\n\n2026-10-12\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2024-11-18\n\n\nUkázkový Plugin\n\n\n\n\n\n\n2025-09-30\n\n\nUtils\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data\n\n\n\n\n\n\n2025-10-21\n\n\nEditace hodnot rastru\n\n\n\n\n\n\n2025-10-21\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\n\n2025-10-21\n\n\nRastrový kalkulátor - příklad\n\n\n\n\n\n\n2025-10-21\n\n\nGDAL tvorba náhodného rastru\n\n\n\n\n\n\n2025-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\n\n2025-11-18\n\n\nAlgoritmus s více kroky\n\n\n\n\n\n\n2025-11-25\n\n\nEditace projektu a layoutu\n\n\n\n\n\n\n2025-11-25\n\n\nGUI nástroj na kreslení polygonu\n\n\n\n\n\n\n2026-09-21\n\n\nÚvod do vektorových dat\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data - výběr prvků\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data - tvorba dat\n\n\n\n\n\n\n2026-10-12\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\n\n2026-10-19\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n\n\n2026-10-19\n\n\nOperace s geometriemi\n\n\n\n\n\n\n2026-10-19\n\n\nVýpočty s elipsoidy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -656,63 +656,77 @@
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#objekty",
     "title": "Rastrová data v ArcPy",
     "section": "Objekty",
-    "text": "Objekty\n\narcpy.Raster - třída pro práci s rastrovými daty\narcpy.RasterInfo - třída vlastností rastru (např. rozměry, souřadnicový systém, atd.)\narcpy.RasterCellIterator - třída pro iteraci přes buňky rastru"
+    "text": "Objekty\n\narcpy.Raster - základní objekt pro práci s rastrovými daty\narcpy.RasterInfo - metadata rastru (rozměr, extent, velikost buňky, souřadnicový systém, typ pixelu, atd.)\narcpy.sa.RasterCellIterator - iterátor přes buňky rastru v arcpy.sa"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#raster",
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#raster",
     "title": "Rastrová data v ArcPy",
     "section": "Raster",
-    "text": "Raster\n\nzákladní třída pro rastrová data\nmůže být multidimenzionální (více pásem)\nlze načíst i pouze vybraná pásma (cesta_k_souboru/Band_1)\natributy třídy - informace o rastru, ale i formátu uložení\nfunkce pro práci s rastrem\nfunkce read() a write() pro čtení a zápis hodnot ve formátu NumPy pole"
+    "text": "Raster\n\nzákladní třída pro rasterová data\nmůže být jednopásmová i vícepásmová\nlze načíst i pouze vybrané pásmo: raster = arcpy.Raster(\"path/to/raster.tif/Band_1\")\nobsahuje vlastnosti typu width, height, bandCount, pixelType, extent, spatialReference\nread() a write() pracují s daty ve formátu NumPy\n\nimport arcpy\n\nraster = arcpy.Raster(\"C:/data/dem.tif\")\nprint(raster.width, raster.height)\nprint(raster.bandCount, raster.pixelType)\nprint(raster.extent)\n\ndata = raster.read(upper_left_corner=(500, 500), nrows=100, ncols=100)\nprint(type(data), data.shape)"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#raster---úprava-hodnot",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#raster---úprava-hodnot",
+    "title": "Rastrová data v ArcPy",
+    "section": "Raster - úprava hodnot",
+    "text": "Raster - úprava hodnot\n\npokud je raster otevřen pro čtení, je readOnly = True\npro úpravu buněk je nutné nastavit readOnly = False\npo změnách je vhodné uložit výsledek pomocí save()\n\nimport arcpy\n\nraster = arcpy.Raster(\"C:/data/input.tif\")\nraster.readOnly = False\n\nfor i, j in raster:\n    if raster[i, j] &lt; 0:\n        raster[i, j] = 0\n\nraster.save(\"C:/data/output.tif\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rasterinfo",
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rasterinfo",
     "title": "Rastrová data v ArcPy",
     "section": "RasterInfo",
-    "text": "RasterInfo\n\n“otisk” či definice rastru\nlze jednak získat z objektu Raster funkcí getRasterInfo(), pak má hodnoty z daného rastru\nnebo vytvořit jako prázdný objekt a pak je nutné nastavit potřebné atributy\nna základě objektu RasterInfo lze vytvořit nový rastr (Raster(RasterInfo())), ale bez dat"
+    "text": "RasterInfo\n\nRasterInfo je “šablona” nebo metadata rastru\nzíská se z existujícího rastru: raster.getRasterInfo()\nfunkce arcpy.Raster(raster_info) vytvoří nový raster se stejnými vlastnostmi\nvelmi užitečné pro vytvoření výstupu s identickým rozlišením, rozměry a souřadnicovým systémem\n\nimport arcpy\n\nin_raster = arcpy.Raster(\"C:/data/dem.tif\")\ninfo = in_raster.getRasterInfo()\n\nout_raster = arcpy.Raster(info)\nout_raster.save(\"C:/data/output_dem.tif\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator",
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator",
     "title": "Rastrová data v ArcPy",
     "section": "RasterCellIterator",
-    "text": "RasterCellIterator\n\nobjekt pro iteraci přes buňky rastru\nv nejjednodušší podobě jako\n\nimport arcpy\n\nraster = arcpy.Raster(\"path/to/raster.tif\")\nraster.readOnly = False\n\nfor i, j in raster:\n    print(f\"{i,j} - {raster[i,j]}\")\n    if raster[i, j] &lt; 0:\n        raster[i, j] = 0"
+    "text": "RasterCellIterator\n\niterátor pro přístup ke všem buňkám rastru\nv ArcPy je v modulu arcpy.sa\npro více rastrů je důležité zadat vstupní seznam v klíči rasters\n\nimport arcpy\n\nraster_1 = arcpy.Raster(\"C:/data/dem.tif\")\nraster_2 = arcpy.Raster(\"C:/data/vegetation.tif\")\n\nwith arcpy.sa.RasterCellIterator({\"rasters\": [raster_1, raster_2]}) as rci:\n    for i, j in rci:\n        values = rci[i, j]\n        print(values)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---indexy",
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---indexy",
     "title": "Rastrová data v ArcPy",
     "section": "RasterCellIterator - indexy",
-    "text": "RasterCellIterator - indexy\n\njednopásmové rastry - i, j v pořadí řádek, sloupec\nčíslování začíná v levém horním rohu (buňka 0,0) a pokračuje dolů a doprava\nvícepásmové rastry\n\nbuď k, i, j v pořadí pásmo, řádek, sloupec a vrací jednu hodnotu\nnebo i, j - řádek, sloupec a vrací tuple hodnot pro pásma"
+    "text": "RasterCellIterator - indexy\n\njednopásmový raster: i, j = řádek, sloupec\nčíslování začíná v levém horním rohu (0,0) a pokračuje dolů a doprava\nvícepásmový raster:\n\nk, i, j = pásmo, řádek, sloupec, vrací jednu hodnotu\ni, j = řádek, sloupec, vrací tuple pro jednotlivá pásma"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---vícero-rastrů",
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---vícero-rastrů",
     "title": "Rastrová data v ArcPy",
     "section": "RasterCellIterator - vícero rastrů",
-    "text": "RasterCellIterator - vícero rastrů\n\npozor na inicializaci - jedná se o python dictionary s klíči - zde rasters (ale jsou další)\n\nwith RasterCellIterator({\"rasters\": [myRas1, myRas2, outRas1, outRas2]}) as rci:\n    for i, j in rci:\n        pass\n\nprvní rastr určuje nastavení enviromentu - souřadnicový sytém, velikost buňky a extent\ndíky tomu lze iterovat přes vícero rastrů současně\nraster lze předefinovat na dané nastavení pomocí\n\nr_1_env = arcpy.sa.ApplyEnvironment(r_1)"
+    "text": "RasterCellIterator - vícero rastrů\n\nparametr rasters je Python list/dictionary\nprvní raster určuje prostředí iterace: extent, velikost buňky a souřadnicový systém\nto je důležité při porovnávání více rastrů, které musí mít kompatibilní geometrii\n\nwith arcpy.sa.RasterCellIterator(\n    {\n        \"rasters\": [raster_1, raster_2, out_raster],\n        \"padding\": 1,\n        \"skipNoData\": [raster_1, raster_2],\n    }\n) as rci:\n    for i, j in rci:\n        values = rci[i, j]\n        pass"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---doplnění",
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#rastercelliterator---doplnění",
     "title": "Rastrová data v ArcPy",
     "section": "RasterCellIterator - doplnění",
-    "text": "RasterCellIterator - doplnění\n\npython hodnota math.nan se implicitně konvertuje na NoData\npři tvorbě RasterCellIterator lze uvést v dictionary tyto klíče\n\n'padding': 2 - vhodné pro jádrové funkce (např. průměry okolí), přednačte iterátor s okolím buňky o velikosti (vlastně matice 5x5) pro rychlejší výpočty\n'skipNoData':[r_1, r_2] - budou se řešit pouze buňky, které u uvedených rastrů nemají hodnotu NoData, jinak se přeskočí (může to výrazně zrychlit výpočty)"
+    "text": "RasterCellIterator - doplnění\n\nmath.nan se automaticky převádí na NoData\nklíče v konfiguračním slovníku:\n\n'padding': 2 - přednačtení okolí buňky pro lokální operace (např. okna / filtry)\n'skipNoData': [r_1, r_2] - přeskočí buňky s NoData ve zvolených rastru\n\ntato konfigurace výrazně zlepšuje výkon při práci s okolím a lokálními operacemi"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#numerické-operace-s-rastry",
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#numerické-operace-s-rastry",
     "title": "Rastrová data v ArcPy",
     "section": "Numerické operace s rastry",
-    "text": "Numerické operace s rastry\n\nmapová algebra\nlze provádět na úrovni celého rastru\n\nimport arcpy\n\nr_1 = arcpy.Raster(\"path/to/raster.tif\")\n\nr_2 = r_1 + 10\nr_3 = r_1 * r_2\n\nr_3.save(\"path/to/output.tif\")"
+    "text": "Numerické operace s rastry\n\nmapová algebra funguje na úrovni celého rastru\nvýsledek je nový Raster objekt\n\nimport arcpy\n\nr_1 = arcpy.Raster(\"C:/data/raster_1.tif\")\nr_2 = r_1 + 10\nr_3 = r_1 * r_2\n\nr_3.save(\"C:/data/output_raster.tif\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#funkce-pro-rastry",
     "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#funkce-pro-rastry",
     "title": "Rastrová data v ArcPy",
     "section": "Funkce pro rastry",
-    "text": "Funkce pro rastry\n\nfunkce aplikované na zdrojové rastry\narcpy.sa - modul pro prostorovou analýzu"
+    "text": "Funkce pro rastry\n\npro rastrovou analýzu se používá arcpy.sa\nmodul obsahuje funkce pro filtrování, výpočty, statistik, maskování a zonální analýzu\npro práci se vstupním rastrem je často vhodné použít arcpy.sa.ApplyEnvironment()\n\nimport arcpy\n\ninput_raster = arcpy.Raster(\"C:/data/dem.tif\")\noutput_raster = arcpy.sa.ApplyEnvironment(input_raster)"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/06_rastrova_data.html#poznámka-k-api",
+    "href": "subjects/PGIS3/prezentace/06_rastrova_data.html#poznámka-k-api",
+    "title": "Rastrová data v ArcPy",
+    "section": "Poznámka k API",
+    "text": "Poznámka k API\n\nRasterCellIterator je ve arcpy.sa, ne v kořenovém arcpy\npro více rastrů je nezbytné udržovat kompatibilní rozlišení a extent\npro úpravu existujícího rastru je nutné nastavit readOnly = False\npro vytvoření nového rastru se často používá arcpy.Raster(raster.getRasterInfo())"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/04_editace_vektorových_dat.html#objekty-pro-práci-s-vektorovými-daty",
@@ -2105,7 +2119,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.6374401 -0.1175668 -0.9498461 -1.3234472 -0.1236238"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.11492934 -0.04536101 -0.32849672 -0.07649327 -0.33313690"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2644,7 +2658,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f0bc8aaf0e0&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f85d8de2f90&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -4066,7 +4080,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-10-21\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2025-11-04\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2025-11-18\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-12-02\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2026-09-14\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-09-21\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2026-09-21\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2026-10-12\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2026-10-12\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-11-04\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2025-11-18\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-12-02\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2026-09-14\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-09-21\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2026-09-21\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2026-10-12\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2026-10-12\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2026-10-19\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -4099,7 +4113,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2025-10-21\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2025-10-21\n\n\nMěření geometrie\n\n\n\n\n\n\n2025-10-21\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2025-11-04\n\n\nRastrová data\n\n\n\n\n\n\n2025-11-04\n\n\nTvorba rastru\n\n\n\n\n\n\n2025-11-04\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2025-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2025-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2025-12-02\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2025-12-02\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2026-09-21\n\n\nVýpisy dat\n\n\n\n\n\n\n2026-09-21\n\n\nutils.py\n\n\n\n\n\n\n2026-10-12\n\n\nFunkce Describe\n\n\n\n\n\n\n2026-10-12\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2026-10-12\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2026-10-12\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2025-11-04\n\n\nRastrová data\n\n\n\n\n\n\n2025-11-04\n\n\nTvorba rastru\n\n\n\n\n\n\n2025-11-04\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2025-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2025-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2025-12-02\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2025-12-02\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2026-09-21\n\n\nVýpisy dat\n\n\n\n\n\n\n2026-09-21\n\n\nutils.py\n\n\n\n\n\n\n2026-10-12\n\n\nFunkce Describe\n\n\n\n\n\n\n2026-10-12\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2026-10-12\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2026-10-12\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2026-10-19\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2026-10-19\n\n\nMěření geometrie\n\n\n\n\n\n\n2026-10-19\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
