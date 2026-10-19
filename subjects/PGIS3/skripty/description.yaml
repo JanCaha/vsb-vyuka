@@ -24,15 +24,15 @@
   path: "PGIS3/skripty/05_kopirovani_dat_kurzory.py"
 - title: "Konverze geometrie mezi souřadnicovými systémy"
   author: Jan Caha
-  date: 2025-10-21
+  date: 2026-10-19
   path: "PGIS3/skripty/06_konverze_geometrie.py"
 - title: "Měření geometrie"
   author: Jan Caha
-  date: 2025-10-21
+  date: 2026-10-19
   path: "PGIS3/skripty/07_geometrie_mereni.py"
 - title: "Prostorové vztahy geometrií"
   author: Jan Caha
-  date: 2025-10-21
+  date: 2026-10-19
   path: "PGIS3/skripty/08_geometrie_vztahy.py"
 - title: "Rastrová data"
   author: Jan Caha
