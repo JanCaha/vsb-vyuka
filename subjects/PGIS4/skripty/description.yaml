@@ -16,15 +16,15 @@
   path: "PGIS4/skripty/04_rozhrani.py"
 - title: "Rozhraní v QgsAbstractGeometry"
   author: Jan Caha
-  date: 2026-10-12
+  date: 2026-10-19
   path: "PGIS4/skripty/05_qgsabstractgeometry.py"
 - title: "Operace s geometriemi"
   author: Jan Caha
-  date: 2025-10-14
+  date: 2026-10-19
   path: "PGIS4/skripty/06_operace_geometrie.py"
 - title: "Výpočty s elipsoidy"
   author: Jan Caha
-  date: 2025-10-21
+  date: 2026-10-19
   path: "PGIS4/skripty/07_geometrie_vypocty.py"
 - title: "Rastrová data"
   author: Jan Caha
