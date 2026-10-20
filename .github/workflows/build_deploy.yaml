@@ -12,6 +12,7 @@ on:
       - '**.yaml'
       - '**.yml'
       - '**.scss'
+      - .github/workflows/build_deploy.yaml
   workflow_dispatch:
     
 jobs:
