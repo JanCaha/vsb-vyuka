@@ -47,4 +47,5 @@ while returned:
     returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
 
     # blok by neměl být None, je zde znovu přiřazen takže se musí zkontrolovat
-    assert block is not None
+    if returned:
+        assert block is not None

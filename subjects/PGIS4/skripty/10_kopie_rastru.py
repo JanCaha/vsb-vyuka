@@ -49,4 +49,5 @@ while returned:
 
     # další blok rastru pro cyklus
     returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
-    assert block is not None
+    if returned:
+        assert block is not None

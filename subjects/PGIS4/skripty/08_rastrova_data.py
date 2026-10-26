@@ -57,6 +57,7 @@ raster_iterator.startRasterRead(1, raster_layer.width(), raster_layer.height(), 
 
 # načtení aktuálního bloku dat a jeho informace (korektnost bloku, počet sloupců a řádků, blok, levý horní roh)
 returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
+assert block is not None
 
 count = 0
 while returned:
@@ -66,4 +67,5 @@ while returned:
     returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
 
     # blok by neměl být None, je zde znovu přiřazen takže se musí zkontrolovat
-    assert block is not None
+    if returned:
+        assert block is not None
