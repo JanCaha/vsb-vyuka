@@ -477,6 +477,20 @@
     "text": "QgsRasterFileWriter\n\ninicializace názvem souboru\nfunkce setOutputProviderKey() a setOutputFormat()\nfunkce QgsRasterFileWriter::driverForExtension()\nfunkce createOneBandRaster()\nfunkce createMultiBandRaster()"
   },
   {
+    "objectID": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrastercalculator",
+    "href": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrastercalculator",
+    "title": "Rastrová data v QGIS Python API",
+    "section": "QgsRasterCalculator",
+    "text": "QgsRasterCalculator\n\ntřída pro výpočty nad rastrovými daty\ninicializace s řadou vstupních parametrů (viz příklad)\nnejdůležitější parametr - výraz k vypočtení a seznam rastrových vstupů (QgsRasterCalculatorEntry)\ndalší parametry se pojí s výstupním rastrem\nprovede výpočet a uloží výsledek do výstupního rastru, mimo to udržuje v paměti i případnou chybovou hlášku"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrastercalculatorentry",
+    "href": "subjects/PGIS4/prezentace/05_rastrova_data.html#qgsrastercalculatorentry",
+    "title": "Rastrová data v QGIS Python API",
+    "section": "QgsRasterCalculatorEntry",
+    "text": "QgsRasterCalculatorEntry\n\ntřída pro definici vstupních rastrů pro QgsRasterCalculator\nobsahuje informace o:\n\nnázvu proměnné ve výrazu,\nodkazu na rastrovou vrstvu\nkonkrétní číslo pásma"
+  },
+  {
     "objectID": "subjects/PGIS4/prezentace/03_vektorová_data.html#objekty-pro-práci-s-vektorovými-daty",
     "href": "subjects/PGIS4/prezentace/03_vektorová_data.html#objekty-pro-práci-s-vektorovými-daty",
     "title": "Vektorová data v QGIS Python API",
@@ -2119,7 +2133,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.8012288 -1.9142024 -1.1274909 -0.5472899 -0.8881399"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.6467354 -0.1367406 -0.2971736 -0.2001029 -0.3385190"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2658,7 +2672,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fd870a11550&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fd565901400&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",

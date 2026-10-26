@@ -207,6 +207,28 @@ Jan Caha
 <li>funkce <code>createMultiBandRaster()</code></li>
 </ul>
 </section>
+<section id="qgsrastercalculator" class="slide level2">
+<h2><code>QgsRasterCalculator</code></h2>
+<ul>
+<li>třída pro výpočty nad rastrovými daty</li>
+<li>inicializace s řadou vstupních parametrů (viz příklad)</li>
+<li>nejdůležitější parametr - výraz k vypočtení a seznam rastrových vstupů (<code>QgsRasterCalculatorEntry</code>)</li>
+<li>další parametry se pojí s výstupním rastrem</li>
+<li>provede výpočet a uloží výsledek do výstupního rastru, mimo to udržuje v paměti i případnou chybovou hlášku</li>
+</ul>
+</section>
+<section id="qgsrastercalculatorentry" class="slide level2">
+<h2><code>QgsRasterCalculatorEntry</code></h2>
+<ul>
+<li>třída pro definici vstupních rastrů pro <code>QgsRasterCalculator</code></li>
+<li>obsahuje informace o:
+<ul>
+<li>názvu proměnné ve výrazu,</li>
+<li>odkazu na rastrovou vrstvu</li>
+<li>konkrétní číslo pásma</li>
+</ul></li>
+</ul>
+</section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
 
