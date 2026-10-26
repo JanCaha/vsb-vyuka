@@ -2,7 +2,7 @@
 title: "Rastrová data v [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2025-10-21
+date: 2026-10-26
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -29,7 +29,7 @@ execute:
 - třída pro rastrové vrstvy
 - přes něj se k datům nepřistupuje
 - funkce `dataProvider()` pro přistup k data provideru
-- na rozdíl od vektorovách dat nemáme provider pro uložení dat v paměti, dočasné rastry se ukládají do dočasného adresáře (**temp**) 
+- na rozdíl od vektorových dat nemáme provider pro uložení dat v paměti, dočasné rastry se ukládají do dočasného adresáře (**temp**) 
 
 ## `QgsRasterDataProvider`
 
