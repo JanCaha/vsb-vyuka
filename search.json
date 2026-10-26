@@ -2133,7 +2133,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.08143300 -0.02724363 -0.10875538 -0.07979678 -0.61710151"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.7178218 -0.2594473 -1.2340650 -0.3881038 -0.1233832"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2672,7 +2672,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fc4c0ed5400&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f9e65131550&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
