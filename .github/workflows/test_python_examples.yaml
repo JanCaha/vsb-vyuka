@@ -56,7 +56,7 @@ jobs:
         with:
           auto-update-conda: true
           activate-environment: pgis2
-          environment-file: subjects/PGIS2/soubory/conda-environment.yml
+          environment-file: conda-environment.yml
           pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
       
       - name: Check if PGIS2 folder was modified
