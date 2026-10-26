@@ -58,6 +58,9 @@ jobs:
           activate-environment: pgis2
           environment-file: conda-environment.yml
           pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
+          channels: conda-forge
+          channel-priority: strict
+          use-mamba: true
       
       - name: Check if PGIS2 folder was modified
         id: pgis2_modified
