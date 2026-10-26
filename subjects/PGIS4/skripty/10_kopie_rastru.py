@@ -16,23 +16,28 @@ writer = QgsRasterFileWriter(new_file.as_posix())
 writer.setOutputProviderKey("gdal")
 writer.setOutputFormat(QgsRasterFileWriter.driverForExtension(new_file.suffix))
 
+raster_layer_dp = raster_layer.dataProvider()
+assert raster_layer_dp is not None
+
 # vytvoříme rastr z jedním pásmem a údaji dle původního rastru
 new_raster_dp = writer.createOneBandRaster(
-    raster_layer.dataProvider().dataType(1),
+    raster_layer_dp.dataType(1),
     raster_layer.width(),
     raster_layer.height(),
     raster_layer.extent(),
     raster_layer.crs(),
 )
+assert new_raster_dp is not None
 
 # iterátor
-raster_iterator = QgsRasterIterator(raster_layer.dataProvider())
+raster_iterator = QgsRasterIterator(raster_layer_dp)
 raster_iterator.setMaximumTileHeight(100)
 raster_iterator.setMaximumTileWidth(100)
 
 raster_iterator.startRasterRead(1, raster_layer.width(), raster_layer.height(), raster_layer.extent())
 
 returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
+assert block is not None
 
 # editace nového rastru
 new_raster_dp.setEditable(True)
@@ -44,3 +49,4 @@ while returned:
 
     # další blok rastru pro cyklus
     returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
+    assert block is not None

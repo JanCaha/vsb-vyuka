@@ -8,9 +8,9 @@ qgis.initQgis()
 raster_layer = QgsRasterLayer(data_path("nahodny_raster.tif").as_posix(), "náhodný raster", "gdal")
 
 # info o rasteru
-print(raster_layer.crs())
-print(raster_layer.extent())
-print(raster_layer.isValid())
+print(f"CRS: {raster_layer.crs()}")
+print(f"Extent: {raster_layer.extent()}")
+print(f"Kontrola validity: {raster_layer.isValid()}")
 
 print(f"Raster size: {raster_layer.width()} - {raster_layer.height()}")
 print(f"Bands: {raster_layer.bandCount()}")
@@ -18,6 +18,8 @@ print(f"Band 1 name:  {raster_layer.bandName(1)}")
 
 # data provider
 raster_layer_dp = raster_layer.dataProvider()
+# kontrola že data provider není None
+assert raster_layer_dp is not None
 
 # extent pro blok dat
 layer_extent = raster_layer.extent()
@@ -30,6 +32,8 @@ extent = QgsRectangle(
 
 # extrakce bloku dat - může být rozsáhlý
 block = raster_layer_dp.block(1, extent, 10, 10)
+# kontrola že block není None
+assert block is not None
 
 # blok = kompletní data
 # raster_layer_dp.block(1, raster_layer.extent(), raster_layer.width(), raster_layer.height())
@@ -60,3 +64,6 @@ while returned:
     count += 1
     # další blok dat pro cyklus
     returned, columns, rows, block, top_left_x, top_left_y = raster_iterator.readNextRasterPart(1)
+
+    # blok by neměl být None, je zde znovu přiřazen takže se musí zkontrolovat
+    assert block is not None

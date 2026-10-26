@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.19">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-11-04">
+  <meta name="dcterms.date" content="2026-10-26">
   <title>Výuka - Jan Caha – Správa vlastního kódu pro ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,12 +214,12 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-11-04</p>
+  <p class="date">2026-10-26</p>
 </section>
 <section id="funkce" class="slide level2">
 <h2>Funkce</h2>
 <ul>
-<li>zjedodušení a zpřehlednění kódu</li>
+<li>zjednodušení a zpřehlednění kódu</li>
 <li>opakující se části kódu, znovupoužitelnost</li>
 <li>zvýšení čitelnosti kódu</li>
 <li>snížení chybovosti kódu</li>
@@ -287,8 +287,8 @@ Jan Caha
 <li>i v <span class="software">conda</span> prostředí instalujeme přes <span class="software">pip</span>, kvůli jednoduchosti</li>
 </ul>
 </section>
-<section id="python-balík---struktura-nezbytný-záaklad" class="slide level2">
-<h2>Python balík - struktura nezbytný záaklad</h2>
+<section id="python-balík---struktura-nezbytný-základ" class="slide level2">
+<h2>Python balík - struktura nezbytný základ</h2>
 <ul>
 <li><code>slozka_projektu</code> - pro <span class="software">VS Code</span> a logické oddělení kódu - nemusí se jmenovat přímo jako balík
 <ul>
@@ -333,28 +333,27 @@ Jan Caha
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
 <span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">readme</span> <span class="op">=</span> <span class="st">"README.md"</span></span>
 <span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">"Popis balíku"</span></span>
-<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;=3.8"</span></span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">requires-python</span> <span class="op">=</span> <span class="st">"&gt;=3.12"</span></span>
 <span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a><span class="dt">keywords</span> <span class="op">=</span> <span class="op">[</span><span class="st">"klíčová"</span><span class="op">,</span> <span class="st">"slova"</span><span class="op">]</span></span>
 <span id="cb4-6"><a aria-hidden="true" tabindex="-1"></a><span class="dt">classifiers</span> <span class="op">=</span> <span class="op">[</span></span>
 <span id="cb4-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"License :: OSI Approved :: MIT License"</span><span class="op">,</span></span>
 <span id="cb4-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3"</span><span class="op">,</span></span>
-<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.8"</span><span class="op">,</span></span>
-<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.9"</span><span class="op">,</span></span>
-<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.10"</span><span class="op">,</span></span>
-<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.11"</span><span class="op">,</span></span>
-<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.12"</span><span class="op">,</span></span>
-<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: POSIX :: Linux"</span><span class="op">,</span></span>
-<span id="cb4-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: Microsoft :: Windows"</span><span class="op">,</span></span>
-<span id="cb4-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: MacOS"</span><span class="op">,</span></span>
-<span id="cb4-17"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
-<span id="cb4-18"><a aria-hidden="true" tabindex="-1"></a><span class="dt">urls</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">"Documentation"</span><span class="op"> =</span> <span class="st">"https://github.com/*"</span><span class="op"> }</span></span>
-<span id="cb4-19"><a aria-hidden="true" tabindex="-1"></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span><span class="st">"numpy"</span><span class="op">]</span></span>
-<span id="cb4-20"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options]</span></span>
-<span id="cb4-22"><a aria-hidden="true" tabindex="-1"></a><span class="dt">include_package_data</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb4-23"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options.package_data]</span></span>
-<span id="cb4-25"><a aria-hidden="true" tabindex="-1"></a><span class="dt">muj_balik</span> <span class="op">=</span> <span class="op">[</span><span class="st">"src/muj_balik/py.typed"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.12"</span><span class="op">,</span></span>
+<span id="cb4-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.13"</span><span class="op">,</span></span>
+<span id="cb4-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.14"</span><span class="op">,</span></span>
+<span id="cb4-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Programming Language :: Python :: 3.15"</span><span class="op">,</span></span>
+<span id="cb4-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: POSIX :: Linux"</span><span class="op">,</span></span>
+<span id="cb4-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: Microsoft :: Windows"</span><span class="op">,</span></span>
+<span id="cb4-15"><a aria-hidden="true" tabindex="-1"></a>    <span class="st">"Operating System :: MacOS"</span><span class="op">,</span></span>
+<span id="cb4-16"><a aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb4-17"><a aria-hidden="true" tabindex="-1"></a><span class="dt">urls</span> <span class="op">=</span> <span class="op">{ </span><span class="dt">"Documentation"</span><span class="op"> =</span> <span class="st">"https://github.com/*"</span><span class="op"> }</span></span>
+<span id="cb4-18"><a aria-hidden="true" tabindex="-1"></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span><span class="st">"numpy"</span><span class="op">]</span></span>
+<span id="cb4-19"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options]</span></span>
+<span id="cb4-21"><a aria-hidden="true" tabindex="-1"></a><span class="dt">include_package_data</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb4-22"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a aria-hidden="true" tabindex="-1"></a><span class="kw">[options.package_data]</span></span>
+<span id="cb4-24"><a aria-hidden="true" tabindex="-1"></a><span class="dt">muj_balik</span> <span class="op">=</span> <span class="op">[</span><span class="st">"src/muj_balik/py.typed"</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="python-balík---pyproject.toml---nastavení-nástrojů-1" class="slide level2">
 <h2>Python balík - <code>pyproject.toml</code> - nastavení nástrojů 1</h2>
@@ -478,6 +477,7 @@ Jan Caha
 <li>v čase se mohou měnit používané funkce, knihovny atd. a jen testy tyto změny dokáží zachytit dřív než se chyba reálně projeví</li>
 </ul></li>
 <li>“programátorská disciplína” - ke každému kódu by měla existovat dokumentace (klidně kratičká) a test</li>
+<li>je normální že pro některé funkce, je objem testů i výrazně větší než samotný kód funkce</li>
 </ul>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
