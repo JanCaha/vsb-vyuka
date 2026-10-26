@@ -61,4 +61,20 @@ execute:
 - funkce `createOneBandRaster()`
 - funkce `createMultiBandRaster()`
 
+## `QgsRasterCalculator`
+
+- třída pro výpočty nad rastrovými daty
+- inicializace s řadou vstupních parametrů (viz příklad)
+- nejdůležitější parametr - výraz k vypočtení a seznam rastrových vstupů (`QgsRasterCalculatorEntry`)
+- další parametry se pojí s výstupním rastrem
+- provede výpočet a uloží výsledek do výstupního rastru, mimo to udržuje v paměti i případnou chybovou hlášku
+
+## `QgsRasterCalculatorEntry`
+
+- třída pro definici vstupních rastrů pro `QgsRasterCalculator`
+- obsahuje informace o:
+  -  názvu proměnné ve výrazu, 
+  -  odkazu na rastrovou vrstvu
+  -  konkrétní číslo pásma
+
 # Dotazy?{.center}
