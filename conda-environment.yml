@@ -42,6 +42,8 @@ dependencies:
   - psycopg
   # GIS
   - qgis
+  - pdal
+  - hdf5
   # install using pip
   - pip:
     # pgis2
