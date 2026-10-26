@@ -2,7 +2,7 @@
 title: "Správa vlastního kódu pro [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2025-11-04
+date: 2026-10-26
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -18,7 +18,7 @@ execute:
 
 ## Funkce 
 
-- zjedodušení a zpřehlednění kódu
+- zjednodušení a zpřehlednění kódu
 - opakující se části kódu, znovupoužitelnost
 - zvýšení čitelnosti kódu
 - snížení chybovosti kódu
@@ -60,7 +60,7 @@ pip install . --upgrade
 ```
 - i v [conda]{.software} prostředí instalujeme přes [pip]{.software}, kvůli jednoduchosti 
 
-## Python balík - struktura nezbytný záaklad
+## Python balík - struktura nezbytný základ
 
 - `slozka_projektu` - pro [VS Code]{.software} a logické oddělení kódu - nemusí se jmenovat přímo jako balík
   - `src` - složka zdrojáků - zde vytvoříme složku s jménem balíku 
@@ -99,16 +99,15 @@ build-backend = "setuptools.build_meta"
 [project]
 readme = "README.md"
 description = "Popis balíku"
-requires-python = ">=3.8"
+requires-python = ">=3.12"
 keywords = ["klíčová", "slova"]
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
     "Operating System :: POSIX :: Linux",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: MacOS",
@@ -230,5 +229,6 @@ def test_plus():
 - pokud chcete mít kód pod kontrolou a mít jistotu, že funguje, jsou testy nutnost
      - v čase se mohou měnit používané funkce, knihovny atd. a jen testy tyto změny dokáží zachytit dřív než se chyba reálně projeví
 - "programátorská disciplína" - ke každému kódu by měla existovat dokumentace (klidně kratičká) a test
+- je normální že pro některé funkce, je objem testů i výrazně větší než samotný kód funkce
 
 # Dotazy?{.center} 
