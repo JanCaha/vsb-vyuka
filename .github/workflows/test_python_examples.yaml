@@ -39,12 +39,12 @@ jobs:
           echo "MONTH=$(date +%B)" >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Cache Conda
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         env:
           CACHE_NUMBER: 0
         with:
@@ -52,7 +52,7 @@ jobs:
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{hashFiles('conda-environment.yml') }}-${{ env.MONTH }}
           restore-keys: ${{ runner.os }}-conda-
 
-      - uses: conda-incubator/setup-miniconda@v3
+      - uses: conda-incubator/setup-miniconda@v4
         with:
           auto-update-conda: true
           activate-environment: pgis2
