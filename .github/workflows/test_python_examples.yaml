@@ -112,11 +112,6 @@ jobs:
             echo "Not running steps for PGIS4!"
           fi
 
-      - name: Add qgis to Conda
-        if: ${{ steps.pgis4_modified.outputs.modified }}
-        run: |
-          conda install qgis
-
       - name: PGIS4 data
         if: ${{ steps.pgis4_modified.outputs.modified }}
         run: |
