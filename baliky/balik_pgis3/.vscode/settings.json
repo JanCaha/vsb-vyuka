@@ -1,4 +1,25 @@
 {
+    "python.terminal.activateEnvironment": true,
+    "notebook.formatOnSave.enabled": true,
+    "notebook.defaultFormatter": "ms-python.black-formatter",
+    "notebook.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+        "**/_freeze": true,
+        "**/.quarto": true,
+        "**/.githooks": true
+    },
     "python.testing.pytestArgs": [
         "tests"
     ],
