@@ -21,7 +21,7 @@ cd $BASE_DIR/baliky
 # smaž nepotřebné složky
 find "balik_pgis2" -type d \( -name build  -o -name .pytest_cache -o -name __pycache__ -o -name "*.egg-info" \) -exec rm -rf {} + 2>/dev/null
 
-zip -r "$TMP_FILE" "balik_pgis2"
+zip -rFS "$TMP_FILE" "balik_pgis2"
 rsync -c "$TMP_FILE" "$FILE"
 
 echo "✓ PGIS2 balíček sbalen: $FILE"
@@ -36,7 +36,7 @@ cd $BASE_DIR/baliky
 # smaž nepotřebné složky
 find "balik_pgis3" -type d \( -name build  -o -name .pytest_cache -o -name __pycache__ -o -name "*.egg-info" \) -exec rm -rf {} + 2>/dev/null
 
-zip -r "$TMP_FILE" "balik_pgis3"
+zip -rFS "$TMP_FILE" "balik_pgis3"
 rsync -c "$TMP_FILE" "$FILE"
 echo "✓ PGIS3 balíček sbalen: $FILE"
 echo "=============================="
