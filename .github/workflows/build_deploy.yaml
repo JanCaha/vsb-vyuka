@@ -85,7 +85,8 @@ jobs:
         id: cache_freeze_idg
         uses: actions/cache@v6
         with:
-          path: _freeze/IDG/prezentace
+          path: |
+            _freeze/subjects/IDG/prezentace
           key: ${{ runner.os }}-freeze-idg-${{ hashFiles('subjects/IDG/prezentace/**/*.qmd', 'subjects/idg.qmd', '_quarto.yml') }}
 
       - name: Cache Conda
