@@ -180,7 +180,7 @@
     "href": "subjects/pvgis4.html#prezentace",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-11-04\n\n\nProcessingové nástroje QGIS Python API\n\n\n\n\n\n\n2025-11-11\n\n\nProjekt a Layout QGIS Python API\n\n\n\n\n\n\n2026-09-14\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-09-21\n\n\nZáklad QGIS Python API\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data v QGIS Python API\n\n\n\n\n\n\n2026-10-12\n\n\nGeometrie v QGIS Python API\n\n\n\n\n\n\n2026-10-26\n\n\nRastrová data v QGIS Python API\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-11-11\n\n\nProjekt a Layout QGIS Python API\n\n\n\n\n\n\n2026-09-14\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-09-21\n\n\nZáklad QGIS Python API\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data v QGIS Python API\n\n\n\n\n\n\n2026-10-12\n\n\nGeometrie v QGIS Python API\n\n\n\n\n\n\n2026-10-26\n\n\nRastrová data v QGIS Python API\n\n\n\n\n\n\n2026-11-02\n\n\nProcessingové nástroje QGIS Python API\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -631,32 +631,53 @@
     "text": "Načtení projektu\n\nbuď práce s aktuálním projektem nebo s konkrétním projektem uloženým na disku\n\naprx = arcpy.mp.ArcGISProject(\"CURRENT\")\n## nebo\naprx = arcpy.mp.ArcGISProject(r\"C:\\Projects\\YosemiteNP\\Yosemite.aprx\")"
   },
   {
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#hlavní-třídy-arcpy.mp",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#hlavní-třídy-arcpy.mp",
+    "title": "Mapping module ArcPy",
+    "section": "Hlavní třídy arcpy.mp",
+    "text": "Hlavní třídy arcpy.mp\n\nArcGISProject — vstupní bod do projektu (.aprx), seznam map, layoutů, stylů a datových zdrojů\nMap — mapové okno v projektu, obsahuje vrstvy a zobrazení dat\nLayer — jedna vrstva v mapě, z ní se získávají vlastnosti, filtry a symbologie\nLayout — stránka s mapovými rámy, legendami, textem a exportem do PDF/PNG\nMapFrame — rámec mapy na layoutu, zobrazuje konkrétní Map\nTable — tabulky připojené k projektu či vrstvě\ndalší: Bookmark, Report, Camera, GraphicElement, TextElement\ndokumentace: Alphabetical list of arcpy.mp classes"
+  },
+  {
     "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#arcgisproject",
     "href": "subjects/PGIS3/prezentace/08_mappping_module.html#arcgisproject",
     "title": "Mapping module ArcPy",
     "section": "ArcGISProject",
-    "text": "ArcGISProject\n\nhlavní třída pro práci - rozcestník k dalším položkám\nřada funkcí pro získání a tvorbu prvků\ndokumentace\nfunkce např. listLayouts(), listMaps(), listReports(), nebo listBrokenDataSources()\nfunkce pro tvorbu nových prvků - createLayout(), createMap(), createTextElement() a další\nfunkce deleteItem() pro smazání prvku\npři modifikaci buď nutné volat save() nebo saveACopy()"
+    "text": "ArcGISProject\n\nhlavní třída pro práci - rozcestník k dalším položkám\nřada funkcí pro získání a tvorbu prvků\ndokumentace\nfunkce např. listLayouts(), listMaps(), listReports(), nebo listBrokenDataSources()\nfunkce pro tvorbu nových prvků - createLayout(), createMap(), createTextElement() a další\nfunkce deleteItem() pro smazání prvku\npři modifikaci buď nutné volat save() nebo saveACopy()\nArcGISProject - příklad\n\naprx = arcpy.mp.ArcGISProject(\"CURRENT\")\nprint(aprx.filePath)\nprint(aprx.listMaps())\nprint(aprx.listLayouts())"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#map",
     "href": "subjects/PGIS3/prezentace/08_mappping_module.html#map",
     "title": "Mapping module ArcPy",
     "section": "Map",
-    "text": "Map\n\nindividuální mapové okno v projektu\nlze z něj získat vrstvy listLayers()\nlze přidávat vrstvy addLayer() nebo addLayerToGroup() či addTable() ale i insertLayer()"
+    "text": "Map\n\nindividuální mapové okno v projektu\nlze z něj získat vrstvy listLayers()\nlze přidávat vrstvy addLayer(), addLayerToGroup(), addTable(), insertLayer()\npracuje se zobrazením, filtry, výběry a symbologií vrstvy\n\nproject = arcpy.mp.ArcGISProject(\"CURRENT\")\nmap = project.listMaps(\"*\")[0]\nfor lyr in map.listLayers():\n    print(f\"{lyr.name} - vektorová vrstva: {lyr.isFeatureLayer}, rasterová vrstva: {lyr.isRasterLayer}\")"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#layer",
     "href": "subjects/PGIS3/prezentace/08_mappping_module.html#layer",
     "title": "Mapping module ArcPy",
     "section": "Layer",
-    "text": "Layer\n\nbuď prvek Map nebo je lze ukládat do lyr či lyrx souborů\npřistup k vlastnostem vrstvy, mimo jiné i k nastavené vizualizace (renderer či symbologie)"
+    "text": "Layer\n\nbuď vrstva v Map, nebo uložený soubor lyr / lyrx\npřístup k vlastnostem vrstvy, definici dotazu, časovým údajům a vizualizaci\nčasto se mění symbology, renderer, definitionQuery, visibility\nv dokumentaci je rozebráno mnoho typů rendererů\n\nlyr = map.listLayers(\"Obce\")[0]\nprint(lyr.name)\nprint(lyr.symbology)\nprint(lyr.isFeatureLayer)"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#layout-a-mapframe",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#layout-a-mapframe",
+    "title": "Mapping module ArcPy",
+    "section": "Layout a MapFrame",
+    "text": "Layout a MapFrame\n\nLayout představuje stránku mapy pro export a publikaci\nobsahuje elementy: MapFrame, Legend, TextElement, PictureElement, GraphicElement\nMapFrame zobrazuje konkrétní Map na layoutu a umožňuje export do PDF/PNG\n\nlyt = aprx.listLayouts(\"Výstup\")[0]\nmap_frame = lyt.listElements(\"MAPFRAME_ELEMENT\", \"Mapa 1\")[0]\nprint(map_frame.map.name)\nlyt.exportToPDF(r\"C:\\Temp\\vystup.pdf\")"
+  },
+  {
+    "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#table",
+    "href": "subjects/PGIS3/prezentace/08_mappping_module.html#table",
+    "title": "Mapping module ArcPy",
+    "section": "Table",
+    "text": "Table\n\ntabulková data v projektu nebo v vrstvě\nslouží pro práci s atributy, připojenými daty a datovými zdroji\nmožné propojení s mapami a layouty v procesu automatizace\n\nfor tbl in mapa.listTables():\n    print(tbl.name)"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#renderery",
     "href": "subjects/PGIS3/prezentace/08_mappping_module.html#renderery",
     "title": "Mapping module ArcPy",
     "section": "Renderery",
-    "text": "Renderery\n\nrůzné objekty dle typu\npříklad zde"
+    "text": "Renderery\n\nrůzné objekty dle typu\npříklad zde\nv praxi se mění u vrstvy lyr.symbology.renderer nebo přes sym.updateRenderer()"
   },
   {
     "objectID": "subjects/PGIS3/prezentace/08_mappping_module.html#export-do-souboru",
@@ -2133,7 +2154,7 @@
     "href": "subjects/IDG/prezentace/02_uvod_r.html#komentáře",
     "title": "Základní orientace v jazyce R",
     "section": "Komentáře",
-    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.17208401 -0.55288447 -0.12255137 -0.01455353 -0.04373494"
+    "text": "Komentáře\n\nv kódu R se zapisují pomocí #\n\n\n# vstupní náhodný vektor o 5 číslech\nx &lt;- runif(5, 0, 1)\n\n# funkce pro výpočet logaritmu o základu 10\ny &lt;- log(x, base = 10)\n\n# tisk výsledku\ny\n\n[1] -0.99271598 -0.02511787 -0.99083274 -0.05833378 -0.32103075"
   },
   {
     "objectID": "subjects/IDG/prezentace/02_uvod_r.html#komplexní-datové-struktury",
@@ -2672,7 +2693,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f261489d250&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f9c84377500&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",
@@ -3855,7 +3876,7 @@
     "href": "subjects/PGIS4/prezentace/06_qgis_nastroje.html#qgsprocessingparameterdefinition-a-odvozené-třídy",
     "title": "Processingové nástroje QGIS Python API",
     "section": "QgsProcessingParameterDefinition a odvozené třídy",
-    "text": "QgsProcessingParameterDefinition a odvozené třídy\n\nvelká řada tříd pro různé typy parametrů\numožňují nastavení daného parametru a tvorbu jeho GUI v dialogu\nlze je pak snadno načíst a zpracovat pomocí funkcí self.parameterAs...() v QgsProcessingAlgorithm objektu"
+    "text": "QgsProcessingParameterDefinition a odvozené třídy\n\nvelká řada tříd pro různé typy parametrů\numožňují nastavení daného parametru a tvorbu jeho GUI v dialogu\nlze je pak snadno načíst a zpracovat pomocí funkcí self.parameterAs...() v QgsProcessingAlgorithm objektu\ntřídy QgsProcessingParameter* reprezentují jednotlivé typy vstupních parametrů\nřada parametrů pro detailnější specifikaci, např. u vektorové vrstvy typ geometrie"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/06_qgis_nastroje.html#dvě-podstatné-třídy-qgsprocessingcontext-a-qgsprocessingfeedback",
@@ -3863,6 +3884,13 @@
     "title": "Processingové nástroje QGIS Python API",
     "section": "Dvě podstatné třídy QgsProcessingContext a QgsProcessingFeedback",
     "text": "Dvě podstatné třídy QgsProcessingContext a QgsProcessingFeedback\n\nobě figurují ve funkci processAlgorithm()\nQgsProcessingFeedback slouží ke komunikaci s uživatele\nQgsProcessingContext obsahuje informace o prostředí, ve kterém se algoritmus provádí (často není třeba, ale může se hodit)"
+  },
+  {
+    "objectID": "subjects/PGIS4/prezentace/06_qgis_nastroje.html#načtení-parametrů-pro-zpracování",
+    "href": "subjects/PGIS4/prezentace/06_qgis_nastroje.html#načtení-parametrů-pro-zpracování",
+    "title": "Processingové nástroje QGIS Python API",
+    "section": "Načtení parametrů pro zpracování",
+    "text": "Načtení parametrů pro zpracování\n\nfunkce self.parameterAs...() slouží k načtení hodnoty parametru z objektu parameters v QgsProcessingAlgorithm objektu\nnapříklad self.parameterAsString(parameters, 'parametr', context) pro načtení textového parametru\nobdobné funkce pro další typy parametrů, např self.parameterAsVectorLayer(parameters, 'parametr', context) pro načtení vektorové vrstvy"
   },
   {
     "objectID": "subjects/PGIS4/prezentace/06_qgis_nastroje.html#funkce-pro-kontrolu-vstupních-dat",
@@ -4094,7 +4122,7 @@
     "href": "subjects/pgis3.html#prezentace",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Prezentace",
-    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-11-18\n\n\nMapping module ArcPy\n\n\n\n\n\n\n2025-12-02\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2026-09-14\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-09-21\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2026-09-21\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2026-10-12\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2026-10-12\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2026-10-19\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2026-10-26\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\nNo matching items",
+    "text": "Prezentace\n\n\n\n\n\n\nDatum\n\n\n\nPrezentace\n\n\n\n\n\n\n\n\n2025-12-02\n\n\nPython Toolbox ArcPy\n\n\n\n\n\n\n2026-09-14\n\n\nÚvodní hodina\n\n\n\n\n\n\n2026-09-21\n\n\nZáklad ArcPy pro ArcGIS Pro\n\n\n\n\n\n\n2026-09-21\n\n\nObecné funkce ArcPy\n\n\n\n\n\n\n2026-10-12\n\n\nEditace vektorových dat v ArcPy\n\n\n\n\n\n\n2026-10-12\n\n\nGeometrie v ArcPy\n\n\n\n\n\n\n2026-10-19\n\n\nRastrová data v ArcPy\n\n\n\n\n\n\n2026-10-26\n\n\nSpráva vlastního kódu pro ArcPy\n\n\n\n\n\n\n2026-11-02\n\n\nMapping module ArcPy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"
@@ -4127,7 +4155,7 @@
     "href": "subjects/pgis3.html#ukázkové-kódy",
     "title": "Programování v GIS 3 (PGIS3)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2025-11-11\n\n\nZkušební balík s testy\n\n\n\n\n\n\n2025-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2025-12-02\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2025-12-02\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2026-09-21\n\n\nVýpisy dat\n\n\n\n\n\n\n2026-09-21\n\n\nutils.py\n\n\n\n\n\n\n2026-10-12\n\n\nFunkce Describe\n\n\n\n\n\n\n2026-10-12\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2026-10-12\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2026-10-12\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2026-10-19\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2026-10-19\n\n\nMěření geometrie\n\n\n\n\n\n\n2026-10-19\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2026-10-26\n\n\nRastrová data\n\n\n\n\n\n\n2026-10-26\n\n\nTvorba rastru\n\n\n\n\n\n\n2026-10-26\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2025-11-18\n\n\nPython toolbox s jednoduchým nástrojem\n\n\n\n\n\n\n2025-12-02\n\n\nǓprava projektu a vrstvy v něm\n\n\n\n\n\n\n2025-12-02\n\n\nZměny Layoutu a jeho export\n\n\n\n\n\n\n2026-09-21\n\n\nVýpisy dat\n\n\n\n\n\n\n2026-09-21\n\n\nutils.py\n\n\n\n\n\n\n2026-10-12\n\n\nFunkce Describe\n\n\n\n\n\n\n2026-10-12\n\n\nÚvod do kurzorů - vektorová data\n\n\n\n\n\n\n2026-10-12\n\n\nKurzory - editace vektorových dat\n\n\n\n\n\n\n2026-10-12\n\n\nKurzory - kopírování vektorových dat\n\n\n\n\n\n\n2026-10-19\n\n\nKonverze geometrie mezi souřadnicovými systémy\n\n\n\n\n\n\n2026-10-19\n\n\nMěření geometrie\n\n\n\n\n\n\n2026-10-19\n\n\nProstorové vztahy geometrií\n\n\n\n\n\n\n2026-10-26\n\n\nRastrová data\n\n\n\n\n\n\n2026-10-26\n\n\nTvorba rastru\n\n\n\n\n\n\n2026-10-26\n\n\nRaster Cell Iterator - procházení přes buňky rastru\n\n\n\n\n\n\n2026-11-02\n\n\nZkušební balík s testy\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 3"

@@ -6,11 +6,11 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.19">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-17888a1159294d3eb470f19f6f52f5a5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.20">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-11-04">
+  <meta name="dcterms.date" content="2026-11-02">
   <title>Výuka - Jan Caha – Processingové nástroje QGIS Python API</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-11-04</p>
+  <p class="date">2026-11-02</p>
 </section>
 <section id="processingové-nástroje" class="slide level2">
 <h2>Processingové nástroje</h2>
@@ -240,6 +240,8 @@ Jan Caha
 <li>velká řada tříd pro různé typy parametrů</li>
 <li>umožňují nastavení daného parametru a tvorbu jeho GUI v dialogu</li>
 <li>lze je pak snadno načíst a zpracovat pomocí funkcí <code>self.parameterAs...()</code> v <code>QgsProcessingAlgorithm</code> objektu</li>
+<li>třídy <code>QgsProcessingParameter*</code> reprezentují jednotlivé typy vstupních parametrů</li>
+<li>řada parametrů pro detailnější specifikaci, např. u vektorové vrstvy typ geometrie</li>
 </ul>
 </section>
 <section id="dvě-podstatné-třídy-qgsprocessingcontext-a-qgsprocessingfeedback" class="slide level2">
@@ -248,6 +250,14 @@ Jan Caha
 <li>obě figurují ve funkci <code>processAlgorithm()</code></li>
 <li><code>QgsProcessingFeedback</code> slouží ke komunikaci s uživatele</li>
 <li><code>QgsProcessingContext</code> obsahuje informace o prostředí, ve kterém se algoritmus provádí (často není třeba, ale může se hodit)</li>
+</ul>
+</section>
+<section id="načtení-parametrů-pro-zpracování" class="slide level2">
+<h2>Načtení parametrů pro zpracování</h2>
+<ul>
+<li>funkce <code>self.parameterAs...()</code> slouží k načtení hodnoty parametru z objektu <code>parameters</code> v <code>QgsProcessingAlgorithm</code> objektu</li>
+<li>například <code>self.parameterAsString(parameters, 'parametr', context)</code> pro načtení textového parametru</li>
+<li>obdobné funkce pro další typy parametrů, např <code>self.parameterAsVectorLayer(parameters, 'parametr', context)</code> pro načtení vektorové vrstvy</li>
 </ul>
 </section>
 <section id="funkce-pro-kontrolu-vstupních-dat" class="slide level2">

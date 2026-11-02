@@ -6,11 +6,11 @@
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.10.19">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-17888a1159294d3eb470f19f6f52f5a5.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.20">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-11-18">
+  <meta name="dcterms.date" content="2026-11-02">
   <title>Výuka - Jan Caha – Mapping module ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-11-18</p>
+  <p class="date">2026-11-02</p>
 </section>
 <section id="mapping-module" class="slide level2">
 <h2>Mapping module</h2>
@@ -235,6 +235,19 @@ Jan Caha
 <span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="co">## nebo</span></span>
 <span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="vs">r"C:</span><span class="er">\</span><span class="vs">Projects</span><span class="er">\</span><span class="vs">YosemiteNP</span><span class="er">\</span><span class="vs">Yosemite</span><span class="dv">.</span><span class="vs">aprx"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+<section id="hlavní-třídy-arcpy.mp" class="slide level2">
+<h2>Hlavní třídy <code>arcpy.mp</code></h2>
+<ul>
+<li><p><code>ArcGISProject</code> — vstupní bod do projektu (<code>.aprx</code>), seznam map, layoutů, stylů a datových zdrojů</p></li>
+<li><p><code>Map</code> — mapové okno v projektu, obsahuje vrstvy a zobrazení dat</p></li>
+<li><p><code>Layer</code> — jedna vrstva v mapě, z ní se získávají vlastnosti, filtry a symbologie</p></li>
+<li><p><code>Layout</code> — stránka s mapovými rámy, legendami, textem a exportem do PDF/PNG</p></li>
+<li><p><code>MapFrame</code> — rámec mapy na layoutu, zobrazuje konkrétní <code>Map</code></p></li>
+<li><p><code>Table</code> — tabulky připojené k projektu či vrstvě</p></li>
+<li><p>další: <code>Bookmark</code>, <code>Report</code>, <code>Camera</code>, <code>GraphicElement</code>, <code>TextElement</code></p></li>
+<li><p>dokumentace: <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/alphabeticallistofclasses.html">Alphabetical list of arcpy.mp classes</a></p></li>
+</ul>
+</section>
 <section id="arcgisproject" class="slide level2">
 <h2><code>ArcGISProject</code></h2>
 <ul>
@@ -245,29 +258,67 @@ Jan Caha
 <li>funkce pro tvorbu nových prvků - <code>createLayout()</code>, <code>createMap()</code>, <code>createTextElement()</code> a další</li>
 <li>funkce <code>deleteItem()</code> pro smazání prvku</li>
 <li>při modifikaci buď nutné volat <code>save()</code> nebo <code>saveACopy()</code></li>
+<li><h2 id="arcgisproject---příklad"><code>ArcGISProject</code> - příklad</h2></li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"CURRENT"</span>)</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(aprx.filePath)</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(aprx.listMaps())</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(aprx.listLayouts())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="map" class="slide level2">
 <h2><code>Map</code></h2>
 <ul>
 <li>individuální mapové okno v projektu</li>
 <li>lze z něj získat vrstvy <code>listLayers()</code></li>
-<li>lze přidávat vrstvy <code>addLayer()</code> nebo <code>addLayerToGroup()</code> či <code>addTable()</code> ale i <code>insertLayer()</code></li>
-<li></li>
+<li>lze přidávat vrstvy <code>addLayer()</code>, <code>addLayerToGroup()</code>, <code>addTable()</code>, <code>insertLayer()</code></li>
+<li>pracuje se zobrazením, filtry, výběry a symbologií vrstvy</li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>project <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"CURRENT"</span>)</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">map</span> <span class="op">=</span> project.listMaps(<span class="st">"*"</span>)[<span class="dv">0</span>]</span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lyr <span class="kw">in</span> <span class="bu">map</span>.listLayers():</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>lyr<span class="sc">.</span>name<span class="sc">}</span><span class="ss"> - vektorová vrstva: </span><span class="sc">{</span>lyr<span class="sc">.</span>isFeatureLayer<span class="sc">}</span><span class="ss">, rasterová vrstva: </span><span class="sc">{</span>lyr<span class="sc">.</span>isRasterLayer<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="layer" class="slide level2">
 <h2><code>Layer</code></h2>
 <ul>
-<li>buď prvek <code>Map</code> nebo je lze ukládat do <code>lyr</code> či <code>lyrx</code> souborů</li>
-<li>přistup k vlastnostem vrstvy, mimo jiné i k nastavené vizualizace (renderer či symbologie)</li>
+<li>buď vrstva v <code>Map</code>, nebo uložený soubor <code>lyr</code> / <code>lyrx</code></li>
+<li>přístup k vlastnostem vrstvy, definici dotazu, časovým údajům a vizualizaci</li>
+<li>často se mění <code>symbology</code>, <code>renderer</code>, <code>definitionQuery</code>, <code>visibility</code></li>
+<li>v dokumentaci je rozebráno mnoho typů rendererů</li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a>lyr <span class="op">=</span> <span class="bu">map</span>.listLayers(<span class="st">"Obce"</span>)[<span class="dv">0</span>]</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lyr.name)</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lyr.symbology)</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lyr.isFeatureLayer)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="layout-a-mapframe" class="slide level2">
+<h2><code>Layout</code> a <code>MapFrame</code></h2>
+<ul>
+<li><code>Layout</code> představuje stránku mapy pro export a publikaci</li>
+<li>obsahuje elementy: <code>MapFrame</code>, <code>Legend</code>, <code>TextElement</code>, <code>PictureElement</code>, <code>GraphicElement</code></li>
+<li><code>MapFrame</code> zobrazuje konkrétní <code>Map</code> na layoutu a umožňuje export do PDF/PNG</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>lyt <span class="op">=</span> aprx.listLayouts(<span class="st">"Výstup"</span>)[<span class="dv">0</span>]</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a>map_frame <span class="op">=</span> lyt.listElements(<span class="st">"MAPFRAME_ELEMENT"</span>, <span class="st">"Mapa 1"</span>)[<span class="dv">0</span>]</span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(map_frame.<span class="bu">map</span>.name)</span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>lyt.exportToPDF(<span class="vs">r"C:</span><span class="er">\</span><span class="vs">Temp</span><span class="ch">\v</span><span class="vs">ystup</span><span class="dv">.</span><span class="vs">pdf"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="table" class="slide level2">
+<h2><code>Table</code></h2>
+<ul>
+<li>tabulková data v projektu nebo v vrstvě</li>
+<li>slouží pro práci s atributy, připojenými daty a datovými zdroji</li>
+<li>možné propojení s mapami a layouty v procesu automatizace</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> tbl <span class="kw">in</span> mapa.listTables():</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(tbl.name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="renderery" class="slide level2">
 <h2>Renderery</h2>
 <ul>
 <li>různé objekty dle typu</li>
 <li>příklad <a href="https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/graduatedsymbolsrenderer-class.htm">zde</a></li>
+<li>v praxi se mění u vrstvy <code>lyr.symbology.renderer</code> nebo přes <code>sym.updateRenderer()</code></li>
 </ul>
 </section>
 <section id="export-do-souboru" class="slide level2">
@@ -275,16 +326,16 @@ Jan Caha
 <ul>
 <li>exporty layoutu do grafického souboru (typicky PDF)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"current"</span>)</span>
-<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>lyt <span class="op">=</span> p.listLayouts()[<span class="dv">0</span>]</span>
-<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> arcpy.mp.CreateExportFormat(<span class="st">"PDF"</span>, <span class="vs">r"C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output1</span><span class="dv">.</span><span class="vs">pdf"</span>)</span>
-<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span>
-<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>pdf.resolution <span class="op">=</span> <span class="dv">300</span></span>
-<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>pdf.filePath <span class="op">=</span> <span class="vs">r"C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output2</span><span class="dv">.</span><span class="vs">pdf"</span></span>
-<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"current"</span>)</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>lyt <span class="op">=</span> p.listLayouts()[<span class="dv">0</span>]</span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> arcpy.mp.CreateExportFormat(<span class="st">"PDF"</span>, <span class="vs">r"C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output1</span><span class="dv">.</span><span class="vs">pdf"</span>)</span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>pdf.resolution <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>pdf.filePath <span class="op">=</span> <span class="vs">r"C:</span><span class="er">\</span><span class="vs">Temp</span><span class="er">\</span><span class="vs">PDF_output2</span><span class="dv">.</span><span class="vs">pdf"</span></span>
+<span id="cb7-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a aria-hidden="true" tabindex="-1"></a>lyt.export(pdf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>
