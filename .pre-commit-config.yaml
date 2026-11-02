@@ -27,7 +27,7 @@ repos:
         language: script
         files: ^baliky/
         pass_filenames: false
-        stages: [pre-push]
+        stages: [pre-commit]
 
       - id: check-qmd-date-year
         name: Check QMD front matter date year
