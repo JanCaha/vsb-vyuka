@@ -2,7 +2,7 @@
 title: "Processingové nástroje [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2025-11-04
+date: 2026-11-02
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -35,12 +35,20 @@ execute:
 - velká řada tříd pro různé typy parametrů
 - umožňují nastavení daného parametru a tvorbu jeho GUI v dialogu
 - lze je pak snadno načíst a zpracovat pomocí funkcí `self.parameterAs...()` v `QgsProcessingAlgorithm` objektu
+- třídy `QgsProcessingParameter*` reprezentují jednotlivé typy vstupních parametrů
+- řada parametrů pro detailnější specifikaci, např. u vektorové vrstvy typ geometrie
 
 ## Dvě podstatné třídy `QgsProcessingContext` a `QgsProcessingFeedback`
 
 - obě figurují ve funkci `processAlgorithm()`
 - `QgsProcessingFeedback` slouží ke komunikaci s uživatele 
 - `QgsProcessingContext` obsahuje informace o prostředí, ve kterém se algoritmus provádí (často není třeba, ale může se hodit)
+
+## Načtení parametrů pro zpracování
+
+- funkce `self.parameterAs...()` slouží k načtení hodnoty parametru z objektu `parameters` v `QgsProcessingAlgorithm` objektu
+- například `self.parameterAsString(parameters, 'parametr', context)` pro načtení textového parametru
+- obdobné funkce pro další typy parametrů, např `self.parameterAsVectorLayer(parameters, 'parametr', context)` pro načtení vektorové vrstvy
 
 ## Funkce pro kontrolu vstupních dat
 
