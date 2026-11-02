@@ -1,72 +1,90 @@
 - title: "Úvod do vektorových dat"
   author: Jan Caha
   date: 2026-09-21
+  year: 2026
   path: "PGIS4/skripty/01_vektorová_vrstva.py"
 - title: "Vektorová data - výběr prvků"
   author: Jan Caha
   date: 2026-09-21
+  year: 2026
   path: "PGIS4/skripty/02_vyber_prvku.py"
 - title: "Vektorová data - tvorba dat"
   author: Jan Caha
   date: 2026-09-21
+  year: 2026
   path: "PGIS4/skripty/03_tvorby_polygonove_vrstvy.py"
 - title: "Ukázka rozhraní v Pythonu"
   author: Jan Caha
   date: 2026-10-12
+  year: 2026
   path: "PGIS4/skripty/04_rozhrani.py"
 - title: "Rozhraní v QgsAbstractGeometry"
   author: Jan Caha
   date: 2026-10-19
+  year: 2026
   path: "PGIS4/skripty/05_qgsabstractgeometry.py"
 - title: "Operace s geometriemi"
   author: Jan Caha
   date: 2026-10-19
+  year: 2026
   path: "PGIS4/skripty/06_operace_geometrie.py"
 - title: "Výpočty s elipsoidy"
   author: Jan Caha
   date: 2026-10-19
+  year: 2026
   path: "PGIS4/skripty/07_geometrie_vypocty.py"
 - title: "Rastrová data"
   author: Jan Caha
   date: 2026-10-26
+  year: 2026
   path: "PGIS4/skripty/08_rastrova_data.py"
 - title: "Editace hodnot rastru"
   author: Jan Caha
   date: 2026-10-26
+  year: 2026
   path: "PGIS4/skripty/09_editace_hodnot_rastru.py"
 - title: "Kopie rastru a jeho hodnot"
   author: Jan Caha
   date: 2026-10-26
+  year: 2026
   path: "PGIS4/skripty/10_kopie_rastru.py"
 - title: "Rastrový kalkulátor - příklad"
   author: Jan Caha
   date: 2026-10-26
+  year: 2026
   path: "PGIS4/skripty/11_raster_calculator.py"
 - title: "Nástroj pro vektorová data"
   author: Jan Caha
-  date: 2025-11-04
+  date: 2026-11-04
+  year: 2026
   path: "PGIS4/skripty/nastroj1.py"
 - title: "Algoritmus s více kroky"
   author: Jan Caha
-  date: 2025-11-18
+  date: 2026-11-18
+  year: 2026
   path: "PGIS4/skripty/nástroj2.py"
 - title: "Ukázkový Plugin"
   author: Jan Caha
-  date: 2024-11-18
+  date: 2026-11-18
+  year: 2026
   path: "PGIS4/skripty/mujplugin.zip"
 - title: "Editace projektu a layoutu"
   author: Jan Caha
-  date: 2025-11-25
+  date: 2026-11-25
+  year: 2026
   path: "PGIS4/skripty/12_projekt_layout.py"
 - title: "GUI nástroj na kreslení polygonu"
   author: Jan Caha
-  date: 2025-11-25
+  date: 2026-11-25
+  year: 2026
   path: "PGIS4/skripty/13_gui_nastroj.py"
 - title: "GDAL tvorba náhodného rastru"
   author: Jan Caha
-  date: 2025-10-21
+  date: 2026-10-21
+  year: 2026
   path: "PGIS4/skripty/generate_random_raster_gdal.py"
 - title: "Utils"
   author: Jan Caha
-  date: 2025-09-30
+  date: 2026-09-30
+  year: 2026
   path: "PGIS4/skripty/utils.py"

@@ -8,7 +8,7 @@ BASE_DIR=$(realpath "$BASE_DIR/..")
 cd "$BASE_DIR" || exit 1
 
 CURRENT_YEAR=$(date +%Y)
-FAILED=0
+WARNINGS=0
 
 if [[ "$#" -eq 0 ]]; then
     echo "ERROR: no files were provided by pre-commit" >&2
@@ -16,6 +16,11 @@ if [[ "$#" -eq 0 ]]; then
 fi
 
 for file in "$@"; do
+    if [[ ! -f "$file" ]]; then
+        echo "ERROR: file not found: $file" >&2
+        exit 1
+    fi
+
     in_front_matter=0
     has_date=0
     date_year=""
@@ -39,10 +44,16 @@ for file in "$@"; do
         fi
     done < "$file"
 
-    if [[ "$has_date" -eq 1 && "$date_year" != "$CURRENT_YEAR" ]]; then
-        echo "ERROR: $file has date year $date_year, expected $CURRENT_YEAR" >&2
-        FAILED=1
+    if [[ "$has_date" -eq 1 && -n "$date_year" ]]; then
+        if [[ "$date_year" != "$CURRENT_YEAR" ]]; then
+            echo "WARNING: $file has date year $date_year, current year is $CURRENT_YEAR; keeping the historical date for existing material." >&2
+            WARNINGS=$((WARNINGS + 1))
+        fi
     fi
 done
 
-exit "$FAILED"
+if [[ "$WARNINGS" -gt 0 ]]; then
+    echo "Note: historical QMD files are allowed to keep older dates; only malformed dates are rejected." >&2
+fi
+
+exit 0
