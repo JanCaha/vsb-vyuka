@@ -39,6 +39,7 @@ for file in "$@"; do
     fi
 
     file_date="$(yq -r --arg target_path "$relative_path" '.[] | select(.path == $target_path or .path == ("subjects/" + $target_path)) | .date' "$description_yaml" | head -n 1)"
+    file_year_field="$(yq -r --arg target_path "$relative_path" '.[] | select(.path == $target_path or .path == ("subjects/" + $target_path)) | .year // ""' "$description_yaml" | head -n 1)"
 
     if [[ -z "$file_date" ]]; then
         echo "ERROR: $description_yaml has no matching entry for $file" >&2
@@ -49,6 +50,17 @@ for file in "$@"; do
         file_year=${BASH_REMATCH[1]}
     else
         echo "ERROR: $description_yaml has an unsupported date format for $file: $file_date" >&2
+        exit 1
+    fi
+
+    if [[ -n "$file_year_field" && "$file_year_field" =~ ^([0-9]{4}) ]]; then
+        yaml_year=${BASH_REMATCH[1]}
+    else
+        yaml_year=""
+    fi
+
+    if [[ -n "$yaml_year" && "$yaml_year" != "$CURRENT_YEAR" ]]; then
+        echo "ERROR: $description_yaml has year $yaml_year for $file, expected $CURRENT_YEAR" >&2
         exit 1
     fi
 
