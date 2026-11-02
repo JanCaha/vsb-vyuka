@@ -1,20 +1,26 @@
 from pathlib import Path
 
 import arcpy
-import muj_balik
-import muj_balik.location
-import muj_balik.utils
+from pgis3 import umisteni_baliku
+from pgis3.utils import is_projected, normalize_name
 
 
 def test_umisteni_baliku():
-    folder = muj_balik.location.umisteni_baliku()
+    folder = umisteni_baliku()
     assert Path(folder).exists()
 
 
 def test_is_projected():
     crs = arcpy.SpatialReference(4326)
-    assert muj_balik.utils.is_projected(crs) is False
-    assert not muj_balik.utils.is_projected(crs)
+    assert is_projected(crs) is False
+    assert not is_projected(crs)
 
     crs = arcpy.SpatialReference(5514)
-    assert muj_balik.utils.is_projected(crs)
+    assert is_projected(crs)
+
+
+def test_normalize_name_variants():
+    assert normalize_name("Městské části 2024") == "mestske_casti_2024"
+    assert normalize_name("Obec Č. 5") == "obec_c_5"
+    assert normalize_name("  Praha-západ  ") == "praha_zapad"
+    assert normalize_name("A/B\\C") == "a_b_c"

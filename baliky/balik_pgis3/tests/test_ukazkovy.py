@@ -21,3 +21,13 @@ def test_ukazka_3():
     result = 0.1 + 0.1 + 0.1
     assert result == pytest.approx(0.3, abs=1e-6)
     assert isinstance(result, float)
+
+
+def test_ukazka_4():
+    with pytest.raises(ZeroDivisionError):
+        result = 1 / 0
+
+
+def test_ukazka_5():
+    with pytest.raises(TypeError):
+        result = 1 + "1"
