@@ -144,7 +144,7 @@ Vynechání složek např. při prohledávání souborů
         },
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-python.black-formatter",
-    }
+    },
      // nastavení pro notebooky - formátování, organizace importů a další úpravy při ukládání
     "notebook.formatOnSave.enabled": true,
     "notebook.defaultFormatter": "ms-python.black-formatter",
