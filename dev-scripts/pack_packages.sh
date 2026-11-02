@@ -5,6 +5,14 @@
 BASE_DIR=$(dirname "$(realpath "$0")")
 BASE_DIR=$(realpath "$BASE_DIR/..")
 
+function create_deterministic_zip() {
+    local source_dir="$1"
+    local output_file="$2"
+
+    rm -f "$output_file"
+    LC_ALL=C find "$source_dir" -type f -print0 | LC_ALL=C sort -z | xargs -0 zip -q -X "$output_file"
+}
+
 echo "🔄 Přepnutí do základního adresáře: $BASE_DIR"
 
 cd "$BASE_DIR" || exit 1
@@ -17,11 +25,11 @@ echo "📦 Balení PGIS2 balíčku..."
 FILE="$BASE_DIR/subjects/PGIS2/skripty/balik_pgis2.zip"
 TMP_FILE="/tmp/balik_pgis2.zip"
 
-cd $BASE_DIR/baliky
+cd "$BASE_DIR/baliky" || exit 1
 # smaž nepotřebné složky
 find "balik_pgis2" -type d \( -name build  -o -name .pytest_cache -o -name __pycache__ -o -name "*.egg-info" \) -exec rm -rf {} + 2>/dev/null
 
-zip -rFS "$TMP_FILE" "balik_pgis2"
+create_deterministic_zip "balik_pgis2" "$TMP_FILE"
 rsync -c "$TMP_FILE" "$FILE"
 
 echo "✓ PGIS2 balíček sbalen: $FILE"
@@ -32,11 +40,11 @@ echo "📦 Balení PGIS3 balíčku..."
 FILE="$BASE_DIR/subjects/PGIS3/skripty/balik_pgis3.zip"
 TMP_FILE="/tmp/balik_pgis3.zip"
 
-cd $BASE_DIR/baliky
+cd "$BASE_DIR/baliky" || exit 1
 # smaž nepotřebné složky
 find "balik_pgis3" -type d \( -name build  -o -name .pytest_cache -o -name __pycache__ -o -name "*.egg-info" \) -exec rm -rf {} + 2>/dev/null
 
-zip -rFS "$TMP_FILE" "balik_pgis3"
+create_deterministic_zip "balik_pgis3" "$TMP_FILE"
 rsync -c "$TMP_FILE" "$FILE"
 echo "✓ PGIS3 balíček sbalen: $FILE"
 echo "=============================="
