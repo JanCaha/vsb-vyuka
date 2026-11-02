@@ -2,7 +2,7 @@
 title: "Mapping module [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2025-11-18
+date: 2026-11-02
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -34,6 +34,18 @@ aprx = arcpy.mp.ArcGISProject("CURRENT")
 aprx = arcpy.mp.ArcGISProject(r"C:\Projects\YosemiteNP\Yosemite.aprx")
 ```
 
+## Hlavní třídy `arcpy.mp`
+
+- `ArcGISProject` — vstupní bod do projektu (`.aprx`), seznam map, layoutů, stylů a datových zdrojů
+- `Map` — mapové okno v projektu, obsahuje vrstvy a zobrazení dat
+- `Layer` — jedna vrstva v mapě, z ní se získávají vlastnosti, filtry a symbologie
+- `Layout` — stránka s mapovými rámy, legendami, textem a exportem do PDF/PNG
+- `MapFrame` — rámec mapy na layoutu, zobrazuje konkrétní `Map`
+- `Table` — tabulky připojené k projektu či vrstvě
+- další: `Bookmark`, `Report`, `Camera`, `GraphicElement`, `TextElement`
+
+- dokumentace: [Alphabetical list of arcpy.mp classes](https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/alphabeticallistofclasses.html)
+
 ## `ArcGISProject`
 
 - hlavní třída pro práci - rozcestník k dalším položkám
@@ -43,23 +55,73 @@ aprx = arcpy.mp.ArcGISProject(r"C:\Projects\YosemiteNP\Yosemite.aprx")
 - funkce pro tvorbu nových prvků - `createLayout()`, `createMap()`, `createTextElement()` a další
 - funkce `deleteItem()` pro smazání prvku
 - při modifikaci buď nutné volat `save()` nebo `saveACopy()`
+- 
+## `ArcGISProject` - příklad
+
+```python
+aprx = arcpy.mp.ArcGISProject("CURRENT")
+print(aprx.filePath)
+print(aprx.listMaps())
+print(aprx.listLayouts())
+```
 
 ## `Map`
 
 - individuální mapové okno v projektu
 - lze z něj získat vrstvy `listLayers()`
-- lze přidávat vrstvy `addLayer()` nebo `addLayerToGroup()` či `addTable()` ale i `insertLayer()`
-- 
+- lze přidávat vrstvy `addLayer()`, `addLayerToGroup()`, `addTable()`, `insertLayer()`
+- pracuje se zobrazením, filtry, výběry a symbologií vrstvy
+
+```python
+project = arcpy.mp.ArcGISProject("CURRENT")
+map = project.listMaps("*")[0]
+for lyr in map.listLayers():
+    print(f"{lyr.name} - vektorová vrstva: {lyr.isFeatureLayer}, rasterová vrstva: {lyr.isRasterLayer}")
+```
 
 ## `Layer`
 
-- buď prvek `Map` nebo je lze ukládat do `lyr` či `lyrx` souborů
-- přistup k vlastnostem vrstvy, mimo jiné i k nastavené vizualizace (renderer či symbologie)
+- buď vrstva v `Map`, nebo uložený soubor `lyr` / `lyrx`
+- přístup k vlastnostem vrstvy, definici dotazu, časovým údajům a vizualizaci
+- často se mění `symbology`, `renderer`, `definitionQuery`, `visibility`
+- v dokumentaci je rozebráno mnoho typů rendererů
+
+```python
+lyr = map.listLayers("Obce")[0]
+print(lyr.name)
+print(lyr.symbology)
+print(lyr.isFeatureLayer)
+```
+
+## `Layout` a `MapFrame`
+
+- `Layout` představuje stránku mapy pro export a publikaci
+- obsahuje elementy: `MapFrame`, `Legend`, `TextElement`, `PictureElement`, `GraphicElement`
+- `MapFrame` zobrazuje konkrétní `Map` na layoutu a umožňuje export do PDF/PNG
+
+```python
+lyt = aprx.listLayouts("Výstup")[0]
+map_frame = lyt.listElements("MAPFRAME_ELEMENT", "Mapa 1")[0]
+print(map_frame.map.name)
+lyt.exportToPDF(r"C:\Temp\vystup.pdf")
+```
+
+## `Table`
+
+- tabulková data v projektu nebo v vrstvě
+- slouží pro práci s atributy, připojenými daty a datovými zdroji
+- možné propojení s mapami a layouty v procesu automatizace
+
+```python
+for tbl in mapa.listTables():
+    print(tbl.name)
+```
 
 ## Renderery
 
 - různé objekty dle typu
 - příklad [zde](https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/graduatedsymbolsrenderer-class.htm)
+- v praxi se mění u vrstvy `lyr.symbology.renderer` nebo přes `sym.updateRenderer()`
 
 ## Export do souboru
 
