@@ -51,6 +51,43 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Detect R presentation changes
+        id: r_changes
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "needs_r=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          BEFORE_SHA="${{ github.event.before }}"
+          AFTER_SHA="${{ github.sha }}"
+
+          if [[ -z "$BEFORE_SHA" || "$BEFORE_SHA" =~ ^0+$ ]]; then
+            echo "needs_r=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          CHANGED_FILES="$(git --no-pager diff --name-only "$BEFORE_SHA" "$AFTER_SHA")"
+          NEED_R=false
+
+          while IFS= read -r file; do
+            [[ -z "$file" ]] && continue
+
+            if [[ "$file" == subjects/IDG/* || "$file" == subjects/idg.qmd || "$file" == linux_install_R.sh || "$file" == _quarto.yml || "$file" == *.R || "$file" == *.Rmd ]]; then
+              NEED_R=true
+              break
+            fi
+          done <<< "$CHANGED_FILES"
+
+          echo "needs_r=$NEED_R" >> "$GITHUB_OUTPUT"
+
+      - name: Cache frozen IDG presentations
+        id: cache_freeze_idg
+        uses: actions/cache@v6
+        with:
+          path: _freeze/IDG/prezentace
+          key: ${{ runner.os }}-freeze-idg-${{ hashFiles('subjects/IDG/prezentace/**/*.qmd', 'subjects/idg.qmd', '_quarto.yml') }}
+
       - name: Cache Conda
         uses: actions/cache@v6
         env:
@@ -66,6 +103,7 @@ jobs:
           pkgs-dirs: ${{ env.CONDA_PKG_DIR }}
       
       - name: Cache APT packages
+        if: steps.r_changes.outputs.needs_r == 'true' || steps.cache_freeze_idg.outputs.cache-hit != 'true'
         uses: actions/cache@v6
         env:
           CACHE_NUMBER: 0
@@ -74,6 +112,7 @@ jobs:
           key: ${{ runner.os }}-apt-${{ env.CACHE_NUMBER }}-${{ hashFiles('linux_install_R.sh') }}-${{ env.MONTH }}
 
       - name: Install R and packages
+        if: steps.r_changes.outputs.needs_r == 'true' || steps.cache_freeze_idg.outputs.cache-hit != 'true'
         run: |
           sudo ./linux_install_R.sh  --all
 
