@@ -2,7 +2,7 @@
 title: "Projekt a Layout [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
-date: 2025-11-11
+date: 2026-11-09
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -21,12 +21,51 @@ execute:
 - `QgsProject.instance()` - aktuálně otevřený projekt -vždycky nějaký existuje i pokud je nový a prázdný
 - `QgsProject.instance().read("cesta k projektu")` - načtení projektu ze souboru
 - `write()`, `write("cesta_k_souboru.qgz")`
+- `qgs` soubor je vlastně XML reprezentace projektu, `qgz` (výchozí nastavení) je komprimovaný archiv obsahující `qgs` soubor a případně další soubory
+
+## Práce s vrstvami v projektu
+
+- Do projektu je nutné vrstvy přidat, pokud s nimi chceme dále pracovat v rámci QGISu nebo layoutů
+- `addMapLayer()` - přidání vrstvy do projektu
+- `removeMapLayer()` - odebrání vrstvy
+- `mapLayersByName()` - vyhledání vrstvy podle jména
+
+```python
+layer = QgsVectorLayer("cesta/k/souboru.gpkg", "Nazev", "ogr")
+if layer.isValid():
+    # Přidání vrstvy
+    QgsProject.instance().addMapLayer(layer)
+
+# Získání vrstvy podle jména
+layers = QgsProject.instance().mapLayersByName("Nazev")
+if layers:
+    first_layer = layers[0]
+```
 
 ## Layout
 
 - `QgsPrintLayout` - třída reprezentující layout
-- funkce `initializeDefaults()` - bez ní je layout těžko použitelný, nemá např, ani stránky
+- funkce `initializeDefaults()` - bez ní je layout těžko použitelný, nemá např. ani stránky
 - layout může být několika stránkový - `pageCollection()`
+
+## Správa layoutů v projektu
+
+- Pro správu vytvořených layoutů slouží `QgsLayoutManager`
+- Přístup přes `QgsProject.instance().layoutManager()`
+
+```python
+project = QgsProject.instance()
+manager = project.layoutManager()
+
+# Vytvoření nového layoutu a přidání do projektu
+layout = QgsPrintLayout(project)
+layout.initializeDefaults()
+layout.setName("Můj Layout")
+manager.addLayout(layout)
+
+# Získání existujícího layoutu podle jména
+existing_layout = manager.layoutByName("Můj Layout")
+```
 
 ## Načtení layout ze šablony
 
@@ -46,7 +85,58 @@ layout.loadFromTemplate(document, context)
 ## Prvky layoutu
 
 - `QgsLayoutItem` - interface reprezentující jednotlivé prvky layoutu, samotné třídy layout pak jsou `QgsLayoutItem*`
-- obecné, určené rozhraním, `QgsLayoutItem` - velikost, pozice, otočení, viditelnost, atd.
-- specifické, dané typem prvku, např. `setPicturePath()` pro `QgsLayoutItemPicture` či `setText(), setTextFormat()` pro `QgsLayoutItemLabel`
+- prvky pro reprezentaci mapy, text, obrázky, měřítko, legendu, atd.
+- nové prvky mohou být vytvářeny i v rámci pluginů
+
+## Metody a vlastnosti layout prvků
+
+- obecné, určené rozhraním základního objektu `QgsLayoutItem` - velikost, pozice, otočení, viditelnost, atd.
+- specifické, dané typem prvku, např. `setPicturePath()` pro `QgsLayoutItemPicture`
+- `setText(), setTextFormat()` pro `QgsLayoutItemLabel`
+
+## Úprava prvků ze šablony
+
+- Layout vytvořený ze šablony (`.qpt`) často obsahuje zástupné prvky, které chceme ze skriptu upravit
+- Vyhledávání prvku podle **Item ID**: `itemById()`
+
+```python
+# Získání textového prvku (Label) podle jeho Item ID
+title_label = layout.itemById("title_label")
+if title_label is not None:
+    # Úprava textu
+    title_label.setText("Nová mapa kraje")
+```
+
+## Prvek mapy (`QgsLayoutItemMap`)
+
+- Mapa v layoutu potřebuje nastavit, jaké území bude zobrazovat (rozsah - extent)
+- Můžeme nastavit rozsah například na základě existující vrstvy
+
+```python
+map_item = layout.itemById("main_map")
+if map_item is not None:
+    # Nalezení vrstvy v projektu
+    layer = QgsProject.instance().mapLayersByName("okresy")[0]
+    
+    # Nastavení rozsahu mapy na rozsah vrstvy
+    map_item.setExtent(layer.extent())
+```
+
+## Export layoutu
+
+- O export hotového layoutu se stará třída `QgsLayoutExporter`
+- Podporuje export do PDF, SVG, i rastrových obrázků (PNG, JPG)
+
+```python
+exporter = QgsLayoutExporter(layout)
+
+# Export do PDF
+pdf_settings = QgsLayoutExporter.PdfExportSettings()
+exporter.exportToPdf("cesta/k/vystup.pdf", pdf_settings)
+
+# Export do obrázku (např. PNG)
+img_settings = QgsLayoutExporter.ImageExportSettings()
+exporter.exportToImage("cesta/k/vystup.png", img_settings)
+```
 
 # Dotazy?{.center}
