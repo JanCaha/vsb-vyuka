@@ -1,3 +1,4 @@
+# no GA run
 from qgis.core import QgsApplication, QgsFeature, QgsVectorLayer
 from utils import data_path
 
