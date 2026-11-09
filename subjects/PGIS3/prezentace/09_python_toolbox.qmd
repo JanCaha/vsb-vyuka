@@ -2,7 +2,7 @@
 title: "Python Toolbox [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
-date: 2025-12-02
+date: 2026-11-09
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
@@ -110,7 +110,8 @@ param1.values = [['NAME', 'SUM']]
 param1.filters[1].list = ['SUM', 'MIN', 'MAX', 'STDEV', 'MEAN']
 ```
 
-## Výchozí hodnota parametru
+## Výchozí hodnota parametru- pokud `updateMessages()` nastaví chybu (`setErrorMessage()`), uživatel nástroj nespustí, dokud chybu neodstraní
+
 
 - lze nastavit jako `param0.defaultEnvironmentName = "workspace"`
 - či např. jako ` param0.value = os.path.join(os.path.dirname(__file__), 'Fire_Station.lyrx')`
@@ -149,6 +150,32 @@ param1.symbology = Path(__file__).parent / 'raster_symbology.lyrx'
 
 - v metodě `execute()` 
 - získávají se z proměnné `parameters`, obvykle jako test - `param0 = parameters[0].valueAsText`
+
+## Propojení validace parametrů a `execute()`
+
+- metody `updateParameters()` a `updateMessages()` běží při změnách hodnot v dialogu nástroje
+- `execute()` se spustí až po kliknutí na **Run** a po úspěšné interní validaci
+- všechny tři metody pracují se stejným seznamem `parameters`, proto je důležité držet stabilní pořadí indexů
+
+```python
+def updateParameters(self, parameters):
+    # Doplneni nebo zmena hodnot podle jinych parametru
+    if parameters[0].valueAsText:
+        parameters[1].enabled = True
+
+
+def updateMessages(self, parameters):
+    # Kontrola hodnot pred spustenim nastroje
+    if not parameters[0].valueAsText:
+        parameters[0].setErrorMessage("Vstupni vrstva musi byt vyplnena.")
+
+
+def execute(self, parameters, messages):
+    # Cteni uz validovanych hodnot
+    in_features = parameters[0].valueAsText
+    out_features = parameters[2].valueAsText
+    arcpy.Copy_management(in_features, out_features)
+```
 
 ## Komunikace s uživatelem
 

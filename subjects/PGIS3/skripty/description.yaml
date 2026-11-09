@@ -65,12 +65,12 @@
   path: "PGIS3/skripty/balik_pgis3.zip"
 - title: "Ǔprava projektu a vrstvy v něm"
   author: Jan Caha
-  date: 2026-12-02
+  date: 2026-11-09
   year: 2026
   path: "PGIS3/skripty/12_projekt.py"
 - title: "Změny Layoutu a jeho export"
   author: Jan Caha
-  date: 2026-12-02
+  date: 2026-11-09
   year: 2026
   path: "PGIS3/skripty/13_layout_zmeny_export.py"
 - title: "Python toolbox s jednoduchým nástrojem"
