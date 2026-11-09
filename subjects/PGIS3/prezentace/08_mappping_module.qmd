@@ -55,7 +55,7 @@ aprx = arcpy.mp.ArcGISProject(r"C:\Projects\YosemiteNP\Yosemite.aprx")
 - funkce pro tvorbu nových prvků - `createLayout()`, `createMap()`, `createTextElement()` a další
 - funkce `deleteItem()` pro smazání prvku
 - při modifikaci buď nutné volat `save()` nebo `saveACopy()`
-- 
+
 ## `ArcGISProject` - příklad
 
 ```python
