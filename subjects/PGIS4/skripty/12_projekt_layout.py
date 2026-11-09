@@ -19,7 +19,7 @@ qgis.initQgis()
 project = QgsProject.instance()
 open = project.read(data_path(r"projekt1.qgz").as_posix())
 # open by měl být TRUE, pokud se projekt načetl správně
-print(open)
+print(f"Projekt načten: {open}")
 
 # vlastnosti projektu
 print(f"Vrstvy: {project.mapLayers()}")
@@ -35,8 +35,8 @@ print(f"Nový název: {project.title()}")
 
 # uložení vlastních proměnných do projektu
 project.setCustomVariables({"my_data": 123456})
-data = project.customVariables()["my_data"]
-print(data)
+project_variable = project.customVariables()["my_data"]
+print(f"Proměnná projetku: {project_variable}")
 
 # projektu uložíme buď se změnami nebo do nového souboru
 # project.write()
