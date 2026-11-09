@@ -258,8 +258,10 @@ Jan Caha
 <li>funkce pro tvorbu nových prvků - <code>createLayout()</code>, <code>createMap()</code>, <code>createTextElement()</code> a další</li>
 <li>funkce <code>deleteItem()</code> pro smazání prvku</li>
 <li>při modifikaci buď nutné volat <code>save()</code> nebo <code>saveACopy()</code></li>
-<li><h2 id="arcgisproject---příklad"><code>ArcGISProject</code> - příklad</h2></li>
 </ul>
+</section>
+<section id="arcgisproject---příklad" class="slide level2">
+<h2><code>ArcGISProject</code> - příklad</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>aprx <span class="op">=</span> arcpy.mp.ArcGISProject(<span class="st">"CURRENT"</span>)</span>
 <span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(aprx.filePath)</span>
 <span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(aprx.listMaps())</span>

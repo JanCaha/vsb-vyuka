@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.11.9">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-11-11">
+  <meta name="dcterms.date" content="2026-11-09">
   <title>Výuka - Jan Caha – Projekt a Layout QGIS Python API</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-11-11</p>
+  <p class="date">2026-11-09</p>
 </section>
 <section id="projekt" class="slide level2">
 <h2>Projekt</h2>
@@ -222,36 +222,123 @@ Jan Caha
 <li><code>QgsProject.instance()</code> - aktuálně otevřený projekt -vždycky nějaký existuje i pokud je nový a prázdný</li>
 <li><code>QgsProject.instance().read("cesta k projektu")</code> - načtení projektu ze souboru</li>
 <li><code>write()</code>, <code>write("cesta_k_souboru.qgz")</code></li>
+<li><code>qgs</code> soubor je vlastně XML reprezentace projektu, <code>qgz</code> (výchozí nastavení) je komprimovaný archiv obsahující <code>qgs</code> soubor a případně další soubory</li>
 </ul>
+</section>
+<section id="práce-s-vrstvami-v-projektu" class="slide level2">
+<h2>Práce s vrstvami v projektu</h2>
+<ul>
+<li>Do projektu je nutné vrstvy přidat, pokud s nimi chceme dále pracovat v rámci QGISu nebo layoutů</li>
+<li><code>addMapLayer()</code> - přidání vrstvy do projektu</li>
+<li><code>removeMapLayer()</code> - odebrání vrstvy</li>
+<li><code>mapLayersByName()</code> - vyhledání vrstvy podle jména</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> QgsVectorLayer(<span class="st">"cesta/k/souboru.gpkg"</span>, <span class="st">"Nazev"</span>, <span class="st">"ogr"</span>)</span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> layer.isValid():</span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Přidání vrstvy</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    QgsProject.instance().addMapLayer(layer)</span>
+<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Získání vrstvy podle jména</span></span>
+<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>layers <span class="op">=</span> QgsProject.instance().mapLayersByName(<span class="st">"Nazev"</span>)</span>
+<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> layers:</span>
+<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>    first_layer <span class="op">=</span> layers[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="layout" class="slide level2">
 <h2>Layout</h2>
 <ul>
 <li><code>QgsPrintLayout</code> - třída reprezentující layout</li>
-<li>funkce <code>initializeDefaults()</code> - bez ní je layout těžko použitelný, nemá např, ani stránky</li>
+<li>funkce <code>initializeDefaults()</code> - bez ní je layout těžko použitelný, nemá např. ani stránky</li>
 <li>layout může být několika stránkový - <code>pageCollection()</code></li>
 </ul>
 </section>
+<section id="správa-layoutů-v-projektu" class="slide level2">
+<h2>Správa layoutů v projektu</h2>
+<ul>
+<li>Pro správu vytvořených layoutů slouží <code>QgsLayoutManager</code></li>
+<li>Přístup přes <code>QgsProject.instance().layoutManager()</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a>project <span class="op">=</span> QgsProject.instance()</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a>manager <span class="op">=</span> project.layoutManager()</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Vytvoření nového layoutu a přidání do projektu</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> QgsPrintLayout(project)</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a>layout.initializeDefaults()</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>layout.setName(<span class="st">"Můj Layout"</span>)</span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>manager.addLayout(layout)</span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Získání existujícího layoutu podle jména</span></span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>existing_layout <span class="op">=</span> manager.layoutByName(<span class="st">"Můj Layout"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section id="načtení-layout-ze-šablony" class="slide level2">
 <h2>Načtení layout ze šablony</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.PyQt.QtXml <span class="im">import</span> QDomDocument</span>
-<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">file</span>(<span class="st">"path_to_file.qpt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a>    template_content <span class="op">=</span> <span class="bu">file</span>.read()</span>
-<span id="cb1-5"><a aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> QDomDocument()</span>
-<span id="cb1-7"><a aria-hidden="true" tabindex="-1"></a>document.setContent(template_content)</span>
-<span id="cb1-8"><a aria-hidden="true" tabindex="-1"></a>context <span class="op">=</span> QgsReadWriteContext()</span>
-<span id="cb1-9"><a aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> QgsPrintLayout(QgsProject.instance())</span>
-<span id="cb1-10"><a aria-hidden="true" tabindex="-1"></a>layout.loadFromTemplate(document, context)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qgis.PyQt.QtXml <span class="im">import</span> QDomDocument</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">file</span>(<span class="st">"path_to_file.qpt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>    template_content <span class="op">=</span> <span class="bu">file</span>.read()</span>
+<span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a aria-hidden="true" tabindex="-1"></a>document <span class="op">=</span> QDomDocument()</span>
+<span id="cb3-7"><a aria-hidden="true" tabindex="-1"></a>document.setContent(template_content)</span>
+<span id="cb3-8"><a aria-hidden="true" tabindex="-1"></a>context <span class="op">=</span> QgsReadWriteContext()</span>
+<span id="cb3-9"><a aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> QgsPrintLayout(QgsProject.instance())</span>
+<span id="cb3-10"><a aria-hidden="true" tabindex="-1"></a>layout.loadFromTemplate(document, context)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="prvky-layoutu" class="slide level2">
 <h2>Prvky layoutu</h2>
 <ul>
 <li><code>QgsLayoutItem</code> - interface reprezentující jednotlivé prvky layoutu, samotné třídy layout pak jsou <code>QgsLayoutItem*</code></li>
-<li>obecné, určené rozhraním, <code>QgsLayoutItem</code> - velikost, pozice, otočení, viditelnost, atd.</li>
-<li>specifické, dané typem prvku, např. <code>setPicturePath()</code> pro <code>QgsLayoutItemPicture</code> či <code>setText(), setTextFormat()</code> pro <code>QgsLayoutItemLabel</code></li>
+<li>prvky pro reprezentaci mapy, text, obrázky, měřítko, legendu, atd.</li>
+<li>nové prvky mohou být vytvářeny i v rámci pluginů</li>
 </ul>
+</section>
+<section id="metody-a-vlastnosti-layout-prvků" class="slide level2">
+<h2>Metody a vlastnosti layout prvků</h2>
+<ul>
+<li>obecné, určené rozhraním základního objektu <code>QgsLayoutItem</code> - velikost, pozice, otočení, viditelnost, atd.</li>
+<li>specifické, dané typem prvku, např. <code>setPicturePath()</code> pro <code>QgsLayoutItemPicture</code></li>
+<li><code>setText(), setTextFormat()</code> pro <code>QgsLayoutItemLabel</code></li>
+</ul>
+</section>
+<section id="úprava-prvků-ze-šablony" class="slide level2">
+<h2>Úprava prvků ze šablony</h2>
+<ul>
+<li>Layout vytvořený ze šablony (<code>.qpt</code>) často obsahuje zástupné prvky, které chceme ze skriptu upravit</li>
+<li>Vyhledávání prvku podle <strong>Item ID</strong>: <code>itemById()</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Získání textového prvku (Label) podle jeho Item ID</span></span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a>title_label <span class="op">=</span> layout.itemById(<span class="st">"title_label"</span>)</span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> title_label <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb4-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Úprava textu</span></span>
+<span id="cb4-5"><a aria-hidden="true" tabindex="-1"></a>    title_label.setText(<span class="st">"Nová mapa kraje"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="prvek-mapy-qgslayoutitemmap" class="slide level2">
+<h2>Prvek mapy (<code>QgsLayoutItemMap</code>)</h2>
+<ul>
+<li>Mapa v layoutu potřebuje nastavit, jaké území bude zobrazovat (rozsah - extent)</li>
+<li>Můžeme nastavit rozsah například na základě existující vrstvy</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a>map_item <span class="op">=</span> layout.itemById(<span class="st">"main_map"</span>)</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> map_item <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Nalezení vrstvy v projektu</span></span>
+<span id="cb5-4"><a aria-hidden="true" tabindex="-1"></a>    layer <span class="op">=</span> QgsProject.instance().mapLayersByName(<span class="st">"okresy"</span>)[<span class="dv">0</span>]</span>
+<span id="cb5-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Nastavení rozsahu mapy na rozsah vrstvy</span></span>
+<span id="cb5-7"><a aria-hidden="true" tabindex="-1"></a>    map_item.setExtent(layer.extent())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="export-layoutu" class="slide level2">
+<h2>Export layoutu</h2>
+<ul>
+<li>O export hotového layoutu se stará třída <code>QgsLayoutExporter</code></li>
+<li>Podporuje export do PDF, SVG, i rastrových obrázků (PNG, JPG)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>exporter <span class="op">=</span> QgsLayoutExporter(layout)</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Export do PDF</span></span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>pdf_settings <span class="op">=</span> QgsLayoutExporter.PdfExportSettings()</span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a>exporter.exportToPdf(<span class="st">"cesta/k/vystup.pdf"</span>, pdf_settings)</span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="co"># Export do obrázku (např. PNG)</span></span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>img_settings <span class="op">=</span> QgsLayoutExporter.ImageExportSettings()</span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>exporter.exportToImage(<span class="st">"cesta/k/vystup.png"</span>, img_settings)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dotazy" class="title-slide slide level1 center">
 <h1>Dotazy?</h1>

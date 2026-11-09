@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.11.9">
 
   <meta name="author" content="Jan Caha">
-  <meta name="dcterms.date" content="2025-12-02">
+  <meta name="dcterms.date" content="2026-11-09">
   <title>Výuka - Jan Caha – Python Toolbox ArcPy</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@ Jan Caha
 </div>
 </div>
 
-  <p class="date">2025-12-02</p>
+  <p class="date">2026-11-09</p>
 </section>
 <section id="python-toolbox" class="slide level2">
 <h2>Python Toolbox</h2>
@@ -322,8 +322,8 @@ Jan Caha
 <span id="cb3-4"><a aria-hidden="true" tabindex="-1"></a>param1.values <span class="op">=</span> [[<span class="st">"NAME"</span>, <span class="st">"SUM"</span>]]</span>
 <span id="cb3-5"><a aria-hidden="true" tabindex="-1"></a>param1.filters[<span class="dv">1</span>].<span class="bu">list</span> <span class="op">=</span> [<span class="st">"SUM"</span>, <span class="st">"MIN"</span>, <span class="st">"MAX"</span>, <span class="st">"STDEV"</span>, <span class="st">"MEAN"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="výchozí-hodnota-parametru" class="slide level2">
-<h2>Výchozí hodnota parametru</h2>
+<section id="výchozí-hodnota-parametru--pokud-updatemessages-nastaví-chybu-seterrormessage-uživatel-nástroj-nespustí-dokud-chybu-neodstraní" class="slide level2">
+<h2>Výchozí hodnota parametru- pokud <code>updateMessages()</code> nastaví chybu (<code>setErrorMessage()</code>), uživatel nástroj nespustí, dokud chybu neodstraní</h2>
 <ul>
 <li>lze nastavit jako <code>param0.defaultEnvironmentName = "workspace"</code></li>
 <li>či např. jako <code>param0.value = os.path.join(os.path.dirname(__file__), 'Fire_Station.lyrx')</code></li>
@@ -366,6 +366,31 @@ Jan Caha
 <li>v metodě <code>execute()</code></li>
 <li>získávají se z proměnné <code>parameters</code>, obvykle jako test - <code>param0 = parameters[0].valueAsText</code></li>
 </ul>
+</section>
+<section id="propojení-validace-parametrů-a-execute" class="slide level2">
+<h2>Propojení validace parametrů a <code>execute()</code></h2>
+<ul>
+<li>metody <code>updateParameters()</code> a <code>updateMessages()</code> běží při změnách hodnot v dialogu nástroje</li>
+<li><code>execute()</code> se spustí až po kliknutí na <strong>Run</strong> a po úspěšné interní validaci</li>
+<li>všechny tři metody pracují se stejným seznamem <code>parameters</code>, proto je důležité držet stabilní pořadí indexů</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> updateParameters(<span class="va">self</span>, parameters):</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Doplneni nebo zmena hodnot podle jinych parametru</span></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> parameters[<span class="dv">0</span>].valueAsText:</span>
+<span id="cb6-4"><a aria-hidden="true" tabindex="-1"></a>        parameters[<span class="dv">1</span>].enabled <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb6-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> updateMessages(<span class="va">self</span>, parameters):</span>
+<span id="cb6-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Kontrola hodnot pred spustenim nastroje</span></span>
+<span id="cb6-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> parameters[<span class="dv">0</span>].valueAsText:</span>
+<span id="cb6-10"><a aria-hidden="true" tabindex="-1"></a>        parameters[<span class="dv">0</span>].setErrorMessage(<span class="st">"Vstupni vrstva musi byt vyplnena."</span>)</span>
+<span id="cb6-11"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> execute(<span class="va">self</span>, parameters, messages):</span>
+<span id="cb6-14"><a aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cteni uz validovanych hodnot</span></span>
+<span id="cb6-15"><a aria-hidden="true" tabindex="-1"></a>    in_features <span class="op">=</span> parameters[<span class="dv">0</span>].valueAsText</span>
+<span id="cb6-16"><a aria-hidden="true" tabindex="-1"></a>    out_features <span class="op">=</span> parameters[<span class="dv">2</span>].valueAsText</span>
+<span id="cb6-17"><a aria-hidden="true" tabindex="-1"></a>    arcpy.Copy_management(in_features, out_features)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="komunikace-s-uživatelem" class="slide level2">
 <h2>Komunikace s uživatelem</h2>
