@@ -63,11 +63,6 @@
   date: 2026-11-18
   year: 2026
   path: "PGIS4/skripty/nástroj2.py"
-- title: "Ukázkový Plugin"
-  author: Jan Caha
-  date: 2026-11-18
-  year: 2026
-  path: "PGIS4/skripty/mujplugin.zip"
 - title: "Editace projektu a layoutu"
   author: Jan Caha
   date: 2026-11-25
@@ -88,3 +83,8 @@
   date: 2026-09-30
   year: 2026
   path: "PGIS4/skripty/utils.py"
+- title: "Ukázkový Plugin"
+  author: Jan Caha
+  date: 2026-11-23
+  year: 2026
+  path: "PGIS4/skripty/mujplugin.zip"
