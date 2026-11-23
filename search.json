@@ -213,7 +213,7 @@
     "href": "subjects/pvgis4.html#ukázkové-kódy",
     "title": "Programování v GIS 4 (PvGIS4)",
     "section": "Ukázkové kódy",
-    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-09-21\n\n\nÚvod do vektorových dat\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data - výběr prvků\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data - tvorba dat\n\n\n\n\n\n\n2026-09-30\n\n\nUtils\n\n\n\n\n\n\n2026-10-12\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\n\n2026-10-19\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n\n\n2026-10-19\n\n\nOperace s geometriemi\n\n\n\n\n\n\n2026-10-19\n\n\nVýpočty s elipsoidy\n\n\n\n\n\n\n2026-10-21\n\n\nGDAL tvorba náhodného rastru\n\n\n\n\n\n\n2026-10-26\n\n\nRastrová data\n\n\n\n\n\n\n2026-10-26\n\n\nEditace hodnot rastru\n\n\n\n\n\n\n2026-10-26\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\n\n2026-10-26\n\n\nRastrový kalkulátor - příklad\n\n\n\n\n\n\n2026-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\n\n2026-11-18\n\n\nAlgoritmus s více kroky\n\n\n\n\n\n\n2026-11-18\n\n\nUkázkový Plugin\n\n\n\n\n\n\n2026-11-25\n\n\nEditace projektu a layoutu\n\n\n\n\n\n\n2026-11-25\n\n\nGUI nástroj na kreslení polygonu\n\n\n\n\n\n\nNo matching items",
+    "text": "Ukázkové kódy\n\n\n\n\n\n\nDatum\n\n\n\nSkript\n\n\n\n\n\n\n\n\n2026-09-21\n\n\nÚvod do vektorových dat\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data - výběr prvků\n\n\n\n\n\n\n2026-09-21\n\n\nVektorová data - tvorba dat\n\n\n\n\n\n\n2026-09-30\n\n\nUtils\n\n\n\n\n\n\n2026-10-12\n\n\nUkázka rozhraní v Pythonu\n\n\n\n\n\n\n2026-10-19\n\n\nRozhraní v QgsAbstractGeometry\n\n\n\n\n\n\n2026-10-19\n\n\nOperace s geometriemi\n\n\n\n\n\n\n2026-10-19\n\n\nVýpočty s elipsoidy\n\n\n\n\n\n\n2026-10-21\n\n\nGDAL tvorba náhodného rastru\n\n\n\n\n\n\n2026-10-26\n\n\nRastrová data\n\n\n\n\n\n\n2026-10-26\n\n\nEditace hodnot rastru\n\n\n\n\n\n\n2026-10-26\n\n\nKopie rastru a jeho hodnot\n\n\n\n\n\n\n2026-10-26\n\n\nRastrový kalkulátor - příklad\n\n\n\n\n\n\n2026-11-04\n\n\nNástroj pro vektorová data\n\n\n\n\n\n\n2026-11-18\n\n\nAlgoritmus s více kroky\n\n\n\n\n\n\n2026-11-23\n\n\nUkázkový Plugin\n\n\n\n\n\n\n2026-11-25\n\n\nEditace projektu a layoutu\n\n\n\n\n\n\n2026-11-25\n\n\nGUI nástroj na kreslení polygonu\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Předměty zimní semestr",
       "Programování v GIS 4"
@@ -2742,7 +2742,7 @@
     "href": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu",
     "title": "Opakování Pythonu",
     "section": "Magické metody - tisk objektu",
-    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7f3c04a15490&gt;"
+    "text": "Magické metody - tisk objektu\n\ntisk objektu bez funkce __repr__()\ntiskne informace o umístění objektu v paměti\n\n\nclass A:\n    def __init__(self):\n        pass\n\n\na = A()\nprint(a)\n\n&lt;__main__.A object at 0x7fcf88a6b5f0&gt;"
   },
   {
     "objectID": "subjects/PGIS2/prezentace/02_opakovani_python.html#magické-metody---tisk-objektu-1",

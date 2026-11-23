@@ -165,8 +165,8 @@ class Tool:
             arcpy.AddWarning("Vrstva nepodporuje renderer. Renderer nelze nastavit.")
             return
 
-        color_ramps = project.listColorRamps("Cyan to Purple")
-        if not color_ramps:
+        color_ramp = project.listColorRamps("Cyan to Purple")[0]
+        if not color_ramp:
             arcpy.AddError("Barevná škála 'Cyan to Purple' nebyla v projektu nalezena.")
             return
 
@@ -175,7 +175,7 @@ class Tool:
             symbology.renderer.classificationField = render_field
             symbology.renderer.breakCount = 5
             symbology.renderer.classificationMethod = "Quantile"
-            symbology.renderer.colorRamp = color_ramps[0]
+            symbology.renderer.colorRamp = color_ramp
             output_layer.symbology = symbology
             arcpy.AddMessage("Renderer výstupu byl nastaven na Graduated Colors.")
         except arcpy.ExecuteError:
