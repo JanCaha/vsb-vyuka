@@ -1,7 +1,7 @@
 from qgis.core import QgsApplication
 from qgis.gui import QgisInterface
 
-from .provider import MujProvider
+from .provider import Pgis4ProcessingProvider
 
 
 class MujPlugin:
@@ -10,7 +10,7 @@ class MujPlugin:
     def __init__(self, iface: QgisInterface):
         self.iface: QgisInterface = iface
 
-        self.provider = MujProvider()
+        self.provider = Pgis4ProcessingProvider()
 
         # načtení provideru do QGIS registru
         QgsApplication.processingRegistry().addProvider(self.provider)

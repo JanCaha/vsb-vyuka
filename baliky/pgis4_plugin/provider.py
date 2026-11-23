@@ -1,10 +1,10 @@
 from qgis.core import QgsProcessingProvider
 
-from .nastroj1 import Nastroj1
-from .nastroj2 import Nastroj2
+from .nastroj1 import PolygonAreaClassificationAlgorithm
+from .nastroj2 import RasterThresholdClassificationAlgorithm
 
 
-class MujProvider(QgsProcessingProvider):
+class Pgis4ProcessingProvider(QgsProcessingProvider):
 
     # funkce načtení
     def load(self) -> bool:
@@ -14,11 +14,11 @@ class MujProvider(QgsProcessingProvider):
 
     # připravení všech algoritmů
     def loadAlgorithms(self):
-        self.addAlgorithm(Nastroj1())
-        self.addAlgorithm(Nastroj2())
+        self.addAlgorithm(PolygonAreaClassificationAlgorithm())
+        self.addAlgorithm(RasterThresholdClassificationAlgorithm())
 
     def id(self):
-        return "mujprovider"
+        return "pgis4_processing"
 
     def name(self):
-        return "Můj Provider"
+        return "PGIS4 Processing"

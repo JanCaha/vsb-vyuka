@@ -14,7 +14,7 @@ from qgis.core import (
 )
 
 
-class Nastroj2(QgsProcessingAlgorithm):
+class RasterThresholdClassificationAlgorithm(QgsProcessingAlgorithm):
     INPUT = "vstupni_vrstva"
     OUTPUT = "vystupni_vrstva"
     NUMERICALLIMIT = "ciselny_limit"
@@ -142,16 +142,16 @@ class Nastroj2(QgsProcessingAlgorithm):
         return {self.OUTPUT: vystupni_raster_umisteni}
 
     def name(self):
-        return "Kategorizace rastru"
+        return "raster_threshold_classification"
 
     def displayName(self):
-        return "Kategorizace rastru"
+        return "Kategorizace rastru dle limitu"
 
     def group(self):
-        return "Zkouška"
+        return "PGIS4 - Rastrové nástroje"
 
     def groupId(self):
-        return "Zkouška"
+        return "pgis4_raster_tools"
 
     def createInstance(self):
-        return Nastroj2()
+        return RasterThresholdClassificationAlgorithm()

@@ -14,7 +14,7 @@ from qgis.core import (
 from qgis.PyQt.QtCore import QVariant
 
 
-class Nastroj1(QgsProcessingAlgorithm):
+class PolygonAreaClassificationAlgorithm(QgsProcessingAlgorithm):
     INPUT = "vstupni_vrstva"
     OUTPUT = "vystupni_vrstva"
     NUMERICALLIMIT = "ciselny_limit"
@@ -121,16 +121,16 @@ class Nastroj1(QgsProcessingAlgorithm):
         return {self.OUTPUT: vystupni_vrstva}
 
     def name(self):
-        return "Kategorizace dle rozlohy"
+        return "polygon_area_classification"
 
     def displayName(self):
-        return "Kategorizace dle rozlohy"
+        return "Kategorizace polygonů dle rozlohy"
 
     def group(self):
-        return "Zkouška"
+        return "PGIS4 - Vektorové nástroje"
 
     def groupId(self):
-        return "Zkouška"
+        return "pgis4_vector_tools"
 
     def createInstance(self):
-        return Nastroj1()
+        return PolygonAreaClassificationAlgorithm()
