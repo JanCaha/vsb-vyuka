@@ -1,0 +1,13 @@
+[general]
+name=PGIS 4 Plugin
+qgisMinimumVersion=3.40
+qgisMaximumVersion=3.99
+description=Ukázkový plugin pro předmět PGIS4 - registrace Processing provideru s vlastními algoritmy.
+about=Didaktický plugin pro výuku PyQGIS. Přidává vlastní Processing provider a ukázkové algoritmy.
+version=0.1.0
+author=Jan Caha
+email=Autor@email.com
+repository=https://github.com/JanCaha/vsb-vyuka
+homepage=https://jancaha.github.io/vsb-vyuka/subjects/pvgis4.html
+tracker=https://github.com/JanCaha/vsb-vyuka/issues
+hasProcessingProvider=yes

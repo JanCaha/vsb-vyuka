@@ -49,5 +49,19 @@ rsync -c "$TMP_FILE" "$FILE"
 echo "✓ PGIS3 balíček sbalen: $FILE"
 echo "=============================="
 
+# PGIS4 plugin
+echo "📦 Balení PGIS4 pluginu..."
+FILE="$BASE_DIR/subjects/PGIS4/skripty/pgis4_plugin.zip"
+TMP_FILE="/tmp/pgis4_plugin.zip"
+
+cd "$BASE_DIR/baliky" || exit 1
+# smaž nepotřebné složky
+find "pgis4_plugin" -type d \( -name build -o -name .pytest_cache -o -name __pycache__ -o -name "*.egg-info" \) -exec rm -rf {} + 2>/dev/null
+
+create_deterministic_zip "pgis4_plugin" "$TMP_FILE"
+rsync -c "$TMP_FILE" "$FILE"
+echo "✓ PGIS4 plugin sbalen: $FILE"
+echo "=============================="
+
 echo ""
 echo "✅ Balení dokončeno!"
