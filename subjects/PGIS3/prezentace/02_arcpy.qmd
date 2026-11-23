@@ -3,6 +3,7 @@ title: "Základ [ArcPy]{.software} pro [ArcGIS Pro]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
 date: 2026-09-21
+year: 2026
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:

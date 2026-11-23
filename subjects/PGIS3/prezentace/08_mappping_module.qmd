@@ -3,6 +3,7 @@ title: "Mapping module [ArcPy]{.software}"
 subtitle: "Programování v GIS 3"
 author: "Jan Caha"
 date: 2026-11-02
+year: 2026
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:

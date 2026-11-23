@@ -3,6 +3,7 @@ title: "Základ [QGIS Python API]{.software}"
 subtitle: "Programování v GIS 4"
 author: "Jan Caha"
 date: 2026-09-21
+year: 2026
 date-format: "YYYY-MM-DD"
 format: 
     revealjs:
